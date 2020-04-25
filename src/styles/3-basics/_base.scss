@@ -6,4 +6,9 @@
 }
 body {
   font-family: Roboto;
+  height: 100vh;
+  display: flex;
+  align-items: center;//CROSS AXIS
+  justify-content: center;//MAIN AXIS
+
 }
