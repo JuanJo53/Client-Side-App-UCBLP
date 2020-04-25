@@ -1,1 +1,21 @@
 // login buttons
+.login-button-teachers{
+    width: 130px;
+    background-color: $color-primary-blue;
+    opacity: 100;
+    border-radius: 11px;
+    text-align: right;
+    font-size: 15px;
+    color: white; 
+    padding: 13px ;
+}
+.login-button-students{
+    width: 130px;
+    background-color: $color-primary-white;
+    opacity: 60%;
+    border-radius: 11px;
+    text-align: right;
+    font-size: 15px;
+    color: $color-primary-blue; 
+    padding: 13px ;
+}
