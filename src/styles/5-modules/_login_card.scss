@@ -44,4 +44,24 @@
     font-weight: 300;
     font-size: 20px;
   }
+
+  &__type-users-buttons{
+    margin-left: 160px;
+    margin-top: 20px;
+  }
+  &__title{
+    margin-left: 100px;
+    margin-top: 40px;
+    font-family: "Roboto";
+    font-weight: 200;
+    font-size: 30px;
+  }
+  &__description{
+    width: 400px;
+    margin-left: 70px;
+    margin-top: 40px;
+    font-family: "Roboto";
+    font-weight: 100;
+    font-size: 15px;
+  }
 }
