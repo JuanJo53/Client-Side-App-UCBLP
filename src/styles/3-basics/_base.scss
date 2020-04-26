@@ -1,14 +1,14 @@
 //overall htm file
-
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: Roboto;
   height: 100vh;
-  display: flex;
-  align-items: center;//CROSS AXIS
-  justify-content: center;//MAIN AXIS
-
+  background-color: $color-primary-white;
+  //display: flex;
+  //align-items: center; //CROSS AXIS
+  //justify-content: center; //MAIN AXIS
 }

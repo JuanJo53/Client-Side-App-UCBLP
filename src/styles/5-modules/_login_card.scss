@@ -1,29 +1,26 @@
 @import "1-helpers/variables";
 .login-card {
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 900px;
-  height: 450px;
+  height: 500px;
   background-color: $color-primary-white;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   display: flex;
-  margin: auto;
   overflow: hidden;
   &__left-side {
-    flex: 0 0 50%;
-    //background-color: rgba($color: $color-primary-blue, $alpha: 0.7);
-  }
-  &__right-side {
-    flex: 1;
-    background-color: white;
-    border-radius: 0 30px 30px 0;
-  
+    flex: 0 1 50%;
   }
   &__img {
     width: 100%;
     height: 100%;
     background-image: url("https://images.unsplash.com/photo-1525571453712-090270b8354f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
-    display: block;
     background-size: cover;
+    display: block;
     position: relative;
   }
   &__overlay-img {
@@ -32,29 +29,24 @@
     position: absolute;
     background-color: rgba($color: $color-primary-blue, $alpha: 0.7);
     color: $color-primary-white;
-    //padding: 20px;
-    // display: block;
   }
   &__overlay-text {
     width: 100%;
     height: 100%;
     position: absolute;
-    margin: 40px;
+    margin: 30px;
     font-family: "Roboto";
     font-weight: 300;
     font-size: 20px;
   }
 
-  &__type-users-buttons{
-    margin-left: 160px;
-    margin-top: 20px;
-  }
   &__title{
     margin-left: 100px;
     margin-top: 40px;
     font-family: "Roboto";
     font-weight: 200;
     font-size: 30px;
+    color: #000000;
   }
   &__description{
     width: 400px;
@@ -63,5 +55,25 @@
     font-family: "Roboto";
     font-weight: 100;
     font-size: 15px;
+    color: #000000;
+  }
+    
+  &__right-side {
+    flex: 1;
+    background-color: white;
+  }
+}
+
+.bg-top-img {
+  background-color: orange;
+  width: 100%;
+  height: 50vh;
+  background-image: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $color-primary-blue, $alpha: 0.85);
+    color: $color-primary-white;
   }
 }
