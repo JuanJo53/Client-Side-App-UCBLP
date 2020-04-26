@@ -1,21 +1,39 @@
 // login buttons
-.login-button-teachers{
-    width: 130px;
+.login-button {
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
+  border: 1px solid $color-primary-blue;
+  opacity: 60%;
+  border-radius: 25px;
+  text-align: right;
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    padding-right: 10px;
+    padding-left: 5px;
+  }
+  i {
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  &:hover{
     background-color: $color-primary-blue;
-    opacity: 100;
-    border-radius: 11px;
-    text-align: right;
-    font-size: 15px;
-    color: white; 
-    padding: 13px ;
+    color: $color-primary-white;
+    border: 1px solid $color-primary-blue;
+    opacity: 100%;
+  }
 }
-.login-button-students{
-    width: 130px;
-    background-color: $color-primary-white;
-    opacity: 60%;
-    border-radius: 11px;
-    text-align: right;
-    font-size: 15px;
-    color: $color-primary-blue; 
-    padding: 13px ;
+.login-button-students {
+  width: 130px;
+  background-color: $color-primary-white;
+  
+  border-radius: 11px;
+  text-align: right;
+  font-size: 15px;
+  color: $color-primary-blue;
+  padding: 13px;
 }
