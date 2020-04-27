@@ -1,51 +1,61 @@
 <div class="bg-top-img">
   <div class="bg-top-img__overlay">
-    <div class="login-card">
-      <div class="login-card__left-side">
-        <div class="login-card__img">
-          <div class="login-card__overlay-img">
-            <div class="login-card__overlay-text">
-              <p>UCB English for teachers</p>
+    <div class="container">
+      <mat-toolbar class="top-hero">
+        <mat-toolbar-row>
+          <div class="top-hero__img">
+            <img [src]="mylogo" />
+          </div>
+          <div class="top-hero__text">UCB ENGLISH</div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="login-card">
+        <div class="login-card__left-side">
+          <div class="login-card__img">
+            <div class="login-card__overlay-img">
+              <div class="login-card__overlay-text">
+                <p>UCB English for teachers</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="login-card__right-side">
-        <div class="login-button-user-container">
-          <button class="login-button-user">
-            <i class="fas fa-user-friends"></i>
-            <div class="login-button-user__text">
-              Students
-            </div>
-          </button>
-          <button class="login-button-user active">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <div class="login-button-user__text">
-              Teachers
-            </div>
-          </button>
-        </div>
-        <p class="login-card__title">Welcome Teacher!</p>
-        <p class="login-card__description">
-          It's good to have you back in the plataform!
-        </p>
+        <div class="login-card__right-side">
+          <div class="login-button-user-container">
+            <button class="login-button-user">
+              <i class="fas fa-user-friends"></i>
+              <div class="login-button-user__text">
+                Students
+              </div>
+            </button>
+            <button class="login-button-user active">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <div class="login-button-user__text">
+                Teachers
+              </div>
+            </button>
+          </div>
+          <p class="login-card__title">Welcome Teacher!</p>
+          <p class="login-card__description">
+            It's good to have you back in the plataform!
+          </p>
 
-        <div class="login-card__form">
-          <form>
-            <p>
-              <mat-form-field appearance="outline" class="size-input">
-                <mat-label>Academic email</mat-label>
-                <input matInput placeholder="Email" />
-              </mat-form-field>
-            </p>
-            <p>
-              <mat-form-field appearance="outline" class="size-input">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" />
-              </mat-form-field>
-            </p>
-            <button mat-button class="style-button">LOG IN</button>
-          </form>
+          <div class="login-card__form">
+            <form>
+              <p>
+                <mat-form-field appearance="outline" class="size-input">
+                  <mat-label>Academic email</mat-label>
+                  <input matInput placeholder="Email" />
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline" class="size-input">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Password" />
+                </mat-form-field>
+              </p>
+              <button mat-button class="style-button">LOG IN</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
