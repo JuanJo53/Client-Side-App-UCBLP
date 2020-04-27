@@ -4,14 +4,10 @@ import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { RouterModule } from '@angular/router';
-<<<<<<< HEAD
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-=======
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
-
->>>>>>> d363fc9d911b342ae8bd524148392267f109f6bf
 
 @NgModule({
   declarations: [
@@ -22,12 +18,9 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     CommonModule,
     RouterModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule,
+    MatButtonModule,
     MatFormFieldModule,
-=======
-    MatButtonModule
->>>>>>> d363fc9d911b342ae8bd524148392267f109f6bf
+    MatInputModule
   ]
 })
-export class DefaultModule { }
+export class DefaultModule {}
