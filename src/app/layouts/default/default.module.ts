@@ -4,6 +4,7 @@ import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { RouterModule } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ]
 })
 export class DefaultModule { }
