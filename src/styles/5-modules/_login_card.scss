@@ -40,7 +40,7 @@
     font-size: 20px;
   }
 
-  &__title{
+  &__title {
     margin-left: 100px;
     margin-top: 40px;
     font-family: "Roboto";
@@ -48,7 +48,7 @@
     font-size: 30px;
     color: #000000;
   }
-  &__description{
+  &__description {
     margin-left: 70px;
     margin-top: 40px;
     font-family: "Roboto";
@@ -56,16 +56,15 @@
     font-size: 15px;
     color: #000000;
   }
-  &__form{
+  &__form {
     margin-left: 70px;
     margin-right: 70px;
     margin-top: 10px;
     color: $color-primary-blue;
     opacity: 100%;
     font-size: 10px;
-    
   }
-    
+
   &__right-side {
     flex: 1;
     background-color: white;
@@ -86,7 +85,7 @@
   }
 }
 
-input[type=button] {
+input[type="button"] {
   border-radius: 25px;
   width: 100%;
   background-color: $color-primary-blue;
@@ -109,6 +108,7 @@ input[type=button] {
   width: 100%;
   color: $color-primary-blue;
   opacity: 100%;
+  border-color: $color-primary-blue;
 }
 .style-button {
   width: 100%;
@@ -120,6 +120,24 @@ input[type=button] {
   border-radius: 28px;
   cursor: pointer;
 }
-mat-toolbar{
-  background-color : transparent;
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color:$color-primary-blue !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: red;
+}
+/* Font color */
+input.mat-input-element {
+  color: black;
+}
+
+::ng-deep {
+  $custom-main-color: orange !important;
+  $custom-label-color:orange !important;
+}
+mat-toolbar {
+  background-color: transparent;
+  color: $color-primary-white;
 }
