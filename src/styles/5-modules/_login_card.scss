@@ -49,13 +49,20 @@
     color: #000000;
   }
   &__description{
-    width: 400px;
     margin-left: 70px;
     margin-top: 40px;
     font-family: "Roboto";
     font-weight: 100;
     font-size: 15px;
     color: #000000;
+  }
+  &__form{
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 10px;
+    color: $color-primary-blue;
+    opacity: 100%;
+    font-size: 10px;
   }
     
   &__right-side {
@@ -76,4 +83,26 @@
     background-color: rgba($color: $color-primary-blue, $alpha: 0.85);
     color: $color-primary-white;
   }
+}
+input[type=text] {
+  width: 100%;
+  padding: 8px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 1px solid $color-primary-blue;
+  opacity: 60%;
+  border-radius: 4px;
+}
+input[type=button] {
+  border-radius: 25px;
+  width: 100%;
+  background-color: $color-primary-blue;
+  opacity: 100%;
+  border: none;
+  color: white;
+  font-family: "Roboto";
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 30px 2px;
+  cursor: pointer;
 }
