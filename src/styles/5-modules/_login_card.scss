@@ -109,6 +109,7 @@ input[type=button] {
   width: 100%;
   color: $color-primary-blue;
   opacity: 100%;
+  border-color: $color-primary-blue;
 }
 .style-button {
   width: 100%;
@@ -119,4 +120,23 @@ input[type=button] {
   font-size: 16px;
   border-radius: 28px;
   cursor: pointer;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $color-primary-blue !important;
+ }
+
+ .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white;
+}
+/* Font color */
+input.mat-input-element {
+  color: white;
+}
+
+
+::ng-deep {
+  $custom-main-color: $color-primary-blue;
+  $custom-label-color:  $color-primary-blue;
+
 }
