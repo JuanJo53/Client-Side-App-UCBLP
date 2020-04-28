@@ -100,76 +100,69 @@
 .style-button {
   width: 100%;
   background: $color-primary-blue;
-  opacity: 100%;
   color: white;
-  font-family: "Roboto";
-  font-size: 16px;
-  border-radius: 28px;
+  //font-family: "Roboto";
+  font-size: 15px;
+  border-radius: 30px;
   cursor: pointer;
 }
 
-// color input
+// color input button
 ::ng-deep {
-  $custom-main-color: $color-primary-blue;
-  $custom-label-color: $color-primary-blue;
-
   // mat-icon-stepper selected color change
   .mat-step-header .mat-step-icon-selected,
   .mat-step-header .mat-step-icon-state-done,
   .mat-step-header .mat-step-icon-state-edit {
-    background-color: $custom-main-color !important;
+    background-color: orange !important;
   }
 
-  // input outline color
+  // input outline color input border
   .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: $custom-main-color !important;
+    color: $color-secondary-blue !important;
   }
 
-  // mat-input focused color
+  // mat-input focused color input border active
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color: $custom-main-color !important;
+    color: $color-secondary-blue !important;
   }
 
   // mat-input error outline color
   .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
     .mat-form-field-outline-thick {
-    color: $custom-main-color !important;
+    color: orange !important;
     opacity: 0.8 !important;
   }
 
-  // mat-input caret color
+  // mat-input caret color |
   .mat-input-element {
-    caret-color: $custom-main-color !important;
+    caret-color: $color-primary-blue !important;
   }
 
   // mat-input error caret color
   .mat-form-field-invalid .mat-input-element,
   .mat-warn .mat-input-element {
-    caret-color: $custom-main-color !important;
+    caret-color: orange  !important;
   }
 
-  // mat-label normal state style
+  // mat-label normal state style hints
   .mat-form-field-label {
-    color: $custom-label-color !important;
+    color: $color-secondary-blue !important;
   }
 
-  // mat-label focused style
+  // mat-label focused style input name over
   .mat-form-field.mat-focused .mat-form-field-label {
-    color: $custom-main-color !important;
+    color: $color-secondary-blue !important;
   }
 
   // mat-label error style
   .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-    color: $custom-main-color !important;
+    color: orange!important;
   }
 }
-mat-toolbar {
-  background-color: transparent;
-  //color: $color-primary-white;
-}
 .top-hero {
+  padding-top: 15px;
   width: 250px;
-  height: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
   &__img {
@@ -184,15 +177,14 @@ mat-toolbar {
     margin: auto;
     display: flex;
     align-items: center;
-    font-size:25px;
+    font-size: 25px;
   }
 }
-.container{
+.container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  
 }
 @media (min-width: 768px) {
   .container {
@@ -208,4 +200,9 @@ mat-toolbar {
   .container {
     width: 1170px;
   }
+}
+
+.circular-button{
+  display: flex;
+  background-color: red;
 }

@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatIconModule} from '@angular/material/icon'
 
 
 
@@ -25,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-    MatToolbarModule 
+    MatToolbarModule ,
+    MatIconModule
   ]
 })
 export class DefaultModule { }
