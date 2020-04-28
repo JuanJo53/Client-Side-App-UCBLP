@@ -1,14 +1,14 @@
 <div class="bg-top-img">
   <div class="bg-top-img__overlay">
     <div class="container">
-      <mat-toolbar class="top-hero">
-        <mat-toolbar-row>
-          <div class="top-hero__img">
-            <img [src]="mylogo" />
-          </div>
-          <div class="top-hero__text">UCB ENGLISH</div>
-        </mat-toolbar-row>
-      </mat-toolbar>
+      <!-- <mat-toolbar>
+        <mat-toolbar-row> -->
+      <div class="top-hero">
+        <img [src]="mylogo" class="top-hero__img" />
+        <div class="top-hero__text">UCB ENGLISH</div>
+      </div>
+      <!-- </mat-toolbar-row>
+      </mat-toolbar> -->
       <div class="login-card">
         <div class="login-card__left-side">
           <div class="login-card__img">
@@ -53,7 +53,7 @@
                   <input matInput placeholder="Password" />
                 </mat-form-field>
               </p>
-              <button mat-button class="style-button">LOG IN</button>
+              <button mat-raised-button class="style-button">LOG IN</button>
             </form>
           </div>
         </div>
