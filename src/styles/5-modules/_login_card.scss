@@ -39,33 +39,43 @@
       font-size: 20px;
     }
   }
-  &__title {
-    margin-left: 100px;
-    margin-top: 40px;
-    font-family: "Roboto";
-    font-weight: 200;
-    font-size: 30px;
-    color: #000000;
-  }
-  &__description {
-    margin-left: 70px;
-    margin-top: 40px;
-    font-family: "Roboto";
-    font-weight: 100;
-    font-size: 15px;
-    color: #000000;
-  }
 
   &__right-side {
     flex: 1;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
   }
 
   &__button-user-container {
+    flex: 0 1 5%;
     display: flex;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin: 20px;
     justify-content: flex-end;
+  }
+  &__description {
+    flex: 0 1 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    &--title {
+      margin : 10px;
+      font-family: "Roboto";
+      font-weight: 200;
+      font-size: 30px;
+      color: #000000;
+      align-items: center;
+    }
+    &--subtitle {
+      margin : 10px;
+      font-family: "Roboto";
+      font-weight: 100;
+      font-size: 15px;
+      color: #000000;
+    }
   }
 }
 
@@ -83,15 +93,19 @@
   }
 }
 .form {
-  margin-left: 70px;
-  margin-right: 70px;
-  margin-top: 10px;
+  flex: 1;
+  margin: 110px 100px;
   color: $color-primary-blue;
   font-size: 10px;
-  &__input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  mat-form-field {
     width: 100%;
     //color: $color-primary-blue;
-    opacity: 100%;
+    //opacity: 100%;
     //border-color: $color-primary-blue;
   }
   &__button {

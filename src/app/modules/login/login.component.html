@@ -30,29 +30,26 @@
               </div>
             </button>
           </div>
-          <p class="login-card__title">Welcome Teacher!</p>
-          <p class="login-card__description">
-            It's good to have you back in the plataform!
-          </p>
-          <div class="form">
-            <form>
-              <p>
-                <mat-form-field appearance="outline" class="form__input">
-                  <mat-label>Academic email</mat-label>
-                  <input matInput placeholder="Email" />
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="outline" class="form__input">
-                  <mat-label>Password</mat-label>
-                  <input matInput placeholder="Password" />
-                </mat-form-field>
-              </p>
-              <button mat-raised-button class="form__button">
-                LOG IN
-              </button>
-            </form>
+          <div class="login-card__description">
+            <p class="login-card__description--title">Welcome Teacher!</p>
+            <p class="login-card__description--subtitle">
+              It's good to have you back in the plataform!
+            </p>
           </div>
+
+          <form class="form">
+            <mat-form-field appearance="outline">
+              <mat-label>Academic email</mat-label>
+              <input matInput placeholder="Email" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" />
+            </mat-form-field>
+            <button mat-raised-button class="form__button">
+              LOG IN
+            </button>
+          </form>
         </div>
       </div>
     </div>
