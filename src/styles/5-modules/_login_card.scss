@@ -22,24 +22,23 @@
     background-size: cover;
     display: block;
     position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($color: $color-primary-blue, $alpha: 0.7);
+      color: $color-primary-white;
+    }
+    &-text {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 30px;
+      font-family: "Roboto";
+      font-weight: 300;
+      font-size: 20px;
+    }
   }
-  &__overlay-img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba($color: $color-primary-blue, $alpha: 0.7);
-    color: $color-primary-white;
-  }
-  &__overlay-text {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    margin: 30px;
-    font-family: "Roboto";
-    font-weight: 300;
-    font-size: 20px;
-  }
-
   &__title {
     margin-left: 100px;
     margin-top: 40px;
@@ -56,18 +55,17 @@
     font-size: 15px;
     color: #000000;
   }
-  &__form {
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-top: 10px;
-    color: $color-primary-blue;
-    opacity: 100%;
-    font-size: 10px;
-  }
 
   &__right-side {
     flex: 1;
     background-color: white;
+  }
+
+  &__button-user-container {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 20px;
+    justify-content: flex-end;
   }
 }
 
@@ -84,125 +82,25 @@
     color: $color-primary-white;
   }
 }
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.size-input {
-  width: 100%;
+.form {
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 10px;
   color: $color-primary-blue;
-  opacity: 100%;
-  border-color: $color-primary-blue;
-}
-.style-button {
-  width: 100%;
-  background: $color-primary-blue;
-  color: white;
-  //font-family: "Roboto";
-  font-size: 15px;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-// color input button
-::ng-deep {
-  // mat-icon-stepper selected color change
-  .mat-step-header .mat-step-icon-selected,
-  .mat-step-header .mat-step-icon-state-done,
-  .mat-step-header .mat-step-icon-state-edit {
-    background-color: orange !important;
+  font-size: 10px;
+  &__input {
+    width: 100%;
+    //color: $color-primary-blue;
+    opacity: 100%;
+    //border-color: $color-primary-blue;
   }
-
-  // input outline color input border
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: $color-secondary-blue !important;
+  &__button {
+    width: 100%;
+    background: $color-primary-blue;
+    color: white;
+    //font-family: "Roboto";
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
   }
-
-  // mat-input focused color input border active
-  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color: $color-secondary-blue !important;
-  }
-
-  // mat-input error outline color
-  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
-    .mat-form-field-outline-thick {
-    color: orange !important;
-    opacity: 0.8 !important;
-  }
-
-  // mat-input caret color |
-  .mat-input-element {
-    caret-color: $color-primary-blue !important;
-  }
-
-  // mat-input error caret color
-  .mat-form-field-invalid .mat-input-element,
-  .mat-warn .mat-input-element {
-    caret-color: orange  !important;
-  }
-
-  // mat-label normal state style hints
-  .mat-form-field-label {
-    color: $color-secondary-blue !important;
-  }
-
-  // mat-label focused style input name over
-  .mat-form-field.mat-focused .mat-form-field-label {
-    color: $color-secondary-blue !important;
-  }
-
-  // mat-label error style
-  .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-    color: orange!important;
-  }
-}
-.top-hero {
-  padding-top: 15px;
-  width: 250px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  &__img {
-    //background-image: url("../../../assets/logo.png");
-    flex: 0 1 30%;
-    height: 100%;
-    background-size: cover;
-    display: block;
-  }
-  &__text {
-    flex: 0 1 1;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-  }
-}
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-.circular-button{
-  display: flex;
-  background-color: red;
 }

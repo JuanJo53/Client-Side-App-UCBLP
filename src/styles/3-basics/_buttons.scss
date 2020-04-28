@@ -1,10 +1,5 @@
 // login buttons
-.login-button-user-container {
-  display: flex;
-  margin-top: 20px;
-  margin-right: 20px;
-  justify-content: flex-end;
-}
+
 .login-button-user {
   background-color: $color-primary-white;
   color: $color-primary-blue;
@@ -12,18 +7,18 @@
   opacity: 60%;
   border-radius: 25px;
   text-align: right;
-  font-size: 15px;
-  padding: 10px;
-  margin: 5px;
+  font-size: 12.5px;
+  padding: 7.5px;
+  margin: 2.5px;
   display: flex;
   align-items: center;
   justify-content: center;
   &__text {
-    padding-right: 10px;
+    padding-right: 7.5px;
     padding-left: 5px;
   }
   i {
-    padding-left: 10px;
+    padding-left: 7.5px;
     padding-right: 5px;
   }
   &:hover {
@@ -37,5 +32,8 @@
     color: $color-primary-white;
     border: 1px solid $color-primary-blue;
     opacity: 100%;
+  }
+  &:focus {
+    outline: 0;
   }
 }

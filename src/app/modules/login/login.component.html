@@ -1,26 +1,22 @@
 <div class="bg-top-img">
   <div class="bg-top-img__overlay">
     <div class="container">
-      <!-- <mat-toolbar>
-        <mat-toolbar-row> -->
-      <div class="top-hero">
-        <img [src]="mylogo" class="top-hero__img" />
-        <div class="top-hero__text">UCB ENGLISH</div>
+      <div class="navbar-brand">
+        <img [src]="mylogo" class="navbar-brand__img" />
+        <div class="navbar-brand__text">UCB ENGLISH</div>
       </div>
-      <!-- </mat-toolbar-row>
-      </mat-toolbar> -->
       <div class="login-card">
         <div class="login-card__left-side">
           <div class="login-card__img">
-            <div class="login-card__overlay-img">
-              <div class="login-card__overlay-text">
+            <div class="login-card__img-overlay">
+              <div class="login-card__img-text">
                 <p>UCB English for teachers</p>
               </div>
             </div>
           </div>
         </div>
         <div class="login-card__right-side">
-          <div class="login-button-user-container">
+          <div class="login-card__button-user-container">
             <button class="login-button-user">
               <i class="fas fa-user-friends"></i>
               <div class="login-button-user__text">
@@ -38,22 +34,23 @@
           <p class="login-card__description">
             It's good to have you back in the plataform!
           </p>
-
-          <div class="login-card__form">
+          <div class="form">
             <form>
               <p>
-                <mat-form-field appearance="outline" class="size-input">
+                <mat-form-field appearance="outline" class="form__input">
                   <mat-label>Academic email</mat-label>
                   <input matInput placeholder="Email" />
                 </mat-form-field>
               </p>
               <p>
-                <mat-form-field appearance="outline" class="size-input">
+                <mat-form-field appearance="outline" class="form__input">
                   <mat-label>Password</mat-label>
                   <input matInput placeholder="Password" />
                 </mat-form-field>
               </p>
-              <button mat-raised-button class="style-button">LOG IN</button>
+              <button mat-raised-button class="form__button">
+                LOG IN
+              </button>
             </form>
           </div>
         </div>
