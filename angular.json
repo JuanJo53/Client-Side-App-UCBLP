@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "ucbEnglish"
+  "defaultProject": "ucbEnglish",
+  "cli": {
+    "analytics": "d0de0807-14b8-4c91-a365-bdb2b40465dc"
+  }
 }
