@@ -3,34 +3,34 @@
 .login-button-user {
   background-color: $color-primary-white;
   color: $color-primary-blue;
-  border: 1px solid $color-primary-blue;
+  border: .1rem solid $color-primary-blue;
   opacity: 60%;
-  border-radius: 25px;
+  border-radius: 2.5rem;
   text-align: right;
-  font-size: 12.5px;
-  padding: 7.5px;
-  margin: 2.5px;
+  font-size: 1.25rem;
+  padding: .75rem;
+  margin: .25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   &__text {
-    padding-right: 7.5px;
-    padding-left: 5px;
+    padding-right: .75rem;
+    padding-left: .5rem;
   }
   i {
-    padding-left: 7.5px;
-    padding-right: 5px;
+    padding-left: .75rem;
+    padding-right: .5rem;
   }
   &:hover {
     background-color: $color-primary-blue;
     color: $color-primary-white;
-    border: 1px solid $color-primary-blue;
+    border: .1rem solid $color-primary-blue;
     opacity: 100%;
   }
   &.active {
     background-color: $color-primary-blue;
     color: $color-primary-white;
-    border: 1px solid $color-primary-blue;
+    border: .1rem solid $color-primary-blue;
     opacity: 100%;
   }
   &:focus {
