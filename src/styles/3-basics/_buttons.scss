@@ -1,41 +1,39 @@
 // login buttons
-.login-button-user-container {
-  display: flex;
-  margin-top: 20px;
-  margin-right: 20px;
-  justify-content: flex-end;
-}
+
 .login-button-user {
   background-color: $color-primary-white;
   color: $color-primary-blue;
-  border: 1px solid $color-primary-blue;
+  border: .1rem solid $color-primary-blue;
   opacity: 60%;
-  border-radius: 25px;
+  border-radius: 2.5rem;
   text-align: right;
-  font-size: 15px;
-  padding: 10px;
-  margin: 5px;
+  font-size: 1.25rem;
+  padding: .75rem;
+  margin: .25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   &__text {
-    padding-right: 10px;
-    padding-left: 5px;
+    padding-right: .75rem;
+    padding-left: .5rem;
   }
   i {
-    padding-left: 10px;
-    padding-right: 5px;
+    padding-left: .75rem;
+    padding-right: .5rem;
   }
   &:hover {
     background-color: $color-primary-blue;
     color: $color-primary-white;
-    border: 1px solid $color-primary-blue;
+    border: .1rem solid $color-primary-blue;
     opacity: 100%;
   }
   &.active {
     background-color: $color-primary-blue;
     color: $color-primary-white;
-    border: 1px solid $color-primary-blue;
+    border: .1rem solid $color-primary-blue;
     opacity: 100%;
+  }
+  &:focus {
+    outline: 0;
   }
 }
