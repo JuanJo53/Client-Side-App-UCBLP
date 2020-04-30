@@ -1,4 +1,6 @@
 @import "1-helpers/variables";
+@import "1-helpers/mixins";
+
 .login-card {
   z-index: 5;
   position: absolute;
@@ -8,7 +10,7 @@
   width: 90rem;
   height: 50rem;
   background-color: $color-primary-white;
-  box-shadow: 0 .5px 2rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
   border-radius: 3rem;
   display: flex;
   overflow: hidden;
@@ -30,16 +32,13 @@
       color: $color-primary-white;
     }
     &-text {
+      position: absolute;
       width: 100%;
       height: 100%;
-      position: absolute;
-      margin: 3rem;
-      font-family: "Roboto";
-      font-weight: 300;
-      font-size: 2rem;
+      // margin: 3rem;
+      @include custom-title(3rem, 2rem, $color-primary-white);
     }
   }
-
   &__right-side {
     flex: 1;
     background-color: white;
@@ -47,7 +46,6 @@
     flex-direction: column;
     //align-items: center;
   }
-
   &__button-user-container {
     flex: 0 1 5%;
     display: flex;
@@ -62,19 +60,10 @@
     justify-content: center;
     padding: 2rem;
     &--title {
-      margin: 1rem;
-      font-family: "Roboto";
-      font-weight: 200;
-      font-size: 3rem;
-      color: #000000;
-      align-items: center;
+      @include custom-title(1rem, 3rem, $color-primary-black);
     }
     &--subtitle {
-      margin: 1rem;
-      font-family: "Roboto";
-      font-weight: 100;
-      font-size: 1.5rem;
-      color: #000000;
+      @include custom-title(1rem, 1.5rem, $color-primary-black);
     }
   }
 }
@@ -90,6 +79,7 @@
     height: 100%;
     background-color: rgba($color: $color-primary-blue, $alpha: 0.85);
     color: $color-primary-white;
+    font-weight: $font-weight-regular;
   }
 }
 .form {
@@ -108,7 +98,7 @@
   &__button {
     width: 100%;
     background: $color-primary-blue;
-    color: white;
+    color: $color-primary-white;
     font-size: 1.5rem;
     border-radius: 3rem;
     cursor: pointer;
