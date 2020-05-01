@@ -1,8 +1,9 @@
-import { NgModule } from "@angular/core";
+import { NgModule, Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DefaultComponent } from "./layouts/default/default.component";
 import { LoginComponent } from "./modules/login/login.component";
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
+import { PostsComponent } from "./modules/posts/posts.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
         path: "",
         //component : LoginComponent
         component: DashboardComponent,
+      },
+      {
+        path: "posts",
+        component: PostsComponent,
       },
     ],
   },
