@@ -14,7 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     DefaultComponent ,
-    //DashboardComponent,
+    DashboardComponent,
     LoginComponent
   ],
   imports: [
