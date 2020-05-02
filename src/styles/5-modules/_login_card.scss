@@ -36,7 +36,7 @@
       width: 100%;
       height: 100%;
       // margin: 3rem;
-      @include custom-title(3rem, 2rem, $color-primary-white);
+      @include custom-title(1rem, 2rem, $color-primary-white);
     }
   }
   &__right-side {

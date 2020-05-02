@@ -1,9 +1,39 @@
 @import "1-helpers/variables";
-mat-drawer {
-  //background-color: blue;
-  width: 300px;
+@import "1-helpers/mixins";
+.sidebar {
+  width: 250px;
   height: 100%;
-  background-color: $color-primary-blue;
+  background-image: linear-gradient(
+      rgba($color-primary-blue, 0.8),
+      rgba($color-primary-blue, 0.8)
+    ),
+    url("https://images.unsplash.com/20/cambridge.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1030&q=80");
+  background-size: cover;
+  &__list {
+    padding: 0;
+  }
+  &__brand {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //background-color: orange;
+    margin-top: 1rem;
+  }
+  &__logo {
+    //background-color: red;
+    flex: 0 1 60%;
+    width: 10rem;
+    background-size: cover;
+    display: block;
+  }
+  &__subtitle {
+    display: flex;
+    //background-color: green;
+    flex: 1;
+    @include custom-title(0rem, 2rem, $color-primary-white);
+  }
 }
 
 :host {
@@ -11,19 +41,18 @@ mat-drawer {
     vertical-align: middle;
   }
 }
-.profile-card {
-  text-align: center;
-  padding: 0 20px 20px 20px;
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-}
+// .sidebar__user {
+//   tex
+//   img {
+//     object-fit: cover;
+//   }
+// }
 .link {
   &:first-of-type {
     border-top: 0.1rem solid $color-primary-white;
+  }
+  &:hover{
+    background-color:rgba($color-primary-white,0.3);
   }
   border-bottom: 0.1rem solid $color-primary-white;
   color: $color-primary-white;
