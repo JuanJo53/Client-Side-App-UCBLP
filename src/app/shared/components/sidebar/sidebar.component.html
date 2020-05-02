@@ -6,11 +6,20 @@
     </div>
     <img [src]="mylogo" alt="" />
   </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader>Pages</h2>
+  <a mat-list-item routerLinkActive="List-item-active" routerLink="/"
+    >Dashboard</a
+  >
+  <a mat-list-item routerLinkActive="List-item-active" routerLink="/posts"
+    >Posts</a
+  >
+  <mat-divider></mat-divider>
+  <h2 matSubheader>Tools</h2>
+  <a mat-list-item routerLinkActive="List-item-active" routerLink="/"
+    ><mat-icon>import_contacts</mat-icon>Contacts</a
+  >
+  <a mat-list-item routerLinkActive="List-item-active" routerLink="/"
+    ><mat-icon>contact_phone</mat-icon>Needs</a
+  >
 </mat-nav-list>
-<div class="">
-  Profile
-</div>
-<mat-divider></mat-divider>
-menu
-<mat-divider></mat-divider>
-another menu
