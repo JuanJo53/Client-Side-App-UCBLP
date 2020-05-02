@@ -4,6 +4,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html{
+  font-size: 62.5%;
+}
 body {
   font-family: Roboto;
   height: 100vh;
@@ -11,23 +14,23 @@ body {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 75rem;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 97rem;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 117rem;
   }
 }

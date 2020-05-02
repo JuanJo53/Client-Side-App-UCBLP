@@ -1,7 +1,7 @@
 .navbar-brand {
-  padding-top: 15px;
-  width: 250px;
-  height: 100px;
+  padding-top: 1.5rem;
+  width: 25rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   &__img {
@@ -15,6 +15,6 @@
     margin: auto;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: 2.5rem;
   }
 }
