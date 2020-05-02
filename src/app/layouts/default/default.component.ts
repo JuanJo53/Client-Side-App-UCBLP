@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import {MediaObserver , MediaChange} from '@angular/flex-layout';
+//import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-default',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./default.component.scss']
 })
 export class DefaultComponent implements OnInit {
+  
   constructor() { }
   ngOnInit() {
   }

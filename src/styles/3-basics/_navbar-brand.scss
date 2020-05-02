@@ -1,0 +1,20 @@
+.navbar-brand {
+  padding-top: 15px;
+  width: 250px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  &__img {
+    flex: 0 1 30%;
+    height: 100%;
+    background-size: cover;
+    display: block;
+  }
+  &__text {
+    flex: 0 1 1;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+  }
+}

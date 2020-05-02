@@ -22,53 +22,60 @@
     background-size: cover;
     display: block;
     position: relative;
-  }
-  &__overlay-img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba($color: $color-primary-blue, $alpha: 0.7);
-    color: $color-primary-white;
-  }
-  &__overlay-text {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    margin: 30px;
-    font-family: "Roboto";
-    font-weight: 300;
-    font-size: 20px;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($color: $color-primary-blue, $alpha: 0.7);
+      color: $color-primary-white;
+    }
+    &-text {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 30px;
+      font-family: "Roboto";
+      font-weight: 300;
+      font-size: 20px;
+    }
   }
 
-  &__title{
-    margin-left: 100px;
-    margin-top: 40px;
-    font-family: "Roboto";
-    font-weight: 200;
-    font-size: 30px;
-    color: #000000;
-  }
-  &__description{
-    margin-left: 70px;
-    margin-top: 40px;
-    font-family: "Roboto";
-    font-weight: 100;
-    font-size: 15px;
-    color: #000000;
-  }
-  &__form{
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-top: 10px;
-    color: $color-primary-blue;
-    opacity: 100%;
-    font-size: 10px;
-    
-  }
-    
   &__right-side {
     flex: 1;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+  }
+
+  &__button-user-container {
+    flex: 0 1 5%;
+    display: flex;
+    margin: 20px;
+    justify-content: flex-end;
+  }
+  &__description {
+    flex: 0 1 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    &--title {
+      margin : 10px;
+      font-family: "Roboto";
+      font-weight: 200;
+      font-size: 30px;
+      color: #000000;
+      align-items: center;
+    }
+    &--subtitle {
+      margin : 10px;
+      font-family: "Roboto";
+      font-weight: 100;
+      font-size: 15px;
+      color: #000000;
+    }
   }
 }
 
@@ -85,79 +92,29 @@
     color: $color-primary-white;
   }
 }
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.size-input {
-  width: 100%;
+.form {
+  flex: 1;
+  margin: 110px 100px;
   color: $color-primary-blue;
-  opacity: 100%;
-  border-color: $color-primary-blue;
-}
-.style-button {
-  width: 100%;
-  background: $color-primary-blue;
-  opacity: 100%;
-  color: white;
-  font-family: "Roboto";
-  font-size: 16px;
-  border-radius: 28px;
-  padding: 15px;
-  cursor: pointer;
-}
-
-// color input
-::ng-deep {
-  $custom-main-color: $color-primary-blue;
-  $custom-label-color:  $color-primary-blue;
-
-  // mat-icon-stepper selected color change
-  .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-     background-color: $custom-main-color !important;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  mat-form-field {
+    width: 100%;
+    //color: $color-primary-blue;
+    //opacity: 100%;
+    //border-color: $color-primary-blue;
   }
-
-  // input outline color
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-     color: $custom-main-color !important;
-  }
-
-  // mat-input focused color
-  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-     color: $custom-main-color !important;
-  }
-
-  // mat-input error outline color
-  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
-     color: $custom-main-color !important;
-     opacity: 0.8 !important;
-  }
-
-  // mat-input caret color
-  .mat-input-element {
-     caret-color: $custom-main-color !important;
-  }
-
-  // mat-input error caret color
-  .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
-     caret-color: $custom-main-color !important;
-  }
-
-  // mat-label normal state style
-  .mat-form-field-label {
-     color: $custom-label-color !important;
-  }
-
-  // mat-label focused style
-  .mat-form-field.mat-focused .mat-form-field-label {
-     color: $custom-main-color !important;
-  }
-
-  // mat-label error style
-  .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-     color: $custom-main-color !important;
+  &__button {
+    width: 100%;
+    background: $color-primary-blue;
+    color: white;
+    //font-family: "Roboto";
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
   }
 }
