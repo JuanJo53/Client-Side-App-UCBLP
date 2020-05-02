@@ -1,13 +1,10 @@
+@import "4-layout/sidebar";
 :host {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-mat-drawer {
-  //background-color: blue;
-  width: 300px;
-  height: 100%;
-}
+
 mat-drawer-container {
   height: 100%;
 }
