@@ -1,0 +1,55 @@
+<mat-nav-list class="sidebar__list">
+  <div class="sidebar__brand">
+    <img [src]="mylogo" alt="UcbLogo" class="sidebar__logo" />
+    <span class="sidebar__subtitle">Teachers</span>
+  </div>
+  <!-- <mat-divider></mat-divider>
+  <h2 matSubheader>Pages</h2> -->
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/"
+    ><mat-icon class="link__icon">dashboard</mat-icon>Dashboard</a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/posts"
+    ><mat-icon class="link__icon">people</mat-icon>My class</a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/posts"
+    ><mat-icon class="link__icon">forum</mat-icon>Forums</a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/posts"
+    ><mat-icon class="link__icon">view_list</mat-icon>Modules</a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/posts"
+    ><mat-icon class="link__icon">extension</mat-icon>Resources</a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/posts"
+    ><mat-icon class="link__icon">account_tree</mat-icon>Evaluation</a
+  >
+  <mat-divider></mat-divider>
+  <!-- <h2 matSubheader>Tools</h2>
+  <a mat-list-item routerLinkActive="List-item-active" routerLink="/"
+    ><mat-icon>import_contacts</mat-icon>Contacts</a
+  > -->
+</mat-nav-list>

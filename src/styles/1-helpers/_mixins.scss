@@ -1,0 +1,10 @@
+//------------------TITLE-----------------------
+//custom title usually for title/subtitle
+@mixin custom-title($margin, $font-size, $color) {
+  margin: $margin;
+  font-weight: $font-weight-light;
+  font-size: $font-size;
+  color: $color;
+  align-items: center;
+}
+//----------------//TITLE-----------------------
