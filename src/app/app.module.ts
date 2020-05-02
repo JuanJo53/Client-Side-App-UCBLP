@@ -5,10 +5,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ChoosingClassroomComponent } from './modules/choosing-classroom/choosing-classroom.component';
+
 
 @NgModule({
-  declarations: [AppComponent, ChoosingClassroomComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
