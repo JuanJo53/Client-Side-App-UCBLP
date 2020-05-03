@@ -7,23 +7,14 @@ import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 import { PostsComponent } from "./modules/posts/posts.component";
 
 const routes: Routes = [
+  { path: "login", component: LoginComponent },
+  {path: 'classroom', component: ChoosingClassroomComponent},
   {
     path: "",
     component: DefaultComponent,
     children: [
       {
-        path: "",
-        //component : LoginComponent
-        component: LoginComponent,
-      },
-      {
-        path: "classroom",
-        //component : LoginComponent
-        component: ChoosingClassroomComponent,
-      },
-      {
         path: "dashboard",
-        //component : LoginComponent
         component: DashboardComponent,
       },
       {
