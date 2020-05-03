@@ -5,7 +5,7 @@ import { LoginComponent } from "./modules/login/login.component";
 import { ChoosingClassroomComponent } from "./modules/choosing-classroom/choosing-classroom.component";
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 import { PostsComponent } from "./modules/posts/posts.component";
-import { ChoosingClassroomComponent } from "./modules/choosing-classroom/choosing-classroom.component";
+
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -21,10 +21,6 @@ const routes: Routes = [
       {
         path: "posts",
         component: PostsComponent,
-      },
-      {
-        path: "classroom",
-        component: ChoosingClassroomComponent,
       },
     ],
   },

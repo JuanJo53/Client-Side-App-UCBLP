@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { DefaultComponent } from "./default.component";
 
 import { LoginComponent } from "src/app/modules/login/login.component";
+import { ChoosingClassroomComponent } from "src/app/modules/choosing-classroom/choosing-classroom.component";
 
 import { RouterModule } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
@@ -22,6 +23,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
     DashboardComponent,
     LoginComponent,
     PostsComponent,
+    ChoosingClassroomComponent
   ],
   imports: [
     CommonModule,
