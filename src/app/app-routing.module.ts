@@ -8,7 +8,7 @@ import { PostsComponent } from "./modules/posts/posts.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  {path: 'classroom', component: ChoosingClassroomComponent},
+  { path: "classroom", component: ChoosingClassroomComponent },
   {
     path: "",
     component: DefaultComponent,
