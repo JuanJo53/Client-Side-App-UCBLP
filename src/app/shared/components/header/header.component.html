@@ -5,32 +5,56 @@
       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
         <ul fxLayout="row" fxLayoutGap="20px">
           <li>
-            <button class="circular-button" mat-mini-fab>
+            <button
+              class="circular-button"
+              mat-mini-fab
+              [matMenuTriggerFor]="classmodal"
+            >
               <span class="circular-button__class">E2</span>
             </button>
-          </li>
-          <li>
-            <button class="circular-button" mat-mini-fab>
-              <mat-icon class="circular-button__icon"
-                >notifications_none</mat-icon
-              >
-            </button>
+            <mat-menu
+              class="classroom-card"
+              #classmodal="matMenu"
+              xPosition="before"
+            >
+              <div class="classroom-card__content">
+                <span class="classroom-card__classroom">English 2</span>
+                <span class="classroom-card__classroom">English 3</span>
+              </div>
+            </mat-menu>
           </li>
           <li>
             <button
               class="circular-button"
               mat-mini-fab
-              [matMenuTriggerFor]="menu"
+              [matMenuTriggerFor]="notificationmodal"
+            >
+              <mat-icon class="circular-button__icon"
+                >notifications_none</mat-icon
+              >
+            </button>
+            <mat-menu
+              class="notification-card"
+              #notificationmodal="matMenu"
+              xPosition="before"
+            >
+              <div class="notification-card__content">
+                <span class="notification-card__notification">Final Test</span>
+                <span class="notification-card__notification">Practice 1</span>
+              </div>
+            </mat-menu>
+          </li>
+          <li>
+            <button
+              class="circular-button"
+              mat-mini-fab
+              [matMenuTriggerFor]="usermodal"
             >
               <span class="circular-button__first-word">M</span>
             </button>
-            <mat-menu class="user-card" #menu="matMenu">
+            <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
               <div class="user-card__content">
-                <button
-                  class="user-card__icon"
-                  mat-fab
-                  [matMenuTriggerFor]="menu"
-                >
+                <button class="user-card__icon" mat-fab>
                   <span class="user-card__first-word">M</span>
                 </button>
                 <span class="user-card__name">Marcelo Ticona</span>
