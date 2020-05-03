@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./choosing-classroom.component.scss']
 })
 export class ChoosingClassroomComponent implements OnInit {
-
+  mylogo:string = "assets/logo.png";
   constructor() { }
 
   ngOnInit(): void {

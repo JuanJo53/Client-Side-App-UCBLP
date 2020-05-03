@@ -8,3 +8,30 @@
   align-items: center;
 }
 //----------------//TITLE-----------------------
+
+//----------------NAVBAR-BRADN------------------
+@mixin custom-navbarbradn($width, $height) {
+  padding-top: 1.5rem;
+  width: $width;
+  height: $height;
+  display: flex;
+}
+//----------------//NAVBAR-BRADN----------------
+
+
+//-----------------CLASSROOMCARD----------------
+@mixin classroom-card ($left, $top,$width,$height,$color) {
+  z-index: 5;
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height: $height;
+  background-color: $color;
+  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem;
+  display: flex;
+  overflow: hidden;
+}
+//-----------------//CLASSROOMCARD----------------

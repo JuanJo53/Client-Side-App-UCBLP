@@ -1,9 +1,9 @@
+@import "1-helpers/variables";
+@import "1-helpers/mixins";
+
 .navbar-brand {
-  padding-top: 1.5rem;
-  width: 25rem;
-  height: 10rem;
-  display: flex;
-  align-items: center;
+  @include custom-navbarbradn(1.5rem, 10rem);
+ 
   &__img {
     flex: 0 1 30%;
     height: 100%;
@@ -15,6 +15,32 @@
     margin: auto;
     display: flex;
     align-items: center;
+    font-size: 2.5rem;
+  }
+}
+.navbar-brand-classroom {
+  @include custom-navbarbradn(100%, 10rem);
+ 
+  &__img {
+    left: 5%;
+    flex: 0 1 5%;
+    height: 100%;
+    background-size: cover;
+    display: block;
+    
+  }
+  &__text {
+    padding-left: 1rem;
+    flex: 0 1 70%;
+    margin: auto;
+    display: flex;
+    font-size: 2.5rem;
+  }
+  &__circle-button {
+    align-items: center;
+    flex: 1;
+    padding-left: 20rem;
+    display: flex;
     font-size: 2.5rem;
   }
 }
