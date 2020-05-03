@@ -47,8 +47,14 @@
     // left: 50%;
     // transform: translate(-50%, -50%);
   }
-  &__text {
+  &__first-word {
     color: $color-primary-blue;
     font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__class {
+    color: $color-primary-blue;
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
   }
 }

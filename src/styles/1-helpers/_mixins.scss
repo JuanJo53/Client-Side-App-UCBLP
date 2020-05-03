@@ -7,4 +7,11 @@
   color: $color;
   align-items: center;
 }
+@mixin custom-title-regular($margin, $font-size, $color) {
+  margin: $margin;
+  font-weight: $font-weight-regular;
+  font-size: $font-size;
+  color: $color;
+  align-items: center;
+}
 //----------------//TITLE-----------------------

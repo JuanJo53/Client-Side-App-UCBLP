@@ -6,7 +6,7 @@
         <ul fxLayout="row" fxLayoutGap="20px">
           <li>
             <button class="circular-button" mat-mini-fab>
-              <span class="circular-button__text">E2</span>
+              <span class="circular-button__class">E2</span>
             </button>
           </li>
           <li>
@@ -22,13 +22,25 @@
               mat-mini-fab
               [matMenuTriggerFor]="menu"
             >
-              <span class="circular-button__text">T</span>
+              <span class="circular-button__first-word">M</span>
             </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <mat-icon>exit_to_app</mat-icon>
-                Sign out
-              </button>
+            <mat-menu class="user-card" #menu="matMenu">
+              <div class="user-card__content">
+                <button
+                  class="user-card__icon"
+                  mat-fab
+                  [matMenuTriggerFor]="menu"
+                >
+                  <span class="user-card__first-word">M</span>
+                </button>
+                <span class="user-card__name">Marcelo Ticona</span>
+                <span class="user-card__email">m.ticona@acad.ucb.edu.bo</span>
+                <span class="user-card__classroom">Class : English 2</span>
+                <button mat-stroked-button class="user-card__button-logout">
+                  <mat-icon>exit_to_app</mat-icon>
+                  Sign out
+                </button>
+              </div>
             </mat-menu>
           </li>
         </ul>

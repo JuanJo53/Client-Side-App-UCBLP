@@ -9,5 +9,41 @@ ul li {
   &__text {
     color: $color-primary-white;
     font-size: 2.5rem;
+    font-weight: $font-weight-regular;
+  }
+}
+.user-card {
+  //background-color: blue;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 3rem;
+  }
+  &__icon {
+    color: $color-primary-white;
+    background-color: $color-primary-blue;
+    margin-bottom: 1rem;
+  }
+  &__first-word {
+    color: $color-primary-white;
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+
+  &__name {
+    @include custom-title-regular(0.5rem, 1.75rem, $color-primary-blue);
+  }
+  &__email {
+    @include custom-title-regular(0.5rem, 1.25rem, $color-primary-gray);
+  }
+  &__classroom {
+    @include custom-title-regular(0.5rem, 1.75rem, $color-primary-blue);
+  }
+  &__button-logout {
+      margin-top: 1rem;
+      color: $color-primary-gray;
   }
 }
