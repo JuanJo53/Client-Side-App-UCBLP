@@ -34,6 +34,17 @@
     flex: 1;
     @include custom-title(0rem, 2rem, $color-primary-white);
   }
+  &__toggle {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $color-primary-white;
+    color: $color-primary-blue;
+    &:hover {
+      background-color: $color-primary-blue;
+      color: $color-primary-white;
+    }
+  }
 }
 
 :host {
@@ -51,8 +62,8 @@
   &:first-of-type {
     border-top: 0.1rem solid $color-primary-white;
   }
-  &:hover{
-    background-color:rgba($color-primary-white,0.3);
+  &:hover {
+    background-color: rgba($color-primary-white, 0.3);
   }
   border-bottom: 0.1rem solid $color-primary-white;
   color: $color-primary-white;

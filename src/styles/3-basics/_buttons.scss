@@ -38,24 +38,22 @@
 }
 .circular-button {
   background-color: $color-primary-white;
+  color: $color-primary-blue;
   position: relative;
   &__icon {
-    color: $color-primary-blue;
     font-size: 2rem;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
   }
   &__first-word {
-    color: $color-primary-blue;
-    background-color: $color-primary-white;
     font-size: 2rem;
     font-weight: $font-weight-regular;
   }
   &__class {
-    color: $color-primary-blue;
     font-size: 2rem;
     font-weight: $font-weight-regular;
+  }
+  &:hover,
+  &:focus {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
   }
 }
