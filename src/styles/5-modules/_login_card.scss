@@ -2,11 +2,8 @@
 @import "1-helpers/mixins";
 
 .login-card {
+  @include center;
   z-index: 5;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: 90rem;
   height: 50rem;
   background-color: $color-primary-white;
@@ -38,6 +35,7 @@
       // margin: 3rem;
       @include custom-title(1rem, 2rem, $color-primary-white);
     }
+    
   }
   &__right-side {
     flex: 1;

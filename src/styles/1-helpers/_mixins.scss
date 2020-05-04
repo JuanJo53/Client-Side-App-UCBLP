@@ -17,7 +17,7 @@
 //----------------//TITLE-----------------------
 
 //----------------NAVBAR-BRADN------------------
-@mixin custom-navbarbradn($width, $height) {
+@mixin custom-navbarbrand($width, $height) {
   padding-top: 1.5rem;
   width: $width;
   height: $height;
@@ -25,13 +25,10 @@
 }
 //----------------//NAVBAR-BRADN----------------
 
-
 //-----------------CLASSROOMCARD----------------
-@mixin classroom-card ($left, $top,$width,$height,$color) {
+@mixin classroom-card($width, $height, $color) {
   z-index: 5;
   position: absolute;
-  left: $left;
-  top: $top;
   transform: translate(-50%, -50%);
   width: $width;
   height: $height;
@@ -42,3 +39,10 @@
   overflow: hidden;
 }
 //-----------------//CLASSROOMCARD----------------
+//CENTER OBJECT ABSOLUTE
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -2,8 +2,7 @@
 @import "1-helpers/mixins";
 
 .navbar-brand {
-  @include custom-navbarbradn(1.5rem, 10rem);
- 
+  @include custom-navbarbrand(25rem, 10rem);
   &__img {
     flex: 0 1 30%;
     height: 100%;
@@ -19,15 +18,13 @@
   }
 }
 .navbar-brand-classroom {
-  @include custom-navbarbradn(100%, 10rem);
- 
+  @include custom-navbarbrand(60rem, 10rem);
+
   &__img {
-    left: 5%;
-    flex: 0 1 5%;
+    flex: 0 1 30%;
     height: 100%;
     background-size: cover;
     display: block;
-    
   }
   &__text {
     padding-left: 1rem;

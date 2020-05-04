@@ -1,54 +1,48 @@
 @import "1-helpers/variables";
-
+.classroom-card-container {
+  //margin: auto;
+}
 .classroom-card {
-   @include classroom-card (30%,55%,50rem,30rem,$color-primary-white);
-   &__description {
-    flex: 0 1 100%;
+  @include classroom-card(50rem, 30rem, $color-primary-white);
+  @include center;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  padding: 3rem;
+  &__description-classroom {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    &--title {
-      @include custom-title(0.5rem, 3.5rem, $color-primary-black);
-      padding-left: 25rem;
-      padding-top: 1rem;
-      padding-bottom: 9rem;
-  
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 25%;
+    //background-color: red;
+    @include custom-title(0rem, 3.5rem, $color-primary-black);
+    // padding-left: 25rem;
+    // padding-top: 1rem;
+    // padding-bottom: 9rem;
+  }
+  &__description-detail {
+    &-text,
+    i {
+      padding-right: 0.75rem;
+      padding-left: 0.5rem;
     }
-    &--subtitle {
-      @include custom-title(0.5rem, 1.5rem, $color-primary-black);
-      opacity: 60%;
-    }
-    &--aux {
-        @include custom-title(0.5rem, 1.5rem, $color-primary-black);
-        opacity: 60%;
-        padding-left: 40rem;
-      }
+    flex: 1;
+    //background-color: orange;
+    @include custom-title(0rem, 1.5rem, $color-primary-black);
+    opacity: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__description-semester {
+    flex: 0 1 10%;
+    //background-color: green;
+    @include custom-title(0rem, 1.5rem, $color-primary-black);
+    opacity: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    // padding-left: 40rem;
   }
 }
-
-.classroom-card1 {
-    @include classroom-card (70%,55%,50rem,30rem,$color-primary-white);
-    &__description {
-        flex: 0 1 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem;
-        &--title {
-          @include custom-title(0.5rem, 3.5rem, $color-primary-black);
-          padding-left: 25rem;
-          padding-top: 1rem;
-          padding-bottom: 9rem;
-        }
-        &--subtitle {
-          @include custom-title(0.5rem, 1.5rem, $color-primary-black);
-          opacity: 60%;
-        }
-        &--aux {
-            @include custom-title(0.5rem, 1.5rem, $color-primary-black);
-            opacity: 60%;
-            padding-left: 40rem;
-          }
-      }
- }
