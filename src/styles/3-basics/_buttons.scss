@@ -51,8 +51,7 @@
     font-size: 2rem;
     font-weight: $font-weight-regular;
   }
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $color-primary-blue;
     color: $color-primary-white;
   }

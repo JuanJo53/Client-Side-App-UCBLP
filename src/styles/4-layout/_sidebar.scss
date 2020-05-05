@@ -58,20 +58,7 @@
 //     object-fit: cover;
 //   }
 // }
-.link {
-  &:first-of-type {
-    border-top: 0.1rem solid $color-primary-white;
-  }
-  &:hover {
-    background-color: rgba($color-primary-white, 0.3);
-  }
-  border-bottom: 0.1rem solid $color-primary-white;
-  color: $color-primary-white;
 
-  &__icon {
-    margin-right: 20px;
-  }
-}
 // .link:first-child {
 //   border-top: 0.1rem solid red;
 // }
