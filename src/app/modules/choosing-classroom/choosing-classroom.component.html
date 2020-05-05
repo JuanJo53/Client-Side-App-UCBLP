@@ -1,39 +1,56 @@
 <div class="bg-top-img">
   <div class="bg-top-img__overlay">
     <div class="container">
-      <div class="navbar-brand-classroom">
-        <img [src]="mylogo" class="navbar-brand-classroom__img" />
-        <div class="navbar-brand-classroom__text">UCB English for teachers</div>
-        <div class="navbar-brand-classroom__circle-button">
-          <button class="circular-button__first-word" mat-mini-fab>
-            M
-          </button>
-        </div>
-        <div class="classroom-card-container">
-          <div class="classroom-card">
-            <p class="classroom-card__description-classroom">English 2</p>
-            <span class="classroom-card__description-detail">
-              <i class="far fa-calendar-alt"></i
-              ><span class="classroom-card__description-detail-text"
-                >Days: Mon-Tue-Wed-Thu</span
-              >
-            </span>
-            <p class="classroom-card__description-detail">
-              <i class="fas fa-clock"></i
-              ><span class="classroom-card__description-detail-text"
-                >Schedule: 7:30 - 9:00</span
-              >
-            </p>
-            <span class="classroom-card__description-detail">
-              <i class="fas fa-user-friends"></i
-              ><span class="classroom-card__description-detail-text"
-                >Students: 25</span
-              >
-            </span>
-            <span class="classroom-card__description-semester">
-              1/2020
-            </span>
+      <div class="navbar-brand">
+        <img [src]="mylogo" class="navbar-brand__img" />
+        <div class="navbar-brand__text">UCB English for teachers</div>
+        <!--  -->
+        <button
+          class="circular-button"
+          mat-mini-fab
+          [matMenuTriggerFor]="usermodal"
+        >
+          <span class="circular-button__first-word">M</span>
+        </button>
+        <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
+          <div class="user-card__content">
+            <button class="user-card__icon" mat-fab>
+              <span class="user-card__first-word">M</span>
+            </button>
+            <span class="user-card__name">Marcelo Ticona</span>
+            <span class="user-card__email">m.ticona@acad.ucb.edu.bo</span>
+            <span class="user-card__classroom">Class : English 2</span>
+            <button mat-stroked-button class="user-card__button-logout">
+              <mat-icon>exit_to_app</mat-icon>
+              Sign out
+            </button>
           </div>
+        </mat-menu>
+      </div>
+      <div class="classroom-card-container">
+        <div class="classroom-card">
+          <p class="classroom-card__description-classroom">English 2</p>
+          <span class="classroom-card__description-detail">
+            <i class="far fa-calendar-alt"></i
+            ><span class="classroom-card__description-detail-text"
+              >Days: Mon-Tue-Wed-Thu</span
+            >
+          </span>
+          <p class="classroom-card__description-detail">
+            <i class="fas fa-clock"></i
+            ><span class="classroom-card__description-detail-text"
+              >Schedule: 7:30 - 9:00</span
+            >
+          </p>
+          <span class="classroom-card__description-detail">
+            <i class="fas fa-user-friends"></i
+            ><span class="classroom-card__description-detail-text"
+              >Students: 25</span
+            >
+          </span>
+          <span class="classroom-card__description-semester">
+            1/2020
+          </span>
         </div>
       </div>
     </div>

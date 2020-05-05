@@ -15,7 +15,8 @@ import { DashboardComponent } from "src/app/modules/dashboard/dashboard.componen
 import { PostsComponent } from "src/app/modules/posts/posts.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
-
+import { MatMenuModule } from "@angular/material/menu";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
     DashboardComponent,
     LoginComponent,
     PostsComponent,
-    ChoosingClassroomComponent
+    ChoosingClassroomComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +36,8 @@ import { MatSidenavModule } from "@angular/material/sidenav";
     MatToolbarModule,
     SharedModule,
     MatSidenavModule,
+    MatMenuModule,
+    MatIconModule,
   ],
 })
 export class DefaultModule {}

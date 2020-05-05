@@ -3,11 +3,11 @@
   //margin: auto;
 }
 .classroom-card {
-  @include classroom-card(50rem, 30rem, $color-primary-white);
+  @include classroom-card(37.5rem, 22.5rem, $color-primary-white);
   @include center;
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  color: $color-primary-black;
   //justify-content: center;
   padding: 3rem;
   &__description-classroom {
@@ -15,8 +15,9 @@
     justify-content: flex-end;
     align-items: center;
     flex: 0 1 25%;
+    font-size: 3rem;
     //background-color: red;
-    @include custom-title(0rem, 3.5rem, $color-primary-black);
+    //@include custom-title(0rem, 3.5rem, $color-primary-black);
     // padding-left: 25rem;
     // padding-top: 1rem;
     // padding-bottom: 9rem;
@@ -24,25 +25,30 @@
   &__description-detail {
     &-text,
     i {
-      padding-right: 0.75rem;
-      padding-left: 0.5rem;
+      padding-right: 2rem;
+      padding-left: 0rem;
     }
     flex: 1;
     //background-color: orange;
-    @include custom-title(0rem, 1.5rem, $color-primary-black);
-    opacity: 60%;
+    // @include custom-title(0rem, 1.5rem, $color-primary-black);
+    font-size: 1.25rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin: 0;
   }
   &__description-semester {
     flex: 0 1 10%;
     //background-color: green;
-    @include custom-title(0rem, 1.5rem, $color-primary-black);
-    opacity: 60%;
+    // @include custom-title(0rem, 1.5rem, );
+    font-size: 1.25rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     // padding-left: 40rem;
+  }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
   }
 }
