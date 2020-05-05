@@ -1,7 +1,13 @@
 @import "1-helpers/variables";
 @import "1-helpers/mixins";
+.sidebar.menu-close {
+  width: 9rem;
+}
+.sidebar.menu-open {
+  width: 25rem;
+}
 .sidebar {
-  width: 250px;
+  width: 25rem;
   height: 100%;
   background-image: linear-gradient(
       rgba($color-primary-blue, 0.8),
