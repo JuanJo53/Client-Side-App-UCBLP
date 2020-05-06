@@ -3,14 +3,7 @@
 
 .login-card {
   @include center;
-  z-index: 5;
-  width: 90rem;
-  height: 50rem;
-  background-color: $color-primary-white;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
-  border-radius: 3rem;
-  display: flex;
-  overflow: hidden;
+  @include custom-card(90rem, 50rem, $color-primary-white);
   &__left-side {
     flex: 0 1 50%;
   }

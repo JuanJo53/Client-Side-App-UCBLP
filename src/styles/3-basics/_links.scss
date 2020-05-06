@@ -1,19 +1,15 @@
 .link {
   //background-color: red;
-  &:first-of-type {
-    border-top: 0.1rem solid $color-primary-white;
-  }
   border-bottom: 0.1rem solid $color-primary-white;
-  //color: $color-primary-white;
+  color: $color-primary-white !important;
   &__icon {
-    margin-left: 1.5rem;
-    margin-right: 2rem;
-    color: $color-primary-white;
+    @include margin-left-right(1.5rem, 2rem);
   }
   &__text {
-    margin-left: 1.5rem;
-    margin-right: 2rem;
-    color: $color-primary-white;
+    @include margin-left-right(1.5rem, 2rem);
+  }
+  &:first-of-type {
+    border-top: 0.1rem solid $color-primary-white;
   }
   &:hover {
     background-color: rgba($color-primary-white, 0.3) !important;

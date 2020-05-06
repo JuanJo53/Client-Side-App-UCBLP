@@ -1,5 +1,6 @@
 @import "1-helpers/variables";
 @import "1-helpers/mixins";
+@import "3-basics/buttons";
 .sidebar.menu-close {
   width: 9rem;
   .sidebar-brand {
@@ -63,24 +64,13 @@
       @include custom-title(0rem, 2rem, $color-primary-white);
     }
   }
-  .toggle-button {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: $color-primary-white;
-    color: $color-primary-blue;
-    &:hover {
-      background-color: $color-primary-blue;
-      color: $color-primary-white;
-    }
-  }
 }
 
-:host {
-  .mat-icon {
-    vertical-align: middle;
-  }
-}
+// :host {
+//   .mat-icon {
+//     vertical-align: middle;
+//   }
+// }
 // .sidebar__user {
 //   tex
 //   img {

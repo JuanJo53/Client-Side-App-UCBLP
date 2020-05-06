@@ -26,12 +26,6 @@
     border: 0.1rem solid $color-primary-blue;
     opacity: 100%;
   }
-  // &.active {
-  //   background-color: $color-primary-blue;
-  //   color: $color-primary-white;
-  //   border: 0.1rem solid $color-primary-blue;
-  //   opacity: 100%;
-  // }
   &:focus {
     outline: 0;
   }
@@ -51,6 +45,17 @@
     font-size: 2rem;
     font-weight: $font-weight-regular;
   }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}
+.toggle-button {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
   &:hover {
     background-color: $color-primary-blue;
     color: $color-primary-white;

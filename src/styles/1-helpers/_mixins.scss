@@ -17,16 +17,16 @@
 //----------------//TITLE-----------------------
 
 //----------------NAVBAR-BRADN------------------
-@mixin custom-navbarbrand($width, $height) {
-  padding-top: 1.5rem;
-  width: $width;
-  height: $height;
-  display: flex;
-}
+// @mixin custom-navbarbrand($width, $height) {
+//   padding-top: 1.5rem;
+//   width: $width;
+//   height: $height;
+//   display: flex;
+// }
 //----------------//NAVBAR-BRADN----------------
 
 //-----------------CLASSROOMCARD----------------
-@mixin classroom-card($width, $height, $color) {
+@mixin custom-card($width, $height, $color) {
   z-index: 5;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -39,10 +39,17 @@
   overflow: hidden;
 }
 //-----------------//CLASSROOMCARD----------------
-//CENTER OBJECT ABSOLUTE
+//------------CENTER OBJECT ABSOLUTE--------------
 @mixin center {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+//------------//CENTER OBJECT ABSOLUTE--------------
+//------------MARGIN LEFT RIGHT--------------
+@mixin margin-left-right($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+//------------//MARGIN LEFT RIGHT--------------

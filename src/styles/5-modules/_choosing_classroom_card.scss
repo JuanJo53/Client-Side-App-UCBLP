@@ -1,15 +1,12 @@
 @import "1-helpers/variables";
 @import "3-basics/links";
-.classroom-card-container {
-  //margin: auto;
-}
+
 .classroom-card {
-  @include classroom-card(37.5rem, 22.5rem, $color-primary-white);
+  @include custom-card(37.5rem, 22.5rem, $color-primary-white);
   @include center;
   display: flex;
   flex-direction: column;
   color: $color-primary-black;
-  //justify-content: center;
   padding: 3rem;
   &__description-classroom {
     display: flex;
