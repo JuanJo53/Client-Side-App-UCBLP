@@ -1,20 +1,49 @@
+@import "4-layout/navbar";
 .navbar-brand {
-  padding-top: 1.5rem;
-  width: 25rem;
-  height: 10rem;
+  padding: 1rem 0rem;
   display: flex;
   align-items: center;
   &__img {
-    flex: 0 1 30%;
+    width: 80px;
     height: 100%;
     background-size: cover;
+    margin: 0rem 1rem;
     display: block;
   }
   &__text {
-    flex: 0 1 1;
-    margin: auto;
     display: flex;
     align-items: center;
     font-size: 2.5rem;
   }
 }
+.circular-button {
+  margin-left: auto;
+  //background-color: $color-primary-white;
+  //color: $color-primary-blue;
+  //justify-content: end;
+  //display: flex;
+  //background-color: red;
+}
+// .navbar-brand-classroom {
+//   @include custom-navbarbrand(60rem, 10rem);
+//   &__img {
+//     flex: 0 1 30%;
+//     height: 100%;
+//     background-size: cover;
+//     display: block;
+//   }
+//   &__text {
+//     padding-left: 1rem;
+//     flex: 0 1 70%;
+//     margin: auto;
+//     display: flex;
+//     font-size: 2.5rem;
+//   }
+//   &__circle-button {
+//     align-items: center;
+//     flex: 1;
+//     padding-left: 20rem;
+//     display: flex;
+//     font-size: 2.5rem;
+//   }
+// }

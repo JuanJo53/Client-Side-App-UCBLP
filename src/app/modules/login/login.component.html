@@ -1,56 +1,90 @@
 <div class="bg-top-img">
   <div class="bg-top-img__overlay">
     <div class="container">
+      <!-- Logo y texto -->
       <div class="navbar-brand">
-        <img [src]="mylogo" class="navbar-brand__img" />
-        <div class="navbar-brand__text">UCB ENGLISH</div>
+        <!-- imagen de logo-->
+        <img [src]="imagenLogo" class="navbar-brand__img" />
+        <!-- texto de logo-->
+        <div class="navbar-brand__text">{{ textoLogo }}</div>
       </div>
+      <!-- //nombre de marca -->
+      <!-- Login card -->
       <div class="login-card">
         <div class="login-card__left-side">
           <div class="login-card__img">
             <div class="login-card__img-overlay">
+              <!--Texto para el usuario izquierda-->
               <div class="login-card__img-text">
-                <p>UCB English for teachers</p>
+                <p>UCB English for {{ usuario }}</p>
               </div>
+              <!--//Texto para el usuario izquierda-->
             </div>
           </div>
         </div>
         <div class="login-card__right-side">
           <div class="login-card__button-user-container">
+            <!-- botton de acceso para estudiantes -->
             <button class="login-button-user">
               <i class="fas fa-user-friends"></i>
               <div class="login-button-user__text">
                 Students
               </div>
             </button>
+            <!-- //botton de acceso para estudiantes -->
+            <!-- botton de acceso para docentes -->
             <button class="login-button-user active">
               <i class="fas fa-chalkboard-teacher"></i>
               <div class="login-button-user__text">
                 Teachers
               </div>
             </button>
+            <!-- //botton de acceso para docentes -->
           </div>
+          <!-- Descripcion para el usuario seleccionado derecha -->
           <div class="login-card__description">
-            <p class="login-card__description--title">Welcome Teacher!</p>
+            <p class="login-card__description--title">Welcome {{ usuario }}!</p>
             <p class="login-card__description--subtitle">
               It's good to have you back in the plataform!
             </p>
           </div>
-          <form class="form">
+          <!-- //Descripcion para el usuario seleccionado derecha-->
+          <!-- Formulario para ingreso de datos del usuario-->
+          <form class="form" (submit)="btnLogin()">
             <mat-form-field appearance="outline">
               <mat-label>Academic email</mat-label>
-              <input matInput placeholder="Email" />
+              <!-- Input para el email-->
+              <input
+                type="text"
+                matInput
+                placeholder="Email"
+                [(ngModel)]="correoAcademicoUsuario"
+                name="correo"
+              />
+              <!-- //Input para el email-->
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" />
+              <!-- Input para la contrasenia-->
+              <input
+                type="password"
+                matInput
+                placeholder="Password"
+                [(ngModel)]="contraseniaUsuario"
+                name="contrasenia"
+              />
+              <!-- //Input para la contrasenia-->
             </mat-form-field>
-            <button mat-raised-button class="form__button">
+            <!-- Button para ingresar al sistema-->
+            <button type="submit" mat-raised-button class="form__button">
               LOG IN
             </button>
+            <!-- //Button para ingresar al sistema-->
           </form>
+          <!-- //Formulario para ingreso de datos del usuario-->
         </div>
       </div>
+      <!-- //Login card -->
     </div>
   </div>
 </div>

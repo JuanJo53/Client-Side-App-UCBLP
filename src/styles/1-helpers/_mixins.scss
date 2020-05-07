@@ -7,4 +7,49 @@
   color: $color;
   align-items: center;
 }
+@mixin custom-title-regular($margin, $font-size, $color) {
+  margin: $margin;
+  font-weight: $font-weight-regular;
+  font-size: $font-size;
+  color: $color;
+  align-items: center;
+}
 //----------------//TITLE-----------------------
+
+//----------------NAVBAR-BRADN------------------
+// @mixin custom-navbarbrand($width, $height) {
+//   padding-top: 1.5rem;
+//   width: $width;
+//   height: $height;
+//   display: flex;
+// }
+//----------------//NAVBAR-BRADN----------------
+
+//-----------------CLASSROOMCARD----------------
+@mixin custom-card($width, $height, $color) {
+  z-index: 5;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height: $height;
+  background-color: $color;
+  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem;
+  display: flex;
+  overflow: hidden;
+}
+//-----------------//CLASSROOMCARD----------------
+//------------CENTER OBJECT ABSOLUTE--------------
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+//------------//CENTER OBJECT ABSOLUTE--------------
+//------------MARGIN LEFT RIGHT--------------
+@mixin margin-left-right($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+//------------//MARGIN LEFT RIGHT--------------

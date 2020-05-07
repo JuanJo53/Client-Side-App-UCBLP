@@ -1,0 +1,20 @@
+@import "3-basics/typography";
+@import "3-basics/navbar-brand";
+@import "5-modules/choosing_classroom_card";
+@import "3-basics/buttons";
+
+.bg-top-img {
+    background-color: orange;
+    width: 100%;
+    height: 50vh;
+    background-image: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    
+    &__overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: $color-primary-blue, $alpha: 0.85);
+      color: $color-primary-white;
+      font-weight: $font-weight-regular;
+    }
+  }

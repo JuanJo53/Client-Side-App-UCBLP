@@ -10,7 +10,7 @@ html{
 body {
   font-family: Roboto;
   height: 100vh;
-  background-color: $color-primary-white;
+  //background-color: $color-primary-white;
 }
 
 .container {
@@ -23,6 +23,7 @@ body {
   .container {
     width: 75rem;
   }
+
 }
 @media (min-width: 992px) {
   .container {
