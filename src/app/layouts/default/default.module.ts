@@ -18,7 +18,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
-//Revisar este import! Me saltaba error en la linea 35!
+//Revisar este import! Me saltaba error en la linea 35! Revisar tambien los demas imports en otras librerias!
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
