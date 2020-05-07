@@ -17,6 +17,7 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatIconModule } from "@angular/material/icon";
     MatSidenavModule,
     MatMenuModule,
     MatIconModule,
+    FormsModule,
   ],
 })
 export class DefaultModule {}
