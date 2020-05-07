@@ -1,0 +1,52 @@
+@import "1-helpers/variables";
+@import "3-basics/links";
+
+.classroom-card {
+  @include custom-card(37.5rem, 22.5rem, $color-primary-white);
+  @include center;
+  display: flex;
+  flex-direction: column;
+  color: $color-primary-black;
+  padding: 3rem;
+  &__description-classroom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 25%;
+    font-size: 3rem;
+    //background-color: red;
+    //@include custom-title(0rem, 3.5rem, $color-primary-black);
+    // padding-left: 25rem;
+    // padding-top: 1rem;
+    // padding-bottom: 9rem;
+  }
+  &__description-detail {
+    &-text,
+    i {
+      padding-right: 2rem;
+      padding-left: 0rem;
+    }
+    flex: 1;
+    //background-color: orange;
+    // @include custom-title(0rem, 1.5rem, $color-primary-black);
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  &__description-semester {
+    flex: 0 1 10%;
+    //background-color: green;
+    // @include custom-title(0rem, 1.5rem, );
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    // padding-left: 40rem;
+  }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}

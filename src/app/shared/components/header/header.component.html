@@ -1,0 +1,74 @@
+<mat-toolbar class="header">
+  <mat-toolbar-row>
+    <div class="container">
+      <span class="header__text">English Ucb</span>
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="20px">
+          <li>
+            <button
+              class="circular-button"
+              mat-mini-fab
+              [matMenuTriggerFor]="classmodal"
+            >
+              <span class="circular-button__class">E2</span>
+            </button>
+            <mat-menu
+              class="classroom-card"
+              #classmodal="matMenu"
+              xPosition="before"
+            >
+              <div class="classroom-card__content">
+                <span class="classroom-card__classroom">English 2</span>
+                <span class="classroom-card__classroom">English 3</span>
+              </div>
+            </mat-menu>
+          </li>
+          <li>
+            <button
+              class="circular-button"
+              mat-mini-fab
+              [matMenuTriggerFor]="notificationmodal"
+            >
+              <mat-icon class="circular-button__icon"
+                >notifications_none</mat-icon
+              >
+            </button>
+            <mat-menu
+              class="notification-card"
+              #notificationmodal="matMenu"
+              xPosition="before"
+            >
+              <div class="notification-card__content">
+                <span class="notification-card__notification">Final Test</span>
+                <span class="notification-card__notification">Practice 1</span>
+              </div>
+            </mat-menu>
+          </li>
+          <li>
+            <button
+              class="circular-button"
+              mat-mini-fab
+              [matMenuTriggerFor]="usermodal"
+            >
+              <span class="circular-button__first-word">M</span>
+            </button>
+            <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
+              <div class="user-card__content">
+                <button class="user-card__icon" mat-fab>
+                  <span class="user-card__first-word">M</span>
+                </button>
+                <span class="user-card__name">Marcelo Ticona</span>
+                <span class="user-card__email">m.ticona@acad.ucb.edu.bo</span>
+                <span class="user-card__classroom">Class : English 2</span>
+                <button mat-stroked-button class="user-card__button-logout">
+                  <mat-icon>exit_to_app</mat-icon>
+                  Sign out
+                </button>
+              </div>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

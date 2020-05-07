@@ -1,39 +1,63 @@
 // login buttons
-
 .login-button-user {
   background-color: $color-primary-white;
   color: $color-primary-blue;
-  border: .1rem solid $color-primary-blue;
+  border: 0.1rem solid $color-primary-blue;
   opacity: 60%;
   border-radius: 2.5rem;
   text-align: right;
   font-size: 1.25rem;
-  padding: .75rem;
-  margin: .25rem;
+  padding: 0.75rem;
+  margin: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   &__text {
-    padding-right: .75rem;
-    padding-left: .5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.5rem;
   }
   i {
-    padding-left: .75rem;
-    padding-right: .5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
   }
   &:hover {
     background-color: $color-primary-blue;
     color: $color-primary-white;
-    border: .1rem solid $color-primary-blue;
-    opacity: 100%;
-  }
-  &.active {
-    background-color: $color-primary-blue;
-    color: $color-primary-white;
-    border: .1rem solid $color-primary-blue;
+    border: 0.1rem solid $color-primary-blue;
     opacity: 100%;
   }
   &:focus {
     outline: 0;
+  }
+}
+.circular-button {
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
+  position: relative;
+  &__icon {
+    font-size: 2rem;
+  }
+  &__first-word {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__class {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}
+.toggle-button {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
   }
 }

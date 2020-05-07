@@ -1,0 +1,64 @@
+<mat-nav-list class="sidebar__list">
+  <div class="sidebar-brand">
+    <img [src]="mylogo" alt="UcbLogo" class="sidebar-brand__logo" />
+    <span class="sidebar-brand__subtitle">Teachers</span>
+  </div>
+  <!-- <mat-divider></mat-divider>
+  <h2 matSubheader>Pages</h2> -->
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/dashboard"
+    ><mat-icon class="link__icon">dashboard</mat-icon
+    ><span class="link__text">Dashboard</span></a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/myclass"
+    ><mat-icon class="link__icon">people</mat-icon
+    ><span class="link__text">My class</span></a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/forums"
+    ><mat-icon class="link__icon">forum</mat-icon
+    ><span class="link__text">Forums</span></a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/modules"
+    ><mat-icon class="link__icon">view_list</mat-icon
+    ><span class="link__text">Modules</span></a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/resources"
+    ><mat-icon class="link__icon">extension</mat-icon
+    ><span class="link__text">Resources</span></a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="List-item-active"
+    routerLink="/evaluation"
+    ><mat-icon class="link__icon">account_tree</mat-icon
+    ><span class="link__text">Evaluation</span></a
+  >
+  <button (click)="onSidebarMenuToggle()" class="toggle-button" mat-mini-fab>
+    <mat-icon class="toggle-button__icon">chevron_left</mat-icon>
+  </button>
+
+  <!-- <h2 matSubheader>Tools</h2>
+  <a mat-list-item routerLinkActive="List-item-active" routerLink="/"
+    ><mat-icon>import_contacts</mat-icon>Contacts</a
+  > -->
+</mat-nav-list>
