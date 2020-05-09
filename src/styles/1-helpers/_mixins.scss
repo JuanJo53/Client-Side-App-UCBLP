@@ -53,3 +53,21 @@
   margin-right: $right;
 }
 //------------//MARGIN LEFT RIGHT--------------
+
+//-----------------CUSTOMCARD----------------
+@mixin custom-card-dinamic($width, $height, $color) {
+  //clip-path: polygon(96% 0, 96% 97%, 100% 100%, 0 100%, 0 45%, 0 0);  
+  z-index: 5;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height: $height;
+  background-color: $color;
+  
+  box-shadow: 0 0.9px 2rem rgba(0, 0, 0, 0.75);
+  display: flex;
+  overflow: hidden;
+}
+//-----------------//CUSTOMCARD----------------
+
+
