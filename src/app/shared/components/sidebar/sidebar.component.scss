@@ -13,6 +13,7 @@ mat-expansion-panel {
 }
 ::ng-deep .mat-expansion-panel-header {
   padding: 0 1.5rem !important;
+  font-size: 1.6rem;
 }
 ::ng-deep .mat-expansion-indicator::after {
   color: $color-primary-white;
