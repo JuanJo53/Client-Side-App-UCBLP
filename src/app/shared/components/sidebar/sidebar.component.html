@@ -29,14 +29,36 @@
     ><mat-icon class="link__icon">forum</mat-icon
     ><span class="link__text">Forums</span></a
   >
-  <a
+  <mat-expansion-panel class="expansion-panel">
+    <mat-expansion-panel-header class="expansion-panel__header">
+      <mat-icon class="expansion-panel__header-icon">view_list</mat-icon
+      ><span class="expansion-panel__header-text">Modules</span>
+    </mat-expansion-panel-header>
+    <a
+      class="sublink"
+      mat-list-item
+      routerLinkActive="List-item-active"
+      routerLink="/evaluation"
+      ><mat-icon class="sublink__icon">view_list</mat-icon
+      ><span class="sublink__text">Themes</span></a
+    >
+    <a
+      class="sublink"
+      mat-list-item
+      routerLinkActive="List-item-active"
+      routerLink="/evaluation"
+      ><mat-icon class="sublink__icon">view_list</mat-icon
+      ><span class="sublink__text">Assessments</span></a
+    >
+  </mat-expansion-panel>
+  <!-- <a
     class="link"
     mat-list-item
     routerLinkActive="List-item-active"
     routerLink="/modules"
     ><mat-icon class="link__icon">view_list</mat-icon
     ><span class="link__text">Modules</span></a
-  >
+  > -->
   <a
     class="link"
     mat-list-item
@@ -53,6 +75,7 @@
     ><mat-icon class="link__icon">account_tree</mat-icon
     ><span class="link__text">Evaluation</span></a
   >
+
   <button (click)="onSidebarMenuToggle()" class="toggle-button" mat-mini-fab>
     <mat-icon class="toggle-button__icon">chevron_left</mat-icon>
   </button>
