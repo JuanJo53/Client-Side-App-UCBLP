@@ -1,46 +1,32 @@
 @import "1-helpers/variables";
 @import "1-helpers/mixins";
 .subtitle {
+  margin: 4rem 0rem;
   width: 100%;
   &__content {
-    display: flex;
-    overflow: hidden;
-    //background-color: yellow;
+    border-bottom: 0.5rem solid $color-primary-blue;
   }
   &__text {
-    background-color: $color-primary-blue;
-    padding: 1.5rem;
-    font-size: 2rem;
-    color: $color-primary-white;
-    width: 150px;
-    // &:before {
-    //   background-color: greenyellow;
-    //   border-top: 0.2rem solid $color-primary-blue;
-    //   font-size: 3rem;
-    //   color: $color-primary-blue;
-    //   transform: rotate(45deg);
-    //   width: 10rem;
-    // }
-    &:before {
-      background-color: red;
-      width: 1.8rem;
-      position: relative;
-    }
-  }
-  // &__curve {
-  //   // background-color: rosybrown;
-  //   // border-top: 0.3rem solid $color-primary-blue;
-  //   // width: 25rem;
-  //   // transform: rotate(45deg);
-  //   border-right: 3rem solid transparent;
-  //   border-top: 3rem solid transparent;
-  //   border-left: 3rem solid #f0ad4e;
-  //   border-bottom: 3rem solid #f0ad4e;
-  //   //right: -10rem;
-  // }
-  &__line {
-    //background-color: skyblue;
-    width: 100%;
+    //background-color: $color-primary-blue;
+    padding-bottom: 1.75rem ;
+    font-size: 2.5rem;
+    color: $color-primary-blue;
+    // border-radius: 2rem 2rem 0rem 0rem;
     border-bottom: 0.2rem solid $color-primary-blue;
   }
+
+  // &__right {
+  //   background-color: $color-primary-blue;
+  //   width: 100%;
+  //   // overflow: hidden;
+  //   ;
+  // }
+  // &__line {
+  //   //border-bottom: 0.2rem solid $color-primary-blue;
+  //   background-color: #fafafa;
+  //   //border-radius: 0rem 0rem 0rem 5rem;
+  //   border-radius: 0rem 0rem 0rem 3rem;
+  //   height: 100%;
+  //   bottom: 5px;
+  // }
 }
