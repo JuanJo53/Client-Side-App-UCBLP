@@ -5,32 +5,41 @@
   &__content {
     display: flex;
     overflow: hidden;
-    background-color: yellow;
+    //background-color: yellow;
   }
   &__text {
-    background-color: greenyellow;
-    border-top: 0.2rem solid $color-primary-blue;
-    padding: 2rem;
-    font-size: 3rem;
-    color: $color-primary-blue;
+    background-color: $color-primary-blue;
+    padding: 1.5rem;
+    font-size: 2rem;
+    color: $color-primary-white;
+    width: 150px;
+    // &:before {
+    //   background-color: greenyellow;
+    //   border-top: 0.2rem solid $color-primary-blue;
+    //   font-size: 3rem;
+    //   color: $color-primary-blue;
+    //   transform: rotate(45deg);
+    //   width: 10rem;
+    // }
     &:before {
-      background-color: greenyellow;
-      border-top: 0.2rem solid $color-primary-blue;
-      font-size: 3rem;
-      color: $color-primary-blue;
-      transform: rotate(45deg);
-      width: 10rem;
+      background-color: red;
+      width: 1.8rem;
+      position: relative;
     }
   }
   // &__curve {
-  //   background-color: rosybrown;
-  //   border-top: 0.3rem solid $color-primary-blue;
-  //   width: 25rem;
-  //   transform: rotate(45deg);
-  //   z-index: 1;
+  //   // background-color: rosybrown;
+  //   // border-top: 0.3rem solid $color-primary-blue;
+  //   // width: 25rem;
+  //   // transform: rotate(45deg);
+  //   border-right: 3rem solid transparent;
+  //   border-top: 3rem solid transparent;
+  //   border-left: 3rem solid #f0ad4e;
+  //   border-bottom: 3rem solid #f0ad4e;
+  //   //right: -10rem;
   // }
   &__line {
-    background-color: skyblue;
+    //background-color: skyblue;
     width: 100%;
     border-bottom: 0.2rem solid $color-primary-blue;
   }
