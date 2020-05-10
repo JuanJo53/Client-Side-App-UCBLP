@@ -5,10 +5,6 @@ import { AppComponent } from "./app.component";
 import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { DefaultModule } from "./layouts/default/default.module";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +13,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AppRoutingModule,
     DefaultModule,
     BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
