@@ -1,40 +1,64 @@
-<div class=subtitle>
-    <div class="subtitle__left-side">
-        <div class="subtitle__line1"></div>
-        <div class="subtitle__text">
-            <p>Themes</p>
-        </div>
+<div class="container">
+  <div class="subtitle">
+    <div class="subtitle__content">
+      <div class="subtitle__text">
+        <p>Themes</p>
+      </div>
+      <div class="subtitle__curve"></div>
+      <div class="subtitle__line"></div>
     </div>
-    <div class="subtitle__right-side">
-        <div class="subtitle__line1"></div>
-    </div>
-</div>
+  </div>
 
-
-<div class="custom-card">
+  <div class="custom-card">
     <div class="custom-card__img">
-        <div class="custom-card__img-overlay">
-            <div class="custom-card__buttons-card">
-                <ul fxLayout="row" fxLayoutGap="20px">
-                    <li>
-                        <button class="circular-button1" mat-mini-fab>
-                            <mat-icon class="circular-button1__icon">
-                                <i class="fas fa-cog"></i>
-                            </mat-icon>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="circular-button1" mat-mini-fab>
-                            <mat-icon class="circular-button1__icon">
-                                <i class="fas fa-trash"></i>
-                            </mat-icon>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <div class="custom-card__empty"></div>
-            <p class="custom-card__description-detail-title">{{ tema }}</p>
-            <p class="custom-card__description-detail-subtitle">{{ descripcion }}</p>
+      <div class="custom-card__img-overlay">
+        <div class="custom-card__buttons-card">
+          <!-- <ul fxLayout="row" >  -->
+          <button class="circular-button-custom-card" mat-mini-fab>
+            <mat-icon class="circular-button-custom-card__icon">
+              <i class="fas fa-cog"></i>
+            </mat-icon>
+          </button>
+          <button class="circular-button-custom-card" mat-mini-fab>
+            <mat-icon class="circular-button-custom-card__icon">
+              <i class="fas fa-trash"></i>
+            </mat-icon>
+          </button>
         </div>
+        <div class="custom-card__content-card"></div>
+        <div class="custom-card__description-theme">
+          <span class="custom-card__description-theme--title">{{ tema }}</span>
+          <span class="custom-card__description-theme--subtitle">
+            {{ descripcion }}
+          </span>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="custom-card">
+    <div class="custom-card__img">
+      <div class="custom-card__img-overlay">
+        <div class="custom-card__buttons-card">
+          <!-- <ul fxLayout="row" >  -->
+          <button class="circular-button-custom-card" mat-mini-fab>
+            <mat-icon class="circular-button-custom-card__icon">
+              <i class="fas fa-cog"></i>
+            </mat-icon>
+          </button>
+          <button class="circular-button-custom-card" mat-mini-fab>
+            <mat-icon class="circular-button-custom-card__icon">
+              <i class="fas fa-trash"></i>
+            </mat-icon>
+          </button>
+        </div>
+        <div class="custom-card__content-card"></div>
+        <div class="custom-card__description-theme">
+          <span class="custom-card__description-theme--title">{{ tema }}</span>
+          <span class="custom-card__description-theme--subtitle">
+            {{ descripcion }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

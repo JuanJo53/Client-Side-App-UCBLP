@@ -1,30 +1,37 @@
-
 @import "1-helpers/variables";
 @import "1-helpers/mixins";
-
-.subtitle{
-    width: 100%;
-    padding: 2rem;
+.subtitle {
+  width: 100%;
+  &__content {
     display: flex;
     overflow: hidden;
-    &__left-side {
-        flex: 0 1 20%;
-      }
-    &__right-side {
-        flex: 1;
-        display: flex;
-        padding: 5rem;
-      }
-    &__line1{
-        width: 100%;
-        border-top: 0.3rem solid $color-primary-blue;
+    background-color: yellow;
+  }
+  &__text {
+    background-color: greenyellow;
+    border-top: 0.2rem solid $color-primary-blue;
+    padding: 2rem;
+    font-size: 3rem;
+    color: $color-primary-blue;
+    &:before {
+      background-color: greenyellow;
+      border-top: 0.2rem solid $color-primary-blue;
+      font-size: 3rem;
+      color: $color-primary-blue;
+      transform: rotate(45deg);
+      width: 10rem;
     }
-    &__text{
-        justify-content: flex-start;
-        display: flex;
-        padding: 2rem;
-        font-size: 4rem;
-        color: $color-primary-blue;
-    }
-     
+  }
+  // &__curve {
+  //   background-color: rosybrown;
+  //   border-top: 0.3rem solid $color-primary-blue;
+  //   width: 25rem;
+  //   transform: rotate(45deg);
+  //   z-index: 1;
+  // }
+  &__line {
+    background-color: skyblue;
+    width: 100%;
+    border-bottom: 0.2rem solid $color-primary-blue;
+  }
 }
