@@ -61,3 +61,19 @@
     color: $color-primary-white;
   }
 }
+.circular-button1 {
+  background-color: transparent;
+  border-color: $color-primary-white;
+  opacity: 90%;
+  position: relative;
+  &__icon {
+    font-size: 2rem;
+  }
+  &:hover {
+    background-color:transparent;
+    color: $color-primary-black;
+    opacity: 60%;
+  }
+}
+
+
