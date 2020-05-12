@@ -22,6 +22,8 @@ import { DashboardComponent } from "src/app/modules/dashboard/dashboard.componen
 import { ThemesComponent } from "src/app/modules/themes/themes.component";
 
 
+
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -44,6 +46,7 @@ import { ThemesComponent } from "src/app/modules/themes/themes.component";
     MatMenuModule,
     MatIconModule,
     FormsModule,
+
   ],
 })
 export class DefaultModule {}
