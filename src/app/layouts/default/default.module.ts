@@ -11,15 +11,15 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { DashboardComponent } from "src/app/modules/dashboard/dashboard.component";
+
 import { PostsComponent } from "src/app/modules/posts/posts.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
-//Revisar este import! Me saltaba error en la linea 35!
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DashboardComponent } from "src/app/modules/dashboard/dashboard.component";
+import { ThemesComponent } from "src/app/modules/themes/themes.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     LoginComponent,
     PostsComponent,
     ChoosingClassroomComponent,
+    ThemesComponent,
   ],
   imports: [
     CommonModule,
