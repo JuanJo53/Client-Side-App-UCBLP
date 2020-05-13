@@ -31,8 +31,12 @@ const routes: Routes = [
         component: ForumsComponent,
       },
       {
-        path: "modules",
-        component: ModulesComponent,
+        path: "themes",
+        component: ThemesComponent,
+      },
+      {
+        path: "assessments",
+        component: AssessmentsComponent,
       },
       {
         path: "resources",
