@@ -3,3 +3,4 @@ export interface TeacherLogin{
     correoDocente:string,
     contraseniaDocente:string,
 }
+

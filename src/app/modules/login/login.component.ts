@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
          console.log("No se pudo iniciar sesión");
         }
         else{
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/classroom']);
         }
        
         },

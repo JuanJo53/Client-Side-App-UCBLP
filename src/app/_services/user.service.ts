@@ -12,6 +12,7 @@ export class UserService {
   
   constructor(private http:HttpClient) { }
   getProfileDocente():Observable<any>{
-    return this.http.get(API+'/users',{responseType:'text'});
+    return this.http.get(API+'/users/profile');
   }
+
 }

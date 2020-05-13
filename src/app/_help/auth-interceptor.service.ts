@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor{
           console.log("hay token");
           request=req.clone({
             setHeaders:{
-              authorization:`Bearer${token}`
+              authorization:`${token}`
             }
           });
         }
