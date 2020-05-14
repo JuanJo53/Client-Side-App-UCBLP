@@ -10,6 +10,8 @@ import { ForumsComponent } from "./modules/forums/forums.component";
 import { ModulesComponent } from "./modules/modules/modules.component";
 import { ResourcesComponent } from "./modules/resources/resources.component";
 import { EvaluationComponent } from "./modules/evaluation/evaluation.component";
+import { ThemesComponent } from "./modules/themes/themes.component";
+import { AssessmentsComponent } from "./modules/assessments/assessments.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -31,8 +33,12 @@ const routes: Routes = [
         component: ForumsComponent,
       },
       {
-        path: "modules",
-        component: ModulesComponent,
+        path: "themes",
+        component: ThemesComponent,
+      },
+      {
+        path: "assessments",
+        component: AssessmentsComponent,
       },
       {
         path: "resources",

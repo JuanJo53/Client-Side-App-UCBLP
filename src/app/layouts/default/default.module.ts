@@ -11,7 +11,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { DashboardComponent } from "src/app/modules/dashboard/dashboard.component";
+
 import { PostsComponent } from "src/app/modules/posts/posts.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -28,11 +28,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     LoginComponent,
     PostsComponent,
     ChoosingClassroomComponent,
+    ThemesComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,

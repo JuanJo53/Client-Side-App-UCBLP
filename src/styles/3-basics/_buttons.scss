@@ -61,3 +61,19 @@
     color: $color-primary-white;
   }
 }
+.circular-button-custom-card {
+  margin-left: 0.5rem;
+  background-color: transparent;
+  border: 1px solid $color-primary-white;
+  box-shadow: none;
+  opacity: 90%;
+  position: relative;
+  &__icon {
+    font-size: 2rem;
+  }
+  &:hover {
+    background-color: $color-card-themes;
+    color: $color-primary-white;
+    border: none;
+  }
+}
