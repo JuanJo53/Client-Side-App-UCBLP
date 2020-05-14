@@ -1,10 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { DefaultComponent } from "./default.component";
-
 import { LoginComponent } from "src/app/modules/login/login.component";
 import { ChoosingClassroomComponent } from "src/app/modules/choosing-classroom/choosing-classroom.component";
-
 import { RouterModule } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -43,6 +41,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatMenuModule,
     MatIconModule,
     FormsModule,
+    MatButtonModule,
   ],
 })
 export class DefaultModule {}

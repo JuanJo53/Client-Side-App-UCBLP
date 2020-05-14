@@ -50,7 +50,7 @@
           </div>
           <!-- //Descripcion para el usuario seleccionado derecha-->
           <!-- Formulario para ingreso de datos del usuario-->
-          <form class="form" (submit)="btnLogin()">
+          <form class="form">
             <mat-form-field appearance="outline">
               <mat-label>Academic email</mat-label>
               <!-- Input para el email-->
@@ -58,7 +58,7 @@
                 type="text"
                 matInput
                 placeholder="Email"
-                [(ngModel)]="correoAcademicoUsuario"
+                [(ngModel)]="loginTeacher.correoDocente"
                 name="correo"
               />
               <!-- //Input para el email-->
@@ -70,13 +70,13 @@
                 type="password"
                 matInput
                 placeholder="Password"
-                [(ngModel)]="contraseniaUsuario"
+                [(ngModel)]="loginTeacher.contraseniaDocente"
                 name="contrasenia"
               />
               <!-- //Input para la contrasenia-->
             </mat-form-field>
             <!-- Button para ingresar al sistema-->
-            <button type="submit" mat-raised-button class="form__button">
+            <button (click)="LoginDocente()" mat-raised-button class="form__button">
               LOG IN
             </button>
             <!-- //Button para ingresar al sistema-->
@@ -88,4 +88,3 @@
     </div>
   </div>
 </div>
-
