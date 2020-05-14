@@ -3,6 +3,7 @@ import { TeacherLogin } from 'src/app/models/TeacherLogin';
 import { from } from 'rxjs';
 import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -14,8 +15,9 @@ export class LoginComponent implements OnInit {
   imagenLogo: string = "assets/logo.png";
   usuario = "teacher";
   loginTeacher:TeacherLogin={
-    contrasenia_docente:"",
-    correo_docente:""
+    idDocente:0 ,
+    contraseniaDocente:"",
+    correoDocente:""
   };
   //-----#variables
   //-----funciones
@@ -25,15 +27,29 @@ export class LoginComponent implements OnInit {
      {
        next:data=>{
         this.tokenStorage.saveToken(data.token); 
-        console.log(this.tokenStorage.getToken());
-        console.log(data.user)},
+        console.log("Tocken "+this.tokenStorage.getToken());
+        if(this.tokenStorage.getToken()==='undefined'){
+         console.log("No se pudo iniciar sesión");
+        }
+        else{
+          this.router.navigate(['/classroom']);
+        }
+       
+        },
        error:error=>console.log(error)
      }
    )
   }
   //-----#funciones
-  constructor(private authService:AuthService,private tokenStorage:TokenStorageService) {}
-  ngOnInit() {
+  constructor(private authService:AuthService,private tokenStorage:TokenStorageService,private router:Router) {}
+  ngOnInit() {    
+    console.log(this.tokenStorage.getToken());
+    if(this.tokenStorage.getToken()==='undefined'||this.tokenStorage.getToken()==null){
+    }
+    else{      
+      this.router.navigate(['/classroom']);
+      return false;
+    }
   }
 
 }
