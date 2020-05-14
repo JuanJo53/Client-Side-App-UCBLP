@@ -33,7 +33,7 @@ import { ThemesComponent } from "src/app/modules/themes/themes.component";
   imports: [
     CommonModule,
     RouterModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
