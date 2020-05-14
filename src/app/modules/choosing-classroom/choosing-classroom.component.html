@@ -16,7 +16,7 @@
           [matMenuTriggerFor]="usermodal"
         >
           <!-- primera letra de nombre de usuario-->
-          <span class="circular-button__first-word">{{ primeraLetra }}</span>
+          <span class="circular-button__first-word">{{ userDocente.primaLetra }}</span>
           <!-- #primera letra de nombre de usuario-->
         </button>
         <!-- #button icono de usuario-->
@@ -25,25 +25,25 @@
           <div class="user-card__content">
             <!-- icono de avatar-->
             <button class="user-card__icon" mat-fab>
-              <span class="user-card__first-word">{{ primeraLetra }}</span>
+              <span class="user-card__first-word">{{ userDocente.primaLetra }}</span>
             </button>
             <!-- //icono de avatar-->
             <!-- nombre de usuario-->
-            <span class="user-card__name">{{ nombreUsuario }}</span>
+            <span class="user-card__name">{{ userDocente.nombreDocente }}</span>
             <!-- #nombre de correo-->
             <!-- correo de usuario-->
-            <span class="user-card__email">{{ correoUsuario }}</span>
+            <span class="user-card__email">{{ userDocente.correoDocente }}</span>
             <!-- #correo de usuario-->
             <!-- materia de docente-->
             <span class="user-card__classroom">Class : {{ materia }}</span>
             <!-- #materia de docente-->
             <!--btn para salir-->
             <button
-              (click)="salir()"
+            (click)="signout()" 
               mat-stroked-button
               class="user-card__button-logout"
             >
-              <mat-icon>exit_to_app</mat-icon>
+              <mat-icon >exit_to_app</mat-icon>
               Sign out
             </button>
             <!--#btn para salir-->

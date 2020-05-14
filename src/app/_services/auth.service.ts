@@ -7,6 +7,7 @@ const AUTH_API='http://localhost:3000'
 @Injectable({
   providedIn:'root'
 })
+//esta clase sirve para poder conectar al servidor con el cliente con el login
 export class AuthService {
   constructor(private http:HttpClient){}
     loginDocente(teacher:TeacherLogin):Observable<any>{

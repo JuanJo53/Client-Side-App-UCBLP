@@ -42,7 +42,14 @@ export class LoginComponent implements OnInit {
   }
   //-----#funciones
   constructor(private authService:AuthService,private tokenStorage:TokenStorageService,private router:Router) {}
-  ngOnInit() {
+  ngOnInit() {    
+    console.log(this.tokenStorage.getToken());
+    if(this.tokenStorage.getToken()==='undefined'||this.tokenStorage.getToken()==null){
+    }
+    else{      
+      this.router.navigate(['/classroom']);
+      return false;
+    }
   }
 
 }
