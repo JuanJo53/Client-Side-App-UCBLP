@@ -18,6 +18,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
 //Revisar este import! Me saltaba error en la linea 35! Revisar tambien los demas imports en otras librerias!
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
+import { ThemesComponent } from 'src/app/modules/themes/themes.component';
 
 @NgModule({
   declarations: [
