@@ -79,3 +79,24 @@
     border: none;
   }
 }
+.circular-button-navbar {
+  margin-left: 1rem;
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
+  position: relative;
+  &__icon {
+    font-size: 2rem;
+  }
+  &__first-word {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__class {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}

@@ -3,6 +3,8 @@
 
 .custom-card {
   @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
   //cursor: pointer;
   &__img {
     width: 100%;

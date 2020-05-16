@@ -1,15 +1,23 @@
 @import "1-helpers/variables";
 @import "1-helpers/mixins";
-ul li {
-  list-style: none;
-}
 .header {
   padding: 2rem 0rem;
   background-color: $color-primary-red;
+  &__container {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
   &__text {
     color: $color-primary-white;
     font-size: 3rem;
     font-weight: $font-weight-regular;
+    //display: flex;
+    justify-content: flex-end;
+  }
+  &__buttons {
+    //display: flex;
+    justify-content: flex-start;
   }
 }
 ::ng-deep .user-card {
