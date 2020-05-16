@@ -18,13 +18,10 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { ThemesComponent } from 'src/app/modules/themes/themes.component';
-<<<<<<< HEAD
-=======
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
->>>>>>> 4d9e9f10f9f3fe8ce2e3fe2dfab0d1ac4a7b13f4
 
 @NgModule({
   declarations: [
