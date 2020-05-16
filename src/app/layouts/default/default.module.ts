@@ -16,13 +16,11 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-<<<<<<< HEAD
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { ThemesComponent } from 'src/app/modules/themes/themes.component';
-=======
-import { DashboardComponent } from "src/app/modules/dashboard/dashboard.component";
-import { ThemesComponent } from "src/app/modules/themes/themes.component";
->>>>>>> 9d33786a7bae0722019818b244d61c5ef6384453
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -47,6 +45,11 @@ import { ThemesComponent } from "src/app/modules/themes/themes.component";
     MatIconModule,
     FormsModule,
     MatButtonModule,
+
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule
+ 
   ],
 })
 export class DefaultModule {}
