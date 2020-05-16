@@ -21,6 +21,7 @@ import { ThemesComponent } from 'src/app/modules/themes/themes.component';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
     MatSortModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
  
   ],
 })

@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {PageEvent, MatPaginator} from '@angular/material/paginator';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 
 
 
@@ -45,9 +46,11 @@ const ELEMENT_DATA: ListaDeEstudiantes[] = [
 //   }
 
 // }
+
 export class DashboardComponent implements OnInit {
   link="Dashboard";
 
+ 
   displayedColumns: string[] = ['posicion', 'nombre', 'p_nombre','m_nombre','promedio','id'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
