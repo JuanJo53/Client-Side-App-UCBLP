@@ -5,13 +5,15 @@ import { LoginComponent } from "./modules/login/login.component";
 import { ChoosingClassroomComponent } from "./modules/choosing-classroom/choosing-classroom.component";
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 import { PostsComponent } from "./modules/posts/posts.component";
-import { MyClassComponent } from "./modules/my-class/my-class.component";
 import { ForumsComponent } from "./modules/forums/forums.component";
 import { ModulesComponent } from "./modules/modules/modules.component";
 import { ResourcesComponent } from "./modules/resources/resources.component";
 import { EvaluationComponent } from "./modules/evaluation/evaluation.component";
 import { ThemesComponent } from "./modules/themes/themes.component";
 import { AssessmentsComponent } from "./modules/assessments/assessments.component";
+import { StudentsComponent } from "./modules/students/students.component";
+import { AssistanceComponent } from "./modules/assistance/assistance.component";
+import { QualificationComponent } from "./modules/qualification/qualification.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -25,8 +27,16 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: "myclass",
-        component: MyClassComponent,
+        path: "students",
+        component: StudentsComponent,
+      },
+      {
+        path: "assistance",
+        component: AssistanceComponent,
+      },
+      {
+        path: "qualification",
+        component: QualificationComponent,
       },
       {
         path: "forums",

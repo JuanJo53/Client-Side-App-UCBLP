@@ -13,17 +13,29 @@
         <div class="custom-card__img">
           <div class="custom-card__img-overlay">
             <div class="custom-card__buttons-card">
-              <button class="circular-button-custom-card" mat-mini-fab>
+              <button
+                class="circular-button-custom-card"
+                mat-mini-fab
+                (click)="list()"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   list
                 </mat-icon>
               </button>
-              <button class="circular-button-custom-card" mat-mini-fab>
+              <button
+                class="circular-button-custom-card"
+                mat-mini-fab
+                (click)="setting()"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
               </button>
-              <button class="circular-button-custom-card" mat-mini-fab>
+              <button
+                class="circular-button-custom-card"
+                mat-mini-fab
+                (click)="delete()"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>

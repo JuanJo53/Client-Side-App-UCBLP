@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Students</span>
+    </div>
+  </div>
+  <!--tables-->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
+      <!-- Position Column -->
+      <ng-container matColumnDef="posicion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
+          No.
+        </th>
+        <td mat-cell *matCellDef="let element" class="mat-cell">
+          {{ element.posicion }}
+        </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <!-- Father's Name Column -->
+      <ng-container matColumnDef="p_nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
+          Father's Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
+      </ng-container>
+
+      <!-- Mother's Name Column -->
+      <ng-container matColumnDef="m_nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
+          Mother's Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
+      </ng-container>
+
+      <!-- Average Column -->
+      <ng-container matColumnDef="promedio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
+          Average
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
+      </ng-container>
+
+      <!-- Buttons Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button class="table__button--normal" mat-mini-fab>
+            <!--usuario-->
+            <span class="circular-button__icon"
+              ><i class="fas fa-user"></i>
+            </span>
+            <!-- #usuario-->
+          </button>
+          <button class="table__button--normal" mat-mini-fab>
+            <!--update usuario-->
+            <span class="circular-button__icon"
+              ><i class="fas fa-pencil-alt"></i>
+            </span>
+            <!-- #update usuario-->
+          </button>
+          <button class="table__button--negative" mat-mini-fab>
+            <!--delete usuario-->
+            <span class="circular-button__icon"
+              ><i class="fas fa-trash"></i>
+            </span>
+            <!-- #delete usuario-->
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!--#tables-->
+    <mat-paginator
+      [pageSizeOptions]="[10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+    <!-- #Paginator -->
+  </div>
+
+
+</div>

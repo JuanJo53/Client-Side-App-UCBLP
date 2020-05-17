@@ -23,6 +23,9 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import { StudentsComponent } from 'src/app/modules/students/students.component';
+import { AssistanceComponent } from 'src/app/modules/assistance/assistance.component';
+import { QualificationComponent } from 'src/app/modules/qualification/qualification.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     PostsComponent,
     ChoosingClassroomComponent,
     ThemesComponent,
-    DeleteCardComponent
+    DeleteCardComponent,
+    StudentsComponent,
+    AssistanceComponent,
+    QualificationComponent,
   ],
   imports: [
     CommonModule,
