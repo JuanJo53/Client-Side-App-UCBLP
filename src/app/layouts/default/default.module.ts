@@ -18,6 +18,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { ThemesComponent } from 'src/app/modules/themes/themes.component';
+import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -31,6 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     PostsComponent,
     ChoosingClassroomComponent,
     ThemesComponent,
+    DeleteCardComponent
   ],
   imports: [
     CommonModule,
@@ -46,11 +48,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     FormsModule,
     MatButtonModule,
-
     MatSortModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    
+    
  
   ],
 })
