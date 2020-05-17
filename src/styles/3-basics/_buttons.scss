@@ -50,6 +50,18 @@
     color: $color-primary-white;
   }
 }
+.table__button {
+  &--normal {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+    margin: 0rem 0.5rem;
+  }
+  &--negative {
+    background-color: $color-primary-red;
+    color: $color-primary-white;
+    margin: 0rem 0.5rem;
+  }
+}
 .toggle-button {
   position: absolute;
   bottom: 2rem;

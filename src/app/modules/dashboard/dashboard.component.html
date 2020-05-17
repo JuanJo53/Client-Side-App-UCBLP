@@ -5,15 +5,16 @@
     </div>
   </div>
   <!--tables-->
-  Student list
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
       <!-- Position Column -->
       <ng-container matColumnDef="posicion">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="header">
           No.
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.posicion }}</td>
+        <td mat-cell *matCellDef="let element" class="mat-cell">
+          {{ element.posicion }}
+        </td>
       </ng-container>
       <!-- Name Column -->
       <ng-container matColumnDef="nombre">
@@ -53,21 +54,21 @@
           Actions
         </th>
         <td mat-cell *matCellDef="let element">
-          <button class="circular-button" mat-mini-fab>
+          <button class="table__button--normal" mat-mini-fab>
             <!--usuario-->
             <span class="circular-button__icon"
               ><i class="fas fa-user"></i>
             </span>
             <!-- #usuario-->
           </button>
-          <button class="circular-button" mat-mini-fab>
+          <button class="table__button--normal" mat-mini-fab>
             <!--update usuario-->
             <span class="circular-button__icon"
               ><i class="fas fa-pencil-alt"></i>
             </span>
             <!-- #update usuario-->
           </button>
-          <button class="circular-button" mat-mini-fab>
+          <button class="table__button--negative" mat-mini-fab>
             <!--delete usuario-->
             <span class="circular-button__icon"
               ><i class="fas fa-trash"></i>
@@ -82,7 +83,7 @@
     </table>
     <!--#tables-->
     <mat-paginator
-      [pageSizeOptions]="[1, 2, 5, 10, 20]"
+      [pageSizeOptions]="[10, 20]"
       showFirstLastButtons
     ></mat-paginator>
     <!-- #Paginator -->
