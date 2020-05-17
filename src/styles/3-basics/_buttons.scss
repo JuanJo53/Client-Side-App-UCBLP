@@ -100,3 +100,11 @@
     color: $color-primary-white;
   }
 }
+.dialog-button-cancel {
+  background-color: $color-primary-red;
+  color: $color-primary-white;
+}
+.dialog-button-accept {
+  background-color: $color-primary-blue;
+  color: $color-primary-white;
+}

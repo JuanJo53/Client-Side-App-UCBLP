@@ -15,8 +15,6 @@
     border-bottom: 0.2rem solid $color-primary-blue;
   }
 
-  
-
   // &__right {
   //   background-color: $color-primary-blue;
   //   width: 100%;
@@ -33,7 +31,7 @@
   // }
 }
 .dialog-subtitle {
-  margin: 1.5rem 0rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   &__content {
     border-bottom: 0.5rem solid $color-primary-blue;
@@ -45,4 +43,8 @@
     // border-radius: 2rem 2rem 0rem 0rem;
     border-bottom: 0.2rem solid $color-primary-blue;
   }
+}
+.dialog {
+  margin: 2rem 1rem 0rem 1rem;
+  //background-color: red;
 }
