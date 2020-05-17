@@ -30,34 +30,16 @@
   }
 }
 
-.subtitle-comp {
-  margin: 4rem 0rem;
-  width: 100%;
-  &__content {
-    border-bottom: 0.5rem solid $color-primary-blue;
-  }
-  &__text {
-    //background-color: $color-primary-blue;
-    padding-bottom: 1.75rem;
-    font-size: 2.5rem;
-    color: $color-primary-blue;
-    // border-radius: 2rem 2rem 0rem 0rem;
-    border-bottom: 0.2rem solid $color-primary-blue;
-  }
-}
-
 .subtitle-compound {
   display: flex;
   border-bottom: 0.2rem solid $color-primary-blue;
-  margin: 4rem 0rem;
+  margin-top: 4rem;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1rem;
   &__text {
     font-size: 2.5rem;
     color: $color-primary-blue;
-  }
-  &__buttons-container {
   }
   &__circular-button {
     background-color: $color-primary-blue;
