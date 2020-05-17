@@ -1,11 +1,15 @@
 <div class="container">
-  <div class="subtitle">
-    <div class="subtitle__text">
+  <div class="subtitle-compound">
+    <div class="subtitle-compound__text">
       <span>Themes</span>
     </div>
-    <!-- <div class="subtitle__right">
-          <div class="subtitle__line"></div>
-        </div> -->
+    <div class="subtitle-compound__buttons-container">
+      <button class="subtitle-compound__circular-button" mat-mini-fab (click)="add()">
+        <mat-icon class="subtitle-compound__circular-button__icon"
+          >add</mat-icon
+        >
+      </button>
+    </div>
   </div>
   <div class="row end-md">
     <div class="col-lg-3 col-md-6 col-xs-12">

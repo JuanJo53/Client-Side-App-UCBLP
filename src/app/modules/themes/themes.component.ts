@@ -29,4 +29,7 @@ export class ThemesComponent implements OnInit {
   list() {
     console.log("click on list");
   }
+  add() {
+    console.log("click on add");
+  }
 }
