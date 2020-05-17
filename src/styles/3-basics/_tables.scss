@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  
 }
 
 .header {
@@ -15,4 +16,6 @@ th.mat-header-cell,
 td.mat-cell {
   text-align: center;
 }
-
+mat-paginator{
+  margin-bottom: 5rem;
+}
