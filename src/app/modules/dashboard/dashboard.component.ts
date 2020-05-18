@@ -2,12 +2,7 @@ import { Component, OnInit, ViewChild, Inject } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from "@angular/material/dialog";
-import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
+
 
 export interface ListaDeEstudiantes {
   nombre: string;
@@ -147,11 +142,5 @@ export class DashboardComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     //this.dataSource.paginator=this.paginator;
   }
-  constructor(public dialog: MatDialog) {}
-  click() {
-    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  constructor() {}
 }

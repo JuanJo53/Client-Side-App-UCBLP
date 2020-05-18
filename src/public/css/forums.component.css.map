@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../app/modules/forums/forums.component.scss"
+    ],
+    "names": [],
+    "file": "forums.component.css"
+}

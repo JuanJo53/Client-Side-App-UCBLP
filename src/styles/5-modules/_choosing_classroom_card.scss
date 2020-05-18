@@ -2,8 +2,9 @@
 @import "3-basics/links";
 
 .classroom-card {
-  @include custom-card(37.5rem, 22.5rem, $color-primary-white);
-  @include center;
+  @include custom-card(27rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   color: $color-primary-black;
@@ -13,7 +14,7 @@
     justify-content: flex-end;
     align-items: center;
     flex: 0 1 25%;
-    font-size: 3rem;
+    font-size: 2.5rem;
     //background-color: red;
     //@include custom-title(0rem, 3.5rem, $color-primary-black);
     // padding-left: 25rem;

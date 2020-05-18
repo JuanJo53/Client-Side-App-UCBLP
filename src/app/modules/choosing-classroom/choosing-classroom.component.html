@@ -16,7 +16,9 @@
           [matMenuTriggerFor]="usermodal"
         >
           <!-- primera letra de nombre de usuario-->
-          <span class="circular-button__first-word">{{ userDocente.primaLetra }}</span>
+          <span class="circular-button__first-word">{{
+            userDocente.primaLetra
+          }}</span>
           <!-- #primera letra de nombre de usuario-->
         </button>
         <!-- #button icono de usuario-->
@@ -25,25 +27,29 @@
           <div class="user-card__content">
             <!-- icono de avatar-->
             <button class="user-card__icon" mat-fab>
-              <span class="user-card__first-word">{{ userDocente.primaLetra }}</span>
+              <span class="user-card__first-word">{{
+                userDocente.primaLetra
+              }}</span>
             </button>
             <!-- //icono de avatar-->
             <!-- nombre de usuario-->
             <span class="user-card__name">{{ userDocente.nombreDocente }}</span>
             <!-- #nombre de correo-->
             <!-- correo de usuario-->
-            <span class="user-card__email">{{ userDocente.correoDocente }}</span>
+            <span class="user-card__email">{{
+              userDocente.correoDocente
+            }}</span>
             <!-- #correo de usuario-->
             <!-- materia de docente-->
             <span class="user-card__classroom">Class : {{ materia }}</span>
             <!-- #materia de docente-->
             <!--btn para salir-->
             <button
-            (click)="signout()" 
+              (click)="signout()"
               mat-stroked-button
               class="user-card__button-logout"
             >
-              <mat-icon >exit_to_app</mat-icon>
+              <mat-icon>exit_to_app</mat-icon>
               Sign out
             </button>
             <!--#btn para salir-->
@@ -52,6 +58,136 @@
         <!-- #modal de avatar para usuario-->
       </div>
       <!--#logo y text-->
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <!--contenedor de los cards-->
+      <div class="classroom-card-container">
+        <!--card-->
+        <div class="classroom-card">
+          <!--titulo de la clase-->
+          <p class="classroom-card__description-classroom">{{ materia }}</p>
+          <!--#titulo de la clase-->
+          <span class="classroom-card__description-detail">
+            <i class="far fa-calendar-alt"></i
+            ><!--horario-->
+            <span class="classroom-card__description-detail-text"
+              >Days: {{ diasMateria }}</span
+            >
+            <!--#horario-->
+          </span>
+          <p class="classroom-card__description-detail">
+            <i class="fas fa-clock"></i
+            ><!--horario-->
+            <span class="classroom-card__description-detail-text"
+              >Schedule: {{ horarioMateria }}</span
+            >
+            <!--#horario-->
+          </p>
+          <span class="classroom-card__description-detail">
+            <i class="fas fa-user-friends"></i>
+            <!--total de estudiantes-->
+            <span class="classroom-card__description-detail-text"
+              >Students: {{ totalEstudiantes }}</span
+            >
+            <!--#total de estudiantes-->
+          </span>
+          <!--semestre en que se da la materia-->
+          <span class="classroom-card__description-semester">
+            {{ semestre }}
+          </span>
+          <!--#semestre en que se da la materia-->
+        </div>
+        <!--#card-->
+      </div>
+      <!--#contenedor de los cards-->
+    </div>
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="classroom-card-container">
+        <!--card-->
+        <div class="classroom-card">
+          <!--titulo de la clase-->
+          <p class="classroom-card__description-classroom">{{ materia }}</p>
+          <!--#titulo de la clase-->
+          <span class="classroom-card__description-detail">
+            <i class="far fa-calendar-alt"></i
+            ><!--horario-->
+            <span class="classroom-card__description-detail-text"
+              >Days: {{ diasMateria }}</span
+            >
+            <!--#horario-->
+          </span>
+          <p class="classroom-card__description-detail">
+            <i class="fas fa-clock"></i
+            ><!--horario-->
+            <span class="classroom-card__description-detail-text"
+              >Schedule: {{ horarioMateria }}</span
+            >
+            <!--#horario-->
+          </p>
+          <span class="classroom-card__description-detail">
+            <i class="fas fa-user-friends"></i>
+            <!--total de estudiantes-->
+            <span class="classroom-card__description-detail-text"
+              >Students: {{ totalEstudiantes }}</span
+            >
+            <!--#total de estudiantes-->
+          </span>
+          <!--semestre en que se da la materia-->
+          <span class="classroom-card__description-semester">
+            {{ semestre }}
+          </span>
+          <!--#semestre en que se da la materia-->
+        </div>
+        <!--#card-->
+      </div>
+      <!--#contenedor de los cards-->
+    </div>
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="classroom-card-container">
+        <!--card-->
+        <div class="classroom-card">
+          <!--titulo de la clase-->
+          <p class="classroom-card__description-classroom">{{ materia }}</p>
+          <!--#titulo de la clase-->
+          <span class="classroom-card__description-detail">
+            <i class="far fa-calendar-alt"></i
+            ><!--horario-->
+            <span class="classroom-card__description-detail-text"
+              >Days: {{ diasMateria }}</span
+            >
+            <!--#horario-->
+          </span>
+          <p class="classroom-card__description-detail">
+            <i class="fas fa-clock"></i
+            ><!--horario-->
+            <span class="classroom-card__description-detail-text"
+              >Schedule: {{ horarioMateria }}</span
+            >
+            <!--#horario-->
+          </p>
+          <span class="classroom-card__description-detail">
+            <i class="fas fa-user-friends"></i>
+            <!--total de estudiantes-->
+            <span class="classroom-card__description-detail-text"
+              >Students: {{ totalEstudiantes }}</span
+            >
+            <!--#total de estudiantes-->
+          </span>
+          <!--semestre en que se da la materia-->
+          <span class="classroom-card__description-semester">
+            {{ semestre }}
+          </span>
+          <!--#semestre en que se da la materia-->
+        </div>
+        <!--#card-->
+      </div>
+      <!--#contenedor de los cards-->
+    </div>
+    <div class="col-lg-3 col-md-6 col-xs-12">
       <!--contenedor de los cards-->
       <div class="classroom-card-container">
         <!--card-->
