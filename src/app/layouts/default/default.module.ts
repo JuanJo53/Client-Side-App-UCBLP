@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { ThemesComponent } from 'src/app/modules/themes/themes.component';
 import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
+
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -26,6 +27,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { StudentsComponent } from 'src/app/modules/students/students.component';
 import { AssistanceComponent } from 'src/app/modules/assistance/assistance.component';
 import { QualificationComponent } from 'src/app/modules/qualification/qualification.component';
+import { AddCardComponent } from 'src/app/modules/dialogs/add-card/add-card.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { QualificationComponent } from 'src/app/modules/qualification/qualificat
     StudentsComponent,
     AssistanceComponent,
     QualificationComponent,
+    AddCardComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,45 @@
+@import "1-helpers/variables";
+
 .dialog {
   margin: 1.5rem 1rem 0rem 1rem;
   //background-color: red;
+}
+
+.dialogAdd{
+  margin: 1.5rem 1rem 0rem 1rem;
+  &__left-side{
+    flex: 0 1 80%;
+    justify-content: flex-start;
+  }
+  &__right-side{
+    flex: 1;
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.dialogforms{
+  flex: 1;
+  margin: 0rem;
+  padding: 0rem;
+  color: $color-primary-blue;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  mat-form-field {
+    width: 100%;
+  }
+}
+.settings-image{
+  opacity: 60%;
+  width: 25rem;
+  height: 15rem;
+  margin: 0rem;
+  padding: 0rem;
+}
+.cont{
+display: flex;
+
 }

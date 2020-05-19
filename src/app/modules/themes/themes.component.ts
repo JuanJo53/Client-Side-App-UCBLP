@@ -5,6 +5,7 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
+import {AddCardComponent } from "../dialogs/add-card/add-card.component";
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -23,13 +24,17 @@ export class ThemesComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  add() {
+    const dialogRef = this.dialog.open(AddCardComponent, { width: "400px" });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   setting() {
     console.log("click on settings");
   }
   list() {
     console.log("click on list");
-  }
-  add() {
-    console.log("click on add");
   }
 }

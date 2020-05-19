@@ -7,11 +7,11 @@ import { FormsModule } from "@angular/forms";
 import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
-import { AddCardComponent } from './modules/dialogs/add-card/add-card.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, AddCardComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
