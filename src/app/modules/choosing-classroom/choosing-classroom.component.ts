@@ -4,6 +4,7 @@ import { AuthService } from "src/app/_services/auth.service";
 import { UserService } from "src/app/_services/user.service";
 import { TokenStorageService } from "src/app/_services/token-storage.service";
 import { Router } from "@angular/router";
+import { CardClassroom } from "src/app/models/CardClassroom";
 
 @Component({
   selector: "app-choosing-classroom",
@@ -12,7 +13,7 @@ import { Router } from "@angular/router";
 })
 export class ChoosingClassroomComponent implements OnInit {
   //-----variables-----
-  classroomCards: ClassroomCard[] = [
+  classroomCards: CardClassroom[] = [
     {
       materia: "English 1",
       diasMateria: "Mon - Tue - Wed - Thu",
@@ -48,7 +49,7 @@ export class ChoosingClassroomComponent implements OnInit {
     correoDocente: "",
     primaLetra: "",
   };
-  numeroCards : number;
+  numeroCards: number;
   mylogo: string = "assets/logo.png";
   materia = "English 1";
   diasMateria = "Mon - Tue - Wed - Thu";
@@ -63,12 +64,11 @@ export class ChoosingClassroomComponent implements OnInit {
     private usService: UserService,
     private tokenServ: TokenStorageService,
     private router: Router
-    
   ) {}
-  
+
   ngOnInit() {
-    this.numeroCards=this.classroomCards.length;
-    console.log("total : "+this.numeroCards);
+    this.numeroCards = this.classroomCards.length;
+    console.log("total : " + this.numeroCards);
     if (this.tokenServ.getToken() === "undefined") {
       this.router.navigate(["/"]);
       return false;
@@ -90,15 +90,7 @@ export class ChoosingClassroomComponent implements OnInit {
     this.tokenServ.signOut();
     this.router.navigate(["/"]);
   }
-  cardClicked(){
+  cardClicked() {
     console.log("here");
   }
-  
-}
-class ClassroomCard {
-  materia: string;
-  diasMateria: string;
-  horarioMateria: string;
-  totalEstudiantes: number;
-  semestre: string;
 }

@@ -60,7 +60,7 @@
     // padding-left: 40rem;
   }
   &:hover {
-    background-color: $color-primary-blue;
+    background-color: lighten($color-primary-blue, 7.5%);
     color: $color-primary-white;
     transition: all 0.3s ease;
   }
