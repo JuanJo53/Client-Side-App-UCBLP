@@ -12,8 +12,9 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatListModule } from "@angular/material/list";
 import { RouterModule } from "@angular/router";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { CardClassroomComponent } from './components/cards/card-classroom/card-classroom.component';
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent, CardClassroomComponent],
   imports: [
     CommonModule,
     MatDividerModule,

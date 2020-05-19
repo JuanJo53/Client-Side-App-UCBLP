@@ -63,17 +63,23 @@
 </div>
 <div class="container card-container">
   <div class="row">
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div
+      *ngFor="let cards of classroomCards"
+      [ngClass]="{'col-lg-3 col-md-6 col-xs-12' : numeroCards==4,'col-lg-4 col-md-6 col-xs-12' : numeroCards===3,'col-lg-6 col-md-6 col-xs-12' : numeroCards===2,'col-lg-12' : numeroCards===1}"
+      
+    >
       <!--card-->
       <div class="classroom-card">
         <!--titulo de la clase-->
-        <p class="classroom-card__description-classroom">{{ materia }}</p>
+        <p class="classroom-card__description-classroom">
+          {{ cards.materia }}
+        </p>
         <!--#titulo de la clase-->
         <span class="classroom-card__description-detail">
           <i class="far fa-calendar-alt"></i
           ><!--horario-->
           <span class="classroom-card__description-detail-text"
-            >Days: {{ diasMateria }}</span
+            >Days: {{ cards.diasMateria }}</span
           >
           <!--#horario-->
         </span>
@@ -81,7 +87,7 @@
           <i class="fas fa-clock"></i
           ><!--horario-->
           <span class="classroom-card__description-detail-text"
-            >Schedule: {{ horarioMateria }}</span
+            >Schedule: {{ cards.horarioMateria }}</span
           >
           <!--#horario-->
         </p>
@@ -89,99 +95,17 @@
           <i class="fas fa-user-friends"></i>
           <!--total de estudiantes-->
           <span class="classroom-card__description-detail-text"
-            >Students: {{ totalEstudiantes }}</span
+            >Students: {{ cards.totalEstudiantes }}</span
           >
           <!--#total de estudiantes-->
         </span>
         <!--semestre en que se da la materia-->
         <span class="classroom-card__description-semester">
-          {{ semestre }}
+          {{ cards.semestre }}
         </span>
         <!--#semestre en que se da la materia-->
       </div>
       <!--#card-->
-    </div>
-    <div class="col-lg-3 col-md-6 col-xs-12">
-      <div class="classroom-card-container">
-        <!--card-->
-        <div class="classroom-card">
-          <!--titulo de la clase-->
-          <p class="classroom-card__description-classroom">{{ materia }}</p>
-          <!--#titulo de la clase-->
-          <span class="classroom-card__description-detail">
-            <i class="far fa-calendar-alt"></i
-            ><!--horario-->
-            <span class="classroom-card__description-detail-text"
-              >Days: {{ diasMateria }}</span
-            >
-            <!--#horario-->
-          </span>
-          <p class="classroom-card__description-detail">
-            <i class="fas fa-clock"></i
-            ><!--horario-->
-            <span class="classroom-card__description-detail-text"
-              >Schedule: {{ horarioMateria }}</span
-            >
-            <!--#horario-->
-          </p>
-          <span class="classroom-card__description-detail">
-            <i class="fas fa-user-friends"></i>
-            <!--total de estudiantes-->
-            <span class="classroom-card__description-detail-text"
-              >Students: {{ totalEstudiantes }}</span
-            >
-            <!--#total de estudiantes-->
-          </span>
-          <!--semestre en que se da la materia-->
-          <span class="classroom-card__description-semester">
-            {{ semestre }}
-          </span>
-          <!--#semestre en que se da la materia-->
-        </div>
-        <!--#card-->
-      </div>
-      <!--#contenedor de los cards-->
-    </div>
-    <div class="col-lg-3 col-md-6 col-xs-12">
-      <div class="classroom-card-container">
-        <!--card-->
-        <div class="classroom-card">
-          <!--titulo de la clase-->
-          <p class="classroom-card__description-classroom">{{ materia }}</p>
-          <!--#titulo de la clase-->
-          <span class="classroom-card__description-detail">
-            <i class="far fa-calendar-alt"></i
-            ><!--horario-->
-            <span class="classroom-card__description-detail-text"
-              >Days: {{ diasMateria }}</span
-            >
-            <!--#horario-->
-          </span>
-          <p class="classroom-card__description-detail">
-            <i class="fas fa-clock"></i
-            ><!--horario-->
-            <span class="classroom-card__description-detail-text"
-              >Schedule: {{ horarioMateria }}</span
-            >
-            <!--#horario-->
-          </p>
-          <span class="classroom-card__description-detail">
-            <i class="fas fa-user-friends"></i>
-            <!--total de estudiantes-->
-            <span class="classroom-card__description-detail-text"
-              >Students: {{ totalEstudiantes }}</span
-            >
-            <!--#total de estudiantes-->
-          </span>
-          <!--semestre en que se da la materia-->
-          <span class="classroom-card__description-semester">
-            {{ semestre }}
-          </span>
-          <!--#semestre en que se da la materia-->
-        </div>
-        <!--#card-->
-      </div>
-      <!--#contenedor de los cards-->
     </div>
   </div>
 </div>
