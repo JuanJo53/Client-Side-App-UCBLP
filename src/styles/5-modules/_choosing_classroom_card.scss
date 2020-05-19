@@ -3,6 +3,7 @@
 
 .classroom-card {
   @include custom-card(27rem, 16rem, $color-primary-white);
+
   margin: auto;
   margin-top: 2rem;
   display: flex;
@@ -50,4 +51,8 @@
     background-color: $color-primary-blue;
     color: $color-primary-white;
   }
+}
+
+.card-container {
+  @include center();
 }
