@@ -65,7 +65,7 @@ export class ChoosingClassroomComponent implements OnInit {
     private router: Router
     
   ) {}
-
+  
   ngOnInit() {
     this.numeroCards=this.classroomCards.length;
     console.log("total : "+this.numeroCards);
@@ -90,6 +90,10 @@ export class ChoosingClassroomComponent implements OnInit {
     this.tokenServ.signOut();
     this.router.navigate(["/"]);
   }
+  cardClicked(){
+    console.log("here");
+  }
+  
 }
 class ClassroomCard {
   materia: string;
