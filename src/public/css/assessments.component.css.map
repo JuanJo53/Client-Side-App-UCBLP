@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../app/modules/assessments/assessments.component.scss"
+    ],
+    "names": [],
+    "file": "assessments.component.css"
+}

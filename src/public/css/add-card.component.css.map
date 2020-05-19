@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../app/modules/dialogs/add-card/add-card.component.scss"
+    ],
+    "names": [],
+    "file": "add-card.component.css"
+}

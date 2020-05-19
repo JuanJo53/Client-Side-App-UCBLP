@@ -1,9 +1,18 @@
 @import "1-helpers/variables";
 @import "3-basics/links";
-
+.card-container {
+  @include center();
+  
+}
+.cols{
+  display: flex;
+  justify-content: center;
+}
 .classroom-card {
-  @include custom-card(37.5rem, 22.5rem, $color-primary-white);
-  @include center;
+  @include custom-card(27rem, 16rem, $color-primary-white);
+  cursor: pointer;
+  margin: auto;
+  margin: 2rem 0rem;
   display: flex;
   flex-direction: column;
   color: $color-primary-black;
@@ -13,7 +22,7 @@
     justify-content: flex-end;
     align-items: center;
     flex: 0 1 25%;
-    font-size: 3rem;
+    font-size: 2.25rem;
     //background-color: red;
     //@include custom-title(0rem, 3.5rem, $color-primary-black);
     // padding-left: 25rem;
@@ -21,11 +30,6 @@
     // padding-bottom: 9rem;
   }
   &__description-detail {
-    &-text,
-    i {
-      padding-right: 2rem;
-      padding-left: 0rem;
-    }
     flex: 1;
     //background-color: orange;
     // @include custom-title(0rem, 1.5rem, $color-primary-black);
@@ -34,6 +38,16 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+    i {
+      flex: 0 1 12.5%;
+      align-items: center;
+      justify-content: center;
+      //background-color: yellow;
+    }
+    &-text{
+      flex: 1;
+    }
+    
   }
   &__description-semester {
     flex: 0 1 10%;
@@ -46,7 +60,18 @@
     // padding-left: 40rem;
   }
   &:hover {
-    background-color: $color-primary-blue;
+    background-color: lighten($color-primary-blue, 7.5%);
     color: $color-primary-white;
+    transition: all 0.3s ease;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .card-container {
+    margin-top: 15rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .card-container {
+    margin-top: 15rem;
   }
 }

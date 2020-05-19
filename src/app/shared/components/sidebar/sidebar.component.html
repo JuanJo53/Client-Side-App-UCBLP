@@ -14,7 +14,40 @@
     ><mat-icon class="link__icon">dashboard</mat-icon
     ><span class="link__text">Dashboard</span></a
   >
-  <a
+  <mat-expansion-panel class="expansion-panel">
+    <mat-expansion-panel-header class="expansion-panel__header">
+      <mat-icon class="expansion-panel__header-icon">people</mat-icon
+      ><span class="expansion-panel__header-text">My class</span>
+    </mat-expansion-panel-header>
+    <a
+      class="sublink"
+      mat-list-item
+      routerLinkActive="List-item-active"
+      (click)="newMessage('Students')"
+      routerLink="/students"
+      ><mat-icon class="sublink__icon">people</mat-icon
+      ><span class="sublink__text">Students</span></a
+    >
+    <a
+      class="sublink"
+      mat-list-item
+      routerLinkActive="List-item-active"
+      (click)="newMessage('Assistance')"
+      routerLink="/assistance"
+      ><mat-icon class="sublink__icon">people</mat-icon
+      ><span class="sublink__text">Assistance</span></a
+    >
+    <a
+      class="sublink"
+      mat-list-item
+      routerLinkActive="List-item-active"
+      (click)="newMessage('Qualification')"
+      routerLink="/qualification"
+      ><mat-icon class="sublink__icon">people</mat-icon
+      ><span class="sublink__text">Qualification</span></a
+    >
+  </mat-expansion-panel>
+  <!-- <a
     class="link"
     mat-list-item
     routerLinkActive="List-item-active"
@@ -22,7 +55,7 @@
     routerLink="/myclass"
     ><mat-icon class="link__icon">people</mat-icon
     ><span class="link__text">My class</span></a
-  >
+  > -->
   <!-- (click)="newMessage()" -->
   <a
     class="link"

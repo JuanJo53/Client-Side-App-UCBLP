@@ -16,7 +16,9 @@
           [matMenuTriggerFor]="usermodal"
         >
           <!-- primera letra de nombre de usuario-->
-          <span class="circular-button__first-word">{{ primeraLetra }}</span>
+          <span class="circular-button__first-word">{{
+            userDocente.primaLetra
+          }}</span>
           <!-- #primera letra de nombre de usuario-->
         </button>
         <!-- #button icono de usuario-->
@@ -25,21 +27,22 @@
           <div class="user-card__content">
             <!-- icono de avatar-->
             <button class="user-card__icon" mat-fab>
-              <span class="user-card__first-word">{{ primeraLetra }}</span>
+              <span class="user-card__first-word">{{
+                userDocente.primaLetra
+              }}</span>
             </button>
             <!-- //icono de avatar-->
             <!-- nombre de usuario-->
-            <span class="user-card__name">{{ nombreUsuario }}</span>
+            <span class="user-card__name">{{ userDocente.nombreDocente }}</span>
             <!-- #nombre de correo-->
             <!-- correo de usuario-->
-            <span class="user-card__email">{{ correoUsuario }}</span>
+            <span class="user-card__email">{{
+              userDocente.correoDocente
+            }}</span>
             <!-- #correo de usuario-->
-            <!-- materia de docente-->
-            <span class="user-card__classroom">Class : {{ materia }}</span>
-            <!-- #materia de docente-->
             <!--btn para salir-->
             <button
-              (click)="salir()"
+              (click)="signout()"
               mat-stroked-button
               class="user-card__button-logout"
             >
@@ -52,46 +55,59 @@
         <!-- #modal de avatar para usuario-->
       </div>
       <!--#logo y text-->
-      <!--contenedor de los cards-->
-      <div class="classroom-card-container">
-        <!--card-->
-        <div class="classroom-card">
-          <!--titulo de la clase-->
-          <p class="classroom-card__description-classroom">{{ materia }}</p>
-          <!--#titulo de la clase-->
-          <span class="classroom-card__description-detail">
-            <i class="far fa-calendar-alt"></i
-            ><!--horario-->
-            <span class="classroom-card__description-detail-text"
-              >Days: {{ diasMateria }}</span
-            >
-            <!--#horario-->
-          </span>
-          <p class="classroom-card__description-detail">
-            <i class="fas fa-clock"></i
-            ><!--horario-->
-            <span class="classroom-card__description-detail-text"
-              >Schedule: {{ horarioMateria }}</span
-            >
-            <!--#horario-->
-          </p>
-          <span class="classroom-card__description-detail">
-            <i class="fas fa-user-friends"></i>
-            <!--total de estudiantes-->
-            <span class="classroom-card__description-detail-text"
-              >Students: {{ totalEstudiantes }}</span
-            >
-            <!--#total de estudiantes-->
-          </span>
-          <!--semestre en que se da la materia-->
-          <span class="classroom-card__description-semester">
-            {{ semestre }}
-          </span>
-          <!--#semestre en que se da la materia-->
-        </div>
-        <!--#card-->
+    </div>
+  </div>
+</div>
+<div class="container card-container">
+  <div class="row">
+    <div
+      *ngFor="let cards of classroomCards"
+      class="cols"
+      [ngClass]="{
+        'col-lg-6 col-md-6': numeroCards === 4,
+        'col-md-4 col-sm-12 col-xs-12': numeroCards === 3,
+        'col-md-6 col-sm-6 col-xs-12': numeroCards === 2,
+        'col-xs-12': numeroCards === 1
+      }"
+    >
+      <!--card-->
+      <div class="classroom-card" (click)="cardClicked()">
+        <!--titulo de la clase-->
+        <p class="classroom-card__description-classroom">
+          {{ cards.materia }}
+        </p>
+        <!--#titulo de la clase-->
+        <span class="classroom-card__description-detail">
+          <i class="far fa-calendar-alt"></i
+          ><!--horario-->
+          <span class="classroom-card__description-detail-text"
+            >Days: {{ cards.diasMateria }}</span
+          >
+          <!--#horario-->
+        </span>
+        <p class="classroom-card__description-detail">
+          <i class="fas fa-clock"></i
+          ><!--horario-->
+          <span class="classroom-card__description-detail-text"
+            >Schedule: {{ cards.horarioMateria }}</span
+          >
+          <!--#horario-->
+        </p>
+        <span class="classroom-card__description-detail">
+          <i class="fas fa-user-friends"></i>
+          <!--total de estudiantes-->
+          <span class="classroom-card__description-detail-text"
+            >Students: {{ cards.totalEstudiantes }}</span
+          >
+          <!--#total de estudiantes-->
+        </span>
+        <!--semestre en que se da la materia-->
+        <span class="classroom-card__description-semester">
+          {{ cards.semestre }}
+        </span>
+        <!--#semestre en que se da la materia-->
       </div>
-      <!--#contenedor de los cards-->
+      <!--#card-->
     </div>
   </div>
 </div>

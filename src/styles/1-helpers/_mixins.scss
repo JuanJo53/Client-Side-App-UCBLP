@@ -12,7 +12,8 @@
   font-weight: $font-weight-regular;
   font-size: $font-size;
   color: $color;
-  align-items: center;
+  // display: flex;
+  // align-items: flex-start;
 }
 //----------------//TITLE-----------------------
 
@@ -27,9 +28,9 @@
 
 //-----------------CLASSROOMCARD----------------
 @mixin custom-card($width, $height, $color) {
-  z-index: 5;
-  position: absolute;
-  transform: translate(-50%, -50%);
+  //z-index: 5;
+  //position: absolute;
+  //transform: translate(-50%, -50%);
   width: $width;
   height: $height;
   background-color: $color;
@@ -66,3 +67,4 @@
   overflow: hidden;
 }
 //-----------------//CUSTOMCARD----------------
+

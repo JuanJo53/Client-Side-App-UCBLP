@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+  
+}
+
+.header {
+  background-color: $color-primary-blue;
+  color: $color-primary-white;
+}
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  text-align: center;
+}
+mat-paginator{
+  margin-bottom: 5rem;
+}

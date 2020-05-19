@@ -2,7 +2,9 @@
 @import "1-helpers/mixins";
 
 .custom-card {
-  @include custom-card-dinamic(32rem, 18rem, $color-primary-white);
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
   //cursor: pointer;
   &__img {
     width: 100%;
@@ -48,18 +50,18 @@
     align-items: flex-start;
     &--title {
       //padding: 0.5rem;
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin: 0.5rem 0;
     }
     &--subtitle {
       //padding: 0.5rem;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-style: italic;
       margin-top: 0.5rem 0;
     }
   }
   &:hover {
-    @include custom-card-dinamic(33rem, 19rem, $color-primary-white);
+    @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
     transition: all 0.1s ease;
   }
 }
