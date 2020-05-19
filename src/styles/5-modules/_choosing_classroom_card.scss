@@ -2,8 +2,12 @@
 @import "3-basics/links";
 .card-container {
   @include center();
+  
 }
-
+.cols{
+  display: flex;
+  justify-content: center;
+}
 .classroom-card {
   @include custom-card(27rem, 16rem, $color-primary-white);
   cursor: pointer;
@@ -26,11 +30,6 @@
     // padding-bottom: 9rem;
   }
   &__description-detail {
-    &-text,
-    i {
-      padding-right: 2rem;
-      padding-left: 0rem;
-    }
     flex: 1;
     //background-color: orange;
     // @include custom-title(0rem, 1.5rem, $color-primary-black);
@@ -39,6 +38,16 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+    i {
+      flex: 0 1 12.5%;
+      align-items: center;
+      justify-content: center;
+      //background-color: yellow;
+    }
+    &-text{
+      flex: 1;
+    }
+    
   }
   &__description-semester {
     flex: 0 1 10%;
@@ -53,9 +62,15 @@
   &:hover {
     background-color: $color-primary-blue;
     color: $color-primary-white;
+    transition: all 0.3s ease;
   }
 }
 @media only screen and (max-width: 767px) {
+  .card-container {
+    margin-top: 15rem;
+  }
+}
+@media only screen and (max-width: 991px) {
   .card-container {
     margin-top: 15rem;
   }
