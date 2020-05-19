@@ -12,16 +12,21 @@ import { ResourcesComponent } from "./modules/resources/resources.component";
 import { EvaluationComponent } from "./modules/evaluation/evaluation.component";
 import { ThemesComponent } from "./modules/themes/themes.component";
 import { AssessmentsComponent } from "./modules/assessments/assessments.component";
+import { ProfileDocenteResolver} from './_resolvers/docente/profile-docente.resolver';
+import {AuthDocenteResolver} from './_resolvers/docente/auth-docente.resolver';
+import { ClassroomDocenteResolver } from './_resolvers/docente/classroom-info-docente.resolver';
 
 const routes: Routes = [
-  { path: "", component: LoginComponent },
-  { path: "classroom", component: ChoosingClassroomComponent },
+  { path: "", component: LoginComponent ,resolve:{login:AuthDocenteResolver}},
+  { path: "classroom", component: ChoosingClassroomComponent ,resolve:{profile:ProfileDocenteResolver,classroom:ClassroomDocenteResolver}},
   {
     path: "",
     component: DefaultComponent,
+    resolve:{profile:ProfileDocenteResolver},
     children: [
       {
         path: "dashboard",
+        
         component: DashboardComponent,
       },
       {

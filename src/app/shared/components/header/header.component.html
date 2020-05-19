@@ -50,16 +50,16 @@
               mat-mini-fab
               [matMenuTriggerFor]="usermodal"
             >
-              <span class="circular-button__first-word">M</span>
+              <span class="circular-button__first-word">{{ userDocente.primaLetra }}</span>
             </button>
             <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
               <div class="user-card__content">
                 <button class="user-card__icon" mat-fab>
-                  <span class="user-card__first-word">M</span>
+                  <span class="user-card__first-word">{{ userDocente.primaLetra }}</span>
                 </button>
-                <span class="user-card__name">Marcelo Ticona</span>
-                <span class="user-card__email">m.ticona@acad.ucb.edu.bo</span>
-                <span class="user-card__classroom">Class : English 2</span>
+                <span class="user-card__name">{{ userDocente.nombreDocente }}</span>
+                <span class="user-card__email">{{ userDocente.correoDocente }}</span>
+                <span class="user-card__classroom">Class : {{ materia }}</span>
                 <button mat-stroked-button class="user-card__button-logout">
                   <mat-icon>exit_to_app</mat-icon>
                   Sign out
