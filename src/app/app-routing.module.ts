@@ -14,16 +14,32 @@ import { AssessmentsComponent } from "./modules/assessments/assessments.componen
 import { StudentsComponent } from "./modules/students/students.component";
 import { AssistanceComponent } from "./modules/assistance/assistance.component";
 import { QualificationComponent } from "./modules/qualification/qualification.component";
+import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
+import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
+import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
 
 const routes: Routes = [
-  { path: "", component: LoginComponent },
-  { path: "classroom", component: ChoosingClassroomComponent },
+  {
+    path: "",
+    component: LoginComponent,
+    resolve: { login: AuthDocenteResolver },
+  },
+  {
+    path: "classroom",
+    component: ChoosingClassroomComponent,
+    resolve: {
+      profile: ProfileDocenteResolver,
+      classroom: ClassroomDocenteResolver,
+    },
+  },
   {
     path: "",
     component: DefaultComponent,
+    resolve: { profile: ProfileDocenteResolver },
     children: [
       {
         path: "dashboard",
+
         component: DashboardComponent,
       },
       {
