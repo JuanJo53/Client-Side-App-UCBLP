@@ -34,13 +34,6 @@ export class ChoosingClassroomComponent implements OnInit {
       totalEstudiantes: 30,
       semestre: "1/2020",
     },
-    {
-      materia: "English 4",
-      diasMateria: "Mon - Tue - Wed - Thu",
-      horarioMateria: "18:15 - 19:45",
-      totalEstudiantes: 30,
-      semestre: "1/2020",
-    },
   ];
 
   userDocente: Teacher = {
@@ -93,7 +86,9 @@ export class ChoosingClassroomComponent implements OnInit {
   }
   signout(): void {
     this.tokenServ.signOut();
-    this.router.dispose();
     this.router.navigate(["/"]);
+  }
+  cardClicked() {
+    console.log("here");
   }
 }
