@@ -1,4 +1,4 @@
-export interface CardClassroom {
+export class CardClassroom {
   materia: string;
   diasMateria: string;
   horarioMateria: string;
