@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { TeacherLogin } from 'src/app/models/TeacherLogin';
 import { from } from 'rxjs';
-import { AuthService } from 'src/app/_services/auth.service';
-import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { AuthService } from 'src/app/_services/general_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: "app-login",
@@ -27,8 +27,7 @@ export class LoginComponent implements OnInit {
      {
        next:data=>{
         this.tokenStorage.saveToken(data.token); 
-        console.log("Tocken "+this.tokenStorage.getToken());
-        if(this.tokenStorage.getToken()==='undefined'){
+        if(this.tokenStorage.getToken()==='undefined'||this.tokenStorage.getToken()==null){
          console.log("No se pudo iniciar sesión");
         }
         else{
