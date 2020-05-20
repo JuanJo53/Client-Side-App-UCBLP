@@ -34,7 +34,12 @@
             <!-- //icono de avatar-->
             <!-- nombre de usuario-->
             <span class="user-card__name">{{ userDocente.nombreDocente }}</span>
-            <!-- #nombre de correo-->
+            <!-- #nombre de usuario-->
+            <!-- nombre de apellido-->
+            <span class="user-card__lastname">{{
+              userDocente.nombreDocente
+            }}</span>
+            <!-- #nombre de apellido-->
             <!-- correo de usuario-->
             <span class="user-card__email">{{
               userDocente.correoDocente
@@ -65,7 +70,7 @@
       class="cols"
       [ngClass]="{
         'col-lg-6 col-md-6': numeroCards === 4,
-        'col-md-4 col-sm-12 col-xs-12': numeroCards === 3,
+        'col-lg-4 col-sm-12 col-xs-12': numeroCards === 3,
         'col-md-6 col-sm-6 col-xs-12': numeroCards === 2,
         'col-xs-12': numeroCards === 1
       }"

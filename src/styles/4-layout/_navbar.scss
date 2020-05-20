@@ -44,6 +44,9 @@
   &__name {
     @include custom-title-regular(0.5rem, 1.75rem, $color-primary-blue);
   }
+  &__lastname {
+    @include custom-title-regular(0.5rem, 1.75rem, $color-primary-blue);
+  }
   &__email {
     @include custom-title-regular(0.5rem, 1.25rem, $color-primary-gray);
   }
