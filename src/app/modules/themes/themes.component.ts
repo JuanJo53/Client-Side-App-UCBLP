@@ -5,7 +5,7 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
-import {AddCardComponent } from "../dialogs/add-card/add-card.component";
+import { AddThemeComponent } from "../dialogs/add-theme/add-theme.component";
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -26,7 +26,7 @@ export class ThemesComponent implements OnInit {
   }
 
   add() {
-    const dialogRef = this.dialog.open(AddCardComponent, { width: "400px" });
+    const dialogRef = this.dialog.open(AddThemeComponent, { width: "400px" });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });

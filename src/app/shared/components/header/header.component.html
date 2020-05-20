@@ -64,28 +64,26 @@
               Sign out
             </button>
           </div>
-          <li>
-            <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
-              <div class="user-card__content">
-                <button class="user-card__icon" mat-fab>
-                  <span class="user-card__first-word">{{
-                    userDocente.primaLetra
-                  }}</span>
-                </button>
-                <span class="user-card__name">{{
-                  userDocente.nombreDocente
+          <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
+            <div class="user-card__content">
+              <button class="user-card__icon" mat-fab>
+                <span class="user-card__first-word">{{
+                  userDocente.primaLetra
                 }}</span>
-                <span class="user-card__email">{{
-                  userDocente.correoDocente
-                }}</span>
-                <span class="user-card__classroom">Class : {{ materia }}</span>
-                <button mat-stroked-button class="user-card__button-logout">
-                  <mat-icon>exit_to_app</mat-icon>
-                  Sign out
-                </button>
-              </div>
-            </mat-menu>
-          </li>
+              </button>
+              <span class="user-card__name">{{
+                userDocente.nombreDocente
+              }}</span>
+              <span class="user-card__email">{{
+                userDocente.correoDocente
+              }}</span>
+              <span class="user-card__classroom">Class : {{ materia }}</span>
+              <button mat-stroked-button class="user-card__button-logout">
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+              </button>
+            </div>
+          </mat-menu>
         </mat-menu>
       </div>
       <!-- </div> -->

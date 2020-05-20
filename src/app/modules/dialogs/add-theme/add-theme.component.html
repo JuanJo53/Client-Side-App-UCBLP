@@ -1,0 +1,57 @@
+<div class="dialog">
+    <div class="dialog-subtitle">
+      <div class="dialog-subtitle__text">
+        <span>Add Theme</span>
+      </div>
+    </div>
+    <mat-dialog-content class="mat-typography">
+      <form class="dialogforms" enctype="multipart/form-data">
+        <mat-form-field appearance="outline">
+          <mat-label>Theme's name</mat-label>
+          <!-- Input para el nombre del tema-->
+          <input
+            type="text"
+            class="input-form"
+            matInput
+            placeholder="Name"
+            name="nombreTema"
+          />
+          <!-- //Input para el nombre del tema-->
+        </mat-form-field>
+        <div class="dialog__container-image">
+          <div class="dialog__container-image--left-side">
+            <img [src]="imageUrl" class="settings-image" />
+          </div>
+          <div class="dialog__container-image--right-side">
+            <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)"> -->
+            <input
+              #csvInput
+              hidden="true"
+              type="file"
+              onclick="this.value=null"
+              (change)="handleFileInput($event.target.files)"
+              accept=".jpg"
+            />
+            <button
+              class="subtitle-compound__circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
+              <mat-icon class="subtitle-compound__circular-button__icon"
+                >image</mat-icon
+              >
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close class="dialog-button-cancel">
+        Cancel
+      </button>
+      <button mat-button class="dialog-button-accept">
+        Accept
+      </button>
+    </mat-dialog-actions>
+  </div>
+  

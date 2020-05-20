@@ -28,6 +28,7 @@ import { StudentsComponent } from 'src/app/modules/students/students.component';
 import { AssistanceComponent } from 'src/app/modules/assistance/assistance.component';
 import { QualificationComponent } from 'src/app/modules/qualification/qualification.component';
 import { AddCardComponent } from 'src/app/modules/dialogs/add-card/add-card.component';
+import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AddCardComponent } from 'src/app/modules/dialogs/add-card/add-card.comp
     StudentsComponent,
     AssistanceComponent,
     QualificationComponent,
-    AddCardComponent
+    AddCardComponent,
+    AddThemeComponent
   ],
   imports: [
     CommonModule,
