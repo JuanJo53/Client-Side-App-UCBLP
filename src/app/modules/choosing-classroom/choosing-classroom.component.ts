@@ -5,8 +5,8 @@ import { UserService } from "src/app/_services/general_services/user.service";
 import { TokenStorageService } from "src/app/_services/general_services/token-storage.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { CardClassroom } from "src/app/models/CardClassroom";
-import { CardClassroomComponent } from 'src/app/shared/components/cards/card-classroom/card-classroom.component';
-import { ClassroomDocenteResolver } from 'src/app/_resolvers/docente/classroom-info-docente.resolver';
+import { CardClassroomComponent } from "src/app/shared/components/cards/card-classroom/card-classroom.component";
+import { ClassroomDocenteResolver } from "src/app/_resolvers/docente/classroom-info-docente.resolver";
 @Component({
   selector: "app-choosing-classroom",
   templateUrl: "./choosing-classroom.component.html",
@@ -14,17 +14,15 @@ import { ClassroomDocenteResolver } from 'src/app/_resolvers/docente/classroom-i
 })
 export class ChoosingClassroomComponent implements OnInit {
   //-----variables-----
-  
-  classroomCards: CardClassroom[] = [
-    
-  ];
-  cardClass:CardClassroom={
-    diasMateria:"",
-    horarioMateria:"",
-    materia:"",
-    semestre:"",
-    totalEstudiantes:0,
-  }
+
+  classroomCards: CardClassroom[] = [];
+  cardClass: CardClassroom = {
+    diasMateria: "",
+    horarioMateria: "",
+    materia: "",
+    semestre: "",
+    totalEstudiantes: 0,
+  };
   userDocente: Teacher = {
     nombreDocente: "",
     correoDocente: "",
@@ -46,42 +44,50 @@ export class ChoosingClassroomComponent implements OnInit {
     private tokenServ: TokenStorageService,
     private router: Router
   ) {}
-  agregarCards(datos){
-    for(let i in datos){
+  agregarCards(datos) {
+    for (let i in datos) {
       console.log(datos[i]);
-      var dias:string="";
-     var horarioini:Array<String>=[];
-     var horariofin:Array<String>=[];
-      var horario:string="";
-      for(let j in datos[i].dias){
-        var datadi=datos[i].dias[j];
-        if(dias===""){          
-          dias+=datadi.diaSemana;
+      var dias: string = "";
+      var horarioini: Array<String> = [];
+      var horariofin: Array<String> = [];
+      var horario: string = "";
+      for (let j in datos[i].dias) {
+        var datadi = datos[i].dias[j];
+        if (dias === "") {
+          dias += datadi.diaSemana;
+        } else {
+          dias += " - " + datadi.diaSemana;
         }
-        else{
-          dias+=" - "+datadi.diaSemana;
-
-        }
-        if(!horarioini.includes(datadi.horaInicio)&&!horariofin.includes(datadi.horaConclusion)){
+        if (
+          !horarioini.includes(datadi.horaInicio) &&
+          !horariofin.includes(datadi.horaConclusion)
+        ) {
           horarioini.push(datadi.horaInicio);
           horariofin.push(datadi.horaConclusion);
-          if(horario===""){
-          horario+=datadi.horaInicio.substring(0,5)+" - "+datadi.horaConclusion.substring(0,5);}
-          else{
-          horario+=" | "+datadi.horaInicio.substring(0,5)+" - "+datadi.horaConclusion.substring(0,5);}
+          if (horario === "") {
+            horario +=
+              datadi.horaInicio.substring(0, 5) +
+              " - " +
+              datadi.horaConclusion.substring(0, 5);
+          } else {
+            horario +=
+              " | " +
+              datadi.horaInicio.substring(0, 5) +
+              " - " +
+              datadi.horaConclusion.substring(0, 5);
+          }
         }
       }
-      let auxCard=new CardClassroom();
-      
-      auxCard.materia=datos[i].nombre_curso;
-      auxCard.diasMateria=dias;
-      auxCard.horarioMateria=horario;
-      auxCard.semestre=datos[i].semestre;
-      auxCard.totalEstudiantes=datos[i].estudiantes;
-      this.classroomCards.push(auxCard);
+      let auxCard = new CardClassroom();
 
+      auxCard.materia = datos[i].nombre_curso;
+      auxCard.diasMateria = dias;
+      auxCard.horarioMateria = horario;
+      auxCard.semestre = datos[i].semestre;
+      auxCard.totalEstudiantes = datos[i].estudiantes;
+      this.classroomCards.push(auxCard);
     }
-  }  
+  }
   ngOnInit() {
     if (this.tokenServ.getToken() === "undefined") {
       this.router.navigate(["/"]);
