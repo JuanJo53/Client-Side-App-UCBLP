@@ -92,9 +92,9 @@
   }
 }
 .circular-button-navbar {
-  margin-left: 1rem;
-  background-color: $color-primary-white;
-  color: $color-primary-blue;
+  margin-left: 1rem!important;
+  background-color: $color-primary-white!important;
+  color: $color-primary-blue!important;
   position: relative;
   &__icon {
     font-size: 2rem;

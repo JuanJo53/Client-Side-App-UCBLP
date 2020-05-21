@@ -10,17 +10,26 @@
 //3 - BASICS 
 @import '3-basics/base';
 @import '3-basics/buttons';
+@import '3-basics/inputs';
 @import '3-basics/links';
+@import '3-basics/navbar-brand';
 @import '3-basics/reset';
 @import '3-basics/selection-colors';
+@import '3-basics/tables';
 @import '3-basics/typography';
 
 //4 - LAYOUT 
 @import '4-layout/grid';
+@import '4-layout/navbar';
 @import '4-layout/navigation';
 @import '4-layout/sidebar';
 
 //5- MODULES 
+@import '5-modules/choosing_classroom_card';
+@import '5-modules/custom_card';
+@import '5-modules/custom_subtitle';
+@import '5-modules/dialogs';
+@import '5-modules/login_card';
 @import '5-modules/logo';
 
 //6- PAGES 
