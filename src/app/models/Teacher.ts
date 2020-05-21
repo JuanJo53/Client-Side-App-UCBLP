@@ -1,5 +1,6 @@
 export interface Teacher{
-    nombreDocente:string,  
+    nombreDocente:string, 
+    apellidoDocente:string,   
     correoDocente:string,
     primaLetra:string
 }

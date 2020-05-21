@@ -55,11 +55,12 @@
                 userDocente.primaLetra
               }}</span>
             </button>
-            <span class="user-card__name">Rolando Marcelo</span>
-            <span class="user-card__lastname">Ticona</span>
-            <span class="user-card__email">m.ticona@acad.ucb.edu.bo</span>
+            <span class="user-card__name">{{userDocente.nombreDocente}}</span>
+            <span class="user-card__lastname">{{userDocente.apellidoDocente}}</span>
+            <span class="user-card__email">{{userDocente.correoDocente}}</span>
             <span class="user-card__classroom">Class : English 2</span>
-            <button mat-stroked-button class="user-card__button-logout">
+            <button mat-stroked-button class="user-card__button-logout"
+            (click)="signout()">
               <mat-icon>exit_to_app</mat-icon>
               Sign out
             </button>
