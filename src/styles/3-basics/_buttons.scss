@@ -50,35 +50,14 @@
     color: $color-primary-white;
   }
 }
-.table__button {
-  &--normal {
-    background-color: $color-primary-blue;
-    color: $color-primary-white;
-    margin: 0rem 0.5rem;
-  }
-  &--negative {
-    background-color: $color-primary-red;
-    color: $color-primary-white;
-    margin: 0rem 0.5rem;
-  }
-}
-.toggle-button {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: $color-primary-white;
-  color: $color-primary-blue;
-  &:hover {
-    background-color: $color-primary-blue;
-    color: $color-primary-white;
-  }
-}
+
+//-----buttons insdie custom card
 .circular-button-custom-card {
-  margin-left: 0.5rem;
-  background-color: transparent;
-  border: 1px solid $color-primary-white;
-  box-shadow: none;
-  opacity: 90%;
+  margin-left: 0.5rem !important;
+  background-color: transparent !important;
+  border: 1px solid $color-primary-white !important;
+  box-shadow: none !important;
+  opacity: 90% !important;
   position: relative;
   // height: 3.5rem;
   // width: 3.5rem;
@@ -91,10 +70,11 @@
     border: none;
   }
 }
+//-----#buttons insdie custom card
 .circular-button-navbar {
-  margin-left: 1rem!important;
-  background-color: $color-primary-white!important;
-  color: $color-primary-blue!important;
+  margin-left: 1rem !important;
+  background-color: $color-primary-white !important;
+  color: $color-primary-blue !important;
   position: relative;
   &__icon {
     font-size: 2rem;
@@ -120,3 +100,36 @@
   background-color: $color-primary-blue;
   color: $color-primary-white;
 }
+//-----sidevar-----
+.toggle-button {
+  position: absolute !important;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: $color-primary-white !important;
+  color: $color-primary-blue !important;
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}
+//-----#sidevar-----
+//-----button inside subtitle-----
+.circular-button-subtitle {
+  background-color: $color-primary-blue !important;
+  margin-left: 1rem;
+}
+//-----#button inside subtitle-----
+//-----table button-----
+.circular-button-table {
+  &--normal {
+    background-color: $color-primary-blue !important;
+    color: $color-primary-white !important;
+    margin: 0rem 0.5rem !important;
+  }
+  &--negative {
+    background-color: $color-primary-red !important;
+    color: $color-primary-white !important;
+    margin: 0rem 0.5rem !important;
+  }
+}
+//-----#table button-----

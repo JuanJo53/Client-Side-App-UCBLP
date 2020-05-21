@@ -66,17 +66,38 @@
   }
 }
 
-// :host {
-//   .mat-icon {
-//     vertical-align: middle;
-//   }
-// }
-// .sidebar__user {
-//   tex
-//   img {
-//     object-fit: cover;
-//   }
-// }
-// .link:first-child {
-//   border-top: 0.1rem solid red;
-// }
+::ng-deep .mat-expansion-panel-body {
+  padding: 0 !important;
+}
+::ng-deep .mat-expansion-panel-header {
+  padding: 0 1.5rem !important;
+  font-size: 1.6rem;
+}
+::ng-deep .mat-expansion-indicator::after {
+  color: $color-primary-white;
+}
+::ng-deep .mat-content {
+  align-items: center;
+}
+
+mat-expansion-panel {
+  background-color: transparent !important;
+  border-bottom: 0.1rem solid $color-primary-white;
+  box-shadow: none;
+  border-radius: 0rem;
+}
+
+.expansion-panel {
+  &__header {
+    color: $color-primary-white !important;
+    &-icon {
+      @include margin-left-right(1.5rem, 2rem);
+    }
+    &-text {
+      @include margin-left-right(1.5rem, 2rem);
+    }
+    &:hover {
+      background-color: rgba($color-primary-white, 0.3) !important;
+    }
+  }
+}

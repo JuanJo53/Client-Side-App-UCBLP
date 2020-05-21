@@ -1,21 +1,25 @@
 table {
   width: 100%;
-  
+  margin-top: 5rem;
+}
+.header-table {
+  background-color: $color-primary-blue !important;
+  color: $color-primary-white !important;
+} 
+.mat-sort-header-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+.mat-sort-header-arrow {
+  color: $color-primary-white!important;
 }
 
-.header {
-  background-color: $color-primary-blue;
-  color: $color-primary-white;
-}
-:host ::ng-deep .mat-sort-header-container {
-  display: flex;
-  justify-content: center;
-}
-
-th.mat-header-cell,
 td.mat-cell {
-  text-align: center;
+  text-align: center ;
 }
-mat-paginator{
-  margin-bottom: 5rem;
+mat-paginator {
+  margin-bottom: 5rem !important;
+}
+th.mat-header-cell {
+  text-align: center !important;
 }

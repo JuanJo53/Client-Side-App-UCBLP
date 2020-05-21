@@ -5,7 +5,7 @@
   background-color: $color-primary-red !important;
   //padding:0!important;
   &__container {
-    padding: 0;
+    padding: 0rem!important;
     display: flex;
     justify-content: space-between;
   }
@@ -76,7 +76,7 @@
   }
 }
 
-::ng-deep .classroom-card {
+::ng-deep .classroom-choose-card {
   margin-top: 1.5rem;
   //background-color: blue!important;
   &__content {
