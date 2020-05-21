@@ -25,6 +25,7 @@ export class ChoosingClassroomComponent implements OnInit {
   };
   userDocente: Teacher = {
     nombreDocente: "",
+    apellidoDocente: "",
     correoDocente: "",
     primaLetra: "",
   };
@@ -87,8 +88,11 @@ export class ChoosingClassroomComponent implements OnInit {
       auxCard.totalEstudiantes = datos[i].estudiantes;
       this.classroomCards.push(auxCard);
     }
+    this.numeroCards = this.classroomCards.length;
   }
   ngOnInit() {
+   
+    console.log("size : " + this.numeroCards);
     if (this.tokenServ.getToken() === "undefined") {
       this.router.navigate(["/"]);
       return false;
@@ -97,12 +101,9 @@ export class ChoosingClassroomComponent implements OnInit {
         next: (data) => {
           this.agregarCards(data.classroom);
           this.userDocente.correoDocente = data.profile.correo_docente;
-          this.userDocente.nombreDocente =
-            data.profile.nombre_docente +
-            " " +
-            data.profile.ap_pat_docente +
-            " " +
-            data.profile.ap_mat_docente;
+          this.userDocente.nombreDocente = data.profile.nombre_docente;
+          this.userDocente.apellidoDocente =
+            data.profile.ap_pat_docente + " " + data.profile.ap_mat_docente;
           this.userDocente.primaLetra = data.profile.nombre_docente.substring(
             0,
             1
