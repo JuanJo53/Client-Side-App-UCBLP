@@ -1,10 +1,10 @@
 @import "1-helpers/variables";
+@import "1-helpers/mixins";
 @import "3-basics/links";
 .card-container {
   @include center();
-  
 }
-.cols{
+.cols {
   display: flex;
   justify-content: center;
 }
@@ -12,7 +12,6 @@
   @include custom-card(27rem, 16rem, $color-primary-white);
   cursor: pointer;
   margin: auto;
-  margin: 2rem 0rem;
   display: flex;
   flex-direction: column;
   color: $color-primary-black;
@@ -23,11 +22,6 @@
     align-items: center;
     flex: 0 1 25%;
     font-size: 2.25rem;
-    //background-color: red;
-    //@include custom-title(0rem, 3.5rem, $color-primary-black);
-    // padding-left: 25rem;
-    // padding-top: 1rem;
-    // padding-bottom: 9rem;
   }
   &__description-detail {
     flex: 1;
@@ -37,17 +31,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0;
+    margin: 0 !important;
     i {
       flex: 0 1 12.5%;
       align-items: center;
       justify-content: center;
       //background-color: yellow;
     }
-    &-text{
+    &-text {
       flex: 1;
     }
-    
   }
   &__description-semester {
     flex: 0 1 10%;
@@ -65,6 +58,23 @@
     transition: all 0.3s ease;
   }
 }
+
+.bg-top-img {
+  background-color: orange;
+  width: 100%;
+  height: 50vh;
+  background-image: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $color-primary-blue, $alpha: 0.85);
+    color: $color-primary-white;
+    font-weight: $font-weight-regular;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .card-container {
     margin-top: 15rem;

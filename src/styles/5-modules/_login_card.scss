@@ -86,11 +86,11 @@
     width: 100%;
   }
   &__button {
-    width: 100%;
-    background: $color-primary-blue;
-    color: $color-primary-white;
-    font-size: 1.5rem;
-    border-radius: 3rem;
+    width: 100% !important;
+    background: $color-primary-blue !important;
+    color: $color-primary-white !important;
+    font-size: 1.5rem !important;
+    border-radius: 3rem !important;
     cursor: pointer;
   }
 }

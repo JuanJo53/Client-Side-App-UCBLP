@@ -3,15 +3,18 @@
     <div class="container">
       <!--logo y text-->
       <div class="navbar-brand">
-        <!-- logo-->
-        <img [src]="mylogo" class="navbar-brand__img" />
-        <!-- #logo-->
-        <!-- texto-->
-        <div class="navbar-brand__text">UCB English for teachers</div>
-        <!-- #texto-->
-        <!-- button icono de usuario-->
+        <div class="navbar-brand__container">
+          <!-- logo-->
+          <img [src]="mylogo" class="navbar-brand__img" />
+          <!-- #logo-->
+          <!-- texto-->
+          <div class="navbar-brand__text">UCB English for teachers</div>
+          <!-- #texto-->
+          <!-- button icono de usuario-->
+        </div>
+        <!-- <div class="navbar-brand__buttons"> -->
         <button
-          class="circular-button"
+          class="circular-button-brand"
           mat-mini-fab
           [matMenuTriggerFor]="usermodal"
         >
@@ -22,6 +25,7 @@
           <!-- #primera letra de nombre de usuario-->
         </button>
         <!-- #button icono de usuario-->
+        <!-- </div> -->
         <!-- modal de avatar para usuario-->
         <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
           <div class="user-card__content">

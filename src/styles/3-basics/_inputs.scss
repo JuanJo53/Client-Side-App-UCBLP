@@ -1,56 +1,55 @@
 // color input button
-::ng-deep {
-  // mat-icon-stepper selected color change
-  // .mat-step-header .mat-step-icon-selected,
-  // .mat-step-header .mat-step-icon-state-done,
-  // .mat-step-header .mat-step-icon-state-edit {
-  //   background-color: orange !important;
-  // }
 
-  // // mat-input error outline color
-  // .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
-  //   .mat-form-field-outline-thick {
-  //   color: orange !important;
-  //   opacity: 0.8 !important;
-  // }
+// mat-icon-stepper selected color change
+// .mat-step-header .mat-step-icon-selected,
+// .mat-step-header .mat-step-icon-state-done,
+// .mat-step-header .mat-step-icon-state-edit {
+//   background-color: orange !important;
+// }
 
-  // // mat-input error caret color
-  // .mat-form-field-invalid .mat-input-element,
-  // .mat-warn .mat-input-element {
-  //   caret-color: orange  !important;
-  // }
+// // mat-input error outline color
+// .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+//   .mat-form-field-outline-thick {
+//   color: orange !important;
+//   opacity: 0.8 !important;
+// }
 
-  // mat-label normal state style hints
-  // .mat-form-field-label {
-  //   color: $color-secondary-blue !important;
-  // }
+// // mat-input error caret color
+// .mat-form-field-invalid .mat-input-element,
+// .mat-warn .mat-input-element {
+//   caret-color: orange  !important;
+// }
 
-  // mat-label error style
-  // .mat-form-field.mat-form-field-invalid .mat-form-field-label {
-  //   color: orange!important;
-  // }
+// mat-label normal state style hints
+// .mat-form-field-label {
+//   color: $color-secondary-blue !important;
+// }
 
-  // input outline color input border
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: $color-secondary-blue !important;
-  }
+// mat-label error style
+// .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+//   color: orange!important;
+// }
 
-  // mat-input focused color input border active
-  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color: $color-secondary-blue !important;
-  }
-
-  // mat-input caret color |
-  .mat-input-element {
-    caret-color: $color-primary-blue !important;
-  }
-  
-  // mat-label focused style input name over
-  .mat-form-field.mat-focused .mat-form-field-label {
-    color: $color-secondary-blue !important;
-  }
+// input outline color input border
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $color-secondary-blue !important;
 }
 
-.input-form{
+// mat-input focused color input border active
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $color-secondary-blue !important;
+}
+
+// mat-input caret color |
+.mat-input-element {
+  caret-color: $color-primary-blue !important;
+}
+
+// mat-label focused style input name over
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $color-secondary-blue !important;
+}
+
+.input-form {
   font-size: 1.25rem;
 }

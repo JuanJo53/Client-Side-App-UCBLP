@@ -3,10 +3,12 @@
     <div class="container">
       <!-- Logo y texto -->
       <div class="navbar-brand">
-        <!-- imagen de logo-->
-        <img [src]="imagenLogo" class="navbar-brand__img" />
-        <!-- texto de logo-->
-        <div class="navbar-brand__text">{{ textoLogo }}</div>
+        <div class="navbar-brand__container">
+          <!-- imagen de logo-->
+          <img [src]="imagenLogo" class="navbar-brand__img" />
+          <!-- texto de logo-->
+          <div class="navbar-brand__text">{{ textoLogo }}</div>
+        </div>
       </div>
       <!-- //nombre de marca -->
       <!-- Login card -->
@@ -16,7 +18,7 @@
             <div class="login-card__img-overlay">
               <!--Texto para el usuario izquierda-->
               <div class="login-card__img-text">
-                <p>UCB English for {{ usuario }}</p>
+                <p>UCB English for teachers</p>
               </div>
               <!--//Texto para el usuario izquierda-->
             </div>

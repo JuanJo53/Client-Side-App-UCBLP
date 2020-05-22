@@ -30,10 +30,11 @@
     outline: 0;
   }
 }
+
 .circular-button {
-  background-color: $color-primary-white;
-  color: $color-primary-blue;
-  position: relative;
+  background-color: $color-primary-white !important;
+  color: $color-primary-blue !important;
+  position: relative !important;
   &__icon {
     font-size: 2rem;
   }
@@ -51,6 +52,30 @@
   }
 }
 
+//------circular button navbar brand------
+.circular-button-brand {
+  padding: 2rem 0rem;
+  margin-left: auto!important;
+  background-color: $color-primary-white !important;
+  color: $color-primary-blue !important;
+  position: relative !important;
+  &__icon {
+    font-size: 2rem;
+  }
+  &__first-word {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__class {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}
+//------#circular button navbar brand------
 //-----buttons insdie custom card
 .circular-button-custom-card {
   margin-left: 0.5rem !important;

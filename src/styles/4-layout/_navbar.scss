@@ -21,7 +21,7 @@
     justify-content: flex-start;
   }
 }
-::ng-deep .user-card {
+.user-card {
   margin-top: 1.5rem;
   //background-color: blue!important;
   &__content {
@@ -56,11 +56,11 @@
   }
   &__button-logout {
     margin-top: 1rem !important;
-    color: $color-primary-gray;
+    color: $color-primary-gray !important;
   }
 }
 
-::ng-deep .notification-card {
+ .notification-card {
   //background-color: blue!important;
   margin-top: 1.5rem;
   &__content {
@@ -76,7 +76,7 @@
   }
 }
 
-::ng-deep .classroom-choose-card {
+.classroom-choose-card {
   margin-top: 1.5rem;
   //background-color: blue!important;
   &__content {
