@@ -1,0 +1,38 @@
+<div class="dialog">
+  <!--subtitle-->
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Add Student</span>
+    </div>
+  </div>
+  <!--#subtitle-->
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogforms" enctype="multipart/form-data">
+      <mat-form-field appearance="outline">
+        <mat-label>Student's academic email</mat-label>
+        <!-- Input para el nombre del tema-->
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder="Academic Email"
+          name="email academico"
+          [(ngModel)]="emailAcademico"
+        />
+        <!-- //Input para el nombre del tema-->
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!--cancel btn-->
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Cancel
+    </button>
+    <!--#cancel btn-->
+    <!--accept btn-->
+    <button mat-button class="dialog-button-accept" (click)="aceptar()">
+      Accept
+    </button>
+    <!--#accept btn-->
+  </mat-dialog-actions>
+</div>

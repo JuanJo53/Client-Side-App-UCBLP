@@ -6,6 +6,7 @@ import {
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
 import { AddThemeComponent } from "../dialogs/add-theme/add-theme.component";
+import { DeleteItemService } from "../../services/dialogs/delete-item.service";
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -14,10 +15,13 @@ import { AddThemeComponent } from "../dialogs/add-theme/add-theme.component";
 export class ThemesComponent implements OnInit {
   tema = "Theme 1";
   descripcion = "Present";
-  link = "Themes";
+  item = "theme";
 
-  ngOnInit(): void {}
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private data: DeleteItemService) {}
+  ngOnInit(): void {
+    this.data.changeMessage(this.item);
+  }
+  //-----funciones-----
   delete() {
     const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
     dialogRef.afterClosed().subscribe((result) => {
@@ -37,4 +41,5 @@ export class ThemesComponent implements OnInit {
   list() {
     console.log("click on list");
   }
+  //-----#funciones-----
 }

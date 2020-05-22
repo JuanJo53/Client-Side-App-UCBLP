@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
+
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -14,7 +14,7 @@ import { RouterModule } from "@angular/router";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { CardClassroomComponent } from './components/cards/card-classroom/card-classroom.component';
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, CardClassroomComponent],
+  declarations: [HeaderComponent, SidebarComponent, CardClassroomComponent],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -27,6 +27,6 @@ import { CardClassroomComponent } from './components/cards/card-classroom/card-c
     RouterModule,
     MatExpansionModule,
   ],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent],
+  exports: [HeaderComponent, SidebarComponent],
 })
 export class SharedModule {}

@@ -7,7 +7,10 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+import { AddStudentComponent } from "../dialogs/students/add-student/add-student.component";
+import { EditStudentComponent } from "../dialogs/students/edit-student/edit-student.component";
 import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
+import { DeleteItemService } from "../../services/dialogs/delete-item.service";
 
 export interface ListaDeEstudiantes {
   nombre: string;
@@ -115,8 +118,7 @@ const ELEMENT_DATA: ListaDeEstudiantes[] = [
   styleUrls: ["./students.component.scss"],
 })
 export class StudentsComponent implements OnInit {
-  link = "Dashboard";
-
+  item: string = "student";
   displayedColumns: string[] = [
     "posicion",
     "nombre",
@@ -131,16 +133,34 @@ export class StudentsComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   // @ViewChild(MatPaginator)paginator: MatPaginator;
 
+  constructor(public dialog: MatDialog, private data: DeleteItemService) {}
   ngOnInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    //this.dataSource.paginator=this.paginator;
+    //this.data.currentMessage.subscribe((message) => (this.titulo = message));
+    this.data.changeMessage(this.item);
   }
-  constructor(public dialog: MatDialog) {}
-  click() {
+
+  //-----funciones-----
+  agregarEstudiante() {
+    const dialogRef = this.dialog.open(AddStudentComponent, { width: "400px" });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  editarEstudiante() {
+    const dialogRef = this.dialog.open(EditStudentComponent, {
+      width: "400px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  eliminarEstudiante() {
     const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
+  //-----#funciones-----
 }

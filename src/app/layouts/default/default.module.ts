@@ -18,7 +18,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { ThemesComponent } from 'src/app/modules/themes/themes.component';
-import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
+ import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
 
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
@@ -27,7 +27,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { StudentsComponent } from 'src/app/modules/students/students.component';
 import { AssistanceComponent } from 'src/app/modules/assistance/assistance.component';
 import { QualificationComponent } from 'src/app/modules/qualification/qualification.component';
-import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
+ import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
+import { AddStudentComponent } from 'src/app/modules/dialogs/students/add-student/add-student.component';
+import { EditStudentComponent } from 'src/app/modules/dialogs/students/edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +43,9 @@ import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.c
     StudentsComponent,
     AssistanceComponent,
     QualificationComponent,
-
-    AddThemeComponent
+    AddThemeComponent,
+    AddStudentComponent,
+    EditStudentComponent
   ],
   imports: [
     CommonModule,

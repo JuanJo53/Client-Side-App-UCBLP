@@ -6,7 +6,11 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab>
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="agregarEstudiante()"
+      >
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
@@ -18,7 +22,12 @@
     <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
       <!-- Position Column -->
       <ng-container matColumnDef="posicion">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-table">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="header-table"
+        >
           No.
         </th>
         <td mat-cell *matCellDef="let element" class="mat-cell">
@@ -27,7 +36,12 @@
       </ng-container>
       <!-- Name Column -->
       <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-table">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="header-table"
+        >
           Name
         </th>
         <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
@@ -35,7 +49,12 @@
 
       <!-- Father's Name Column -->
       <ng-container matColumnDef="p_nombre">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-table">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="header-table"
+        >
           Father's Name
         </th>
         <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
@@ -43,7 +62,12 @@
 
       <!-- Mother's Name Column -->
       <ng-container matColumnDef="m_nombre">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-table">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="header-table"
+        >
           Mother's Name
         </th>
         <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
@@ -51,7 +75,12 @@
 
       <!-- Average Column -->
       <ng-container matColumnDef="promedio">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-table">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="header-table"
+        >
           Average
         </th>
         <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
@@ -59,7 +88,12 @@
 
       <!-- Buttons Column -->
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-table">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="header-table"
+        >
           Actions
         </th>
         <td mat-cell *matCellDef="let element">
@@ -70,14 +104,22 @@
             </span>
             <!-- #usuario-->
           </button>
-          <button class="circular-button-table--normal" mat-mini-fab>
+          <button
+            class="circular-button-table--normal"
+            mat-mini-fab
+            (click)="editarEstudiante()"
+          >
             <!--update usuario-->
             <span class="circular-button-table__icon"
               ><i class="fas fa-pencil-alt"></i>
             </span>
             <!-- #update usuario-->
           </button>
-          <button class="circular-button-table--negative" mat-mini-fab>
+          <button
+            class="circular-button-table--negative"
+            mat-mini-fab
+            (click)="eliminarEstudiante()"
+          >
             <!--delete usuario-->
             <span class="circular-button-table__icon"
               ><i class="fas fa-trash"></i>
