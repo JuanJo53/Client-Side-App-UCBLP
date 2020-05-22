@@ -27,7 +27,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { StudentsComponent } from 'src/app/modules/students/students.component';
 import { AssistanceComponent } from 'src/app/modules/assistance/assistance.component';
 import { QualificationComponent } from 'src/app/modules/qualification/qualification.component';
-import { AddCardComponent } from 'src/app/modules/dialogs/add-card/add-card.component';
 import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
 
 @NgModule({
@@ -42,7 +41,7 @@ import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.c
     StudentsComponent,
     AssistanceComponent,
     QualificationComponent,
-    AddCardComponent,
+
     AddThemeComponent
   ],
   imports: [

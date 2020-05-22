@@ -28,6 +28,15 @@
     padding: 1.75rem;
     display: flex;
     flex-direction: column;
+    &:hover {
+      // @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
+      cursor: pointer;
+      //transition: all 0.1s ease;
+      background-color: rgba(
+        $color: darken($color-card-themes, $hover-custom-card),
+        $alpha: $opacity-custom-card
+      );
+    }
   }
   &__buttons-card {
     //background-color: orange;
@@ -61,7 +70,9 @@
     }
   }
   &:hover {
-    @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
-    transition: all 0.1s ease;
+    // @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
+    cursor: pointer;
+    //transition: all 0.1s ease;
+    background-color: red;
   }
 }

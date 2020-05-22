@@ -55,7 +55,7 @@
 //------circular button navbar brand------
 .circular-button-brand {
   padding: 2rem 0rem;
-  margin-left: auto!important;
+  margin-left: auto !important;
   background-color: $color-primary-white !important;
   color: $color-primary-blue !important;
   position: relative !important;
@@ -117,14 +117,7 @@
     color: $color-primary-white;
   }
 }
-.dialog-button-cancel {
-  background-color: $color-primary-red;
-  color: $color-primary-white;
-}
-.dialog-button-accept {
-  background-color: $color-primary-blue;
-  color: $color-primary-white;
-}
+
 //-----sidevar-----
 .toggle-button {
   position: absolute !important;
@@ -158,3 +151,16 @@
   }
 }
 //-----#table button-----
+//-----button inside dialog-----
+.dialog-circular-button {
+  background-color: $color-primary-blue !important;
+}
+.dialog-button-cancel {
+  background-color: $color-primary-red !important;
+  color: $color-primary-white!important;
+}
+.dialog-button-accept {
+  background-color: $color-primary-blue !important;
+  color: $color-primary-white!important;
+}
+//-----#button inside dialog-----

@@ -66,17 +66,17 @@
   }
 }
 
-::ng-deep .mat-expansion-panel-body {
+.mat-expansion-panel-body {
   padding: 0 !important;
 }
-::ng-deep .mat-expansion-panel-header {
+.mat-expansion-panel-header {
   padding: 0 1.5rem !important;
   font-size: 1.6rem;
 }
-::ng-deep .mat-expansion-indicator::after {
-  color: $color-primary-white;
+.mat-expansion-indicator::after {
+  color: $color-primary-white!important;
 }
-::ng-deep .mat-content {
+.mat-content {
   align-items: center;
 }
 

@@ -1,7 +1,8 @@
 @import "1-helpers/variables";
 
 .dialog {
-  margin: 1.5rem 1rem 0rem 1rem;
+  margin: 1.5rem 1rem 1rem 1rem;
+  //background-color: yellow;
   &__container-image {
     margin: 1rem 0;
     display: flex;
