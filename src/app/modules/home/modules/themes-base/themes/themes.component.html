@@ -1,0 +1,66 @@
+<div class="container">
+  <!--Subtitle-->
+  <div class="subtitle-compound">
+    <div class="subtitle-compound__text">
+      <span>Themes</span>
+    </div>
+    <div class="subtitle-compound__buttons-container">
+      <!--Add button-->
+      <button class="circular-button-subtitle" mat-mini-fab (click)="add()">
+        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+      </button>
+      <!--#Add button-->
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <div class="row">
+    <div *ngFor="let cards of themeCards" class="col-lg-3 col-md-6 col-xs-12">
+      <!--custom-cards-->
+      <div class="custom-card" (click)="cargarContenido()">
+        <div class="custom-card__img">
+          <div class="custom-card__img-overlay">
+            <div class="custom-card__buttons-card">
+              <button
+                class="circular-button-custom-card"
+                mat-mini-fab
+                (click)="list()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  list
+                </mat-icon>
+              </button>
+              <button
+                class="circular-button-custom-card"
+                mat-mini-fab
+                (click)="setting()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <button
+                class="circular-button-custom-card"
+                mat-mini-fab
+                (click)="delete()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  delete
+                </mat-icon>
+              </button>
+            </div>
+            <div class="custom-card__content-card"></div>
+            <div class="custom-card__description-theme">
+              <span class="custom-card__description-theme--title">{{
+                cards.titulo
+              }}</span>
+              <span class="custom-card__description-theme--subtitle">
+                {{ cards.subtitulo }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#custom-cards-->
+    </div>
+  </div>
+</div>

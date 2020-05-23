@@ -14,7 +14,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ThemesComponent } from 'src/app/modules/home/modules/themes/themes.component';
+import { ThemesComponent } from 'src/app/modules/home/modules/themes-base/themes/themes.component';
 import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
 import { MatSortModule} from '@angular/material/sort';
 import { MatTableModule} from '@angular/material/table';
@@ -31,7 +31,8 @@ import { EvaluationComponent } from 'src/app/modules/home/evaluation/evaluation.
 import { ForumsComponent } from 'src/app/modules/home/forums/forums.component';
 import { ResourcesComponent } from 'src/app/modules/home/resources/resources.component';
 import { AssessmentsComponent } from 'src/app/modules/home/modules/assessments/assessments.component';
-import { ThemeContentComponent } from 'src/app/modules/home/modules/themes/theme-content/theme-content.component';
+import { ThemeContentComponent } from 'src/app/modules/home/modules/themes-base/themes/theme-content/theme-content.component';
+import { ThemesBaseComponent } from 'src/app/modules/home/modules/themes-base/themes-base.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ThemeContentComponent } from 'src/app/modules/home/modules/themes/theme
     ForumsComponent,
     ResourcesComponent,
     AssessmentsComponent,
-    ThemeContentComponent
+    ThemeContentComponent,
+    ThemesBaseComponent
   ],
   imports: [
     CommonModule,

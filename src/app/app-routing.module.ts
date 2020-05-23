@@ -8,7 +8,7 @@ import { ForumsComponent } from "./modules/home/forums/forums.component";
 //import { ModulesComponent } from "./modules/modules/modules.component";
 import { ResourcesComponent } from "./modules/home/resources/resources.component";
 import { EvaluationComponent } from "./modules/home/evaluation/evaluation.component";
-import { ThemesComponent } from "./modules/home/modules/themes/themes.component";
+import { ThemesComponent } from "./modules/home/modules/themes-base/themes/themes.component";
 import { AssessmentsComponent } from "./modules/home/modules/assessments/assessments.component";
 import { StudentsComponent } from "./modules/home/my-class/students/students.component";
 import { AssistanceComponent } from "./modules/home/my-class/assistance/assistance.component";
@@ -16,7 +16,8 @@ import { QualificationComponent } from "./modules/home/my-class/qualification/qu
 import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
-import { ThemeContentComponent } from "./modules/home/modules/themes/theme-content/theme-content.component";
+import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
+import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
 
 const routes: Routes = [
   {
@@ -59,8 +60,12 @@ const routes: Routes = [
       },
       {
         path: "themes",
-        component: ThemesComponent,
+        component: ThemesBaseComponent,
         children: [
+          {
+            path: "",
+            component: ThemesComponent,
+          },
           {
             path: "theme-content",
             component: ThemeContentComponent,
