@@ -31,6 +31,7 @@ import { EvaluationComponent } from 'src/app/modules/home/evaluation/evaluation.
 import { ForumsComponent } from 'src/app/modules/home/forums/forums.component';
 import { ResourcesComponent } from 'src/app/modules/home/resources/resources.component';
 import { AssessmentsComponent } from 'src/app/modules/home/modules/assessments/assessments.component';
+import { ThemeContentComponent } from 'src/app/modules/home/modules/themes/theme-content/theme-content.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AssessmentsComponent } from 'src/app/modules/home/modules/assessments/a
     EvaluationComponent,
     ForumsComponent,
     ResourcesComponent,
-    AssessmentsComponent
+    AssessmentsComponent,
+    ThemeContentComponent
   ],
   imports: [
     CommonModule,
@@ -69,9 +71,6 @@ import { AssessmentsComponent } from 'src/app/modules/home/modules/assessments/a
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    
-    
- 
   ],
 })
 export class DefaultModule {}

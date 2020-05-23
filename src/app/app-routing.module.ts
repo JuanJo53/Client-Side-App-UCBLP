@@ -16,6 +16,7 @@ import { QualificationComponent } from "./modules/home/my-class/qualification/qu
 import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
+import { ThemeContentComponent } from "./modules/home/modules/themes/theme-content/theme-content.component";
 
 const routes: Routes = [
   {
@@ -38,7 +39,6 @@ const routes: Routes = [
     children: [
       {
         path: "dashboard",
-
         component: DashboardComponent,
       },
       {
@@ -60,6 +60,12 @@ const routes: Routes = [
       {
         path: "themes",
         component: ThemesComponent,
+        children: [
+          {
+            path: "theme-content",
+            component: ThemeContentComponent,
+          },
+        ],
       },
       {
         path: "assessments",
