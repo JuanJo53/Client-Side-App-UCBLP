@@ -34,6 +34,7 @@
           {{ element.posicion }}
         </td>
       </ng-container>
+      <!-- #Position Column -->
       <!-- Name Column -->
       <ng-container matColumnDef="nombre">
         <th
@@ -46,6 +47,7 @@
         </th>
         <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
       </ng-container>
+      <!-- #Name Column -->
 
       <!-- Father's Name Column -->
       <ng-container matColumnDef="p_nombre">
@@ -59,7 +61,7 @@
         </th>
         <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
       </ng-container>
-
+      <!-- #Father's Name Column -->
       <!-- Mother's Name Column -->
       <ng-container matColumnDef="m_nombre">
         <th
@@ -72,7 +74,7 @@
         </th>
         <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
       </ng-container>
-
+      <!-- #Mother's Name Column -->
       <!-- Average Column -->
       <ng-container matColumnDef="promedio">
         <th
@@ -85,7 +87,7 @@
         </th>
         <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
       </ng-container>
-
+      <!-- #Average Column -->
       <!-- Buttons Column -->
       <ng-container matColumnDef="id">
         <th
@@ -126,6 +128,7 @@
             </span>
             <!-- #delete usuario-->
           </button>
+        <!-- #Buttons Column -->
         </td>
       </ng-container>
 
@@ -133,6 +136,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
     <!--#tables-->
+    <!-- Paginator -->
     <mat-paginator
       [pageSizeOptions]="[10, 20]"
       showFirstLastButtons
