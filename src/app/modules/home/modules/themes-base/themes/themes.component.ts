@@ -7,8 +7,9 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../../../../dialogs/delete-card/delete-card.component";
-import { AddThemeComponent } from "../../../../dialogs/add-theme/add-theme.component";
+import { AddThemeComponent } from "../../../../dialogs/themes/add-theme/add-theme.component";
 import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
+import { ConfigureThemeComponent } from "../../../../dialogs/themes/configure-theme/configure-theme.component";
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -19,6 +20,7 @@ export class ThemesComponent implements OnInit {
   tema = "Theme 1";
   descripcion = "Present";
   item = "theme";
+
   themeCards: CardThemes[] = [
     {
       titulo: "Theme 1",
@@ -88,28 +90,33 @@ export class ThemesComponent implements OnInit {
   }
   //----#variables-----
   //-----funciones-----
-  delete() {
-    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
-  add() {
+  agregarTemas() {
     const dialogRef = this.dialog.open(AddThemeComponent, { width: "400px" });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-  setting() {
-    console.log("click on settings");
+  configuraciones() {
+    const dialogRef = this.dialog.open(ConfigureThemeComponent, {
+      width: "400px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-  list() {
+  listar() {
     console.log("click on list");
   }
-  cargarContenido() {
+  verContenido() {
     //[where i wanna go] ,{where i am}
     this.router.navigate(["theme-content"], { relativeTo: this.route });
+  }
+  eliminar() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
   //-----#funciones-----
 }

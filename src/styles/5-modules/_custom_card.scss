@@ -30,7 +30,7 @@
     flex-direction: column;
     &:hover {
       // @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
-      cursor: pointer;
+      // cursor: pointer;
       //transition: all 0.1s ease;
       background-color: rgba(
         $color: darken($color-card-themes, $hover-custom-card),
@@ -71,8 +71,8 @@
   }
   &:hover {
     // @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
-    cursor: pointer;
+    // cursor: pointer;
     //transition: all 0.1s ease;
-    background-color: red;
+    // background-color: red;
   }
 }

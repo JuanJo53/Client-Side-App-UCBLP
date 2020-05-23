@@ -6,7 +6,11 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab (click)="add()">
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="agregarTemas()"
+      >
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
@@ -16,33 +20,32 @@
   <div class="row">
     <div *ngFor="let cards of themeCards" class="col-lg-3 col-md-6 col-xs-12">
       <!--custom-cards-->
-      <div class="custom-card" (click)="cargarContenido()">
+      <div class="custom-card">
         <div class="custom-card__img">
           <div class="custom-card__img-overlay">
             <div class="custom-card__buttons-card">
               <button
                 class="circular-button-custom-card"
-                mat-mini-fab
-                (click)="list()"
+                (click)="verContenido()"
               >
+                <mat-icon class="circular-button-custom-card__icon">
+                  remove_red_eye
+                </mat-icon>
+              </button>
+              <button class="circular-button-custom-card" (click)="listar()">
                 <mat-icon class="circular-button-custom-card__icon">
                   list
                 </mat-icon>
               </button>
               <button
                 class="circular-button-custom-card"
-                mat-mini-fab
-                (click)="setting()"
+                (click)="configuraciones()"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
               </button>
-              <button
-                class="circular-button-custom-card"
-                mat-mini-fab
-                (click)="delete()"
-              >
+              <button class="circular-button-custom-card" (click)="eliminar()">
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>

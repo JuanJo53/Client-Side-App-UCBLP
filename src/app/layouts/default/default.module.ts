@@ -23,7 +23,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { StudentsComponent } from 'src/app/modules/home/my-class/students/students.component';
 import { AssistanceComponent } from 'src/app/modules/home/my-class/assistance/assistance.component';
 import { QualificationComponent } from 'src/app/modules/home/my-class/qualification/qualification.component';
-import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
+import { AddThemeComponent } from 'src/app/modules/dialogs/themes/add-theme/add-theme.component';
 import { AddStudentComponent } from 'src/app/modules/dialogs/students/add-student/add-student.component';
 import { EditStudentComponent } from 'src/app/modules/dialogs/students/edit-student/edit-student.component';
 import { DashboardComponent } from 'src/app/modules/home/dashboard/dashboard.component';
@@ -33,6 +33,8 @@ import { ResourcesComponent } from 'src/app/modules/home/resources/resources.com
 import { AssessmentsComponent } from 'src/app/modules/home/modules/assessments/assessments.component';
 import { ThemeContentComponent } from 'src/app/modules/home/modules/themes-base/themes/theme-content/theme-content.component';
 import { ThemesBaseComponent } from 'src/app/modules/home/modules/themes-base/themes-base.component';
+import { ConfigureThemeComponent } from 'src/app/modules/dialogs/themes/configure-theme/configure-theme.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { ThemesBaseComponent } from 'src/app/modules/home/modules/themes-base/th
     ResourcesComponent,
     AssessmentsComponent,
     ThemeContentComponent,
-    ThemesBaseComponent
+    ThemesBaseComponent,
+    ConfigureThemeComponent
   ],
   imports: [
     CommonModule,
@@ -73,6 +76,7 @@ import { ThemesBaseComponent } from 'src/app/modules/home/modules/themes-base/th
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatRadioModule
   ],
 })
 export class DefaultModule {}

@@ -78,23 +78,35 @@
 //------#circular button navbar brand------
 //-----buttons insdie custom card
 .circular-button-custom-card {
-  margin-left: 0.5rem !important;
-  background-color: transparent !important;
-  border: 1px solid $color-primary-white !important;
-  box-shadow: none !important;
-  opacity: 90% !important;
+  outline: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  background-color: transparent;
+  border: 1px solid $color-primary-white;
+  box-shadow: none;
+  opacity: 90%;
   position: relative;
-  // height: 3.5rem;
-  // width: 3.5rem;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    height: 1.6rem !important; //borders
+    width: 1.8rem !important; //borders
+    color: $color-primary-white;
   }
   &:hover {
-    background-color: $color-card-themes;
+    background-color: darken($color-card-themes, 20%);
     color: $color-primary-white;
     border: none;
   }
 }
+// mat-icon {
+//   background-color: yellow;
+// }
 //-----#buttons insdie custom card
 .circular-button-navbar {
   margin-left: 1rem !important;
@@ -157,10 +169,10 @@
 }
 .dialog-button-cancel {
   background-color: $color-primary-red !important;
-  color: $color-primary-white!important;
+  color: $color-primary-white !important;
 }
 .dialog-button-accept {
   background-color: $color-primary-blue !important;
-  color: $color-primary-white!important;
+  color: $color-primary-white !important;
 }
 //-----#button inside dialog-----
