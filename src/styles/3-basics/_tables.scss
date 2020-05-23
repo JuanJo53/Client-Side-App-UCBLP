@@ -23,3 +23,8 @@ mat-paginator {
 th.mat-header-cell {
   text-align: center !important;
 }
+
+.table-button{
+  display: flex;
+  justify-content: flex-end;
+}
