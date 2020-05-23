@@ -30,6 +30,7 @@ import { DashboardComponent } from 'src/app/modules/home/dashboard/dashboard.com
 import { EvaluationComponent } from 'src/app/modules/home/evaluation/evaluation.component';
 import { ForumsComponent } from 'src/app/modules/home/forums/forums.component';
 import { ResourcesComponent } from 'src/app/modules/home/resources/resources.component';
+import { AssessmentsComponent } from 'src/app/modules/home/modules/assessments/assessments.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ResourcesComponent } from 'src/app/modules/home/resources/resources.com
     EditStudentComponent,
     EvaluationComponent,
     ForumsComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    AssessmentsComponent
   ],
   imports: [
     CommonModule,
