@@ -4,9 +4,9 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
-import { AddThemeComponent } from "../dialogs/add-theme/add-theme.component";
-import { DeleteItemService } from "../../services/dialogs/delete-item.service";
+import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.component";
+import { AddThemeComponent } from "../../../dialogs/add-theme/add-theme.component";
+import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",

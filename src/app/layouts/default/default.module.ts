@@ -8,35 +8,34 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatToolbarModule } from "@angular/material/toolbar";
-//import { FlexLayoutModule } from "@angular/flex-layout";
-import { PostsComponent } from "src/app/modules/posts/posts.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
-import { ThemesComponent } from 'src/app/modules/themes/themes.component';
- import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
-
-import {MatSortModule} from '@angular/material/sort';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatDialogModule} from '@angular/material/dialog';
-import { StudentsComponent } from 'src/app/modules/students/students.component';
-import { AssistanceComponent } from 'src/app/modules/assistance/assistance.component';
-import { QualificationComponent } from 'src/app/modules/qualification/qualification.component';
- import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
+import { ThemesComponent } from 'src/app/modules/home/modules/themes/themes.component';
+import { DeleteCardComponent} from 'src/app/modules/dialogs/delete-card/delete-card.component';
+import { MatSortModule} from '@angular/material/sort';
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialogModule} from '@angular/material/dialog';
+import { StudentsComponent } from 'src/app/modules/home/my-class/students/students.component';
+import { AssistanceComponent } from 'src/app/modules/home/my-class/assistance/assistance.component';
+import { QualificationComponent } from 'src/app/modules/home/my-class/qualification/qualification.component';
+import { AddThemeComponent } from 'src/app/modules/dialogs/add-theme/add-theme.component';
 import { AddStudentComponent } from 'src/app/modules/dialogs/students/add-student/add-student.component';
 import { EditStudentComponent } from 'src/app/modules/dialogs/students/edit-student/edit-student.component';
+import { DashboardComponent } from 'src/app/modules/home/dashboard/dashboard.component';
+import { EvaluationComponent } from 'src/app/modules/home/evaluation/evaluation.component';
+import { ForumsComponent } from 'src/app/modules/home/forums/forums.component';
+import { ResourcesComponent } from 'src/app/modules/home/resources/resources.component';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     LoginComponent,
-    PostsComponent,
     ChoosingClassroomComponent,
     ThemesComponent,
     DeleteCardComponent,
@@ -45,7 +44,10 @@ import { EditStudentComponent } from 'src/app/modules/dialogs/students/edit-stud
     QualificationComponent,
     AddThemeComponent,
     AddStudentComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    EvaluationComponent,
+    ForumsComponent,
+    ResourcesComponent
   ],
   imports: [
     CommonModule,

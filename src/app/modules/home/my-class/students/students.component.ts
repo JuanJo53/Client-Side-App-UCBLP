@@ -7,10 +7,10 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { AddStudentComponent } from "../dialogs/students/add-student/add-student.component";
-import { EditStudentComponent } from "../dialogs/students/edit-student/edit-student.component";
-import { DeleteCardComponent } from "../dialogs/delete-card/delete-card.component";
-import { DeleteItemService } from "../../services/dialogs/delete-item.service";
+import { AddStudentComponent } from "../../../dialogs/students/add-student/add-student.component";
+import { EditStudentComponent } from "../../../dialogs/students/edit-student/edit-student.component";
+import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.component";
+import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
 
 export interface ListaDeEstudiantes {
   nombre: string;
