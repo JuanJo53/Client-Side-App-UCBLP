@@ -17,6 +17,7 @@ import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.res
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
 import { ThemeContentComponent } from "./modules/home/modules/themes/theme-content/theme-content.component";
+import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
 
 const routes: Routes = [
   {
@@ -31,45 +32,60 @@ const routes: Routes = [
       profile: ProfileDocenteResolver,
       classroom: ClassroomDocenteResolver,
     },
-  },
+  },  
   {
-    path: "",
+    path: "teacher/:idCurso",
     component: DefaultComponent,
     resolve: { profile: ProfileDocenteResolver },
     children: [
+      
       {
+        
         path: "dashboard",
         component: DashboardComponent,
       },
       {
-        path: "students",
-        component: StudentsComponent,
-      },
-      {
-        path: "attendance",
-        component: AssistanceComponent,
-      },
-      {
-        path: "qualification",
-        component: QualificationComponent,
+        path: "my-class",
+        children:[
+          {
+            path: "students",
+            resolve:{
+              students:StudentsGeneralResolver
+            },
+            component: StudentsComponent,
+          },
+          {
+            path: "attendance",
+            component: AssistanceComponent,
+          },
+          {
+            path: "qualification",
+            component: QualificationComponent,
+          },
+        ]
       },
       {
         path: "forums",
         component: ForumsComponent,
       },
       {
-        path: "themes",
-        component: ThemesComponent,
+        path: "modules",
         children: [
           {
-            path: "theme-content",
-            component: ThemeContentComponent,
+            path: "themes",
+            component: ThemesComponent,
+            children: [
+              {
+                path: "theme-content",
+                component: ThemeContentComponent,
+              },
+            ],
+          },
+          {
+            path: "assessments",
+            component: AssessmentsComponent,
           },
         ],
-      },
-      {
-        path: "assessments",
-        component: AssessmentsComponent,
       },
       {
         path: "resources",

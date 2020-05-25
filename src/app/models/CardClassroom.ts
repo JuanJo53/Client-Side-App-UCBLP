@@ -1,7 +1,8 @@
 export class CardClassroom {
-  materia: string;
-  diasMateria: string;
-  horarioMateria: string;
+  id_curso:string;
+  curso: string;
+  diasCurso: string;
+  horarioCurso: string;
   totalEstudiantes: number;
   semestre: string;
 }
