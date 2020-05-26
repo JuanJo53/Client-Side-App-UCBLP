@@ -23,61 +23,37 @@ export class ThemesComponent implements OnInit {
 
   themeCards: CardThemes[] = [
     {
+      id: 1,
       titulo: "Theme 1",
       subtitulo: "Fruits",
+      color: "#D77A61",
     },
     {
+      id: 2,
       titulo: "Theme 2",
       subtitulo: "Vegetables",
+      color: "#D77A61",
     },
     {
+      id: 3,
       titulo: "Theme 3",
       subtitulo: "Animals",
+      color: "#D77A61",
     },
+    { id: 4, titulo: "Theme 4", subtitulo: "Cellphones", color: "#D77A61" },
+
     {
-      titulo: "Theme 4",
-      subtitulo: "Cellphones",
-    },
-    {
+      id: 5,
       titulo: "Theme 5",
       subtitulo: "Services",
-    },
-    {
-      titulo: "Theme 6",
-      subtitulo: "Games",
-    },
-    {
-      titulo: "Theme 7",
-      subtitulo: "Music",
-    },
-    {
-      titulo: "Theme 8",
-      subtitulo: "Movies",
-    },
-    {
-      titulo: "Theme 9",
-      subtitulo: "Houses",
-    },
-    {
-      titulo: "Theme 10",
-      subtitulo: "Family",
-    },
-    {
-      titulo: "Theme 11",
-      subtitulo: "Professions",
-    },
-    {
-      titulo: "Theme 12",
-      subtitulo: "University",
-    },
-    {
-      titulo: "Theme 13",
-      subtitulo: "Education",
+      color: "#D77A61",
     },
   ];
   cardTheme: CardThemes = {
+    id: 0,
     titulo: "",
     subtitulo: "",
+    color: "",
   };
   constructor(
     public dialog: MatDialog,
@@ -108,9 +84,9 @@ export class ThemesComponent implements OnInit {
   listar() {
     console.log("click on list");
   }
-  verContenido() {
+  verContenido(id: number) {
     //[where i wanna go] ,{where i am}
-    this.router.navigate(["theme-content"], { relativeTo: this.route });
+    this.router.navigate(["/themes", id], { relativeTo: this.route });
   }
   eliminar() {
     const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });

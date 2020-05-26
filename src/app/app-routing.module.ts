@@ -67,7 +67,7 @@ const routes: Routes = [
             component: ThemesComponent,
           },
           {
-            path: "theme-content",
+            path: ":id",
             component: ThemeContentComponent,
           },
         ],

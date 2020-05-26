@@ -1,1 +1,151 @@
-<p>content theme</p>
+<div class="container">
+  <!--Subtitle-->
+  <div class="subtitle-compound">
+    <div class="subtitle-compound__text">
+      <span>Lesson</span>
+    </div>
+    <div class="subtitle-compound__buttons-container">
+      <!--Add button-->
+      <button class="circular-button-subtitle" mat-mini-fab>
+        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+      </button>
+      <!--#Add button-->
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <!-- <div>
+    <p>{{ theme.id }}</p>
+  </div> -->
+  <!--row-->
+  <div class="row">
+    <div *ngFor="let cards of lessonCards" class="col-lg-3 col-md-6 col-xs-12">
+      <!--custom-cards  #D77A61  -->
+      <div class="custom-card">
+        <div class="custom-card__img">
+          <div class="custom-card__img-overlay">
+            <div class="custom-card__buttons-card">
+              <!--btn ver contenido-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(cards.id)"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  remove_red_eye
+                </mat-icon>
+              </button>
+              <!--#btn ver contenido-->
+              <!--btn Ver lista-->
+              <button class="circular-button-custom-card" (click)="listar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  list
+                </mat-icon>
+              </button>
+              <!--#btn Ver lista-->
+              <!--btn  configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="configuraciones()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn  configuraciones-->
+              <!--btn eliminar-->
+              <button class="circular-button-custom-card" (click)="eliminar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  delete
+                </mat-icon>
+              </button>
+              <!--#btn eliminar-->
+            </div>
+            <div class="custom-card__content-card"></div>
+            <div class="custom-card__description-theme">
+              <span class="custom-card__description-theme--title">{{
+                cards.titulo
+              }}</span>
+              <span class="custom-card__description-theme--subtitle">
+                {{ cards.subtitulo }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#custom-cards-->
+    </div>
+  </div>
+  <!--#row-->
+  <!--Subtitle Theme Test-->
+  <div class="subtitle-compound">
+    <div class="subtitle-compound__text">
+      <span>Theme Test</span>
+    </div>
+    <div class="subtitle-compound__buttons-container">
+      <!--Add button-->
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="agregarTemas()"
+      >
+        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+      </button>
+      <!--#Add button-->
+    </div>
+  </div>
+  <!--#Subtitle Theme Test-->
+  <!--row-->
+  <div class="row">
+    <div *ngFor="let cardss of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
+      <div class="custom-card">
+        <div class="custom-card__img">
+          <div class="custom-card__img-overlay">
+            <div class="custom-card__buttons-card">
+              <!--btn ver contenido-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(cardss.id)"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  remove_red_eye
+                </mat-icon>
+              </button>
+              <!--#btn ver contenido-->
+              <!--btn Ver lista-->
+              <button class="circular-button-custom-card" (click)="listar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  list
+                </mat-icon>
+              </button>
+              <!--#btn Ver lista-->
+              <!--btn  configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="configuraciones()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn  configuraciones-->
+              <!--btn eliminar-->
+              <button class="circular-button-custom-card" (click)="eliminar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  delete
+                </mat-icon>
+              </button>
+              <!--#btn eliminar-->
+            </div>
+            <div class="custom-card__content-card"></div>
+            <div class="custom-card__description-theme">
+              <span class="custom-card__description-theme--title">{{
+                cardss.titulo
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#custom-cards-->
+    </div>
+  </div>
+  <!--#row-->
+</div>

@@ -102,6 +102,7 @@
     background-color: darken($color-card-themes, 20%);
     color: $color-primary-white;
     border: none;
+    transition: 0.5s;
   }
 }
 // mat-icon {

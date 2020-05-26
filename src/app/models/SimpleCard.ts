@@ -1,6 +1,5 @@
-export class CardThemes {
+export class SimpleCard {
   id: number;
   titulo: string;
-  subtitulo: string;
   color: string;
 }
