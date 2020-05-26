@@ -30,19 +30,19 @@ export class ThemeContentComponent implements OnInit {
   lessonCards: CardThemes[] = [
     {
       id: 1,
-      titulo: "Theme 1",
+      titulo: "Lesson 1",
       subtitulo: "Fruits",
       color: "#D77A61",
     },
     {
       id: 2,
-      titulo: "Theme 2",
+      titulo: "Lesson 2",
       subtitulo: "Vegetables",
       color: "#D77A61",
     },
     {
       id: 3,
-      titulo: "Theme 3",
+      titulo: "Lesson 3",
       subtitulo: "Animals",
       color: "#D77A61",
     },
@@ -50,12 +50,12 @@ export class ThemeContentComponent implements OnInit {
   simpleCards: SimpleCard[] = [
     {
       id: 1,
-      titulo: "Theme 1",
+      titulo: "Theme Test 1",
       color: "#D77A61",
     },
     {
       id: 2,
-      titulo: "Theme 2",
+      titulo: "Theme Test 2",
       color: "#D77A61",
     },
   ];

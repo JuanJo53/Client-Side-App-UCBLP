@@ -81,9 +81,6 @@ export class ThemesComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-  listar() {
-    console.log("click on list");
-  }
   verContenido(id: number) {
     //[where i wanna go] ,{where i am}
     this.router.navigate(["/themes", id], { relativeTo: this.route });

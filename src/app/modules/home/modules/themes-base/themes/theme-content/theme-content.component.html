@@ -20,10 +20,10 @@
   <div class="row">
     <div *ngFor="let cards of lessonCards" class="col-lg-3 col-md-6 col-xs-12">
       <!--custom-cards  #D77A61  -->
-      <div class="custom-card">
-        <div class="custom-card__img">
-          <div class="custom-card__img-overlay">
-            <div class="custom-card__buttons-card">
+      <div class="custom-card--lessons">
+        <div class="custom-card--lessons__img">
+          <div class="custom-card--lessons__img-overlay">
+            <div class="custom-card--lessons__buttons-card">
               <!--btn ver contenido-->
               <button
                 class="circular-button-custom-card"
@@ -59,12 +59,12 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card__content-card"></div>
-            <div class="custom-card__description-theme">
-              <span class="custom-card__description-theme--title">{{
+            <div class="custom-card--lessons__content-card"></div>
+            <div class="custom-card--lessons__description-theme">
+              <span class="custom-card--lessons__description-theme--title">{{
                 cards.titulo
               }}</span>
-              <span class="custom-card__description-theme--subtitle">
+              <span class="custom-card--lessons__description-theme--subtitle">
                 {{ cards.subtitulo }}
               </span>
             </div>
@@ -95,15 +95,15 @@
   <!--#Subtitle Theme Test-->
   <!--row-->
   <div class="row">
-    <div *ngFor="let cardss of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
-      <div class="custom-card">
-        <div class="custom-card__img">
-          <div class="custom-card__img-overlay">
-            <div class="custom-card__buttons-card">
+    <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
+      <div class="custom-card--practices">
+        <div class="custom-card--practices__img">
+          <div class="custom-card--practices__img-overlay">
+            <div class="custom-card--practices__buttons-card">
               <!--btn ver contenido-->
               <button
                 class="circular-button-custom-card"
-                (click)="verContenido(cardss.id)"
+                (click)="verContenido(cards.id)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   remove_red_eye
@@ -135,10 +135,10 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card__content-card"></div>
-            <div class="custom-card__description-theme">
-              <span class="custom-card__description-theme--title">{{
-                cardss.titulo
+            <div class="custom-card--practices__content-card"></div>
+            <div class="custom-card--practices__description-theme">
+              <span class="custom-card--practices__description-theme--title">{{
+                cards.titulo
               }}</span>
             </div>
           </div>
