@@ -11,6 +11,11 @@ import { AddStudentComponent } from "../../../dialogs/students/add-student/add-s
 import { EditStudentComponent } from "../../../dialogs/students/edit-student/edit-student.component";
 import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
+import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ListaEstudiante } from "src/app/models/Teacher/MyClass/ListaEstudiante";
+import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
+import { THIS_EXPR, IfStmt } from '@angular/compiler/src/output/output_ast';
 
 export interface ListaDeEstudiantes {
   nombre: string;
@@ -21,95 +26,8 @@ export interface ListaDeEstudiantes {
   id: number;
 }
 
-const ELEMENT_DATA: ListaDeEstudiantes[] = [
-  {
-    posicion: 1,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 1,
-  },
-  {
-    posicion: 2,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 2,
-  },
-  {
-    posicion: 3,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 3,
-  },
-  {
-    posicion: 4,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 4,
-  },
-  {
-    posicion: 5,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 5,
-  },
-  {
-    posicion: 6,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 6,
-  },
-  {
-    posicion: 7,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 7,
-  },
-  {
-    posicion: 8,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 8,
-  },
-  {
-    posicion: 9,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 9,
-  },
-  {
-    posicion: 10,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 10,
-  },
-  {
-    posicion: 11,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 11,
-  },
+const ELEMENT_DATA: ListaEstudiante[]= [
+ 
 ];
 
 @Component({
@@ -133,34 +51,123 @@ export class StudentsComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   // @ViewChild(MatPaginator)paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog, private data: DeleteItemService) {}
+  constructor(
+    public dialog: MatDialog, 
+    private data: DeleteItemService,
+    private tokenServ:TokenStorageService,
+    private router:Router,
+    private stService:ActivatedRoute,
+    private servEst:MyClassService
+    ) {}
+    agregarListaEstudiantes(data){
+      for(let i in data){
+        let nuevoEstudiante=new ListaEstudiante();
+        nuevoEstudiante.id=data[i].id_alumno;
+        nuevoEstudiante.id_alumno_curso=data[i].id_curso_alumno;
+        nuevoEstudiante.m_nombre=data[i].ap_materno_alumno;
+        nuevoEstudiante.nombre=data[i].nombre_alumno;
+        nuevoEstudiante.p_nombre=data[i].ap_paterno_alumno;
+        nuevoEstudiante.posicion=Number(i)+1;
+        nuevoEstudiante.promedio=data[i].nota;
+        ELEMENT_DATA.push(nuevoEstudiante);
+      }
+    }
+  iniciarTabla(){
+    this.stService.data.subscribe({
+      next: (data) => {
+        console.log(data.students)
+        this.agregarListaEstudiantes(data.students);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        //this.data.currentMessage.subscribe((message) => (this.titulo = message));
+        this.data.changeMessage(this.item);
+      },
+      error: (err) => {
+        this.router.navigate(["/"]);
+      },
+    });
+  }
   ngOnInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    //this.data.currentMessage.subscribe((message) => (this.titulo = message));
-    this.data.changeMessage(this.item);
+    if (this.tokenServ.getToken() === "undefined") {
+      this.router.navigate(["/"]);
+      return false;
+    } else {
+      this.iniciarTabla();
+    }
   }
 
   //-----funciones-----
   agregarEstudiante() {
-    const dialogRef = this.dialog.open(AddStudentComponent, { width: "400px" });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    
+    this.stService.parent.parent.params.subscribe(
+      (param)=>{
+        const idCurso=param['idCurso'];
+        
+        const dialogRef = this.dialog.open(AddStudentComponent, { 
+             width: "400px" ,
+             data:{
+               idCurso:idCurso
+             }
+          });
+          dialogRef.afterClosed().subscribe((result:ListaEstudiante) => {
+            result.posicion=ELEMENT_DATA.length+1;
+            ELEMENT_DATA.push(result);
+            this.dataSource.sort = this.sort;
+            this.dataSource.paginator = this.paginator;
+            //this.data.currentMessage.subscribe((message) => (this.titulo = message));
+            this.data.changeMessage(this.item);
+            
+            console.log(result);
+            console.log(ELEMENT_DATA);
+          });
+        
+
+      }
+    );
   }
   editarEstudiante() {
     const dialogRef = this.dialog.open(EditStudentComponent, {
       width: "400px",
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      console.log(result[0]);
     });
   }
-  eliminarEstudiante() {
-    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+  removeItem(value){
+    var flag=false;
+    for(let i in ELEMENT_DATA){
+      if(flag==false){
+        if(ELEMENT_DATA[i].id_alumno_curso==value){
+          flag=true;
+          ELEMENT_DATA.splice(Number(i), 1);
+          console.log(ELEMENT_DATA);          
+        }
+      }
+      else{
+        ELEMENT_DATA[Number(i)-1].posicion--;
+      }
+    }
+    
+    this.dataSource.data=ELEMENT_DATA;
+  }
+  eliminarEstudiante(idAlumnoCurso) {
+    this.stService.parent.parent.params.subscribe(
+      (param)=>{
+        const idCurso=param['idCurso'];
+        const dialogRef = this.dialog.open(DeleteCardComponent, 
+          { width: "400px",
+            data:{
+              id_alumno_curso:idAlumnoCurso,
+            }
+          });
+          dialogRef.afterClosed().subscribe((result) => {
+            this.removeItem(idAlumnoCurso);
+            console.log(result);
+          });
+        
+
+      }
+    );
   }
   //-----#funciones-----
 }

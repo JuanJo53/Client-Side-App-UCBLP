@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { SharedService } from "../../shared.service";
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: "app-sidebar",
@@ -17,13 +18,37 @@ export class SidebarComponent implements OnInit {
     this.isSidebarOpen = !this.isSidebarOpen;
     this.openEvent.emit(this.isSidebarOpen);
   }
-  constructor(private data: SharedService) {}
+  constructor(private data: SharedService,private route:ActivatedRoute,private router:Router) {}
   // constructor() {}
   // ngOnInit(): void {}
   ngOnInit() {
     this.data.currentMessage.subscribe((message) => (this.message = message));
   }
-  newMessage(link:string) {
+  navigateGeneral(link:string) {
     this.data.changeMessage(link);
+    this.route.params.subscribe(
+      (params)=>{      
+        this.router.navigate(['teacher',params['idCurso'],link.toLowerCase()]); 
+        
+      }
+    );
+  }
+  navigateModules(link:string) {
+    this.data.changeMessage(link);
+    this.route.params.subscribe(
+      (params)=>{      
+        this.router.navigate(['teacher',params['idCurso'],"modules",link.toLowerCase()]); 
+        
+      }
+    );
+  }
+  navigationMyClass(link:string) {
+    this.data.changeMessage(link);
+    this.route.params.subscribe(
+      (params)=>{      
+        this.router.navigate(['teacher',params['idCurso'],"my-class",link.toLowerCase()]); 
+        
+      }
+    );
   }
 }

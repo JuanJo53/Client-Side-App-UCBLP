@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Teacher } from "src/app/models/Teacher";
+import { Teacher } from "src/app/models/Teacher/Teacher";
 import { AuthService } from "src/app/_services/general_services/auth.service";
 import { UserService } from "src/app/_services/general_services/user.service";
 import { TokenStorageService } from "src/app/_services/general_services/token-storage.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { CardClassroom } from "src/app/models/CardClassroom";
+import { CardClassroom } from "src/app/models/Teacher/CardClassroom";
 import { CardClassroomComponent } from "src/app/shared/components/cards/card-classroom/card-classroom.component";
 import { ClassroomDocenteResolver } from "src/app/_resolvers/docente/classroom-info-docente.resolver";
 @Component({
@@ -16,13 +16,6 @@ export class ChoosingClassroomComponent implements OnInit {
   //-----variables-----
 
   classroomCards: CardClassroom[] = [];
-  cardClass: CardClassroom = {
-    diasMateria: "",
-    horarioMateria: "",
-    materia: "",
-    semestre: "",
-    totalEstudiantes: 0,
-  };
   userDocente: Teacher = {
     nombreDocente: "",
     apellidoDocente: "",
@@ -80,10 +73,10 @@ export class ChoosingClassroomComponent implements OnInit {
         }
       }
       let auxCard = new CardClassroom();
-
-      auxCard.materia = datos[i].nombre_curso;
-      auxCard.diasMateria = dias;
-      auxCard.horarioMateria = horario;
+      auxCard.id_curso=datos[i].id_curso;
+      auxCard.curso = datos[i].nombre_curso;
+      auxCard.diasCurso = dias;
+      auxCard.horarioCurso = horario;
       auxCard.semestre = datos[i].semestre;
       auxCard.totalEstudiantes = datos[i].estudiantes;
       this.classroomCards.push(auxCard);
@@ -100,6 +93,7 @@ export class ChoosingClassroomComponent implements OnInit {
       this.usService.data.subscribe({
         next: (data) => {
           this.agregarCards(data.classroom);
+          console.log(data);
           this.userDocente.correoDocente = data.profile.correo_docente;
           this.userDocente.nombreDocente = data.profile.nombre_docente;
           this.userDocente.apellidoDocente =
@@ -119,7 +113,7 @@ export class ChoosingClassroomComponent implements OnInit {
     this.tokenServ.signOut();
     this.router.navigate(["/"]);
   }
-  cardClicked() {
-    this.router.navigate(["/dashboard"]);
+  cardClicked(idCurso:string) {
+    this.router.navigate(['teacher',idCurso,'dashboard']);
   }
 }

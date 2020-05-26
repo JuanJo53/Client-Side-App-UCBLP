@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from '@angular/router';
-import { Teacher } from 'src/app/models/Teacher';
+import { Teacher } from 'src/app/models/Teacher/Teacher';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 
 @Component({

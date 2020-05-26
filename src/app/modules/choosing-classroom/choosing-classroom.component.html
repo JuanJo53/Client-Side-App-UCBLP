@@ -80,17 +80,17 @@
       }"
     >
       <!--card-->
-      <div class="classroom-card" (click)="cardClicked()">
+      <div class="classroom-card" (click)="cardClicked(cards.id_curso)">
         <!--titulo de la clase-->
         <p class="classroom-card__description-classroom">
-          {{ cards.materia }}
+          {{ cards.curso }}
         </p>
         <!--#titulo de la clase-->
         <span class="classroom-card__description-detail">
           <i class="far fa-calendar-alt"></i
           ><!--horario-->
           <span class="classroom-card__description-detail-text"
-            >Days: {{ cards.diasMateria }}</span
+            >Days: {{ cards.diasCurso }}</span
           >
           <!--#horario-->
         </span>
@@ -98,7 +98,7 @@
           <i class="fas fa-clock"></i
           ><!--horario-->
           <span class="classroom-card__description-detail-text"
-            >Schedule: {{ cards.horarioMateria }}</span
+            >Schedule: {{ cards.horarioCurso }}</span
           >
           <!--#horario-->
         </p>
