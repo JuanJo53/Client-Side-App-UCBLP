@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
-import { AddStudent } from 'src/app/models/AddStudent';
-import { ListaEstudiante } from 'src/app/models/ListaEstudiante';
+import { AddStudent } from 'src/app/models/Teacher/MyClass/AddStudent';
+import { ListaEstudiante } from 'src/app/models/Teacher/MyClass/ListaEstudiante';
 
 @Component({
   selector: "app-add-student",

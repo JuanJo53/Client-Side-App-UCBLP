@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TeacherLogin } from '../../models/TeacherLogin';
+import { TeacherLogin } from '../../models/Login/TeacherLogin';
 import apiKey from '../apiKey'
 @Injectable({
   providedIn:'root'

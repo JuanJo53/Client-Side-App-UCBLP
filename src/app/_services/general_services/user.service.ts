@@ -13,5 +13,8 @@ export class UserService {
   getProfileDocente():Observable<any>{
     return this.http.get(apiKey.api+'/users/profile');
   }
+  verificarToken():Observable<any>{
+    return  this.http.get(apiKey.api+'/users/verify');
+  }
 
 }

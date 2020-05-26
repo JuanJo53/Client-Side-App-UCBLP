@@ -3,13 +3,14 @@ import { TokenStorageService } from 'src/app/_services/general_services/token-st
 import { Router, ActivatedRouteSnapshot } from '@angular/router';
 import { ClassroomService } from 'src/app/_services/teacher_services/classroom.service';
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
+import { ModulesService } from 'src/app/_services/teacher_services/modules.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StudentsGeneralResolver{
+export class GetThemesTeacherResolver{
 
-  constructor(private studentService:MyClassService,private tokenService:TokenStorageService,private router:Router) { }
+  constructor(private themeService:ModulesService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.params['idCurso'];
     console.log(idCurso); 
@@ -18,8 +19,7 @@ export class StudentsGeneralResolver{
 
     }
     else{      
-      return this.studentService.getStudentsGeneral(idCurso);
-      
+      return this.themeService.getThemes(idCurso);
     }
   }
 }

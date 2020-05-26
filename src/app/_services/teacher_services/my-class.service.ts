@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import apiKey from '../apiKey'
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { AddStudent } from 'src/app/models/AddStudent';
+import { AddStudent } from 'src/app/models/Teacher/MyClass/AddStudent';
 
 @Injectable({
   providedIn: 'root'

@@ -13,7 +13,7 @@ import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.co
 import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ListaEstudiante } from "src/app/models/ListaEstudiante";
+import { ListaEstudiante } from "src/app/models/Teacher/MyClass/ListaEstudiante";
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
 import { THIS_EXPR, IfStmt } from '@angular/compiler/src/output/output_ast';
 

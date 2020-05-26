@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { TeacherLogin } from 'src/app/models/TeacherLogin';
+import { TeacherLogin } from 'src/app/models/Login/TeacherLogin';
 import { from } from 'rxjs';
 import { AuthService } from 'src/app/_services/general_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';

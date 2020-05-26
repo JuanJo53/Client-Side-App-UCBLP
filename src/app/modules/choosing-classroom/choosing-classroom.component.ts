@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Teacher } from "src/app/models/Teacher";
+import { Teacher } from "src/app/models/Teacher/Teacher";
 import { AuthService } from "src/app/_services/general_services/auth.service";
 import { UserService } from "src/app/_services/general_services/user.service";
 import { TokenStorageService } from "src/app/_services/general_services/token-storage.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { CardClassroom } from "src/app/models/CardClassroom";
+import { CardClassroom } from "src/app/models/Teacher/CardClassroom";
 import { CardClassroomComponent } from "src/app/shared/components/cards/card-classroom/card-classroom.component";
 import { ClassroomDocenteResolver } from "src/app/_resolvers/docente/classroom-info-docente.resolver";
 @Component({

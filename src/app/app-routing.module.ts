@@ -18,6 +18,7 @@ import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver"
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
 import { ThemeContentComponent } from "./modules/home/modules/themes/theme-content/theme-content.component";
 import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
+import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
 
 const routes: Routes = [
   {
@@ -74,6 +75,9 @@ const routes: Routes = [
           {
             path: "themes",
             component: ThemesComponent,
+            resolve:{
+              themes:GetThemesTeacherResolver
+            },
             children: [
               {
                 path: "theme-content",

@@ -7,6 +7,7 @@ import {
 import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.component";
 import { AddThemeComponent } from "../../../dialogs/add-theme/add-theme.component";
 import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -17,9 +18,23 @@ export class ThemesComponent implements OnInit {
   descripcion = "Present";
   item = "theme";
 
-  constructor(public dialog: MatDialog, private data: DeleteItemService) {}
+  constructor( 
+    public dialog: MatDialog, 
+    private data: DeleteItemService,
+    private thService: ActivatedRoute,
+    ) {}
+
   ngOnInit(): void {
     this.data.changeMessage(this.item);
+    this.thService.data.subscribe({
+      next:(data)=>{ 
+        console.log(data);
+      },
+      error:(error)=>{
+
+      }
+      
+    });
   }
   //-----funciones-----
   delete() {
