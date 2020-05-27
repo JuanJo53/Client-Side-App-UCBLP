@@ -30,7 +30,7 @@
               <!--btn ver contenido-->
               <button
                 class="circular-button-custom-card"
-                (click)="verContenido(cards.id)"
+                (click)="verContenido(cards.idTema)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   remove_red_eye
@@ -40,7 +40,7 @@
               <!--btn configuraciones-->
               <button
                 class="circular-button-custom-card"
-                (click)="configuraciones()"
+                (click)="configuraciones(cards)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
@@ -48,7 +48,7 @@
               </button>
               <!--#btn configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card" (click)="eliminar()">
+              <button class="circular-button-custom-card" (click)="eliminar(cards.idTema)">
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
@@ -57,11 +57,11 @@
             </div>
             <div class="custom-card__content-card"></div>
             <div class="custom-card__description-theme">
-              <span class="custom-card__description-theme--title">{{
-                cards.titulo
+              <span class="custom-card__description-theme--title">Theme {{
+                cards.numeroTema
               }}</span>
               <span class="custom-card__description-theme--subtitle">
-                {{ cards.subtitulo }}
+                {{ cards.nombreTema }}
               </span>
             </div>
           </div>

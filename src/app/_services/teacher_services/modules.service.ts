@@ -11,10 +11,19 @@ export class ModulesService {
 
   constructor(private http:HttpClient) { }
   getThemes(idCurso):Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/modules/themes/"+idCurso);
+    return this.http.get(apiKey.api+"/teacher/modules/themes/"+idCurso,{ observe: 'response' });
   }
   addTheme(addT:Theme):Observable<any>{
-    return this.http.post(apiKey.api+"/teacher/themes",addT);
+    return this.http.post(apiKey.api+"/teacher/modules/themes",addT,{ observe: 'response' });
+  }
+  getImagesThemes():Observable<any>{
+    return this.http.get(apiKey.api+"/teacher/modules/themes/images/get",{ observe: 'response' });
+  }
+  delThemes(idTema):Observable<any>{
+    return this.http.delete(apiKey.api+"/teacher/modules/themes/"+idTema,{ observe: 'response' });
+  }
+  updateThemes(updTh:Theme):Observable<any>{
+    return this.http.put(apiKey.api+"/teacher/modules/themes/",updTh,{ observe: 'response' });
   }
 
 }

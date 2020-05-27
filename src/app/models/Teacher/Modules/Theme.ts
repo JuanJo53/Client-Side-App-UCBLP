@@ -1,5 +1,8 @@
 export class Theme{
-    idThema:string;
-    nombre:string; 
+    idTema:string;
+    nombreTema:string;
+    numeroTema:number; 
+    estado:number;
     idCurso:string;
+    idImagen:string;
 }

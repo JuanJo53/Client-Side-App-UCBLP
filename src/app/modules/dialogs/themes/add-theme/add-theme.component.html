@@ -15,6 +15,7 @@
           matInput
           placeholder="Name"
           name="nombreTema"
+          [(ngModel)]="nombreTema"
         />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
@@ -50,7 +51,9 @@
     </button>
     <!--#btn cancel-->
     <!-- btn accept-->
-    <button mat-button class="dialog-button-accept">
+    <button mat-button class="dialog-button-accept"
+    (click)="aceptar()"
+    >
       Accept
     </button>
   </mat-dialog-actions>

@@ -10,6 +10,8 @@ import { DeleteCardComponent } from "../../../../dialogs/delete-card/delete-card
 import { AddThemeComponent } from "../../../../dialogs/themes/add-theme/add-theme.component";
 import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
 import { ConfigureThemeComponent } from "../../../../dialogs/themes/configure-theme/configure-theme.component";
+import { Theme } from 'src/app/models/Teacher/Modules/Theme';
+import { ThemeImage } from 'src/app/models/Teacher/Modules/ThemeImage';
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -19,35 +21,12 @@ export class ThemesComponent implements OnInit {
   //----variables-----
   tema = "Theme 1";
   descripcion = "Present";
+
   item = "theme";
-
-  themeCards: CardThemes[] = [
-    {
-      id: 1,
-      titulo: "Theme 1",
-      subtitulo: "Fruits",
-      color: "#D77A61",
-    },
-    {
-      id: 2,
-      titulo: "Theme 2",
-      subtitulo: "Vegetables",
-      color: "#D77A61",
-    },
-    {
-      id: 3,
-      titulo: "Theme 3",
-      subtitulo: "Animals",
-      color: "#D77A61",
-    },
-    { id: 4, titulo: "Theme 4", subtitulo: "Cellphones", color: "#D77A61" },
-
-    {
-      id: 5,
-      titulo: "Theme 5",
-      subtitulo: "Services",
-      color: "#D77A61",
-    },
+  idCurso:string;
+  themeCards: Theme[] = [    
+  ];
+  themeImages: ThemeImage[] = [    
   ];
   cardTheme: CardThemes = {
     id: 0,
@@ -61,33 +40,101 @@ export class ThemesComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {}
+  addThemesImages(data){
+    for(let i in data){
+     let newImgT=new ThemeImage();
+     newImgT.idTemaImagen=data[i].id_imagen;
+     newImgT.url=data[i].imagen;
+     this.themeImages.push(newImgT);
+    }
+  }
+  addThemesCards(data,idCurso:string){
+    this.themeCards=[];
+    for(let i in data){
+      let newCardTheme=new Theme();
+      newCardTheme.idImagen=data[i].id_imagen;
+      newCardTheme.idTema=data[i].id_tema;
+      newCardTheme.nombreTema=data[i].nombre_tema;
+      newCardTheme.numeroTema=data[i].numero_tema;
+      newCardTheme.idCurso=idCurso;
+      newCardTheme.estado=data[i].tema_habilitado;
+      this.themeCards.push(newCardTheme);
+    }
+  }
   ngOnInit(): void {
+    
     this.data.changeMessage(this.item);
+    this.route.parent.parent.parent.params.subscribe((param)=>{
+      this.idCurso=param['idCurso'];
+      console.log(param);
+      this.route.data.subscribe({
+        next:(data)=>{
+          this.addThemesCards(data.themes.body,this.idCurso);
+          this.addThemesImages(data.images.body);
+        },
+        error:(error)=>{
+          console.log(error.error);
+        }
+      })
+    })
+    
+    
   }
   //----#variables-----
   //-----funciones-----
 
   agregarTemas() {
-    const dialogRef = this.dialog.open(AddThemeComponent, { width: "400px" });
+    const dialogRef = this.dialog.open(AddThemeComponent, { width: "400px" ,
+    data:{
+      idCurso:this.idCurso,
+      images:this.themeImages,
+      numero_tema:this.themeCards.length
+    }
+  });
     dialogRef.afterClosed().subscribe((result) => {
+      if(result!==""){
+        this.addThemesCards(result,this.idCurso);
+      }
       console.log(`Dialog result: ${result}`);
     });
   }
-  configuraciones() {
+  configuraciones(tema) {
     const dialogRef = this.dialog.open(ConfigureThemeComponent, {
       width: "400px",
+      data:{
+        tema:tema
+      }
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      if(result!=""){
+        tema=result;
+      }
     });
   }
   verContenido(id: number) {
     //[where i wanna go] ,{where i am}
-    this.router.navigate(["/themes", id], { relativeTo: this.route });
+    
+    this.router.navigate([id], { relativeTo: this.route });
   }
-  eliminar() {
-    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
+  eliminar(idTema) {
+    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" 
+    ,data:{
+      idTema:idTema,
+      tipo:"Temas"
+    }  
+  });
     dialogRef.afterClosed().subscribe((result) => {
+      var temas=this.themeCards;
+      if(result!=""){
+        this.themeCards.find(function(valor,index){
+          if(valor.idTema===idTema){
+            temas.splice(index,1);
+
+          }
+        });
+        
+
+      }
       console.log(`Dialog result: ${result}`);
     });
   }

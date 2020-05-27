@@ -20,6 +20,7 @@ import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
 import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
 import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
+import { GetImagesIdResolver } from './_resolvers/docente/modules/get_imagesId.resolver';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
           {
             path: "themes",
             component: ThemesBaseComponent,
+            resolve:{
+              themes:GetThemesTeacherResolver, 
+              images:GetImagesIdResolver
+            },
             children: [
             {
               path: "",

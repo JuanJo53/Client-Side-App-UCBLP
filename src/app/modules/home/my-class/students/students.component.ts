@@ -26,9 +26,7 @@ export interface ListaDeEstudiantes {
   id: number;
 }
 
-const ELEMENT_DATA: ListaEstudiante[]= [
- 
-];
+
 
 @Component({
   selector: "app-students",
@@ -36,6 +34,9 @@ const ELEMENT_DATA: ListaEstudiante[]= [
   styleUrls: ["./students.component.scss"],
 })
 export class StudentsComponent implements OnInit {
+  ELEMENT_DATA: ListaEstudiante[]= [
+ 
+  ];
   item: string = "student";
   displayedColumns: string[] = [
     "posicion",
@@ -45,7 +46,7 @@ export class StudentsComponent implements OnInit {
     "promedio",
     "id",
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -69,7 +70,7 @@ export class StudentsComponent implements OnInit {
         nuevoEstudiante.p_nombre=data[i].ap_paterno_alumno;
         nuevoEstudiante.posicion=Number(i)+1;
         nuevoEstudiante.promedio=data[i].nota;
-        ELEMENT_DATA.push(nuevoEstudiante);
+        this.ELEMENT_DATA.push(nuevoEstudiante);
       }
     }
   iniciarTabla(){
@@ -109,16 +110,16 @@ export class StudentsComponent implements OnInit {
                idCurso:idCurso
              }
           });
-          dialogRef.afterClosed().subscribe((result:ListaEstudiante) => {
-            result.posicion=ELEMENT_DATA.length+1;
-            ELEMENT_DATA.push(result);
+          dialogRef.afterClosed().subscribe((result) => {
+            if(result!==""){
+            result.posicion=this.ELEMENT_DATA.length+1;
+            this.ELEMENT_DATA.push(result);
             this.dataSource.sort = this.sort;
             this.dataSource.paginator = this.paginator;
             //this.data.currentMessage.subscribe((message) => (this.titulo = message));
             this.data.changeMessage(this.item);
             
-            console.log(result);
-            console.log(ELEMENT_DATA);
+            console.log(this.ELEMENT_DATA);}
           });
         
 
@@ -135,20 +136,20 @@ export class StudentsComponent implements OnInit {
   }
   removeItem(value){
     var flag=false;
-    for(let i in ELEMENT_DATA){
+    for(let i in this.ELEMENT_DATA){
       if(flag==false){
-        if(ELEMENT_DATA[i].id_alumno_curso==value){
+        if(this.ELEMENT_DATA[i].id_alumno_curso==value){
           flag=true;
-          ELEMENT_DATA.splice(Number(i), 1);
-          console.log(ELEMENT_DATA);          
+          this.ELEMENT_DATA.splice(Number(i), 1);
+          console.log(this.ELEMENT_DATA);          
         }
       }
       else{
-        ELEMENT_DATA[Number(i)-1].posicion--;
+        this.ELEMENT_DATA[Number(i)-1].posicion--;
       }
     }
     
-    this.dataSource.data=ELEMENT_DATA;
+    this.dataSource.data=this.ELEMENT_DATA;
   }
   eliminarEstudiante(idAlumnoCurso) {
     this.stService.parent.parent.params.subscribe(
@@ -161,8 +162,9 @@ export class StudentsComponent implements OnInit {
             }
           });
           dialogRef.afterClosed().subscribe((result) => {
+            if(result!==""){
             this.removeItem(idAlumnoCurso);
-            console.log(result);
+            console.log(result);}
           });
         
 
