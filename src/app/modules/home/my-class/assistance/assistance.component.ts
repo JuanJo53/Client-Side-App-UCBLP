@@ -2,11 +2,14 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
+import { ComboMes } from "src/app/models/comboMes";
+
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+
 export interface ListaAsistencia {
   nombre: string;
   posicion: number;
@@ -40,6 +43,12 @@ const ELEMENT_DATA: ListaAsistencia[] = [
   styleUrls: ["./assistance.component.scss"],
 })
 export class AssistanceComponent implements OnInit {
+  selectedValue: string;
+  foods: ComboMes[] = [
+    { value: "Enero", display: "Enero" },
+    { value: "Febrero", display: "Febrero" },
+    { value: "Marzo", display: "Marzo" },
+  ];
   displayedColumns: string[] = [
     "posicion",
     "nombre",

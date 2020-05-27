@@ -1,0 +1,33 @@
+.combo-box-container {
+  //background-color: $color-primary-blue;
+}
+
+.combo-box {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  //background-color: red;
+  &__text {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: $color-primary-blue;
+  }
+  &__combo {
+    //background-color: yellow;
+  }
+}
+// .mat-select-panel {
+//   background-color: red!important;
+// }
+// .mat-form-field-infix{
+//   background-color: red!important;
+// }
+// .mat-select{
+//   background-color: red!important;
+// }
+.mat-form-field-underline{
+  background-color: $color-primary-blue!important;
+}
+.mat-focused{
+  color: red!important;
+}

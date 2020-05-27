@@ -35,6 +35,7 @@ import { ThemeContentComponent } from 'src/app/modules/home/modules/themes-base/
 import { ThemesBaseComponent } from 'src/app/modules/home/modules/themes-base/themes-base.component';
 import { ConfigureThemeComponent } from 'src/app/modules/dialogs/themes/configure-theme/configure-theme.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
 })
 export class DefaultModule {}
