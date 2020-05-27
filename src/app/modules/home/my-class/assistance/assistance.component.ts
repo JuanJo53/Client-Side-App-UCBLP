@@ -67,4 +67,7 @@ export class AssistanceComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
+  agregarAsistenia() {
+    console.log("add assitance");
+  }
 }
