@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
@@ -13,7 +13,7 @@ export interface ListaAsistencia {
   p_nombre: string; //apellido paterno
   m_nombre: string; //pellido materno
   promedioFinal: number;
-  id: number;
+  asistencia: number;
 }
 const ELEMENT_DATA: ListaAsistencia[] = [
   {
@@ -22,14 +22,22 @@ const ELEMENT_DATA: ListaAsistencia[] = [
     p_nombre: "Prudencio",
     m_nombre: "Flores",
     promedioFinal: 90,
-    id: 1,
+    asistencia: 1,
   },
-]
+  {
+    posicion: 2,
+    nombre: "Ariel",
+    p_nombre: "Colque",
+    m_nombre: "Herrera",
+    promedioFinal: 90,
+    asistencia: 0,
+  },
+];
 
 @Component({
-  selector: 'app-assistance',
-  templateUrl: './assistance.component.html',
-  styleUrls: ['./assistance.component.scss']
+  selector: "app-assistance",
+  templateUrl: "./assistance.component.html",
+  styleUrls: ["./assistance.component.scss"],
 })
 export class AssistanceComponent implements OnInit {
   displayedColumns: string[] = [
@@ -37,26 +45,7 @@ export class AssistanceComponent implements OnInit {
     "nombre",
     "p_nombre",
     "m_nombre",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
-    "id",
+    "asistencia",
     "promedioFinal",
   ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -69,5 +58,4 @@ export class AssistanceComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
-
 }
