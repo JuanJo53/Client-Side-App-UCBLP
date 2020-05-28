@@ -31,10 +31,6 @@ export class MyClassService {
   getProfileStudent(email):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/my-class/students/profile",{correoAlumno:email},{ observe: 'response' });
   }
-
-
-
-
   //Servicios para la Asistencia
   getFechasAsistencia(idCurso):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/my-class/assistance-dates/"+idCurso,{ observe: 'response' });
