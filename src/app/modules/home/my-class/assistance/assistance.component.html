@@ -1,8 +1,9 @@
 <div class="container">
+  <!--combo box-->
   <div class="combo-box-container">
     <div class="combo-box">
       <div class="combo-box__combo">
-        <mat-form-field>
+        <mat-form-field class="combo-box__campo">
           <mat-label>Month</mat-label>
           <mat-select>
             <mat-option *ngFor="let elemento of foods" [value]="elemento.value">
@@ -13,8 +14,8 @@
       </div>
     </div>
   </div>
+  <!--#combo box-->
   <!--Subtitle-->
-  <!--Subtitle lesson-->
   <div class="subtitle-compound">
     <div class="subtitle-compound__text">
       <span>Attendance</span>
@@ -31,7 +32,6 @@
       <!--#Add button-->
     </div>
   </div>
-  <!--#Subtitle lesson-->
   <!--#Subtitle-->
   <!--tables-->
   <div class="mat-elevation-z8">
