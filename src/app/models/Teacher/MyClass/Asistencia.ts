@@ -3,6 +3,6 @@ export class Asistencia{
     nombreAlumno:string;
     apPaternoAlumno:string;
     apMaternoAlumno:string;
-    asistencia:number[];
+    asistencia:Array<any>;
     promedio:string;
 }

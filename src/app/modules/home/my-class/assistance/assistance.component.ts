@@ -9,6 +9,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+import {CdkColumnDef} from '@angular/cdk/table';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
@@ -24,12 +25,15 @@ export interface ListaAsistencia {
 }
 
 
+
 @Component({
   selector: "app-assistance",
   templateUrl: "./assistance.component.html",
   styleUrls: ["./assistance.component.scss"],
 })
 export class AssistanceComponent implements OnInit {
+  columns:string[]=[
+  ];
   ELEMENT_DATA: Asistencia[] = [
  
   ];
@@ -37,8 +41,6 @@ export class AssistanceComponent implements OnInit {
   foods: Combo[] = [
   ];
   idCurso:string;
-  columns:number[]=[
-  ];
   month:string[]=[
     "January","February","March","April","May","June","July","August","September","October","November","December"
   ]
@@ -49,7 +51,7 @@ export class AssistanceComponent implements OnInit {
     { value: "2", display: "2nd Period" },
     { value: "3", display: "3rd Period" },
   ];
-  displayedColumns: string[] = [
+  displayedColumns: any[] = [
     "posicion",
     "nombre",
     "p_nombre",
@@ -65,23 +67,22 @@ export class AssistanceComponent implements OnInit {
     private stService:ActivatedRoute,
     private assiEst:MyClassService
     ) {}
-  anadirCabezera(data){
+
+  anadirTabla(data){
     if(data.length>0){
       for(let dat of data[0].asistencia){
-        this.columns.push(dat.dia);
-        this.displayedColumns.push(String(dat.dia));
+        this.columns.push(String(dat.dia) );
       }
+      this.displayedColumns=this.columns.map(col => col);
+      this.displayedColumns.splice(0, 0, "m_nombre");
+      this.displayedColumns.splice(0, 0, "p_nombre");
+      this.displayedColumns.splice(0, 0, "nombre");
+      this.displayedColumns.splice(0, 0, "posicion");
+      console.log(this.columns);
+      console.log(this.displayedColumns);
       
     this.displayedColumns.push("promedioFinal");
-    this.dataSource.data=this.ELEMENT_DATA;
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
     }
-    console.log(this.displayedColumns);
-    console.log(this.columns);
-  }
-  anadirTabla(data){
-    this.anadirCabezera(data);
     for(let i in data){
       let newAsis=new Asistencia();
       newAsis.nombreAlumno=data[i].nombre_alumno;
@@ -89,7 +90,7 @@ export class AssistanceComponent implements OnInit {
       newAsis.apPaternoAlumno=data[i].ap_paterno_alumno;
       var a=[];
       var prom=0;
-      const porcen=(100/data.length)
+      const porcen=(100/data[0].asistencia.length)
       for(let asis of data[i].asistencia){
         a.push(asis.asistencia);
         if(asis.asistencia==1){
@@ -105,7 +106,7 @@ export class AssistanceComponent implements OnInit {
     this.dataSource.data=this.ELEMENT_DATA;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    console.log(this.ELEMENT_DATA);
+    
   }
   getLista(fecha){
     this.stService.parent.parent.params.subscribe(
@@ -155,9 +156,9 @@ export class AssistanceComponent implements OnInit {
 
           console.log(data.fechas);
           for(let i in data.fechas.body){
-            this.foods.push({ value: String(Number(i)+1), display: this.month[data.fechas.body[i].mes-1] })
+            this.foods.push({ value: data.fechas.body[i].mes, display: this.month[data.fechas.body[i].mes-1] })
           }
-          this.getLista(data.fechas.body[0].mes);
+          
           //this.crearNuevaClase();
 
         }
@@ -173,7 +174,7 @@ export class AssistanceComponent implements OnInit {
   agregarAsistenia() {
     console.log("add assitance");
   }
-  click(){
-    console.log(this.selected);
+  changeMonth(){
+    this.getLista(Number(this.selected));
   }
 }

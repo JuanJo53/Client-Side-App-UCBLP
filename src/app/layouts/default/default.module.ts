@@ -36,6 +36,7 @@ import { ThemesBaseComponent } from 'src/app/modules/home/modules/themes-base/th
 import { ConfigureThemeComponent } from 'src/app/modules/dialogs/themes/configure-theme/configure-theme.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import {MatSelectModule} from '@angular/material/select';
     // BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    CdkTableModule,
     //FlexLayoutModule,
     MatToolbarModule,
     SharedModule,

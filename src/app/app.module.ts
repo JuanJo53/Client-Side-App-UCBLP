@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
 
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -18,7 +17,7 @@ import { AuthInterceptor } from "./_help/auth-interceptor.service";
     DefaultModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [
     {
