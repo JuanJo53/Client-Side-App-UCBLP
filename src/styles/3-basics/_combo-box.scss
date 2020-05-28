@@ -1,5 +1,5 @@
 .combo-box-container {
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: flex;
   //background-color: $color-primary-blue;
 }
@@ -34,9 +34,9 @@
 // .mat-form-field-underline {
 //   background-color: $color-primary-blue !important;
 // }
-// .mat-form-field-wrapper {
-//   padding-bottom: 1rem !important;
-// }
+.mat-form-field-wrapper {
+  padding-bottom: 1rem !important;
+}
 // .mat-focused {
 //   color: red !important;
 // }

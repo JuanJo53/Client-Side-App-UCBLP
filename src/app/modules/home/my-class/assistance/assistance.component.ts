@@ -43,7 +43,7 @@ const ELEMENT_DATA: ListaAsistencia[] = [
   styleUrls: ["./assistance.component.scss"],
 })
 export class AssistanceComponent implements OnInit {
-  selectedValue: string;
+  selected: string;
   foods: Combo[] = [
     { value: "Enero", display: "Enero" },
     { value: "Febrero", display: "Febrero" },
@@ -72,8 +72,12 @@ export class AssistanceComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    console.log(this.selected);
   }
   agregarAsistenia() {
     console.log("add assitance");
+  }
+  click(){
+    console.log(this.selected);
   }
 }
