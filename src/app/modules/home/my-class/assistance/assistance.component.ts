@@ -7,6 +7,10 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
 export interface ListaAsistencia {
   nombre: string;
   posicion: number;
@@ -32,6 +36,10 @@ const ELEMENT_DATA: ListaAsistencia[] = [
   styleUrls: ['./assistance.component.scss']
 })
 export class AssistanceComponent implements OnInit {
+  idCurso:string;
+  month:string[]=[
+    "January","February","March","April","May","June","July","August","September","October","November","December"
+  ]
   displayedColumns: string[] = [
     "posicion",
     "nombre",
@@ -63,11 +71,69 @@ export class AssistanceComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor() {}
-
+  constructor(
+    private tokenServ:TokenStorageService,
+    private router:Router,
+    private stService:ActivatedRoute,
+    private assiEst:MyClassService
+    ) {}
+  getLista(fecha){
+    this.stService.parent.parent.params.subscribe(
+      (param)=>{
+        this.idCurso=param['idCurso'];
+        this.assiEst.getAlumnossAsistencia(this.idCurso,fecha).subscribe({
+          next:(data)=>{
+            if(data.status==200){
+              console.log(data);
+            }
+            else{
+              console.log(data);
+            }
+          },
+          error:(error)=>{
+            console.log(error);
+          }
+        });
+      })
+  }
+  crearNuevaClase(){
+    this.stService.parent.parent.params.subscribe(
+      (param)=>{
+        this.idCurso=param['idCurso'];
+        this.assiEst.crearClase(this.idCurso).subscribe({
+          next:(data)=>{
+            if(data.status==200){
+              console.log(data);
+            }
+            else{
+              console.log(data);
+            }
+          },
+          error:(error)=>{
+            console.log(error);
+          }
+        });
+      })
+  }
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.stService.data.subscribe({
+      next:(data)=>{
+        if(data.fechas.status==200){
+          console.log(data.fechas.body[0].mes);
+          this.getLista(data.fechas.body[0].mes);
+          //this.crearNuevaClase();
+
+        }
+        else{
+          console.log("Error");
+        }
+      },
+      error:(error)=>{
+        console.log("Error");
+      }
+    });
   }
 
 }

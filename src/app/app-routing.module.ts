@@ -21,6 +21,7 @@ import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-b
 import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
 import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
 import { GetImagesIdResolver } from './_resolvers/docente/modules/get_imagesId.resolver';
+import { GetFechasAsistenciaResolver } from './_resolvers/docente/my-class/get-fechas-asistencia.resolver';
 
 const routes: Routes = [
   {
@@ -59,6 +60,9 @@ const routes: Routes = [
           },
           {
             path: "attendance",
+            resolve:{
+              fechas:GetFechasAsistenciaResolver
+            },
             component: AssistanceComponent,
           },
           {
