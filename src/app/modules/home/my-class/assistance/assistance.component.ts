@@ -13,6 +13,7 @@ import { TokenStorageService } from 'src/app/_services/general_services/token-st
 import { Router, ActivatedRoute } from '@angular/router';
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
+import { Asistencia } from 'src/app/models/Teacher/MyClass/Asistencia';
 export interface ListaAsistencia {
   nombre: string;
   posicion: number;
@@ -21,24 +22,7 @@ export interface ListaAsistencia {
   promedioFinal: number;
   asistencia: number;
 }
-const ELEMENT_DATA: ListaAsistencia[] = [
-  {
-    posicion: 1,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedioFinal: 90,
-    asistencia: 1,
-  },
-  {
-    posicion: 2,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedioFinal: 90,
-    asistencia: 0,
-  },
-];
+
 
 @Component({
   selector: "app-assistance",
@@ -46,13 +30,15 @@ const ELEMENT_DATA: ListaAsistencia[] = [
   styleUrls: ["./assistance.component.scss"],
 })
 export class AssistanceComponent implements OnInit {
+  ELEMENT_DATA: Asistencia[] = [
+ 
+  ];
   selectedValue: string;
   foods: ComboMes[] = [
-    { value: "Enero", display: "Enero" },
-    { value: "Febrero", display: "Febrero" },
-    { value: "Marzo", display: "Marzo" },
   ];
   idCurso:string;
+  columns:number[]=[
+  ];
   month:string[]=[
     "January","February","March","April","May","June","July","August","September","October","November","December"
   ]
@@ -61,10 +47,8 @@ export class AssistanceComponent implements OnInit {
     "nombre",
     "p_nombre",
     "m_nombre",
-    "asistencia",
-    "promedioFinal",
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -74,6 +58,48 @@ export class AssistanceComponent implements OnInit {
     private stService:ActivatedRoute,
     private assiEst:MyClassService
     ) {}
+  anadirCabezera(data){
+    if(data.length>0){
+      for(let dat of data[0].asistencia){
+        this.columns.push(dat.dia);
+        this.displayedColumns.push(String(dat.dia));
+      }
+      
+    this.displayedColumns.push("promedioFinal");
+    this.dataSource.data=this.ELEMENT_DATA;
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    }
+    console.log(this.displayedColumns);
+    console.log(this.columns);
+  }
+  anadirTabla(data){
+    this.anadirCabezera(data);
+    for(let i in data){
+      let newAsis=new Asistencia();
+      newAsis.nombreAlumno=data[i].nombre_alumno;
+      newAsis.apMaternoAlumno=data[i].ap_materno_alumno;
+      newAsis.apPaternoAlumno=data[i].ap_paterno_alumno;
+      var a=[];
+      var prom=0;
+      const porcen=(100/data.length)
+      for(let asis of data[i].asistencia){
+        a.push(asis.asistencia);
+        if(asis.asistencia==1){
+          prom+=porcen;
+        }
+      }
+      newAsis.asistencia=a;
+      newAsis.promedio=String(prom.toPrecision(3));
+      newAsis.posicion=Number(i)+1;
+      this.ELEMENT_DATA.push(newAsis);
+
+    }
+    this.dataSource.data=this.ELEMENT_DATA;
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    console.log(this.ELEMENT_DATA);
+  }
   getLista(fecha){
     this.stService.parent.parent.params.subscribe(
       (param)=>{
@@ -82,6 +108,7 @@ export class AssistanceComponent implements OnInit {
           next:(data)=>{
             if(data.status==200){
               console.log(data);
+              this.anadirTabla(data.body)
             }
             else{
               console.log(data);
@@ -118,7 +145,11 @@ export class AssistanceComponent implements OnInit {
     this.stService.data.subscribe({
       next:(data)=>{
         if(data.fechas.status==200){
-          console.log(data.fechas.body[0].mes);
+
+          console.log(data.fechas);
+          for(let i in data.fechas.body){
+            this.foods.push({ value: String(Number(i)+1), display: this.month[data.fechas.body[i].mes-1] })
+          }
           this.getLista(data.fechas.body[0].mes);
           //this.crearNuevaClase();
 

@@ -40,7 +40,7 @@ export class MyClassService {
     return this.http.get(apiKey.api+"/teacher/my-class/assistance-dates/"+idCurso,{ observe: 'response' });
   }
   getAlumnossAsistencia(idCurso,fecha):Observable<any>{
-    return this.http.post(apiKey.api+"/teacher/my-class/list-assistance/",{id:idCurso,fechaClase:fecha});
+    return this.http.post(apiKey.api+"/teacher/my-class/list-assistance/",{id:idCurso,fechaClase:fecha},{ observe: 'response' });
   }
   crearClase(idCurso):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/my-class/add-class-assistance",{idCurso},{ observe: 'response' });

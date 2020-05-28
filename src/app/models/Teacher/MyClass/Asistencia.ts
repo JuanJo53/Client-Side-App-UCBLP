@@ -1,7 +1,8 @@
 export class Asistencia{
-    idClaseAlumno:number;
+    posicion:number;
     nombreAlumno:string;
     apPaternoAlumno:string;
     apMaternoAlumno:string;
-    asistencia:string;
+    asistencia:number[];
+    promedio:string;
 }

@@ -61,7 +61,7 @@
         >
           Name
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.nombreAlumno }}</td>
       </ng-container>
       <!-- #Name Column -->
 
@@ -75,7 +75,7 @@
         >
           Father's Name
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.apPaternoAlumno }}</td>
       </ng-container>
       <!-- #Father's Name Column -->
       <!-- Mother's Name Column -->
@@ -88,35 +88,36 @@
         >
           Mother's Name
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.apMaternoAlumno }}</td>
       </ng-container>
       <!-- #Mother's Name Column -->
 
       <!-- 1/2 Column -->
-      <ng-container matColumnDef="asistencia">
+      
+      <ng-container *ngFor="let column of columns;let i = index"  matColumnDef="{{column}}">
         <th
           mat-header-cell
           *matHeaderCellDef
           mat-sort-header
           class="header-table"
         >
-          1/2
+        {{column}}
         </th>
         <td mat-cell *matCellDef="let element">
           <!-- <span class="circular-button-table__icon"><mat-icon class="circular-button-subtitle__icon">close</mat-icon>
     </span> -->
           <span class="circular-button-table__icon">
             <mat-icon class="circular-button-subtitle__icon"
-              ><div *ngIf="element.asistencia == 1">
+              ><div *ngIf="element.asistencia[i] == 1">
                 check
               </div>
-              <div *ngIf="element.asistencia == 0">
+              <div *ngIf="element.asistencia[i] == 0">
                 close
               </div>
             </mat-icon>
           </span>
-        </td></ng-container
-      >
+        </td>
+      </ng-container>
       <!-- #1/2 Column -->
       <!-- Average Column -->
       <ng-container matColumnDef="promedioFinal">
@@ -128,7 +129,7 @@
         >
           Final Average
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.promedioFinal }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
       </ng-container>
       <!-- #Average Column -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
