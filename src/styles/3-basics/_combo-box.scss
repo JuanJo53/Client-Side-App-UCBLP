@@ -1,36 +1,76 @@
 .combo-box-container {
+  margin-top: 4rem;
+  display: flex;
   //background-color: $color-primary-blue;
 }
-
 .combo-box {
-  margin-top: 2.5rem;
-  display: flex;
-  align-items: center;
-  //background-color: red;
-  &__text {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: $color-primary-blue;
-  }
-  &__combo {
-    //background-color: yellow;
-  }
+  margin-right: 2rem;
 }
-// .mat-select-panel {
-//   background-color: red!important;
+// .combo-box {
+//   margin-top: 2.5rem;
+//   display: flex;
+//   align-items: center;
+//   //background-color: red;
+//   &__text {
+//     font-size: 1.5rem;
+//     margin-right: 1rem;
+//     color: $color-primary-blue;
+//   }
+//   &__combo {
+//     //background-color: yellow;
+//   }
 // }
-// .mat-form-field-infix{
-//   background-color: red!important;
+// .mat-select-panel {
+//   background-color: $color-primary-blue!important;
+// }
+// .mat-form-field-infix {
+//   background-color: red !important;
+//   border-top-left-radius: 1rem;
+//   border-top-right-radius: 1rem;
 // }
 // .mat-select{
 //   background-color: red!important;
 // }
-.mat-form-field-underline {
-  background-color: $color-primary-blue !important;
-}
+// .mat-form-field-underline {
+//   background-color: $color-primary-blue !important;
+// }
 // .mat-form-field-wrapper {
 //   padding-bottom: 1rem !important;
 // }
-.mat-focused {
-  color: red !important;
+// .mat-focused {
+//   color: red !important;
+// }
+.mat-select-arrow {
+  color: $color-primary-blue !important;
+}
+.mat-form-field-underline {
+  height: 1 !important;
+}
+.mat-form-field-ripple {
+  background-color: $color-primary-blue !important;
+}
+.mat-form-field-flex {
+  padding: 1rem !important;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  //background-color: lighten($color-primary-blue, 65%);
+  //background-color: $color-primary-blue;
+  //border:0.15rem solid $color-primary-blue!important;
+  //opacity: 70%;
+}
+// .mat-option-text {
+//   //color: $color-primary-white;
+// }
+.mat-active {
+  background-color: $color-primary-blue !important;
+  color: $color-primary-white !important;
+}
+// .mat-option {
+//   &:hover {
+//     //background-color: $color-primary-blue !important;
+//     //color: $color-primary-white !important;
+//   }
+// }
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $color-primary-white !important;
 }
