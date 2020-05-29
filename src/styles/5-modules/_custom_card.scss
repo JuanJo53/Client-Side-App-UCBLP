@@ -171,10 +171,10 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      background-color: rgba(
-        $color: $color-card-themes-test,
-        $alpha: $opacity-custom-card
-      );
+      // background-color: rgba(
+      //   $color: $color-card-themes-test,
+      //   $alpha: $opacity-custom-card
+      // );
       color: $color-primary-white;
     }
   }
@@ -187,9 +187,9 @@
       // cursor: pointer;
       //transition: all 0.1s ease;
       background-color: rgba(
-        $color: darken($color-card-themes-test, $hover-custom-card),
+        $color: darken($color-card-lessons, $hover-custom-card),
         $alpha: $opacity-custom-card
-      );
+      ) !important;
     }
   }
   &__buttons-card {

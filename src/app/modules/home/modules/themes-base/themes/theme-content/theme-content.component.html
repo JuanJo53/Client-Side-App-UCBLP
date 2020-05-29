@@ -13,9 +13,6 @@
     </div>
   </div>
   <!--#Subtitle-->
-  <!-- <div>
-    <p>{{ theme.id }}</p>
-  </div> -->
   <!--row-->
   <div class="row">
     <div *ngFor="let cards of lessonCards" class="col-lg-3 col-md-6 col-xs-12">
@@ -27,7 +24,7 @@
               <!--btn ver contenido-->
               <button
                 class="circular-button-custom-card"
-                (click)="verContenido(cards.id)"
+                (click)="verLecciones()"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   remove_red_eye
