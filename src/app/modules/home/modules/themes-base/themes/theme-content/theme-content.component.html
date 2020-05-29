@@ -31,13 +31,6 @@
                 </mat-icon>
               </button>
               <!--#btn ver contenido-->
-              <!--btn Ver lista-->
-              <button class="circular-button-custom-card" (click)="listar()">
-                <mat-icon class="circular-button-custom-card__icon">
-                  list
-                </mat-icon>
-              </button>
-              <!--#btn Ver lista-->
               <!--btn  configuraciones-->
               <button
                 class="circular-button-custom-card"
@@ -93,20 +86,10 @@
   <!--row-->
   <div class="row">
     <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
-      <div class="custom-card--practices">
-        <div class="custom-card--practices__img">
-          <div class="custom-card--practices__img-overlay">
-            <div class="custom-card--practices__buttons-card">
-              <!--btn ver contenido-->
-              <button
-                class="circular-button-custom-card"
-                (click)="verContenido(cards.id)"
-              >
-                <mat-icon class="circular-button-custom-card__icon">
-                  remove_red_eye
-                </mat-icon>
-              </button>
-              <!--#btn ver contenido-->
+      <div class="custom-card--themes">
+        <div class="custom-card--themes__img">
+          <div class="custom-card--themes__img-overlay">
+            <div class="custom-card--themes__buttons-card">
               <!--btn Ver lista-->
               <button class="circular-button-custom-card" (click)="listar()">
                 <mat-icon class="circular-button-custom-card__icon">
@@ -132,9 +115,9 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card--practices__content-card"></div>
-            <div class="custom-card--practices__description-theme">
-              <span class="custom-card--practices__description-theme--title">{{
+            <div class="custom-card--themes__content-card"></div>
+            <div class="custom-card--themes__description-theme">
+              <span class="custom-card--themes__description-theme--title">{{
                 cards.titulo
               }}</span>
             </div>

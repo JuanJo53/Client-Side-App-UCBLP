@@ -16,25 +16,70 @@
   <!--row-->
   <div class="row">
     <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
-      <div class="custom-card--practices">
-        <div class="custom-card--practices__img">
-          <div
-            class="custom-card--practices__img-overlay"
-            [ngStyle]="{
-              'background-color': 'rgba( 215, 122, 97,' + 0.75 + ')'
-            }"
-          >
-            <div class="custom-card--practices__buttons-card">
-              <!--btn ver contenido-->
-              <button
-                class="circular-button-custom-card"
-                (click)="verContenido(cards.id)"
-              >
+      <div class="custom-card--lessons">
+        <div class="custom-card--lessons__img">
+          <div class="custom-card--lessons__img-overlay">
+            <div class="custom-card--lessons__buttons-card">
+              <!--btn Ver lista-->
+              <button class="circular-button-custom-card" (click)="listar()">
                 <mat-icon class="circular-button-custom-card__icon">
-                  remove_red_eye
+                  list
                 </mat-icon>
               </button>
-              <!--#btn ver contenido-->
+              <!--#btn Ver lista-->
+              <!--btn  configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="configuraciones()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn  configuraciones-->
+              <!--btn eliminar-->
+              <button class="circular-button-custom-card" (click)="eliminar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  delete
+                </mat-icon>
+              </button>
+              <!--#btn eliminar-->
+            </div>
+            <div class="custom-card--lessons__content-card"></div>
+            <div class="custom-card--lessons__description-theme">
+              <span class="custom-card--lessons__description-theme--title">{{
+                cards.titulo
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#custom-cards-->
+    </div>
+  </div>
+  <!--#row-->
+
+  <!--Subtitle practices-->
+  <div class="subtitle-compound">
+    <div class="subtitle-compound__text">
+      <span>Practices</span>
+    </div>
+    <div class="subtitle-compound__buttons-container">
+      <!--Add button-->
+      <button class="circular-button-subtitle" mat-mini-fab>
+        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+      </button>
+      <!--#Add button-->
+    </div>
+  </div>
+  <!--#Subtitle practices-->
+  <!--row-->
+  <div class="row">
+    <div *ngFor="let cards of practices" class="col-lg-3 col-md-6 col-xs-12">
+      <div class="custom-card--practices">
+        <div class="custom-card--practices__img">
+          <div class="custom-card--practices__img-overlay">
+            <div class="custom-card--practices__buttons-card">
               <!--btn Ver lista-->
               <button class="circular-button-custom-card" (click)="listar()">
                 <mat-icon class="circular-button-custom-card__icon">
@@ -73,19 +118,4 @@
     </div>
   </div>
   <!--#row-->
-
-  <!--Subtitle practices-->
-  <div class="subtitle-compound">
-    <div class="subtitle-compound__text">
-      <span>Practices</span>
-    </div>
-    <div class="subtitle-compound__buttons-container">
-      <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab>
-        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
-      </button>
-      <!--#Add button-->
-    </div>
-  </div>
-  <!--#Subtitle practices-->
 </div>

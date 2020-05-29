@@ -78,7 +78,7 @@
 }
 //-----LESSONS-----
 .custom-card--lessons {
-  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  @include custom-card-dinamic(26rem, 16rem, transparent);
   margin: auto;
   margin-top: 2rem;
   //cursor: pointer;
@@ -154,6 +154,67 @@
 }
 //-----#LESSONS-----
 
+//-----THEMES-----
+.custom-card--themes {
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
+  //cursor: pointer;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1525571453712-090270b8354f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(
+        $color: $color-card-themes-test,
+        $alpha: $opacity-custom-card
+      );
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      // @include custom-card-dinamic(27rem, 17rem, $color-primary-white);
+      // cursor: pointer;
+      //transition: all 0.1s ease;
+      background-color: rgba(
+        $color: darken($color-card-themes-test, $hover-custom-card),
+        $alpha: $opacity-custom-card
+      );
+    }
+  }
+  &__buttons-card {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+  }
+  &__content-card {
+    flex: 1;
+  }
+  &__description-theme {
+    flex: 0 1 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    &--title {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+  }
+}
+//-----#THEMES-----
+
 //-----PRACTICES-----
 .custom-card--practices {
   @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
@@ -171,10 +232,10 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      // background-color: rgba(
-      //   $color: $color-card-themes-test,
-      //   $alpha: $opacity-custom-card
-      // );
+      background-color: rgba(
+        $color: $color-card-practices,
+        $alpha: $opacity-custom-card
+      );
       color: $color-primary-white;
     }
   }
@@ -187,9 +248,9 @@
       // cursor: pointer;
       //transition: all 0.1s ease;
       background-color: rgba(
-        $color: darken($color-card-lessons, $hover-custom-card),
+        $color: darken($color-card-practices, $hover-custom-card),
         $alpha: $opacity-custom-card
-      ) !important;
+      );
     }
   }
   &__buttons-card {

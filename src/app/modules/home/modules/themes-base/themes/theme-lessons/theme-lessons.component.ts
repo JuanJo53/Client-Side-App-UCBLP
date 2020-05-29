@@ -18,6 +18,28 @@ export class ThemeLessonsComponent implements OnInit {
       color: "#D77A61",
     },
   ];
+  practices: SimpleCard[] = [
+    {
+      id: 1,
+      titulo: "Practice 1",
+      color: "#D77A61",
+    },
+    {
+      id: 2,
+      titulo: "Practice 2",
+      color: "#D77A61",
+    },
+    {
+      id: 3,
+      titulo: "Practice 3",
+      color: "#D77A61",
+    },
+    {
+      id: 4,
+      titulo: "Practice 4",
+      color: "#D77A61",
+    },
+  ];
 
   constructor() {}
 
@@ -53,7 +75,6 @@ export class ThemeLessonsComponent implements OnInit {
   }
   verLecciones() {
     //[where i wanna go] ,{where i am}
-
     //this.router.navigate(["lessons"], { relativeTo: this.route });
   }
   //-----#funciones-----
