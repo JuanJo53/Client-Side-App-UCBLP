@@ -41,6 +41,7 @@ import { ForumsBaseComponent } from "src/app/modules/home/forums-base/forums-bas
 import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/forum-content/forum-content.component";
 import { InitialInformationComponent } from 'src/app/modules/dialogs/create-practice/initial-information/initial-information.component';
 import { TypeQuestionComponent } from 'src/app/modules/dialogs/create-practice/type-question/type-question.component';
+import { AddForumComponent } from 'src/app/modules/dialogs/forums/add-forum/add-forum.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { TypeQuestionComponent } from 'src/app/modules/dialogs/create-practice/t
     ForumContentComponent,
     ThemeLessonsComponent,
     InitialInformationComponent,
-    TypeQuestionComponent
+    TypeQuestionComponent,
+    AddForumComponent
 
   ],
   imports: [
