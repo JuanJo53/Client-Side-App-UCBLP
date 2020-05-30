@@ -1,0 +1,60 @@
+.modal-header {
+  //background-color: yellow;
+}
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //background-color: red;
+  &__text {
+    &-previous {
+      margin-left: 1rem;
+      color: $color-primary-blue;
+      font-size: 2rem;
+    }
+    &-next {
+      margin-right: 1rem;
+      color: $color-primary-blue;
+      font-size: 2rem;
+    }
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: $color-primary-blue;
+    font-weight: $font-weight-regular;
+  }
+  &__container {
+    //background-color: purple;
+    display: flex;
+    align-items: center;
+  }
+  &__bar {
+    margin-top: 1rem;
+    display: flex;
+    //background-color: green;
+    justify-content: space-between;
+    &--circle {
+      height: 3rem;
+      width: 3rem;
+      border: 0.2rem solid $color-primary-blue;
+      border-radius: 50%;
+      opacity: 25%;
+      &.active {
+        border: 0.275rem solid $color-primary-blue;
+        opacity: 100%;
+        transition: 0.5s;
+      }
+    }
+    &--row {
+      border: 0.15rem solid $color-primary-blue;
+      width: 4rem;
+      opacity: 25%;
+      &.active {
+        opacity: 100%;
+        transition: 0.5s;
+      }
+    }
+  }
+}

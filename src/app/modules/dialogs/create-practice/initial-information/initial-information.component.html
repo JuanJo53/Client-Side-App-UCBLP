@@ -1,13 +1,50 @@
-<div class="container">
-  <div class="modal-header">
-    <div class="modal__button--back">
-      <!--back button-->
-      <button class="circular-button-subtitle" mat-mini-fab>
-        <mat-icon class="circular-button-subtitle__icon"
-          >chevron_left</mat-icon
-        >
-      </button>
-      <!--#Add button-->
-    </div>
+<div class="modal-header">
+  <!--modal title-->
+  <div class="progress-bar__title">
+    Initial Information for practice
   </div>
+  <!--#modal title-->
+  <!--progress bar-->
+  <div class="progress-bar__bar">
+    <!--back button-->
+    <div class="progress-bar__previous" (click)="previous()">
+      <button class="progress-bar__button-previous" mat-mini-fab>
+        <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+      </button>
+      <span class="progress-bar__text-previous">Previous</span>
+    </div>
+    <!--#back button-->
+    <div class="progress-bar__container">
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle active"></div>
+      <!--#progress bar circle-->
+      <!--progress bar row connector-->
+      <div class="progress-bar__bar--row"></div>
+      <!--progress bar row connector-->
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle"></div>
+      <!--#progress bar circle-->
+      <!--progress bar row connector-->
+      <div class="progress-bar__bar--row"></div>
+      <!--progress bar row connector-->
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle"></div>
+      <!--#progress bar circle-->
+      <!--progress bar row connector-->
+      <div class="progress-bar__bar--row"></div>
+      <!--progress bar row connector-->
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle"></div>
+      <!--#progress bar circle-->
+    </div>
+    <!--next button-->
+    <div class="progress-bar__next" (click)="next()">
+      <span class="progress-bar__text-next">Next</span>
+      <button class="progress-bar__button-next" mat-mini-fab>
+        <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+      </button>
+    </div>
+    <!--#next button-->
+  </div>
+  <!--#progress bar-->
 </div>

@@ -186,3 +186,13 @@
 }
 
 //-----#button table-----
+//-----button progress bar-----
+.progress-bar {
+  &__button {
+    &-next,
+    &-previous {
+      background-color: $color-primary-blue !important;
+    }
+  }
+}
+//-----#button progress bar-----
