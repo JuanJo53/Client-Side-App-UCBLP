@@ -7,15 +7,18 @@
   align-items: center;
   //background-color: red;
   &__text {
+    
     &-previous {
       margin-left: 1rem;
       color: $color-primary-blue;
       font-size: 2rem;
+      cursor: pointer;
     }
     &-next {
       margin-right: 1rem;
       color: $color-primary-blue;
       font-size: 2rem;
+      cursor: pointer;
     }
   }
   &__title {
