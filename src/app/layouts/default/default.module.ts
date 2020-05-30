@@ -39,6 +39,8 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { ForumsBaseComponent } from "src/app/modules/home/forums-base/forums-base.component";
 import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/forum-content/forum-content.component";
+import { InitialInformationComponent } from 'src/app/modules/dialogs/create-practice/initial-information/initial-information.component';
+import { TypeQuestionComponent } from 'src/app/modules/dialogs/create-practice/type-question/type-question.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,10 @@ import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/f
     ConfigureThemeComponent,
     ForumsBaseComponent,
     ForumContentComponent,
-    ThemeLessonsComponent
+    ThemeLessonsComponent,
+    InitialInformationComponent,
+    TypeQuestionComponent
+
   ],
   imports: [
     CommonModule,

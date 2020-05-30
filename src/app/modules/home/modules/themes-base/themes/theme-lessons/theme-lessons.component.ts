@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { SimpleCard } from "src/app/models/simpleCard";
+import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from "@angular/material/dialog";
 @Component({
   selector: "app-theme-lessons",
   templateUrl: "./theme-lessons.component.html",
@@ -41,7 +47,7 @@ export class ThemeLessonsComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
   //-----funciones-----
@@ -76,6 +82,14 @@ export class ThemeLessonsComponent implements OnInit {
   verLecciones() {
     //[where i wanna go] ,{where i am}
     //this.router.navigate(["lessons"], { relativeTo: this.route });
+  }
+  agregarPractica() {
+    const dialogRef = this.dialog.open(InitialInformationComponent, {
+      width: "1000px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
   //-----#funciones-----
 }
