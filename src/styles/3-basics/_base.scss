@@ -15,9 +15,15 @@ body {
 
 .container {
   padding-right: 1.5rem;
-  padding-left: 1.5rem ;
-  margin-right: auto ;
-  margin-left: auto ;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container-dialog {
+  padding-right: 5rem;
+  padding-left: 5rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
