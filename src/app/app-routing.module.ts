@@ -22,6 +22,7 @@ import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-stude
 import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
 import { GetImagesIdResolver } from './_resolvers/docente/modules/get_imagesId.resolver';
 import { GetFechasAsistenciaResolver } from './_resolvers/docente/my-class/get-fechas-asistencia.resolver';
+import { GetLessonsResolver } from './_resolvers/docente/modules/themes/get-lessons.resolver';
 
 const routes: Routes = [
   {
@@ -91,7 +92,10 @@ const routes: Routes = [
               component: ThemesComponent,
             },
             {
-            path: ":id",
+            path: ":idTema",
+            resolve:{
+              lessons:GetLessonsResolver
+            },
             component: ThemeContentComponent,
               },
             ],

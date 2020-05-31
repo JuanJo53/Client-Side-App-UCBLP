@@ -11,6 +11,7 @@ import { DeleteCardComponent } from "../../../../../dialogs/delete-card/delete-c
 import { AddThemeComponent } from "../../../../../dialogs/themes/add-theme/add-theme.component";
 import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
 import { ConfigureThemeComponent } from "../../../../../dialogs/themes/configure-theme/configure-theme.component";
+import { Lesson } from 'src/app/models/Teacher/Modules/Lesson';
 @Component({
   selector: "app-theme-content",
   templateUrl: "./theme-content.component.html",
@@ -27,25 +28,8 @@ export class ThemeContentComponent implements OnInit {
   descripcion = "Present";
   item = "theme";
 
-  lessonCards: CardThemes[] = [
-    {
-      id: 1,
-      titulo: "Lesson 1",
-      subtitulo: "Fruits",
-      color: "#D77A61",
-    },
-    {
-      id: 2,
-      titulo: "Lesson 2",
-      subtitulo: "Vegetables",
-      color: "#D77A61",
-    },
-    {
-      id: 3,
-      titulo: "Lesson 3",
-      subtitulo: "Animals",
-      color: "#D77A61",
-    },
+  lessonCards: Lesson[] = [
+    
   ];
   simpleCards: SimpleCard[] = [
     {

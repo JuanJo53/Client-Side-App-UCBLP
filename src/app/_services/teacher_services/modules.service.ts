@@ -10,6 +10,8 @@ import { Theme } from 'src/app/models/Teacher/Modules/Theme';
 export class ModulesService {
 
   constructor(private http:HttpClient) { }
+
+  //CRUD temas
   getThemes(idCurso):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/modules/themes/"+idCurso,{ observe: 'response' });
   }
@@ -17,13 +19,21 @@ export class ModulesService {
     return this.http.post(apiKey.api+"/teacher/modules/themes",addT,{ observe: 'response' });
   }
   getImagesThemes():Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/modules/themes/images/get",{ observe: 'response' });
+    return this.http.get(apiKey.api+"/teacher/images/get",{ observe: 'response' });
   }
   delThemes(idTema):Observable<any>{
     return this.http.delete(apiKey.api+"/teacher/modules/themes/"+idTema,{ observe: 'response' });
   }
   updateThemes(updTh:Theme):Observable<any>{
     return this.http.put(apiKey.api+"/teacher/modules/themes/",updTh,{ observe: 'response' });
+  }
+
+
+
+
+  //CRUD Lecciones
+  getLessons(idTema):Observable<any>{
+    return this.http.get(apiKey.api+"/teacher/modules/themes/lessons/"+idTema,{ observe: 'response' });
   }
 
 }
