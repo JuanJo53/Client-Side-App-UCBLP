@@ -2,7 +2,7 @@
     <!--subtitle-->
     <div class="dialog-subtitle">
         <div class="dialog-subtitle__text">
-            <span>Add Forum</span>
+            <span>Edit Forum</span>
         </div>
     </div>
     <!--#subtitle-->
@@ -24,9 +24,10 @@
             </mat-form-field>
         </form>
     </mat-dialog-content>
+
     <div class="dialog__container">
         <div class="dialog__container--left-side">
-            <mat-form-field color="accent">
+            <mat-form-field >
                 <mat-label>Start Date</mat-label>
                 <input matInput [matDatepicker]="picker1">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -36,7 +37,7 @@
 
         </div>
         <div class="dialog__container--right-side">
-            <mat-form-field color="accent">
+            <mat-form-field >
                 <mat-label>End Date</mat-label>
                 <input matInput [matDatepicker]="picker2">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
@@ -44,6 +45,7 @@
             </mat-form-field>
         </div>
     </div>
+
     <mat-dialog-actions align="end">
         <!--cancel btn-->
         <button mat-button mat-dialog-close class="dialog-button-cancel">

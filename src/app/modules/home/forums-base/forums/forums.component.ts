@@ -4,6 +4,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { AddForumComponent } from "../../../dialogs/forums/add-forum/add-forum.component";
+import { EditForumComponent } from "../../../dialogs/forums/edit-forum/edit-forum.component";
 import {
   MatDialog,
   MatDialogRef,
@@ -46,6 +47,7 @@ const ELEMENT_DATA: ListaDeForos[] = [
   styleUrls: ["./forums.component.scss"],
 })
 export class ForumsComponent implements OnInit {
+  
   displayedColumns: string[] = [
     "nombreForo",
     "fechaInicio",
@@ -73,6 +75,9 @@ export class ForumsComponent implements OnInit {
     this.router.navigate([1], { relativeTo: this.route });
   }
   crearForo() {
-    const dialogRef = this.dialog.open(AddForumComponent, { width: "400px" });
+    const dialogRef = this.dialog.open(AddForumComponent, { width: "500px" });
+  }
+  editarForo() {
+    const dialogRef = this.dialog.open(EditForumComponent, { width: "500px" });
   }
 }

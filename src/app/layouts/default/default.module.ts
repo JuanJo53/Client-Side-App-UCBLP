@@ -42,6 +42,9 @@ import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/f
 import { InitialInformationComponent } from 'src/app/modules/dialogs/create-practice/initial-information/initial-information.component';
 import { TypeQuestionComponent } from 'src/app/modules/dialogs/create-practice/type-question/type-question.component';
 import { AddForumComponent } from 'src/app/modules/dialogs/forums/add-forum/add-forum.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { EditForumComponent } from 'src/app/modules/dialogs/forums/edit-forum/edit-forum.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,8 @@ import { AddForumComponent } from 'src/app/modules/dialogs/forums/add-forum/add-
     ThemeLessonsComponent,
     InitialInformationComponent,
     TypeQuestionComponent,
-    AddForumComponent
+    AddForumComponent,
+    EditForumComponent
 
   ],
   imports: [
@@ -92,6 +96,8 @@ import { AddForumComponent } from 'src/app/modules/dialogs/forums/add-forum/add-
     MatDialogModule,
     MatRadioModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
   ],
 })
 export class DefaultModule {}

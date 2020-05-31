@@ -67,7 +67,7 @@
           </button>
           <button class="circular-button-table--normal" S mat-mini-fab>
             <!--update usuario-->
-            <span class="circular-button-table__icon"><i class="fas fa-pencil-alt"></i>
+            <span class="circular-button-table__icon" (click)="editarForo()"><i class="fas fa-pencil-alt"></i>
             </span>
             <!-- #update usuario-->
           </button>
@@ -88,4 +88,8 @@
     <!-- Paginator -->
     <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
     <!-- #Paginator -->
+
+
+ 
+
   </div>
