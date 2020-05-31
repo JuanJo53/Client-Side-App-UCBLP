@@ -19,21 +19,14 @@ import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-do
 import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemeLessonsComponent } from "./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
-<<<<<<< HEAD
 import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
 import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
 import { GetImagesIdResolver } from './_resolvers/docente/modules/get_imagesId.resolver';
 import { GetFechasAsistenciaResolver } from './_resolvers/docente/my-class/get-fechas-asistencia.resolver';
 import { GetLessonsResolver } from './_resolvers/docente/modules/themes/get-lessons.resolver';
-=======
-import { StudentsGeneralResolver } from "./_resolvers/docente/my-class/get-students.resolver";
-import { GetThemesTeacherResolver } from "./_resolvers/docente/modules/get-themes.resolver";
-import { GetImagesIdResolver } from "./_resolvers/docente/modules/get_imagesId.resolver";
-import { GetFechasAsistenciaResolver } from "./_resolvers/docente/my-class/get-fechas-asistencia.resolver";
 import { ForumContentComponent } from "./modules/home/forums-base/forums/forum-content/forum-content.component";
 import { ForumsComponent } from "./modules/home/forums-base/forums/forums.component";
 import { ForumsBaseComponent } from "./modules/home/forums-base/forums-base.component";
->>>>>>> origin/frontend
 
 const routes: Routes = [
   {
@@ -108,36 +101,26 @@ const routes: Routes = [
               images: GetImagesIdResolver,
             },
             children: [
-<<<<<<< HEAD
-            {
-              path: "",
-              component: ThemesComponent,
-            },
-            {
-            path: ":idTema",
-            resolve:{
-              lessons:GetLessonsResolver
-            },
-            component: ThemeContentComponent,
-=======
               {
                 path: "",
                 component: ThemesComponent,
               },
               {
-                path: ":id",
+                path: ":idTema",
                 component: ThemeContentComponent,
-                // children: [
-                //   {
-                //     path: "lessons",
-                //     component: ThemeLessonsComponent,
-                //   },
-                // ],
-              },
-              {
-                path: ":id/lessons",
-                component: ThemeLessonsComponent,
->>>>>>> origin/frontend
+                 children: [
+                   {
+                    path: "",
+                    resolve:{
+                      lessons:GetLessonsResolver
+                    },
+                    component: ThemeContentComponent,
+                   },
+                  {
+                    path: "lessons",
+                    component: ThemeLessonsComponent,
+                  },
+                 ],
               },
             ],
           },

@@ -13,7 +13,7 @@ export class GetLessonsResolver{
   constructor(private lessonService:ModulesService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.params['idCurso'];
-    const idTema=route.params['idTema'];
+    const idTema=route.parent.params['idTema'];
     console.log(idTema); 
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);

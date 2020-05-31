@@ -108,12 +108,14 @@
       <!-- #Mother's Name Column -->
 
       <!-- 1/2 Column -->
-      
-      <ng-container *ngFor="let column of columns;let i=index"  [cdkColumnDef]="column">
+
+      <ng-container
+        *ngFor="let column of columns; let i = index"
+        matColumnDef="{{ column }}"
+      >
         <th
           mat-header-cell
-          *cdkHeaderCellDef
-          mat-sort-header
+          *matHeaderCellDef
           class="header-table"
         >
           {{ column }}
