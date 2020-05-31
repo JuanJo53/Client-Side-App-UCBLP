@@ -1,0 +1,18 @@
+@import "1-helpers/variables";
+@import "1-helpers/mixins";
+
+.description-Forum {
+    flex: 0 1 25%;
+    display: flex;
+    flex-direction: column;
+    //padding: 3rem;
+    &--title {
+      @include custom-title(1rem, 2rem, $color-primary-blue);
+      font-weight: bold; 
+
+    }
+    &--subtitle {
+      @include custom-title(1rem, 1.5rem, $color-primary-black);
+      padding-top: 1rem;
+    }
+  }

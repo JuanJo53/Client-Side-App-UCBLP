@@ -1,0 +1,86 @@
+<div class="container">
+  <!--Subtitle-->
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Complain Test 1</span>
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <!-- description forum -->
+  <div class="description-Forum">
+    <p class="description-Forum--title">Description:</p>
+
+    <p class="description-Forum--subtitle">
+      Comment if you had problems with the test 1
+    </p>
+  </div>
+  <!-- #description forum -->
+  <!--Subtitle-->
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Responses</span>
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <!--tables-->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
+      <!-- Student's name Column -->
+      <ng-container matColumnDef="nombreEstudiante">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Student's Name
+        </th>
+        <td mat-cell *matCellDef="let element" class="mat-cell">
+          {{ element.nombreEstudiante }}
+        </td>
+      </ng-container>
+      <!-- Student's name Column -->
+      <!-- date Column -->
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
+      </ng-container>
+      <!-- #date Column -->
+
+      <!-- Hour Column -->
+      <ng-container matColumnDef="hora">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Hour
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.hora }}</td>
+      </ng-container>
+      <!-- #Hour Column -->
+
+      <!-- Buttons Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button class="circular-button-subtitle" mat-mini-fab>
+            <!--see answer-->
+            <mat-icon class="circular-button-subtitle__icon"
+              >remove_red_eye</mat-icon
+            >
+            <!--#see answer-->
+          </button>
+
+          <button class="circular-button-table--negative" mat-mini-fab>
+            <!--delete usuario-->
+            <span class="circular-button-table__icon"
+              ><i class="fas fa-trash"></i>
+            </span>
+            <!-- #delete usuario-->
+          </button>
+          <!-- #Buttons Column -->
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!--#tables-->
+  </div>
+</div>

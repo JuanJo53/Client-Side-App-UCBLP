@@ -4,7 +4,7 @@ import { DefaultComponent } from "./layouts/default/default.component";
 import { LoginComponent } from "./modules/login/login.component";
 import { ChoosingClassroomComponent } from "./modules/choosing-classroom/choosing-classroom.component";
 import { DashboardComponent } from "./modules/home/dashboard/dashboard.component";
-import { ForumsComponent } from "./modules/home/forums/forums.component";
+
 //import { ModulesComponent } from "./modules/modules/modules.component";
 import { ResourcesComponent } from "./modules/home/resources/resources.component";
 import { EvaluationComponent } from "./modules/home/evaluation/evaluation.component";
@@ -17,12 +17,23 @@ import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.res
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
 import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
+import { ThemeLessonsComponent } from "./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
+<<<<<<< HEAD
 import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
 import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
 import { GetImagesIdResolver } from './_resolvers/docente/modules/get_imagesId.resolver';
 import { GetFechasAsistenciaResolver } from './_resolvers/docente/my-class/get-fechas-asistencia.resolver';
 import { GetLessonsResolver } from './_resolvers/docente/modules/themes/get-lessons.resolver';
+=======
+import { StudentsGeneralResolver } from "./_resolvers/docente/my-class/get-students.resolver";
+import { GetThemesTeacherResolver } from "./_resolvers/docente/modules/get-themes.resolver";
+import { GetImagesIdResolver } from "./_resolvers/docente/modules/get_imagesId.resolver";
+import { GetFechasAsistenciaResolver } from "./_resolvers/docente/my-class/get-fechas-asistencia.resolver";
+import { ForumContentComponent } from "./modules/home/forums-base/forums/forum-content/forum-content.component";
+import { ForumsComponent } from "./modules/home/forums-base/forums/forums.component";
+import { ForumsBaseComponent } from "./modules/home/forums-base/forums-base.component";
+>>>>>>> origin/frontend
 
 const routes: Routes = [
   {
@@ -37,32 +48,30 @@ const routes: Routes = [
       profile: ProfileDocenteResolver,
       classroom: ClassroomDocenteResolver,
     },
-  },  
+  },
   {
     path: "teacher/:idCurso",
     component: DefaultComponent,
     resolve: { profile: ProfileDocenteResolver },
     children: [
-      
       {
-        
         path: "dashboard",
         component: DashboardComponent,
       },
       {
         path: "my-class",
-        children:[
+        children: [
           {
             path: "students",
-            resolve:{
-              students:StudentsGeneralResolver
+            resolve: {
+              students: StudentsGeneralResolver,
             },
             component: StudentsComponent,
           },
           {
             path: "attendance",
-            resolve:{
-              fechas:GetFechasAsistenciaResolver
+            resolve: {
+              fechas: GetFechasAsistenciaResolver,
             },
             component: AssistanceComponent,
           },
@@ -70,11 +79,23 @@ const routes: Routes = [
             path: "qualification",
             component: QualificationComponent,
           },
-        ]
+        ],
       },
       {
+        // path: "forums",
+        // component: ForumsComponent,
         path: "forums",
-        component: ForumsComponent,
+        component: ForumsBaseComponent,
+        children: [
+          {
+            path: "",
+            component: ForumsComponent,
+          },
+          {
+            path: ":id",
+            component: ForumContentComponent,
+          },
+        ],
       },
       {
         path: "modules",
@@ -82,11 +103,12 @@ const routes: Routes = [
           {
             path: "themes",
             component: ThemesBaseComponent,
-            resolve:{
-              themes:GetThemesTeacherResolver, 
-              images:GetImagesIdResolver
+            resolve: {
+              themes: GetThemesTeacherResolver,
+              images: GetImagesIdResolver,
             },
             children: [
+<<<<<<< HEAD
             {
               path: "",
               component: ThemesComponent,
@@ -97,6 +119,25 @@ const routes: Routes = [
               lessons:GetLessonsResolver
             },
             component: ThemeContentComponent,
+=======
+              {
+                path: "",
+                component: ThemesComponent,
+              },
+              {
+                path: ":id",
+                component: ThemeContentComponent,
+                // children: [
+                //   {
+                //     path: "lessons",
+                //     component: ThemeLessonsComponent,
+                //   },
+                // ],
+              },
+              {
+                path: ":id/lessons",
+                component: ThemeLessonsComponent,
+>>>>>>> origin/frontend
               },
             ],
           },

@@ -1,21 +1,21 @@
 table {
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 .header-table {
   background-color: $color-primary-blue !important;
   color: $color-primary-white !important;
-} 
+}
 .mat-sort-header-container {
   display: flex !important;
   justify-content: center !important;
 }
 .mat-sort-header-arrow {
-  color: $color-primary-white!important;
+  color: $color-primary-white !important;
 }
 
 td.mat-cell {
-  text-align: center ;
+  text-align: center;
 }
 mat-paginator {
   margin-bottom: 5rem !important;
@@ -24,7 +24,18 @@ th.mat-header-cell {
   text-align: center !important;
 }
 
-.table-button{
+.table-button {
   display: flex;
   justify-content: flex-end;
+}
+.table-extra {
+  &__icon {
+    font-size: 1.75rem;
+    &--check {
+      color: $color-primary-blue;
+    }
+    &--cross {
+      color: $color-primary-red;
+    }
+  }
 }

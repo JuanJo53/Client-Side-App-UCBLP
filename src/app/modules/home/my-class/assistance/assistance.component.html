@@ -56,7 +56,6 @@
         <th
           mat-header-cell
           *matHeaderCellDef
-          mat-sort-header
           class="header-table"
         >
           No.
@@ -71,7 +70,6 @@
         <th
           mat-header-cell
           *matHeaderCellDef
-          mat-sort-header
           class="header-table"
         >
           Name
@@ -85,12 +83,13 @@
         <th
           mat-header-cell
           *matHeaderCellDef
-          mat-sort-header
           class="header-table"
         >
           Father's Name
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.apPaternoAlumno }}</td>
+        <td mat-cell *matCellDef="let element">
+          {{ element.apPaternoAlumno }}
+        </td>
       </ng-container>
       <!-- #Father's Name Column -->
       <!-- Mother's Name Column -->
@@ -98,12 +97,13 @@
         <th
           mat-header-cell
           *matHeaderCellDef
-          mat-sort-header
           class="header-table"
         >
           Mother's Name
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.apMaternoAlumno }}</td>
+        <td mat-cell *matCellDef="let element">
+          {{ element.apMaternoAlumno }}
+        </td>
       </ng-container>
       <!-- #Mother's Name Column -->
 
@@ -116,17 +116,17 @@
           mat-sort-header
           class="header-table"
         >
-        {{column}}
+          {{ column }}
         </th>
         <td mat-cell *cdkCellDef="let element">
           <!-- <span class="circular-button-table__icon"><mat-icon class="circular-button-subtitle__icon">close</mat-icon>
     </span> -->
-          <span class="circular-button-table__icon">
-            <mat-icon class="circular-button-subtitle__icon"
-              ><div *ngIf="element.asistencia[i] == 1">
+          <span class="table-extra">
+            <mat-icon class="table-extra__icon"
+              ><div class="table-extra__icon--check" *ngIf="element.asistencia[i] == 1">
                 check
               </div>
-              <div *ngIf="element.asistencia[i] == 0">
+              <div class="table-extra__icon--cross" *ngIf="element.asistencia[i] == 0">
                 close
               </div>
             </mat-icon>
@@ -139,7 +139,6 @@
         <th
           mat-header-cell
           *matHeaderCellDef
-          mat-sort-header
           class="header-table"
         >
           Final Average

@@ -103,5 +103,10 @@ export class ThemeContentComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  verLecciones() {
+    //[where i wanna go] ,{where i am}
+
+    this.router.navigate(["lessons"], { relativeTo: this.route });
+  }
   //-----#funciones-----
 }

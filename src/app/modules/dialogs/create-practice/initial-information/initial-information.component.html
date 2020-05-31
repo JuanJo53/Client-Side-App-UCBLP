@@ -1,0 +1,91 @@
+<div class="modal-header">
+  <!--modal title-->
+  <div class="progress-bar__title">
+    Initial information for practice
+  </div>
+  <!--#modal title-->
+  <!--progress bar-->
+  <div class="progress-bar__bar">
+    <!--back button-->
+    <div class="progress-bar__previous" (click)="previous()">
+      <button class="progress-bar__button-previous" mat-mini-fab>
+        <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+      </button>
+      <span class="progress-bar__text-previous">Back</span>
+    </div>
+    <!--#back button-->
+    <div class="progress-bar__container">
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle active"></div>
+      <!--#progress bar circle-->
+      <!--progress bar row connector-->
+      <div class="progress-bar__bar--row"></div>
+      <!--progress bar row connector-->
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle"></div>
+      <!--#progress bar circle-->
+      <!--progress bar row connector-->
+      <div class="progress-bar__bar--row"></div>
+      <!--progress bar row connector-->
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle"></div>
+      <!--#progress bar circle-->
+      <!--progress bar row connector-->
+      <div class="progress-bar__bar--row"></div>
+      <!--progress bar row connector-->
+      <!--progress bar circle-->
+      <div class="progress-bar__bar--circle"></div>
+      <!--#progress bar circle-->
+    </div>
+    <!--next button-->
+    <div class="progress-bar__next" (click)="next()">
+      <span class="progress-bar__text-next">Next</span>
+      <button class="progress-bar__button-next" mat-mini-fab>
+        <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+      </button>
+    </div>
+    <!--#next button-->
+  </div>
+  <!--#progress bar-->
+</div>
+<div class="card">
+  <div class="container-dialog">
+    <!--subtitle-->
+    <div class="dialog-subtitle">
+      <div class="dialog-subtitle__text">
+        <span>Name</span>
+      </div>
+    </div>
+    <!--#subtitle-->
+    <mat-form-field appearance="outline">
+      <mat-label>Practice name</mat-label>
+      <!-- Input para el email-->
+      <input
+        class="input-form"
+        type="text"
+        matInput
+        placeholder="Practice name"
+        name="nombrePractica"
+      />
+      <!-- //Input para el email-->
+    </mat-form-field>
+    <div class="col-sm-6">
+      <!--subtitle-->
+      <div class="dialog-subtitle">
+        <div class="dialog-subtitle__text">
+          <span>Start Date and Hour</span>
+        </div>
+      </div>
+      <!--#subtitle-->
+    </div>
+    <div class="col-sm-6">
+      <!--subtitle-->
+      <div class="dialog-subtitle">
+        <div class="dialog-subtitle__text">
+          <span>End Date and Hour</span>
+        </div>
+      </div>
+      <!--#subtitle-->
+    </div>
+  </div>
+</div>

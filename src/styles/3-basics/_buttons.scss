@@ -31,8 +31,6 @@
   }
 }
 
-
-
 .circular-button {
   background-color: $color-primary-white !important;
   color: $color-primary-blue !important;
@@ -94,17 +92,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $color-primary-white;
   &__icon {
     font-size: 1.8rem;
     height: 1.6rem !important; //borders
     width: 1.8rem !important; //borders
-    color: $color-primary-white;
   }
   &:hover {
-    background-color: darken($color-card-themes, 20%);
-    color: $color-primary-white;
-    border: none;
-    transition: 0.5s;
+    //background-color: lighten($color-primary-gray, 25%);
+    //background-color:$color-primary-white;
+    //color: $color-primary-transpa;
+    border: 0.15rem solid $color-primary-white;
+    transition: 0.15s;
   }
 }
 // mat-icon {
@@ -183,7 +182,17 @@
 //-----button table-----
 .table-button-day {
   background-color: $color-primary-blue !important;
-  color: $color-primary-white!important;
+  color: $color-primary-white !important;
 }
 
 //-----#button table-----
+//-----button progress bar-----
+.progress-bar {
+  &__button {
+    &-next,
+    &-previous {
+      background-color: $color-primary-blue !important;
+    }
+  }
+}
+//-----#button progress bar-----
