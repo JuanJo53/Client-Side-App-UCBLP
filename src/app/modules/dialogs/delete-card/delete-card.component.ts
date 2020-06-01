@@ -19,53 +19,106 @@ export class DeleteCardComponent implements OnInit {
     private servTh:ModulesService,
     private dialogRef: MatDialogRef<DeleteCardComponent>) {}
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(
-      (nombreItem) => (this.item = nombreItem)
-    );
+    this.item=this.dataDialog['tipo'];
   }
+  
+  
   aceptar(){
     console.log(this.dataDialog);
     switch(this.dataDialog['tipo']){
-      case "Alumnos":
-          this.servEst.removeStudentsGeneral(this.dataDialog['id_alumno_curso']).subscribe({
-            next:(data)=>{
-              console.log(data);
-              if(data['text']==="El alumno ha sido eliminado con éxito"){
-                console.log("se elimino correctamente al estudiante");      
-                this.dialogRef.close("ok");   
-              }
-              else{
-                console.log("error");
-              }
-            },
-            error:(err)=>{
-              console.log(err);
-              console.log("error");
-            }
-          }
-            
-          );    
+      case "student":
+        this.eliminarAlumno();   
         break;
-      case "Temas":
-        this.servTh.delThemes(this.dataDialog['idTema']).subscribe({
-          next:(data)=>{
-            console.log(data);
-            if(data.status==200){
-              console.log("se elimino correctamente al estudiante");      
-              this.dialogRef.close("ok");   
-            }
-            else{
-              console.log("error");
-            }
-          },
-          error:(err)=>{
-            console.log(err);
-            console.log("error");
-          }
-        }
-          
-        );
+      case "theme":
+        this.eliminarTema();
+        break;
+      case "lesson":
+        this.eliminarLeccion();
         break;
     }
   }
+
+
+
+
+
+  //FUncion para eliminar Alumno
+eliminarAlumno(){
+  this.servEst.removeStudentsGeneral(this.dataDialog['id_alumno_curso']).subscribe({
+    next:(data)=>{
+      console.log(data);
+      if(data['text']==="El alumno ha sido eliminado con éxito"){
+        console.log("se elimino correctamente al estudiante");      
+        this.dialogRef.close("ok");   
+      }
+      else{
+        console.log("error");
+        this.dialogRef.close();  
+      }
+    },
+    error:(err)=>{
+      console.log(err);
+      console.log("error");
+      this.dialogRef.close();  
+    }
+  }
+    
+  );   
 }
+
+
+
+//Funcion para eliminar temas
+eliminarTema(){
+  this.servTh.delThemes(this.dataDialog['idTema']).subscribe({
+    next:(data)=>{
+      console.log(data);
+      if(data.status==200){
+        console.log("se elimino correctamente al estudiante");      
+        this.dialogRef.close("ok");   
+      }
+      else{
+        console.log("error");
+        this.dialogRef.close();  
+      }
+    },
+    error:(err)=>{
+      console.log(err);
+      console.log("error");
+      this.dialogRef.close();  
+    }
+  }
+    
+  );
+}
+
+
+
+//Funcion para eliminar leccion
+eliminarLeccion(){
+  this.servTh.delLesson(this.dataDialog['idLec']).subscribe({
+    next:(data)=>{
+      console.log(data);
+      if(data.status==200){
+        console.log("se elimino correctamente al estudiante");      
+        this.dialogRef.close("ok");   
+      }
+      else{
+        console.log("error");   
+        this.dialogRef.close();   
+      }
+    },
+    error:(err)=>{
+      console.log(err);
+      console.log("error");   
+      this.dialogRef.close();   
+    }
+  }
+    
+  );
+}
+
+}
+
+
+

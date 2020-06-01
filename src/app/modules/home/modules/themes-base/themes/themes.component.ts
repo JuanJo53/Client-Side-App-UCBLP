@@ -57,7 +57,7 @@ export class ThemesComponent implements OnInit {
       newCardTheme.nombreTema=data[i].nombre_tema;
       newCardTheme.numeroTema=data[i].numero_tema;
       newCardTheme.idCurso=idCurso;
-      newCardTheme.estado=data[i].tema_habilitado;
+      newCardTheme.estado=data[i].estado_tema;
       this.themeCards.push(newCardTheme);
     }
   }
@@ -92,8 +92,19 @@ export class ThemesComponent implements OnInit {
     }
   });
     dialogRef.afterClosed().subscribe((result) => {
+      var route=this.route;
       if(result!==""){
+        route.data.subscribe({
+          next:(data)=>{
+            data.themes.body=result;
+            console.log(data);            
         this.addThemesCards(result,this.idCurso);
+          },
+          error:(error)=>{
+            console.log("No se pudieron obtener las lecciones");
+          }
+        });
+        
       }
       console.log(`Dialog result: ${result}`);
     });
@@ -120,23 +131,35 @@ export class ThemesComponent implements OnInit {
     const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" 
     ,data:{
       idTema:idTema,
-      tipo:"Temas"
+      tipo:"theme"
     }  
   });
     dialogRef.afterClosed().subscribe((result) => {
       var temas=this.themeCards;
-      if(result!=""){
-        this.themeCards.find(function(valor,index){
-          if(valor.idTema===idTema){
-            temas.splice(index,1);
+      var route=this.route;
+    if(result!=""){
+      route.data.subscribe({
+        next:(data)=>{
+          data.themes.body.find(function(valor,index){
+            console.log(valor.id_tema);
+            if(valor.id_tema==idTema){
+              data.themes.body.splice(index,1);
+              temas.splice(index,1);
+              return true;
+  
+            }
+          });
+        },
+        error:(error)=>{
+          console.log("No se pudieron obtener las lecciones");
+        }
+      });
+      
 
-          }
-        });
-        
-
-      }
-      console.log(`Dialog result: ${result}`);
-    });
+    }
+    console.log(`Dialog result: ${result}`);
+  });
+      
   }
   //-----#funciones-----
 }

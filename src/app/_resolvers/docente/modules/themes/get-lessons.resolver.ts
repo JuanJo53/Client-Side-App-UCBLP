@@ -14,7 +14,6 @@ export class GetLessonsResolver{
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.params['idCurso'];
     const idTema=route.parent.params['idTema'];
-    console.log(idTema); 
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
     }

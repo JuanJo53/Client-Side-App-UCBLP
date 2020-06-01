@@ -107,7 +107,6 @@ const routes: Routes = [
               },
               {
                 path: ":idTema",
-                component: ThemeContentComponent,
                  children: [
                    {
                     path: "",
@@ -118,6 +117,9 @@ const routes: Routes = [
                    },
                   {
                     path: "lessons",
+                    resolve:{
+                      lessons:GetLessonsResolver
+                    },
                     component: ThemeLessonsComponent,
                   },
                  ],

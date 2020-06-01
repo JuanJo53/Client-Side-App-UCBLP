@@ -28,7 +28,7 @@ export class ConfigureThemeComponent implements OnInit {
       this.dataDialog['tema'].estado=1;
     }
     else{
-      this.dataDialog['tema'].estado=0;}
+      this.dataDialog['tema'].estado=2;}
     
       this.dataDialog['tema'].nombreTema=this.nombreTema;
     this.servThe.updateThemes(this.dataDialog['tema']).subscribe({

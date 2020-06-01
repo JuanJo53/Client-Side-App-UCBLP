@@ -63,7 +63,36 @@ export class ThemeContentComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  
+  agregarCardsLecciones(){
+    this.route.data.subscribe({
+      next:(data)=>{
+        if(data.lessons.status==200){
+          var datales=data.lessons.body;
+          console.log(datales);
+          for(let i in datales)
+          {
+            let newLesson=new Lesson();
+            newLesson.id=datales[i].id_leccion;
+            newLesson.idImagen=datales[i].id_imagen;
+            newLesson.numeroLeccion=datales[i].numero_leccion;
+            newLesson.nombre=datales[i].nombre_leccion;
+            newLesson.tipoLeccion=datales[i].tipo_leccion;
+            this.lessonCards.push(newLesson);
+          }
+        }
+        else{
+          console.log("No se pudieron obtener las lecciones");
+
+        }
+      },
+      error:(error)=>{
+        console.log("No se pudieron obtener las lecciones");
+      }
+    });
+  }
   ngOnInit(): void {
+    this.agregarCardsLecciones();
     this.theme = {
       id: this.route.snapshot.params["id"],
       titulo: this.route.snapshot.params["id"],
@@ -97,16 +126,43 @@ export class ThemeContentComponent implements OnInit {
     //[where i wanna go] ,{where i am}
     this.router.navigate(["/themes", id], { relativeTo: this.route });
   }
-  eliminar() {
-    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+  
+  eliminar(idLec) {
+    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" 
+    ,data:{
+      idLec:idLec,
+      tipo:"lesson"
+    }  
+  });
+  dialogRef.afterClosed().subscribe((result) => {
+    var lessons=this.lessonCards;
+    var route=this.route;
+    if(result!=""){
+      route.data.subscribe({
+        next:(data)=>{
+          this.lessonCards.find(function(valor,index){
+            if(valor.id===idLec){
+              lessons.splice(index,1);
+              data.lessons.body.splice(index,1);
+            }
+          });
+        },
+        error:(error)=>{
+          console.log("No se pudieron obtener las lecciones");
+        }
+      });
+      
+
+    }
+    console.log(`Dialog result: ${result}`);
+  });
   }
   verLecciones() {
     //[where i wanna go] ,{where i am}
 
     this.router.navigate(["lessons"], { relativeTo: this.route });
   }
+
   //-----#funciones-----
+ 
 }

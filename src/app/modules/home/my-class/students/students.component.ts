@@ -159,7 +159,7 @@ export class StudentsComponent implements OnInit {
           { width: "400px",
             data:{
               id_alumno_curso:idAlumnoCurso,
-              tipo:"Alumnos"
+              tipo:"student"
             }
           });
           dialogRef.afterClosed().subscribe((result) => {

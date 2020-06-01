@@ -35,5 +35,8 @@ export class ModulesService {
   getLessons(idTema):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/modules/themes/lessons/"+idTema,{ observe: 'response' });
   }
+  delLesson(idLes):Observable<any>{
+    return this.http.delete(apiKey.api+"/teacher/modules/themes/lessons/"+idLes,{ observe: 'response' })
+  }
 
 }
