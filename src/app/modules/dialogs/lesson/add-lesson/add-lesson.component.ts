@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { ModulesService } from "src/app/_services/teacher_services/modules.service";
+import { LessonService } from "src/app/_services/teacher_services/lesson.service";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 @Component({
   selector: "app-add-lesson",
@@ -12,7 +12,7 @@ export class AddLessonComponent implements OnInit {
   fileToUpload: File = null;
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
-    private servThe: ModulesService,
+    private servThe: LessonService,
     private dialogRef: MatDialogRef<AddLessonComponent>
   ) {}
 

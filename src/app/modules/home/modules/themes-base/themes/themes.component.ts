@@ -116,7 +116,6 @@ export class ThemesComponent implements OnInit {
       data:{
         tema:tema,
         idCurso:this.idCurso,
-        tipo:"Theme"
       }
     });
     dialogRef.afterClosed().subscribe((result) => {

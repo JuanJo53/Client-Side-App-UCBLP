@@ -150,13 +150,8 @@ export class ThemeContentComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-<<<<<<< HEAD
-  configuraciones() {
-    const dialogRef = this.dialog.open(ConfigureLessonComponent, {
-=======
   configuraciones(leccion) {
-    const dialogRef = this.dialog.open(ConfigureThemeComponent, {
->>>>>>> origin/Backend
+    const dialogRef = this.dialog.open(ConfigureLessonComponent, {
       width: "400px",
       data:{
         leccion:leccion,
@@ -164,7 +159,6 @@ export class ThemeContentComponent implements OnInit {
         images:this.cardImages,
         types:this.typesofLessons,
         idTema:this.idTema,
-        tipo:"Lesson"
       }
     });
     dialogRef.afterClosed().subscribe((result) => {
