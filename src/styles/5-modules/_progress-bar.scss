@@ -1,3 +1,4 @@
+@import "1-helpers/mixins";
 .modal-header {
   //background-color: yellow;
 }
@@ -6,6 +7,16 @@
   flex-direction: column;
   align-items: center;
   //background-color: red;
+  &__choose-buttons-container {
+    margin-top: 2rem;
+    &.col {
+      background-color: red;
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
   &__text {
     &-previous {
       margin-left: 1rem;
@@ -18,6 +29,25 @@
       color: $color-primary-blue;
       font-size: 2rem;
       cursor: pointer;
+    }
+  }
+  &__button {
+    &-container {
+      display: flex;
+      align-items: center;
+      //background-color: orange;
+    }
+    &-normal {
+      padding: 0.5rem 0.75rem!important;
+      background-color: $color-primary-blue !important;
+      color: white !important;
+
+      &--icon {
+        @include margin-left-right(0.5rem, 0.5rem);
+      }
+      &--text {
+        @include margin-left-right(0.5rem, 0.5rem);
+      }
     }
   }
   &__bar {
@@ -53,4 +83,6 @@
 }
 .mat-step-icon-state-edit {
   background-color: $color-secondary-blue !important;
+}
+.button-icon-container {
 }
