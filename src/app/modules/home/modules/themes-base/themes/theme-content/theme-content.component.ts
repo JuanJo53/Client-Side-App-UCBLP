@@ -162,6 +162,7 @@ export class ThemeContentComponent implements OnInit {
 
     this.router.navigate(["lessons"], { relativeTo: this.route });
   }
+  eliminar2(){}
 
   //-----#funciones-----
  

@@ -69,23 +69,34 @@
       />
       <!-- //Input para el email-->
     </mat-form-field>
-    <div class="col-sm-6">
-      <!--subtitle-->
-      <div class="dialog-subtitle">
-        <div class="dialog-subtitle__text">
-          <span>Start Date and Hour</span>
+    <div class="row">
+      <div class="col-sm-6">
+        <!--subtitle-->
+        <div class="dialog-subtitle">
+          <div class="dialog-subtitle__text">
+            <span>Start Date and Hour</span>
+          </div>
         </div>
+        <mat-form-field color="accent">
+          <mat-label>Inherited calendar color</mat-label>
+          <input matInput [matDatepicker]="picker1" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <!--#subtitle-->
       </div>
-      <!--#subtitle-->
-    </div>
-    <div class="col-sm-6">
-      <!--subtitle-->
-      <div class="dialog-subtitle">
-        <div class="dialog-subtitle__text">
-          <span>End Date and Hour</span>
+      <div class="col-sm-6">
+        <!--subtitle-->
+        <div class="dialog-subtitle">
+          <div class="dialog-subtitle__text">
+            <span>End Date and Hour</span>
+          </div>
         </div>
+        <!--#subtitle-->
       </div>
-      <!--#subtitle-->
     </div>
   </div>
 </div>
