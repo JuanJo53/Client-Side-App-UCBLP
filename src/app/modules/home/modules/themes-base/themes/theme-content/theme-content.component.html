@@ -34,7 +34,7 @@
               <!--btn  configuraciones-->
               <button
                 class="circular-button-custom-card"
-                (click)="configuraciones()"
+                (click)="configuraciones(cards)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
@@ -43,7 +43,7 @@
               <!--#btn  configuraciones-->
               <!--btn eliminar-->
               <button class="circular-button-custom-card" (click)="eliminar(cards.id)">
-                <mat-icon class="circular-button-custom-card__icon">
+                <mat-icon class="circular-button-custom-card__icon"> 
                   delete
                 </mat-icon>
               </button>
@@ -51,7 +51,7 @@
             </div>
             <div class="custom-card--lessons__content-card"></div>
             <div class="custom-card--lessons__description-theme">
-              <span class="custom-card--lessons__description-theme--title">Leccion {{
+              <span class="custom-card--lessons__description-theme--title">Lesson {{
                 cards.numeroLeccion
               }}</span>
               <span class="custom-card--lessons__description-theme--subtitle">
@@ -100,15 +100,15 @@
               <!--btn  configuraciones-->
               <button
                 class="circular-button-custom-card"
-                (click)="configuraciones()"
+                (click)="configuraciones(cards.titulo)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
-              </button>
+              </button> 
               <!--#btn  configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card" (click)="eliminar()">
+              <button class="circular-button-custom-card" >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>

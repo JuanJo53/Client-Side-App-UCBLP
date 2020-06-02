@@ -3,7 +3,8 @@ import { DeleteItemService } from "../../../services/dialogs/delete-item.service
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
 import { timeInterval } from 'rxjs/operators';
-import { ModulesService } from 'src/app/_services/teacher_services/modules.service';
+import {ThemesService } from 'src/app/_services/teacher_services/themes.service';
+import { LessonService } from 'src/app/_services/teacher_services/lesson.service';
 @Component({
   selector: "app-delete-card",
   templateUrl: "./delete-card.component.html",
@@ -16,7 +17,8 @@ export class DeleteCardComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) 
     public dataDialog: any,
     private servEst:MyClassService,
-    private servTh:ModulesService,
+    private servTh:ThemesService,
+    private servLes:LessonService,
     private dialogRef: MatDialogRef<DeleteCardComponent>) {}
   ngOnInit(): void {
     this.item=this.dataDialog['tipo'];
@@ -96,7 +98,7 @@ eliminarTema(){
 
 //Funcion para eliminar leccion
 eliminarLeccion(){
-  this.servTh.delLesson(this.dataDialog['idLec']).subscribe({
+  this.servLes.delLesson(this.dataDialog['idLec']).subscribe({
     next:(data)=>{
       console.log(data);
       if(data.status==200){
