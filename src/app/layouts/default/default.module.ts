@@ -39,10 +39,16 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { ForumsBaseComponent } from "src/app/modules/home/forums-base/forums-base.component";
 import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/forum-content/forum-content.component";
-import { InitialInformationComponent } from 'src/app/modules/dialogs/create-practice/initial-information/initial-information.component';
-import { TypeQuestionComponent } from 'src/app/modules/dialogs/create-practice/type-question/type-question.component';
-import { AddForumComponent } from 'src/app/modules/dialogs/forums/add-forum/add-forum.component';
-import { CdkTableModule } from '@angular/cdk/table';
+import { InitialInformationComponent } from "src/app/modules/dialogs/create-practice/initial-information/initial-information.component";
+import { TypeQuestionComponent } from "src/app/modules/dialogs/create-practice/type-question/type-question.component";
+import { AddForumComponent } from "src/app/modules/dialogs/forums/add-forum/add-forum.component";
+import { CdkTableModule } from "@angular/cdk/table";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { EditForumComponent } from "src/app/modules/dialogs/forums/edit-forum/edit-forum.component";
+import { MatNativeDateModule } from "@angular/material/core";
+import { ProgressBarComponent } from "src/app/modules/dialogs/create-practice/progress-bar/progress-bar.component";
+import { MatStepperModule } from "@angular/material/stepper";
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -69,8 +75,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     ThemeLessonsComponent,
     InitialInformationComponent,
     TypeQuestionComponent,
-    AddForumComponent
-
+    AddForumComponent,
+    EditForumComponent,
+    ProgressBarComponent,
   ],
   imports: [
     CommonModule,
@@ -93,6 +100,10 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatDialogModule,
     MatRadioModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
 })
 export class DefaultModule {}

@@ -7,7 +7,6 @@
   align-items: center;
   //background-color: red;
   &__text {
-    
     &-previous {
       margin-left: 1rem;
       color: $color-primary-blue;
@@ -21,20 +20,8 @@
       cursor: pointer;
     }
   }
-  &__title {
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    color: $color-primary-blue;
-    font-weight: $font-weight-regular;
-  }
-  &__container {
-    //background-color: purple;
-    display: flex;
-    align-items: center;
-  }
   &__bar {
-    margin-top: 1rem;
+    margin-top: 4rem;
     display: flex;
     //background-color: green;
     justify-content: space-between;
@@ -60,4 +47,10 @@
       }
     }
   }
+}
+.mat-step-icon-selected {
+  background-color: $color-primary-blue !important;
+}
+.mat-step-icon-state-edit {
+  background-color: $color-secondary-blue !important;
 }

@@ -11,6 +11,11 @@ export class EditStudentComponent implements OnInit {
   apellidoMaternoEstudiante: string = "";
 
   constructor() {}
+  disableTextbox =  true;
+
+  toggleDisable() {
+    this.disableTextbox = !this.disableTextbox;
+  }
 
   ngOnInit(): void {}
   aceptar() {

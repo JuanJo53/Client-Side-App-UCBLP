@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SimpleCard } from "src/app/models/simpleCard";
 import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
+import { ProgressBarComponent } from "../../../../../dialogs/create-practice/progress-bar/progress-bar.component";
 import {
   MatDialog,
   MatDialogRef,
@@ -84,7 +85,7 @@ export class ThemeLessonsComponent implements OnInit {
     //this.router.navigate(["lessons"], { relativeTo: this.route });
   }
   agregarPractica() {
-    const dialogRef = this.dialog.open(InitialInformationComponent, {
+    const dialogRef = this.dialog.open(ProgressBarComponent, {
       width: "1000px",
     });
     dialogRef.afterClosed().subscribe((result) => {

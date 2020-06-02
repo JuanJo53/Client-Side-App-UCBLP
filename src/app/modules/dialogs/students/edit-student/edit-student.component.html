@@ -7,11 +7,13 @@
   </div>
   <!--#subtitle-->
   <mat-dialog-content class="mat-typography">
+    
     <form class="dialogforms" enctype="multipart/form-data">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" (dblclick)='toggleDisable()'>
         <mat-label>Student's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input
+        [disabled]='disableTextbox'
           type="text"
           class="input-form"
           matInput
@@ -21,10 +23,11 @@
         />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" (dblclick)='toggleDisable()'>
         <mat-label>Father's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input
+        [disabled]='disableTextbox'
           type="text"
           class="input-form"
           matInput
@@ -34,10 +37,11 @@
         />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" (dblclick)='toggleDisable()'>
         <mat-label>Mother's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input
+        [disabled]='disableTextbox'
           type="text"
           class="input-form"
           matInput
