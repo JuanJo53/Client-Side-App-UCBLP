@@ -8,17 +8,15 @@ import { LessonService } from 'src/app/_services/teacher_services/lesson.service
 @Injectable({
   providedIn: 'root'
 })
-export class GetLessonsResolver{
+export class GetTypeLessonsResolver{
 
   constructor(private lessonService:LessonService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
-    const idCurso=route.parent.parent.params['idCurso'];
-    const idTema=route.parent.params['idTema'];
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
     }
     else{      
-      return this.lessonService.getLessons(idTema);
+      return this.lessonService.getTipoLeccion();
     }
   }
 }

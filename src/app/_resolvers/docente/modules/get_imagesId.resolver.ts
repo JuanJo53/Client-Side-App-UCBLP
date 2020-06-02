@@ -3,14 +3,14 @@ import { TokenStorageService } from 'src/app/_services/general_services/token-st
 import { Router, ActivatedRouteSnapshot } from '@angular/router';
 import { ClassroomService } from 'src/app/_services/teacher_services/classroom.service';
 import { MyClassService } from 'src/app/_services/teacher_services/my-class.service';
-import { ModulesService } from 'src/app/_services/teacher_services/modules.service';
+import { ThemesService } from 'src/app/_services/teacher_services/themes.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetImagesIdResolver{
 
-  constructor(private themeService:ModulesService,private tokenService:TokenStorageService,private router:Router) { }
+  constructor(private themeService:ThemesService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.params['idCurso'];
     console.log(idCurso); 

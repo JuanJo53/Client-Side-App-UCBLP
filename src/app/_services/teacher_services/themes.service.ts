@@ -7,7 +7,7 @@ import { Theme } from 'src/app/models/Teacher/Modules/Theme';
 @Injectable({
   providedIn: 'root'
 })
-export class ModulesService {
+export class ThemesService {
 
   constructor(private http:HttpClient) { }
 
@@ -31,12 +31,6 @@ export class ModulesService {
 
 
 
-  //CRUD Lecciones
-  getLessons(idTema):Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/modules/themes/lessons/"+idTema,{ observe: 'response' });
-  }
-  delLesson(idLes):Observable<any>{
-    return this.http.delete(apiKey.api+"/teacher/modules/themes/lessons/"+idLes,{ observe: 'response' })
-  }
+  
 
 }

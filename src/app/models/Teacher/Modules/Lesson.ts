@@ -4,5 +4,5 @@ export class Lesson{
     idTipoLeccion:string;
     nombre: string;
     idImagen: string;
-    tipoLeccion:string;
+    estado:number;
 }
