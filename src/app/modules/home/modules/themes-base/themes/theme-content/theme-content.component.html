@@ -6,7 +6,11 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab>
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="agregarLeccion()"
+      >
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
@@ -42,7 +46,10 @@
               </button>
               <!--#btn  configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card" (click)="eliminar(cards.id)">
+              <button
+                class="circular-button-custom-card"
+                (click)="eliminar(cards.id)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
@@ -51,9 +58,9 @@
             </div>
             <div class="custom-card--lessons__content-card"></div>
             <div class="custom-card--lessons__description-theme">
-              <span class="custom-card--lessons__description-theme--title">Leccion {{
-                cards.numeroLeccion
-              }}</span>
+              <span class="custom-card--lessons__description-theme--title"
+                >Leccion {{ cards.numeroLeccion }}</span
+              >
               <span class="custom-card--lessons__description-theme--subtitle">
                 {{ cards.nombre }}
               </span>
@@ -72,11 +79,7 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button
-        class="circular-button-subtitle"
-        mat-mini-fab
-        (click)="agregarTemas()"
-      >
+      <button class="circular-button-subtitle" mat-mini-fab>
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->

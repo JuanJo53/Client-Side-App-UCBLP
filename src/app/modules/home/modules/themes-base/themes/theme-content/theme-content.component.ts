@@ -8,9 +8,10 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../../../../../dialogs/delete-card/delete-card.component";
-import { AddThemeComponent } from "../../../../../dialogs/themes/add-theme/add-theme.component";
+import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add-lesson.component";
 import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
-import { ConfigureThemeComponent } from "../../../../../dialogs/themes/configure-theme/configure-theme.component";
+import { ConfigureLessonComponent } from "../../../../../dialogs/lesson/configure-lesson/configure-lesson.component";
+
 import { Lesson } from 'src/app/models/Teacher/Modules/Lesson';
 @Component({
   selector: "app-theme-content",
@@ -105,14 +106,14 @@ export class ThemeContentComponent implements OnInit {
   }
   //-----funciones-----
 
-  agregarTemas() {
-    const dialogRef = this.dialog.open(AddThemeComponent, { width: "400px" });
+  agregarLeccion() {
+    const dialogRef = this.dialog.open(AddLessonComponent, { width: "400px" });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
   configuraciones() {
-    const dialogRef = this.dialog.open(ConfigureThemeComponent, {
+    const dialogRef = this.dialog.open(ConfigureLessonComponent, {
       width: "400px",
     });
     dialogRef.afterClosed().subscribe((result) => {

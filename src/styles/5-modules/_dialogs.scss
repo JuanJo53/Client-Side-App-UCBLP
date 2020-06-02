@@ -3,31 +3,36 @@
 .dialog {
   margin: 1.5rem 1rem 1rem 1rem;
   //background-color: yellow;
+  // .mat-dialog-content{
+  //   margin: 1rem 0rem;
+  // }
   &__container {
-    margin: 1rem 0;
+    //margin: 1rem 0;
     display: flex;
-    &--left-side {
-      flex: 0 1 80%;
-      justify-content: flex-start;
-    }
-    &--right-side {
-      flex: 1;
-      align-items: flex-end;
+    &-image {
+      //background-color: orange;
+      padding: 1rem 0rem;
       display: flex;
-      justify-content: flex-end;
+      &--left-side {
+        flex: 0 1 80%;
+        justify-content: flex-start;
+      }
+      &--right-side {
+        flex: 1;
+        align-items: flex-end;
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
-
-
 
 .dialogforms {
   mat-form-field {
     width: 100%;
   }
- 
 }
-.size{
+.size {
   width: 50%;
 }
 .settings-image {
@@ -40,22 +45,20 @@
   margin-left: 16px;
 }
 
-
- 
 .mat-form-field-underline {
   /*change color of underline*/
   background-color: $color-primary-blue !important;
- } 
- 
- .mat-form-field-ripple {
+}
+
+.mat-form-field-ripple {
   /*change color of underline when focused*/
   background-color: $color-primary-blue !important;
- }
- 
- mat-datepicker-toggle {
+}
+
+mat-datepicker-toggle {
   color: $color-primary-blue !important;
- }
- .mat-calendar-body-selected {
+}
+.mat-calendar-body-selected {
   background-color: $color-primary-blue !important;
   color: #fff;
 }

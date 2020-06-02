@@ -49,6 +49,8 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { ProgressBarComponent } from "src/app/modules/dialogs/create-practice/progress-bar/progress-bar.component";
 import { MatStepperModule } from "@angular/material/stepper";
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddLessonComponent } from 'src/app/modules/dialogs/lesson/add-lesson/add-lesson.component';
+import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -78,6 +80,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddForumComponent,
     EditForumComponent,
     ProgressBarComponent,
+    AddLessonComponent,
+    ConfigureLessonComponent
   ],
   imports: [
     CommonModule,

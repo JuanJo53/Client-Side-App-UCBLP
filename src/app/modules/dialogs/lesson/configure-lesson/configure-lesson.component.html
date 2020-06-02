@@ -1,0 +1,63 @@
+<div class="dialog">
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Configurar Lesson</span>
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogforms" enctype="multipart/form-data">
+      <mat-form-field appearance="outline">
+        <mat-label>Lesson's name</mat-label>
+        <!-- Input para el nombre del tema-->
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder="Name"
+          name="nombreTema"
+          [(ngModel)]="nombreTema"
+        />
+        <!-- //Input para el nombre del tema-->
+      </mat-form-field>
+      <div class="radio-buttons-dialog">
+        <div class="radio-buttons-dialog__title">Lesson Status :</div>
+        <!-- <mat-radio-group
+            aria-label="Select an option"
+            [(ngModel)]="radioButto nValue"
+          >
+            <mat-radio-button
+              class="radio-button"
+              *ngFor="let estado of cardEstado"
+              [value]="estado"
+            >
+              {{ estado }}
+            </mat-radio-button> -->
+        <mat-radio-group
+          aria-label="Select an option"
+          [(ngModel)]="radioButtonValue"
+          name="radiobuttonvalue"
+        >
+          <mat-radio-button class="radio-button" value="enable" checked
+            >Enable</mat-radio-button
+          >
+          <mat-radio-button class="radio-button" value="unable"
+            >Unable</mat-radio-button
+          >
+        </mat-radio-group>
+        <br />
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!--btn cancel-->
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Cancel
+    </button>
+    <!--#btn cancel-->
+    <!-- btn accept-->
+    <button mat-button class="dialog-button-accept" (click)="accept()">
+      Accept
+    </button>
+  </mat-dialog-actions>
+  <!-- #btn accept-->
+</div>
