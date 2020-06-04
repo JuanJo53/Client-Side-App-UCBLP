@@ -1,7 +1,7 @@
 @import "1-helpers/variables";
 @import "1-helpers/mixins";
 .subtitle {
-  margin: 4rem 0rem;
+  margin-top: 4rem;
   width: 100%;
   &__content {
     border-bottom: 0.5rem solid $color-primary-blue;
