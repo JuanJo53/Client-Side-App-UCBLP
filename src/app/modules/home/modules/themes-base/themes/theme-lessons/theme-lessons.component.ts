@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { SimpleCard } from "src/app/models/simpleCard";
 import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
 import { ProgressBarComponent } from "../../../../../dialogs/create-practice/progress-bar/progress-bar.component";
+import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add-lesson.component";
+import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
 import {
   MatDialog,
   MatDialogRef,
