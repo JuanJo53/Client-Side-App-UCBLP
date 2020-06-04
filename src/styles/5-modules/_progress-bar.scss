@@ -7,6 +7,16 @@
   flex-direction: column;
   align-items: center;
   //background-color: red;
+  &__container-mix {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    //background-color: red;
+  }
+  &__button-actions-container--right {
+    //background-color: red;
+    //justify-content: right;
+  }
   &__choose-buttons-container {
     margin-top: 2rem;
     &.col {
@@ -38,9 +48,24 @@
       //background-color: orange;
     }
     &-normal {
-      padding: 0.5rem 0.75rem!important;
+      //margin-left: 1rem;
+      margin-left: 1rem !important;
+      //padding: 0.5rem 0.75rem !important;
       background-color: $color-primary-blue !important;
-      color: white !important;
+      color: $color-primary-white !important;
+
+      &--icon {
+        @include margin-left-right(0.5rem, 0.5rem);
+      }
+      &--text {
+        @include margin-left-right(0.5rem, 0.5rem);
+      }
+    }
+    &-negative {
+      //margin-left: 1rem;
+      //padding: 0.5rem 0.75rem !important;
+      background-color: $color-primary-red !important;
+      color: $color-primary-white !important;
 
       &--icon {
         @include margin-left-right(0.5rem, 0.5rem);
