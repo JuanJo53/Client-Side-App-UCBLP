@@ -5,4 +5,5 @@ export class Lesson{
     nombre: string;
     idImagen: string;
     estado:number;
+    idTema:number;
 }

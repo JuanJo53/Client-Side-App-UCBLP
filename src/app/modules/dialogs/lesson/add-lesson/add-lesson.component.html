@@ -19,12 +19,46 @@
         />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <div class="dialog__container-image">
+      <mat-form-field appearance="outline">
+        <mat-label>Lesson's number</mat-label>
+          <!-- Input para el nombre del tema-->
+          <input
+            type="number"
+            class="input-form"
+            matInput
+            placeholder="Number"
+            name="numero"
+            [(ngModel)]="numero"
+          />
+          <!-- //Input para el nombre del tema-->
+      </mat-form-field>
+      <div class="combo-box">
+        <mat-form-field>
+          <mat-label>Type</mat-label>
+          <mat-select
+          [(value)]="typeSelected" >
+            <mat-option *ngFor="let elemento of types" [value]="elemento.value">
+              {{ elemento.display }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="combo-box">
+        <mat-form-field>
+          <mat-label>Images</mat-label>
+          <mat-select [(value)]="imageSelected" >
+            <mat-option *ngFor="let elemento of images" [value]="elemento.value">
+              {{ elemento.display }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--<div class="dialog__container-image">
         <div class="dialog__container-image--left-side">
           <img [src]="imageUrl" class="settings-image" />
         </div>
         <div class="dialog__container-image--right-side">
-          <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)"> -->
+          <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)"> 
           <input
             #csvInput
             hidden="true"
@@ -41,7 +75,7 @@
             <mat-icon class="dialog-circular-button__icon">image</mat-icon>
           </button>
         </div>
-      </div>
+      </div>-->
     </form>
   </mat-dialog-content>
   <mat-dialog-actions align="end">

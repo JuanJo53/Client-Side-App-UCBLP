@@ -20,7 +20,10 @@ export class LessonService {
   updateLesson(lesson:Lesson):Observable<any>{
     return this.http.put(apiKey.api+"/teacher/modules/themes/lessons/",lesson,{ observe: 'response' });
   }
-  getTipoLeccion():Observable<any>{
+  getTypeLesson():Observable<any>{
     return this.http.get(apiKey.api+'/teacher/modules/themes/lessons/get/tipo',{observe:'response'})
+  }
+  addLesson(lesson:Lesson):Observable<any>{
+    return this.http.post(apiKey.api+"/teacher/modules/themes/lessons/",lesson,{observe:'response'});
   }
 }

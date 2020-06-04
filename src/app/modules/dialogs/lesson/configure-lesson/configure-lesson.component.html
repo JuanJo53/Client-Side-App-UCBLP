@@ -19,16 +19,40 @@
         />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <!--<div class="combo-box">
+      <mat-form-field appearance="outline">
+        <mat-label>Lesson's number</mat-label>
+          <!-- Input para el nombre del tema-->
+          <input
+            type="number"
+            class="input-form"
+            matInput
+            placeholder="Number"
+            name="numero"
+            [(ngModel)]="numero"
+          />
+        <!-- //Input para el nombre del tema-->
+      </mat-form-field>
+      <div class="combo-box">
         <mat-form-field>
-          <mat-label>Month</mat-label>
-          <mat-select [(value)]="typeSelected" (selectionChange)="changeMonth()">
-            <mat-option *ngFor="let elemento of foods" [value]="elemento.value">
+          <mat-label>Type</mat-label>
+          <mat-select
+          [(value)]="typeSelected" >
+            <mat-option *ngFor="let elemento of types" [value]="elemento.value">
               {{ elemento.display }}
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </div>-->
+      </div>
+      <div class="combo-box">
+        <mat-form-field>
+          <mat-label>Images</mat-label>
+          <mat-select [(value)]="imageSelected" >
+            <mat-option *ngFor="let elemento of images" [value]="elemento.value">
+              {{ elemento.display }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
       <div class="radio-buttons-dialog">
         <div class="radio-buttons-dialog__title">Lesson Status :</div>
         <!-- <mat-radio-group
