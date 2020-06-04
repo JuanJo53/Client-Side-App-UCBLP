@@ -30,6 +30,7 @@ import { ForumsBaseComponent } from "./modules/home/forums-base/forums-base.comp
 import { GetTypeLessonsResolver } from './_resolvers/docente/modules/themes/get-type-lessons.resolver';
 import { GetModulesResolver } from './_resolvers/docente/evaluation/get_modules.resolver';
 import { GetColorsResolver } from './_resolvers/docente/evaluation/get-colores.resolver';
+import { GetForumsResolver } from './_resolvers/docente/forums/get-forums.resolver';
 
 const routes: Routes = [
   {
@@ -85,6 +86,9 @@ const routes: Routes = [
         children: [
           {
             path: "",
+            resolve:{
+              forums:GetForumsResolver
+            },
             component: ForumsComponent,
           },
           {
