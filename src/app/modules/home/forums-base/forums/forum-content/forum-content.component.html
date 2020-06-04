@@ -67,7 +67,11 @@
             <!--#see answer-->
           </button>
 
-          <button class="circular-button-table--negative" mat-mini-fab>
+          <button
+            class="circular-button-table--negative"
+            (click)="eliminarRespuestaForo()"
+            mat-mini-fab
+          >
             <!--delete usuario-->
             <span class="circular-button-table__icon"
               ><i class="fas fa-trash"></i>
