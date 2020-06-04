@@ -8,8 +8,9 @@ import {
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../../../../dialogs/delete-card/delete-card.component";
 import { AddThemeComponent } from "../../../../dialogs/themes/add-theme/add-theme.component";
-import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
 import { ConfigureThemeComponent } from "../../../../dialogs/themes/configure-theme/configure-theme.component";
+import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
+
 import { Theme } from 'src/app/models/Teacher/Modules/Theme';
 import { CardImage } from 'src/app/models/Teacher/Modules/CardImage';
 @Component({
