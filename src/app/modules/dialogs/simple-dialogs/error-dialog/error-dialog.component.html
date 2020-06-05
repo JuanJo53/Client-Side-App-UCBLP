@@ -1,0 +1,24 @@
+<div class="simple-dialog">
+  <div class="simple-dialog__content">
+    <!--icon-->
+    <div class="simple-dialog__icon-content--negative">
+      <mat-icon class="simple-dialog__icon--negative">close</mat-icon>
+    </div>
+    <!--#icon-->
+    <!--Title simple dialog-->
+    <div class="simple-dialog__title">
+      <span class="simple-dialog__title--text">Error</span>
+    </div>
+    <!--#title simple dialog-->
+    <!--message-->
+    <mat-dialog-content class="simple-dialog__message">
+      {{ message }}
+    </mat-dialog-content>
+    <!--#message-->
+  </div>
+  <mat-dialog-actions align="center">
+    <button mat-button class="dialog-button-accept" [mat-dialog-close]>
+      Try it again
+    </button>
+  </mat-dialog-actions>
+</div>

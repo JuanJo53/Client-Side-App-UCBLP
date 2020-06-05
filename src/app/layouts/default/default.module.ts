@@ -48,9 +48,10 @@ import { EditForumComponent } from "src/app/modules/dialogs/forums/edit-forum/ed
 import { MatNativeDateModule } from "@angular/material/core";
 import { ProgressBarComponent } from "src/app/modules/dialogs/create-practice/progress-bar/progress-bar.component";
 import { MatStepperModule } from "@angular/material/stepper";
-import { ReactiveFormsModule } from '@angular/forms';
-import { AddLessonComponent } from 'src/app/modules/dialogs/lesson/add-lesson/add-lesson.component';
-import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { AddLessonComponent } from "src/app/modules/dialogs/lesson/add-lesson/add-lesson.component";
+import { ConfigureLessonComponent } from "src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component";
+import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/error-dialog/error-dialog.component";
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -81,7 +82,8 @@ import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configu
     EditForumComponent,
     ProgressBarComponent,
     AddLessonComponent,
-    ConfigureLessonComponent
+    ConfigureLessonComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -107,7 +109,8 @@ import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configu
     MatDatepickerModule,
     MatNativeDateModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
+  
 })
 export class DefaultModule {}
