@@ -52,6 +52,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AddLessonComponent } from "src/app/modules/dialogs/lesson/add-lesson/add-lesson.component";
 import { ConfigureLessonComponent } from "src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component";
 import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/error-dialog/error-dialog.component";
+import { CreatePracticeComponent } from "src/app/modules/home/modules/themes-base/themes/create-practice/create-practice.component";
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -84,6 +86,7 @@ import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/err
     AddLessonComponent,
     ConfigureLessonComponent,
     ErrorDialogComponent,
+    CreatePracticeComponent,
   ],
   imports: [
     CommonModule,
@@ -110,7 +113,7 @@ import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/err
     MatNativeDateModule,
     MatStepperModule,
     ReactiveFormsModule,
+    NgxMaterialTimepickerModule
   ],
-  
 })
 export class DefaultModule {}

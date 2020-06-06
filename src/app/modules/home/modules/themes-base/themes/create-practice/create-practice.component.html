@@ -1,0 +1,391 @@
+<div class="container">
+  <!--Subtitle-->
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Practice creation</span>
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <!-------------------------------------------------------------------------->
+  <mat-horizontal-stepper
+    labelPosition="bottom"
+    #stepper
+    class="question-maker-container"
+  >
+    <!--1 paso-->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Initial Information</ng-template>
+        <!-- card -->
+        <div class="card">
+          <div class="container-dialog">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Name</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-form-field appearance="outline">
+              <mat-label>Practice name</mat-label>
+              <!-- Input para el email-->
+              <input
+                class="input-form"
+                type="text"
+                matInput
+                placeholder="Practice name"
+                name="nombrePractica"
+              />
+              <!-- //Input para el email-->
+            </mat-form-field>
+
+            <div class="row">
+              <!--start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Type of Question</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput [matDatepicker]="picker1" />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="picker1"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker
+                        #picker1
+                        startView="year"
+                        [startAt]="startDate"
+                      ></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <!--fecha-->
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <input
+                        [ngxTimepicker]="toggleTimepicker"
+                        [disableClick]="true"
+                        readonly
+                      />
+                      <ngx-material-timepicker-toggle
+                        [for]="toggleTimepicker"
+                      ></ngx-material-timepicker-toggle>
+                      <ngx-material-timepicker
+                        #toggleTimepicker
+                      ></ngx-material-timepicker>
+                    </div>
+                    <!--#hora-->
+                  </div>
+                </div>
+              </div>
+              <!--#start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Building Question</span>
+                  </div>
+                </div>
+                <!--row-->
+                <!-- <div class="row"> -->
+                <div class="col">
+                  <!--fecha-->
+                  <mat-form-field>
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker2" />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker2"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker
+                      #picker2
+                      startView="year"
+                      [startAt]="startDate"
+                    ></mat-datepicker>
+                  </mat-form-field>
+                  <!--fecha-->
+                </div>
+                <!--hora-->
+                <!--#hora-->
+                <!-- </div> -->
+                <!--#row-->
+                <!--#subtitle-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- #card -->
+        <!-- <button mat-button matStepperNext>Next</button> -->
+        <!-- buttons -->
+        <div class="progress-bar__bar">
+          <!--back button-->
+          <div class="progress-bar__previous" (click)="previous()">
+            <button
+              class="progress-bar__button-previous"
+              mat-mini-fab
+              matStepperPrevious
+            >
+              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+            </button>
+            <span class="progress-bar__text-previous">Back</span>
+          </div>
+          <!--#back button-->
+          <!--next button-->
+          <div class="progress-bar__next">
+            <span class="progress-bar__text-next">Next</span>
+            <button
+              class="progress-bar__button-next"
+              mat-mini-fab
+              matStepperNext
+            >
+              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+            </button>
+          </div>
+          <!--#next button-->
+        </div>
+        <!-- #buttons -->
+      </form>
+    </mat-step>
+    <!--#1 paso-->
+    <!--2 paso-->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Building Question</ng-template>
+        <!--card-->
+        <div class="card">
+          <div class="card__text--no-content">
+            No questions added
+          </div>
+          <div class="question-card-added">
+            <div class="question-card-added__content"></div>
+            <div class="question-card-added__button">
+              <button
+                mat-mini-fab
+                class="question-card-added__button--positive"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-mini-fab
+                class="question-card-added__button--negative"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row progress-bar__choose-buttons-container">
+          <div class="col-sm-6 progress-bar__content">
+            <button mat-raised-button class="progress-bar__button-normal">
+              <div class="progress-bar__button-container">
+                <mat-icon class="progress-bar__button-normal--icon"
+                  >add_circle</mat-icon
+                >
+                <span class="progress-bar__button-normal--text"
+                  >Add customed question</span
+                >
+              </div>
+            </button>
+          </div>
+          <div class="col-sm-6 progress-bar__content">
+            <button mat-raised-button class="progress-bar__button-normal">
+              <div class="progress-bar__button-container">
+                <mat-icon class="progress-bar__button-normal--icon"
+                  >account_balance</mat-icon
+                >
+                <span class="progress-bar__button-normal--text"
+                  >Add customed question</span
+                >
+              </div>
+            </button>
+          </div>
+        </div>
+        <!--#card-->
+        <!-- buttons -->
+        <div class="progress-bar__bar">
+          <!--back button-->
+          <div class="progress-bar__previous" (click)="previous()">
+            <button
+              class="progress-bar__button-previous"
+              mat-mini-fab
+              matStepperPrevious
+            >
+              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+            </button>
+            <span class="progress-bar__text-previous">Back</span>
+          </div>
+          <!--#back button-->
+          <!--next button-->
+          <div class="progress-bar__next">
+            <span class="progress-bar__text-next">Next</span>
+            <button
+              class="progress-bar__button-next"
+              mat-mini-fab
+              matStepperNext
+            >
+              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+            </button>
+          </div>
+          <!--#next button-->
+        </div>
+        <!-- #buttons -->
+      </form>
+    </mat-step>
+    <!--#2 paso-->
+    <!--3 paso-->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Review Questions</ng-template>
+        <!--#complete card-->
+        <!--combo box-->
+        <div class="combo-box-container">
+          <!--combo tipo de preguntas-->
+          <div class="combo-box-container--left">
+            <div class="combo-box">
+              <mat-form-field>
+                <mat-label>Type of Question</mat-label>
+                <mat-select
+                  [(value)]="tipoPreguntaSeleccionado"
+                  (selectionChange)="selected()"
+                >
+                  <mat-option
+                    *ngFor="let elemento of tipoPregunta"
+                    [value]="elemento.value"
+                  >
+                    <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
+                    {{ elemento.display }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!--#combo tipo de preguntas-->
+            <!--combo tipo de respuestas-->
+            <div class="combo-box">
+              <mat-form-field>
+                <mat-label>Type of answer</mat-label>
+                <mat-select
+                  [(value)]="tipoPreguntaSeleccionado"
+                  (selectionChange)="selected()"
+                >
+                  <mat-option
+                    *ngFor="let elemento of tipoRespuesta"
+                    [value]="elemento.value"
+                  >
+                    <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
+                    {{ elemento.display }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="progress-bar__button-actions-container--right">
+            <button mat-raised-button class="progress-bar__button-normal">
+              <div class="progress-bar__button-container">
+                <mat-icon class="progress-bar__button-normal--icon"
+                  >clear_all</mat-icon
+                >
+                <span class="progress-bar__button-normal--text">Clear</span>
+              </div>
+            </button>
+          </div>
+          <!--#combo tipo de respuestas-->
+        </div>
+        <!--#combo box-->
+        <!--card-->
+        <div class="card">
+          <div class="card__text--no-content">
+            No questions added
+          </div>
+        </div>
+        <!--#card-->
+        <div class="progress-bar__container-mix">
+          <button mat-raised-button class="progress-bar__button-negative">
+            <span class="progress-bar__button-normal--text">Cancel</span>
+          </button>
+          <button mat-raised-button class="progress-bar__button-normal">
+            <span class="progress-bar__button-normal--text">Add question</span>
+          </button>
+        </div>
+        <!--#complete card-->
+        <!-- <button mat-button matStepperNext>Next</button> -->
+        <!-- buttons -->
+        <div class="progress-bar__bar">
+          <!--back button-->
+          <div class="progress-bar__previous" (click)="previous()">
+            <button
+              class="progress-bar__button-previous"
+              mat-mini-fab
+              matStepperPrevious
+            >
+              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+            </button>
+            <span class="progress-bar__text-previous">Back</span>
+          </div>
+          <!--#back button-->
+          <!--next button-->
+          <div class="progress-bar__next">
+            <span class="progress-bar__text-next">Next</span>
+            <button
+              class="progress-bar__button-next"
+              mat-mini-fab
+              matStepperNext
+            >
+              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+            </button>
+          </div>
+          <!--#next button-->
+        </div>
+        <!-- #buttons -->
+      </form>
+    </mat-step>
+
+    <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+
+    <!--#3 paso-->
+    <!--4 paso-->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Done</ng-template>
+        <div>
+          <!-- <button mat-button matStepperNext>Next</button> -->
+          <!-- buttons -->
+          <div class="progress-bar__bar">
+            <!--back button-->
+            <div class="progress-bar__previous" (click)="previous()">
+              <button
+                class="progress-bar__button-previous"
+                mat-mini-fab
+                matStepperPrevious
+              >
+                <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+              </button>
+              <span class="progress-bar__text-previous">Back</span>
+            </div>
+            <!--#back button-->
+            <!--next button-->
+            <div class="progress-bar__next">
+              <span class="progress-bar__text-next">Next</span>
+              <button
+                class="progress-bar__button-next"
+                mat-mini-fab
+                matStepperNext
+              >
+                <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+              </button>
+            </div>
+            <!--#next button-->
+          </div>
+          <!-- #buttons -->
+        </div>
+      </form>
+    </mat-step>
+    <!--#4 paso-->
+  </mat-horizontal-stepper>
+</div>
