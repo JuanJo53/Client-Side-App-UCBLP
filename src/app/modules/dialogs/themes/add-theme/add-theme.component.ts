@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, ComponentFactoryResolver } from '@angular/core';
-import { ModulesService } from 'src/app/_services/teacher_services/modules.service';
+import { ThemesService } from 'src/app/_services/teacher_services/themes.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Theme } from 'src/app/models/Teacher/Modules/Theme';
 
@@ -12,7 +12,9 @@ export class AddThemeComponent implements OnInit {
   nombreTema="";
   imageUrl: string = "/assets/default.png";
   fileToUpload: File = null;
-  constructor(@Inject(MAT_DIALOG_DATA) public dataDialog: any,private servThe:ModulesService,private dialogRef: MatDialogRef<AddThemeComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public dataDialog: any,
+  private servThe:ThemesService,
+  private dialogRef: MatDialogRef<AddThemeComponent>) { }
 
   ngOnInit(): void {
 

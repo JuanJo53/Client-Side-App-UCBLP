@@ -12,7 +12,7 @@ import { ConfigureThemeComponent } from "../../../../dialogs/themes/configure-th
 import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
 
 import { Theme } from 'src/app/models/Teacher/Modules/Theme';
-import { ThemeImage } from 'src/app/models/Teacher/Modules/ThemeImage';
+import { CardImage } from 'src/app/models/CardImage';
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -27,7 +27,7 @@ export class ThemesComponent implements OnInit {
   idCurso:string;
   themeCards: Theme[] = [    
   ];
-  themeImages: ThemeImage[] = [    
+  themeImages: CardImage[] = [    
   ];
   cardTheme: CardThemes = {
     id: 0,
@@ -43,8 +43,8 @@ export class ThemesComponent implements OnInit {
   ) {}
   addThemesImages(data){
     for(let i in data){
-     let newImgT=new ThemeImage();
-     newImgT.idTemaImagen=data[i].id_imagen;
+     let newImgT=new CardImage();
+     newImgT.idImagen=data[i].id_imagen;
      newImgT.url=data[i].imagen;
      this.themeImages.push(newImgT);
     }
@@ -94,12 +94,13 @@ export class ThemesComponent implements OnInit {
   });
     dialogRef.afterClosed().subscribe((result) => {
       var route=this.route;
-      if(result!==""){
+      console.log(result);
+      if(result!==""&&result!=null&&result!=="undefined"){
         route.data.subscribe({
           next:(data)=>{
             data.themes.body=result;
             console.log(data);            
-        this.addThemesCards(result,this.idCurso);
+            this.addThemesCards(result,this.idCurso);
           },
           error:(error)=>{
             console.log("No se pudieron obtener las lecciones");
@@ -114,12 +115,22 @@ export class ThemesComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfigureThemeComponent, {
       width: "400px",
       data:{
-        tema:tema
+        tema:tema,
+        idCurso:this.idCurso,
       }
     });
     dialogRef.afterClosed().subscribe((result) => {
       if(result!=""){
-        tema=result;
+        this.route.data.subscribe({
+          next:(data)=>{
+            console.log(data.themes.body);
+            console.log(result);
+            data.themes.body=result;
+          },
+          error:(error)=>{
+            console.log("no se pudo modificar el tema");
+          }
+        })
       }
     });
   }

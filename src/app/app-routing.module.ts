@@ -27,6 +27,9 @@ import { GetLessonsResolver } from './_resolvers/docente/modules/themes/get-less
 import { ForumContentComponent } from "./modules/home/forums-base/forums/forum-content/forum-content.component";
 import { ForumsComponent } from "./modules/home/forums-base/forums/forums.component";
 import { ForumsBaseComponent } from "./modules/home/forums-base/forums-base.component";
+import { GetTypeLessonsResolver } from './_resolvers/docente/modules/themes/get-type-lessons.resolver';
+import { GetModulesResolver } from './_resolvers/docente/evaluation/get_modules.resolver';
+import { GetColorsResolver } from './_resolvers/docente/evaluation/get-colores.resolver';
 
 const routes: Routes = [
   {
@@ -111,14 +114,15 @@ const routes: Routes = [
                    {
                     path: "",
                     resolve:{
-                      lessons:GetLessonsResolver
+                      lessons:GetLessonsResolver,
+                      images:GetImagesIdResolver,
+                      types:GetTypeLessonsResolver
                     },
                     component: ThemeContentComponent,
                    },
                   {
                     path: "lessons",
                     resolve:{
-                      lessons:GetLessonsResolver
                     },
                     component: ThemeLessonsComponent,
                   },
@@ -139,6 +143,11 @@ const routes: Routes = [
       {
         path: "evaluation",
         component: EvaluationComponent,
+        resolve:{
+          modules:GetModulesResolver,
+          colors:GetColorsResolver,
+          images:GetImagesIdResolver
+        }
       },
     ],
   },

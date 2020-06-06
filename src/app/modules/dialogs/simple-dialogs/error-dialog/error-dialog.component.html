@@ -17,7 +17,7 @@
     <!--#message-->
   </div>
   <mat-dialog-actions align="center">
-    <button mat-button class="dialog-button-accept" [mat-dialog-close]>
+    <button mat-button class="dialog-button-accept" (click)="clearAll()">
       Try it again
     </button>
   </mat-dialog-actions>
