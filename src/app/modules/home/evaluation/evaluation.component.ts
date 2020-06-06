@@ -169,4 +169,7 @@ export class EvaluationComponent implements OnInit {
       },
     });
   }
+  editarPorcentajes() {
+    console.log("clicked");
+  }
 }

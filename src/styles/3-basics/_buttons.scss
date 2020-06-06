@@ -1,5 +1,6 @@
 // login buttons
 .login-button-user {
+  cursor: pointer;
   background-color: $color-primary-white;
   color: $color-primary-blue;
   border: 0.1rem solid $color-primary-blue;
@@ -148,7 +149,11 @@
 //-----button inside subtitle-----
 .circular-button-subtitle {
   background-color: $color-primary-blue !important;
-  margin-left: 1rem;
+  margin-left: 1rem !important;
+  &--negative {
+    background-color: $color-primary-red !important;
+    margin-left: 1rem !important;
+  }
 }
 //-----#button inside subtitle-----
 //-----table button-----
@@ -196,3 +201,38 @@
   }
 }
 //-----#button progress bar-----
+// module buttons
+.module-button {
+  cursor: pointer;
+  margin-top: 4rem;
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
+  border: 0.1rem solid $color-primary-blue;
+  opacity: 60%;
+  border-radius: 2.5rem;
+  text-align: right;
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    padding-right: 0.75rem;
+    padding-left: 0.5rem;
+  }
+  i {
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
+  }
+  &:hover {
+    // background-color: $color-primary-blue;
+    // color: $color-primary-white;
+    border: 0.1rem solid $color-primary-blue;
+    opacity: 100%;
+    transition: 0.25s;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+// #module buttons
