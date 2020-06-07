@@ -45,7 +45,7 @@
                 <!--subtitle-->
                 <div class="dialog-subtitle">
                   <div class="dialog-subtitle__text">
-                    <span>Type of Question</span>
+                    <span>Start date and hour</span>
                   </div>
                 </div>
                 <div class="row">
@@ -69,55 +69,81 @@
                   <!--hora-->
                   <div class="col-sm-6">
                     <div class="toggle-example">
-                      <input
-                        [ngxTimepicker]="toggleTimepicker"
-                        [disableClick]="true"
-                        readonly
-                      />
-                      <ngx-material-timepicker-toggle
-                        [for]="toggleTimepicker"
-                      ></ngx-material-timepicker-toggle>
-                      <ngx-material-timepicker
-                        #toggleTimepicker
-                      ></ngx-material-timepicker>
+                      <mat-form-field>
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          [ngxTimepicker]="toggleTimepicker1"
+                          [disableClick]="true"
+                          readonly
+                        />
+                        <ngx-material-timepicker-toggle
+                          matSuffix
+                          [for]="toggleTimepicker1"
+                        ></ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker
+                          #toggleTimepicker1
+                        ></ngx-material-timepicker>
+                      </mat-form-field>
                     </div>
-                    <!--#hora-->
                   </div>
+                  <!--#hora-->
                 </div>
               </div>
               <!--#start date-->
+              <!--end date-->
               <div class="col-sm-6">
                 <!--subtitle-->
                 <div class="dialog-subtitle">
                   <div class="dialog-subtitle__text">
-                    <span>Building Question</span>
+                    <span>End date and hour</span>
                   </div>
                 </div>
-                <!--row-->
-                <!-- <div class="row"> -->
-                <div class="col">
-                  <!--fecha-->
-                  <mat-form-field>
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="picker2" />
-                    <mat-datepicker-toggle
-                      matSuffix
-                      [for]="picker2"
-                    ></mat-datepicker-toggle>
-                    <mat-datepicker
-                      #picker2
-                      startView="year"
-                      [startAt]="startDate"
-                    ></mat-datepicker>
-                  </mat-form-field>
-                  <!--fecha-->
-                </div>
-                <!--hora-->
-                <!--#hora-->
-                <!-- </div> -->
-                <!--#row-->
                 <!--#subtitle-->
+                <!--row-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput [matDatepicker]="picker2" />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="picker2"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker
+                        #picker2
+                        startView="year"
+                        [startAt]="startDate"
+                      ></mat-datepicker>
+                    </mat-form-field>
+                    <!--fecha-->
+                  </div>
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field>
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          [ngxTimepicker]="toggleTimepicker2"
+                          [disableClick]="true"
+                          readonly
+                        />
+                        <ngx-material-timepicker-toggle
+                          matSuffix
+                          [for]="toggleTimepicker2"
+                        ></ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker
+                          #toggleTimepicker2
+                        ></ngx-material-timepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
               </div>
+              <!--end date-->
             </div>
           </div>
         </div>
