@@ -20,6 +20,11 @@ export class ConfigureLessonComponent implements OnInit {
     private servLes: LessonService,
     private dialogRef: MatDialogRef<ConfigureLessonComponent>
   ) {}
+  disableTextbox =  true;
+
+  toggleDisable() {
+    this.disableTextbox = !this.disableTextbox;
+  }
   ngOnInit(): void {
     this.cargarDatos();
   }

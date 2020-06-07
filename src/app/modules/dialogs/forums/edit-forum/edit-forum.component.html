@@ -8,18 +8,19 @@
     <!--#subtitle-->
     <mat-dialog-content class="mat-typography">
         <form class="dialogforms" enctype="multipart/form-data">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="input-disabled" (dblclick)='toggleDisable()'>
                 <mat-label>Forum's Name</mat-label>
                 <!-- Input para el nombre del foro-->
-                <input type="text" class="input-form" matInput placeholder="Forum's Name" name="nombre foro" />
+                <input type="text" class="input-form" matInput placeholder="Forum's Name" [disabled]='disableTextbox'
+                    name="nombre foro" />
                 <!-- //Input para el nombre del foro-->
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="input-disabled" (dblclick)='toggleDisable()'>
                 <mat-label>Forum Description</mat-label>
                 <!-- Input para la descripcion del foro-->
                 <input type="text" class="input-form" matInput placeholder="Write the description here"
-                    name="descripcion foro" />
+                    [disabled]='disableTextbox' name="descripcion foro" />
                 <!-- //Input para la descripcion del foro-->
             </mat-form-field>
         </form>
@@ -27,7 +28,7 @@
 
     <div class="dialog__container">
         <div class="dialog__container--left-side">
-            <mat-form-field >
+            <mat-form-field>
                 <mat-label>Start Date</mat-label>
                 <input matInput [matDatepicker]="picker1">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -37,7 +38,7 @@
 
         </div>
         <div class="dialog__container--right-side">
-            <mat-form-field >
+            <mat-form-field>
                 <mat-label>End Date</mat-label>
                 <input matInput [matDatepicker]="picker2">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>

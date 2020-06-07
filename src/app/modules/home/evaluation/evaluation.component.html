@@ -31,7 +31,7 @@
           >
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
-              <button class="circular-button-custom-card">
+              <button class="circular-button-custom-card" (click)="configuracionModulo()">
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
@@ -61,7 +61,7 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab>
+      <button class="circular-button-subtitle" mat-mini-fab (click)="nuevoModulo()">
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
@@ -85,12 +85,19 @@
           >
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
-              <button class="circular-button-custom-card">
+              <button class="circular-button-custom-card" (click)="configuracionModuloPersonalizado()">
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
               </button>
               <!--#btn configuraciones-->
+               <!--btn eliminar-->
+               <button class="circular-button-custom-card" (click)="eliminar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  delete
+                </mat-icon>
+              </button>
+              <!--#btn eliminar-->
             </div>
             <div class="evaluation-card__content-card">
               <div

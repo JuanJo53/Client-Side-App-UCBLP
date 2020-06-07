@@ -54,6 +54,12 @@ import { ConfigureLessonComponent } from "src/app/modules/dialogs/lesson/configu
 import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/error-dialog/error-dialog.component";
 import { CreatePracticeComponent } from "src/app/modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { ViewResponseComponent} from "src/app/modules/dialogs/forums/view-response/view-response.component";
+import { AddCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/add-custom-module/add-custom-module.component';
+import { EditDefaultModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-default-module/edit-default-module.component';
+import { EditCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component';
+import { ModulesRubricComponent } from 'src/app/modules/dialogs/evaluation/modules-rubric/modules-rubric.component';
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -87,6 +93,11 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     ConfigureLessonComponent,
     ErrorDialogComponent,
     CreatePracticeComponent,
+    ViewResponseComponent,
+    AddCustomModuleComponent,
+    EditCustomModuleComponent,
+    EditDefaultModuleComponent,
+    ModulesRubricComponent
   ],
   imports: [
     CommonModule,

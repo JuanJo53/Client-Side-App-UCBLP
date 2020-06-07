@@ -6,17 +6,11 @@
   </div>
   <mat-dialog-content class="mat-typography">
     <form class="dialogforms" enctype="multipart/form-data">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="input-disabled" (dblclick)='toggleDisable()'>
         <mat-label>Theme's name</mat-label>
         <!-- Input para el nombre del tema-->
-        <input
-          type="text"
-          class="input-form"
-          matInput
-          placeholder="Name"
-          name="nombreTema"
-          [(ngModel)]="nombre"
-        />
+        <input [disabled]='disableTextbox' type="text" class="input-form" matInput placeholder="Name" name="nombreTema"
+          [(ngModel)]="nombre" />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
       <div class="radio-buttons-dialog">
@@ -32,17 +26,9 @@
           >
             {{ estado }}
           </mat-radio-button> -->
-        <mat-radio-group
-          aria-label="Select an option"
-          [(ngModel)]="radioButtonValue"
-          name="radiobuttonvalue"
-        >
-          <mat-radio-button class="radio-button" value="enable" checked
-            >Enable</mat-radio-button
-          >
-          <mat-radio-button class="radio-button" value="unable"
-            >Unable</mat-radio-button
-          >
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="radioButtonValue" name="radiobuttonvalue">
+          <mat-radio-button class="radio-button" value="enable" checked>Enable</mat-radio-button>
+          <mat-radio-button class="radio-button" value="unable">Unable</mat-radio-button>
         </mat-radio-group>
         <br />
       </div>

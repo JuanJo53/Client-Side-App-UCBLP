@@ -1,0 +1,69 @@
+<div class="dialog">
+    <div class="dialog-subtitle">
+        <div class="dialog-subtitle__text">
+            <span>Modules Rubric</span>
+        </div>
+    </div>
+    <mat-dialog-content class="mat-typography">
+        <form class="dialogformsModuesRubric" enctype="multipart/form-data">
+            <div class="dialog__container-image">
+                <div class="dialog__container-image--left-side">
+                    <p class= "pModuleRubric">Assistance</p>
+                </div>
+                <div class="dialog__container-image--right-side">
+                    <mat-form-field appearance="outline"  class="input-disabled" (dblclick)='toggleDisable()'>
+                        <mat-label>%</mat-label>
+                        <!-- Input para el nombre del modulo-->
+                        <input [disabled]='disableTextbox' type="text" class="input-form" matInput placeholder="%" name="nombreModulo" />
+                        <!-- //Input para el nombre del modulo-->
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="dialog__container-image">
+                <div class="dialog__container-image--left-side">
+                    <p class= "pModuleRubric">Theme Activities</p>
+                </div>
+                <div class="dialog__container-image--right-side">
+                    <mat-form-field appearance="outline"  class="input-disabled" (dblclick)='toggleDisable()'>
+                        <mat-label>%</mat-label>
+                        <!-- Input para el nombre del modulo-->
+                        <input [disabled]='disableTextbox' type="text" class="input-form" matInput placeholder="%" name="nombreModulo" />
+                        <!-- //Input para el nombre del modulo-->
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="dialog__container-image">
+                <div class="dialog__container-image--left-side">
+                    <p class= "pModuleRubric">Theme Practices</p>
+                </div>
+                <div class="dialog__container-image--right-side">
+                    <mat-form-field appearance="outline"  class="input-disabled" (dblclick)='toggleDisable()'>
+                        <mat-label>%</mat-label>
+                        <!-- Input para el nombre del modulo-->
+                        <input [disabled]='disableTextbox' type="text" class="input-form" matInput placeholder="%" name="nombreModulo" />
+                        <!-- //Input para el nombre del modulo-->
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+    <div class="dialog-subtitle">
+        <div class="dialog-subtitle__text">
+           
+        </div>
+    </div>
+    <p class= "pModuleRubricResult">100</p>
+
+    <mat-dialog-actions align="end">
+        <!--btn cancel-->
+        <button mat-button mat-dialog-close class="dialog-button-cancel">
+            Cancel
+        </button>
+        <!--#btn cancel-->
+        <!-- btn accept-->
+        <button mat-button class="dialog-button-accept" >
+            Accept
+        </button>
+    </mat-dialog-actions>
+    <!-- #btn accept-->
+</div>
