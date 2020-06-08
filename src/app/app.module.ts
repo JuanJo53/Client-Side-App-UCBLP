@@ -7,10 +7,11 @@ import { FormsModule } from "@angular/forms";
 import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
+import { BuildingPageComponent } from './modules/aux-pages/building-page/building-page.component';
 
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent, BuildingPageComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,

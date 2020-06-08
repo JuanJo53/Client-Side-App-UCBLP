@@ -325,9 +325,72 @@
         </div>
         <!--#combo box-->
         <!--card-->
-        <div class="card">
-          <div class="card__text--no-content">
-            No questions added
+        <div class="card-question">
+          <!-- <div class="card__text--no-content">
+          </div> -->
+          <div class="container-dialog">
+            <div class="card-question__header">
+              <!--input para pregunta-->
+              <div class="card-question__header--question">
+                <mat-form-field appearance="outline">
+                  <mat-label>Question Name</mat-label>
+                  <input
+                    type="text"
+                    class="input-form"
+                    matInput
+                    placeholder="Question Name"
+                    name="nombre pregunta"
+                  />
+                </mat-form-field>
+              </div>
+              <!--#input para pregunta-->
+              <div class="card-question__header--score">
+                <!--input para pregunta-->
+                <div class="card-question__input">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Score</mat-label>
+                    <input
+                      type="text"
+                      class="input-form"
+                      matInput
+                      placeholder="Score Name"
+                      name="puntuacion"
+                    />
+                  </mat-form-field>
+                </div>
+                <!--#input para pregunta-->
+              </div>
+            </div>
+            <div class="card-question__content">
+              <!-- <form class="example-form"> -->
+              <mat-radio-group
+                aria-label="Select an option"
+                class="example-radio-group"
+              >
+                <!-- radio button option -->
+                <mat-radio-button
+                  class="card-question__choice"
+                  *ngFor="let opcion of radioButtonOptiones; let i = index"
+                  value="{{ i }}"
+                >
+                  <mat-form-field class="full-width-field">
+                    <input
+                      class="card-question__choice--input"
+                      matInput
+                      placeholder="{{ opcion.item }} {{ i }}"
+                    />
+                  </mat-form-field>
+                  <mat-icon class="card-question__choice--close"
+                    >close</mat-icon
+                  >
+                  <!--#radio button option-->
+                </mat-radio-button>
+              </mat-radio-group>
+              <button mat-mini-fab class="card-question__button--add">
+                <mat-icon (click)="agregarRespuesta()">add</mat-icon>
+              </button>
+              <!-- </form> -->
+            </div>
           </div>
         </div>
         <!--#card-->

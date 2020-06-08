@@ -115,3 +115,77 @@
 }
 .button-icon-container {
 }
+
+.card-question {
+  //margin-top: 2rem;
+  //padding: 4rem 0rem;
+  border: $card-width solid $color-primary-blue;
+  border-radius: $border-radious-standard;
+  mat-form-field {
+    width: 100%;
+  }
+  &__text {
+    &--no-content {
+      color: $color-primary-gray;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__header {
+    margin-top: 2rem;
+    //background-color: yellow;
+    display: flex;
+    align-items: center;
+    &--question {
+      flex: 0 1 85%;
+      margin-right: 1rem;
+    }
+    &--score {
+      flex: 1;
+      margin-left: 1rem;
+    }
+  }
+  &__choice {
+
+    width: 100%;
+
+    margin-bottom: 1rem;
+    //background-color: yellow;
+
+    &--input {
+      width: 100% !important;
+    }
+    &--close {
+      color: $color-primary-red !important;
+      margin-left: 1rem;
+    }
+    // &.mat-form-field-infix {
+    //   width: 380px!important;
+    // }
+  }
+  &__content {
+    //background-color: red;
+    //display: flex;
+    //flex-direction: column;
+  }
+  &__button--add {
+    background-color: $color-primary-blue !important;
+    margin-bottom: 2rem !important;
+  }
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.box {
+  background-color: pink;
+  width: 100%;
+}
