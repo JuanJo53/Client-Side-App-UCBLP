@@ -25,7 +25,6 @@
       }
     }
   }
-  
 }
 
 .dialogforms {
@@ -63,19 +62,21 @@ mat-datepicker-toggle {
   background-color: $color-primary-blue !important;
   color: #fff;
 }
-.input-view-response{
+.input-view-response {
   height: 7rem;
 }
-.dialogformsModuesRubric{
+.dialogformsModuesRubric {
   mat-form-field {
     width: 25%;
   }
 }
-.pModuleRubric{
+.pModuleRubric {
   font-size: 1.8rem;
   color: $color-primary-blue;
 }
-.pModuleRubricResult{
+
+//-----------
+.pModuleRubricResult {
   flex: 1;
   font-size: 2rem;
   color: $color-primary-blue;
@@ -84,3 +85,22 @@ mat-datepicker-toggle {
   justify-content: flex-end;
 }
 
+.dialog__module-rubric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //background-color: orange;
+  &--text {
+    font-size: 2rem;
+    color: $color-primary-blue;
+  }
+  &--left-side {
+    flex: 0 1 80%;
+    //background-color: red;
+  }
+  &--right-side {
+    align-items: center!important;
+    flex: 1;
+    //background-color: yellow;
+  }
+}
