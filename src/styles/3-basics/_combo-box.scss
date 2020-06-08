@@ -11,6 +11,21 @@
     justify-content: space-between;
   }
 }
+
+.combo-box-container.question-maker {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  //background-color: $color-primary-blue;
+  justify-content: space-between;
+  &--left {
+    display: flex;
+    align-items: center;
+    //background-color: $color-primary-blue;
+    justify-content: space-between;
+  }
+}
+
 .combo-box {
   margin-right: 2rem;
   .mat-form-field-underline {

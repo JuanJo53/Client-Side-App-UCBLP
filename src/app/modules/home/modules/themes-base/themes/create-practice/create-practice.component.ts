@@ -1,7 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { Combo } from "src/app/models/ComboBox/comboBox";
+
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
+import { CustomQuestionComponent } from "../../../../../dialogs/create-practice/custom-question/custom-question.component";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from "@angular/material/dialog";
 @Component({
   selector: "app-create-practice",
   templateUrl: "./create-practice.component.html",
@@ -10,27 +16,8 @@ import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 export class CreatePracticeComponent implements OnInit {
   startDate = new Date(1990, 0, 1);
   endDate = new Date(1990, 0, 1);
-  tipoPreguntaSeleccionado: string;
 
-  radioButtonOptiones: RadioButtonQuestion[] = [
-    {
-      id: 1,
-      item: "Option",
-    },
-    {
-      id: 2,
-      item: "Option",
-    },
-    {
-      id: 3,
-      item: "Option",
-    },
-  ];
-
-  tipoPregunta: Combo[] = [{ value: "1", display: "Simple" }];
-  tipoRespuesta: Combo[] = [{ value: "1", display: "Unique" }];
-
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
   //funciones
@@ -40,15 +27,11 @@ export class CreatePracticeComponent implements OnInit {
   previous() {
     console.log("previous");
   }
-  selected() {
-    console.log(this.tipoPreguntaSeleccionado);
-  }
-  agregarRespuesta() {
-    console.log("clicked");
-    var aux = {
-      id: 4,
-      item: "Option",
-    };
-    this.radioButtonOptiones.push(aux);
+
+  preguntasPersonalizadas() {
+    const dialogRef = this.dialog.open(CustomQuestionComponent, {
+      width: "1000px",
+      maxHeight: "80vh",
+    });
   }
 }

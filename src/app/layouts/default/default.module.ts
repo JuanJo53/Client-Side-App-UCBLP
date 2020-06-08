@@ -40,13 +40,11 @@ import { MatSelectModule } from "@angular/material/select";
 import { ForumsBaseComponent } from "src/app/modules/home/forums-base/forums-base.component";
 import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/forum-content/forum-content.component";
 import { InitialInformationComponent } from "src/app/modules/dialogs/create-practice/initial-information/initial-information.component";
-import { TypeQuestionComponent } from "src/app/modules/dialogs/create-practice/type-question/type-question.component";
 import { AddForumComponent } from "src/app/modules/dialogs/forums/add-forum/add-forum.component";
 import { CdkTableModule } from "@angular/cdk/table";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { EditForumComponent } from "src/app/modules/dialogs/forums/edit-forum/edit-forum.component";
 import { MatNativeDateModule } from "@angular/material/core";
-import { ProgressBarComponent } from "src/app/modules/dialogs/create-practice/progress-bar/progress-bar.component";
 import { MatStepperModule } from "@angular/material/stepper";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AddLessonComponent } from "src/app/modules/dialogs/lesson/add-lesson/add-lesson.component";
@@ -59,6 +57,9 @@ import { AddCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/add
 import { EditDefaultModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-default-module/edit-default-module.component';
 import { EditCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component';
 import { ModulesRubricComponent } from 'src/app/modules/dialogs/evaluation/modules-rubric/modules-rubric.component';
+import { BuildingPageComponent } from 'src/app/modules/aux-pages/building-page/building-page.component';
+import { CustomQuestionComponent } from 'src/app/modules/dialogs/create-practice/custom-question/custom-question.component';
+
 
 @NgModule({
   declarations: [
@@ -85,10 +86,8 @@ import { ModulesRubricComponent } from 'src/app/modules/dialogs/evaluation/modul
     ForumContentComponent,
     ThemeLessonsComponent,
     InitialInformationComponent,
-    TypeQuestionComponent,
     AddForumComponent,
     EditForumComponent,
-    ProgressBarComponent,
     AddLessonComponent,
     ConfigureLessonComponent,
     ErrorDialogComponent,
@@ -97,7 +96,9 @@ import { ModulesRubricComponent } from 'src/app/modules/dialogs/evaluation/modul
     AddCustomModuleComponent,
     EditCustomModuleComponent,
     EditDefaultModuleComponent,
-    ModulesRubricComponent
+    ModulesRubricComponent,
+    CustomQuestionComponent,
+    BuildingPageComponent
   ],
   imports: [
     CommonModule,
