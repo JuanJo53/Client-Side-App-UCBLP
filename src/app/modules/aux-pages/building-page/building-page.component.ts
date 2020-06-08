@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./building-page.component.scss']
 })
 export class BuildingPageComponent implements OnInit {
-
+  imageUrl: string = "/assets/building.gif";
   constructor() { }
 
   ngOnInit(): void {
