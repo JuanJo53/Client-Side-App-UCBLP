@@ -31,11 +31,16 @@ import { GetTypeLessonsResolver } from "./_resolvers/docente/modules/themes/get-
 import { GetModulesResolver } from "./_resolvers/docente/evaluation/get_modules.resolver";
 import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.resolver";
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
+import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 const routes: Routes = [
   {
     path: "",
     component: LoginComponent,
     resolve: { login: AuthDocenteResolver },
+  },
+  {
+    path: "building",
+    component: BuildingPageComponent,
   },
   {
     path: "classroom",
