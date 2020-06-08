@@ -25,6 +25,7 @@
       }
     }
   }
+  
 }
 
 .dialogforms {
@@ -62,3 +63,24 @@ mat-datepicker-toggle {
   background-color: $color-primary-blue !important;
   color: #fff;
 }
+.input-view-response{
+  height: 7rem;
+}
+.dialogformsModuesRubric{
+  mat-form-field {
+    width: 25%;
+  }
+}
+.pModuleRubric{
+  font-size: 1.8rem;
+  color: $color-primary-blue;
+}
+.pModuleRubricResult{
+  flex: 1;
+  font-size: 2rem;
+  color: $color-primary-blue;
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+

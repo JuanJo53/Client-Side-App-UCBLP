@@ -1,0 +1,43 @@
+<div class="dialog">
+    <!--subtitle-->
+    <div class="dialog-subtitle">
+        <div class="dialog-subtitle__text">
+            <span>Complains Test 1 -Juan Jose Fernandez</span>
+        </div>
+    </div>
+    <!--#subtitle-->
+    <mat-dialog-content class="mat-typography">
+        <form class="dialogforms" enctype="multipart/form-data">
+            <mat-form-field appearance="outline" >
+                <mat-label>Comments</mat-label>
+                <!-- Input para el comentario-->
+                <textarea type="text" class="input-form" matInput placeholder="Add comment" class="input-view-response" 
+                name="comentario" ></textarea>
+                <!-- //Input para el comentario-->
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" >
+                <mat-label>Reply</mat-label>
+                <!-- Input para la respuesta-->
+                <textarea type="text" class="input-form" matInput placeholder="Write and answer"  class="input-view-response" 
+                name="respuesta"  ></textarea>
+               
+                <!-- //Input para la respuesta-->
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+
+    
+    <mat-dialog-actions align="end">
+        <!--back btn-->
+        <button mat-button mat-dialog-close class="dialog-button-cancel">
+            BACK
+        </button>
+        <!--#back btn-->
+        <!--reply btn-->
+        <button mat-button class="dialog-button-accept">
+            REPLY
+        </button>
+        <!--#reply btn-->
+    </mat-dialog-actions>
+</div>

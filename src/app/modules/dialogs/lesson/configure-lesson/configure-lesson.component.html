@@ -6,10 +6,11 @@
   </div>
   <mat-dialog-content class="mat-typography">
     <form class="dialogforms" enctype="multipart/form-data">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" (dblclick)='toggleDisable()' class="input-disabled">
         <mat-label>Lesson's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input
+        [disabled]='disableTextbox'
           type="text"
           class="input-form"
           matInput
@@ -19,10 +20,11 @@
         />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" (dblclick)='toggleDisable()' class="input-disabled">
         <mat-label>Lesson's number</mat-label>
           <!-- Input para el nombre del tema-->
           <input
+          [disabled]='disableTextbox'
             type="number"
             class="input-form"
             matInput

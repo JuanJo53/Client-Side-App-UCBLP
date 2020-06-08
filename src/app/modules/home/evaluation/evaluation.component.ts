@@ -7,6 +7,13 @@ import { Module } from "src/app/models/Teacher/Evaluation/Module";
 import { CardColor } from "src/app/models/CardColor";
 import { CardImage } from "src/app/models/CardImage";
 import { EvaluationCard } from "src/app/models/Teacher/EvaluationCard";
+import { MatDialog } from '@angular/material/dialog';
+import { AddCustomModuleComponent } from "../../dialogs/evaluation/add-custom-module/add-custom-module.component";
+import { EditCustomModuleComponent } from "../../dialogs/evaluation/edit-custom-module/edit-custom-module.component";
+import { EditDefaultModuleComponent } from "../../dialogs/evaluation/edit-default-module/edit-default-module.component";
+import { ModulesRubricComponent } from "../../dialogs/evaluation/modules-rubric/modules-rubric.component";
+import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
+import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
 
 @Component({
   selector: "app-evaluation",
@@ -55,8 +62,9 @@ export class EvaluationComponent implements OnInit {
     private tokenServ: TokenStorageService,
     private router: Router,
     private mdServ: EvaluationService,
+    public dialog: MatDialog,
     private route: ActivatedRoute
-  ) {}
+  ) { }
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
       next: (data) => {
@@ -169,7 +177,26 @@ export class EvaluationComponent implements OnInit {
       },
     });
   }
+
+  nuevoModulo() {
+    const dialogRef = this.dialog.open(AddCustomModuleComponent, { width: "500px" });
+  }
+  configuracionModulo() {
+    const dialogRef = this.dialog.open(EditDefaultModuleComponent, { width: "500px" });
+  }
+  configuracionModuloPersonalizado() {
+    const dialogRef = this.dialog.open(EditCustomModuleComponent, { width: "500px" });
+  }
   editarPorcentajes() {
-    console.log("clicked");
+    const dialogRef = this.dialog.open(ModulesRubricComponent, { width: "400px" });
+  }
+  eliminar() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px"
+      , data: {
+       
+        tipo: "Custom Module"
+      }
+    });
   }
 }

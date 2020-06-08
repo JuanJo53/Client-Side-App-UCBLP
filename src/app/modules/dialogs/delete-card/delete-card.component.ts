@@ -24,7 +24,7 @@ export class DeleteCardComponent implements OnInit {
     private servLes: LessonService,
     private servTh: ThemesService,
     private dialogRef: MatDialogRef<DeleteCardComponent>
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.item = this.dataDialog["tipo"];
   }
@@ -45,6 +45,9 @@ export class DeleteCardComponent implements OnInit {
         break;
       case "forum response":
         this.eliminarRespuestaForum();
+        break;
+      case "Custom Module":
+        this.eliminarModuloPersonalizado();
         break;
     }
   }
@@ -115,7 +118,10 @@ export class DeleteCardComponent implements OnInit {
   }
 
   //eliminar forum
-  eliminarForum() {}
+  eliminarForum() { }
   //eliminar respeusta de forum
-  eliminarRespuestaForum() {}
+  eliminarRespuestaForum() { }
+  //eliminar modulo personalizado
+  eliminarModuloPersonalizado(){}
+  
 }

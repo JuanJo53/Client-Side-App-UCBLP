@@ -10,8 +10,15 @@ import { AuthInterceptor } from "./_help/auth-interceptor.service";
 import { BuildingPageComponent } from './modules/aux-pages/building-page/building-page.component';
 
 
+
+
+
 @NgModule({
+<<<<<<< HEAD
   declarations: [AppComponent, BuildingPageComponent,],
+=======
+  declarations: [AppComponent],
+>>>>>>> c4dec162eb4445af8b603c8f665d6209f772dff5
   imports: [
     BrowserModule,
     AppRoutingModule,

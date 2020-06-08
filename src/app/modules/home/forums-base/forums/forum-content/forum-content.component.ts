@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
 import { MatPaginator } from "@angular/material/paginator";
+import { ViewResponseComponent } from "../../../../dialogs/forums/view-response/view-response.component";
 import { DeleteCardComponent } from "../../../../dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
 import {
@@ -57,6 +58,10 @@ export class ForumContentComponent implements OnInit {
     this.data.changeMessage(this.item);
     this.dataSource.paginator = this.paginator;
   }
+  verRespuesta() {
+    const dialogRef = this.dialog.open(ViewResponseComponent, { width: "800px" });
+  }
+  
 
   eliminarRespuestaForo() {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
