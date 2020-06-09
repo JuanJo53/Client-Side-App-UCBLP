@@ -11,13 +11,18 @@ export class CustomQuestionComponent implements OnInit {
   pregunta: string;
   puntuacionPregunta: string;
   opcionCorrecta: string;
+  //contenidoPregunta: string;
+  radioButtonContent: string;
+  tamanioPreguntas: string[];
 
   radioButtonOptiones: RadioButtonQuestion[] = [
     {
       id: 1,
       item: "Option",
+      respuestas: "",
     },
   ];
+
   tipoPregunta: Combo[] = [{ value: "1", display: "Simple" }];
   tipoRespuesta: Combo[] = [{ value: "1", display: "Unique" }];
 
@@ -33,6 +38,7 @@ export class CustomQuestionComponent implements OnInit {
     var aux = {
       id: 4,
       item: "Option",
+      respuestas: "",
     };
     this.radioButtonOptiones.push(aux);
   }
@@ -44,6 +50,12 @@ export class CustomQuestionComponent implements OnInit {
     console.log("titulo :" + this.pregunta);
     console.log("puntuacion :" + this.puntuacionPregunta);
     console.log("Correcta :" + this.opcionCorrecta);
+    for (let i in this.radioButtonOptiones) {
+      console.log(
+        "contenido pregunta : " + this.radioButtonOptiones[i].respuestas
+      );
+    }
+    //console.log("contenido Pregunta :" + this.contenidoPregunta);
   }
   limpiar() {
     console.log("clear");
@@ -53,6 +65,7 @@ export class CustomQuestionComponent implements OnInit {
       {
         id: 1,
         item: "Option",
+        respuestas: "",
       },
     ];
   }

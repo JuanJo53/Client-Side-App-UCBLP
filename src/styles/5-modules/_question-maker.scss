@@ -1,7 +1,5 @@
 @import "1-helpers/mixins";
-.modal-header {
-  //background-color: yellow;
-}
+
 .question-maker-container {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -17,10 +15,7 @@
     margin-top: 3rem;
     //background-color: red;
   }
-  &__button-actions-container--right {
-    //background-color: red;
-    //justify-content: right;
-  }
+
   &__choose-buttons-container {
     margin-top: 2rem;
     &.col {
@@ -112,8 +107,6 @@
 }
 .mat-step-icon-state-edit {
   background-color: $color-secondary-blue !important;
-}
-.button-icon-container {
 }
 
 .card-question {
