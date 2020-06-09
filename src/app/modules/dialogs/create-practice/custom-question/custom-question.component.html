@@ -33,15 +33,19 @@
               *ngFor="let elemento of tipoRespuesta"
               [value]="elemento.value"
             >
-              <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
               {{ elemento.display }}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
+      <!--#combo tipo de respuestas-->
     </div>
     <div class="progress-bar__button-actions-container--right">
-      <button mat-raised-button class="progress-bar__button-normal">
+      <button
+        mat-raised-button
+        class="progress-bar__button-normal"
+        (click)="limpiar()"
+      >
         <div class="progress-bar__button-container">
           <mat-icon class="progress-bar__button-normal--icon"
             >clear_all</mat-icon
@@ -114,11 +118,13 @@
                 placeholder="{{ opcion.item }} {{ i }}"
               />
             </mat-form-field>
-            <mat-icon
-              class="card-question__choice--close"
-              (click)="eliminarElemento(i)"
-              >close</mat-icon
-            >
+            <button class="card-question__choice--button-delete">
+              <mat-icon
+                class="card-question__choice--button-delete-icon"
+                (click)="eliminarElemento(i)"
+                >close</mat-icon
+              >
+            </button>
             <!--#radio button option-->
           </mat-radio-button>
         </mat-radio-group>

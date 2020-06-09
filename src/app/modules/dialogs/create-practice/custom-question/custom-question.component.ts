@@ -17,14 +17,6 @@ export class CustomQuestionComponent implements OnInit {
       id: 1,
       item: "Option",
     },
-    {
-      id: 2,
-      item: "Option",
-    },
-    {
-      id: 3,
-      item: "Option",
-    },
   ];
   tipoPregunta: Combo[] = [{ value: "1", display: "Simple" }];
   tipoRespuesta: Combo[] = [{ value: "1", display: "Unique" }];
@@ -52,5 +44,16 @@ export class CustomQuestionComponent implements OnInit {
     console.log("titulo :" + this.pregunta);
     console.log("puntuacion :" + this.puntuacionPregunta);
     console.log("Correcta :" + this.opcionCorrecta);
+  }
+  limpiar() {
+    console.log("clear");
+    this.pregunta = "";
+    this.puntuacionPregunta = "";
+    this.radioButtonOptiones = [
+      {
+        id: 1,
+        item: "Option",
+      },
+    ];
   }
 }
