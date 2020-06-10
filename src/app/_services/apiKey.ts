@@ -1,3 +1,3 @@
 export default{
-    api:'http://localhost:3000'
+    api:'https://grand-citadel-275922.rj.r.appspot.com'
 }  

@@ -1,38 +1,13 @@
+service: idiomas-angular
+# [START runtime]
 runtime: python27
-api_version: 1
-threadsafe: true
+threadsafe: yes
+# [END runtime]
 handlers:
+- url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+  static_files: dist/\1
+  upload: dist/(.*)(|\.map)
 
-# Initial route that will serve up index.html, main entry point to your app
-- url: /
-  secure: always
+- url: /(.*)
   static_files: dist/index.html
-  upload: dist/.*
-
-# Routing for typedoc, assets and favicon.ico to serve directly
-- url: /((?:assets|docs)/.*|favicon\.ico)
-  secure: always
-  redirect_http_response_code: 301
-  static_files: dist/\1
-  upload: dist/.*
-  
-# Routing for any js files
-- url: /(.*\.js)
-  secure: always
-  redirect_http_response_code: 301
-  static_files: dist/\1
-  upload: dist/.*\.js
-
-# Routing for any css files
-- url: /(.*\.css)
-  secure: always
-  redirect_http_response_code: 301
-  static_files: dist/\1
-  mime_type: text/css
-  upload: dist/.*\.css
-  
-# Routing for anything (wild card) after
-- url: /.*
-  secure: always
-  static_files: dist/index.html
-  upload: dist/.*
+  upload: dist/index.html
