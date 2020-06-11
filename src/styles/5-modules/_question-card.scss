@@ -1,6 +1,6 @@
 .question-card-added {
   //padding: 1rem;
-  margin: 2rem;
+  margin: 2rem 4rem;
   display: flex;
   &__content {
     background-color: $color-secondary-gray;
@@ -54,7 +54,7 @@
       width: 100%;
     }
     .mat-form-field-infix {
-      width: 80rem !important;
+      width: 75rem !important;
     }
   }
 

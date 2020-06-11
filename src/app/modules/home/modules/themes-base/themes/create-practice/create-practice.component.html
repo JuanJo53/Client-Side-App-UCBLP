@@ -369,9 +369,237 @@
     <mat-step>
       <form>
         <ng-template matStepLabel>Review Questions</ng-template>
-        <!--#complete card-->
+        <!-- card -->
+        <div class="card">
+          <div class="container-dialog">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Name</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-form-field appearance="outline">
+              <mat-label>Practice name</mat-label>
+              <!-- Input para el email-->
+              <input
+                class="input-form"
+                type="text"
+                matInput
+                placeholder="Practice name"
+                name="nombrePractica"
+              />
+              <!-- //Input para el email-->
+            </mat-form-field>
 
-        <!-- <button mat-button matStepperNext>Next</button> -->
+            <div class="row">
+              <!--start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Start date and hour</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput [matDatepicker]="picker3" />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="picker3"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker
+                        #picker3
+                        startView="year"
+                        [startAt]="startDate"
+                      ></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <!--fecha-->
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field>
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          [ngxTimepicker]="toggleTimepicker3"
+                          [disableClick]="true"
+                          readonly
+                        />
+                        <ngx-material-timepicker-toggle
+                          matSuffix
+                          [for]="toggleTimepicker3"
+                        ></ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker
+                          #toggleTimepicker3
+                        ></ngx-material-timepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--#start date-->
+              <!--end date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>End date and hour</span>
+                  </div>
+                </div>
+                <!--#subtitle-->
+                <!--row-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput [matDatepicker]="picker4" />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="picker4"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker
+                        #picker4
+                        startView="year"
+                        [startAt]="startDate"
+                      ></mat-datepicker>
+                    </mat-form-field>
+                    <!--fecha-->
+                  </div>
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field>
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          [ngxTimepicker]="toggleTimepicker4"
+                          [disableClick]="true"
+                          readonly
+                        />
+                        <ngx-material-timepicker-toggle
+                          matSuffix
+                          [for]="toggleTimepicker4"
+                        ></ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker
+                          #toggleTimepicker4
+                        ></ngx-material-timepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--end date-->
+            </div>
+          </div>
+          <!--row added row-->
+          <div *ngFor="let card of radioButtonCompleteCard; let i = index">
+            <div class="question-card-added">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.preguntaCard"
+                        type="text"
+                        class="input-form"
+                        matInput
+                        placeholder="Question Name"
+                        name="nombre pregunta{{ i }}"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          class="input-form"
+                          matInput
+                          placeholder="Score Name"
+                          name="puntuacion{{ i }}"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    class="example-radio-group"
+                    name="radioButtonsGroup{{ i }}"
+                    [value]="false"
+                  >
+                    <!-- radio button option -->
+                    <mat-radio-button
+                      name="grupo{{ i }}"
+                      class="question-card-added__choice"
+                      *ngFor="
+                        let opcionesRadioButton of card.radioButtonContent;
+                        let x = index
+                      "
+                    >
+                      <mat-form-field class="full-width-field">
+                        <input
+                          [(ngModel)]="
+                            card.radioButtonContent[x].opcionRespuesta
+                          "
+                          name="grupo{{ x }}{{ i }}"
+                          class="question-card-added__choice--input"
+                          matInput
+                          placeholder="input radio button {{ x }}"
+                        />
+                      </mat-form-field>
+                      <button
+                        class="question-card-added__choice--button-delete"
+                      >
+                        <mat-icon
+                          class="question-card-added__choice--button-delete-icon"
+                          >close</mat-icon
+                        >
+                      </button>
+                      <!--#radio button option-->
+                    </mat-radio-button>
+                  </mat-radio-group>
+                  <!-- </form> -->
+                </div>
+              </div>
+              <!--button-->
+              <div class="question-card-added__button">
+                <button
+                  mat-mini-fab
+                  class="question-card-added__button--positive"
+                >
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button
+                  mat-mini-fab
+                  class="question-card-added__button--negative"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+              <!--#button-->
+            </div>
+          </div>
+          <!--#row-->
+        </div>
+
         <!-- buttons -->
         <div class="progress-bar__bar">
           <!--back button-->
