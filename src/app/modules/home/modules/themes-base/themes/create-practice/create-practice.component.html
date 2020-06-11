@@ -187,108 +187,115 @@
         <ng-template matStepLabel>Building Question</ng-template>
         <!--card-->
         <div class="card">
-          <div class="card__text--no-content">
+          <div
+            class="card__text--no-content"
+            *ngIf="radioButtonCompleteCard.length == 0; else negative"
+          >
             No questions added
           </div>
           <!--row added row-->
-          <div *ngFor="let card of radioButtonCompleteCard; let i = index">
-            <div class="question-card-added">
-              <div class="question-card-added__content">
-                <div class="question-card-added__header">
-                  <!--input para pregunta-->
-                  <div class="question-card-added__header--question">
-                    <mat-form-field appearance="outline">
-                      <mat-label>Question Name</mat-label>
-                      <input
-                        [(ngModel)]="card.preguntaCard"
-                        type="text"
-                        class="input-form"
-                        matInput
-                        placeholder="Question Name"
-                        name="nombre pregunta{{ i }}"
-                      />
-                    </mat-form-field>
-                  </div>
-                  <!--#input para pregunta-->
-                  <div class="question-card-added__header--score">
+          <ng-template #negative>
+            <div
+              *ngFor="let card of radioButtonCompleteCard; let i = index"
+              #template
+            >
+              <div class="question-card-added">
+                <div class="question-card-added__content">
+                  <div class="question-card-added__header">
                     <!--input para pregunta-->
-                    <div class="card-question__input">
+                    <div class="question-card-added__header--question">
                       <mat-form-field appearance="outline">
-                        <mat-label>Score</mat-label>
+                        <mat-label>Question Name</mat-label>
                         <input
-                          [(ngModel)]="card.puntuacion"
+                          [(ngModel)]="card.preguntaCard"
                           type="text"
                           class="input-form"
                           matInput
-                          placeholder="Score Name"
-                          name="puntuacion{{ i }}"
+                          placeholder="Question Name"
+                          name="nombre pregunta{{ i }}"
                         />
                       </mat-form-field>
                     </div>
                     <!--#input para pregunta-->
+                    <div class="question-card-added__header--score">
+                      <!--input para pregunta-->
+                      <div class="card-question__input">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Score</mat-label>
+                          <input
+                            [(ngModel)]="card.puntuacion"
+                            type="text"
+                            class="input-form"
+                            matInput
+                            placeholder="Score Name"
+                            name="puntuacion{{ i }}"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <!--#input para pregunta-->
+                    </div>
+                  </div>
+                  <div class="question-card-added__content-question">
+                    <!-- <form class="example-form"> -->
+                    <mat-radio-group
+                      aria-label="Select an option"
+                      class="example-radio-group"
+                      name="radioButtonsGroup{{ i }}"
+                      [value]="false"
+                    >
+                      <!-- radio button option -->
+                      <mat-radio-button
+                        name="grupo{{ i }}"
+                        class="question-card-added__choice"
+                        *ngFor="
+                          let opcionesRadioButton of card.radioButtonContent;
+                          let x = index
+                        "
+                      >
+                        <mat-form-field class="full-width-field">
+                          <input
+                            [(ngModel)]="
+                              card.radioButtonContent[x].opcionRespuesta
+                            "
+                            name="grupo{{ x }}{{ i }}"
+                            class="question-card-added__choice--input"
+                            matInput
+                            placeholder="input radio button {{ x }}"
+                          />
+                        </mat-form-field>
+                        <button
+                          class="question-card-added__choice--button-delete"
+                        >
+                          <mat-icon
+                            class="question-card-added__choice--button-delete-icon"
+                            >close</mat-icon
+                          >
+                        </button>
+                        <!--#radio button option-->
+                      </mat-radio-button>
+                    </mat-radio-group>
+                    <!-- </form> -->
                   </div>
                 </div>
-                <div class="question-card-added__content-question">
-                  <!-- <form class="example-form"> -->
-                  <mat-radio-group
-                    aria-label="Select an option"
-                    class="example-radio-group"
-                    name="radioButtonsGroup{{ i }}"
-                    [value]="false"
+                <!--button-->
+                <div class="question-card-added__button">
+                  <button
+                    mat-mini-fab
+                    class="question-card-added__button--positive"
                   >
-                    <!-- radio button option -->
-                    <mat-radio-button
-                      name="grupo{{i}}"
-                      class="question-card-added__choice"
-                      *ngFor="
-                        let opcionesRadioButton of card.radioButtonContent;
-                        let x = index
-                      "
-                    >
-                      <mat-form-field class="full-width-field">
-                        <input
-                          [(ngModel)]="
-                            card.radioButtonContent[x].opcionRespuesta
-                          "
-                          name="grupo{{ x }}{{i}}"
-                          class="question-card-added__choice--input"
-                          matInput
-                          placeholder="input radio button {{ x }}"
-                        />
-                      </mat-form-field>
-                      <button
-                        class="question-card-added__choice--button-delete"
-                      >
-                        <mat-icon
-                          class="question-card-added__choice--button-delete-icon"
-                          >close</mat-icon
-                        >
-                      </button>
-                      <!--#radio button option-->
-                    </mat-radio-button>
-                  </mat-radio-group>
-                  <!-- </form> -->
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    mat-mini-fab
+                    class="question-card-added__button--negative"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
                 </div>
+                <!--#button-->
               </div>
-              <!--button-->
-              <div class="question-card-added__button">
-                <button
-                  mat-mini-fab
-                  class="question-card-added__button--positive"
-                >
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <button
-                  mat-mini-fab
-                  class="question-card-added__button--negative"
-                >
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </div>
-              <!--#button-->
             </div>
-          </div>
-
+          </ng-template>
           <!--#row-->
         </div>
 
