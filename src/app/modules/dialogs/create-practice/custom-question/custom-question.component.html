@@ -107,16 +107,16 @@
           <!-- radio button option -->
           <mat-radio-button
             class="card-question__choice"
-            *ngFor="let opcion of radioButtonOptiones; let i = index"
+            *ngFor="let opciones of radioButtonOpciones; let i = index"
             [value]="i"
           >
             <mat-form-field class="full-width-field">
               <input
-                [(ngModel)]="radioButtonOptiones[i].respuestas"
-                name="first"
+                [(ngModel)]="radioButtonOpciones[i].opcionRespuesta"
+                name="a{{ i }}"
                 class="card-question__choice--input"
                 matInput
-                placeholder="{{ opcion.item }} {{ i }}"
+                placeholder="opcion"
               />
             </mat-form-field>
             <button class="card-question__choice--button-delete">
@@ -146,7 +146,7 @@
     <button mat-raised-button class="progress-bar__button-normal">
       <span
         class="progress-bar__button-normal--text"
-        (click)="agregarPregunta()"
+        (click)="agregarPreguntaEnContenido()"
         >Add question</span
       >
     </button>
