@@ -19,8 +19,28 @@ export interface ListaDeForos {
   id: number;
 }
 
-const ELEMENT_DATA: Forum[] = [
-  
+const ELEMENT_DATA: ListaDeForos[] = [
+  {
+    nombreForo: "Complains Test 1",
+    fechaInicio: "30/5/2020",
+    fechaFinal: "30/6/2020",
+    hora: "20:00",
+    id: 1,
+  },
+  {
+    nombreForo: "Complains Practice 1",
+    fechaInicio: "30/5/2020",
+    fechaFinal: "30/6/2020",
+    hora: "20:00",
+    id: 1,
+  },
+  {
+    nombreForo: "Complains Assessment 1",
+    fechaInicio: "30/5/2020",
+    fechaFinal: "30/6/2020",
+    hora: "20:00",
+    id: 1,
+  },
 ];
 @Component({
   selector: "app-forums",

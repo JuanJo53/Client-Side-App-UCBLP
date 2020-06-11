@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "highcharts": "^8.0.4",
     "mat-timepicker": "^4.0.7",
+    "ng-file-upload": "^12.2.13",
     "ngx-material-timepicker": "^5.5.3",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",
