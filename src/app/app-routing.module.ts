@@ -32,6 +32,8 @@ import { GetModulesResolver } from "./_resolvers/docente/evaluation/get_modules.
 import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.resolver";
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
+import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
+
 const routes: Routes = [
   {
     path: "",
@@ -90,6 +92,9 @@ const routes: Routes = [
         children: [
           {
             path: "",
+            resolve: {
+              forums: GetForumsResolver,
+            },
             component: ForumsComponent,
           },
           {
