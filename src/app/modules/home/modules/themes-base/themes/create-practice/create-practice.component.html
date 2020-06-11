@@ -238,8 +238,7 @@
                   >
                     <!-- radio button option -->
                     <mat-radio-button
-                      
-                      name="grupo{{ i }}"
+                      name="grupo{{i}}"
                       class="question-card-added__choice"
                       *ngFor="
                         let opcionesRadioButton of card.radioButtonContent;
@@ -251,7 +250,7 @@
                           [(ngModel)]="
                             card.radioButtonContent[x].opcionRespuesta
                           "
-                          name="grupo{{ x }}"
+                          name="grupo{{ x }}{{i}}"
                           class="question-card-added__choice--input"
                           matInput
                           placeholder="input radio button {{ x }}"
