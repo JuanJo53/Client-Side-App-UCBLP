@@ -1,6 +1,6 @@
 <div class="container">
   <!-- botton de agregar seccion -->
-  <button class="module-button" (click)="agregarSeccion()">
+  <button class="module-button">
     <i class="fas fa-plus module-button__icon"></i>
     <div class="module-button__text">
       Add section
@@ -15,7 +15,11 @@
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
       <button class="circular-button-subtitle" mat-mini-fab>
-        <mat-icon class="circular-button-subtitle__icon" (click)="subirArchivo()">add</mat-icon>
+        <mat-icon
+          class="circular-button-subtitle__icon"
+          (click)="subirArchivo()"
+          >add</mat-icon
+        >
       </button>
       <!--#Add button-->
       <!--Add button-->
@@ -31,6 +35,11 @@
     </div>
   </div>
   <!--#Subtitle-->
-  
-  <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.jpg">
+
+  <input
+    type="file"
+    (change)="fileChange($event)"
+    placeholder="Upload file"
+    accept=".pdf,.doc,.docx,.jpg"
+  />
 </div>
