@@ -31,4 +31,81 @@
     </div>
   </div>
   <!--#Subtitle-->
+
+  <!--tables-->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
+      <!-- Forum's name Column -->
+      <ng-container matColumnDef="tipoDocumento">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Type
+        </th>
+        <td mat-cell *matCellDef="let element" class="mat-cell">
+          {{ element.tipoDocumento }}
+        </td>
+      </ng-container>
+      <!-- #Forum's name Column -->
+      <!-- Start date Column -->
+      <ng-container matColumnDef="nombreDocumento">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Document's Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.nombreDocumento }}</td>
+      </ng-container>
+      <!-- #Start date Column -->
+
+      <!-- Buttons Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            class="circular-button-subtitle"
+            mat-mini-fab
+            (click)="verForo()"
+          >
+            <!--see answer page-->
+            <mat-icon class="circular-button-subtitle__icon"
+              >file_download</mat-icon
+            >
+            <!--#see answer page-->
+          </button>
+          <button
+            class="circular-button-table--normal"
+            (click)="editarForo()"
+            mat-mini-fab
+          >
+            <!--update usuario-->
+            <span class="circular-button-table__icon"
+              ><i class="fas fa-pencil-alt"></i>
+            </span>
+            <!-- #update usuario-->
+          </button>
+          <button
+            class="circular-button-table--negative"
+            (click)="eliminarForo()"
+            mat-mini-fab
+          >
+            <!--delete usuario-->
+            <span class="circular-button-table__icon"
+              ><i class="fas fa-trash"></i>
+            </span>
+            <!-- #delete usuario-->
+          </button>
+          <!-- #Buttons Column -->
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!--#tables-->
+    <!-- Paginator -->
+    <mat-paginator
+      [pageSizeOptions]="[10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+    <!-- #Paginator -->
+  </div>
 </div>
