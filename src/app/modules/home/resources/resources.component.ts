@@ -1,10 +1,41 @@
 import { Component, OnInit } from "@angular/core";
-import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
+
 import { MatTableDataSource } from "@angular/material/table";
 import { ResourceContent } from "../../../models/resources/resourceContent";
 import { ResourceSection } from "../../../models/resources/resourceSection";
 
 
+import { AddSectionComponent} from "../../dialogs/resources/add-section/add-section.component";
+import { AddDocumentComponent} from "../../dialogs/resources/add-document/add-document.component";
+import {EditSectionComponent} from "../../dialogs/resources/edit-section/edit-section.component";
+import {EditDocumentComponent} from "../../dialogs/resources/edit-document/edit-document.component";
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
+import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
+
+export interface ListaDeForos {
+  
+  tipoDocumento: string;
+  nombreDocumento: string;
+  id: string;
+}
+const ELEMENT_DATA: ListaDeForos[] = [
+  {
+    tipoDocumento: "Complains Test 1",
+    nombreDocumento: "Verb to be Doc",
+    id: "1",
+  },
+  {
+    tipoDocumento: "Complains Test 1",
+    nombreDocumento: "Verb to be Doc",
+    id: "1",
+  },
+  {
+    tipoDocumento: "Complains Test 1",
+    nombreDocumento: "Verb to be Doc",
+    id: "1",
+  },
+];
 @Component({
   selector: "app-resources",
   templateUrl: "./resources.component.html",
@@ -61,29 +92,39 @@ export class ResourcesComponent implements OnInit {
 
   //dataSource = new MatTableDataSource(ELEMENT_DATA);
   displayedColumns: string[] = ["tipoDocumento", "nombreDocumento", "id"];
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
   //funciones
   agregarSeccion() {
     console.log("clicked");
+    const dialogRef = this.dialog.open(AddSectionComponent, { width: "500px" });
   }
-  verForo() {
-    //[where i wanna go] ,{where i am}
-    //this.router.navigate([1], { relativeTo: this.route });
+  agregarDocumento() {
+    const dialogRef = this.dialog.open(AddDocumentComponent, { width: "500px" });
   }
-  crearForo() {
-    // const dialogRef = this.dialog.open(AddForumComponent, { width: "500px" });
+  editarDocumento() {
+    const dialogRef = this.dialog.open(EditDocumentComponent, { width: "500px" });
   }
-  editarForo() {
-    //const dialogRef = this.dialog.open(EditForumComponent, { width: "500px" });
+  editarSeccion() {
+    const dialogRef = this.dialog.open(EditSectionComponent, { width: "500px" });
   }
-  eliminarForo() {
-    // const dialogRef = this.dialog.open(DeleteCardComponent, {
-    //   width: "400px",
-    //   data: {
-    //     tipo: "forum",
-    //   },
-    // });
+  eliminarSeccion() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        tipo: "Section",
+      },
+    });
   }
+  eliminarDocumento() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        tipo: "File",
+      },
+    });
+  }
+  
+  
 }

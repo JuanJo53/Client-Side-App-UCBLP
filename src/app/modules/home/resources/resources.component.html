@@ -16,17 +16,17 @@
       </div>
       <div class="subtitle-compound__buttons-container">
         <!--Add button-->
-        <button class="circular-button-subtitle" mat-mini-fab>
+        <button class="circular-button-subtitle" mat-mini-fab (click)="agregarDocumento()">
           <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
         </button>
         <!--#Add button-->
         <!--Add button-->
-        <button class="circular-button-subtitle" mat-mini-fab>
+        <button class="circular-button-subtitle" mat-mini-fab (click)="editarSeccion()">
           <mat-icon class="circular-button-subtitle__icon">edit</mat-icon>
         </button>
         <!--#Add button-->
         <!--Add button-->
-        <button class="circular-button-subtitle--negative" mat-mini-fab>
+        <button class="circular-button-subtitle--negative" mat-mini-fab (click)="eliminarSeccion()">
           <mat-icon class="circular-button-subtitle__icon">delete</mat-icon>
         </button>
         <!--#Add button-->
@@ -73,7 +73,6 @@
             <button
               class="circular-button-subtitle"
               mat-mini-fab
-              (click)="verForo()"
             >
               <!--download-->
               <mat-icon class="circular-button-subtitle__icon"
@@ -83,7 +82,7 @@
             </button>
             <button
               class="circular-button-table--normal"
-              (click)="editarForo()"
+              (click)="editarDocumento()"
               mat-mini-fab
             >
               <!--update usuario-->
@@ -94,7 +93,7 @@
             </button>
             <button
               class="circular-button-table--negative"
-              (click)="eliminarForo()"
+              (click)="eliminarDocumento()"
               mat-mini-fab
             >
               <!--delete usuario-->
