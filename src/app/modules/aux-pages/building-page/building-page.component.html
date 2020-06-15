@@ -1,24 +1,19 @@
-<div class="contenedorBuilding">
-
-    <div class="contenedorBuilding__container-building">
-        <div class="contenedorBuilding__container-building--left-side">
-            <div class="margin">
-                <p class="titleBuilding">Sorry, this
-                </p>
-                <div class="margin">
-                    <p class="titleBuilding">
-                        page isn't </p>
-                </div>
-                <div class="margin">
-                    <p class="titleBuilding">
-                        available</p>
-                </div>
-            </div>
-            <p class="subtitleBuilding">The page you were looking for couldn't be found</p>
-
+<div class="container">
+  <div class="contenedorBuilding">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contenedorBuilding__words">
+          <div class="titleBuilding">Sorry , this page isn't available</div>
+          <div class="subtitleBuilding">
+            The page you were looking for couldn't be found
+          </div>
         </div>
-        <div class="contenedorBuilding__container-building--right-side">
-            <img [src]="imageUrl" class="gif" />
+      </div>
+      <div class="col-md-6">
+        <div class="contenedorBuilding__img">
+          <img [src]="imageUrl" class="gif" />
         </div>
+      </div>
     </div>
+  </div>
 </div>

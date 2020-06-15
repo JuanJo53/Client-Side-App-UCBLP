@@ -33,15 +33,19 @@
               *ngFor="let elemento of tipoRespuesta"
               [value]="elemento.value"
             >
-              <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
               {{ elemento.display }}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
+      <!--#combo tipo de respuestas-->
     </div>
     <div class="progress-bar__button-actions-container--right">
-      <button mat-raised-button class="progress-bar__button-normal">
+      <button
+        mat-raised-button
+        class="progress-bar__button-normal"
+        (click)="limpiar()"
+      >
         <div class="progress-bar__button-container">
           <mat-icon class="progress-bar__button-normal--icon"
             >clear_all</mat-icon
@@ -103,22 +107,25 @@
           <!-- radio button option -->
           <mat-radio-button
             class="card-question__choice"
-            *ngFor="let opcion of radioButtonOptiones; let i = index"
+            *ngFor="let opciones of radioButtonOpciones; let i = index"
             [value]="i"
           >
             <mat-form-field class="full-width-field">
               <input
-                name="first"
+                [(ngModel)]="radioButtonOpciones[i].opcionRespuesta"
+                name="a{{ i }}"
                 class="card-question__choice--input"
                 matInput
-                placeholder="{{ opcion.item }} {{ i }}"
+                placeholder="opcion"
               />
             </mat-form-field>
-            <mat-icon
-              class="card-question__choice--close"
-              (click)="eliminarElemento(i)"
-              >close</mat-icon
-            >
+            <button class="card-question__choice--button-delete">
+              <mat-icon
+                class="card-question__choice--button-delete-icon"
+                (click)="eliminarElemento(i)"
+                >close</mat-icon
+              >
+            </button>
             <!--#radio button option-->
           </mat-radio-button>
         </mat-radio-group>
@@ -139,7 +146,7 @@
     <button mat-raised-button class="progress-bar__button-normal">
       <span
         class="progress-bar__button-normal--text"
-        (click)="agregarPregunta()"
+        (click)="agregarPreguntaEnContenido()"
         >Add question</span
       >
     </button>
