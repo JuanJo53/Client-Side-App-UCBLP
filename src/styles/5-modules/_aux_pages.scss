@@ -1,11 +1,12 @@
 .contenedorBuilding{
     width: 120rem;
     height: 100%;
-    
+    align-items: center;
     display: flex;
     margin: auto;
     &__container {
     display: flex;
+   
     &-building {
     display: flex;
         &--left-side {
