@@ -109,7 +109,6 @@ export class ThemeContentComponent implements OnInit {
           this.agregarCardsLecciones(datales);
           this.addImages(images);
           this.addTypeLesson(types);
-          
         }
         else{
           console.log("No se pudieron obtener las lecciones");
