@@ -40,17 +40,27 @@ import { MatSelectModule } from "@angular/material/select";
 import { ForumsBaseComponent } from "src/app/modules/home/forums-base/forums-base.component";
 import { ForumContentComponent } from "src/app/modules/home/forums-base/forums/forum-content/forum-content.component";
 import { InitialInformationComponent } from "src/app/modules/dialogs/create-practice/initial-information/initial-information.component";
-import { TypeQuestionComponent } from "src/app/modules/dialogs/create-practice/type-question/type-question.component";
 import { AddForumComponent } from "src/app/modules/dialogs/forums/add-forum/add-forum.component";
 import { CdkTableModule } from "@angular/cdk/table";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { EditForumComponent } from "src/app/modules/dialogs/forums/edit-forum/edit-forum.component";
 import { MatNativeDateModule } from "@angular/material/core";
-import { ProgressBarComponent } from "src/app/modules/dialogs/create-practice/progress-bar/progress-bar.component";
 import { MatStepperModule } from "@angular/material/stepper";
-import { ReactiveFormsModule } from '@angular/forms';
-import { AddLessonComponent } from 'src/app/modules/dialogs/lesson/add-lesson/add-lesson.component';
-import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { AddLessonComponent } from "src/app/modules/dialogs/lesson/add-lesson/add-lesson.component";
+import { ConfigureLessonComponent } from "src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component";
+import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/error-dialog/error-dialog.component";
+import { CreatePracticeComponent } from "src/app/modules/home/modules/themes-base/themes/create-practice/create-practice.component";
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { ViewResponseComponent} from "src/app/modules/dialogs/forums/view-response/view-response.component";
+import { AddCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/add-custom-module/add-custom-module.component';
+import { EditDefaultModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-default-module/edit-default-module.component';
+import { EditCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component';
+import { ModulesRubricComponent } from 'src/app/modules/dialogs/evaluation/modules-rubric/modules-rubric.component';
+import { BuildingPageComponent } from 'src/app/modules/aux-pages/building-page/building-page.component';
+import { CustomQuestionComponent } from 'src/app/modules/dialogs/create-practice/custom-question/custom-question.component';
+
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -76,12 +86,19 @@ import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configu
     ForumContentComponent,
     ThemeLessonsComponent,
     InitialInformationComponent,
-    TypeQuestionComponent,
     AddForumComponent,
     EditForumComponent,
-    ProgressBarComponent,
     AddLessonComponent,
-    ConfigureLessonComponent
+    ConfigureLessonComponent,
+    ErrorDialogComponent,
+    CreatePracticeComponent,
+    ViewResponseComponent,
+    AddCustomModuleComponent,
+    EditCustomModuleComponent,
+    EditDefaultModuleComponent,
+    ModulesRubricComponent,
+    CustomQuestionComponent,
+    BuildingPageComponent
   ],
   imports: [
     CommonModule,
@@ -107,7 +124,8 @@ import { ConfigureLessonComponent } from 'src/app/modules/dialogs/lesson/configu
     MatDatepickerModule,
     MatNativeDateModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaterialTimepickerModule
   ],
 })
 export class DefaultModule {}

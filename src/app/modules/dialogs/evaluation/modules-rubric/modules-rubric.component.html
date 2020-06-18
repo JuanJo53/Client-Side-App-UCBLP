@@ -1,0 +1,148 @@
+<div class="dialog">
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Modules Rubric</span>
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogformsModuesRubric">
+      <!--block-->
+      <div class="dialog__module-rubric">
+        <div class="dialog__module-rubric--left-side">
+          <span class="dialog__module-rubric--text">Attendance</span>
+        </div>
+
+        <mat-form-field
+          appearance="outline"
+          class="dialog__module-rubric--right-side input-disabled"
+          (dblclick)="toggleDisable()"
+        >
+          <mat-label>%</mat-label>
+          <!-- Input para el nombre del modulo-->
+          <input
+            [disabled]="disableTextbox"
+            type="text"
+            matInput
+            placeholder="%"
+            name="nombreModulo"
+          />
+          <!-- //Input para el nombre del modulo-->
+        </mat-form-field>
+      </div>
+      <!--#block-->
+      <!--block-->
+      <div class="dialog__module-rubric">
+        <div class="dialog__module-rubric--left-side">
+          <span class="dialog__module-rubric--text">Theme Activities</span>
+        </div>
+
+        <mat-form-field
+          appearance="outline"
+          class="dialog__module-rubric--right-side input-disabled"
+          (dblclick)="toggleDisable()"
+        >
+          <mat-label>%</mat-label>
+          <!-- Input para el nombre del modulo-->
+          <input
+            [disabled]="disableTextbox"
+            type="text"
+            matInput
+            placeholder="%"
+            name="nombreModulo"
+          />
+          <!-- //Input para el nombre del modulo-->
+        </mat-form-field>
+      </div>
+      <!--#block-->
+      <!--block-->
+      <div class="dialog__module-rubric">
+        <div class="dialog__module-rubric--left-side">
+          <span class="dialog__module-rubric--text">Theme Practices</span>
+        </div>
+
+        <mat-form-field
+          appearance="outline"
+          class="dialog__module-rubric--right-side input-disabled"
+          (dblclick)="toggleDisable()"
+        >
+          <mat-label>%</mat-label>
+          <!-- Input para el nombre del modulo-->
+          <input
+            [disabled]="disableTextbox"
+            type="text"
+            matInput
+            placeholder="%"
+            name="nombreModulo"
+          />
+          <!-- //Input para el nombre del modulo-->
+        </mat-form-field>
+      </div>
+      <!--#block-->
+      <!--block-->
+      <div class="dialog__module-rubric">
+        <div class="dialog__module-rubric--left-side">
+          <span class="dialog__module-rubric--text">Theme Test</span>
+        </div>
+
+        <mat-form-field
+          appearance="outline"
+          class="dialog__module-rubric--right-side input-disabled"
+          (dblclick)="toggleDisable()"
+        >
+          <mat-label>%</mat-label>
+          <!-- Input para el nombre del modulo-->
+          <input
+            [disabled]="disableTextbox"
+            type="text"
+            matInput
+            placeholder="%"
+            name="nombreModulo"
+          />
+          <!-- //Input para el nombre del modulo-->
+        </mat-form-field>
+      </div>
+      <!--#block-->
+      <!--block-->
+      <div class="dialog__module-rubric">
+        <div class="dialog__module-rubric--left-side">
+          <span class="dialog__module-rubric--text">Assessments</span>
+        </div>
+
+        <mat-form-field
+          appearance="outline"
+          class="dialog__module-rubric--right-side input-disabled"
+          (dblclick)="toggleDisable()"
+        >
+          <mat-label>%</mat-label>
+          <!-- Input para el nombre del modulo-->
+          <input
+            [disabled]="disableTextbox"
+            type="text"
+            matInput
+            placeholder="%"
+            name="nombreModulo"
+          />
+          <!-- //Input para el nombre del modulo-->
+        </mat-form-field>
+      </div>
+      <!--#block-->
+    </form>
+
+    <div class="dialog-subtitle">
+      <div class="dialog-subtitle__text"></div>
+    </div>
+    <p class="pModuleRubricResult">100</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!--btn cancel-->
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Cancel
+    </button>
+    <!--#btn cancel-->
+    <!-- btn accept-->
+    <button mat-button class="dialog-button-accept">
+      Accept
+    </button>
+  </mat-dialog-actions>
+  <!-- #btn accept-->
+</div>

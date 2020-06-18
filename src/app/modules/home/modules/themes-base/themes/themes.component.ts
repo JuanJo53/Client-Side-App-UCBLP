@@ -8,10 +8,11 @@ import {
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../../../../dialogs/delete-card/delete-card.component";
 import { AddThemeComponent } from "../../../../dialogs/themes/add-theme/add-theme.component";
-import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
 import { ConfigureThemeComponent } from "../../../../dialogs/themes/configure-theme/configure-theme.component";
+import { DeleteItemService } from "../../../../../services/dialogs/delete-item.service";
+
 import { Theme } from 'src/app/models/Teacher/Modules/Theme';
-import { CardImage } from 'src/app/models/Teacher/Modules/CardImage';
+import { CardImage } from 'src/app/models/CardImage';
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -43,7 +44,7 @@ export class ThemesComponent implements OnInit {
   addThemesImages(data){
     for(let i in data){
      let newImgT=new CardImage();
-     newImgT.idTemaImagen=data[i].id_imagen;
+     newImgT.idImagen=data[i].id_imagen;
      newImgT.url=data[i].imagen;
      this.themeImages.push(newImgT);
     }
@@ -99,7 +100,7 @@ export class ThemesComponent implements OnInit {
           next:(data)=>{
             data.themes.body=result;
             console.log(data);            
-        this.addThemesCards(result,this.idCurso);
+            this.addThemesCards(result,this.idCurso);
           },
           error:(error)=>{
             console.log("No se pudieron obtener las lecciones");

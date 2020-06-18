@@ -19,21 +19,30 @@ import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-do
 import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemeLessonsComponent } from "./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
-import { StudentsGeneralResolver } from './_resolvers/docente/my-class/get-students.resolver';
-import { GetThemesTeacherResolver } from './_resolvers/docente/modules/get-themes.resolver';
-import { GetImagesIdResolver } from './_resolvers/docente/modules/get_imagesId.resolver';
-import { GetFechasAsistenciaResolver } from './_resolvers/docente/my-class/get-fechas-asistencia.resolver';
-import { GetLessonsResolver } from './_resolvers/docente/modules/themes/get-lessons.resolver';
+import { StudentsGeneralResolver } from "./_resolvers/docente/my-class/get-students.resolver";
+import { GetThemesTeacherResolver } from "./_resolvers/docente/modules/get-themes.resolver";
+import { GetImagesIdResolver } from "./_resolvers/docente/modules/get_imagesId.resolver";
+import { GetFechasAsistenciaResolver } from "./_resolvers/docente/my-class/get-fechas-asistencia.resolver";
+import { GetLessonsResolver } from "./_resolvers/docente/modules/themes/get-lessons.resolver";
 import { ForumContentComponent } from "./modules/home/forums-base/forums/forum-content/forum-content.component";
 import { ForumsComponent } from "./modules/home/forums-base/forums/forums.component";
 import { ForumsBaseComponent } from "./modules/home/forums-base/forums-base.component";
-import { GetTypeLessonsResolver } from './_resolvers/docente/modules/themes/get-type-lessons.resolver';
+import { GetTypeLessonsResolver } from "./_resolvers/docente/modules/themes/get-type-lessons.resolver";
+import { GetModulesResolver } from "./_resolvers/docente/evaluation/get_modules.resolver";
+import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.resolver";
+import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
+import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
+import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
 
 const routes: Routes = [
   {
     path: "",
     component: LoginComponent,
     resolve: { login: AuthDocenteResolver },
+  },
+  {
+    path: "building",
+    component: BuildingPageComponent,
   },
   {
     path: "classroom",
@@ -83,6 +92,9 @@ const routes: Routes = [
         children: [
           {
             path: "",
+            resolve: {
+              forums: GetForumsResolver,
+            },
             component: ForumsComponent,
           },
           {
@@ -108,23 +120,31 @@ const routes: Routes = [
               },
               {
                 path: ":idTema",
-                 children: [
-                   {
+                children: [
+                  {
                     path: "",
-                    resolve:{
-                      lessons:GetLessonsResolver,
-                      images:GetImagesIdResolver,
-                      types:GetTypeLessonsResolver
+                    resolve: {
+                      lessons: GetLessonsResolver,
+                      images: GetImagesIdResolver,
+                      types: GetTypeLessonsResolver,
                     },
                     component: ThemeContentComponent,
-                   },
+                  },
                   {
                     path: "lessons",
-                    resolve:{
-                    },
-                    component: ThemeLessonsComponent,
+                    //component: ThemeLessonsComponent,
+                    children: [
+                      {
+                        path: "",
+                        component: ThemeLessonsComponent,
+                      },
+                      {
+                        path: "practice",
+                        component: CreatePracticeComponent,
+                      },
+                    ],
                   },
-                 ],
+                ],
               },
             ],
           },
@@ -141,6 +161,11 @@ const routes: Routes = [
       {
         path: "evaluation",
         component: EvaluationComponent,
+        resolve: {
+          modules: GetModulesResolver,
+          colors: GetColorsResolver,
+          images: GetImagesIdResolver,
+        },
       },
     ],
   },

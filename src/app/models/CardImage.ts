@@ -1,4 +1,4 @@
 export class CardImage{
-    idTemaImagen:string;
+    idImagen:string;
     url:string;
 }

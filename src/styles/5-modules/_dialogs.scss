@@ -41,9 +41,9 @@
   width: 100%;
   //height: 15rem;
 }
-.mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
-}
+// .mat-radio-button ~ .mat-radio-button {
+//   margin-left: 16px;
+// }
 
 .mat-form-field-underline {
   /*change color of underline*/
@@ -61,4 +61,46 @@ mat-datepicker-toggle {
 .mat-calendar-body-selected {
   background-color: $color-primary-blue !important;
   color: #fff;
+}
+.input-view-response {
+  height: 7rem;
+}
+.dialogformsModuesRubric {
+  mat-form-field {
+    width: 25%;
+  }
+}
+.pModuleRubric {
+  font-size: 1.8rem;
+  color: $color-primary-blue;
+}
+
+//-----------
+.pModuleRubricResult {
+  flex: 1;
+  font-size: 2rem;
+  color: $color-primary-blue;
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog__module-rubric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //background-color: orange;
+  &--text {
+    font-size: 2rem;
+    color: $color-primary-blue;
+  }
+  &--left-side {
+    flex: 0 1 80%;
+    //background-color: red;
+  }
+  &--right-side {
+    align-items: center!important;
+    flex: 1;
+    //background-color: yellow;
+  }
 }

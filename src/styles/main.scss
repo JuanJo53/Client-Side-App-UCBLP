@@ -19,6 +19,7 @@
 @import "3-basics/tables";
 @import "3-basics/combo-box";
 @import "3-basics/typography";
+@import "3-basics/timepicker";
 
 //4 - LAYOUT
 @import "4-layout/grid";
@@ -34,8 +35,12 @@
 @import "5-modules/login_card";
 @import "5-modules/logo";
 @import "5-modules/forum";
-@import "5-modules/progress-bar";
+@import "5-modules/question-maker";
 @import "5-modules/progress-bar-content";
+@import "5-modules/question-card";
+@import "5-modules/evaluation_card";
+@import "5-modules/simple_dialogs";
+@import "5-modules/aux_pages";
 
 //6- PAGES
 @import "6-pages/home";

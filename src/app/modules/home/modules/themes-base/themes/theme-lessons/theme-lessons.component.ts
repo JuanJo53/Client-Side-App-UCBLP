@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { SimpleCard } from "src/app/models/simpleCard";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
-import { ProgressBarComponent } from "../../../../../dialogs/create-practice/progress-bar/progress-bar.component";
+import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add-lesson.component";
+import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
 import {
   MatDialog,
   MatDialogRef,
@@ -48,7 +50,11 @@ export class ThemeLessonsComponent implements OnInit {
     },
   ];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {}
   //-----funciones-----
@@ -85,12 +91,14 @@ export class ThemeLessonsComponent implements OnInit {
     //this.router.navigate(["lessons"], { relativeTo: this.route });
   }
   agregarPractica() {
-    const dialogRef = this.dialog.open(ProgressBarComponent, {
-      width: "1000px",
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // const dialogRef = this.dialog.open(ProgressBarComponent, {
+    //   width: "1000px",
+    // });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
+    this.router.navigate(["practice"], { relativeTo: this.route });
+    console.log("clicked");
   }
   //-----#funciones-----
 }

@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class EditForumComponent implements OnInit {
   startDate = new Date(1990, 0, 1);
   startDate1 = new Date(1990, 0, 1);
+  disableTextbox =  true;
   constructor() { }
-
+  toggleDisable() {
+    this.disableTextbox = !this.disableTextbox;
+  }
   ngOnInit(): void {
   }
 

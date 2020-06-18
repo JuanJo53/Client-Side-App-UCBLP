@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProgressBarComponent } from './progress-bar.component';
+import { EditCustomModuleComponent } from './edit-custom-module.component';
 
-describe('ProgressBarComponent', () => {
-  let component: ProgressBarComponent;
-  let fixture: ComponentFixture<ProgressBarComponent>;
+describe('EditCustomModuleComponent', () => {
+  let component: EditCustomModuleComponent;
+  let fixture: ComponentFixture<EditCustomModuleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProgressBarComponent ]
+      declarations: [ EditCustomModuleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProgressBarComponent);
+    fixture = TestBed.createComponent(EditCustomModuleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

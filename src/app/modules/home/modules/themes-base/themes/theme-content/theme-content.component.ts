@@ -13,7 +13,7 @@ import { DeleteItemService } from "../../../../../../services/dialogs/delete-ite
 import { ConfigureLessonComponent } from "../../../../../dialogs/lesson/configure-lesson/configure-lesson.component";
 
 import { Lesson } from 'src/app/models/Teacher/Modules/Lesson';
-import { CardImage } from 'src/app/models/Teacher/Modules/CardImage';
+import { CardImage } from 'src/app/models/CardImage';
 import { TypeLesson } from 'src/app/models/Teacher/Modules/TYpeLesson';
 @Component({
   selector: "app-theme-content",
@@ -40,7 +40,7 @@ export class ThemeContentComponent implements OnInit {
   addImages(data){
     for(let i in data){
      let newImgT=new CardImage();
-     newImgT.idTemaImagen=data[i].id_imagen;
+     newImgT.idImagen=data[i].id_imagen;
      newImgT.url=data[i].imagen;
      this.cardImages.push(newImgT);
     }
@@ -145,9 +145,30 @@ export class ThemeContentComponent implements OnInit {
   //-----funciones-----
 
   agregarLeccion() {
-    const dialogRef = this.dialog.open(AddLessonComponent, { width: "400px" });
+    console.log(this.idTema);
+    const dialogRef = this.dialog.open(AddLessonComponent, { width: "400px" 
+    ,data:{
+      types:this.typesofLessons,
+      images:this.cardImages,
+      numero:this.lessonCards.length+1,
+      idTema:this.idTema
+    }
+    });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      if(result!=""){
+        this.route.data.subscribe({
+          next:(data)=>{
+            console.log(data.lessons.body);
+            console.log(result);
+            data.lessons.body=result;
+            this.lessonCards=[];
+            this.agregarCardsLecciones(result);
+          },
+          error:(error)=>{
+            console.log("no se pudo añadir el tema");
+          }
+        })
+      }
     });
   }
   configuraciones(leccion) {

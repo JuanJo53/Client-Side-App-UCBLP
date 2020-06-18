@@ -9,9 +9,11 @@ import { LessonService } from 'src/app/_services/teacher_services/lesson.service
   styleUrls: ["./configure-theme.component.scss"],
 })
 export class ConfigureThemeComponent implements OnInit {
+  
   nombre: string = "";
   tipo:string="";
   radioButtonValue: string = "";
+  disableTextbox =  true;
   constructor(@Inject(MAT_DIALOG_DATA) public dataDialog: any,
   private servThe:ThemesService,
   private dialogRef: MatDialogRef<ConfigureThemeComponent>) {}
@@ -25,6 +27,9 @@ export class ConfigureThemeComponent implements OnInit {
           this.radioButtonValue="unable";
     
         }
+  }
+  toggleDisable() {
+    this.disableTextbox = !this.disableTextbox;
   }
   ngOnInit(): void {
     this.cargarDatos();
@@ -69,3 +74,4 @@ export class ConfigureThemeComponent implements OnInit {
   }
  
 }
+

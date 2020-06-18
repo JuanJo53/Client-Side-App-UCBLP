@@ -1,0 +1,45 @@
+@import "1-helpers/mixins";
+.simple-dialog {
+  margin: 1.5rem 1rem 1rem 1rem;
+  .mat-icon {
+    vertical-align: middle !important;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    //background-color: red;
+    margin: 1rem 0rem;
+    height: 12.5rem;
+  }
+  &__title {
+    color: $color-primary-red;
+    font-size: 2rem;
+  }
+  &__icon-content {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    &--negative {
+      border: 0.25rem solid $color-primary-red;
+      border-radius: 50%;
+      padding: 1rem;
+      //background-color: red;
+    }
+  }
+  &__icon {
+    &--negative {
+      color: $color-primary-red;
+      font-size: 3rem;
+      height: 3rem !important;
+      width: 3rem !important;
+    }
+  }
+  &__message {
+    @include margin-left-right(0.5rem, 0.5rem);
+    color: $color-primary-gray;
+    font-size: 1.5rem;
+  }
+}

@@ -16,7 +16,7 @@ export class GetTypeLessonsResolver{
       this.router.navigate(['/']);
     }
     else{      
-      return this.lessonService.getTipoLeccion();
+      return this.lessonService.getTypeLesson();
     }
   }
 }

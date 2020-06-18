@@ -12,6 +12,7 @@ const TOKEN_DOCENTE="token_doc";
 export class AuthInterceptor implements HttpInterceptor{
     constructor(private router:Router,private tokenT:TokenStorageService){}
     intercept(req:HttpRequest<any>,next:HttpHandler){
+
         const token: string=this.tokenT.getToken();
         let request=req;
         //se verifica si el toquen es vacio o nullo
@@ -19,6 +20,7 @@ export class AuthInterceptor implements HttpInterceptor{
           this.router.navigate(['/']);
         }
         else{
+          console.log(req);
           //aqui se agrega el token al header
           request=req.clone({
             setHeaders:{

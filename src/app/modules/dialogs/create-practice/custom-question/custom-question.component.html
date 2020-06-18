@@ -1,0 +1,154 @@
+<mat-dialog-content class="mat-typography">
+  <!--combo box-->
+  <div class="combo-box-container question-maker">
+    <!--combo tipo de preguntas-->
+    <div class="combo-box-container--left">
+      <div class="combo-box">
+        <mat-form-field>
+          <mat-label>Type of Question</mat-label>
+          <mat-select
+            [(value)]="tipoPreguntaSeleccionado"
+            (selectionChange)="selected()"
+          >
+            <mat-option
+              *ngFor="let elemento of tipoPregunta"
+              [value]="elemento.value"
+            >
+              <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
+              {{ elemento.display }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--#combo tipo de preguntas-->
+      <!--combo tipo de respuestas-->
+      <div class="combo-box">
+        <mat-form-field>
+          <mat-label>Type of answer</mat-label>
+          <mat-select
+            [(value)]="tipoPreguntaSeleccionado"
+            (selectionChange)="selected()"
+          >
+            <mat-option
+              *ngFor="let elemento of tipoRespuesta"
+              [value]="elemento.value"
+            >
+              {{ elemento.display }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--#combo tipo de respuestas-->
+    </div>
+    <div class="progress-bar__button-actions-container--right">
+      <button
+        mat-raised-button
+        class="progress-bar__button-normal"
+        (click)="limpiar()"
+      >
+        <div class="progress-bar__button-container">
+          <mat-icon class="progress-bar__button-normal--icon"
+            >clear_all</mat-icon
+          >
+          <span class="progress-bar__button-normal--text">Clear</span>
+        </div>
+      </button>
+    </div>
+    <!--#combo tipo de respuestas-->
+  </div>
+  <!--#combo box-->
+  <!--card-->
+  <div class="card-question">
+    <!-- <div class="card__text--no-content">
+    </div> -->
+    <div class="container-dialog">
+      <div class="card-question__header">
+        <!--input para pregunta-->
+        <div class="card-question__header--question">
+          <mat-form-field appearance="outline">
+            <mat-label>Question Name</mat-label>
+            <input
+              [(ngModel)]="pregunta"
+              type="text"
+              class="input-form"
+              matInput
+              placeholder="Question Name"
+              name="nombre pregunta"
+            />
+          </mat-form-field>
+        </div>
+        <!--#input para pregunta-->
+        <div class="card-question__header--score">
+          <!--input para pregunta-->
+          <div class="card-question__input">
+            <mat-form-field appearance="outline">
+              <mat-label>Score</mat-label>
+              <input
+                type="text"
+                class="input-form"
+                matInput
+                placeholder="Score Name"
+                name="puntuacion"
+                [(ngModel)]="puntuacionPregunta"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+        </div>
+      </div>
+      <div class="card-question__content">
+        <!-- <form class="example-form"> -->
+        <mat-radio-group
+          aria-label="Select an option"
+          class="example-radio-group"
+          name="radiobuttons"
+          [(ngModel)]="opcionCorrecta"
+        >
+          <!-- radio button option -->
+          <mat-radio-button
+            class="card-question__choice"
+            *ngFor="let opciones of radioButtonOpciones; let i = index"
+            [value]="i"
+          >
+            <mat-form-field class="full-width-field">
+              <input
+                [(ngModel)]="radioButtonOpciones[i].opcionRespuesta"
+                name="a{{ i }}"
+                class="card-question__choice--input"
+                matInput
+                placeholder="opcion"
+              />
+            </mat-form-field>
+            <button class="card-question__choice--button-delete">
+              <mat-icon
+                class="card-question__choice--button-delete-icon"
+                (click)="eliminarElemento(i)"
+                >close</mat-icon
+              >
+            </button>
+            <!--#radio button option-->
+          </mat-radio-button>
+        </mat-radio-group>
+        <button mat-mini-fab class="card-question__button--add">
+          <mat-icon (click)="agregarRespuesta()">add</mat-icon>
+        </button>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+  <!--#card-->
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="progress-bar__container-mix">
+    <button mat-raised-button class="progress-bar__button-negative">
+      <span class="progress-bar__button-normal--text">Cancel</span>
+    </button>
+    <button mat-raised-button class="progress-bar__button-normal">
+      <span
+        class="progress-bar__button-normal--text"
+        (click)="agregarPreguntaEnContenido()"
+        >Add question</span
+      >
+    </button>
+  </div>
+</mat-dialog-actions>

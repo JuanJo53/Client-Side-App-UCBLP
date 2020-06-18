@@ -1,8 +1,31 @@
 .combo-box-container {
   margin-top: 3rem;
   display: flex;
+  align-items: center;
   //background-color: $color-primary-blue;
+  justify-content: space-between;
+  &--left {
+    display: flex;
+    align-items: center;
+    //background-color: $color-primary-blue;
+    justify-content: space-between;
+  }
 }
+
+.combo-box-container.question-maker {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  //background-color: $color-primary-blue;
+  justify-content: space-between;
+  &--left {
+    display: flex;
+    align-items: center;
+    //background-color: $color-primary-blue;
+    justify-content: space-between;
+  }
+}
+
 .combo-box {
   margin-right: 2rem;
   .mat-form-field-underline {
@@ -23,10 +46,9 @@
     //border:0.15rem solid $color-primary-blue!important;
     //opacity: 70%;
   }
-  .mat-icon{
-    color:red!important;
+  .mat-icon {
+    color: red !important;
   }
-
 }
 
 .mat-select-arrow {

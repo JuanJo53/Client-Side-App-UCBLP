@@ -5,6 +5,9 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { AddForumComponent } from "../../../dialogs/forums/add-forum/add-forum.component";
 import { EditForumComponent } from "../../../dialogs/forums/edit-forum/edit-forum.component";
+import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.component";
+import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
+import { Forum } from "../../../../models/Teacher/Forums/Forum";
 import {
   MatDialog,
   MatDialogRef,
@@ -47,7 +50,7 @@ const ELEMENT_DATA: ListaDeForos[] = [
   styleUrls: ["./forums.component.scss"],
 })
 export class ForumsComponent implements OnInit {
-  
+  item: string = "forum";
   displayedColumns: string[] = [
     "nombreForo",
     "fechaInicio",
@@ -63,12 +66,34 @@ export class ForumsComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private data: DeleteItemService
   ) {}
-
+  agregarCardsForums(data) {
+    for (let i in data) {
+      let newForum = new Forum();
+      let fecini = Date.parse(data[i].fecha_creacion);
+      let datini = new Date();
+      datini.setTime(fecini);
+      let fecfin = Date.parse(data[i].fecha_creacion);
+      let datfin = new Date();
+      datini.setTime(fecini);
+      console.log(datfin);
+    }
+  }
   ngOnInit(): void {
+    this.route.data.subscribe({
+      next: (data) => {
+        console.log(data);
+        this.agregarCardsForums(data.forums.body);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.data.changeMessage(this.item);
   }
   verForo() {
     //[where i wanna go] ,{where i am}
@@ -79,5 +104,13 @@ export class ForumsComponent implements OnInit {
   }
   editarForo() {
     const dialogRef = this.dialog.open(EditForumComponent, { width: "500px" });
+  }
+  eliminarForo() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        tipo: "forum",
+      },
+    });
   }
 }

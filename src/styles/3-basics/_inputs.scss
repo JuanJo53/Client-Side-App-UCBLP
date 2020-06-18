@@ -34,10 +34,17 @@
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: $color-secondary-blue !important;
 }
+.input-disabled {
+  .mat-form-field-outline {
+    background-color: $color-secondary-gray;
+    // cursor: pointer!important;
+  }
+}
 
 // mat-input focused color input border active
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
   color: $color-secondary-blue !important;
+  background-color: $color-primary-white;
 }
 
 // mat-input caret color |
@@ -48,8 +55,11 @@
 // mat-label focused style input name over
 .mat-form-field.mat-focused .mat-form-field-label {
   color: $color-secondary-blue !important;
+  //background-color: $color-primary-white!important;
 }
 
 .input-form {
-  font-size: 1.25rem!important;
+  font-size: 1.25rem !important;
+  &.disabled {
+  }
 }
