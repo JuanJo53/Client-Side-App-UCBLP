@@ -1,27 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QualificationComponent } from './qualification.component';
+import { StudentsProfileComponent } from './students-profile.component';
 
-
-
-
-
-
-
-
-describe('QualificationComponent', () => {
-  let component: QualificationComponent;
-  let fixture: ComponentFixture<QualificationComponent>;
+describe('StudentsProfileComponent', () => {
+  let component: StudentsProfileComponent;
+  let fixture: ComponentFixture<StudentsProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QualificationComponent ]
+      declarations: [ StudentsProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QualificationComponent);
+    fixture = TestBed.createComponent(StudentsProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -29,5 +22,4 @@ describe('QualificationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });

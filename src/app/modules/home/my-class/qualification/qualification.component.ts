@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
+import { Router, ActivatedRoute } from "@angular/router";
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+import { TitleCasePipe } from '@angular/common';
 export interface ListaDeNotas {
   nombre: string;
   posicion: number;
@@ -282,15 +284,12 @@ const ELEMENT_DATA: ListaDeNotas[] = [
     promedioFinal: 90,
     id: 20,
   },
- 
-  
-  
 ];
 
 @Component({
-  selector: 'app-qualification',
-  templateUrl: './qualification.component.html',
-  styleUrls: ['./qualification.component.scss']
+  selector: "app-qualification",
+  templateUrl: "./qualification.component.html",
+  styleUrls: ["./qualification.component.scss"],
 })
 export class QualificationComponent implements OnInit {
   displayedColumns: string[] = [
@@ -310,11 +309,16 @@ export class QualificationComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor() { }
+  constructor( private router: Router,
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
+  irPerfilEstudiante() {
+    console.log("ir a perfil de estudiante");
+    this.router.navigate(["profile-students"],{relativeTo:this.route});
+  }
 }
