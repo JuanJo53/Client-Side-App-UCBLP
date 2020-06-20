@@ -7,17 +7,12 @@ import { FormsModule } from "@angular/forms";
 import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
-import { StudentsProfileComponent } from './modules/home/my-class/students-profile/students-profile.component';
-
-
-
-
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, StudentsProfileComponent],
+  declarations: [AppComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,

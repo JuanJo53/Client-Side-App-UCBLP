@@ -8,7 +8,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { TitleCasePipe } from '@angular/common';
+import { TitleCasePipe } from "@angular/common";
 export interface ListaDeNotas {
   nombre: string;
   posicion: number;
@@ -309,8 +309,7 @@ export class QualificationComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor( private router: Router,
-    private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
@@ -319,6 +318,6 @@ export class QualificationComponent implements OnInit {
 
   irPerfilEstudiante() {
     console.log("ir a perfil de estudiante");
-    this.router.navigate(["profile-students"],{relativeTo:this.route});
+    this.router.navigate(["profile-students"], { relativeTo: this.route });
   }
 }

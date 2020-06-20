@@ -51,18 +51,21 @@ import { AddLessonComponent } from "src/app/modules/dialogs/lesson/add-lesson/ad
 import { ConfigureLessonComponent } from "src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component";
 import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/error-dialog/error-dialog.component";
 import { CreatePracticeComponent } from "src/app/modules/home/modules/themes-base/themes/create-practice/create-practice.component";
-import { NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-import { ViewResponseComponent} from "src/app/modules/dialogs/forums/view-response/view-response.component";
-import { AddCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/add-custom-module/add-custom-module.component';
-import { EditDefaultModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-default-module/edit-default-module.component';
-import { EditCustomModuleComponent } from 'src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component';
-import { ModulesRubricComponent } from 'src/app/modules/dialogs/evaluation/modules-rubric/modules-rubric.component';
-import { BuildingPageComponent } from 'src/app/modules/aux-pages/building-page/building-page.component';
-import { CustomQuestionComponent } from 'src/app/modules/dialogs/create-practice/custom-question/custom-question.component';
-import { AddSectionComponent } from 'src/app/modules/dialogs/resources/add-section/add-section.component';
-import { AddDocumentComponent } from 'src/app/modules/dialogs/resources/add-document/add-document.component';
-import { EditSectionComponent } from 'src/app/modules/dialogs/resources/edit-section/edit-section.component';
-import { EditDocumentComponent } from 'src/app/modules/dialogs/resources/edit-document/edit-document.component';
+import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
+import { ViewResponseComponent } from "src/app/modules/dialogs/forums/view-response/view-response.component";
+import { AddCustomModuleComponent } from "src/app/modules/dialogs/evaluation/add-custom-module/add-custom-module.component";
+import { EditDefaultModuleComponent } from "src/app/modules/dialogs/evaluation/edit-default-module/edit-default-module.component";
+import { EditCustomModuleComponent } from "src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component";
+import { ModulesRubricComponent } from "src/app/modules/dialogs/evaluation/modules-rubric/modules-rubric.component";
+import { BuildingPageComponent } from "src/app/modules/aux-pages/building-page/building-page.component";
+import { CustomQuestionComponent } from "src/app/modules/dialogs/create-practice/custom-question/custom-question.component";
+import { AddSectionComponent } from "src/app/modules/dialogs/resources/add-section/add-section.component";
+import { AddDocumentComponent } from "src/app/modules/dialogs/resources/add-document/add-document.component";
+import { EditSectionComponent } from "src/app/modules/dialogs/resources/edit-section/edit-section.component";
+import { EditDocumentComponent } from "src/app/modules/dialogs/resources/edit-document/edit-document.component";
+import { StudentsProfileComponent } from "src/app/modules/home/my-class/students-profile/students-profile.component";
+import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component";
+import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
 
 @NgModule({
   declarations: [
@@ -105,7 +108,10 @@ import { EditDocumentComponent } from 'src/app/modules/dialogs/resources/edit-do
     AddSectionComponent,
     AddDocumentComponent,
     EditSectionComponent,
-    EditDocumentComponent
+    EditDocumentComponent,
+    StudentsProfileComponent,
+    AttendanceScoreComponent,
+    OthersScoreComponent,
   ],
   imports: [
     CommonModule,
@@ -132,7 +138,7 @@ import { EditDocumentComponent } from 'src/app/modules/dialogs/resources/edit-do
     MatNativeDateModule,
     MatStepperModule,
     ReactiveFormsModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ],
 })
 export class DefaultModule {}
