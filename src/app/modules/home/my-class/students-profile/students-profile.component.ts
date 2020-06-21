@@ -54,4 +54,7 @@ export class StudentsProfileComponent implements OnInit {
     }
     //console.log("ver ceontenido card");
   }
+  verContenido2(){
+    
+  }
 }

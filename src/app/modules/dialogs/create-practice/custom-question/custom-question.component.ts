@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCompleteCard";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
+import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox";
 import { Combo } from "src/app/models/ComboBox/comboBox";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { PracticeService } from "src/app/_services/practices_services/practice.service";
@@ -16,11 +17,18 @@ export class CustomQuestionComponent implements OnInit {
   opcionCorrecta: string;
   radioButtonContent: string;
   tamanioPreguntas: string[];
+  tipoPreguntaEscogida: string = "Multiple";
 
   radioButtonOpciones: RadioButtonQuestion[] = [{ opcionRespuesta: "" }];
+  checkboxOpciones: CheckboxQuestion[] = [
+    { opcionRespuesta: "", isChecked: false },
+  ];
 
-  tipoPregunta: Combo[] = [{ value: "1", display: "Simple" }];
-  tipoRespuesta: Combo[] = [{ value: "1", display: "Unique" }];
+  tipoPregunta: Combo[] = [{ value: "Simple 1", display: "Simple" }];
+  tipoRespuesta: Combo[] = [
+    { value: "Unique", display: "Unique" },
+    { value: "Multiple", display: "Multiple" },
+  ];
 
   message: RadioButtonCompleteCard = {
     id: 5,
@@ -45,57 +53,34 @@ export class CustomQuestionComponent implements OnInit {
   selected() {
     console.log(this.tipoPreguntaSeleccionado);
   }
-  agregarRespuesta() {
-    console.log("clicked");
+  agregarRespuesta(tipoDePregunta) {
     var aux = {
       opcionRespuesta: "",
     };
-    this.radioButtonOpciones.push(aux);
+    var auxCheckbox = {
+      opcionRespuesta: "",
+      isChecked: false,
+    };
+    switch (tipoDePregunta) {
+      case "Unique":
+        this.radioButtonOpciones.push(aux);
+        break;
+      case "Multiple":
+        this.checkboxOpciones.push(auxCheckbox);
+        break;
+    }
   }
   eliminarElemento(i) {
+    // switch (tipoDePregunta) {
+    //   case "Unique":
+    //     break;
+    //   case "Multiple":
+    //     break;
+    // }
     console.log("elemt " + i);
     this.radioButtonOpciones.splice(i, 1);
   }
-  agregarPreguntaEnContenido() {
-    console.log("titulo :" + this.pregunta);
-    console.log("puntuacion :" + this.puntuacionPregunta);
-    for (let i in this.radioButtonOpciones) {
-      console.log(
-        "contenido pregunta : " + this.radioButtonOpciones[i].opcionRespuesta
-      );
-    }
-    console.log("Correcta :" + this.opcionCorrecta);
 
-    // let newLes = new Lesson();
-    // newLes.nombre = this.nombrelesson;
-    // newLes.idTipoLeccion = String(this.typeSelected);
-    // newLes.idImagen = String(this.imageSelected);
-    // newLes.numeroLeccion = this.numero;
-    // newLes.idTema = this.dataDialog["idTema"];
-    // this.servPractice.addRadioButtonQuestion(newLes).subscribe({
-    //   next: (data) => {
-    //     if (data.status == 200) {
-    //       this.servPractice.getLessons(this.dataDialog["idTema"]).subscribe({
-    //         next: (data) => {
-    //           console.log(data);
-    //           this.dialogRef.close(data.body);
-    //         },
-    //         error: (error) => {
-    //           console.log(error);
-    //           this.dialogRef.close();
-    //         },
-    //       });
-    //     } else {
-    //       console.log("No se pudo actualizar la pregunta");
-    //       this.dialogRef.close();
-    //     }
-    //   },
-    //   error: (error) => {
-    //     console.log("No se pudo Actualizar la pregunta");
-    //     this.dialogRef.close();
-    //   },
-    // });
-  }
   limpiar() {
     console.log("clear");
     this.pregunta = "";
@@ -105,5 +90,39 @@ export class CustomQuestionComponent implements OnInit {
         opcionRespuesta: "",
       },
     ];
+  }
+
+  changeClient(event) {
+    this.tipoPreguntaEscogida = event;
+    console.log("tipo de pregunta : " + this.tipoPreguntaEscogida);
+  }
+
+  agregarPreguntaEnContenido(tipoDePregunta) {
+    switch (tipoDePregunta) {
+      case "Unique":
+        console.log("titulo :" + this.pregunta);
+        console.log("puntuacion :" + this.puntuacionPregunta);
+        for (let i in this.radioButtonOpciones) {
+          console.log(
+            "contenido pregunta : " +
+              this.radioButtonOpciones[i].opcionRespuesta
+          );
+        }
+        console.log("Correcta :" + this.opcionCorrecta);
+        break;
+      case "Multiple":
+        console.log("multiple");
+        console.log("titulo :" + this.pregunta);
+        console.log("puntuacion :" + this.puntuacionPregunta);
+        for (let i in this.checkboxOpciones) {
+          console.log(
+            "contenido pregunta : " +
+              this.checkboxOpciones[i].opcionRespuesta +
+              "checked?" +
+              this.checkboxOpciones[i].isChecked
+          );
+        }
+        break;
+    }
   }
 }
