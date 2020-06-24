@@ -17,7 +17,7 @@ export class CustomQuestionComponent implements OnInit {
   opcionCorrecta: string;
   radioButtonContent: string;
   tamanioPreguntas: string[];
-  tipoPreguntaEscogida: string = "Multiple";
+  tipoPreguntaEscogida: string = "Unique";
 
   radioButtonOpciones: RadioButtonQuestion[] = [{ opcionRespuesta: "" }];
   checkboxOpciones: CheckboxQuestion[] = [
@@ -81,7 +81,7 @@ export class CustomQuestionComponent implements OnInit {
     this.radioButtonOpciones.splice(i, 1);
   }
 
-  limpiar() {
+  limpiar(tipoDePregunta) {
     console.log("clear");
     this.pregunta = "";
     this.puntuacionPregunta = "";
@@ -90,6 +90,23 @@ export class CustomQuestionComponent implements OnInit {
         opcionRespuesta: "",
       },
     ];
+
+
+    switch (tipoDePregunta) {
+      case "Unique":
+        this.radioButtonOpciones = [
+          {
+            opcionRespuesta: "",
+          },
+        ];
+
+        break;
+      case "Multiple":
+        this.checkboxOpciones = [
+          { opcionRespuesta: "", isChecked: false },
+        ];
+        break;
+    }
   }
 
   changeClient(event) {
