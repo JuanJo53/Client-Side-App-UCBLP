@@ -5,10 +5,10 @@
     <div class="combo-box-container--left">
       <div class="combo-box">
         <mat-form-field>
-          <mat-label>Type of Question</mat-label>
+          <mat-label *ngIf="!nuevaPregunta.bloqidtp">Type of Question</mat-label>
+          <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red;">*Type of Question</mat-label>
           <mat-select
-            [(value)]="tipoPreguntaSeleccionado"
-            (selectionChange)="selected()"
+            [(value)]="nuevaPregunta.idTipoPregunta"
           >
             <mat-option
               *ngFor="let elemento of tipoPregunta"
@@ -24,10 +24,10 @@
       <!--combo tipo de respuestas-->
       <div class="combo-box">
         <mat-form-field>
-          <mat-label>Type of answer</mat-label>
+          <mat-label *ngIf="!nuevaPregunta.bloqidtr">Type of answer</mat-label>
+          <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red;">*Type of answer</mat-label>
           <mat-select
-            [(value)]="tipoPreguntaSeleccionado"
-            (selectionChange)="selected()"
+            [(value)]="nuevaPregunta.idTipoRespuesta"
           >
             <mat-option
               *ngFor="let elemento of tipoRespuesta"
@@ -66,9 +66,10 @@
         <!--input para pregunta-->
         <div class="card-question__header--question">
           <mat-form-field appearance="outline">
-            <mat-label>Question Name</mat-label>
+            <mat-label *ngIf="!nuevaPregunta.bloqpreg" >Question Name</mat-label>
+            <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;">*Question Name</mat-label>
             <input
-              [(ngModel)]="pregunta"
+              [(ngModel)]="nuevaPregunta.pregunta"
               type="text"
               class="input-form"
               matInput
@@ -82,38 +83,42 @@
           <!--input para pregunta-->
           <div class="card-question__input">
             <mat-form-field appearance="outline">
-              <mat-label>Score</mat-label>
+              <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+              <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
               <input
                 type="text"
                 class="input-form"
                 matInput
                 placeholder="Score Name"
                 name="puntuacion"
-                [(ngModel)]="puntuacionPregunta"
+                [(ngModel)]="nuevaPregunta.puntuacion"
               />
             </mat-form-field>
           </div>
           <!--#input para pregunta-->
         </div>
       </div>
+      
+      <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">*Check the answers</h5>
+
       <div class="card-question__content">
         <!-- <form class="example-form"> -->
         <mat-radio-group
           aria-label="Select an option"
           class="example-radio-group"
           name="radiobuttons"
-          [(ngModel)]="opcionCorrecta"
+          [(ngModel)]="nuevaPregunta.respuesta"
         >
           <!-- radio button option -->
           <mat-radio-button
             class="card-question__choice"
-            *ngFor="let opciones of radioButtonOpciones; let i = index"
+            *ngFor="let opcion of radioButtonOpciones; let i = index"
             [value]="i"
           >
             <mat-form-field class="full-width-field">
               <input
-                [(ngModel)]="radioButtonOpciones[i].opcionRespuesta"
-                name="a{{ i }}"
+                [(ngModel)]="opcion.opcionRespuesta"
+                [ngModelOptions]="{standalone: true}"
                 class="card-question__choice--input"
                 matInput
                 placeholder="opcion"

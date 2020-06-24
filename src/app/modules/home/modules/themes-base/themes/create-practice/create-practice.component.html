@@ -11,6 +11,7 @@
   <mat-horizontal-stepper
     labelPosition="bottom"
     #stepper
+    draggable=false
     class="question-maker-container"
   >
     <!--1 paso-->
@@ -23,7 +24,8 @@
             <!--subtitle-->
             <div class="dialog-subtitle">
               <div class="dialog-subtitle__text">
-                <span>Name</span>
+                <span *ngIf="!paso1.bloqnombre">Name</span>
+                <span *ngIf="paso1.bloqnombre" style="color: red;">Name *</span>
               </div>
             </div>
             <!--#subtitle-->
@@ -34,11 +36,12 @@
                 class="input-form"
                 type="text"
                 matInput
+                [(ngModel)]="paso1.nombre"
                 placeholder="Practice name"
                 name="nombrePractica"
-              />
+              /> 
               <!-- //Input para el email-->
-            </mat-form-field>
+            </mat-form-field>    
 
             <div class="row">
               <!--start date-->
@@ -53,8 +56,9 @@
                   <div class="col-sm-6">
                     <!--fecha-->
                     <mat-form-field>
-                      <mat-label>Choose a date</mat-label>
-                      <input matInput [matDatepicker]="picker1" />
+                      <mat-label *ngIf="!paso1.bloqfecha1">Choose a date</mat-label>
+                      <mat-label *ngIf="paso1.bloqfecha1" style="color: red;">Choose a date*</mat-label>
+                      <input matInput [matDatepicker]="picker1" [(ngModel)]="paso1.fechaini"[ngModelOptions]="{standalone: startDate}"/>
                       <mat-datepicker-toggle
                         matSuffix
                         [for]="picker1"
@@ -71,9 +75,11 @@
                   <div class="col-sm-6">
                     <div class="toggle-example">
                       <mat-form-field>
-                        <mat-label>Choose an hour</mat-label>
+                        <mat-label *ngIf="!paso1.bloqhora1">Choose an hour</mat-label>
+                        <mat-label *ngIf="paso1.bloqhora1" style="color: red;">Choose an hour*</mat-label>
                         <input
                           matInput
+                          [(ngModel)]="paso1.horaini"[ngModelOptions]="{standalone: true}"
                           [ngxTimepicker]="toggleTimepicker1"
                           [disableClick]="true"
                           readonly
@@ -106,8 +112,11 @@
                   <div class="col-sm-6">
                     <!--fecha-->
                     <mat-form-field>
-                      <mat-label>Choose a date</mat-label>
-                      <input matInput [matDatepicker]="picker2" />
+                      <mat-label *ngIf="!paso1.bloqfecha2">Choose a date</mat-label>
+                      <mat-label *ngIf="paso1.bloqfecha2" style="color: red;">Choose a date*</mat-label>
+                      <input matInput [matDatepicker]="picker2" 
+                      [(ngModel)]="paso1.fechafin" 
+                      [ngModelOptions]="{standalone: startDate}"/>
                       <mat-datepicker-toggle
                         matSuffix
                         [for]="picker2"
@@ -124,9 +133,11 @@
                   <div class="col-sm-6">
                     <div class="toggle-example">
                       <mat-form-field>
-                        <mat-label>Choose an hour</mat-label>
+                        <mat-label *ngIf="!paso1.bloqhora2">Choose an hour</mat-label>
+                        <mat-label *ngIf="paso1.bloqhora2" style="color: red;">Choose an hour*</mat-label>
                         <input
                           matInput
+                          [(ngModel)]="paso1.horafin"[ngModelOptions]="{standalone: true}"
                           [ngxTimepicker]="toggleTimepicker2"
                           [disableClick]="true"
                           readonly
@@ -153,11 +164,10 @@
         <!-- buttons -->
         <div class="progress-bar__bar">
           <!--back button-->
-          <div class="progress-bar__previous" (click)="previous()">
+          <div class="progress-bar__previous" (click)="previous(stepper)">
             <button
               class="progress-bar__button-previous"
               mat-mini-fab
-              matStepperPrevious
             >
               <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
             </button>
@@ -165,12 +175,11 @@
           </div>
           <!--#back button-->
           <!--next button-->
-          <div class="progress-bar__next">
+          <div class="progress-bar__next" (click)="next(stepper)">
             <span class="progress-bar__text-next">Next</span>
             <button
               class="progress-bar__button-next"
               mat-mini-fab
-              matStepperNext
             >
               <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
             </button>
@@ -207,7 +216,7 @@
                       <mat-form-field appearance="outline">
                         <mat-label>Question Name</mat-label>
                         <input
-                          [(ngModel)]="card.preguntaCard"
+                          [(ngModel)]="card.pregunta"
                           type="text"
                           class="input-form"
                           matInput
@@ -240,23 +249,25 @@
                     <mat-radio-group
                       aria-label="Select an option"
                       class="example-radio-group"
-                      name="radioButtonsGroup{{ i }}"
-                      [value]="false"
+                      name="radioButtonsGroup{{ i }}"                      
+                    [(ngModel)]="card.respuesta"
                     >
                       <!-- radio button option -->
                       <mat-radio-button
                         name="grupo{{ i }}"
                         class="question-card-added__choice"
+
                         *ngFor="
-                          let opcionesRadioButton of card.radioButtonContent;
+                          let opcionesRadioButton of card.opciones;
                           let x = index
                         "
+                        [value]="x"
                       >
                         <mat-form-field class="full-width-field">
                           <input
                             [(ngModel)]="
-                              card.radioButtonContent[x].opcionRespuesta
-                            "
+                              opcionesRadioButton[i]
+                            "                            
                             name="grupo{{ x }}{{ i }}"
                             class="question-card-added__choice--input"
                             matInput
@@ -337,11 +348,10 @@
         <!-- buttons -->
         <div class="progress-bar__bar">
           <!--back button-->
-          <div class="progress-bar__previous" (click)="previous()">
+          <div class="progress-bar__previous" (click)="previous(stepper)">
             <button
               class="progress-bar__button-previous"
               mat-mini-fab
-              matStepperPrevious
             >
               <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
             </button>
@@ -349,12 +359,11 @@
           </div>
           <!--#back button-->
           <!--next button-->
-          <div class="progress-bar__next">
+          <div class="progress-bar__next" (click)="next(stepper)">
             <span class="progress-bar__text-next">Next</span>
             <button
               class="progress-bar__button-next"
               mat-mini-fab
-              matStepperNext
             >
               <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
             </button>
@@ -509,7 +518,7 @@
                     <mat-form-field appearance="outline">
                       <mat-label>Question Name</mat-label>
                       <input
-                        [(ngModel)]="card.preguntaCard"
+                        [(ngModel)]="card.pregunta"
                         type="text"
                         class="input-form"
                         matInput
@@ -542,24 +551,22 @@
                   <mat-radio-group
                     aria-label="Select an option"
                     class="example-radio-group"
-                    name="radioButtonsGroup{{ i }}"
-                    [value]="false"
+                    name="radioButtonsGrouppaso3{{ i }}"
+                    [(ngModel)]="card.respuesta"
+                    [ngModelOptions]="{standalone: true}"
+
                   >
                     <!-- radio button option -->
                     <mat-radio-button
-                      name="grupo{{ i }}"
                       class="question-card-added__choice"
-                      *ngFor="
-                        let opcionesRadioButton of card.radioButtonContent;
-                        let x = index
-                      "
+                      *ngFor="let opcionesRadioButton of card.opciones;
+                        let x = index"
+                      [value]="x"
                     >
                       <mat-form-field class="full-width-field">
                         <input
-                          [(ngModel)]="
-                            card.radioButtonContent[x].opcionRespuesta
-                          "
-                          name="grupo{{ x }}{{ i }}"
+                          [(ngModel)]="opcionesRadioButton[i]"
+                          [ngModelOptions]="{standalone: true}"
                           class="question-card-added__choice--input"
                           matInput
                           placeholder="input radio button {{ x }}"
@@ -603,11 +610,10 @@
         <!-- buttons -->
         <div class="progress-bar__bar">
           <!--back button-->
-          <div class="progress-bar__previous" (click)="previous()">
+          <div class="progress-bar__previous" (click)="previous(stepper)">
             <button
               class="progress-bar__button-previous"
               mat-mini-fab
-              matStepperPrevious
             >
               <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
             </button>
@@ -615,12 +621,11 @@
           </div>
           <!--#back button-->
           <!--next button-->
-          <div class="progress-bar__next">
+          <div class="progress-bar__next" (click)="next(stepper)">
             <span class="progress-bar__text-next">Next</span>
             <button
               class="progress-bar__button-next"
               mat-mini-fab
-              matStepperNext
             >
               <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
             </button>
@@ -643,11 +648,10 @@
           <!-- buttons -->
           <div class="progress-bar__bar">
             <!--back button-->
-            <div class="progress-bar__previous" (click)="previous()">
+            <div class="progress-bar__previous" (click)="previous(stepper)">
               <button
                 class="progress-bar__button-previous"
                 mat-mini-fab
-                matStepperPrevious
               >
                 <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
               </button>
@@ -655,12 +659,11 @@
             </div>
             <!--#back button-->
             <!--next button-->
-            <div class="progress-bar__next">
+            <div class="progress-bar__next" (click)="next(stepper)">
               <span class="progress-bar__text-next">Next</span>
               <button
                 class="progress-bar__button-next"
                 mat-mini-fab
-                matStepperNext
               >
                 <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
               </button>

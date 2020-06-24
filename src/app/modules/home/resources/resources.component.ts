@@ -12,6 +12,9 @@ export class ResourcesComponent implements OnInit {
   fileChange(file) {
     this.file = file;
   }
+  agregarSeccion(){
+    
+  }
   subirArchivo() {
     this.servUpload.getUrlvideo().subscribe({
       next: (data) => {

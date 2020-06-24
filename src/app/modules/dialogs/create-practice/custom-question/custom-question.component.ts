@@ -4,34 +4,22 @@ import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 import { Combo } from "src/app/models/ComboBox/comboBox";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { PracticeService } from "src/app/_services/practices_services/practice.service";
+import { Pregunta } from 'src/app/models/Teacher/CreatePractice/Pregunta';
 @Component({
   selector: "app-custom-question",
   templateUrl: "./custom-question.component.html",
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
-  tipoPreguntaSeleccionado: string;
-  pregunta: string;
-  puntuacionPregunta: string;
-  opcionCorrecta: string;
-  radioButtonContent: string;
-  tamanioPreguntas: string[];
+  nuevaPregunta:Pregunta=new Pregunta();
+  
 
   radioButtonOpciones: RadioButtonQuestion[] = [{ opcionRespuesta: "" }];
 
   tipoPregunta: Combo[] = [{ value: "1", display: "Simple" }];
   tipoRespuesta: Combo[] = [{ value: "1", display: "Unique" }];
 
-  message: RadioButtonCompleteCard = {
-    id: 5,
-    puntuacion: 100,
-    preguntaCard: "fill the answer 100",
-    radioButtonContent: [
-      { opcionRespuesta: "a" },
-      { opcionRespuesta: "b" },
-      { opcionRespuesta: "c" },
-    ],
-  };
+  
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private servPractice: PracticeService,
@@ -39,32 +27,66 @@ export class CustomQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //
+    
   }
   //funciones
-  selected() {
-    console.log(this.tipoPreguntaSeleccionado);
+  
+  verificarContenido(){
+    if(this.nuevaPregunta.pregunta==="") this.nuevaPregunta.bloqpreg=true
+    else this.nuevaPregunta.bloqpreg=false
+    
+    if(this.nuevaPregunta.opciones.length==0) this.nuevaPregunta.bloqopci=true
+    else {
+      var i=0;
+      for(let preg of this.nuevaPregunta.opciones){
+        if(preg===""){
+          i++;
+        }
+      }
+      if(i==0) this.nuevaPregunta.bloqopci=false
+      else this.nuevaPregunta.bloqopci=true
+    }
+    
+    if(this.nuevaPregunta.puntuacion==0) this.nuevaPregunta.bloqpunt=true
+    else this.nuevaPregunta.bloqpunt=false
+    
+    
+    if(this.nuevaPregunta.idTipoPregunta==null) this.nuevaPregunta.bloqidtp=true
+    else this.nuevaPregunta.bloqidtp=false
+
+    if(this.nuevaPregunta.idTipoRespuesta==null) this.nuevaPregunta.bloqidtr=true
+    else this.nuevaPregunta.bloqidtr=false
+
+    if(this.nuevaPregunta.bloqidtp==false&&
+      this.nuevaPregunta.bloqidtr==false&&
+      this.nuevaPregunta.bloqopci==false&&
+      this.nuevaPregunta.bloqpreg==false&&
+      this.nuevaPregunta.bloqpunt==false){
+        return true;
+      }
+      else return false;
+    
   }
-  agregarRespuesta() {
-    console.log("clicked");
-    var aux = {
-      opcionRespuesta: "",
-    };
-    this.radioButtonOpciones.push(aux);
+  agregarRespuesta() {    
+    this.radioButtonOpciones.push({
+      opcionRespuesta:""
+    })
   }
   eliminarElemento(i) {
-    console.log("elemt " + i);
     this.radioButtonOpciones.splice(i, 1);
   }
   agregarPreguntaEnContenido() {
-    console.log("titulo :" + this.pregunta);
-    console.log("puntuacion :" + this.puntuacionPregunta);
-    for (let i in this.radioButtonOpciones) {
-      console.log(
-        "contenido pregunta : " + this.radioButtonOpciones[i].opcionRespuesta
-      );
+    this.nuevaPregunta.numeroPreg=this.dataDialog["numero"];
+    this.nuevaPregunta.opciones=[];
+    for(let opcion of this.radioButtonOpciones){
+      this.nuevaPregunta.opciones.push(opcion.opcionRespuesta);
     }
-    console.log("Correcta :" + this.opcionCorrecta);
+    console.log(this.nuevaPregunta);
+   var ver=this.verificarContenido()
+   if(ver){
+     this.dialogRef.close(this.nuevaPregunta);
+   }
+    
 
     // let newLes = new Lesson();
     // newLes.nombre = this.nombrelesson;
@@ -98,12 +120,8 @@ export class CustomQuestionComponent implements OnInit {
   }
   limpiar() {
     console.log("clear");
-    this.pregunta = "";
-    this.puntuacionPregunta = "";
-    this.radioButtonOpciones = [
-      {
-        opcionRespuesta: "",
-      },
-    ];
+    this.nuevaPregunta.pregunta = "";
+    this.nuevaPregunta.puntuacion = 0;
+    this.nuevaPregunta.opciones= [""];
   }
 }
