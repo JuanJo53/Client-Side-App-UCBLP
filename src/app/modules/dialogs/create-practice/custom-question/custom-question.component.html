@@ -9,6 +9,7 @@
           <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red;">*Type of Question</mat-label>
           <mat-select
             [(value)]="nuevaPregunta.idTipoPregunta"
+            (selectionChange)="changeClient($event.value)"
           >
             <mat-option
               *ngFor="let elemento of tipoPregunta"
@@ -58,67 +59,141 @@
   </div>
   <!--#combo box-->
   <!--card-->
-  <div class="card-question">
+  <div class="card-question" [ngSwitch]="tipoPreguntaEscogida">
     <!-- <div class="card__text--no-content">
     </div> -->
-    <div class="container-dialog">
-      <div class="card-question__header">
-        <!--input para pregunta-->
-        <div class="card-question__header--question">
-          <mat-form-field appearance="outline">
-            <mat-label *ngIf="!nuevaPregunta.bloqpreg" >Question Name</mat-label>
-            <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;">*Question Name</mat-label>
-            <input
-              [(ngModel)]="nuevaPregunta.pregunta"
-              type="text"
-              class="input-form"
-              matInput
-              placeholder="Question Name"
-              name="nombre pregunta"
-            />
-          </mat-form-field>
-        </div>
-        <!--#input para pregunta-->
-        <div class="card-question__header--score">
+    <div class="card-question-radio-button" *ngSwitchCase="'Unique'">
+      <div class="container-dialog">
+        <div class="card-question__header">
           <!--input para pregunta-->
-          <div class="card-question__input">
+          <div class="card-question__header--question">
             <mat-form-field appearance="outline">
-              <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-              <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg" >Question Name</mat-label>
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;">*Question Name</mat-label>
               <input
+                [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
                 class="input-form"
                 matInput
-                placeholder="Score Name"
-                name="puntuacion"
-                [(ngModel)]="nuevaPregunta.puntuacion"
+                placeholder="Question Name"
+                name="nombre pregunta"
               />
             </mat-form-field>
           </div>
           <!--#input para pregunta-->
+          <div class="card-question__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
+                <input
+                  type="text"
+                  class="input-form"
+                  matInput
+                  placeholder="Score Name"
+                  name="puntuacion"
+                  [(ngModel)]="nuevaPregunta.puntuacion"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+        
+        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">*Check the answers</h5>
+  
+        <div class="card-question__content">
+          <!-- <form class="example-form"> -->
+          <mat-radio-group
+            aria-label="Select an option"
+            class="example-radio-group"
+            name="radiobuttons"
+            [(ngModel)]="nuevaPregunta.respuesta"
+          >
+            <!-- radio button option -->
+            <mat-radio-button
+              class="card-question__choice"
+              *ngFor="let opcion of radioButtonOpciones; let i = index"
+              [value]="i"
+            >
+              <mat-form-field class="full-width-field">
+                <input
+                  [(ngModel)]="opcion.opcionRespuesta"
+                  [ngModelOptions]="{standalone: true}"
+                  class="card-question__choice--input"
+                  matInput
+                  placeholder="opcion"
+                />
+              </mat-form-field>
+              <button class="card-question__choice--button-delete">
+                <mat-icon
+                  class="card-question__choice--button-delete-icon"
+                  (click)="eliminarElemento(i)"
+                  >close</mat-icon
+                >
+              </button>
+              <!--#radio button option-->
+            </mat-radio-button>
+          </mat-radio-group>
+          <button mat-mini-fab class="card-question__button--add">
+            <mat-icon (click)="agregarRespuesta(tipoPreguntaEscogida)">add</mat-icon>
+          </button>
+          <!-- </form> -->
         </div>
       </div>
-      
-      <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">*Check the answers</h5>
+    </div>
 
-      <div class="card-question__content">
-        <!-- <form class="example-form"> -->
-        <mat-radio-group
-          aria-label="Select an option"
-          class="example-radio-group"
-          name="radiobuttons"
-          [(ngModel)]="nuevaPregunta.respuesta"
-        >
+    <!-- #radio button question-->
+    <!-- checkbox question-->
+    <div class="card-question-radio-button" *ngSwitchCase="'Multiple'">
+      <div class="container-dialog">
+        <div class="card-question__header">
+          <!--input para pregunta-->
+          <div class="card-question__header--question">
+            <mat-form-field appearance="outline">
+              <mat-label>Question</mat-label>
+              <input
+                [(ngModel)]="pregunta"
+                type="text"
+                class="input-form"
+                matInput
+                placeholder="Question Name"
+                name="nombre pregunta"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+          <div class="card-question__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label>Score</mat-label>
+                <input
+                  type="text"
+                  class="input-form"
+                  matInput
+                  placeholder="Score Name"
+                  name="puntuacion"
+                  [(ngModel)]="puntuacionPregunta"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+        <div class="card-question__content">
+          <!-- <form class="example-form"> -->
           <!-- radio button option -->
-          <mat-radio-button
+          <mat-checkbox
             class="card-question__choice"
-            *ngFor="let opcion of radioButtonOpciones; let i = index"
-            [value]="i"
+            *ngFor="let opcionesCB of checkboxOpciones; let i = index"
+            [(ngModel)]="checkboxOpciones[i].isChecked"
           >
             <mat-form-field class="full-width-field">
               <input
-                [(ngModel)]="opcion.opcionRespuesta"
-                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="checkboxOpciones[i].opcionRespuesta"
+                name="a{{ i }}"
                 class="card-question__choice--input"
                 matInput
                 placeholder="opcion"
@@ -132,14 +207,18 @@
               >
             </button>
             <!--#radio button option-->
-          </mat-radio-button>
-        </mat-radio-group>
-        <button mat-mini-fab class="card-question__button--add">
-          <mat-icon (click)="agregarRespuesta()">add</mat-icon>
-        </button>
-        <!-- </form> -->
+          </mat-checkbox>
+
+          <button mat-mini-fab class="card-question__button--add">
+            <mat-icon (click)="agregarRespuesta(tipoPreguntaEscogida)"
+              >add</mat-icon
+            >
+          </button>
+          <!-- </form> -->
+        </div>
       </div>
     </div>
+    <!-- #checkbox question-->
   </div>
   <!--#card-->
 </mat-dialog-content>
@@ -151,7 +230,7 @@
     <button mat-raised-button class="progress-bar__button-normal">
       <span
         class="progress-bar__button-normal--text"
-        (click)="agregarPreguntaEnContenido()"
+        (click)="agregarPreguntaEnContenido(tipoPreguntaEscogida)"
         >Add question</span
       >
     </button>
