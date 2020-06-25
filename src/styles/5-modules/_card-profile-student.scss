@@ -1,0 +1,38 @@
+@import "1-helpers/mixins";
+.card-profile-student-container {
+  display: flex;
+  justify-content: center;
+}
+.card-profile-student {
+  margin-top: 4rem;
+  @include custom-card-header(35rem, 20.5rem, $color-primary-white);
+  &__header {
+    border-radius: 3rem 3rem 0rem 0rem;
+    background-color: $color-primary-blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0rem;
+  }
+  &__title {
+    color: $color-primary-white;
+    font-size: 2rem;
+  }
+  &__body {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+  &__characteristic {
+    display: flex;
+    justify-content: space-between;
+    color: $color-primary-blue;
+    //background-color: yellow;
+    margin: 2rem 0rem;
+    font-size: 1.5rem;
+    &--subtitle {
+      //background-color: orange;
+      font-weight: bold;
+    }
+  }
+}

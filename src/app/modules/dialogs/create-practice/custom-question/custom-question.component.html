@@ -29,6 +29,7 @@
           <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red;">*Type of answer</mat-label>
           <mat-select
             [(value)]="nuevaPregunta.idTipoRespuesta"
+            (selectionChange)="changeClient($event.value)"
           >
             <mat-option
               *ngFor="let elemento of tipoRespuesta"
@@ -45,7 +46,7 @@
       <button
         mat-raised-button
         class="progress-bar__button-normal"
-        (click)="limpiar()"
+        (click)="limpiar(tipoPreguntaEscogida)"
       >
         <div class="progress-bar__button-container">
           <mat-icon class="progress-bar__button-normal--icon"

@@ -49,6 +49,12 @@ export class DeleteCardComponent implements OnInit {
       case "Custom Module":
         this.eliminarModuloPersonalizado();
         break;
+      case "Seccion Module":
+        this.eliminarSeccionRecursos();
+        break;
+      case "Document Module":
+        this.eliminarDocumentoRecursos();
+        break;
     }
   }
 
@@ -122,6 +128,7 @@ export class DeleteCardComponent implements OnInit {
   //eliminar respeusta de forum
   eliminarRespuestaForum() { }
   //eliminar modulo personalizado
-  eliminarModuloPersonalizado(){}
-  
+  eliminarModuloPersonalizado() { }
+  eliminarSeccionRecursos() { }
+  eliminarDocumentoRecursos() { }
 }

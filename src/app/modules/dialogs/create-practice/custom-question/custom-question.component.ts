@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCompleteCard";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
+import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox;
 import { Combo } from "src/app/models/ComboBox/comboBox";
 import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
@@ -76,13 +77,25 @@ export class CustomQuestionComponent implements OnInit {
       else return false;
     
   }
-  changeClient(event) {
-    this.tipoPreguntaEscogida = event;
-  }
-  agregarRespuesta() {    
+  agregarRespuesta(tipoDePregunta) {    
     this.radioButtonOpciones.push({
       opcionRespuesta:""
     })
+    var aux = {
+      opcionRespuesta: "",
+    };
+    var auxCheckbox = {
+      opcionRespuesta: "",
+      isChecked: false,
+    };
+    switch (tipoDePregunta) {
+      case "Unique":
+        this.radioButtonOpciones.push(aux);
+        break;
+      case "Multiple":
+        this.checkboxOpciones.push(auxCheckbox);
+        break;
+    }
   }
   eliminarElemento(i) {
     this.radioButtonOpciones.splice(i, 1);
@@ -98,44 +111,42 @@ export class CustomQuestionComponent implements OnInit {
    if(ver){
      this.dialogRef.close(this.nuevaPregunta);
    }
-    
-
-    // let newLes = new Lesson();
-    // newLes.nombre = this.nombrelesson;
-    // newLes.idTipoLeccion = String(this.typeSelected);
-    // newLes.idImagen = String(this.imageSelected);
-    // newLes.numeroLeccion = this.numero;
-    // newLes.idTema = this.dataDialog["idTema"];
-    // this.servPractice.addRadioButtonQuestion(newLes).subscribe({
-    //   next: (data) => {
-    //     if (data.status == 200) {
-    //       this.servPractice.getLessons(this.dataDialog["idTema"]).subscribe({
-    //         next: (data) => {
-    //           console.log(data);
-    //           this.dialogRef.close(data.body);
-    //         },
-    //         error: (error) => {
-    //           console.log(error);
-    //           this.dialogRef.close();
-    //         },
-    //       });
-    //     } else {
-    //       console.log("No se pudo actualizar la pregunta");
-    //       this.dialogRef.close();
-    //     }
-    //   },
-    //   error: (error) => {
-    //     console.log("No se pudo Actualizar la pregunta");
-    //     this.dialogRef.close();
-    //   },
-    // });
   }
-  limpiar() {
+
+  limpiar(tipoDePregunta) {
     console.log("clear");
     this.nuevaPregunta.pregunta = "";
     this.nuevaPregunta.puntuacion = 0;
     this.nuevaPregunta.opciones= [""];
+    this.radioButtonOpciones = [
+      {
+        opcionRespuesta: "",
+      },
+    ];
+
+
+    switch (tipoDePregunta) {
+      case "Unique":
+        this.radioButtonOpciones = [
+          {
+            opcionRespuesta: "",
+          },
+        ];
+
+        break;
+      case "Multiple":
+        this.checkboxOpciones = [
+          { opcionRespuesta: "", isChecked: false },
+        ];
+        break;
+    }
   }
+
+  changeClient(event) {
+    this.tipoPreguntaEscogida = event;
+    console.log("tipo de pregunta : " + this.tipoPreguntaEscogida);
+  }
+
   // agregarPreguntaEnContenido(tipoDePregunta) {
   //   switch (tipoDePregunta) {
   //     case "Unique":
