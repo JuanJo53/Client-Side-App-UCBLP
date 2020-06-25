@@ -63,7 +63,7 @@
   <div class="card-question" [ngSwitch]="tipoPreguntaEscogida">
     <!-- <div class="card__text--no-content">
     </div> -->
-    <div class="card-question-radio-button" *ngSwitchCase="'Unique'">
+    <div class="card-question-radio-button" *ngSwitchCase="'1'">
       <div class="container-dialog">
         <div class="card-question__header">
           <!--input para pregunta-->
@@ -147,7 +147,7 @@
 
     <!-- #radio button question-->
     <!-- checkbox question-->
-    <div class="card-question-radio-button" *ngSwitchCase="'Multiple'">
+    <div class="card-question-radio-button" *ngSwitchCase="'2'">
       <div class="container-dialog">
         <div class="card-question__header">
           <!--input para pregunta-->
@@ -155,7 +155,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Question</mat-label>
               <input
-                [(ngModel)]="pregunta"
+                [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
                 class="input-form"
                 matInput
@@ -176,7 +176,7 @@
                   matInput
                   placeholder="Score Name"
                   name="puntuacion"
-                  [(ngModel)]="puntuacionPregunta"
+                  [(ngModel)]="nuevaPregunta.puntuacion"
                 />
               </mat-form-field>
             </div>

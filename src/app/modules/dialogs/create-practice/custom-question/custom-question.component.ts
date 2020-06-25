@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCompleteCard";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
-import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox;
 import { Combo } from "src/app/models/ComboBox/comboBox";
 import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
@@ -100,7 +99,7 @@ export class CustomQuestionComponent implements OnInit {
   eliminarElemento(i) {
     this.radioButtonOpciones.splice(i, 1);
   }
-  agregarPreguntaEnContenido() {
+  agregarPreguntaEnContenido(tipoPregunta) {
     this.nuevaPregunta.numeroPreg=this.dataDialog["numero"];
     this.nuevaPregunta.opciones=[];
     for(let opcion of this.radioButtonOpciones){
