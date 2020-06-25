@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from "@angular/core";
 import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCompleteCard";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 import { Combo } from "src/app/models/ComboBox/comboBox";
+import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { PracticeService } from "src/app/_services/practices_services/practice.service";
 import { Pregunta } from 'src/app/models/Teacher/CreatePractice/Pregunta';
@@ -11,13 +12,21 @@ import { Pregunta } from 'src/app/models/Teacher/CreatePractice/Pregunta';
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
+  tipoPreguntaSeleccionado: string;
   nuevaPregunta:Pregunta=new Pregunta();
+  tipoPreguntaEscogida: string = "1";
   
 
   radioButtonOpciones: RadioButtonQuestion[] = [{ opcionRespuesta: "" }];
+  checkboxOpciones: CheckboxQuestion[] = [
+    { opcionRespuesta: "", isChecked: false },
+  ];
 
   tipoPregunta: Combo[] = [{ value: "1", display: "Simple" }];
-  tipoRespuesta: Combo[] = [{ value: "1", display: "Unique" }];
+  tipoRespuesta: Combo[] = [
+    { value: "1", display: "Unique" },
+    { value: "2", display: "Multiple" },
+  ];
 
   
   constructor(
@@ -66,6 +75,9 @@ export class CustomQuestionComponent implements OnInit {
       }
       else return false;
     
+  }
+  changeClient(event) {
+    this.tipoPreguntaEscogida = event;
   }
   agregarRespuesta() {    
     this.radioButtonOpciones.push({
@@ -124,4 +136,32 @@ export class CustomQuestionComponent implements OnInit {
     this.nuevaPregunta.puntuacion = 0;
     this.nuevaPregunta.opciones= [""];
   }
+  // agregarPreguntaEnContenido(tipoDePregunta) {
+  //   switch (tipoDePregunta) {
+  //     case "Unique":
+  //       console.log("titulo :" + this.pregunta);
+  //       console.log("puntuacion :" + this.puntuacionPregunta);
+  //       for (let i in this.radioButtonOpciones) {
+  //         console.log(
+  //           "contenido pregunta : " +
+  //             this.radioButtonOpciones[i].opcionRespuesta
+  //         );
+  //       }
+  //       console.log("Correcta :" + this.opcionCorrecta);
+  //       break;
+  //     case "Multiple":
+  //       console.log("multiple");
+  //       console.log("titulo :" + this.pregunta);
+  //       console.log("puntuacion :" + this.puntuacionPregunta);
+  //       for (let i in this.checkboxOpciones) {
+  //         console.log(
+  //           "contenido pregunta : " +
+  //             this.checkboxOpciones[i].opcionRespuesta +
+  //             "checked?" +
+  //             this.checkboxOpciones[i].isChecked
+  //         );
+  //       }
+  //       break;
+  //   }
+  // }
 }
