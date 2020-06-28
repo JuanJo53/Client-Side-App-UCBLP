@@ -66,6 +66,7 @@ import { EditDocumentComponent } from "src/app/modules/dialogs/resources/edit-do
 import { StudentsProfileComponent } from "src/app/modules/home/my-class/students-profile/students-profile.component";
 import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component";
 import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -139,6 +140,7 @@ import { OthersScoreComponent } from "src/app/modules/home/my-class/students-pro
     MatStepperModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
+    MatCheckboxModule
   ],
 })
 export class DefaultModule {}
