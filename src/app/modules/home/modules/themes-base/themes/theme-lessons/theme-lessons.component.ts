@@ -55,8 +55,33 @@ export class ThemeLessonsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {}
+  agregarPracticas(data){
+    this.practices=[];
+    for(let practica of data){
+      this.practices.push({
+        color: "#D77A61",
+        titulo:practica.nombre_practica,
+        id:practica.id_practica
+      })
+    }
+  }
+  ngOnInit(): void {
+    this.route.data.subscribe({
+      next:(data)=>{
+        if(data.practicas.status==200){
+          this.agregarPracticas(data.practicas.body)
+        }
+        else{
+          console.log("error");
 
-  ngOnInit(): void {}
+        }
+      },
+      error:(error)=>{
+        console.log(error);
+
+      }
+    })
+  }
   //-----funciones-----
 
   agregarTemas() {

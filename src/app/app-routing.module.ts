@@ -37,10 +37,13 @@ import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.r
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
+import { GetPracticesResolver } from './_resolvers/docente/practices/get-practices.resolver';
 
 const routes: Routes = [
+  
   {
     path: "",
+
     component: LoginComponent,
     resolve: { login: AuthDocenteResolver },
   },
@@ -157,11 +160,15 @@ const routes: Routes = [
                     component: ThemeContentComponent,
                   },
                   {
-                    path: "lessons",
+                    path: ":idLeccion",
                     //component: ThemeLessonsComponent,
                     children: [
                       {
                         path: "",
+                        resolve:{
+                          practicas:GetPracticesResolver
+                        },
+                        runGuardsAndResolvers:"always",
                         component: ThemeLessonsComponent,
                       },
                       {
