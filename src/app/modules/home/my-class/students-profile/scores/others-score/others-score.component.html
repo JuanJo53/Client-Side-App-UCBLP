@@ -1,0 +1,64 @@
+<div class="container">
+
+    <div *ngFor="let seccion of ListaNotasAsistencia; let i = index">
+        <!--Subtitle-->
+        <div class="subtitle-compound">
+            <div class="subtitle-compound__text">
+                <span>{{ seccion.Nombre }}</span>
+            </div>
+        </div>
+        <!--#Subtitle-->
+        <!--tables-->
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="seccion.OtherScoreContent" matSort class="mat-header-row">
+                <!-- Period Column -->
+                <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef class="header-table">
+                        Name
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.nombre }}
+                    </td>
+                </ng-container>
+                <!-- #Period  Column -->
+                <!--  date Column -->
+                <ng-container matColumnDef="nota">
+                    <th mat-header-cell *matHeaderCellDef class="header-table">
+                       Score
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.nota}}
+                    </td>
+                </ng-container>
+                <!-- # date Column -->
+                <!-- Buttons Column -->
+                <ng-container matColumnDef="acciones">
+                    <th mat-header-cell *matHeaderCellDef class="header-table">
+                        Actions
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button class="circular-button-subtitle" mat-mini-fab>
+                            <!--repeat-->
+                            <mat-icon class="circular-button-subtitle__icon">repeat</mat-icon>
+                            <!--#repeat-->
+                        </button>
+                        <button class="circular-button-subtitle" mat-mini-fab>
+                            <!--repeat-->
+                            <mat-icon class="circular-button-subtitle__icon">  remove_red_eye</mat-icon>
+                            <!--#repeat-->
+                            
+                        </button>
+                    </td>
+                </ng-container>
+
+                
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            
+            </table>
+            <!--#tables-->
+        </div>
+        <div class="subtitle-average-table"><span>Average: 85.5</span></div> 
+    </div>
+</div>

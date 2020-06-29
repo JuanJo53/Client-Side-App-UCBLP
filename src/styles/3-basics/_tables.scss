@@ -42,3 +42,12 @@ th.mat-header-cell {
 .resource_type_icon {
   color: $color-primary-blue;
 }
+.subtitle-average-table {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: $color-primary-blue;
+  
+}
