@@ -51,6 +51,7 @@ const routes: Routes = [
     path: "building",
     component: BuildingPageComponent,
   },
+  
   {
     path: "classroom",
     component: ChoosingClassroomComponent,
@@ -66,7 +67,9 @@ const routes: Routes = [
     children: [
       {
         path: "dashboard",
-        component: DashboardComponent,
+        // path: "building",
+        component: BuildingPageComponent,
+        // component: DashboardComponent,
       },
       {
         path: "my-class",
@@ -78,13 +81,13 @@ const routes: Routes = [
             },
             component: StudentsComponent,
           },
-          {
-            path: "attendance",
-            resolve: {
-              fechas: GetFechasAsistenciaResolver,
-            },
-            component: AssistanceComponent,
-          },
+          // {
+          //   path: "attendance",
+          //   resolve: {
+          //     fechas: GetFechasAsistenciaResolver,
+          //   },
+          //   component: AssistanceComponent,
+          // },
           {
             path: "qualification",
             children: [
@@ -188,6 +191,7 @@ const routes: Routes = [
         ],
       },
       {
+        
         path: "resources",
         component: ResourcesComponent,
       },
@@ -200,7 +204,12 @@ const routes: Routes = [
           images: GetImagesIdResolver,
         },
       },
-    ],
+     
+    ],  
+  }, 
+  {
+    path: '**',
+    redirectTo: "building",
   },
 ];
 
