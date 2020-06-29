@@ -8,8 +8,8 @@
           <mat-label *ngIf="!nuevaPregunta.bloqidtp">Type of Question</mat-label>
           <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red;">*Type of Question</mat-label>
           <mat-select
+            [(ngModel)]="nuevaPregunta.idTipoPregunta"
             [(value)]="nuevaPregunta.idTipoPregunta"
-            (selectionChange)="changeClient($event.value)"
           >
             <mat-option
               *ngFor="let elemento of tipoPregunta"
@@ -46,7 +46,7 @@
       <button
         mat-raised-button
         class="progress-bar__button-normal"
-        (click)="limpiar(tipoPreguntaEscogida)"
+        (click)="limpiar()"
       >
         <div class="progress-bar__button-container">
           <mat-icon class="progress-bar__button-normal--icon"
@@ -60,7 +60,7 @@
   </div>
   <!--#combo box-->
   <!--card-->
-  <div class="card-question" [ngSwitch]="tipoPreguntaEscogida">
+  <div class="card-question" [ngSwitch]="nuevaPregunta.idTipoRespuesta">
     <!-- <div class="card__text--no-content">
     </div> -->
     <div class="card-question-radio-button" *ngSwitchCase="'1'">
@@ -89,7 +89,7 @@
                 <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
                 <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
                 <input
-                  type="text"
+                  type="number"
                   class="input-form"
                   matInput
                   placeholder="Score Name"
@@ -110,7 +110,7 @@
             aria-label="Select an option"
             class="example-radio-group"
             name="radiobuttons"
-            [(ngModel)]="nuevaPregunta.respuesta"
+            [(ngModel)]="nuevaPregunta.respuesta[0]"
           >
             <!-- radio button option -->
             <mat-radio-button
@@ -137,8 +137,8 @@
               <!--#radio button option-->
             </mat-radio-button>
           </mat-radio-group>
-          <button mat-mini-fab class="card-question__button--add">
-            <mat-icon (click)="agregarRespuesta(tipoPreguntaEscogida)">add</mat-icon>
+          <button mat-mini-fab class="card-question__button--add" (click)="agregarRespuesta()">
+            <mat-icon >add</mat-icon>
           </button>
           <!-- </form> -->
         </div>
@@ -153,8 +153,9 @@
           <!--input para pregunta-->
           <div class="card-question__header--question">
             <mat-form-field appearance="outline">
-              <mat-label>Question</mat-label>
-              <input
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg" >Question Name</mat-label>
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;">*Question Name</mat-label>
+               <input
                 [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
                 class="input-form"
@@ -169,9 +170,10 @@
             <!--input para pregunta-->
             <div class="card-question__input">
               <mat-form-field appearance="outline">
-                <mat-label>Score</mat-label>
+                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
                 <input
-                  type="text"
+                  type="number"
                   class="input-form"
                   matInput
                   placeholder="Score Name"
@@ -183,6 +185,8 @@
             <!--#input para pregunta-->
           </div>
         </div>
+        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">*Check the answers</h5>
+  
         <div class="card-question__content">
           <!-- <form class="example-form"> -->
           <!-- radio button option -->
@@ -200,18 +204,22 @@
                 placeholder="opcion"
               />
             </mat-form-field>
-            <button class="card-question__choice--button-delete">
+            <button 
+            
+            (click)="eliminarElemento(i)"
+            class="card-question__choice--button-delete">
               <mat-icon
                 class="card-question__choice--button-delete-icon"
-                (click)="eliminarElemento(i)"
                 >close</mat-icon
               >
             </button>
             <!--#radio button option-->
           </mat-checkbox>
 
-          <button mat-mini-fab class="card-question__button--add">
-            <mat-icon (click)="agregarRespuesta(tipoPreguntaEscogida)"
+          <button 
+          (click)="agregarRespuesta()"
+          mat-mini-fab class="card-question__button--add">
+            <mat-icon 
               >add</mat-icon
             >
           </button>
@@ -225,13 +233,15 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <div class="progress-bar__container-mix">
-    <button mat-raised-button class="progress-bar__button-negative">
+    <button mat-raised-button class="progress-bar__button-negative"
+    (click)="cancelar()">
       <span class="progress-bar__button-normal--text">Cancel</span>
     </button>
-    <button mat-raised-button class="progress-bar__button-normal">
+    <button 
+    (click)="agregarPreguntaEnContenido()"
+    mat-raised-button class="progress-bar__button-normal">
       <span
         class="progress-bar__button-normal--text"
-        (click)="agregarPreguntaEnContenido(tipoPreguntaEscogida)"
         >Add question</span
       >
     </button>
