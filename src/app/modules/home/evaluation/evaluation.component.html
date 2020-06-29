@@ -18,7 +18,7 @@
   <div class="row">
     <!--evaluation-card-attendance  -->
     <div
-      *ngFor="let preCard of defaultCard"
+      *ngFor="let preCard of cardsModulosPred"
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
@@ -26,9 +26,9 @@
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': preCard.colorFondo
+              'background-color': colores[preCard.idColor-1].color+'A6'
             }"
-          >
+          > 
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
               <button class="circular-button-custom-card" (click)="configuracionModulo()">
@@ -41,11 +41,11 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': preCard.colorCirculo }"
+                [ngStyle]="{ 'background-color': colores[preCard.idColor-1].color}"
               >
-                {{ preCard.porcentaje }}
+                {{ preCard.rubrica}}%
               </div>
-              <div class="evaluation-card__title">{{ preCard.titulo }}</div>
+              <div class="evaluation-card__title">{{ preCard.nombreModulo }}</div>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
   <div class="row">
     <!--evaluation-card-attendance  -->
     <div
-      *ngFor="let custCards of customCards"
+      *ngFor="let custCards of cardsModulosPers"
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
@@ -80,7 +80,7 @@
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': custCards.colorFondo
+              'background-color': colores[custCards.idColor].color+'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
@@ -102,11 +102,11 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': custCards.colorCirculo }"
+                [ngStyle]="{ 'background-color': colores[custCards.idColor].color }"
               >
-                {{ custCards.porcentaje }}
+                {{ custCards.rubrica }}%
               </div>
-              <div class="evaluation-card__title">{{ custCards.titulo }}</div>
+              <div class="evaluation-card__title">{{ custCards.nombreModulo}}</div>
             </div>
           </div>
         </div>

@@ -4,17 +4,6 @@
     <div class="subtitle-compound__text">
       <span>General Notes</span>
     </div>
-    <!-- <div class="subtitle-compound__buttons-container"> -->
-    <!--Add button-->
-    <!-- <button
-        class="circular-button-subtitle"
-        mat-mini-fab
-        (click)="agregarEstudiante()"
-      >
-        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
-      </button> -->
-    <!--#Add button-->
-    <!-- </div> -->
   </div>
   <!--#Subtitle-->
   <!--tables-->
@@ -124,7 +113,7 @@
           Actions
         </th>
         <td mat-cell *matCellDef="let element">
-          <button class="circular-button-table--normal" mat-mini-fab>
+          <button class="circular-button-table--normal" mat-mini-fab (click)="irPerfilEstudiante()">
             <!--usuario-->
             <span class="circular-button-table__icon"><i class="fas fa-user"></i>
             </span>

@@ -41,6 +41,33 @@ const ELEMENT_DATA: ListaDeForos[] = [
   styleUrls: ["./resources.component.scss"],
 })
 export class ResourcesComponent implements OnInit {
+  file: any;
+  constructor(
+    private servUpload: UploadFilesService,
+    public dialog: MatDialog
+  ) {}
+  fileChange(file) {
+    this.file = file;
+  }
+  subirArchivo() {
+    this.servUpload.getUrlvideo().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.servUpload
+          .subirArchivo(data.body[0], this.file.target.files[0])
+          .subscribe({
+            next: (data2) => {
+              console.log(data2);
+            },
+            error: (error) => {
+              console.log(error);
+            },
+          });
+      },
+      error: (error) => {},
+    });
+  }
+  ngOnInit(): void {}
   ListaSecciones: ResourceSection[] = [
     {
       nombreSeccion: "seccion 1",
@@ -91,9 +118,7 @@ export class ResourcesComponent implements OnInit {
 
   //dataSource = new MatTableDataSource(ELEMENT_DATA);
   displayedColumns: string[] = ["tipoDocumento", "nombreDocumento", "id"];
-  constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
   //funciones
   agregarSeccion() {
     console.log("clicked");

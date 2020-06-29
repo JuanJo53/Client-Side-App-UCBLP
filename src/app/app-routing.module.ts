@@ -13,6 +13,10 @@ import { AssessmentsComponent } from "./modules/home/modules/assessments/assessm
 import { StudentsComponent } from "./modules/home/my-class/students/students.component";
 import { AssistanceComponent } from "./modules/home/my-class/assistance/assistance.component";
 import { QualificationComponent } from "./modules/home/my-class/qualification/qualification.component";
+import { StudentsProfileComponent } from "./modules/home/my-class/students-profile/students-profile.component";
+import { AttendanceScoreComponent } from "./modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component";
+
+import { OthersScoreComponent } from "./modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
@@ -80,7 +84,29 @@ const routes: Routes = [
           },
           {
             path: "qualification",
-            component: QualificationComponent,
+            children: [
+              {
+                path: "",
+                component: QualificationComponent,
+              },
+              {
+                path: "profile-students",
+                children: [
+                  {
+                    path: "",
+                    component: StudentsProfileComponent,
+                  },
+                  {
+                    path: "attendance-score",
+                    component: AttendanceScoreComponent,
+                  },
+                  {
+                    path: "others-score",
+                    component: OthersScoreComponent,
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
