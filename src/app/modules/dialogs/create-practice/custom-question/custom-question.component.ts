@@ -71,12 +71,6 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   eliminarElemento(i) {
-    // switch (tipoDePregunta) {
-    //   case "Unique":
-    //     break;
-    //   case "Multiple":
-    //     break;
-    // }
     console.log("elemt " + i);
     this.radioButtonOpciones.splice(i, 1);
   }
@@ -85,13 +79,6 @@ export class CustomQuestionComponent implements OnInit {
     console.log("clear");
     this.pregunta = "";
     this.puntuacionPregunta = "";
-    this.radioButtonOpciones = [
-      {
-        opcionRespuesta: "",
-      },
-    ];
-
-
     switch (tipoDePregunta) {
       case "Unique":
         this.radioButtonOpciones = [
