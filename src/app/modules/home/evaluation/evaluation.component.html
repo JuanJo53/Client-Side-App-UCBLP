@@ -22,7 +22,8 @@
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img">
+        <div class="evaluation-card__img" [ngStyle]="{
+          'background-image': 'url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)'}">
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
@@ -69,14 +70,15 @@
   </div>
   <!--#Subtitle-->
   <!--row-->
-  <div class="row">
+  <div class="row last-component">
     <!--evaluation-card-attendance  -->
     <div
       *ngFor="let custCards of cardsModulosPers"
-      class="col-lg-3 col-md-6 col-xs-12"
+      class="col-lg-3 col-md-6 col-xs-12 "
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img">
+        <div class="evaluation-card__img" [ngStyle]="{
+          'background-image': 'url(https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80)'}" >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
