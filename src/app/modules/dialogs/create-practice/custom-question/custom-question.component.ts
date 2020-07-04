@@ -122,6 +122,7 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   eliminarElemento(i) {
+<<<<<<< HEAD
     switch (this.nuevaPregunta.idTipoRespuesta) {
       case "1":
         this.radioButtonOpciones.splice(i, 1);
@@ -130,10 +131,15 @@ export class CustomQuestionComponent implements OnInit {
         this.checkboxOpciones.splice(i, 1);
         break;
     }
+=======
+    console.log("elemt " + i);
+    this.radioButtonOpciones.splice(i, 1);
+>>>>>>> deeae8bdabf71fc032f8c4590fb63db6dce3d8f3
   }
   agregarRespuestasNuevo(){
     switch(this.nuevaPregunta.idTipoRespuesta){
 
+<<<<<<< HEAD
       case "1":
         for(let opcion of this.radioButtonOpciones){
           this.nuevaPregunta.opciones.push(opcion.opcionRespuesta);
@@ -185,6 +191,27 @@ export class CustomQuestionComponent implements OnInit {
        opcionRespuesta:""
       },
     ];
+=======
+  limpiar(tipoDePregunta) {
+    console.log("clear");
+    this.pregunta = "";
+    this.puntuacionPregunta = "";
+    switch (tipoDePregunta) {
+      case "Unique":
+        this.radioButtonOpciones = [
+          {
+            opcionRespuesta: "",
+          },
+        ];
+
+        break;
+      case "Multiple":
+        this.checkboxOpciones = [
+          { opcionRespuesta: "", isChecked: false },
+        ];
+        break;
+    }
+>>>>>>> deeae8bdabf71fc032f8c4590fb63db6dce3d8f3
   }
 
   changeClient(event) {
