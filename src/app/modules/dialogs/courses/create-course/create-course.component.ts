@@ -13,4 +13,5 @@ export class CreateCourseComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  guardarCurso(){}
 }
