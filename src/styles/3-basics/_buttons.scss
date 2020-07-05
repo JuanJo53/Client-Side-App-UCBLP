@@ -177,6 +177,9 @@
 //-----button inside dialog-----
 .dialog-circular-button {
   background-color: $color-primary-blue !important;
+  &__delete{
+    background-color: $color-primary-red !important;
+  }
 }
 .dialog-button-cancel {
   background-color: $color-primary-red !important;
@@ -238,6 +241,13 @@
   &:focus {
     outline: 0;
   }
+}
+
+.dialog-circular-minus{
+  background-color: $color-secondary-blue;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
 }
 // #module buttons
 
