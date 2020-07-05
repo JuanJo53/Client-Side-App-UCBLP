@@ -1,72 +1,115 @@
 <div class="dialog">
-    <div class="dialog-subtitle">
-        <div class="dialog-subtitle__text">
-            <span>Add Clasroom</span>
-        </div>
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Add Clasroom</span>
     </div>
-    <mat-dialog-content class="mat-typography">
-        <form class="dialogforms" enctype="multipart/form-data">
-            <!--nombre de classroom-->
-            <mat-form-field appearance="outline">
-                <mat-label>Classroom's name</mat-label>
-                <!-- Input para el nombre del modulo-->
-                <input type="text" 
-                class="input-form" 
-                matInput placeholder="Classroom's name" 
-                name="nombreClasroom"                
-                 [(ngModel)]="nombreClassroom" />
-                <!-- //Input para el nombre del modulo-->
-            </mat-form-field>
-            <!--#nombre de classroom-->
-            <!--cantidad estudiantes-->
-            <div class="combo-box-dialog">
-                <mat-form-field>
-                  <mat-label>Cantidad de estudiantes</mat-label>
-                  <mat-select [(value)]="valueQuantity" >
-                    <mat-option *ngFor="let elemento of cantidadEstudiantes" [value]="elemento">
-                      {{ elemento }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-            <!--#cantidad estudiantes-->
-            
-            <!-- <div class="combo-box">
-                <mat-form-field>
-                  <mat-label>Colors</mat-label>
-                  <mat-select
-                  [(value)]="valueColor" >
-                    <mat-option *ngFor="let elemento of colores" [value]="elemento.value"
-                    [ngStyle]="{
-                        'background-color': elemento.display+'A6'
-                      }" >
-                      {{ elemento.display }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="combo-box">
-                <mat-form-field>
-                  <mat-label>Images</mat-label>
-                  <mat-select [(value)]="valueImage" >
-                    <mat-option *ngFor="let elemento of imagenes" [value]="elemento.value">
-                      {{ elemento.display }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div> -->
-        </form>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-        <!--btn cancel-->
-        <button mat-button mat-dialog-close class="dialog-button-cancel">
-            Cancel
-        </button>
-        <!--#btn cancel-->
-        <!-- btn accept-->
-        <button mat-button class="dialog-button-accept" >
-            Save course
-        </button>
-    </mat-dialog-actions>
-    <!-- #btn accept-->
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogforms" enctype="multipart/form-data">
+      <!--nombre de classroom-->
+      <mat-form-field appearance="outline">
+        <mat-label>Classroom's name</mat-label>
+        <!-- Input para el nombre del modulo-->
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder="Classroom's name"
+          name="nombreClasroom"
+          [(ngModel)]="nombreClassroom"
+        />
+        <!-- //Input para el nombre del modulo-->
+      </mat-form-field>
+      <!--#nombre de classroom-->
+      <!--cantidad estudiantes-->
+      <div class="combo-box-dialog">
+        <mat-form-field>
+          <mat-label>Cantidad de estudiantes</mat-label>
+          <mat-select [(value)]="valueQuantity">
+            <mat-option
+              *ngFor="let elemento of cantidadEstudiantes"
+              [value]="elemento"
+            >
+              {{ elemento }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--#cantidad estudiantes-->
+    </form>
+  </mat-dialog-content>
+  <!--document uploaded-->
+  <div class="dialog-subtitle-compound">
+    <div class="dialog-subtitle-compound__text">
+      <span>Schedule</span>
+    </div>
+    <div class="dialog-subtitle-compound__buttons-container">
+      <button class="dialog-circular-button" mat-mini-fab>
+        <mat-icon class="dialog-circular-button__icon">add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="row dialog-schedule">
+    <!--dia de la semana-->
+    <mat-form-field class="col-xs-4">
+      <mat-label>Day</mat-label>
+      <mat-select [(value)]="valueQuantity">
+        <mat-option
+          *ngFor="let elemento of cantidadEstudiantes"
+          [value]="elemento"
+        >
+          {{ elemento }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--#dia de la semana-->
+    <!--hora de comienzo de clases-->
+
+    <mat-form-field class="col-xs-4">
+      <mat-label>Start</mat-label>
+      <input
+        matInput
+        [ngxTimepicker]="toggleTimepicker1"
+        [disableClick]="true"
+        readonly
+      />
+      <ngx-material-timepicker-toggle
+        matSuffix
+        [for]="toggleTimepicker1"
+      ></ngx-material-timepicker-toggle>
+      <ngx-material-timepicker #toggleTimepicker1></ngx-material-timepicker>
+    </mat-form-field>
+
+    <!--hora de comienzo de clases-->
+    <!--hora de finalizacion de clases-->
+    <mat-form-field class="col-xs-4">
+      <mat-label>Finish</mat-label>
+      <input
+        matInput
+        [ngxTimepicker]="toggleTimepicker2"
+        [disableClick]="true"
+        readonly
+      />
+      <ngx-material-timepicker-toggle
+        matSuffix
+        [for]="toggleTimepicker2"
+      ></ngx-material-timepicker-toggle>
+      <ngx-material-timepicker #toggleTimepicker2></ngx-material-timepicker>
+    </mat-form-field>
+    <!--hora de finalizacion de clases-->
+  </div>
+  <!--#document uploaded-->
+  <mat-dialog-actions align="end">
+    <!--btn cancel-->
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Cancel
+    </button>
+    <!--#btn cancel-->
+    <!-- btn accept-->
+    <button mat-button class="dialog-button-accept">
+      Save course
+    </button>
+  </mat-dialog-actions>
+  <!-- #btn accept-->
 </div>
