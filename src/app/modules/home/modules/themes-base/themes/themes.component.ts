@@ -20,7 +20,7 @@ import { CardImage } from 'src/app/models/CardImage';
 })
 export class ThemesComponent implements OnInit {
   //----variables-----
-  cardStatus: boolean=true;
+  cardStatus: boolean=false;
   tema = "Theme 1";
   descripcion = "Present";
 
