@@ -13,55 +13,70 @@
           <!-- button icono de usuario-->
         </div>
         <!-- <div class="navbar-brand__buttons"> -->
-        <button
-          class="circular-button-brand"
-          mat-mini-fab
-          [matMenuTriggerFor]="usermodal"
-        >
-          <!-- primera letra de nombre de usuario-->
-          <span class="circular-button__first-word">{{
-            userDocente.primaLetra
-          }}</span>
-          <!-- #primera letra de nombre de usuario-->
-        </button>
-        <!-- #button icono de usuario-->
-        <!-- </div> -->
-        <!-- modal de avatar para usuario-->
-        <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
-          <div class="user-card__content">
-            <!-- icono de avatar-->
-            <button class="user-card__icon" mat-fab>
-              <span class="user-card__first-word">{{
-                userDocente.primaLetra
+        <div class="navbar-brand__header-buttons">
+          <!-- agregar classroom-->
+          <button
+            class="circular-button-navbar"
+            mat-mini-fab (click)="agregarCurso()"
+          >
+            <!-- primera letra de nombre de usuario-->
+            <mat-icon class="circular-button__first-word">add</mat-icon>
+            <!-- #primera letra de nombre de usuario-->
+          </button>
+          <!-- #agregar classroom-->
+          <!-- button icono de usuario-->
+          <button
+            class="circular-button-navbar"
+            mat-mini-fab
+            [matMenuTriggerFor]="usermodal"
+          >
+            <!-- primera letra de nombre de usuario-->
+            <span class="circular-button__first-word">{{
+              userDocente.primaLetra
+            }}</span>
+            <!-- #primera letra de nombre de usuario-->
+          </button>
+          <!-- #button icono de usuario-->
+          <!-- </div> -->
+          <!-- modal de avatar para usuario-->
+          <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
+            <div class="user-card__content">
+              <!-- icono de avatar-->
+              <button class="user-card__icon" mat-fab>
+                <span class="user-card__first-word">{{
+                  userDocente.primaLetra
+                }}</span>
+              </button>
+              <!-- //icono de avatar-->
+              <!-- nombre de usuario-->
+              <span class="user-card__name">{{
+                userDocente.nombreDocente
               }}</span>
-            </button>
-            <!-- //icono de avatar-->
-            <!-- nombre de usuario-->
-            <span class="user-card__name">{{ userDocente.nombreDocente }}</span>
-            <!-- #nombre de usuario-->
-            <!-- nombre de apellido-->
-            <span class="user-card__lastname">{{
-              userDocente.apellidoDocente
-            }}</span>
-            <!-- #nombre de apellido-->
-            <!-- correo de usuario-->
-            <span class="user-card__email">{{
-              userDocente.correoDocente
-            }}</span>
-            <!-- #correo de usuario-->
-            <!--btn para salir-->
-            <button
-              (click)="signout()"
-              mat-stroked-button
-              class="user-card__button-logout"
-            >
-              <mat-icon>exit_to_app</mat-icon>
-              Sign out
-            </button>
-            <!--#btn para salir-->
-          </div>
-        </mat-menu>
-        <!-- #modal de avatar para usuario-->
+              <!-- #nombre de usuario-->
+              <!-- nombre de apellido-->
+              <span class="user-card__lastname">{{
+                userDocente.apellidoDocente
+              }}</span>
+              <!-- #nombre de apellido-->
+              <!-- correo de usuario-->
+              <span class="user-card__email">{{
+                userDocente.correoDocente
+              }}</span>
+              <!-- #correo de usuario-->
+              <!--btn para salir-->
+              <button
+                (click)="signout()"
+                mat-stroked-button
+                class="user-card__button-logout"
+              >
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+              </button>
+              <!--#btn para salir-->
+            </div>
+          </mat-menu>
+          <!-- #modal de avatar para usuario-->
+        </div>
       </div>
       <!--#logo y text-->
     </div>

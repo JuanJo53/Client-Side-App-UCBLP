@@ -45,3 +45,15 @@
   //   //background-color: red;
   // }
 }
+.dialog-subtitle-compound {
+  margin-bottom: 1.5rem;
+  display: flex;
+  border-bottom: 0.2rem solid $color-primary-blue;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  &__text {
+    font-size: 2rem;
+    color: $color-primary-blue;
+  }
+}

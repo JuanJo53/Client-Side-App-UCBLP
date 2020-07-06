@@ -109,7 +109,6 @@ export class ThemeContentComponent implements OnInit {
           this.agregarCardsLecciones(datales);
           this.addImages(images);
           this.addTypeLesson(types);
-          
         }
         else{
           console.log("No se pudieron obtener las lecciones");
@@ -141,6 +140,7 @@ export class ThemeContentComponent implements OnInit {
       this.theme.id = params["id"];
     });
     this.data.changeMessage(this.item);
+    
   }
   //-----funciones-----
 
@@ -233,10 +233,10 @@ export class ThemeContentComponent implements OnInit {
     console.log(`Dialog result: ${result}`);
   });
   }
-  verLecciones() {
+  verLecciones(idLeccion) {
     //[where i wanna go] ,{where i am}
 
-    this.router.navigate(["lessons"], { relativeTo: this.route });
+    this.router.navigate([idLeccion], { relativeTo: this.route });
   }
   eliminar2(){}
 

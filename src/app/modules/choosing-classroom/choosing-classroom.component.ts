@@ -7,6 +7,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { CardClassroom } from "src/app/models/Teacher/CardClassroom";
 import { CardClassroomComponent } from "src/app/shared/components/cards/card-classroom/card-classroom.component";
 import { ClassroomDocenteResolver } from "src/app/_resolvers/docente/classroom-info-docente.resolver";
+import { MatDialog } from '@angular/material/dialog';
+import { CreateCourseComponent } from "../dialogs/courses/create-course/create-course.component";
 @Component({
   selector: "app-choosing-classroom",
   templateUrl: "./choosing-classroom.component.html",
@@ -36,7 +38,9 @@ export class ChoosingClassroomComponent implements OnInit {
   constructor(
     private usService: ActivatedRoute,
     private tokenServ: TokenStorageService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
+    private route: ActivatedRoute
   ) {}
   agregarCards(datos) {
     for (let i in datos) {
@@ -73,7 +77,7 @@ export class ChoosingClassroomComponent implements OnInit {
         }
       }
       let auxCard = new CardClassroom();
-      auxCard.id_curso=datos[i].id_curso;
+      auxCard.id_curso = datos[i].id_curso;
       auxCard.curso = datos[i].nombre_curso;
       auxCard.diasCurso = dias;
       auxCard.horarioCurso = horario;
@@ -84,7 +88,6 @@ export class ChoosingClassroomComponent implements OnInit {
     this.numeroCards = this.classroomCards.length;
   }
   ngOnInit() {
-   
     console.log("size : " + this.numeroCards);
     if (this.tokenServ.getToken() === "undefined") {
       this.router.navigate(["/"]);
@@ -113,7 +116,11 @@ export class ChoosingClassroomComponent implements OnInit {
     this.tokenServ.signOut();
     this.router.navigate(["/"]);
   }
-  cardClicked(idCurso:string) {
-    this.router.navigate(['teacher',idCurso,'dashboard']);
+  cardClicked(idCurso: string) {
+    this.router.navigate(["teacher", idCurso, "dashboard"]);
+  }
+  agregarCurso() {
+    console.log("agregar curso");
+    const dialogRef = this.dialog.open(CreateCourseComponent, { width: "400px"});
   }
 }

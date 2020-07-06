@@ -13,6 +13,10 @@ import { AssessmentsComponent } from "./modules/home/modules/assessments/assessm
 import { StudentsComponent } from "./modules/home/my-class/students/students.component";
 import { AssistanceComponent } from "./modules/home/my-class/assistance/assistance.component";
 import { QualificationComponent } from "./modules/home/my-class/qualification/qualification.component";
+import { StudentsProfileComponent } from "./modules/home/my-class/students-profile/students-profile.component";
+import { AttendanceScoreComponent } from "./modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component";
+
+import { OthersScoreComponent } from "./modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
 import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
@@ -33,10 +37,13 @@ import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.r
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
+import { GetPracticesResolver } from './_resolvers/docente/practices/get-practices.resolver';
 
 const routes: Routes = [
+  
   {
     path: "",
+
     component: LoginComponent,
     resolve: { login: AuthDocenteResolver },
   },
@@ -44,6 +51,7 @@ const routes: Routes = [
     path: "building",
     component: BuildingPageComponent,
   },
+  
   {
     path: "classroom",
     component: ChoosingClassroomComponent,
@@ -59,7 +67,9 @@ const routes: Routes = [
     children: [
       {
         path: "dashboard",
-        component: DashboardComponent,
+        // path: "building",
+        component: BuildingPageComponent,
+        // component: DashboardComponent,
       },
       {
         path: "my-class",
@@ -71,16 +81,38 @@ const routes: Routes = [
             },
             component: StudentsComponent,
           },
-          {
-            path: "attendance",
-            resolve: {
-              fechas: GetFechasAsistenciaResolver,
-            },
-            component: AssistanceComponent,
-          },
+          // {
+          //   path: "attendance",
+          //   resolve: {
+          //     fechas: GetFechasAsistenciaResolver,
+          //   },
+          //   component: AssistanceComponent,
+          // },
           {
             path: "qualification",
-            component: QualificationComponent,
+            children: [
+              {
+                path: "",
+                component: QualificationComponent,
+              },
+              {
+                path: "profile-students",
+                children: [
+                  {
+                    path: "",
+                    component: StudentsProfileComponent,
+                  },
+                  {
+                    path: "attendance-score",
+                    component: AttendanceScoreComponent,
+                  },
+                  {
+                    path: "others-score",
+                    component: OthersScoreComponent,
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -131,11 +163,15 @@ const routes: Routes = [
                     component: ThemeContentComponent,
                   },
                   {
-                    path: "lessons",
+                    path: ":idLeccion",
                     //component: ThemeLessonsComponent,
                     children: [
                       {
                         path: "",
+                        resolve:{
+                          practicas:GetPracticesResolver
+                        },
+                        runGuardsAndResolvers:"always",
                         component: ThemeLessonsComponent,
                       },
                       {
@@ -155,6 +191,7 @@ const routes: Routes = [
         ],
       },
       {
+        
         path: "resources",
         component: ResourcesComponent,
       },
@@ -167,7 +204,12 @@ const routes: Routes = [
           images: GetImagesIdResolver,
         },
       },
-    ],
+     
+    ],  
+  }, 
+  {
+    path: '**',
+    redirectTo: "building",
   },
 ];
 

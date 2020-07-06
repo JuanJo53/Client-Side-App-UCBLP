@@ -21,4 +21,8 @@
   &__text {
     font-size: 2.5rem;
   }
+  &__header-buttons{
+    justify-content: flex-start;
+    //background-color: red;
+  }
 }
