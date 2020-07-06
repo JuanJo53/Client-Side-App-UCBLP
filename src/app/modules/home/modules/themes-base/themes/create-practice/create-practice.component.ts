@@ -16,8 +16,15 @@ import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCom
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
+  showSpinner=false;
   startDate = new Date(1990, 0, 1);
   endDate = new Date(1990, 0, 1);
+  loadData(){
+    this.showSpinner=true;
+    setTimeout(()=> {
+      this.showSpinner=false;
+    },5000)
+  }
 
   radioButtonCompleteCard: RadioButtonCompleteCard[] = [
     {

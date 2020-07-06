@@ -60,12 +60,12 @@ const routes: Routes = [
     component: DefaultComponent,
     resolve: { profile: ProfileDocenteResolver },
     children: [
-      {
-        path: "dashboard",
-        // path: "building",
-        component: BuildingPageComponent,
-        // component: DashboardComponent,
-      },
+      // {
+      //   // path: "dashboard",
+      //   // path: "building",
+      //   // component: BuildingPageComponent,
+      //   // component: DashboardComponent,
+      // },
       {
         path: "my-class",
         children: [

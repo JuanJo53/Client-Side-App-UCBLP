@@ -114,6 +114,6 @@ export class ChoosingClassroomComponent implements OnInit {
     this.router.navigate(["/"]);
   }
   cardClicked(idCurso:string) {
-    this.router.navigate(['teacher',idCurso,'dashboard']);
+    this.router.navigate(['teacher',idCurso,'forums']);
   }
 }

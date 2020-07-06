@@ -17,18 +17,15 @@
   <!--row-->
   <div class="row">
     <!--evaluation-card-attendance  -->
-    <div
-      *ngFor="let preCard of defaultCard"
-      class="col-lg-3 col-md-6 col-xs-12"
-    >
+    <div *ngFor="let preCard of defaultCard" class="col-lg-3 col-md-6 col-xs-12">
+
       <div class="evaluation-card">
         <div class="evaluation-card__img">
-          <div
-            class="evaluation-card__img-overlay"
-            [ngStyle]="{
-              'background-color': preCard.colorFondo
-            }"
-          >
+          <div class="evaluation-card__img-overlay" 
+             [ngStyle]="{
+            'background-color': preCard.colorFondo
+            }">
+            
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
               <button class="circular-button-custom-card" (click)="configuracionModulo()">
@@ -39,10 +36,7 @@
               <!--#btn configuraciones-->
             </div>
             <div class="evaluation-card__content-card">
-              <div
-                class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': preCard.colorCirculo }"
-              >
+              <div class="evaluation-card__circle" [ngStyle]="{ 'background-color': preCard.colorCirculo }">
                 {{ preCard.porcentaje }}
               </div>
               <div class="evaluation-card__title">{{ preCard.titulo }}</div>
@@ -71,18 +65,12 @@
   <!--row-->
   <div class="row">
     <!--evaluation-card-attendance  -->
-    <div
-      *ngFor="let custCards of customCards"
-      class="col-lg-3 col-md-6 col-xs-12"
-    >
+    <div *ngFor="let custCards of customCards" class="col-lg-3 col-md-6 col-xs-12">
       <div class="evaluation-card">
         <div class="evaluation-card__img">
-          <div
-            class="evaluation-card__img-overlay"
-            [ngStyle]="{
+          <div class="evaluation-card__img-overlay" [ngStyle]="{
               'background-color': custCards.colorFondo
-            }"
-          >
+            }">
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
               <button class="circular-button-custom-card" (click)="configuracionModuloPersonalizado()">
@@ -91,8 +79,8 @@
                 </mat-icon>
               </button>
               <!--#btn configuraciones-->
-               <!--btn eliminar-->
-               <button class="circular-button-custom-card" (click)="eliminar()">
+              <!--btn eliminar-->
+              <button class="circular-button-custom-card" (click)="eliminar()">
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
@@ -100,10 +88,7 @@
               <!--#btn eliminar-->
             </div>
             <div class="evaluation-card__content-card">
-              <div
-                class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': custCards.colorCirculo }"
-              >
+              <div class="evaluation-card__circle" [ngStyle]="{ 'background-color': custCards.colorCirculo }">
                 {{ custCards.porcentaje }}
               </div>
               <div class="evaluation-card__title">{{ custCards.titulo }}</div>

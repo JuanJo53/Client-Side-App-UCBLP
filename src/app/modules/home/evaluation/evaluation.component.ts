@@ -21,6 +21,7 @@ import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.compo
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
+  colorNoDisponible:  "#838282";
   defaultCard: EvaluationCard[] = [
     {
       id_evaluationCard: 1,
@@ -28,6 +29,7 @@ export class EvaluationComponent implements OnInit {
       porcentaje: "10%",
       colorFondo: "#9c5fafbf",
       colorCirculo: "#9c5faf",
+     
     },
     {
       id_evaluationCard: 2,

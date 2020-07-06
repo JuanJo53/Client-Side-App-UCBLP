@@ -618,6 +618,7 @@
           <div class="progress-bar__next">
             <span class="progress-bar__text-next">Next</span>
             <button
+              (click)="loadData()"
               class="progress-bar__button-next"
               mat-mini-fab
               matStepperNext
@@ -635,7 +636,11 @@
 
     <!--#3 paso-->
     <!--4 paso-->
+    
     <mat-step>
+      <div class="spinner">
+        <mat-spinner *ngIf="showSpinner" ></mat-spinner>
+      </div>
       <form>
         <ng-template matStepLabel>Done</ng-template>
         <div>

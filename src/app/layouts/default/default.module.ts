@@ -67,6 +67,7 @@ import { StudentsProfileComponent } from "src/app/modules/home/my-class/students
 import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component";
 import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -139,7 +140,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     MatStepperModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
 })
 export class DefaultModule {}
