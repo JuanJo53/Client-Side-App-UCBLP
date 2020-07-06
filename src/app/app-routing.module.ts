@@ -9,7 +9,7 @@ import { DashboardComponent } from "./modules/home/dashboard/dashboard.component
 import { ResourcesComponent } from "./modules/home/resources/resources.component";
 import { EvaluationComponent } from "./modules/home/evaluation/evaluation.component";
 import { ThemesComponent } from "./modules/home/modules/themes-base/themes/themes.component";
-import { AssessmentsComponent } from "./modules/home/modules/assessments/assessments.component";
+import { AssessmentsComponent } from "./modules/home/modules/assessments-base/assessments/assessments.component";
 import { StudentsComponent } from "./modules/home/my-class/students/students.component";
 import { AssistanceComponent } from "./modules/home/my-class/assistance/assistance.component";
 import { QualificationComponent } from "./modules/home/my-class/qualification/qualification.component";
@@ -23,6 +23,10 @@ import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-do
 import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemeLessonsComponent } from "./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
+import { AssessmentsBaseComponent } from "./modules/home/modules/assessments-base/assessments-base.component";
+import { IndividualAssessmentComponent } from "./modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component";
+
+import { DetailAssessmentsComponent } from "./modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component";
 import { StudentsGeneralResolver } from "./_resolvers/docente/my-class/get-students.resolver";
 import { GetThemesTeacherResolver } from "./_resolvers/docente/modules/get-themes.resolver";
 import { GetImagesIdResolver } from "./_resolvers/docente/modules/get_imagesId.resolver";
@@ -36,9 +40,13 @@ import { GetModulesResolver } from "./_resolvers/docente/evaluation/get_modules.
 import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.resolver";
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
+import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
+import { GetPracticesResolver } from "./_resolvers/docente/practices/get-practices.resolver";
+
 const routes: Routes = [
   {
     path: "",
+
     component: LoginComponent,
     resolve: { login: AuthDocenteResolver },
   },
@@ -46,7 +54,7 @@ const routes: Routes = [
     path: "building",
     component: BuildingPageComponent,
   },
-  
+
   {
     path: "classroom",
     component: ChoosingClassroomComponent,
@@ -60,12 +68,12 @@ const routes: Routes = [
     component: DefaultComponent,
     resolve: { profile: ProfileDocenteResolver },
     children: [
-      // {
-      //   // path: "dashboard",
-      //   // path: "building",
-      //   // component: BuildingPageComponent,
-      //   // component: DashboardComponent,
-      // },
+      {
+        path: "dashboard",
+        // path: "building",
+        // component: BuildingPageComponent,
+         component: DashboardComponent,
+      },
       {
         path: "my-class",
         children: [
@@ -119,6 +127,9 @@ const routes: Routes = [
         children: [
           {
             path: "",
+            resolve: {
+              forums: GetForumsResolver,
+            },
             component: ForumsComponent,
           },
           {
@@ -155,11 +166,15 @@ const routes: Routes = [
                     component: ThemeContentComponent,
                   },
                   {
-                    path: "lessons",
+                    path: ":idLeccion",
                     //component: ThemeLessonsComponent,
                     children: [
                       {
                         path: "",
+                        resolve: {
+                          practicas: GetPracticesResolver,
+                        },
+                        runGuardsAndResolvers: "always",
                         component: ThemeLessonsComponent,
                       },
                       {
@@ -174,12 +189,30 @@ const routes: Routes = [
           },
           {
             path: "assessments",
-            component: AssessmentsComponent,
+            component: AssessmentsBaseComponent,
+            children: [
+              {
+                path: "",
+                component: AssessmentsComponent,
+              },
+              {
+                path: "detail",
+                children: [
+                  {
+                    path: "",
+                    component: DetailAssessmentsComponent,
+                  },
+                  {
+                    path: "individual-test",
+                    component: IndividualAssessmentComponent,
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
       {
-        
         path: "resources",
         component: ResourcesComponent,
       },
@@ -192,11 +225,10 @@ const routes: Routes = [
           images: GetImagesIdResolver,
         },
       },
-     
-    ],  
-  }, 
+    ],
+  },
   {
-    path: '**',
+    path: "**",
     redirectTo: "building",
   },
 ];

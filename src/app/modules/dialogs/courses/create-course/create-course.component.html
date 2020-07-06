@@ -1,0 +1,144 @@
+<div class="dialog">
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Add Clasroom</span>
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogforms" enctype="multipart/form-data">
+      <!--nombre de classroom-->
+      <mat-form-field appearance="outline">
+        <mat-label>Classroom's name</mat-label>
+        <!-- Input para el nombre del modulo-->
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder="Classroom's name"
+          name="nombreClasroom"
+          [(ngModel)]="nombreClassroom"
+        />
+        <!-- //Input para el nombre del modulo-->
+      </mat-form-field>
+      <!--#nombre de classroom-->
+      <!--cantidad estudiantes-->
+      <div class="combo-box-dialog">
+        <mat-form-field>
+          <mat-label>Student's quantity</mat-label>
+          <mat-select [(value)]="valueQuantity">
+            <mat-option
+              *ngFor="let elemento of cantidadEstudiantes"
+              [value]="elemento"
+            >
+              {{ elemento }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--#cantidad estudiantes-->
+    </form>
+
+    <div class="dialog-subtitle-compound">
+      <div class="dialog-subtitle-compound__text">
+        <span>Schedule</span>
+      </div>
+      <div class="dialog-subtitle-compound__buttons-container">
+        <button
+          class="dialog-circular-button"
+          mat-mini-fab
+          (click)="agregarHorario()"
+        >
+          <mat-icon class="dialog-circular-button__icon">add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div *ngFor="let item of horarioClase; let i = index">
+      <!--div horario-->
+      <div class="dialog-schedule">
+        <div class="dialog-schedule__content">
+          <div class="combo-box-dialog">
+            <!--dia de la semana-->
+            <mat-form-field class="dialog-schedule__day-combo">
+              <mat-label>Day</mat-label>
+              <mat-select [(value)]="item.dia">
+                <mat-option
+                  *ngFor="let elemento of diasSemana"
+                  [value]="elemento"
+                  name="i"
+                >
+                  {{ elemento }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!--#dia de la semana-->
+          </div>
+          <div class="dialog-schedule__hour row">
+            <!--hora de comienzo de clases-->
+            <mat-form-field class="col-sm-6">
+              <mat-label>Start</mat-label>
+              <input
+                matInput
+                [ngxTimepicker]="toggleTimepicker1"
+                [disableClick]="true"
+                readonly
+                [(ngModel)]="item.horaComienzo"
+              />
+              <ngx-material-timepicker-toggle
+                matSuffix
+                [for]="toggleTimepicker1"
+              ></ngx-material-timepicker-toggle>
+              <ngx-material-timepicker
+                #toggleTimepicker1
+              ></ngx-material-timepicker>
+            </mat-form-field>
+            <!--hora de comienzo de clases-->
+            <!--hora de finalizacion de clases-->
+            <mat-form-field class="col-sm-6">
+              <mat-label>End</mat-label>
+              <input
+                matInput
+                [ngxTimepicker]="toggleTimepicker2"
+                [disableClick]="true"
+                readonly
+                [(ngModel)]="item.horaFinaliza"
+              />
+              <ngx-material-timepicker-toggle
+                matSuffix
+                [for]="toggleTimepicker2"
+              ></ngx-material-timepicker-toggle>
+              <ngx-material-timepicker
+                #toggleTimepicker2
+              ></ngx-material-timepicker>
+            </mat-form-field>
+            <!--hora de finalizacion de clases-->
+          </div>
+        </div>
+        <!--delete-->
+        <div class="dialog-schedule__delete-button">
+          <button
+            class="dialog-circular-button__delete"
+            mat-mini-fab
+            (click)="eliminarHorario(i)"
+          >
+            <mat-icon class="dialog-circular-button__icon">delete</mat-icon>
+          </button>
+        </div>
+        <!--#delete-->
+      </div>
+      <!--#div horario-->
+      <hr class="dialog-hr" />
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!--btn cancel-->
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Cancel
+    </button>
+    <!--#btn cancel-->
+    <!-- btn accept-->
+    <button mat-button class="dialog-button-accept" (click)="guardarCurso()">
+      Save course
+    </button>
+  </mat-dialog-actions>
+  <!-- #btn accept-->
+</div>

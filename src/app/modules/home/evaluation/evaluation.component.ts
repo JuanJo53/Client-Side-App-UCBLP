@@ -39,21 +39,7 @@ export class EvaluationComponent implements OnInit {
       colorCirculo: "#d77a61",
     },
   ];
-  customCards: EvaluationCard[] = [
-    {
-      id_evaluationCard: 1,
-      titulo: "Project",
-      porcentaje: "10%",
-      colorFondo: "#ef8ec8bf",
-      colorCirculo: "#ef8ec8",
-    },
-    {
-      id_evaluationCard: 2,
-      titulo: "Expositions",
-      porcentaje: "20%",
-      colorFondo: "#c7cc77bf",
-      colorCirculo: "#c7cc77",
-    },
+  customCards: Module[] = [
   ];
   idCurso = "";
   cardsModulosPred: Module[] = [];
@@ -87,23 +73,10 @@ export class EvaluationComponent implements OnInit {
       },
     });
   }
-  addModulesPers() {
-    let newModule = new Module();
-    newModule.idColor = this.colores[0].idColor;
-    newModule.idImagen = Number(this.images[0].idImagen);
-    newModule.nombreModulo = "modulo personalizado";
-    newModule.rubrica = 0;
-    newModule.idCurso = Number(this.idCurso);
-    this.mdServ.addModule(newModule).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  }
+
   cargarDatos(data) {
+    this.cardsModulosPred= [];
+    this.cardsModulosPers= [];
     for (let i in data) {
       let newModule = new Module();
       newModule.id = data[i].id_modulo;
@@ -172,16 +145,34 @@ export class EvaluationComponent implements OnInit {
         //this.cardsModulosPred[0].estado=2;
         //this.cardsModulosPred[0].rubrica=10;
         //this.updateModulesPred(this.cardsModulosPred[0]);
-        this.deleteModulo(this.cardsModulosPers[0].id);
       },
       error: (error) => {
         console.log(error);
       },
     });
   }
-
   nuevoModulo() {
-    const dialogRef = this.dialog.open(AddCustomModuleComponent, { width: "500px" });
+    const dialogRef = this.dialog.open(AddCustomModuleComponent, { width: "500px" 
+    ,data:{
+      colores:this.colores,
+      imagenes:this.images,
+      idCurso:this.idCurso
+    }
+  });
+  dialogRef.afterClosed().subscribe((result)=>{
+    if(result!==""&&result!=null&&result!=="undefined"){
+      console.log(result);
+      this.route.data.subscribe({
+        next:(data)=>{
+          data.modules.body=result;       
+          this.cargarDatos(result);
+        },
+        error:(error)=>{
+          console.log("No se pudieron obtener las lecciones");
+          }
+        });
+      }
+    });
   }
   configuracionModulo() {
     const dialogRef = this.dialog.open(EditDefaultModuleComponent, { width: "500px" });

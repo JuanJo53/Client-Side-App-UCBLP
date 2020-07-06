@@ -7,6 +7,7 @@ import { AddForumComponent } from "../../../dialogs/forums/add-forum/add-forum.c
 import { EditForumComponent } from "../../../dialogs/forums/edit-forum/edit-forum.component";
 import { DeleteCardComponent } from "../../../dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "../../../../services/dialogs/delete-item.service";
+import { Forum } from "../../../../models/Teacher/Forums/Forum";
 import {
   MatDialog,
   MatDialogRef,
@@ -68,8 +69,28 @@ export class ForumsComponent implements OnInit {
     public dialog: MatDialog,
     private data: DeleteItemService
   ) {}
-
+  agregarCardsForums(data) {
+    for (let i in data) {
+      let newForum = new Forum();
+      let fecini = Date.parse(data[i].fecha_creacion);
+      let datini = new Date();
+      datini.setTime(fecini);
+      let fecfin = Date.parse(data[i].fecha_creacion);
+      let datfin = new Date();
+      datini.setTime(fecini);
+      console.log(datfin);
+    }
+  }
   ngOnInit(): void {
+    this.route.data.subscribe({
+      next: (data) => {
+        console.log(data);
+        this.agregarCardsForums(data.forums.body);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.data.changeMessage(this.item);
