@@ -25,14 +25,16 @@
         class="custom-card"
       >
         <div class="custom-card__img">
-          <div class="custom-card__img-overlay" >
+          <div class="custom-card__img-overlay">
             <div class="custom-card__buttons-card">
               <!--btn ver contenido-->
               <button
+              [ngStyle]="{'background-color': cardStatus? 'transparent' : '#808080'}"
+               [disabled]="cardStatus == false"
                 class="circular-button-custom-card"
                 (click)="verContenido(cards.idTema)"
               >
-                <mat-icon class="circular-button-custom-card__icon">
+                <mat-icon class="circular-button-custom-card__icon" >
                   remove_red_eye
                 </mat-icon>
               </button>
@@ -48,7 +50,10 @@
               </button>
               <!--#btn configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card" (click)="eliminar(cards.idTema)">
+              <button class="circular-button-custom-card"
+              [ngStyle]="{'background-color': cardStatus? 'transparent' : '#808080'}"
+                [disabled]="cardStatus == false"
+                (click)="eliminar(cards.idTema)">
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
