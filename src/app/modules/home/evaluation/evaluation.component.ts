@@ -21,7 +21,23 @@ import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.compo
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
-  defaultCard: Module[] = [
+  colorNoDisponible:  "#838282";
+  defaultCard: EvaluationCard[] = [
+    {
+      id_evaluationCard: 1,
+      titulo: "Attendance",
+      porcentaje: "10%",
+      colorFondo: "#9c5fafbf",
+      colorCirculo: "#9c5faf",
+     
+    },
+    {
+      id_evaluationCard: 2,
+      titulo: "Themes",
+      porcentaje: "20%",
+      colorFondo: "#d77a61bf",
+      colorCirculo: "#d77a61",
+    },
   ];
   customCards: Module[] = [
   ];
@@ -176,4 +192,5 @@ export class EvaluationComponent implements OnInit {
       }
     });
   }
+  
 }

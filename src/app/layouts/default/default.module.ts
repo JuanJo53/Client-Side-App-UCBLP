@@ -30,7 +30,7 @@ import { DashboardComponent } from "src/app/modules/home/dashboard/dashboard.com
 import { EvaluationComponent } from "src/app/modules/home/evaluation/evaluation.component";
 import { ForumsComponent } from "src/app/modules/home/forums-base/forums/forums.component";
 import { ResourcesComponent } from "src/app/modules/home/resources/resources.component";
-import { AssessmentsComponent } from "src/app/modules/home/modules/assessments/assessments.component";
+import { AssessmentsComponent } from "src/app/modules/home/modules/assessments-base/assessments/assessments.component";
 import { ThemeLessonsComponent } from "src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemeContentComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemesBaseComponent } from "src/app/modules/home/modules/themes-base/themes-base.component";
@@ -68,6 +68,12 @@ import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students
 import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { CreateCourseComponent } from 'src/app/modules/dialogs/courses/create-course/create-course.component';
+import { DetailComponent } from 'src/app/modules/home/modules/themes-base/themes/theme-lessons/detail/detail.component';
+import { DetailAssessmentsComponent } from 'src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component';
+import { AssessmentsBaseComponent } from 'src/app/modules/home/modules/assessments-base/assessments-base.component';
+import { TestDetailComponent } from 'src/app/modules/dialogs/test-detail/test-detail.component';
+import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -113,7 +119,12 @@ import { CreateCourseComponent } from 'src/app/modules/dialogs/courses/create-co
     StudentsProfileComponent,
     AttendanceScoreComponent,
     OthersScoreComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    DetailComponent,
+    DetailAssessmentsComponent,
+    AssessmentsBaseComponent,
+    TestDetailComponent,
+    IndividualAssessmentComponent
   ],
   imports: [
     CommonModule,
@@ -141,7 +152,8 @@ import { CreateCourseComponent } from 'src/app/modules/dialogs/courses/create-co
     MatStepperModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
 })
 export class DefaultModule {}

@@ -54,3 +54,18 @@
   color: $color-primary-blue;
   font-size: 2rem;
 }
+
+.buttonBuilding {
+  // background-color: red;
+  margin-top: 6rem;
+  color: $color-primary-blue;
+  font-size: 2rem;
+}
+.buttonBuildingPage{
+  width: 30% !important;
+  background: $color-primary-blue !important;
+  color: $color-primary-white !important;
+  font-size: 1.5rem !important;
+  border-radius: 3rem !important;
+  cursor: pointer;
+}

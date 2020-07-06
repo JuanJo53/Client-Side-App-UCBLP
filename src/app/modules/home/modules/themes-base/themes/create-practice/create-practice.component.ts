@@ -22,6 +22,43 @@ import { PracticesService } from '../../../../../../_services/teacher_services/p
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
+  showSpinner=false;
+  // startDate = new Date(1990, 0, 1);
+  // endDate = new Date(1990, 0, 1);
+
+
+  radioButtonCompleteCard: RadioButtonCompleteCard[] = [
+    {
+      id: 1,
+      puntuacion: 10,
+      preguntaCard: "fill the answer",
+      radioButtonContent: [
+        { opcionRespuesta: "123" },
+        { opcionRespuesta: "1234" },
+        { opcionRespuesta: "12345" },
+        { opcionRespuesta: "123456" },
+      ],
+    },
+    {
+      id: 2,
+      puntuacion: 20,
+      preguntaCard: "fill the answer 2",
+      radioButtonContent: [
+        { opcionRespuesta: "aa" },
+        { opcionRespuesta: "bb" },
+        { opcionRespuesta: "cc" },
+      ],
+    },
+    {
+      id: 3,
+      puntuacion: 30,
+      preguntaCard: "fill the answer 3",
+      radioButtonContent: [
+        { opcionRespuesta: "falso" },
+        { opcionRespuesta: "verdadero" },
+      ],
+    },
+  ]
   correcto="";
   startDate =Date.now();
   endDate = new Date(2020, 0, 1);
@@ -276,5 +313,12 @@ export class CreatePracticeComponent implements OnInit {
    this.location.back();
   }
 
+  //funcion del loader
+  loadData(){
+    this.showSpinner=true;
+    setTimeout(()=> {
+      this.showSpinner=false;
+    },5000)
+  }
   
 }

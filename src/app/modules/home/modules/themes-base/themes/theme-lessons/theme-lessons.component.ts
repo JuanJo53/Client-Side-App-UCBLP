@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
 import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add-lesson.component";
 import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
+
 import {
   MatDialog,
   MatDialogRef,
@@ -98,7 +99,7 @@ export class ThemeLessonsComponent implements OnInit {
     //   console.log(`Dialog result: ${result}`);
     // });
   }
-  listar() {
+  verlistar() {
     console.log("click on list");
   }
   verContenido(id: number) {

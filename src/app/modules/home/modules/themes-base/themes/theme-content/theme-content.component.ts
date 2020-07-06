@@ -21,6 +21,7 @@ import { TypeLesson } from 'src/app/models/Teacher/Modules/TYpeLesson';
   styleUrls: ["./theme-content.component.scss"],
 })
 export class ThemeContentComponent implements OnInit {
+
   theme: {
     id: number;
     titulo: string;
@@ -241,5 +242,6 @@ export class ThemeContentComponent implements OnInit {
   eliminar2(){}
 
   //-----#funciones-----
+
  
 }
