@@ -81,16 +81,7 @@ export class EvaluationComponent implements OnInit {
     console.log(this.cardsModulosPers);
     console.log(this.cardsModulosPred);
   }
-  deleteModulo(idModulo) {
-    this.mdServ.deleteModule(idModulo).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  }
+  
   cargarColores(data) {
     for (let i in data) {
       let newCol = new CardColor();
@@ -158,22 +149,90 @@ export class EvaluationComponent implements OnInit {
       }
     });
   }
-  configuracionModulo() {
-    const dialogRef = this.dialog.open(EditDefaultModuleComponent, { width: "500px" });
-  }
-  configuracionModuloPersonalizado() {
-    const dialogRef = this.dialog.open(EditCustomModuleComponent, { width: "500px" });
+  configuracionModulo(modulo) {
+    const dialogRef = this.dialog.open(EditDefaultModuleComponent, { width: "500px" ,
+    data:{
+      modulo:modulo,
+      idCurso:this.idCurso
+    }});
+      dialogRef.afterClosed().subscribe((result)=>{
+        if(result!==""&&result!=null&&result!=="undefined"){
+          console.log(result);
+        this.route.data.subscribe({
+          next:(data)=>{
+            data.modules.body=result;       
+            this.cargarDatos(result);
+          },
+          error:(error)=>{
+            console.log("No se pudieron obtener las lecciones");
+            }
+          });
+        }
+      })
+    }
+  configuracionModuloPersonalizado(modulo:Module) {
+    const dialogRef = this.dialog.open(EditCustomModuleComponent, { width: "500px" ,
+  data:{
+    modulo:modulo,
+    idCurso:this.idCurso
+  }});
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result!==""&&result!=null&&result!=="undefined"){
+        console.log(result);
+      this.route.data.subscribe({
+        next:(data)=>{
+          data.modules.body=result;       
+          this.cargarDatos(result);
+        },
+        error:(error)=>{
+          console.log("No se pudieron obtener las lecciones");
+          }
+        });
+      }
+    })
   }
   editarPorcentajes() {
-    const dialogRef = this.dialog.open(ModulesRubricComponent, { width: "400px" });
+    this.route.data.subscribe({
+      next:(data)=>{
+
+        const dialogRef = this.dialog.open(ModulesRubricComponent, { width: "400px" ,
+        data:{
+          modulos: data.modules.body
+        }});
+        dialogRef.afterClosed().subscribe((result)=>{
+          
+          if(result!==""&&result!=null&&result!=="undefined"){
+          data.modules.body=result;       
+          this.cargarDatos(result);
+        }
+        })
+      },
+      
+      error:(err)=>{
+
+      }
+    })
   }
-  eliminar() {
+  eliminar(modulo:Module,index) {
+    console.log(modulo);
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px"
-      , data: {
-       
-        tipo: "Custom Module"
+      , data: {       
+        tipo: "Custom Module",
+        idModulo:modulo.id
       }
     });
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result==="ok"){
+        this.cardsModulosPers.splice(index,1);
+      }
+    })
+  }
+  sacarColor(id){
+    for(let color of this.colores){
+      if(color.idColor==id){
+        return color.color;
+      }
+    }
   }
 }

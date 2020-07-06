@@ -1,5 +1,6 @@
 export class ResourceContent{
-    tipoDocumento: string;
-    nombreDocumento: string;
-    urlDoucmento :string;
+    id:number;
+    tipo: number;
+    nombre: string;
+    url :string;
 }

@@ -12,9 +12,9 @@ export class UploadFilesService {
   constructor(private http:HttpClient,handler: HttpBackend) { 
     this.httpClient = new HttpClient(handler);}
 
-  //CRUD temas
-  getUrlpdf():Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/storagepdf",{ observe: 'response' });
+  //Obtener URLs Firmadas del servidor
+  getUrlDoc():Observable<any>{
+    return this.http.get(apiKey.api+"/teacher/storagedoc",{ observe: 'response' });
   }
   getUrlvideo():Observable<any>{
     return this.http.get(apiKey.api+"/teacher/storagevideo",{ observe: 'response' });
@@ -22,8 +22,8 @@ export class UploadFilesService {
   getUrlaudio():Observable<any>{
     return this.http.get(apiKey.api+"/teacher/storageaudio",{ observe: 'response' });
   }
-  
-  subirArchivo(url:string,file:any):Observable<any>{
+  //Subir el archivo0
+  subirArchivo(url:string,file:File):Observable<any>{
     
     
     let formData:FormData = new FormData();
@@ -32,7 +32,7 @@ export class UploadFilesService {
     let httpheader=new HttpHeaders;
     httpheader.append("Content-Type","application/octet-stream'")   
     console.log(formData.get('fileKey'));       
-    var r=this.httpClient.put(url,formData.get('fileKey')); 
+    var r=this.httpClient.put(url,formData.get('fileKey'),{ observe: 'response' }); 
     return r;
   }
 }

@@ -8,7 +8,7 @@
           mat-mini-fab
           [matMenuTriggerFor]="classmodal"
         >
-          <span class="circular-button__class">E2</span>
+          <span class="circular-button__class">{{simbCurso}}</span>
         </button>
         <mat-menu
           class="classroom-choose-card"
@@ -16,8 +16,7 @@
           xPosition="before"
         >
           <div class="classroom-choose-card__content">
-            <span class="classroom-choose-card__classroom">English 2</span>
-            <span class="classroom-choose-card__classroom">English 3</span>
+            <button (click)=navigator(materia) class="classroom-choose-card__classroom" style="border:0px;background-color: white;" *ngFor="let materia of materias">{{materia.curso}}</button>
           </div>
         </mat-menu>
 
@@ -62,7 +61,7 @@
             <span class="user-card__email">{{
               userDocente.correoDocente
             }}</span>
-            <span class="user-card__classroom">Class : English 2</span>
+            <span class="user-card__classroom">Class : {{materia}}</span>
             <button
               mat-stroked-button
               class="user-card__button-logout"
