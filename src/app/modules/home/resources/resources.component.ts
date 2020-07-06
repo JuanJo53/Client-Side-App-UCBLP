@@ -12,40 +12,26 @@ import { EditDocumentComponent } from "../../dialogs/resources/edit-document/edi
 import { MatDialog } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
+import { Router, ActivatedRoute } from '@angular/router';
+import { SectionsService } from 'src/app/_services/teacher_services/sections.service';
 
-export interface ListaDeForos {
-  tipoDocumento: string;
-  nombreDocumento: string;
-  id: string;
-}
-const ELEMENT_DATA: ListaDeForos[] = [
-  {
-    tipoDocumento: "Complains Test 1",
-    nombreDocumento: "Verb to be Doc",
-    id: "1",
-  },
-  {
-    tipoDocumento: "Complains Test 1",
-    nombreDocumento: "Verb to be Doc",
-    id: "1",
-  },
-  {
-    tipoDocumento: "Complains Test 1",
-    nombreDocumento: "Verb to be Doc",
-    id: "1",
-  },
-];
 @Component({
   selector: "app-resources",
   templateUrl: "./resources.component.html",
   styleUrls: ["./resources.component.scss"],
 })
 export class ResourcesComponent implements OnInit {
+  idCurso:number;
+  ListaSecciones: ResourceSection[] = [
+  ];
   file: any;
   constructor(
     private servUpload: UploadFilesService,
-    public dialog: MatDialog
-  ) {}
+    private servSec:SectionsService,
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
+    ) {}
   fileChange(file) {
     this.file = file;
   }
@@ -67,93 +53,143 @@ export class ResourcesComponent implements OnInit {
       error: (error) => {},
     });
   }
-  ngOnInit(): void {}
-  ListaSecciones: ResourceSection[] = [
-    {
-      nombreSeccion: "seccion 1",
-      resourceContent: [
-        {
-          tipoDocumento: "insert_drive_file",
-          nombreDocumento: "Verb to be Doc",
-          urlDoucmento: "www.whatever.com",
-        },
-        {
-          tipoDocumento: "video_library",
-          nombreDocumento: "Verb to be Doc",
-          urlDoucmento: "www.whatever.com",
-        },
-      ],
-    },
-    {
-      nombreSeccion: "seccion 2",
-      resourceContent: [
-        {
-          tipoDocumento: "fiber_manual_record",
-          nombreDocumento: "Verb to be Doc",
-          urlDoucmento: "www.whatever.com",
-        },
-        {
-          tipoDocumento: "insert_drive_file",
-          nombreDocumento: "Verb to be Doc",
-          urlDoucmento: "www.whatever.com",
-        },
-        {
-          tipoDocumento: "insert_drive_file",
-          nombreDocumento: "Verb to be Doc",
-          urlDoucmento: "www.whatever.com",
-        },
-      ],
-    },
-    {
-      nombreSeccion: "seccion 3",
-      resourceContent: [
-        {
-          tipoDocumento: "fiber_manual_record",
-          nombreDocumento: "Verb to be Doc",
-          urlDoucmento: "www.whatever.com",
-        },
-      ],
-    },
-  ];
+  cargarSecciones(data){
+    this.ListaSecciones=[];
+    for(let seccion of data){
+      let nuevaSeccion=new ResourceSection();
+      nuevaSeccion.nombreSeccion=seccion.nombre_seccion;
+      nuevaSeccion.idSeccion=seccion.id_seccion;
+      for(let recurso of seccion.recursos){
+        let nuevoRecurso=new ResourceContent();
+        nuevoRecurso.nombre=recurso.nombre_recurso;
+        nuevoRecurso.tipo=recurso.id_tipo_recurso;
+        nuevoRecurso.url=recurso.ruta_recurso;
+        nuevoRecurso.id=recurso.id_recurso;
+        nuevaSeccion.resourceContent.push(nuevoRecurso);
+      }
+
+      this.ListaSecciones.push(nuevaSeccion);
+    }
+    console.log(this.ListaSecciones);
+  }
+  ngOnInit(): void {
+    this.route.parent.params.subscribe((param)=>{
+      this.idCurso=param["idCurso"];
+    });
+    this.route.data.subscribe({
+      next:(next)=>{
+        if(next.sections.status==200){
+          this.cargarSecciones(next.sections.body);
+        }
+        else{console.log("error")}
+      },
+      error:(err)=>{
+          console.log("error");
+      }
+
+    })    
+  }
 
   //dataSource = new MatTableDataSource(ELEMENT_DATA);
   displayedColumns: string[] = ["tipoDocumento", "nombreDocumento", "id"];
 
   //funciones
   agregarSeccion() {
-    console.log("clicked");
-    const dialogRef = this.dialog.open(AddSectionComponent, { width: "500px" });
+    const dialogRef = this.dialog.open(AddSectionComponent, { width: "500px" 
+    ,
+    data:{
+      idCurso:this.idCurso,
+    }
+  });
+  dialogRef.afterClosed().subscribe((res)=>{
+    if(res!==""&&res!=='undefined'&&res!=null){        
+    this.cargarSecciones(res);
+    }
+  })
   }
-  agregarDocumento() {
-    const dialogRef = this.dialog.open(AddDocumentComponent, {
-      width: "500px",
+  agregarDocumento(seccion:ResourceSection) {
+    const dialogRef = this.dialog.open(AddDocumentComponent, { width: "500px" ,
+    data:{
+      idSeccion:seccion.idSeccion,
+      idCurso:this.idCurso
+    }
+    });
+    dialogRef.afterClosed().subscribe((res)=>{
+      if(res!==""&&res!=='undefined'&&res!=null){        
+      this.cargarSecciones(res);
+      }
+    })
+  }
+
+  editarDocumento(resource:ResourceContent) {
+    const dialogRef = this.dialog.open(EditDocumentComponent, { width: "500px" ,
+    data:{
+      resource:resource,
+      idCurso:this.idCurso
+    }
+    });
+    dialogRef.afterClosed().subscribe((res)=>{
+      if(res!==""&&res!=='undefined'&&res!=null){        
+      this.cargarSecciones(res);
+      }
     });
   }
-  editarDocumento() {
-    const dialogRef = this.dialog.open(EditDocumentComponent, {
-      width: "500px",
-    });
+  editarSeccion(seccion:ResourceSection,index) {
+    const dialogRef = this.dialog.open(EditSectionComponent, { width: "500px",
+    data:{
+      idCurso:this.idCurso,
+      nombre:seccion.nombreSeccion,
+      idSeccion:seccion.idSeccion,
+
+
+    } });
+    dialogRef.afterClosed().subscribe((res)=>{
+      if(res!==""&&res!=='undefined'&&res!=null){        
+      this.cargarSecciones(res);
+      }
+    })
   }
-  editarSeccion() {
-    const dialogRef = this.dialog.open(EditSectionComponent, {
-      width: "500px",
-    });
-  }
-  eliminarSeccion() {
+  eliminarSeccion(seccion:ResourceSection,index) {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
       data: {
-        tipo: "Section",
+        tipo: "section",
+        idSeccion:seccion.idSeccion
       },
     });
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result==="ok"){
+        this.ListaSecciones.splice(index,1);
+      }
+    })
   }
-  eliminarDocumento() {
+  eliminarDocumento(resource:ResourceContent,indexs,index) {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
       data: {
         tipo: "File",
+        id:resource.id,
+        idCurso:this.idCurso
       },
     });
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result==="ok"){
+        window.location.reload();
+      }
+    })
+  }
+  descargarArchivo(resource:ResourceContent){
+    this.servSec.downloadResource(resource.url).subscribe({
+      next:(data)=>{
+        if(data.status==200){
+          window.open(data.body.url[0]);
+        }
+      },
+      error:(err)=>{
+        console.log("ocurrio un error");
+
+      }
+    })
   }
 
   // file: any;

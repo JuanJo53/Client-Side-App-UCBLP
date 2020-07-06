@@ -7,76 +7,21 @@
   <mat-dialog-content class="mat-typography">
     <form class="dialogformsModuesRubric">
       <!--block-->
-      <div class="dialog__module-rubric">
+      <div class="dialog__module-rubric" *ngFor="let element of listaRubricas,let i=index">
         <div class="dialog__module-rubric--left-side">
-          <span class="dialog__module-rubric--text">Attendance</span>
+          <span class="dialog__module-rubric--text">{{element.nombre_modulo}}</span>
         </div>
 
         <mat-form-field appearance="outline" class="dialog__module-rubric--right-side input-disabled"
           (dblclick)="toggleDisable()">
           <mat-label>%</mat-label>
           <!-- Input para el nombre del modulo-->
-          <input [disabled]="disableTextbox" type="text" matInput placeholder="%" name="nombreModulo" />
-          <!-- //Input para el nombre del modulo-->
-        </mat-form-field>
-      </div>
-      <!--#block-->
-      <!--block-->
-      <div class="dialog__module-rubric">
-        <div class="dialog__module-rubric--left-side">
-          <span class="dialog__module-rubric--text">Theme Activities</span>
-        </div>
-
-        <mat-form-field appearance="outline" class="dialog__module-rubric--right-side input-disabled"
-          (dblclick)="toggleDisable()">
-          <mat-label>%</mat-label>
-          <!-- Input para el nombre del modulo-->
-          <input [disabled]="disableTextbox" type="text" matInput placeholder="%" name="nombreModulo" />
-          <!-- //Input para el nombre del modulo-->
-        </mat-form-field>
-      </div>
-      <!--#block-->
-      <!--block-->
-      <div class="dialog__module-rubric">
-        <div class="dialog__module-rubric--left-side">
-          <span class="dialog__module-rubric--text">Theme Practices</span>
-        </div>
-
-        <mat-form-field appearance="outline" class="dialog__module-rubric--right-side input-disabled"
-          (dblclick)="toggleDisable()">
-          <mat-label>%</mat-label>
-          <!-- Input para el nombre del modulo-->
-          <input [disabled]="disableTextbox" type="text" matInput placeholder="%" name="nombreModulo" />
-          <!-- //Input para el nombre del modulo-->
-        </mat-form-field>
-      </div>
-      <!--#block-->
-      <!--block-->
-      <div class="dialog__module-rubric">
-        <div class="dialog__module-rubric--left-side">
-          <span class="dialog__module-rubric--text">Theme Test</span>
-        </div>
-
-        <mat-form-field appearance="outline" class="dialog__module-rubric--right-side input-disabled"
-          (dblclick)="toggleDisable()">
-          <mat-label>%</mat-label>
-          <!-- Input para el nombre del modulo-->
-          <input [disabled]="disableTextbox" type="text" matInput placeholder="%" name="nombreModulo" />
-          <!-- //Input para el nombre del modulo-->
-        </mat-form-field>
-      </div>
-      <!--#block-->
-      <!--block-->
-      <div class="dialog__module-rubric">
-        <div class="dialog__module-rubric--left-side">
-          <span class="dialog__module-rubric--text">Assessments</span>
-        </div>
-
-        <mat-form-field appearance="outline" class="dialog__module-rubric--right-side input-disabled"
-          (dblclick)="toggleDisable()">
-          <mat-label>%</mat-label>
-          <!-- Input para el nombre del modulo-->
-          <input [disabled]="disableTextbox" type="text" matInput placeholder="%" name="nombreModulo" />
+          <input
+            type="number"
+            matInput
+            [(ngModel)]="element.rubrica"
+            name="nombreModulo+ {{i}}"
+          />
           <!-- //Input para el nombre del modulo-->
         </mat-form-field>
       </div>
@@ -90,12 +35,12 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <!--btn cancel-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel">
+    <button mat-button mat-dialog-close class="dialog-button-cancel" (click)=cancelar()>
       Cancel
     </button>
     <!--#btn cancel-->
     <!-- btn accept-->
-    <button mat-button class="dialog-button-accept">
+    <button mat-button class="dialog-button-accept" (click)=aceptar()>
       Accept
     </button>
   </mat-dialog-actions>

@@ -41,7 +41,8 @@ import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.r
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
-import { GetPracticesResolver } from "./_resolvers/docente/practices/get-practices.resolver";
+import { GetPracticesResolver } from './_resolvers/docente/practices/get-practices.resolver';
+import { GetResourcesResolver } from './_resolvers/docente/Resources/get-resources.resolver';
 
 const routes: Routes = [
   {
@@ -66,7 +67,8 @@ const routes: Routes = [
   {
     path: "teacher/:idCurso",
     component: DefaultComponent,
-    resolve: { profile: ProfileDocenteResolver },
+    resolve: { profile: ProfileDocenteResolver ,
+      classroom: ClassroomDocenteResolver,},
     children: [
       {
         path: "dashboard",
@@ -215,6 +217,10 @@ const routes: Routes = [
       {
         path: "resources",
         component: ResourcesComponent,
+        runGuardsAndResolvers:"always",
+        resolve:{
+          sections:GetResourcesResolver
+        },
       },
       {
         path: "evaluation",
