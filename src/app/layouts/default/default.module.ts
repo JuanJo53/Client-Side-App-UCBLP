@@ -75,6 +75,7 @@ import { TestDetailComponent } from 'src/app/modules/dialogs/test-detail/test-de
 import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RepositoryQuestionComponent } from 'src/app/modules/dialogs/create-practice/repository-question/repository-question.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -155,7 +156,8 @@ import { RepositoryQuestionComponent } from 'src/app/modules/dialogs/create-prac
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
     MatCheckboxModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatAutocompleteModule
   ],
 })
 export class DefaultModule {}

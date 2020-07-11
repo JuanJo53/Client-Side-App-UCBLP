@@ -1,16 +1,152 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-export class HorarioClase {
-  dia: string;
-  horaComienzo: string;
-  horaFinaliza: string;
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from "@angular/forms";
+import { Observable } from "rxjs";
+import { map, startWith } from "rxjs/operators";
+import { MatTableDataSource } from "@angular/material/table";
+
+export interface ListaDeEstudiantes {
+  nombre: string;
+  posicion: number;
+  p_nombre: string; //apellido paterno
+  m_nombre: string; //pellido materno
+  promedio: number;
+  id: number;
 }
+
 @Component({
   selector: "app-repository-question",
   templateUrl: "./repository-question.component.html",
   styleUrls: ["./repository-question.component.scss"],
 })
 export class RepositoryQuestionComponent implements OnInit {
+  ELEMENT_DATA: ListaDeEstudiantes[] = [
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+    {
+      nombre: "ariel",
+      posicion: 5,
+      p_nombre: "ads", //apellido paterno
+      m_nombre: "ads", //pellido materno
+      promedio: 76,
+      id: 4,
+    },
+  ];
+  displayedColumns: string[] = [
+    "posicion",
+    "nombre",
+    "p_nombre",
+    "m_nombre",
+    "promedio",
+    "id",
+  ];
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -30,6 +166,10 @@ export class RepositoryQuestionComponent implements OnInit {
   valueTipoRespuesta: string;
   valueTipoPregunta: string;
   valueTipoHabilidad: string;
+
+  myControl = new FormControl();
+  options: string[] = ["One", "Two", "Three"];
+  filteredOptions: Observable<string[]>;
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -39,5 +179,16 @@ export class RepositoryQuestionComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ["", Validators.required],
     });
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(""),
+      map((value) => this._filter(value))
+    );
+  }
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(
+      (option) => option.toLowerCase().indexOf(filterValue) === 0
+    );
   }
 }
