@@ -1,0 +1,139 @@
+<mat-dialog-content class="mat-typography">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <!-- primer paso -->
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Questions from Repository</ng-template>
+        <!-- contenido -->
+        <div class="repository__combos">
+          <!--cantidad estudiantes-->
+          <mat-form-field class="combo-box">
+            <mat-label>English Level</mat-label>
+            <mat-select [(value)]="valueNivelIngles">
+              <mat-option
+                *ngFor="let elemento of nivelIngles"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--#cantidad estudiantes-->
+          <!--cantidad categoria pregunta-->
+          <mat-form-field class="combo-box">
+            <mat-label>Category</mat-label>
+            <mat-select [(value)]="valueTipoCategoria">
+              <mat-option
+                *ngFor="let elemento of tipoCategoriasRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--#cantidad categoria pregunta-->
+          <!-- tipo preguntas-->
+          <mat-form-field class="combo-box">
+            <mat-label>Type of question</mat-label>
+            <mat-select [(value)]="valueTipoPregunta">
+              <mat-option
+                *ngFor="let elemento of tipoPreguntasRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--# tipo preguntas-->
+          <!-- tipo respuestas-->
+          <mat-form-field class="combo-box">
+            <mat-label>Type of answer</mat-label>
+            <mat-select [(value)]="valueTipoRespuesta">
+              <mat-option
+                *ngFor="let elemento of tipoRespuestasRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--# tipo respuestas-->
+          <!-- tipo skill-->
+          <mat-form-field class="combo-box">
+            <mat-label>Type of skill</mat-label>
+            <mat-select [(value)]="valueTipoHabilidad">
+              <mat-option
+                *ngFor="let elemento of tipoHabilidadRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--# tipo skill-->
+        </div>
+
+        <!-- #contenido -->
+        <div>
+          <button
+            mat-button
+            matStepperPrevious
+            class="progress-bar__button-negative"
+          >
+            Cancel
+          </button>
+          <button mat-button matStepperNext class="progress-bar__button-normal">
+            Add questions
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <!-- #primer paso -->
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Review selected questions</ng-template>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input
+            matInput
+            formControlName="secondCtrl"
+            placeholder="Ex. 1 Main St, New York, NY"
+            required
+          />
+        </mat-form-field>
+        <div>
+          <button
+            mat-button
+            matStepperPrevious
+            class="progress-bar__button-negative"
+          >
+            Back
+          </button>
+          <button mat-button matStepperNext class="progress-bar__button-normal">
+            Add questions to practice
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button
+          mat-button
+          matStepperPrevious
+          class="progress-bar__button-negative"
+        >
+          Back
+        </button>
+        <button
+          mat-button
+          (click)="stepper.reset()"
+          class="progress-bar__button-normal"
+        >
+          Reset
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</mat-dialog-content>

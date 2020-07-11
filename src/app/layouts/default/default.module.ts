@@ -74,6 +74,7 @@ import { AssessmentsBaseComponent } from 'src/app/modules/home/modules/assessmen
 import { TestDetailComponent } from 'src/app/modules/dialogs/test-detail/test-detail.component';
 import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { RepositoryQuestionComponent } from 'src/app/modules/dialogs/create-practice/repository-question/repository-question.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -124,7 +125,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     DetailAssessmentsComponent,
     AssessmentsBaseComponent,
     TestDetailComponent,
-    IndividualAssessmentComponent
+    IndividualAssessmentComponent,
+    RepositoryQuestionComponent
   ],
   imports: [
     CommonModule,

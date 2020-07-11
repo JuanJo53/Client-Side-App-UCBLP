@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
-import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 import { CustomQuestionComponent } from "../../../../../dialogs/create-practice/custom-question/custom-question.component";
+import { RepositoryQuestionComponent } from "../../../../../dialogs/create-practice/repository-question/repository-question.component";
 import {
   MatDialog,
   MatDialogRef,
@@ -166,13 +166,12 @@ export class CreatePracticeComponent implements OnInit {
       }
     });
   }
-  Repository(){
-
+  preguntasRepositorio(){
+    const dialogRef = this.dialog.open(RepositoryQuestionComponent, {
+      width: "1000px",
+      maxHeight: "80vh",
+    });
   }
-
-
-
-
 
   //Funciones paso 1
   verificarpaso1():boolean{
