@@ -9,13 +9,14 @@ import { Observable } from "rxjs";
 import { map, startWith } from "rxjs/operators";
 import { MatTableDataSource } from "@angular/material/table";
 
-export interface ListaDeEstudiantes {
-  nombre: string;
-  posicion: number;
-  p_nombre: string; //apellido paterno
-  m_nombre: string; //pellido materno
-  promedio: number;
-  id: number;
+export interface ListaPreguntasPracticas {
+  codigo: number;
+  nivel: string;
+  categoria: string;
+  tipoPregunta: string;
+  tipoRespuesta: string;
+  habilidad: string;
+  checkbox: number;
 }
 
 @Component({
@@ -24,127 +25,116 @@ export interface ListaDeEstudiantes {
   styleUrls: ["./repository-question.component.scss"],
 })
 export class RepositoryQuestionComponent implements OnInit {
-  ELEMENT_DATA: ListaDeEstudiantes[] = [
+  checked: boolean;
+  ELEMENT_DATA: ListaPreguntasPracticas[] = [
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
     {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
-    },
-    {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
-    },
-    {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
-    },
-    {
-      nombre: "ariel",
-      posicion: 5,
-      p_nombre: "ads", //apellido paterno
-      m_nombre: "ads", //pellido materno
-      promedio: 76,
-      id: 4,
+      codigo: 1,
+      nivel: "Level 1",
+      categoria: "vegetables",
+      tipoPregunta: "simple",
+      tipoRespuesta: "multiple choice",
+      habilidad: "reading",
+      checkbox: 0,
     },
   ];
   displayedColumns: string[] = [
-    "posicion",
-    "nombre",
-    "p_nombre",
-    "m_nombre",
-    "promedio",
-    "id",
+    "nivel",
+    "categoria",
+    "tipoPregunta",
+    "tipoRespuesta",
+    "habilidad",
+    "codigo",
+    "checkbox",
   ];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
   isLinear = false;
