@@ -2,107 +2,11 @@ import { Component, OnInit, ViewChild, Inject } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
+import { ChartType } from 'chart.js';
+// import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { MultiDataSet, Label } from 'ng2-charts';
+import { ChartOptions, ChartDataSets } from 'chart.js';
 
-
-export interface ListaDeEstudiantes {
-  nombre: string;
-  posicion: number;
-  p_nombre: string; //apellido paterno
-  m_nombre: string; //pellido materno
-  promedio: number;
-  id: number;
-}
-
-const ELEMENT_DATA: ListaDeEstudiantes[] = [
-  {
-    posicion: 1,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 1,
-  },
-  {
-    posicion: 2,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 2,
-  },
-  {
-    posicion: 3,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 3,
-  },
-  {
-    posicion: 4,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 4,
-  },
-  {
-    posicion: 5,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 5,
-  },
-  {
-    posicion: 6,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 6,
-  },
-  {
-    posicion: 7,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 7,
-  },
-  {
-    posicion: 8,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 8,
-  },
-  {
-    posicion: 9,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 9,
-  },
-  {
-    posicion: 10,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    promedio: 90,
-    id: 10,
-  },
-  {
-    posicion: 11,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    promedio: 90,
-    id: 11,
-  },
-];
 
 @Component({
   selector: "app-dashboard",
@@ -122,25 +26,77 @@ const ELEMENT_DATA: ListaDeEstudiantes[] = [
 // }
 export class DashboardComponent implements OnInit {
   link = "Dashboard";
+  public doughnutChartType: ChartType = 'doughnut';
 
-  displayedColumns: string[] = [
-    "posicion",
-    "nombre",
-    "p_nombre",
-    "m_nombre",
-    "promedio",
-    "id",
+  public doughnutChartLabels: Label[] = ['Yes', 'No'];
+  public doughnutChartData: MultiDataSet = [
+    [85, 15]
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  
+  public doughnutChartColors = [
+    {
+      backgroundColor: ['#084c61', '#ca5a5d'],
+    },
+  ];
 
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  // @ViewChild(MatPaginator)paginator: MatPaginator;
+
+  public doughnutChartLabelsPractices: Label[] = ['Approved', 'Failed','No taken'];
+  public doughnutChartDataPractices: MultiDataSet = [
+    [70, 10,20]
+  ];
+  
+  public doughnutChartColorsPractices = [
+    {
+      backgroundColor: ['#084c61', '#ca5a5d','#8f8f8f'],
+    },
+  ];
+
+
+
+  public doughnutChartDataTests: MultiDataSet = [
+    [70, 10,20]
+  ];
+  
+  public doughnutChartDataAssessment: MultiDataSet = [
+    [70, 15,15]
+  ];
+
+
+
+
+  public barChartOptions: ChartOptions = {
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
+    scales: { xAxes: [{}], yAxes: [{}] },
+    plugins: {
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+      }
+    }
+  };
+
+  public barChartLabels: Label[] = ['T1', 'T2', 'T3', 'T4', 'T5','T6'];
+  public barChartType: ChartType = 'bar';
+  public barChartLegend = true;
+  // public barChartPlugins = [pluginDataLabels];
+  
+
+  public barChartData: ChartDataSets[] = [
+    { data: [ 0,80, 81, 60, 60, 80], label: 'Tests' , backgroundColor:'#084c61',hoverBackgroundColor: '#83a5af' ,weight:'3rem'}
+   
+  ];
+  constructor() { }
 
   ngOnInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    //this.dataSource.paginator=this.paginator;
   }
-  constructor() {}
+
+  // events
+  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
 }

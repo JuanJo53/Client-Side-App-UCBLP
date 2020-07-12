@@ -76,6 +76,7 @@ import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/asse
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RepositoryQuestionComponent } from 'src/app/modules/dialogs/create-practice/repository-question/repository-question.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -157,7 +158,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     NgxMaterialTimepickerModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    ChartsModule
   ],
 })
 export class DefaultModule {}
