@@ -83,7 +83,7 @@ export class DashboardComponent implements OnInit {
   
 
   public barChartData: ChartDataSets[] = [
-    { data: [ 0,80, 81, 60, 60, 80], label: 'Tests' , backgroundColor:'#084c61',hoverBackgroundColor: '#83a5af' ,weight:'3rem'}
+    { data: [ 0,80, 81, 60, 60, 80], label: 'Tests' , backgroundColor:'#084c61',hoverBackgroundColor: '#83a5af' }
    
   ];
   constructor() { }
