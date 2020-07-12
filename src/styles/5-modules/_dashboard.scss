@@ -1,0 +1,35 @@
+@import "1-helpers/variables";
+@import "1-helpers/mixins";
+@import "3-basics/links";
+
+.dashboard-card {
+    @include custom-card(40rem, 30rem, $color-primary-white);
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: $color-primary-black;
+    &__description-dashboard {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex: 0 1 15%;
+        
+        background-color:  $color-primary-blue;
+        &-title {
+            font-size: 2.25rem;
+            flex: 1;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            color: $color-primary-white;
+          }
+      }
+      &__grafics {
+        flex: 1;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        margin: 0 !important;
+      }
+}
