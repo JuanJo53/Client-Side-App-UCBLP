@@ -29,7 +29,62 @@ export interface ListaPreguntasPracticas {
 export class RepositoryQuestionComponent implements OnInit {
   showSpinner = false;
   checked: boolean;
-  preguntas: Pregunta[] = [];
+  preguntas: Pregunta[] = [
+    {
+      tipo: true,
+      numeroPreg: 1,
+      puntuacion: 30,
+      pregunta: "abc",
+      opciones: ["a", "b"],
+      grupo: "1",
+      respuesta: [1, 0],
+      respuestasBool: [true, false],
+      idTipoPregunta: "1",
+      idTipoRespuesta: "1",
+      recurso: "",
+      bloqpunt: false,
+      bloqpreg: false,
+      bloqopci: false,
+      bloqidtp: false,
+      bloqidtr: false,
+    },
+    {
+      tipo: true,
+      numeroPreg: 2,
+      puntuacion: 30,
+      pregunta: "def2",
+      opciones: ["c", "d"],
+      grupo: "2",
+      respuesta: [0, 0],
+      respuestasBool: [true, false],
+      idTipoPregunta: "2",
+      idTipoRespuesta: "2",
+      recurso: "",
+      bloqpunt: false,
+      bloqpreg: false,
+      bloqopci: false,
+      bloqidtp: false,
+      bloqidtr: false,
+    },
+    {
+      tipo: true,
+      numeroPreg: 3,
+      puntuacion: 40,
+      pregunta: "def3",
+      opciones: ["ff", "dd"],
+      grupo: "2",
+      respuesta: [0, 1],
+      respuestasBool: [true, false],
+      idTipoPregunta: "2",
+      idTipoRespuesta: "1",
+      recurso: "",
+      bloqpunt: false,
+      bloqpreg: false,
+      bloqopci: false,
+      bloqidtp: false,
+      bloqidtr: false,
+    },
+  ];
   ELEMENT_DATA: ListaPreguntasPracticas[] = [
     {
       codigo: 1,
@@ -41,7 +96,7 @@ export class RepositoryQuestionComponent implements OnInit {
       checkbox: 0,
     },
     {
-      codigo: 1,
+      codigo: 2,
       nivel: "Level 1",
       categoria: "vegetables",
       tipoPregunta: "simple",
@@ -50,79 +105,7 @@ export class RepositoryQuestionComponent implements OnInit {
       checkbox: 0,
     },
     {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
-      nivel: "Level 1",
-      categoria: "vegetables",
-      tipoPregunta: "simple",
-      tipoRespuesta: "multiple choice",
-      habilidad: "reading",
-      checkbox: 0,
-    },
-    {
-      codigo: 1,
+      codigo: 3,
       nivel: "Level 1",
       categoria: "vegetables",
       tipoPregunta: "simple",
@@ -195,6 +178,10 @@ export class RepositoryQuestionComponent implements OnInit {
     setTimeout(() => {
       this.showSpinner = false;
     }, 5000);
+  }
+  irPasoDos(stepper: MatStepper, codigo: number) {
+    console.log("codigo : " + codigo);
+    stepper.next();
   }
   irPasoTres(stepper: MatStepper) {
     stepper.selectedIndex = 2;

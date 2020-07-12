@@ -156,7 +156,7 @@
               <button
                 class="circular-button-table--normal"
                 mat-mini-fab
-                matStepperNext
+                (click)="irPasoDos(stepper, element.codigo)"
               >
                 <mat-icon class="circular-button-subtitle__icon"
                   >remove_red_eye</mat-icon
@@ -201,158 +201,7 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>View</ng-template>
-      <!--row added row-->
-      <div
-        *ngFor="let card of preguntas; let i = index"
-        [ngSwitch]="card.idTipoRespuesta"
-        #template
-      >
-        <!--radio button case-->
-        <div class="question-card-added" *ngSwitchCase="'1'">
-          <div class="question-card-added__content">
-            <div class="question-card-added__header">
-              <!--input para pregunta-->
-              <div class="question-card-added__header--question">
-                <mat-form-field appearance="outline">
-                  <mat-label>Question Name</mat-label>
-                  <input
-                    [(ngModel)]="card.pregunta"
-                    type="text"
-                    readonly
-                    class="input-form"
-                    matInput
-                    placeholder="Question Name"
-                    name="nombre preguntaPas3{{ i }}"
-                  />
-                </mat-form-field>
-              </div>
-              <!--#input para pregunta-->
-              <div class="question-card-added__header--score">
-                <!--input para pregunta-->
-                <div class="card-question__input">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Score</mat-label>
-                    <input
-                      [(ngModel)]="card.puntuacion"
-                      type="text"
-                      readonly
-                      class="input-form"
-                      matInput
-                      placeholder="Score Name"
-                      name="puntuacionPas3{{ i }}"
-                    />
-                  </mat-form-field>
-                </div>
-                <!--#input para pregunta-->
-              </div>
-            </div>
-            <div class="question-card-added__content-question">
-              <!-- <form class="example-form"> -->
-              <mat-radio-group
-                aria-label="Select an option"
-                class="example-radio-group"
-                name="radioButtonsGroupPas3{{ i }}"
-                [disabled]="true"
-                [(ngModel)]="card.respuesta[0]"
-              >
-                <!-- radio button option -->
-                <mat-radio-button
-                  name="grupo{{ i }}"
-                  class="question-card-added__choice"
-                  *ngFor="
-                    let opcionesRadioButton of card.opciones;
-                    let x = index
-                  "
-                  [value]="x"
-                >
-                  <mat-form-field class="full-width-field">
-                    <input
-                      [(value)]="card.opciones[x]"
-                      name="grupoPas3{{ x }}{{ i }}"
-                      style="color: black;"
-                      readonly
-                      class="question-card-added__choice--input"
-                      matInput
-                      placeholder="opcion {{ x + 1 }}"
-                    />
-                  </mat-form-field>
-                  <!--#radio button option-->
-                </mat-radio-button>
-              </mat-radio-group>
-              <!-- </form> -->
-            </div>
-          </div>
-        </div>
-
-        <!--checkbox case-->
-        <div class="question-card-added" *ngSwitchCase="'2'">
-          <div class="question-card-added__content">
-            <div class="question-card-added__header">
-              <!--input para pregunta-->
-              <div class="question-card-added__header--question">
-                <mat-form-field appearance="outline">
-                  <mat-label>Question Name</mat-label>
-                  <input
-                    [(ngModel)]="card.pregunta"
-                    type="text"
-                    class="input-form"
-                    matInput
-                    readonly
-                    placeholder="Question Name"
-                    name="nombre preguntaPas3{{ i }}"
-                  />
-                </mat-form-field>
-              </div>
-              <!--#input para pregunta-->
-              <div class="question-card-added__header--score">
-                <!--input para pregunta-->
-                <div class="card-question__input">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Score</mat-label>
-                    <input
-                      [(ngModel)]="card.puntuacion"
-                      type="text"
-                      class="input-form"
-                      readonly
-                      matInput
-                      placeholder="Score Name"
-                      name="puntuacionPas3{{ i }}"
-                    />
-                  </mat-form-field>
-                </div>
-                <!--#input para pregunta-->
-              </div>
-            </div>
-            <div class="question-card-added__content-question">
-              <!-- <form class="example-form"> -->
-              <mat-checkbox
-                class="card-question__choice"
-                [disabled]="true"
-                *ngFor="let opcionesCB of card.opciones; let x = index"
-                [(ngModel)]="card.respuestasBool[x]"
-                name="respuestacheckPas3{{ x }}"
-              >
-                <mat-form-field class="full-width-field">
-                  <input
-                    [(value)]="card.opciones[x]"
-                    style="color: black;"
-                    readonly
-                    name="aPas3{{ x }}"
-                    class="card-question__choice--input"
-                    matInput
-                    placeholder="opcion"
-                  />
-                </mat-form-field>
-                <!--#radio button option-->
-              </mat-checkbox>
-
-              <!-- </form> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--#row-->
-
+      2do
       <div class="group-buttons__dialog">
         <button
           mat-button
@@ -360,14 +209,6 @@
           class="progress-bar__button-negative"
         >
           Back
-        </button>
-        <button
-          mat-button
-          matStepperNext
-          class="progress-bar__button-normal"
-          (click)="loadData()"
-        >
-          Add questions to practice
         </button>
       </div>
     </form>
@@ -377,157 +218,164 @@
   <mat-step [stepControl]="thirdFormGroup">
     <form [formGroup]="thirdFormGroup">
       <ng-template matStepLabel>Preview</ng-template>
-      <!--row added row-->
-      <div
-        *ngFor="let card of preguntas; let i = index"
-        [ngSwitch]="card.idTipoRespuesta"
-        #template
-      >
-        <!--radio button case-->
-        <div class="question-card-added" *ngSwitchCase="'1'">
-          <div class="question-card-added__content">
-            <div class="question-card-added__header">
-              <!--input para pregunta-->
-              <div class="question-card-added__header--question">
-                <mat-form-field appearance="outline">
-                  <mat-label>Question Name</mat-label>
-                  <input
-                    [(ngModel)]="card.pregunta"
-                    type="text"
-                    readonly
-                    class="input-form"
-                    matInput
-                    placeholder="Question Name"
-                    name="nombre preguntaPas3{{ i }}"
-                  />
-                </mat-form-field>
-              </div>
-              <!--#input para pregunta-->
-              <div class="question-card-added__header--score">
+      <mat-dialog-content class="mat-typography">
+        <!--row added row-->
+        <div
+          *ngFor="let card of preguntas; let i = index"
+          [ngSwitch]="card.idTipoRespuesta"
+          #template
+        >
+          <!--radio button case-->
+          <div class="question-card-added" *ngSwitchCase="'1'">
+            <div class="question-card-added__content">
+              <div class="question-card-added__header">
                 <!--input para pregunta-->
-                <div class="card-question__input">
+                <div class="question-card-added__header--question">
                   <mat-form-field appearance="outline">
-                    <mat-label>Score</mat-label>
+                    <mat-label>Question Name</mat-label>
                     <input
-                      [(ngModel)]="card.puntuacion"
+                      [(ngModel)]="card.pregunta"
                       type="text"
                       readonly
                       class="input-form"
                       matInput
-                      placeholder="Score Name"
-                      name="puntuacionPas3{{ i }}"
+                      placeholder="Question Name"
+                      name="nombre preguntaPas3{{ i }}"
+                      [ngModelOptions]="{ standalone: true }"
                     />
                   </mat-form-field>
                 </div>
                 <!--#input para pregunta-->
+                <div class="question-card-added__header--score">
+                  <!--input para pregunta-->
+                  <div class="card-question__input">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Score</mat-label>
+                      <input
+                        [(ngModel)]="card.puntuacion"
+                        type="text"
+                        readonly
+                        class="input-form"
+                        matInput
+                        placeholder="Score Name"
+                        name="puntuacionPas3{{ i }}"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                </div>
+              </div>
+              <div class="question-card-added__content-question">
+                <!-- <form class="example-form"> -->
+                <mat-radio-group
+                  aria-label="Select an option"
+                  class="example-radio-group"
+                  name="radioButtonsGroupPas3{{ i }}"
+                  [disabled]="true"
+                  [(ngModel)]="card.respuesta[0]"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <!-- radio button option -->
+                  <mat-radio-button
+                    name="grupo{{ i }}"
+                    class="question-card-added__choice"
+                    *ngFor="
+                      let opcionesRadioButton of card.opciones;
+                      let x = index
+                    "
+                    [value]="x"
+                  >
+                    <mat-form-field class="full-width-field">
+                      <input
+                        [(value)]="card.opciones[x]"
+                        name="grupoPas3{{ x }}{{ i }}"
+                        style="color: black;"
+                        readonly
+                        class="question-card-added__choice--input"
+                        matInput
+                        placeholder="opcion {{ x + 1 }}"
+                      />
+                    </mat-form-field>
+                    <!--#radio button option-->
+                  </mat-radio-button>
+                </mat-radio-group>
+                <!-- </form> -->
               </div>
             </div>
-            <div class="question-card-added__content-question">
-              <!-- <form class="example-form"> -->
-              <mat-radio-group
-                aria-label="Select an option"
-                class="example-radio-group"
-                name="radioButtonsGroupPas3{{ i }}"
-                [disabled]="true"
-                [(ngModel)]="card.respuesta[0]"
-              >
-                <!-- radio button option -->
-                <mat-radio-button
-                  name="grupo{{ i }}"
-                  class="question-card-added__choice"
-                  *ngFor="
-                    let opcionesRadioButton of card.opciones;
-                    let x = index
-                  "
-                  [value]="x"
+          </div>
+
+          <!--checkbox case-->
+          <div class="question-card-added" *ngSwitchCase="'2'">
+            <div class="question-card-added__content">
+              <div class="question-card-added__header">
+                <!--input para pregunta-->
+                <div class="question-card-added__header--question">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Question Name</mat-label>
+                    <input
+                      [(ngModel)]="card.pregunta"
+                      type="text"
+                      class="input-form"
+                      matInput
+                      readonly
+                      placeholder="Question Name"
+                      name="nombre preguntaPas3{{ i }}"
+                      [ngModelOptions]="{ standalone: true }"
+                    />
+                  </mat-form-field>
+                </div>
+                <!--#input para pregunta-->
+                <div class="question-card-added__header--score">
+                  <!--input para pregunta-->
+                  <div class="card-question__input">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Score</mat-label>
+                      <input
+                        [(ngModel)]="card.puntuacion"
+                        type="text"
+                        class="input-form"
+                        readonly
+                        matInput
+                        placeholder="Score Name"
+                        name="puntuacionPas3{{ i }}"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                </div>
+              </div>
+              <div class="question-card-added__content-question">
+                <!-- <form class="example-form"> -->
+                <mat-checkbox
+                  class="card-question__choice"
+                  [disabled]="true"
+                  *ngFor="let opcionesCB of card.opciones; let x = index"
+                  [(ngModel)]="card.respuestasBool[x]"
+                  name="respuestacheckPas3{{ x }}"
                 >
                   <mat-form-field class="full-width-field">
                     <input
                       [(value)]="card.opciones[x]"
-                      name="grupoPas3{{ x }}{{ i }}"
                       style="color: black;"
                       readonly
-                      class="question-card-added__choice--input"
+                      name="aPas3{{ x }}"
+                      class="card-question__choice--input"
                       matInput
-                      placeholder="opcion {{ x + 1 }}"
+                      placeholder="opcion"
                     />
                   </mat-form-field>
                   <!--#radio button option-->
-                </mat-radio-button>
-              </mat-radio-group>
-              <!-- </form> -->
+                </mat-checkbox>
+
+                <!-- </form> -->
+              </div>
             </div>
           </div>
         </div>
-
-        <!--checkbox case-->
-        <div class="question-card-added" *ngSwitchCase="'2'">
-          <div class="question-card-added__content">
-            <div class="question-card-added__header">
-              <!--input para pregunta-->
-              <div class="question-card-added__header--question">
-                <mat-form-field appearance="outline">
-                  <mat-label>Question Name</mat-label>
-                  <input
-                    [(ngModel)]="card.pregunta"
-                    type="text"
-                    class="input-form"
-                    matInput
-                    readonly
-                    placeholder="Question Name"
-                    name="nombre preguntaPas3{{ i }}"
-                  />
-                </mat-form-field>
-              </div>
-              <!--#input para pregunta-->
-              <div class="question-card-added__header--score">
-                <!--input para pregunta-->
-                <div class="card-question__input">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Score</mat-label>
-                    <input
-                      [(ngModel)]="card.puntuacion"
-                      type="text"
-                      class="input-form"
-                      readonly
-                      matInput
-                      placeholder="Score Name"
-                      name="puntuacionPas3{{ i }}"
-                    />
-                  </mat-form-field>
-                </div>
-                <!--#input para pregunta-->
-              </div>
-            </div>
-            <div class="question-card-added__content-question">
-              <!-- <form class="example-form"> -->
-              <mat-checkbox
-                class="card-question__choice"
-                [disabled]="true"
-                *ngFor="let opcionesCB of card.opciones; let x = index"
-                [(ngModel)]="card.respuestasBool[x]"
-                name="respuestacheckPas3{{ x }}"
-              >
-                <mat-form-field class="full-width-field">
-                  <input
-                    [(value)]="card.opciones[x]"
-                    style="color: black;"
-                    readonly
-                    name="aPas3{{ x }}"
-                    class="card-question__choice--input"
-                    matInput
-                    placeholder="opcion"
-                  />
-                </mat-form-field>
-                <!--#radio button option-->
-              </mat-checkbox>
-
-              <!-- </form> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--#row-->
+        <!--#row-->
+      </mat-dialog-content>
 
       <div class="group-buttons__dialog">
         <button
