@@ -8,6 +8,7 @@ import {
 import { Observable } from "rxjs";
 import { map, startWith } from "rxjs/operators";
 import { MatTableDataSource } from "@angular/material/table";
+import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 
 export interface ListaPreguntasPracticas {
   codigo: number;
@@ -27,6 +28,7 @@ export interface ListaPreguntasPracticas {
 export class RepositoryQuestionComponent implements OnInit {
   showSpinner = false;
   checked: boolean;
+  preguntas: Pregunta[] = [];
   ELEMENT_DATA: ListaPreguntasPracticas[] = [
     {
       codigo: 1,
