@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 import { map, startWith } from "rxjs/operators";
 import { MatTableDataSource } from "@angular/material/table";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
+import { MatStepper } from "@angular/material/stepper";
 
 export interface ListaPreguntasPracticas {
   codigo: number;
@@ -143,6 +144,7 @@ export class RepositoryQuestionComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
   nivelIngles: string[] = ["Level 1", "Level 2", "Level 3", "Level 4"];
   tipoCategoriasRepositorio: string[] = ["Animals", "Vegetables", "Technology"];
   tipoPreguntasRepositorio: string[] = ["Simple", "Drag and Drop"];
@@ -172,6 +174,9 @@ export class RepositoryQuestionComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ["", Validators.required],
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ["", Validators.required],
+    });
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(""),
       map((value) => this._filter(value))
@@ -190,5 +195,11 @@ export class RepositoryQuestionComponent implements OnInit {
     setTimeout(() => {
       this.showSpinner = false;
     }, 5000);
+  }
+  irPasoTres(stepper: MatStepper) {
+    stepper.selectedIndex = 2;
+  }
+  volverPasoUno(stepper: MatStepper) {
+    stepper.selectedIndex = 0;
   }
 }
