@@ -189,9 +189,10 @@
     </form>
   </mat-step>
   <!-- #primer paso -->
+  <!-- segundo paso -->
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Review selected ques tions</ng-template>
+      <ng-template matStepLabel>Preview</ng-template>
       <mat-form-field>
         <mat-label>Address</mat-label>
         <input
@@ -201,7 +202,7 @@
           required
         />
       </mat-form-field>
-      <div>
+      <div class="group-buttons__dialog">
         <button
           mat-button
           matStepperPrevious
@@ -209,16 +210,25 @@
         >
           Back
         </button>
-        <button mat-button matStepperNext class="progress-bar__button-normal">
+        <button
+          mat-button
+          matStepperNext
+          class="progress-bar__button-normal"
+          (click)="loadData()"
+        >
           Add questions to practice
         </button>
       </div>
     </form>
   </mat-step>
+  <!-- #segundo paso -->
+  <!-- tercer paso -->
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
+    <div class="spinner">
+      <mat-spinner *ngIf="showSpinner"></mat-spinner>
+    </div>
+    <div class="group-buttons__dialog">
       <button
         mat-button
         matStepperPrevious
@@ -235,4 +245,5 @@
       </button>
     </div>
   </mat-step>
+  <!-- #tercer paso -->
 </mat-horizontal-stepper>

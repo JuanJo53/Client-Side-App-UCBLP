@@ -25,6 +25,7 @@ export interface ListaPreguntasPracticas {
   styleUrls: ["./repository-question.component.scss"],
 })
 export class RepositoryQuestionComponent implements OnInit {
+  showSpinner = false;
   checked: boolean;
   ELEMENT_DATA: ListaPreguntasPracticas[] = [
     {
@@ -180,5 +181,12 @@ export class RepositoryQuestionComponent implements OnInit {
     return this.options.filter(
       (option) => option.toLowerCase().indexOf(filterValue) === 0
     );
+  }
+  // funciones
+  loadData() {
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 5000);
   }
 }
