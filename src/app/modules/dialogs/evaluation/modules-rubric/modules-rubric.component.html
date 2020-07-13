@@ -29,17 +29,16 @@
 
     <div  *ngIf="total==100">
       <div  class="colorRubric1">
-        <p class="pModuleRubricResult">{{total}}</p>
+        <p >{{total}}</p>
       </div>
-      
     </div>
-    <div  *ngIf="total<100">
+    <div  *ngIf="total==30">
       <div class="colorRubric2">
-        <p class="pModuleRubricResult" >{{total}}</p>
+        <p  >{{total}}</p>
       </div>
       
     </div>
-
+    <!-- class="pModuleRubricResult" -->
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <!--btn cancel-->
