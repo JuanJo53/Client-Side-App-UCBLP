@@ -30,7 +30,6 @@ export class CreatePracticeComponent implements OnInit {
   paso2bloqScore=false;
   paso1:Config1=new Config1();
   preguntas: Pregunta[] = [
-    
   ];
 
   constructor(
