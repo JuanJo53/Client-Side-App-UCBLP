@@ -224,7 +224,7 @@
                         class="input-form"
                         matInput
                         placeholder="Question Name"
-                        name="nombre pregunta{{ i }}"
+                        [ngModelOptions]="{standalone: true}"
                       />
                     </mat-form-field>
                   </div>
@@ -241,7 +241,7 @@
                           class="input-form"
                           matInput
                           placeholder="Score Name"
-                          name="puntuacion{{ i }}"
+                          [ngModelOptions]="{standalone: true}"
                         />
                       </mat-form-field>
                     </div>
@@ -254,12 +254,11 @@
                     aria-label="Select an option"
                     class="example-radio-group"
                     [disabled]=true
-                    name="radioButtonsGroup{{ i }}"                      
+                    [ngModelOptions]="{standalone: true}"                  
                   [(ngModel)]="card.respuesta[0]"
                   >
                     <!-- radio button option -->
                     <mat-radio-button
-                      name="grupo{{ i }}"
                       class="question-card-added__choice"
 
                       *ngFor="
@@ -275,7 +274,6 @@
                           "               
                           style="color: black;"
                           readonly             
-                          name="grupo{{ x }}{{ i }}"
                           class="question-card-added__choice--input"
                           matInput
                           placeholder="opcion {{ x+1 }}"
@@ -322,7 +320,7 @@
                         matInput                        
                         readonly             
                         placeholder="Question Name"
-                        name="nombre pregunta{{ i }}"
+                        [ngModelOptions]="{standalone: true}"
                       />
                     </mat-form-field>
                   </div>
@@ -339,7 +337,7 @@
                           class="input-form"
                           matInput
                           placeholder="Score Name"
-                          name="puntuacion{{ i }}"
+                          [ngModelOptions]="{standalone: true}"
                         />
                       </mat-form-field>
                     </div>
@@ -354,7 +352,7 @@
                     [disabled]=true
                     *ngFor="let opcionesCB of card.opciones; let x = index"
                     [(ngModel)]="card.respuestasBool[x]"
-                    name="respuestacheck{{x}}"
+                    [ngModelOptions]="{standalone: true}"
                   >
                     <mat-form-field class="full-width-field">
                       <input
@@ -363,7 +361,6 @@
                       "  
                       style="color: black;"
                       readonly     
-                        name="a{{ x }}"
                         class="card-question__choice--input"
                         matInput
                         placeholder="opcion"
@@ -633,7 +630,7 @@
                         class="input-form"
                         matInput
                         placeholder="Question Name"
-                        name="nombre preguntaPas3{{ i }}"
+                        [ngModelOptions]="{standalone: true}"
                       />
                     </mat-form-field>
                   </div>
@@ -650,7 +647,7 @@
                           class="input-form"
                           matInput
                           placeholder="Score Name"
-                          name="puntuacionPas3{{ i }}"
+                          [ngModelOptions]="{standalone: true}"
                         />
                       </mat-form-field>
                     </div>
@@ -662,13 +659,12 @@
                   <mat-radio-group
                     aria-label="Select an option"
                     class="example-radio-group"
-                    name="radioButtonsGroupPas3{{ i }}"  
+                    [ngModelOptions]="{standalone: true}"  
                     [disabled]=true
                   [(ngModel)]="card.respuesta[0]"
                   >
                     <!-- radio button option -->
                     <mat-radio-button
-                      name="grupo{{ i }}"
                       class="question-card-added__choice"
                     
                       *ngFor="
@@ -682,7 +678,7 @@
                           [(value)]="
                             card.opciones[x]
                           "                           
-                          name="grupoPas3{{ x }}{{ i }}"
+                          
                           style="color: black;"
                           readonly
                           class="question-card-added__choice--input"
@@ -713,7 +709,7 @@
                         matInput
                         readonly
                         placeholder="Question Name"
-                        name="nombre preguntaPas3{{ i }}"
+                        [ngModelOptions]="{standalone: true}"
                       />
                     </mat-form-field>
                   </div>
@@ -730,7 +726,7 @@
                           readonly
                           matInput
                           placeholder="Score Name"
-                          name="puntuacionPas3{{ i }}"
+                          [ngModelOptions]="{standalone: true}"
                         />
                       </mat-form-field>
                     </div>
@@ -744,7 +740,7 @@
                     [disabled]=true
                     *ngFor="let opcionesCB of card.opciones; let x = index"
                     [(ngModel)]="card.respuestasBool[x]"
-                    name="respuestacheckPas3{{x}}"
+                    [ngModelOptions]="{standalone: true}"
                   >
                     <mat-form-field class="full-width-field">
                       <input
@@ -753,7 +749,6 @@
                       "  
                       style="color: black;"
                       readonly     
-                        name="aPas3{{ x }}"
                         class="card-question__choice--input"
                         matInput
                         placeholder="opcion"

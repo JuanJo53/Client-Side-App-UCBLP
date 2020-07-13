@@ -28,6 +28,7 @@ import { IndividualAssessmentComponent } from "./modules/home/modules/assessment
 
 import { DetailAssessmentsComponent } from "./modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component";
 import { StudentsGeneralResolver } from "./_resolvers/docente/my-class/get-students.resolver";
+import { GetProfileStudentResolver } from "./_resolvers/docente/my-class/get-profile-student.resolver";
 import { GetThemesTeacherResolver } from "./_resolvers/docente/modules/get-themes.resolver";
 import { GetImagesIdResolver } from "./_resolvers/docente/modules/get_imagesId.resolver";
 import { GetFechasAsistenciaResolver } from "./_resolvers/docente/my-class/get-fechas-asistencia.resolver";
@@ -43,6 +44,7 @@ import { BuildingPageComponent } from "./modules/aux-pages/building-page/buildin
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
 import { GetPracticesResolver } from './_resolvers/docente/practices/get-practices.resolver';
 import { GetResourcesResolver } from './_resolvers/docente/Resources/get-resources.resolver';
+import { GetModulesSimpleResolver } from './_resolvers/docente/evaluation/get-modules-simple.resolver';
 
 const routes: Routes = [
   {
@@ -67,8 +69,11 @@ const routes: Routes = [
   {
     path: "teacher/:idCurso",
     component: DefaultComponent,
-    resolve: { profile: ProfileDocenteResolver ,
-      classroom: ClassroomDocenteResolver,},
+    resolve: { 
+      profile: ProfileDocenteResolver ,
+      classroom: ClassroomDocenteResolver,
+      modules:GetModulesSimpleResolver  
+    },
     children: [
       {
         path: "dashboard",
@@ -93,6 +98,16 @@ const routes: Routes = [
           //   },
           //   component: AssistanceComponent,
           // },
+          {
+            path: "profile/:idAlumnoCurso",
+            resolve: {
+              students: GetProfileStudentResolver,
+              colors: GetColorsResolver,
+              images: GetImagesIdResolver,
+            },
+            component: StudentsProfileComponent,
+
+          },
           {
             path: "qualification",
             children: [
@@ -143,6 +158,10 @@ const routes: Routes = [
       {
         path: "modules",
         children: [
+          {
+            path:"custom/:id",
+            component:DashboardComponent     
+          },
           {
             path: "themes",
             component: ThemesBaseComponent,

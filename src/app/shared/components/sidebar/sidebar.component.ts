@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ["./sidebar.component.scss"],
 })
 export class SidebarComponent implements OnInit {
+  mPersonalizados:any[]=[];
   isSidebarOpen: boolean = true;
   mylogo: string = "assets/logo.png";
   message: String = "link";
@@ -21,8 +22,32 @@ export class SidebarComponent implements OnInit {
   constructor(private data: SharedService,private route:ActivatedRoute,private router:Router) {}
   // constructor() {}
   // ngOnInit(): void {}
+  agregarModulos(data){
+    for(let datos of data){
+      this.mPersonalizados.push({
+        id:datos.id_modulo,
+        nombre:datos.nombre_modulo
+      })
+    }
+  }
+  navigateCustom(modulo){
+    console.log(modulo);
+    this.route.params.subscribe(
+      (params)=>{      
+        this.router.navigate(['teacher',params['idCurso'],"modules","custom",modulo.id]); 
+      }
+    );
+  }
   ngOnInit() {
     this.data.currentMessage.subscribe((message) => (this.message = message));
+    this.route.data.subscribe({
+      next:(data)=>{
+        this.agregarModulos(data.modules.body);
+      },
+     error:(err)=>{
+       console.log(err);
+     }
+    });
   }
   navigateGeneral(link:string) {
     this.data.changeMessage(link);

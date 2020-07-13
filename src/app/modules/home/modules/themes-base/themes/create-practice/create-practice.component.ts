@@ -83,7 +83,17 @@ export class CreatePracticeComponent implements OnInit {
        this.idLeccion=param['idLeccion'];
     })
   }
+  generateId():string{
+    // Alphanumeric characters
+    const chars =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let autoId = '';
+    for (let i = 0; i < 20; i++) {
+      autoId += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
   
+    return autoId;
+  } 
   //funciones
   next(stepper:MatStepper) {
     switch(stepper.selectedIndex){

@@ -22,6 +22,16 @@ import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.compo
 })
 export class EvaluationComponent implements OnInit {
   colorNoDisponible:  "#838282";
+  getImageUrl(image){
+    return "url(" + image+ ")";
+  }
+  getImageIndex(index:string){
+    for(let image of this.images){
+      if(image.idImagen===index){
+        return image.url;
+      }
+    }
+  }
   defaultCard: EvaluationCard[] = [
     {
       id_evaluationCard: 1,
