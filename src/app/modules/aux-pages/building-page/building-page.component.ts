@@ -16,6 +16,10 @@ export class BuildingPageComponent implements OnInit {
 
     console.log( 'goBack()...' );
   }
+  // Funcion para ir al dashboard
+  cardClicked() {
+    this.router.navigate(["teacher", "dashboard"]);
+  }
 
   ngOnInit(): void {
   }
