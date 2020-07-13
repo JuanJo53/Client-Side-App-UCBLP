@@ -10,6 +10,7 @@ import { CardClassroom } from 'src/app/models/Teacher/CardClassroom';
   styleUrls: ['./modules-rubric.component.scss']
 })
 export class ModulesRubricComponent implements OnInit {
+  total=100;
   valor=30;
   disableTextbox =  true;
   listaRubricas:any[]=[];
