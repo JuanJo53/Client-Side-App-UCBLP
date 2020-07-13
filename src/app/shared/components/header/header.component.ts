@@ -3,6 +3,7 @@ import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Teacher } from 'src/app/models/Teacher/Teacher';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
+import { CardClassroom } from 'src/app/models/Teacher/CardClassroom';
 
 @Component({
   selector: "app-header",
@@ -17,15 +18,39 @@ export class HeaderComponent implements OnInit {
     correoDocente:"",
     primaLetra:""
   }
+  materias:CardClassroom[]=[]
+  
   mylogo: string = "assets/logo.png";
-  materia = "English 1";
+  materia = "";
+  simbCurso="";
   message: string;
   tituloNavbar: string;
   constructor(private data: SharedService,private usService:ActivatedRoute,private router:Router,private tokenServ:TokenStorageService) {}
   ngOnInit() {
+    var idCurso;
+    this.usService.params.subscribe((data)=>{
+      idCurso=data["idCurso"];
+      console.log(idCurso);
+    })
+    
     this.data.currentMessage.subscribe((message) => (this.message = message));
     this.usService.data.subscribe({
       next:data=>{
+        this.materias=[];
+        for(let materia of data.classroom){
+          console.log(materia);
+          let newCurso=new CardClassroom();
+          newCurso.curso=materia.nombre_curso;
+          newCurso.id_curso=materia.id_curso;
+          this.materias.push(newCurso);
+          if(materia.id_curso==idCurso){
+            this.materia=materia.nombre_curso;
+            var ini=this.materia.substring(0,1);
+            var fin=this.materia.substring(this.materia.length-1,this.materia.length);
+            this.simbCurso=ini+fin;
+          }
+        }
+        console.log(this.materias);
         this.userDocente.correoDocente = data.profile.correo_docente;
           this.userDocente.nombreDocente =
             data.profile.nombre_docente;
@@ -46,5 +71,8 @@ export class HeaderComponent implements OnInit {
   signout(): void {
     this.tokenServ.signOut();
     this.router.navigate(["/"]);
+  }
+  navigator(materia:CardClassroom){
+    this.router.navigate(["/teacher/"+materia.id_curso+"/dashboard"]);
   }
 }

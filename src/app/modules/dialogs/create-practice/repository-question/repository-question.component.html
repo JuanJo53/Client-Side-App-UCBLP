@@ -1,0 +1,424 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+  <!-- primer paso -->
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Repository</ng-template>
+      <!-- contenido -->
+      <mat-dialog-content class="mat-typography">
+        <div class="row">
+          <!--cantidad estudiantes-->
+          <mat-form-field class="col-sm-2">
+            <mat-label>English Level</mat-label>
+            <mat-select [(value)]="valueNivelIngles">
+              <mat-option
+                *ngFor="let elemento of nivelIngles"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--#cantidad estudiantes-->
+          <!--cantidad categoria pregunta-->
+          <mat-form-field class="col-sm-2">
+            <mat-label>Category</mat-label>
+            <mat-select [(value)]="valueTipoCategoria">
+              <mat-option
+                *ngFor="let elemento of tipoCategoriasRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--#cantidad categoria pregunta-->
+          <!-- tipo preguntas-->
+          <mat-form-field class="col-sm-2">
+            <mat-label>Type of question</mat-label>
+            <mat-select [(value)]="valueTipoPregunta">
+              <mat-option
+                *ngFor="let elemento of tipoPreguntasRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--# tipo preguntas-->
+          <!-- tipo respuestas-->
+          <mat-form-field class="col-sm-2">
+            <mat-label>Type of answer</mat-label>
+            <mat-select [(value)]="valueTipoRespuesta">
+              <mat-option
+                *ngFor="let elemento of tipoRespuestasRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--# tipo respuestas-->
+          <!-- tipo skill-->
+          <mat-form-field class="col-sm-2">
+            <mat-label>Type of skill</mat-label>
+            <mat-select [(value)]="valueTipoHabilidad">
+              <mat-option
+                *ngFor="let elemento of tipoHabilidadRepositorio"
+                [value]="elemento"
+              >
+                {{ elemento }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--# tipo skill-->
+          <!-- search bar -->
+          <mat-form-field class="col-sm-2">
+            <input
+              type="text"
+              placeholder="Search"
+              aria-label="Number"
+              matInput
+              [formControl]="myControl"
+              [matAutocomplete]="auto"
+            />
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions | async"
+                [value]="option"
+              >
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <!-- #search bar -->
+        </div>
+        <!-- tabla -->
+
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          matSort
+          class="mat-header-row"
+        >
+          <!-- nivel Column -->
+          <ng-container matColumnDef="nivel">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              Level
+            </th>
+            <td mat-cell *matCellDef="let element" class="mat-cell">
+              {{ element.nivel }}
+            </td>
+          </ng-container>
+          <!-- #nivel Column -->
+          <!-- Category Column -->
+          <ng-container matColumnDef="categoria">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              Category
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.categoria }}</td>
+          </ng-container>
+          <!-- #Category Column -->
+          <!-- question  Column -->
+          <ng-container matColumnDef="tipoPregunta">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              Type of Question
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.tipoPregunta }}
+            </td>
+          </ng-container>
+          <!-- #question  Column -->
+          <!-- type of answer Column -->
+          <ng-container matColumnDef="tipoRespuesta">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              Type of Answer
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.tipoRespuesta }}
+            </td>
+          </ng-container>
+          <!-- #type of answer Column -->
+          <!-- Skill Column -->
+          <ng-container matColumnDef="habilidad">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              Skill
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.habilidad }}</td>
+          </ng-container>
+          <!-- #Skill Column -->
+
+          <!-- Buttons Column -->
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              View
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                class="circular-button-table--normal"
+                mat-mini-fab
+                (click)="irPasoDos(stepper, element.codigo)"
+              >
+                <mat-icon class="circular-button-subtitle__icon"
+                  >remove_red_eye</mat-icon
+                >
+              </button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="checkbox">
+            <th mat-header-cell *matHeaderCellDef class="header-table">
+              Mark
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </mat-dialog-content>
+      <!-- #tabla -->
+      <!-- #contenido -->
+      <div class="group-buttons__dialog">
+        <button
+          mat-button
+          matStepperPrevious
+          class="progress-bar__button-negative"
+        >
+          Cancel
+        </button>
+        <button
+          mat-button
+          class="progress-bar__button-normal"
+          (click)="irPasoTres(stepper)"
+        >
+          Add questions
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- #primer paso -->
+  <!-- segundo paso -->
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>View</ng-template>
+      2do
+      <div class="group-buttons__dialog">
+        <button
+          mat-button
+          matStepperPrevious
+          class="progress-bar__button-negative"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- #segundo paso -->
+  <!-- tercer paso -->
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Preview</ng-template>
+      <mat-dialog-content class="mat-typography">
+        <!--row added row-->
+        <div
+          *ngFor="let card of preguntas; let i = index"
+          [ngSwitch]="card.idTipoRespuesta"
+          #template
+        >
+          <!--radio button case-->
+          <div class="question-card-added" *ngSwitchCase="'1'">
+            <div class="question-card-added__content">
+              <div class="question-card-added__header">
+                <!--input para pregunta-->
+                <div class="question-card-added__header--question">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Question Name</mat-label>
+                    <input
+                      [(ngModel)]="card.pregunta"
+                      type="text"
+                      readonly
+                      class="input-form"
+                      matInput
+                      placeholder="Question Name"
+                      name="nombre preguntaPas3{{ i }}"
+                      [ngModelOptions]="{ standalone: true }"
+                    />
+                  </mat-form-field>
+                </div>
+                <!--#input para pregunta-->
+                <div class="question-card-added__header--score">
+                  <!--input para pregunta-->
+                  <div class="card-question__input">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Score</mat-label>
+                      <input
+                        [(ngModel)]="card.puntuacion"
+                        type="text"
+                        readonly
+                        class="input-form"
+                        matInput
+                        placeholder="Score Name"
+                        name="puntuacionPas3{{ i }}"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                </div>
+              </div>
+              <div class="question-card-added__content-question">
+                <!-- <form class="example-form"> -->
+                <mat-radio-group
+                  aria-label="Select an option"
+                  class="example-radio-group"
+                  name="radioButtonsGroupPas3{{ i }}"
+                  [disabled]="true"
+                  [(ngModel)]="card.respuesta[0]"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <!-- radio button option -->
+                  <mat-radio-button
+                    name="grupo{{ i }}"
+                    class="question-card-added__choice"
+                    *ngFor="
+                      let opcionesRadioButton of card.opciones;
+                      let x = index
+                    "
+                    [value]="x"
+                  >
+                    <mat-form-field class="full-width-field">
+                      <input
+                        [(value)]="card.opciones[x]"
+                        name="grupoPas3{{ x }}{{ i }}"
+                        style="color: black;"
+                        readonly
+                        class="question-card-added__choice--input"
+                        matInput
+                        placeholder="opcion {{ x + 1 }}"
+                      />
+                    </mat-form-field>
+                    <!--#radio button option-->
+                  </mat-radio-button>
+                </mat-radio-group>
+                <!-- </form> -->
+              </div>
+            </div>
+          </div>
+
+          <!--checkbox case-->
+          <div class="question-card-added" *ngSwitchCase="'2'">
+            <div class="question-card-added__content">
+              <div class="question-card-added__header">
+                <!--input para pregunta-->
+                <div class="question-card-added__header--question">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Question Name</mat-label>
+                    <input
+                      [(ngModel)]="card.pregunta"
+                      type="text"
+                      class="input-form"
+                      matInput
+                      readonly
+                      placeholder="Question Name"
+                      name="nombre preguntaPas3{{ i }}"
+                      [ngModelOptions]="{ standalone: true }"
+                    />
+                  </mat-form-field>
+                </div>
+                <!--#input para pregunta-->
+                <div class="question-card-added__header--score">
+                  <!--input para pregunta-->
+                  <div class="card-question__input">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Score</mat-label>
+                      <input
+                        [(ngModel)]="card.puntuacion"
+                        type="text"
+                        class="input-form"
+                        readonly
+                        matInput
+                        placeholder="Score Name"
+                        name="puntuacionPas3{{ i }}"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                </div>
+              </div>
+              <div class="question-card-added__content-question">
+                <!-- <form class="example-form"> -->
+                <mat-checkbox
+                  class="card-question__choice"
+                  [disabled]="true"
+                  *ngFor="let opcionesCB of card.opciones; let x = index"
+                  [(ngModel)]="card.respuestasBool[x]"
+                  name="respuestacheckPas3{{ x }}"
+                >
+                  <mat-form-field class="full-width-field">
+                    <input
+                      [(value)]="card.opciones[x]"
+                      style="color: black;"
+                      readonly
+                      name="aPas3{{ x }}"
+                      class="card-question__choice--input"
+                      matInput
+                      placeholder="opcion"
+                    />
+                  </mat-form-field>
+                  <!--#radio button option-->
+                </mat-checkbox>
+
+                <!-- </form> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--#row-->
+      </mat-dialog-content>
+
+      <div class="group-buttons__dialog">
+        <button
+          mat-button
+          (click)="volverPasoUno(stepper)"
+          class="progress-bar__button-negative"
+        >
+          Back
+        </button>
+        <button
+          mat-button
+          matStepperNext
+          class="progress-bar__button-normal"
+          (click)="loadData()"
+        >
+          Add questions to practice
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- #tercer paso -->
+  <!-- cuarto paso -->
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <div class="spinner">
+      <mat-spinner *ngIf="showSpinner"></mat-spinner>
+    </div>
+    <div class="group-buttons__dialog">
+      <button
+        mat-button
+        matStepperPrevious
+        class="progress-bar__button-negative"
+      >
+        Back
+      </button>
+      <button
+        mat-button
+        (click)="stepper.reset()"
+        class="progress-bar__button-normal"
+      >
+        Reset
+      </button>
+    </div>
+  </mat-step>
+  <!-- #cuarto paso -->
+</mat-horizontal-stepper>

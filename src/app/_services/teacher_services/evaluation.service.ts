@@ -29,4 +29,7 @@ export class EvaluationService {
   deleteModule(idModulo):Observable<any>{
     return this.http.delete(apiKey.api+"/teacher/evaluation/delete/"+idModulo,{ observe: 'response' });
   }
+  updateRubricas(rubricas:any[]):Observable<any>{
+    return this.http.post(apiKey.api+"/teacher/evaluation/rubric",{rubricas},{ observe: 'response' });
+  }
 }

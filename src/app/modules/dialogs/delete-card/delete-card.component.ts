@@ -9,6 +9,9 @@ import { MyClassService } from "src/app/_services/teacher_services/my-class.serv
 import { timeInterval } from "rxjs/operators";
 import { ThemesService } from "src/app/_services/teacher_services/themes.service";
 import { LessonService } from "src/app/_services/teacher_services/lesson.service";
+import { SectionsService } from 'src/app/_services/teacher_services/sections.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { EvaluationService } from 'src/app/_services/teacher_services/evaluation.service';
 @Component({
   selector: "app-delete-card",
   templateUrl: "./delete-card.component.html",
@@ -23,6 +26,8 @@ export class DeleteCardComponent implements OnInit {
     private servEst: MyClassService,
     private servLes: LessonService,
     private servTh: ThemesService,
+    private servSecc:SectionsService,
+    private servMod:EvaluationService,
     private dialogRef: MatDialogRef<DeleteCardComponent>
   ) { }
   ngOnInit(): void {
@@ -43,18 +48,18 @@ export class DeleteCardComponent implements OnInit {
       case "forum":
         this.eliminarForum();
         break;
-      case "forum response":
+      case "forum_response":
         this.eliminarRespuestaForum();
+        break;
+      case "section":
+        this.eliminarSeccionRecursos();
+        break;
+      case "File":
+        this.eliminarDocumentoRecursos();
         break;
       case "Custom Module":
         this.eliminarModuloPersonalizado();
-        break;
-      case "Seccion Module":
-        this.eliminarSeccionRecursos();
-        break;
-      case "Document Module":
-        this.eliminarDocumentoRecursos();
-        break;
+        break;  
     }
   }
 
@@ -128,7 +133,57 @@ export class DeleteCardComponent implements OnInit {
   //eliminar respeusta de forum
   eliminarRespuestaForum() { }
   //eliminar modulo personalizado
-  eliminarModuloPersonalizado() { }
-  eliminarSeccionRecursos() { }
-  eliminarDocumentoRecursos() { }
+  eliminarModuloPersonalizado() { 
+      this.servMod.deleteModule(this.dataDialog["idModulo"]).subscribe({
+        next: (data) => {
+          if(data.status==200){
+            this.dialogRef.close("ok")
+          }
+          else{
+            console.log("error");
+            this.dialogRef.close()
+          }
+        },
+        error: (error) => {
+          console.log(error);
+          this.dialogRef.close()
+        },
+      });
+  }
+
+
+  //Eliminar seccion 
+  eliminarSeccionRecursos() { 
+    this.servSecc.delSection(this.dataDialog["idSeccion"]).subscribe({
+      next:(data)=>{
+        if(data.status==200){
+          this.dialogRef.close("ok");
+
+        }
+        else{
+          this.dialogRef.close();
+        }
+      },
+      error:(error)=>{
+        this.dialogRef.close();
+      }
+
+    })
+  }
+  eliminarDocumentoRecursos() { 
+    this.servSecc.delResource(this.dataDialog["id"]).subscribe({
+      next:(data)=>{
+        if(data.status==200){
+          this.dialogRef.close("ok");
+        }
+        else{
+          this.dialogRef.close();
+        }
+      },
+      error:(err)=>{
+        this.dialogRef.close();
+
+      }
+    })
+  }
 }

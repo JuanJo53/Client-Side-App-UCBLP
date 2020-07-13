@@ -16,6 +16,7 @@
           class="input-form"
           matInput
           placeholder=""
+          [(ngModel)]="nombre"
           name="email academico"
         />
         <!-- //Input para el nombre de la seccion-->
@@ -33,6 +34,7 @@
         hidden="true"
         type="file"
         onclick="this.value=null"
+        accept=".xls,.xlsx,.mp4,.mp3,.docx,.doc,.mpeg,.pptx,.pdf"
         (change)="handleFileInput($event.target.files)"
       />
       <button
@@ -43,22 +45,24 @@
         <mat-icon class="dialog-circular-button__icon">file_upload</mat-icon>
       </button>
     </div>
+    
   </div>
   <!--#document uploaded-->
   <!--document name-->
   <div class="dialog__file-container">
-    <mat-icon class="dialog__file-container--icon">insert_drive_file</mat-icon>
-    <div class="dialog__file-container--file-name">084u52sadjoadf.mp3</div>
+    <div class="dialog__file-container--file-name" *ngIf="fileToUpload==null">No file selected</div>
+    <mat-icon class="dialog__file-container--icon">{{tipoArchivo}}</mat-icon>
+    <div class="dialog__file-container--file-name">{{nombreArchivo}}</div>    
   </div>
   <!--#document name-->
   <mat-dialog-actions align="end">
     <!--cancel btn-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel">
+    <button mat-button mat-dialog-close class="dialog-button-cancel"  (click)=cancelar()>
       Cancel
     </button>
     <!--#cancel btn-->
     <!--accept btn-->
-    <button mat-button class="dialog-button-accept">
+    <button mat-button class="dialog-button-accept" (click)=aceptar()>
       Accept
     </button>
     <!--#accept btn-->

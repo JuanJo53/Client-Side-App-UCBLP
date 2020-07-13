@@ -20,12 +20,14 @@ export class ConfigureThemeComponent implements OnInit {
   cargarDatos(){
         this.nombre=this.dataDialog['tema'].nombreTema;
         if(this.dataDialog['tema'].estado==1){
-
+          console.log("enable");
           this.radioButtonValue="enable";
+        
         }
         else{
+          console.log("unable");
           this.radioButtonValue="unable";
-    
+          
         }
   }
   toggleDisable() {

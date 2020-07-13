@@ -1,0 +1,123 @@
+.color-picker__container {
+  display: flex;
+  //background-color: red;
+  align-items: center;
+}
+.color-picker__title {
+  //background-color: violet;
+  justify-content: flex-start;
+  flex: 0 1 15%;
+  color: $color-primary-blue;
+  font-size: 1.5rem;
+}
+.color-picker__content {
+  flex: 1;
+  justify-content: flex-end;
+  //background-color: blue;
+}
+
+.summary-info {
+  box-shadow: 0 0.5rem 2rem $color-box-shadow;
+  background: #fff;
+  //   max-width: 270px;
+  max-width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.info {
+  width: calc(100% - 40px);
+}
+
+p.style {
+  color: #000;
+  margin-bottom: 5px;
+}
+
+p.style-value {
+  color: #595b65;
+  text-transform: uppercase;
+  //   letter-spacing: 1.5px;
+  font-size: 1.25rem;
+}
+
+.circle {
+  height: 3.5rem;
+  width: 3.5rem;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: 1px solid #dadada;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.opened {
+  box-shadow: 0 0.5rem 2rem $color-box-shadow;
+  background: #fff;
+  //   max-width: 270px;
+  max-width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.opened:after {
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  content: "";
+  right: 10px;
+  position: absolute;
+  top: -20px;
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.circle {
+  flex: 3.5rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.circle:nth-child(7n) {
+  margin-right: 0;
+}
+
+.hex-code {
+  display: flex;
+  margin-top: 20px;
+}
+
+.hex-code p {
+  width: 50%;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 45px;
+}
+
+.g-input {
+  border: 1px solid #e8ebed;
+  height: 45px;
+  border-radius: 5px;
+  width: 120px;
+}
+
+.hex-code .g-input input {
+  border: none;
+  width: 100%;
+  margin-top: 14px;
+  text-transform: uppercase;
+  padding: 0 25px;
+  outline: none;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: #595b65;
+  box-sizing: border-box;
+}

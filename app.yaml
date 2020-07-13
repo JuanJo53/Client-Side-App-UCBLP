@@ -1,14 +1,13 @@
-service: idiomas-cliente2
+service: idiomas-cliente
 # [START runtime]
-runtime: python
-env: flex
+runtime: python27
 threadsafe: yes
 # [END runtime]
 handlers:
-- url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
-  static_files: dist/\1
-  upload: dist/(.*)(|\.map)
+- url: /(.*\.(gif|png|jpg|css|js|)(|\.map))$
+  static_files: build/\1
+  upload: build/(.*)(|\.map)
 
-- url: /(.*)
-  static_files: dist/index.html
-  upload: dist/index.html
+- url: /(.*) 
+  static_files: build/index.html
+  upload: build/index.html

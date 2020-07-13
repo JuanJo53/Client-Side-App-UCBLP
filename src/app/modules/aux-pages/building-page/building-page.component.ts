@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-building-page',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuildingPageComponent implements OnInit {
   imageUrl: string = "/assets/building.gif";
-  constructor() { }
+  constructor(private router: Router, private location: Location) {}
+  goBack() {
+    // window.history.back();
+    this.location.back();
+
+    console.log( 'goBack()...' );
+  }
 
   ngOnInit(): void {
   }

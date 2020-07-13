@@ -66,14 +66,17 @@ import { EditDocumentComponent } from "src/app/modules/dialogs/resources/edit-do
 import { StudentsProfileComponent } from "src/app/modules/home/my-class/students-profile/students-profile.component";
 import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component";
 import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import { CreateCourseComponent } from 'src/app/modules/dialogs/courses/create-course/create-course.component';
-import { DetailComponent } from 'src/app/modules/home/modules/themes-base/themes/theme-lessons/detail/detail.component';
-import { DetailAssessmentsComponent } from 'src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component';
-import { AssessmentsBaseComponent } from 'src/app/modules/home/modules/assessments-base/assessments-base.component';
-import { TestDetailComponent } from 'src/app/modules/dialogs/test-detail/test-detail.component';
-import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component';
-
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { CreateCourseComponent } from "src/app/modules/dialogs/courses/create-course/create-course.component";
+import { DetailComponent } from "src/app/modules/home/modules/themes-base/themes/theme-lessons/detail/detail.component";
+import { DetailAssessmentsComponent } from "src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component";
+import { AssessmentsBaseComponent } from "src/app/modules/home/modules/assessments-base/assessments-base.component";
+import { TestDetailComponent } from "src/app/modules/dialogs/test-detail/test-detail.component";
+import { IndividualAssessmentComponent } from "src/app/modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { RepositoryQuestionComponent } from "src/app/modules/dialogs/create-practice/repository-question/repository-question.component";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { ChartsModule } from "ng2-charts";
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -124,7 +127,8 @@ import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/asse
     DetailAssessmentsComponent,
     AssessmentsBaseComponent,
     TestDetailComponent,
-    IndividualAssessmentComponent
+    IndividualAssessmentComponent,
+    RepositoryQuestionComponent,
   ],
   imports: [
     CommonModule,
@@ -152,7 +156,10 @@ import { IndividualAssessmentComponent } from 'src/app/modules/home/modules/asse
     MatStepperModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule,
+    MatAutocompleteModule,
+    ChartsModule,
   ],
 })
 export class DefaultModule {}
