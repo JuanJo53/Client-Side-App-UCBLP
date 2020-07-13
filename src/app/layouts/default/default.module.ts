@@ -77,6 +77,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { RepositoryQuestionComponent } from "src/app/modules/dialogs/create-practice/repository-question/repository-question.component";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { ChartsModule } from "ng2-charts";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ProgressBarComponent } from 'src/app/modules/dialogs/progress-bar/progress-bar.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -128,7 +130,9 @@ import { ChartsModule } from "ng2-charts";
     AssessmentsBaseComponent,
     TestDetailComponent,
     IndividualAssessmentComponent,
-    RepositoryQuestionComponent,
+    ProgressBarComponent,
+    RepositoryQuestionComponent
+ 
   ],
   imports: [
     CommonModule,
@@ -160,6 +164,7 @@ import { ChartsModule } from "ng2-charts";
     MatProgressSpinnerModule,
     MatAutocompleteModule,
     ChartsModule,
+    MatProgressBarModule
   ],
 })
 export class DefaultModule {}

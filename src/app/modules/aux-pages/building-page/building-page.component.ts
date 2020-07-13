@@ -16,8 +16,8 @@ export class BuildingPageComponent implements OnInit {
 
     console.log( 'goBack()...' );
   }
-  // Funcion para ir al dashboard
-  cardClicked() {
+  // Funcion para ir al dashboard, falta id de curso
+  goDashboard() {
     this.router.navigate(["teacher", "dashboard"]);
   }
 
