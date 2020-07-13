@@ -22,17 +22,25 @@
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img" [ngStyle]="{
-          'background-image': 'url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)'}">
+        <div
+          class="evaluation-card__img"
+          [ngStyle]="{
+            'background-image':
+              'url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)'
+          }"
+        >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': sacarColor(preCard.idColor)+'A6'
+              'background-color': sacarColor(preCard.idColor) + 'A6'
             }"
-          > 
+          >
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
-              <button class="circular-button-custom-card" (click)="configuracionModulo(preCard)">
+              <button
+                class="circular-button-custom-card"
+                (click)="configuracionModulo(preCard)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
@@ -42,11 +50,13 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': sacarColor(preCard.idColor)}"
+                [ngStyle]="{ 'background-color': sacarColor(preCard.idColor) }"
               >
-                {{ preCard.rubrica}}%
+                {{ preCard.rubrica }}%
               </div>
-              <div class="evaluation-card__title">{{ preCard.nombreModulo }}</div>
+              <div class="evaluation-card__title">
+                {{ preCard.nombreModulo }}
+              </div>
             </div>
           </div>
         </div>
@@ -62,7 +72,11 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab (click)="nuevoModulo()">
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="customModulo()"
+      >
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
@@ -73,28 +87,38 @@
   <div class="row last-component">
     <!--evaluation-card-attendance  -->
     <div
-      *ngFor="let custCards of cardsModulosPers,let indexcu=index"
+      *ngFor="let custCards of cardsModulosPers; let indexcu = index"
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img" [ngStyle]="{
-          'background-image': getImageUrl(getImageIndex(custCards.idImagen))}" >
+        <div
+          class="evaluation-card__img"
+          [ngStyle]="{
+            'background-image': getImageUrl(getImageIndex(custCards.idImagen))
+          }"
+        >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': sacarColor(custCards.idColor)+'A6'
+              'background-color': sacarColor(custCards.idColor) + 'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
               <!--btn configuraciones-->
-              <button class="circular-button-custom-card" (click)="configuracionModuloPersonalizado(custCards)">
+              <button
+                class="circular-button-custom-card"
+                (click)="configuracionModuloPersonalizado(custCards)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
               </button>
               <!--#btn configuraciones-->
-               <!--btn eliminar-->
-               <button class="circular-button-custom-card" (click)="eliminar(custCards,indexcu)">
+              <!--btn eliminar-->
+              <button
+                class="circular-button-custom-card"
+                (click)="eliminar(custCards, indexcu)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
@@ -104,11 +128,15 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': sacarColor(custCards.idColor) }"
+                [ngStyle]="{
+                  'background-color': sacarColor(custCards.idColor)
+                }"
               >
                 {{ custCards.rubrica }}%
               </div>
-              <div class="evaluation-card__title">{{ custCards.nombreModulo}}</div>
+              <div class="evaluation-card__title">
+                {{ custCards.nombreModulo }}
+              </div>
             </div>
           </div>
         </div>

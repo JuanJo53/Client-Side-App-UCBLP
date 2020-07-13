@@ -7,7 +7,7 @@ import { Module } from "src/app/models/Teacher/Evaluation/Module";
 import { CardColor } from "src/app/models/CardColor";
 import { CardImage } from "src/app/models/CardImage";
 import { EvaluationCard } from "src/app/models/Teacher/EvaluationCard";
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from "@angular/material/dialog";
 import { AddCustomModuleComponent } from "../../dialogs/evaluation/add-custom-module/add-custom-module.component";
 import { EditCustomModuleComponent } from "../../dialogs/evaluation/edit-custom-module/edit-custom-module.component";
 import { EditDefaultModuleComponent } from "../../dialogs/evaluation/edit-default-module/edit-default-module.component";
@@ -21,13 +21,13 @@ import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.compo
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
-  colorNoDisponible:  "#838282";
-  getImageUrl(image){
-    return "url(" + image+ ")";
+  colorNoDisponible: "#838282";
+  getImageUrl(image) {
+    return "url(" + image + ")";
   }
-  getImageIndex(index:string){
-    for(let image of this.images){
-      if(image.idImagen===index){
+  getImageIndex(index: string) {
+    for (let image of this.images) {
+      if (image.idImagen === index) {
         return image.url;
       }
     }
@@ -39,7 +39,6 @@ export class EvaluationComponent implements OnInit {
       porcentaje: "10%",
       colorFondo: "#9c5fafbf",
       colorCirculo: "#9c5faf",
-     
     },
     {
       id_evaluationCard: 2,
@@ -49,8 +48,7 @@ export class EvaluationComponent implements OnInit {
       colorCirculo: "#d77a61",
     },
   ];
-  customCards: Module[] = [
-  ];
+  customCards: Module[] = [];
   idCurso = "";
   cardsModulosPred: Module[] = [];
   cardsModulosPers: Module[] = [];
@@ -62,7 +60,7 @@ export class EvaluationComponent implements OnInit {
     private mdServ: EvaluationService,
     public dialog: MatDialog,
     private route: ActivatedRoute
-  ) { }
+  ) {}
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
       next: (data) => {
@@ -85,8 +83,8 @@ export class EvaluationComponent implements OnInit {
   }
 
   cargarDatos(data) {
-    this.cardsModulosPred= [];
-    this.cardsModulosPers= [];
+    this.cardsModulosPred = [];
+    this.cardsModulosPers = [];
     for (let i in data) {
       let newModule = new Module();
       newModule.id = data[i].id_modulo;
@@ -107,7 +105,7 @@ export class EvaluationComponent implements OnInit {
     console.log(this.cardsModulosPers);
     console.log(this.cardsModulosPred);
   }
-  
+
   cargarColores(data) {
     for (let i in data) {
       let newCol = new CardColor();
@@ -152,114 +150,116 @@ export class EvaluationComponent implements OnInit {
       },
     });
   }
-  nuevoModulo() {
-    const dialogRef = this.dialog.open(AddCustomModuleComponent, { width: "500px" 
-    ,data:{
-      colores:this.colores,
-      imagenes:this.images,
-      idCurso:this.idCurso
-    }
-  });
-  dialogRef.afterClosed().subscribe((result)=>{
-    if(result!==""&&result!=null&&result!=="undefined"){
-      console.log(result);
-      this.route.data.subscribe({
-        next:(data)=>{
-          data.modules.body=result;       
-          this.cargarDatos(result);
-        },
-        error:(error)=>{
-          console.log("No se pudieron obtener las lecciones");
-          }
+  customModulo() {
+    const dialogRef = this.dialog.open(AddCustomModuleComponent, {
+      width: "500px",
+      data: {
+        colores: this.colores,
+        imagenes: this.images,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== "" && result != null && result !== "undefined") {
+        console.log(result);
+        this.route.data.subscribe({
+          next: (data) => {
+            data.modules.body = result;
+            this.cargarDatos(result);
+          },
+          error: (error) => {
+            console.log("No se pudieron obtener las lecciones");
+          },
         });
       }
     });
   }
   configuracionModulo(modulo) {
-    const dialogRef = this.dialog.open(EditDefaultModuleComponent, { width: "500px" ,
-    data:{
-      modulo:modulo,
-      idCurso:this.idCurso
-    }});
-      dialogRef.afterClosed().subscribe((result)=>{
-        if(result!==""&&result!=null&&result!=="undefined"){
-          console.log(result);
+    const dialogRef = this.dialog.open(EditDefaultModuleComponent, {
+      width: "500px",
+      data: {
+        modulo: modulo,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== "" && result != null && result !== "undefined") {
+        console.log(result);
         this.route.data.subscribe({
-          next:(data)=>{
-            data.modules.body=result;       
+          next: (data) => {
+            data.modules.body = result;
             this.cargarDatos(result);
           },
-          error:(error)=>{
+          error: (error) => {
             console.log("No se pudieron obtener las lecciones");
-            }
-          });
-        }
-      })
-    }
-  configuracionModuloPersonalizado(modulo:Module) {
-    const dialogRef = this.dialog.open(EditCustomModuleComponent, { width: "500px" ,
-  data:{
-    modulo:modulo,
-    idCurso:this.idCurso
-  }});
-    dialogRef.afterClosed().subscribe((result)=>{
-      if(result!==""&&result!=null&&result!=="undefined"){
-        console.log(result);
-      this.route.data.subscribe({
-        next:(data)=>{
-          data.modules.body=result;       
-          this.cargarDatos(result);
-        },
-        error:(error)=>{
-          console.log("No se pudieron obtener las lecciones");
-          }
+          },
         });
       }
-    })
+    });
+  }
+  configuracionModuloPersonalizado(modulo: Module) {
+    const dialogRef = this.dialog.open(EditCustomModuleComponent, {
+      width: "500px",
+      data: {
+        modulo: modulo,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== "" && result != null && result !== "undefined") {
+        console.log(result);
+        this.route.data.subscribe({
+          next: (data) => {
+            data.modules.body = result;
+            this.cargarDatos(result);
+          },
+          error: (error) => {
+            console.log("No se pudieron obtener las lecciones");
+          },
+        });
+      }
+    });
   }
   editarPorcentajes() {
     this.route.data.subscribe({
-      next:(data)=>{
-
-        const dialogRef = this.dialog.open(ModulesRubricComponent, { width: "400px" ,
-        data:{
-          modulos: data.modules.body
-        }});
-        dialogRef.afterClosed().subscribe((result)=>{
-          
-          if(result!==""&&result!=null&&result!=="undefined"){
-          data.modules.body=result;       
-          this.cargarDatos(result);
-        }
-        })
+      next: (data) => {
+        const dialogRef = this.dialog.open(ModulesRubricComponent, {
+          width: "400px",
+          data: {
+            modulos: data.modules.body,
+          },
+        });
+        dialogRef.afterClosed().subscribe((result) => {
+          if (result !== "" && result != null && result !== "undefined") {
+            data.modules.body = result;
+            this.cargarDatos(result);
+          }
+        });
       },
-      
-      error:(err)=>{
 
-      }
-    })
+      error: (err) => {},
+    });
   }
-  eliminar(modulo:Module,index) {
+  eliminar(modulo: Module, index) {
     console.log(modulo);
     const dialogRef = this.dialog.open(DeleteCardComponent, {
-      width: "400px"
-      , data: {       
+      width: "400px",
+      data: {
         tipo: "Custom Module",
-        idModulo:modulo.id
+        idModulo: modulo.id,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === "ok") {
+        this.cardsModulosPers.splice(index, 1);
       }
     });
-    dialogRef.afterClosed().subscribe((result)=>{
-      if(result==="ok"){
-        this.cardsModulosPers.splice(index,1);
-      }
-    })
   }
-  sacarColor(id){
-    for(let color of this.colores){
-      if(color.idColor==id){
+  sacarColor(id) {
+    for (let color of this.colores) {
+      if (color.idColor == id) {
         return color.color;
       }
     }
   }
-  
 }

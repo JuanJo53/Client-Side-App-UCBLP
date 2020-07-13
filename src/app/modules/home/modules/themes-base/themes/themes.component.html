@@ -21,20 +21,21 @@
   <div class="row">
     <div *ngFor="let cards of themeCards" class="col-lg-3 col-md-6 col-xs-12">
       <!--custom-cards  #D77A61  -->
-      <div
-        class="custom-card"
-      >
+      <div class="custom-card">
         <div class="custom-card__img">
           <div class="custom-card__img-overlay">
             <div class="custom-card__buttons-card">
               <!--btn ver contenido-->
               <button
-              [ngStyle]="{'background-color': cards.estado==2? 'transparent' : '#808080'}"
-               [disabled]="cards.estado==2"
+                [ngStyle]="{
+                  'background-color':
+                    cards.estado == 2 ? '#808080' : 'transparent'
+                }"
+                [disabled]="cards.estado == 2"
                 class="circular-button-custom-card"
                 (click)="verContenido(cards.idTema)"
               >
-                <mat-icon class="circular-button-custom-card__icon" >
+                <mat-icon class="circular-button-custom-card__icon">
                   remove_red_eye
                 </mat-icon>
               </button>
@@ -50,10 +51,15 @@
               </button>
               <!--#btn configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card"
-              [ngStyle]="{'background-color': cards.estado==2? 'transparent' : '#808080'}"
-                [disabled]="cards.estado==2"
-                (click)="eliminar(cards.idTema)">
+              <button
+                class="circular-button-custom-card"
+                [ngStyle]="{
+                  'background-color':
+                    cards.estado == 2 ? 'transparent' : '#808080'
+                }"
+                [disabled]="cards.estado == 2"
+                (click)="eliminar(cards.idTema)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
@@ -62,9 +68,9 @@
             </div>
             <div class="custom-card__content-card"></div>
             <div class="custom-card__description-theme">
-              <span class="custom-card__description-theme--title">Theme {{
-                cards.numeroTema
-              }}</span>
+              <span class="custom-card__description-theme--title"
+                >Theme {{ cards.numeroTema }}</span
+              >
               <span class="custom-card__description-theme--subtitle">
                 {{ cards.nombreTema }}
               </span>
@@ -76,5 +82,4 @@
     </div>
   </div>
   <!--#row-->
-
 </div>

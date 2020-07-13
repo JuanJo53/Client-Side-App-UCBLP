@@ -3,6 +3,10 @@ import { UploadFilesService } from 'src/app/_services/teacher_services/upload-fi
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SectionsService } from 'src/app/_services/teacher_services/sections.service';
 import { ResourceContent } from 'src/app/models/resources/resourceContent';
+import { ProgressBarComponent } from '../../../dialogs/progress-bar/progress-bar.component';
+import {
+  MatDialog
+} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-add-document',
@@ -18,6 +22,7 @@ export class AddDocumentComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private servRes: UploadFilesService,
+    public dialog: MatDialog,
     private servSec:SectionsService,
     private dialogRef: MatDialogRef<AddDocumentComponent>
 
@@ -126,10 +131,15 @@ verificarTipo(tipo){
         }
       })
     }
-
+    const dialogRef = this.dialog.open(ProgressBarComponent, {
+      width: "400px",
+    });
+    
+    
     // if(this.fileToUpload!=null){
     //   this.servRes.
     // }
+
   }
   subirRecurso(ruta,tipo){
     let newRec=new ResourceContent();

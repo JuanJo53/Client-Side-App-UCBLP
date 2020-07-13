@@ -1,0 +1,36 @@
+@import "1-helpers/variables";
+@import "1-helpers/mixins";
+@import "3-basics/links";
+
+.dashboard-card {
+  @include custom-card(35rem, 25rem, $color-primary-white);
+  margin-top: 4rem !important;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: $color-primary-black;
+  &__description-dashboard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex: 0 1 15%;
+    background-color: $color-primary-blue;
+    &-title {
+      font-size: 2rem;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      color: $color-primary-white;
+      margin: 0;
+    }
+  }
+  &__grafics {
+    // flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0 !important;
+  }
+}

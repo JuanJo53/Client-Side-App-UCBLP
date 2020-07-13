@@ -7,12 +7,12 @@ import { FormsModule } from "@angular/forms";
 import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
-
+import { ColorPickerComponent } from './color-picker/color-picker.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent, ColorPickerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -177,7 +177,7 @@
 //-----button inside dialog-----
 .dialog-circular-button {
   background-color: $color-primary-blue !important;
-  &__delete{
+  &__delete {
     background-color: $color-primary-red !important;
   }
 }
@@ -243,7 +243,7 @@
   }
 }
 
-.dialog-circular-minus{
+.dialog-circular-minus {
   background-color: $color-secondary-blue;
   border-radius: 50%;
   height: 3rem;
@@ -263,3 +263,9 @@
 //   }
 // }
 //-----#question choice-----
+
+.group-buttons__dialog {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
+}
