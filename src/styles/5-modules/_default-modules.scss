@@ -1,0 +1,296 @@
+.default-card-attendance {
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(
+        $color-card-attendance,
+        $alpha: $opacity-custom-card
+      );
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__buttons-card {
+    //background-color: orange;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+  }
+  &__content-card {
+    //background-color: green;
+    //flex: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-card-attendance;
+    border: 0.1rem solid $color-primary-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 1rem;
+    font-size: 1.25rem;
+  }
+  &__title {
+    color: $color-primary-white;
+    font-size: 2rem;
+    margin: 0rem 1rem;
+  }
+}
+
+.default-card-theme {
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1564144006388-615f4f4abb6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($color-card-themes, $alpha: $opacity-custom-card);
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__buttons-card {
+    //background-color: orange;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+  }
+  &__content-card {
+    //background-color: green;
+    //flex: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-card-themes;
+    border: 0.1rem solid $color-primary-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 1rem;
+    font-size: 1.25rem;
+  }
+  &__title {
+    color: $color-primary-white;
+    font-size: 2rem;
+    margin: 0rem 1rem;
+  }
+}
+
+.default-card-practices {
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1009&q=80");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(
+        $color-card-practices,
+        $alpha: $opacity-custom-card
+      );
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__buttons-card {
+    //background-color: orange;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+  }
+  &__content-card {
+    //background-color: green;
+    //flex: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-card-practices;
+    border: 0.1rem solid $color-primary-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 1rem;
+    font-size: 1.25rem;
+  }
+  &__title {
+    color: $color-primary-white;
+    font-size: 2rem;
+    margin: 0rem 1rem;
+  }
+}
+
+.default-card-theme-test {
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(
+        $color-card-themes-test,
+        $alpha: $opacity-custom-card
+      );
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__buttons-card {
+    //background-color: orange;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+  }
+  &__content-card {
+    //background-color: green;
+    //flex: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-card-themes-test;
+    border: 0.1rem solid $color-primary-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 1rem;
+    font-size: 1.25rem;
+  }
+  &__title {
+    color: $color-primary-white;
+    font-size: 2rem;
+    margin: 0rem 1rem;
+  }
+}
+
+.default-card-assessment {
+  @include custom-card-dinamic(26rem, 16rem, $color-primary-white);
+  margin: auto;
+  margin-top: 2rem;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(
+        $color-card-assessment,
+        $alpha: $opacity-custom-card
+      );
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__buttons-card {
+    //background-color: orange;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 1 30%;
+  }
+  &__content-card {
+    //background-color: green;
+    //flex: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-card-assessment;
+    border: 0.1rem solid $color-primary-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 1rem;
+    font-size: 1.25rem;
+  }
+  &__title {
+    color: $color-primary-white;
+    font-size: 2rem;
+    margin: 0rem 1rem;
+  }
+}
