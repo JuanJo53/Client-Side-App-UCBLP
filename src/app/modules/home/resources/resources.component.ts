@@ -173,9 +173,22 @@ export class ResourcesComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result)=>{
-      if(result==="ok"){
-        window.location.reload();
-      }
+      this.route.data.subscribe({
+        next:(next)=>{
+          if(next.sections.status==200){
+            
+          next.sections.body[indexs].recursos.splice(index,1);
+            this.cargarSecciones(next.sections.body);
+            
+          }
+          else{console.log("error")}
+        },
+        error:(err)=>{
+            console.log("error");
+        }
+  
+      }) 
+      
     })
   }
   descargarArchivo(resource:ResourceContent){
