@@ -21,10 +21,10 @@
   <div class="row">
     <div *ngFor="let cards of themeCards" class="col-lg-3 col-md-6 col-xs-12">
       <!--custom-cards  #D77A61  -->
-      <div class="custom-card">
-        <div class="custom-card__img">
-          <div class="custom-card__img-overlay">
-            <div class="custom-card__buttons-card">
+      <div class="custom-card--themes">
+        <div class="custom-card--themes__img">
+          <div class="custom-card--themes__img-overlay">
+            <div class="custom-card--themes__buttons-card">
               <!--btn ver contenido-->
               <button
                 [ngStyle]="{
@@ -66,12 +66,12 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card__content-card"></div>
-            <div class="custom-card__description-theme">
-              <span class="custom-card__description-theme--title"
+            <div class="custom-card--themes__content-card"></div>
+            <div class="custom-card--themes__description-theme">
+              <span class="custom-card--themes__description-theme--title"
                 >Theme {{ cards.numeroTema }}</span
               >
-              <span class="custom-card__description-theme--subtitle">
+              <span class="custom-card--themes__description-theme--subtitle">
                 {{ cards.nombreTema }}
               </span>
             </div>
