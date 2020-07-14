@@ -104,8 +104,10 @@ export class CreatePracticeComponent implements OnInit {
       case 1:
         var b = this.verificarpaso2();
         if (b) {
+          this.cambiarFecha();
           stepper.next();
         }
+        
         console.log(b);
 
         break;
@@ -172,6 +174,10 @@ export class CreatePracticeComponent implements OnInit {
       }
     });
   }
+  cambiarFecha(){    
+    this.paso1.fechaini = this.Date_toDMY(this.paso1.fechaini);
+    this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafin);
+  }
   preguntasRepositorio() {
     const dialogRef = this.dialog.open(RepositoryQuestionComponent, {
       width: "1000px",
@@ -229,7 +235,11 @@ export class CreatePracticeComponent implements OnInit {
     }
   }
   //////////////////////////////
-  Date_toYMD(date: Date) {
+  Date_toYMD(date: string) {
+    var fecha=date.split("/");
+    return fecha[2] + "-" + fecha[1] + "-" + fecha[0];
+  }
+  Date_toDMY(date: Date) {
     var year, month, day;
     year = String(date.getFullYear());
     month = String(date.getMonth() + 1);
@@ -240,7 +250,7 @@ export class CreatePracticeComponent implements OnInit {
     if (day.length == 1) {
       day = "0" + day;
     }
-    return year + "-" + month + "-" + day;
+    return day + "/" + month + "/" + year;
   }
   Hour_toMYSQL(time) {
     var partTime = time.split(" ");
@@ -265,7 +275,6 @@ export class CreatePracticeComponent implements OnInit {
     for (let preg of this.preguntas) {
       preg.tipo = false;
     }
-    console.log(this.paso1.fechaini);
     this.paso1.idLeccion = this.idLeccion;
     this.paso1.numero = 1;
     this.paso1.fechaini = this.Date_toYMD(this.paso1.fechaini);
@@ -273,6 +282,7 @@ export class CreatePracticeComponent implements OnInit {
     console.log(this.paso1.fechaini);
     this.paso1.horaini = this.Hour_toMYSQL(this.paso1.horaini);
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
+    console.log(this.paso1.fechaini);
 
     this.servPrac.addPractica(this.paso1).subscribe({
       next: (data) => {
