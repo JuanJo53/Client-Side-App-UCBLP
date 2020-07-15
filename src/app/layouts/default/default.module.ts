@@ -68,7 +68,6 @@ import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students
 import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { CreateCourseComponent } from "src/app/modules/dialogs/courses/create-course/create-course.component";
-import { DetailComponent } from "src/app/modules/home/modules/themes-base/themes/theme-lessons/detail/detail.component";
 import { DetailAssessmentsComponent } from "src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component";
 import { AssessmentsBaseComponent } from "src/app/modules/home/modules/assessments-base/assessments-base.component";
 import { TestDetailComponent } from "src/app/modules/dialogs/test-detail/test-detail.component";
@@ -86,6 +85,9 @@ import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modu
 import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
 import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
 import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
+import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/detail-table/detail-table.component";
+import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -132,7 +134,6 @@ import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-car
     AttendanceScoreComponent,
     OthersScoreComponent,
     CreateCourseComponent,
-    DetailComponent,
     DetailAssessmentsComponent,
     AssessmentsBaseComponent,
     TestDetailComponent,
@@ -146,6 +147,8 @@ import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-car
     EditCardComponent,
     CustomModuleRubricComponent,
     AddCardComponent,
+    DetailTableComponent,
+    DetailIndividualComponent,
   ],
   imports: [
     CommonModule,

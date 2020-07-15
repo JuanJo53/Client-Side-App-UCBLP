@@ -48,6 +48,8 @@ import { GetModulesSimpleResolver } from "./_resolvers/docente/evaluation/get-mo
 import { CustomModuleBaseComponent } from "./modules/home/modules/custom-module-base/custom-module-base.component";
 import { CustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/custom-module.component";
 import { DetailCustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
+import { DetailTableComponent } from "./modules/home/modules/themes-base/themes/detail-table/detail-table.component";
+import { DetailIndividualComponent } from "./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
 
 const routes: Routes = [
   {
@@ -208,7 +210,27 @@ const routes: Routes = [
                           practicas: GetPracticesResolver,
                         },
                         runGuardsAndResolvers: "always",
-                        component: ThemeLessonsComponent,
+
+                        children: [
+                          {
+                            path: "",
+                            component: ThemeLessonsComponent,
+                          },
+                          {
+                            path: "detail",
+
+                            children: [
+                              {
+                                path: "",
+                                component: DetailTableComponent,
+                              },
+                              {
+                                path: "individual",
+                                component: DetailIndividualComponent,
+                              },
+                            ],
+                          },
+                        ],
                       },
                       {
                         path: "practice",
