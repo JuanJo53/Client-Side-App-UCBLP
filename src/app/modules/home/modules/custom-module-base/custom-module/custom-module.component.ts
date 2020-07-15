@@ -5,32 +5,44 @@ import { DeleteCardComponent } from "src/app/modules/dialogs/delete-card/delete-
 import { DeleteItemService } from "src/app/services/dialogs/delete-item.service";
 import { MatDialog } from "@angular/material/dialog";
 import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
+import { Module } from "src/app/models/Teacher/Evaluation/Module";
+import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
 @Component({
   selector: "app-custom-module",
   templateUrl: "./custom-module.component.html",
   styleUrls: ["./custom-module.component.scss"],
 })
 export class CustomModuleComponent implements OnInit {
-  customCards: SimpleCard[] = [
+  cardsModulosPers: Module[] = [
     {
       id: 1,
-      titulo: "Practice 1",
-      color: "#D77A61",
+      nombreModulo: "exposition 1",
+      rubrica: 30,
+      idColor: 1,
+      idImagen: 1,
+      estado: 1,
+      idTipoModulo: 1,
+      idCurso: 1,
     },
     {
-      id: 2,
-      titulo: "Practice 2",
-      color: "#D77A61",
+      id: 1,
+      nombreModulo: "exposition 2",
+      rubrica: 30,
+      idColor: 1,
+      idImagen: 1,
+      estado: 1,
+      idTipoModulo: 1,
+      idCurso: 1,
     },
     {
-      id: 3,
-      titulo: "Practice 3",
-      color: "#D77A61",
-    },
-    {
-      id: 4,
-      titulo: "Practice 4",
-      color: "#D77A61",
+      id: 1,
+      nombreModulo: "exposition 3",
+      rubrica: 40,
+      idColor: 1,
+      idImagen: 1,
+      estado: 1,
+      idTipoModulo: 1,
+      idCurso: 1,
     },
   ];
   constructor(
@@ -41,11 +53,17 @@ export class CustomModuleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-  editarPorcentajes() {}
+
   agregarModulo() {}
   eliminarCustom() {}
   verlistar() {
     this.router.navigate(["detail"], { relativeTo: this.route });
+  }
+
+  editarPorcentajes() {
+    const dialogRef = this.dialog.open(CustomModuleRubricComponent, {
+      width: "400px",
+    });
   }
 
   editarCard() {
@@ -53,13 +71,10 @@ export class CustomModuleComponent implements OnInit {
       width: "400px",
     });
   }
-  eliminarCard(idTema) {
+  eliminarCard() {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
-      data: {
-        idTema: idTema,
-        tipo: "custom module name",
-      },
     });
   }
+  sacarColor(id) {}
 }

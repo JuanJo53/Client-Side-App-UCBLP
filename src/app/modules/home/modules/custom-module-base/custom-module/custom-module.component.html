@@ -27,19 +27,16 @@
   <!--#Subtitle-->
   <!--row-->
   <div class="row">
-    <div *ngFor="let cards of customCards" class="col-lg-3 col-md-6 col-xs-12">
+    <!--evaluation-card-attendance  -->
+    <div
+      *ngFor="let custCards of cardsModulosPers; let indexcu = index"
+      class="col-lg-3 col-md-6 col-xs-12"
+    >
       <div class="custom-card--custom">
         <div class="custom-card--custom__img">
           <div class="custom-card--custom__img-overlay">
             <div class="custom-card--custom__buttons-card">
-              <!--btn Ver lista-->
-              <button class="circular-button-custom-card" (click)="verlistar()">
-                <mat-icon class="circular-button-custom-card__icon">
-                  list
-                </mat-icon>
-              </button>
-              <!--#btn Ver lista-->
-              <!--btn  configuraciones-->
+              <!--btn configuraciones-->
               <button
                 class="circular-button-custom-card"
                 (click)="editarCard()"
@@ -48,11 +45,11 @@
                   settings
                 </mat-icon>
               </button>
-              <!--#btn  configuraciones-->
+              <!--#btn configuraciones-->
               <!--btn eliminar-->
               <button
                 class="circular-button-custom-card"
-                (click)="eliminarCard(1)"
+                (click)="eliminarCard()"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
@@ -60,17 +57,19 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card--custom__content-card"></div>
-            <div class="custom-card--custom__description-theme">
-              <span class="custom-card--custom__description-theme--title">{{
-                cards.titulo
-              }}</span>
+            <div class="custom-card--custom__content-card">
+              <div class="custom-card--custom__circle">
+                {{ custCards.rubrica }}%
+              </div>
+              <div class="custom-card--custom__title">
+                {{ custCards.nombreModulo }}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!--#custom-cards-->
     </div>
+    <!--#evaluation-card-attendance  -->
   </div>
   <!--#row-->
 </div>
