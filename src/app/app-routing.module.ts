@@ -47,6 +47,7 @@ import { GetResourcesResolver } from "./_resolvers/docente/Resources/get-resourc
 import { GetModulesSimpleResolver } from "./_resolvers/docente/evaluation/get-modules-simple.resolver";
 import { CustomModuleBaseComponent } from "./modules/home/modules/custom-module-base/custom-module-base.component";
 import { CustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/custom-module.component";
+import { DetailCustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
 
 const routes: Routes = [
   {
@@ -158,14 +159,18 @@ const routes: Routes = [
       },
       {
         path: "modules",
+        component: CustomModuleBaseComponent,
         children: [
           {
-            path: "",
-            component: CustomModuleBaseComponent,
+            path: "custom/:id",
             children: [
               {
-                path: "custom/:id",
+                path: "",
                 component: CustomModuleComponent,
+              },
+              {
+                path: "detail",
+                component: DetailCustomModuleComponent,
               },
             ],
           },

@@ -81,6 +81,8 @@ import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { ProgressBarComponent } from "src/app/modules/dialogs/progress-bar/progress-bar.component";
 import { CustomModuleComponent } from "src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component";
 import { CustomModuleBaseComponent } from "src/app/modules/home/modules/custom-module-base/custom-module-base.component";
+import { DetailCustomModuleComponent } from "src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
+import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -136,6 +138,8 @@ import { CustomModuleBaseComponent } from "src/app/modules/home/modules/custom-m
     RepositoryQuestionComponent,
     CustomModuleComponent,
     CustomModuleBaseComponent,
+    DetailCustomModuleComponent,
+    UpdateStudentScoreComponent,
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SimpleCard } from "src/app/models/simpleCard";
+import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: "app-custom-module",
   templateUrl: "./custom-module.component.html",
@@ -28,13 +29,15 @@ export class CustomModuleComponent implements OnInit {
       color: "#D77A61",
     },
   ];
-  constructor() {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
   editarPorcentajes() {}
   agregarModulo() {}
   eliminarCustom() {}
-  verlistar() {}
+  verlistar() {
+    this.router.navigate(["detail"], { relativeTo: this.route });
+  }
   eliminar() {}
   configuraciones() {}
 }

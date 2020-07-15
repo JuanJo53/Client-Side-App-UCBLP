@@ -8,7 +8,7 @@
   <!--#subtitle-->
   <mat-dialog-content class="mat-typography">
     <form class="dialogforms" enctype="multipart/form-data">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="input-disabled">
         <mat-label>Document's Name</mat-label>
         <!-- Input para el nombre de la seccion-->
         <input
@@ -45,24 +45,30 @@
         <mat-icon class="dialog-circular-button__icon">file_upload</mat-icon>
       </button>
     </div>
-    
   </div>
   <!--#document uploaded-->
   <!--document name-->
   <div class="dialog__file-container">
-    <div class="dialog__file-container--file-name" *ngIf="fileToUpload==null">No file selected</div>
-    <mat-icon class="dialog__file-container--icon">{{tipoArchivo}}</mat-icon>
-    <div class="dialog__file-container--file-name">{{nombreArchivo}}</div>    
+    <div class="dialog__file-container--file-name" *ngIf="fileToUpload == null">
+      No file selected
+    </div>
+    <mat-icon class="dialog__file-container--icon">{{ tipoArchivo }}</mat-icon>
+    <div class="dialog__file-container--file-name">{{ nombreArchivo }}</div>
   </div>
   <!--#document name-->
   <mat-dialog-actions align="end">
     <!--cancel btn-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel"  (click)=cancelar()>
+    <button
+      mat-button
+      mat-dialog-close
+      class="dialog-button-cancel"
+      (click)="cancelar()"
+    >
       Cancel
     </button>
     <!--#cancel btn-->
     <!--accept btn-->
-    <button mat-button class="dialog-button-accept" (click)=aceptar()>
+    <button mat-button class="dialog-button-accept" (click)="aceptar()">
       Accept
     </button>
     <!--#accept btn-->
