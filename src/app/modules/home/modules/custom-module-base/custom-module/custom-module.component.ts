@@ -7,6 +7,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
 import { Module } from "src/app/models/Teacher/Evaluation/Module";
 import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
+import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
 @Component({
   selector: "app-custom-module",
   templateUrl: "./custom-module.component.html",
@@ -54,7 +55,11 @@ export class CustomModuleComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarModulo() {}
+  agregarModulo() {
+    const dialogRef = this.dialog.open(AddCardComponent, {
+      width: "400px",
+    });
+  }
   eliminarCustom() {}
   verlistar() {
     this.router.navigate(["detail"], { relativeTo: this.route });

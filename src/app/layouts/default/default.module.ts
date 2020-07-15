@@ -85,6 +85,7 @@ import { DetailCustomModuleComponent } from "src/app/modules/home/modules/custom
 import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
 import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
 import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
+import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -144,6 +145,7 @@ import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modu
     UpdateStudentScoreComponent,
     EditCardComponent,
     CustomModuleRubricComponent,
+    AddCardComponent,
   ],
   imports: [
     CommonModule,
