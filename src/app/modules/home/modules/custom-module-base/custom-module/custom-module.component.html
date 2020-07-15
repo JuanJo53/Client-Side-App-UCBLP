@@ -1,0 +1,82 @@
+<div class="container">
+  <!-- botton de editar porcentajes -->
+  <button class="module-button" (click)="editarPorcentajes()">
+    <i class="fas fa-edit module-button__icon"></i>
+    <div class="module-button__text">
+      Edit Percentages
+    </div>
+  </button>
+  <!-- //botton de editar porcentajes -->
+  <!--Subtitle-->
+  <div class="subtitle-compound">
+    <div class="subtitle-compound__text">
+      <span>Custom Module Name</span>
+    </div>
+    <div class="subtitle-compound__buttons-container">
+      <!--Add button-->
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="agregarModulo()"
+      >
+        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+      </button>
+      <!--#Add button-->
+      <!--Add button-->
+      <button
+        class="circular-button-subtitle--negative"
+        mat-mini-fab
+        (click)="eliminarCustom()"
+      >
+        <mat-icon class="circular-button-subtitle__icon">delete</mat-icon>
+      </button>
+      <!--#Add button-->
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <!--row-->
+  <div class="row">
+    <div *ngFor="let cards of customCards" class="col-lg-3 col-md-6 col-xs-12">
+      <div class="custom-card--custom">
+        <div class="custom-card--custom__img">
+          <div class="custom-card--custom__img-overlay">
+            <div class="custom-card--custom__buttons-card">
+              <!--btn Ver lista-->
+              <button class="circular-button-custom-card" (click)="verlistar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  list
+                </mat-icon>
+              </button>
+              <!--#btn Ver lista-->
+              <!--btn  configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="configuraciones()"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn  configuraciones-->
+              <!--btn eliminar-->
+              <button class="circular-button-custom-card" (click)="eliminar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  delete
+                </mat-icon>
+              </button>
+              <!--#btn eliminar-->
+            </div>
+            <div class="custom-card--custom__content-card"></div>
+            <div class="custom-card--custom__description-theme">
+              <span class="custom-card--custom__description-theme--title">{{
+                cards.titulo
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#custom-cards-->
+    </div>
+  </div>
+  <!--#row-->
+</div>
