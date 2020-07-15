@@ -22,15 +22,6 @@
         <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
-      <!--Add button-->
-      <button
-        class="circular-button-subtitle--negative"
-        mat-mini-fab
-        (click)="eliminarCustom()"
-      >
-        <mat-icon class="circular-button-subtitle__icon">delete</mat-icon>
-      </button>
-      <!--#Add button-->
     </div>
   </div>
   <!--#Subtitle-->
@@ -51,7 +42,7 @@
               <!--btn  configuraciones-->
               <button
                 class="circular-button-custom-card"
-                (click)="configuraciones()"
+                (click)="editarCard()"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
@@ -59,7 +50,10 @@
               </button>
               <!--#btn  configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card" (click)="eliminar()">
+              <button
+                class="circular-button-custom-card"
+                (click)="eliminarCard(1)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>

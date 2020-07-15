@@ -83,6 +83,7 @@ import { CustomModuleComponent } from "src/app/modules/home/modules/custom-modul
 import { CustomModuleBaseComponent } from "src/app/modules/home/modules/custom-module-base/custom-module-base.component";
 import { DetailCustomModuleComponent } from "src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
 import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
+import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -140,6 +141,7 @@ import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modu
     CustomModuleBaseComponent,
     DetailCustomModuleComponent,
     UpdateStudentScoreComponent,
+    EditCardComponent,
   ],
   imports: [
     CommonModule,
