@@ -16,7 +16,16 @@
           xPosition="before"
         >
           <div class="classroom-choose-card__content">
-            <button (click)=navigator(materia) class="classroom-choose-card__classroom" style="border:0px;background-color: white;" *ngFor="let materia of materias">{{materia.curso}}</button>
+            <button (click)=navigator(materia)
+             class="classroom-choose-card__classroom" 
+             style="border:0px;background-color: white;" 
+             *ngFor="let materia of materias">{{materia.curso}}
+             </button>
+             <button (click)=home()
+             class="classroom-choose-card__classroom" 
+             style="border:0px;background-color: white;color:red;" >
+             Home
+             </button>
           </div>
         </mat-menu>
 

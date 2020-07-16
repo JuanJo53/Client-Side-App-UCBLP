@@ -16,7 +16,7 @@
           (dblclick)="toggleDisable()">
           <mat-label>%</mat-label>
           <!-- Input para el nombre del modulo-->
-          <input type="number" matInput [(ngModel)]="element.rubrica" name="nombreModulo+ {{i}}" />
+          <input type="number" matInput [(ngModel)]="element.rubrica" name="nombreModulo+ {{i}}" (change)=cambio() />
           <!-- //Input para el nombre del modulo-->
         </mat-form-field>
       </div>
@@ -32,7 +32,7 @@
         <p >{{total}}</p>
       </div>
     </div>
-    <div  *ngIf="total==30">
+    <div *ngIf="total!=100" >
       <div class="colorRubric2">
         <p  >{{total}}</p>
       </div>

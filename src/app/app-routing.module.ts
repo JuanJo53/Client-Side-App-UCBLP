@@ -19,7 +19,9 @@ import { AttendanceScoreComponent } from "./modules/home/my-class/students-profi
 import { OthersScoreComponent } from "./modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
-import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
+import { ClassroomDocenteResolver } from "./_resolvers/docente/classRoom/classroom-info-docente.resolver";
+import { GetLevelResolver } from "./_resolvers/docente/classRoom/get-level.resolver";
+import { GetSemesterResolver } from "./_resolvers/docente/classRoom/get-semester.resolver";
 import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemeLessonsComponent } from "./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
@@ -64,6 +66,8 @@ const routes: Routes = [
     resolve: {
       profile: ProfileDocenteResolver,
       classroom: ClassroomDocenteResolver,
+      semester:GetSemesterResolver,
+      level:GetLevelResolver
     },
   },
   {

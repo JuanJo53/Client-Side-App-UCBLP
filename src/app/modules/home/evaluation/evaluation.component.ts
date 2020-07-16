@@ -197,7 +197,27 @@ export class EvaluationComponent implements OnInit {
       }
     });
   }
+  
+  cargarDatosSideBar(datos:any[]){
+    this.route.parent.data.subscribe({
+      next:(data)=>{
+        let newData=[];
+        for(let dato of datos){
+          if(dato.id_tipo_modulo==2){
+            newData.push({
+              "id_modulo":dato.id_modulo,
+              "nombre_modulo":dato.nombre_modulo,
+            })
+          }
+        }
+        console.log(data.modules);
+        console.log(newData);
+        data.modules.body=newData;
+      }
+    })
+  }
   configuracionModuloPersonalizado(modulo: Module) {
+    
     const dialogRef = this.dialog.open(EditCustomModuleComponent, {
       width: "500px",
       data: {
@@ -211,6 +231,7 @@ export class EvaluationComponent implements OnInit {
         this.route.data.subscribe({
           next: (data) => {
             data.modules.body = result;
+            this.cargarDatosSideBar(result);
             this.cargarDatos(result);
           },
           error: (error) => {
