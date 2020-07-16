@@ -55,6 +55,7 @@ export class AddCustomModuleComponent implements OnInit {
 
   ngOnInit(): void {}
   addModulesPers() {
+    console.log("color escogido:" + this.heading);
     console.log("color escogido:" + this.color);
     let newModule = new Module();
     newModule.idColor = this.valueColor;
@@ -89,8 +90,9 @@ export class AddCustomModuleComponent implements OnInit {
   toggleColors() {
     this.show = !this.show;
   }
-  changeColor(color: string) {
-    this.color = color;
+  changeColor(color: Combo) {
+    this.color = color.display;
+    this.valueColor=Number(color.value);
     this.event.emit(this.color); // Return color
     this.show = false;
   }

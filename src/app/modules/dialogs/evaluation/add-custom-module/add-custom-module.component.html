@@ -52,9 +52,9 @@
             <div class="colors">
               <div
                 (click)="changeColor(paint)"
-                *ngFor="let paint of defaultColors"
+                *ngFor="let paint of colores"
                 class="circle"
-                [ngStyle]="{ background: paint }"
+                [ngStyle]="{ background: paint.display }"
               ></div>
             </div>
           </div>

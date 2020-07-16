@@ -52,6 +52,7 @@ import { CustomModuleComponent } from "./modules/home/modules/custom-module-base
 import { DetailCustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
 import { DetailTableComponent } from "./modules/home/modules/themes-base/themes/detail-table/detail-table.component";
 import { DetailIndividualComponent } from "./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
+import { GetQualificationResolver } from './_resolvers/docente/my-class/get-qualification.resolver';
 
 const routes: Routes = [
   {
@@ -100,13 +101,13 @@ const routes: Routes = [
             },
             component: StudentsComponent,
           },
-          // {
-          //   path: "attendance",
-          //   resolve: {
-          //     fechas: GetFechasAsistenciaResolver,
-          //   },
-          //   component: AssistanceComponent,
-          // },
+          {
+            path: "attendance",
+            resolve: {
+              fechas: GetFechasAsistenciaResolver,
+            },
+            component: AssistanceComponent,
+          },
           {
             path: "profile/:idAlumnoCurso",
             resolve: {
@@ -122,6 +123,9 @@ const routes: Routes = [
               {
                 path: "",
                 component: QualificationComponent,
+                resolve:{
+                  qualifications:GetQualificationResolver
+                }
               },
               {
                 path: "profile-students",

@@ -43,12 +43,12 @@ export class StudentsProfileComponent implements OnInit {
     var promedio=0;
     for(let modulo of modulos){
       let newEvaluationCard=new Module();
-      promedio+=modulo.nota_modulo;
+      promedio+=modulo.nota_modulo*modulo.rubrica/100;
       newEvaluationCard.id=modulo.id_modulo;
       newEvaluationCard.idImagen=modulo.id_imagen;
       newEvaluationCard.idColor=modulo.id_color;
       newEvaluationCard.nombreModulo=modulo.nombre_modulo;
-      newEvaluationCard.rubrica=modulo.nota_modulo;
+      newEvaluationCard.rubrica=modulo.nota_modulo*modulo.rubrica/100;
       if(modulo.id_tipo_modulo==1){
          this.defaultCard.push(newEvaluationCard)
       }
@@ -56,8 +56,7 @@ export class StudentsProfileComponent implements OnInit {
        this.customCards.push(newEvaluationCard)
       }
     }
-    promedio=promedio/(modulos.length)
-    this.estudiante.promedio=promedio;
+    this.estudiante.promedio=Number(promedio.toPrecision(3));
   }
   cargarColores(data) {
     for (let i in data) {
