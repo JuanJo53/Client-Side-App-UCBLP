@@ -48,4 +48,14 @@
     </form>
   </mat-dialog-content>
   <!-- #body -->
+  <!--buttons-->
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Cancel
+    </button>
+    <button mat-button (click)="aceptar()" class="dialog-button-accept">
+      Accept
+    </button>
+  </mat-dialog-actions>
+  <!--buttons-->
 </div>

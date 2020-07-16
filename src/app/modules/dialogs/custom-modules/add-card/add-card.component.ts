@@ -13,4 +13,5 @@ export class AddCardComponent implements OnInit {
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
+  aceptar() {}
 }
