@@ -13,6 +13,9 @@ export class EvaluationService {
   getModules(idCurso):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/evaluation/"+idCurso,{ observe: 'response' });
   }
+  getModulesSimple(idCurso):Observable<any>{
+    return this.http.get(apiKey.api+"/teacher/evaluation/simple/"+idCurso,{ observe: 'response' });
+  }
   addModule(module:Module):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/evaluation/",module,{ observe: 'response' });
 

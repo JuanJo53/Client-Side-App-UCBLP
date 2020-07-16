@@ -16,10 +16,10 @@
   <!--row-->
   <div class="row">
     <div *ngFor="let cards of practices" class="col-lg-3 col-md-6 col-xs-12">
-      <div class="custom-card--practices">
-        <div class="custom-card--practices__img">
-          <div class="custom-card--practices__img-overlay">
-            <div class="custom-card--practices__buttons-card">
+      <div class="custom-card--assessment">
+        <div class="custom-card--assessment__img">
+          <div class="custom-card--assessment__img-overlay">
+            <div class="custom-card--assessment__buttons-card">
               <!--btn Ver lista-->
               <button class="circular-button-custom-card" (click)="verlistar()">
                 <mat-icon class="circular-button-custom-card__icon">
@@ -45,9 +45,9 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card--practices__content-card"></div>
-            <div class="custom-card--practices__description-theme">
-              <span class="custom-card--practices__description-theme--title">{{
+            <div class="custom-card--assessment__content-card"></div>
+            <div class="custom-card--assessment__description-theme">
+              <span class="custom-card--assessment__description-theme--title">{{
                 cards.titulo
               }}</span>
             </div>

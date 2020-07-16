@@ -30,7 +30,7 @@
                 class="circular-button-custom-card"
                 (click)="verLecciones(cards.id)"
               >
-                <mat-icon class="circular-button-custom-card__icon" >
+                <mat-icon class="circular-button-custom-card__icon">
                   remove_red_eye
                 </mat-icon>
               </button>
@@ -46,8 +46,11 @@
               </button>
               <!--#btn  configuraciones-->
               <!--btn eliminar-->
-              <button class="circular-button-custom-card" (click)="eliminar(cards.id)">
-                <mat-icon class="circular-button-custom-card__icon"> 
+              <button
+                class="circular-button-custom-card"
+                (click)="eliminar(cards.id)"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
                   delete
                 </mat-icon>
               </button>
@@ -55,9 +58,9 @@
             </div>
             <div class="custom-card--lessons__content-card"></div>
             <div class="custom-card--lessons__description-theme">
-              <span class="custom-card--lessons__description-theme--title">Lesson {{
-                cards.numeroLeccion
-              }}</span>
+              <span class="custom-card--lessons__description-theme--title"
+                >Lesson {{ cards.numeroLeccion }}</span
+              >
               <span class="custom-card--lessons__description-theme--subtitle">
                 {{ cards.nombre }}
               </span>
@@ -86,12 +89,12 @@
   <!--row-->
   <div class="row">
     <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
-      <div class="custom-card--themes">
-        <div class="custom-card--themes__img">
-          <div class="custom-card--themes__img-overlay">
-            <div class="custom-card--themes__buttons-card">
+      <div class="custom-card--themes-test">
+        <div class="custom-card--themes-test__img">
+          <div class="custom-card--themes-test__img-overlay">
+            <div class="custom-card--themes-test__buttons-card">
               <!--btn Ver lista-->
-              <button class="circular-button-custom-card" (click)="listar()" >
+              <button class="circular-button-custom-card" (click)="listar()">
                 <mat-icon class="circular-button-custom-card__icon">
                   list
                 </mat-icon>
@@ -105,7 +108,7 @@
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
                 </mat-icon>
-              </button> 
+              </button>
               <!--#btn  configuraciones-->
               <!--btn eliminar-->
               <button class="circular-button-custom-card" (click)="eliminar2()">
@@ -115,11 +118,12 @@
               </button>
               <!--#btn eliminar-->
             </div>
-            <div class="custom-card--themes__content-card"></div>
-            <div class="custom-card--themes__description-theme">
-              <span class="custom-card--themes__description-theme--title">{{
-                cards.titulo
-              }}</span>
+            <div class="custom-card--themes-test__content-card"></div>
+            <div class="custom-card--themes-test__description-theme">
+              <span
+                class="custom-card--themes-test__description-theme--title"
+                >{{ cards.titulo }}</span
+              >
             </div>
           </div>
         </div>

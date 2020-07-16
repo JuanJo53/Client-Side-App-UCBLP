@@ -6,4 +6,5 @@ export class ListaEstudiante {
   m_nombre: string;
   promedio: number;
   id: number;
+  correo: string;
 }

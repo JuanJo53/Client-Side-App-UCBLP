@@ -49,6 +49,7 @@ export class StudentsComponent implements OnInit {
   // @ViewChild(MatPaginator)paginator: MatPaginator;
 
   constructor(
+    private route: ActivatedRoute,
     public dialog: MatDialog,
     private data: DeleteItemService,
     private tokenServ: TokenStorageService,
@@ -118,12 +119,9 @@ export class StudentsComponent implements OnInit {
       });
     });
   }
-  editarEstudiante() {
-    const dialogRef = this.dialog.open(EditStudentComponent, {
-      width: "400px",
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result[0]);
+  perfilEstudiante(alumno) {
+    this.router.navigate(["profile", alumno.id_alumno_curso], {
+      relativeTo: this.route.parent,
     });
   }
   removeItem(value) {

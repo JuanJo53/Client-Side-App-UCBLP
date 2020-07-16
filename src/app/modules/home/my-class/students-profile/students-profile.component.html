@@ -17,7 +17,7 @@
             Full Name :
           </div>
           <div class="card-profile-student__characteristic--content">
-            {{ nombreEstudiante }}
+            {{ estudiante.nombre }}
           </div>
         </div>
         <div class="card-profile-student__characteristic">
@@ -25,7 +25,7 @@
             Email :
           </div>
           <div class="card-profile-student__characteristic--content">
-            {{ correoEstudiante }}
+            {{ estudiante.correo }}
           </div>
         </div>
         <div class="card-profile-student__characteristic">
@@ -33,7 +33,7 @@
             General Average :
           </div>
           <div class="card-profile-student__characteristic--content">
-            {{ promedioGeneralEstudiante }}%
+            {{ estudiante.promedio}}
           </div>
         </div>
       </div>
@@ -54,18 +54,19 @@
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img">
+        <div class="evaluation-card__img" [ngStyle]="{
+          'background-image': getImageUrl(getImageIndex(preCard.idImagen))}" >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': preCard.colorFondo
+              'background-color':  sacarColor(preCard.idColor)+'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
               <!--btn ver contenido-->
               <button
                 class="circular-button-custom-card"
-                (click)="verContenido(preCard.id_evaluationCard)"
+                (click)="verContenido(1)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   remove_red_eye
@@ -76,11 +77,11 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': preCard.colorCirculo }"
+                [ngStyle]="{ 'background-color': sacarColor(preCard.idColor)}"
               >
-                {{ preCard.porcentaje }}
+                {{ preCard.rubrica }}
               </div>
-              <div class="evaluation-card__title">{{ preCard.titulo }}</div>
+              <div class="evaluation-card__title">{{ preCard.nombreModulo }}</div>
             </div>
           </div>
         </div>
@@ -104,11 +105,12 @@
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img">
+        <div class="evaluation-card__img" [ngStyle]="{
+          'background-image': getImageUrl(getImageIndex(custCards.idImagen))}" >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': custCards.colorFondo
+              'background-color':  sacarColor(custCards.idColor)+'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
@@ -126,11 +128,11 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': custCards.colorCirculo }"
+                [ngStyle]="{ 'background-color': sacarColor(custCards.idColor) }"
               >
-                {{ custCards.porcentaje }}
+                {{ custCards.rubrica }}
               </div>
-              <div class="evaluation-card__title">{{ custCards.titulo }}</div>
+              <div class="evaluation-card__title">{{ custCards.nombreModulo }}</div>
             </div>
           </div>
         </div>

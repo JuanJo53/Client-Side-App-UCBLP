@@ -41,6 +41,9 @@ export class MyClassService {
   crearClase(idCurso):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/my-class/add-class-assistance",{idCurso},{ observe: 'response' });
   }
+  getProfile(idCurso:number,idAlumnoCurso:number):Observable<any>{
+    return this.http.post(apiKey.api+"/student/profile",{idCurso:idCurso,idAlumnoCurso:idAlumnoCurso},{ observe: 'response' });
+  }
 
 
 }

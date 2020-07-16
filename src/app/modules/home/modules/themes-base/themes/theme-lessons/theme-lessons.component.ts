@@ -56,32 +56,29 @@ export class ThemeLessonsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {}
-  agregarPracticas(data){
-    this.practices=[];
-    for(let practica of data){
+  agregarPracticas(data) {
+    this.practices = [];
+    for (let practica of data) {
       this.practices.push({
         color: "#D77A61",
-        titulo:practica.nombre_practica,
-        id:practica.id_practica
-      })
+        titulo: practica.nombre_practica,
+        id: practica.id_practica,
+      });
     }
   }
   ngOnInit(): void {
     this.route.data.subscribe({
-      next:(data)=>{
-        if(data.practicas.status==200){
-          this.agregarPracticas(data.practicas.body)
-        }
-        else{
+      next: (data) => {
+        if (data.practicas.status == 200) {
+          this.agregarPracticas(data.practicas.body);
+        } else {
           console.log("error");
-
         }
       },
-      error:(error)=>{
+      error: (error) => {
         console.log(error);
-
-      }
-    })
+      },
+    });
   }
   //-----funciones-----
 
@@ -99,7 +96,8 @@ export class ThemeLessonsComponent implements OnInit {
     //   console.log(`Dialog result: ${result}`);
     // });
   }
-  verlistar() {
+  verDetalle() {
+    this.router.navigate(["detail"], { relativeTo: this.route });
     console.log("click on list");
   }
   verContenido(id: number) {

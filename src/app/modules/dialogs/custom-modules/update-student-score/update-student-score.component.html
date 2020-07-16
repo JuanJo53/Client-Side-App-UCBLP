@@ -1,0 +1,51 @@
+<div class="dialog">
+  <!-- title dialog -->
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Update Student Score</span>
+    </div>
+  </div>
+  <!-- #title dialog -->
+  <!-- body -->
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogforms" enctype="multipart/form-data">
+      <mat-form-field
+        appearance="outline"
+        class="input-disabled"
+        (dblclick)="toggleDisable()"
+      >
+        <mat-label>Student's Name</mat-label>
+        <!-- Input para el nombre de la seccion-->
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder=""
+          [disabled]="disableTextbox"
+          [(ngModel)]="nombreEstudiante"
+          name="nombreEstudiante"
+        />
+        <!-- //Input para el nombre de la seccion-->
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        class="input-disabled"
+        (dblclick)="toggleDisable()"
+      >
+        <mat-label>Student's Score</mat-label>
+        <!-- Input para el nombre de la seccion-->
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder=""
+          [disabled]="disableTextbox"
+          [(ngModel)]="score"
+          name="puntuacionEstudiante"
+        />
+        <!-- //Input para el nombre de la seccion-->
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <!-- #body -->
+</div>

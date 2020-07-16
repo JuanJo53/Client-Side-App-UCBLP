@@ -82,6 +82,17 @@
       ><mat-icon class="sublink__icon">view_list</mat-icon
       ><span class="sublink__text">Assessments</span></a
     >
+    <a
+    *ngFor="let modulos of mPersonalizados"
+      class="sublink"
+      mat-list-item
+      (click)=navigateCustom(modulos)
+      routerLinkActive="List-item-active"
+      ><mat-icon class="sublink__icon">view_list</mat-icon
+      ><span class="sublink__text">{{modulos.nombre}}</span>
+      </a
+    >
+
   </mat-expansion-panel>
   <!-- <a
     class="link"

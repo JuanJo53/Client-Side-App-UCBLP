@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-edit-forum',
-  templateUrl: './edit-forum.component.html',
-  styleUrls: ['./edit-forum.component.scss']
+  selector: "app-edit-forum",
+  templateUrl: "./edit-forum.component.html",
+  styleUrls: ["./edit-forum.component.scss"],
 })
 export class EditForumComponent implements OnInit {
   startDate = new Date(1990, 0, 1);
   startDate1 = new Date(1990, 0, 1);
-  disableTextbox =  true;
-  constructor() { }
+  disableTextbox = true;
+
+  constructor() {}
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
