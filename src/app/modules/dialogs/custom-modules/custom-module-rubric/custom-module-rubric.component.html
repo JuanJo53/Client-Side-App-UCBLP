@@ -1,7 +1,7 @@
 <div class="dialog">
   <div class="dialog-subtitle">
     <div class="dialog-subtitle__text">
-      <span>Modules Rubric</span>
+      <span>Custome Module Rubric</span>
     </div>
   </div>
   <mat-dialog-content class="mat-typography">
@@ -24,7 +24,12 @@
         >
           <mat-label>%</mat-label>
           <!-- Input para el nombre del modulo-->
-          <input type="number" matInput [(ngModel)]="element.rubrica" name="nombreModulo+ {{i}}" (change)=cambio() />
+          <input
+            type="number"
+            matInput
+            [(ngModel)]="element.rubrica"
+            name="nombreModulo+ {{ i }}"
+          />
           <!-- //Input para el nombre del modulo-->
         </mat-form-field>
       </div>

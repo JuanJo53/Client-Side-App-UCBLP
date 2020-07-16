@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Pregunta } from 'src/app/models/Teacher/CreatePractice/Pregunta';
+import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 
 @Component({
   selector: "app-individual-assessment",

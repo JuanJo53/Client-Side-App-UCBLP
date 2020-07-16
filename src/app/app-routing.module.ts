@@ -44,9 +44,14 @@ import { GetColorsResolver } from "./_resolvers/docente/evaluation/get-colores.r
 import { CreatePracticeComponent } from "./modules/home/modules/themes-base/themes/create-practice/create-practice.component";
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
-import { GetPracticesResolver } from './_resolvers/docente/practices/get-practices.resolver';
-import { GetResourcesResolver } from './_resolvers/docente/Resources/get-resources.resolver';
-import { GetModulesSimpleResolver } from './_resolvers/docente/evaluation/get-modules-simple.resolver';
+import { GetPracticesResolver } from "./_resolvers/docente/practices/get-practices.resolver";
+import { GetResourcesResolver } from "./_resolvers/docente/Resources/get-resources.resolver";
+import { GetModulesSimpleResolver } from "./_resolvers/docente/evaluation/get-modules-simple.resolver";
+import { CustomModuleBaseComponent } from "./modules/home/modules/custom-module-base/custom-module-base.component";
+import { CustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/custom-module.component";
+import { DetailCustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
+import { DetailTableComponent } from "./modules/home/modules/themes-base/themes/detail-table/detail-table.component";
+import { DetailIndividualComponent } from "./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
 
 const routes: Routes = [
   {
@@ -73,17 +78,17 @@ const routes: Routes = [
   {
     path: "teacher/:idCurso",
     component: DefaultComponent,
-    resolve: { 
-      profile: ProfileDocenteResolver ,
+    resolve: {
+      profile: ProfileDocenteResolver,
       classroom: ClassroomDocenteResolver,
-      modules:GetModulesSimpleResolver  
+      modules: GetModulesSimpleResolver,
     },
     children: [
       {
         path: "dashboard",
         // path: "building",
         // component: BuildingPageComponent,
-         component: DashboardComponent,
+        component: DashboardComponent,
       },
       {
         path: "my-class",
@@ -110,7 +115,6 @@ const routes: Routes = [
               images: GetImagesIdResolver,
             },
             component: StudentsProfileComponent,
-
           },
           {
             path: "qualification",
@@ -161,10 +165,20 @@ const routes: Routes = [
       },
       {
         path: "modules",
+        component: CustomModuleBaseComponent,
         children: [
           {
-            path:"custom/:id",
-            component:DashboardComponent     
+            path: "custom/:id",
+            children: [
+              {
+                path: "",
+                component: CustomModuleComponent,
+              },
+              {
+                path: "detail",
+                component: DetailCustomModuleComponent,
+              },
+            ],
           },
           {
             path: "themes",
@@ -200,7 +214,27 @@ const routes: Routes = [
                           practicas: GetPracticesResolver,
                         },
                         runGuardsAndResolvers: "always",
-                        component: ThemeLessonsComponent,
+
+                        children: [
+                          {
+                            path: "",
+                            component: ThemeLessonsComponent,
+                          },
+                          {
+                            path: "detail",
+
+                            children: [
+                              {
+                                path: "",
+                                component: DetailTableComponent,
+                              },
+                              {
+                                path: "individual",
+                                component: DetailIndividualComponent,
+                              },
+                            ],
+                          },
+                        ],
                       },
                       {
                         path: "practice",
@@ -240,9 +274,9 @@ const routes: Routes = [
       {
         path: "resources",
         component: ResourcesComponent,
-        runGuardsAndResolvers:"always",
-        resolve:{
-          sections:GetResourcesResolver
+        runGuardsAndResolvers: "always",
+        resolve: {
+          sections: GetResourcesResolver,
         },
       },
       {

@@ -68,7 +68,6 @@ import { AttendanceScoreComponent } from "src/app/modules/home/my-class/students
 import { OthersScoreComponent } from "src/app/modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { CreateCourseComponent } from "src/app/modules/dialogs/courses/create-course/create-course.component";
-import { DetailComponent } from "src/app/modules/home/modules/themes-base/themes/theme-lessons/detail/detail.component";
 import { DetailAssessmentsComponent } from "src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component";
 import { AssessmentsBaseComponent } from "src/app/modules/home/modules/assessments-base/assessments-base.component";
 import { TestDetailComponent } from "src/app/modules/dialogs/test-detail/test-detail.component";
@@ -77,8 +76,18 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { RepositoryQuestionComponent } from "src/app/modules/dialogs/create-practice/repository-question/repository-question.component";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { ChartsModule } from "ng2-charts";
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { ProgressBarComponent } from 'src/app/modules/dialogs/progress-bar/progress-bar.component';
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { ProgressBarComponent } from "src/app/modules/dialogs/progress-bar/progress-bar.component";
+import { CustomModuleComponent } from "src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component";
+import { CustomModuleBaseComponent } from "src/app/modules/home/modules/custom-module-base/custom-module-base.component";
+import { DetailCustomModuleComponent } from "src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
+import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
+import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
+import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
+import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
+import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/detail-table/detail-table.component";
+import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -125,14 +134,21 @@ import { ProgressBarComponent } from 'src/app/modules/dialogs/progress-bar/progr
     AttendanceScoreComponent,
     OthersScoreComponent,
     CreateCourseComponent,
-    DetailComponent,
     DetailAssessmentsComponent,
     AssessmentsBaseComponent,
     TestDetailComponent,
     IndividualAssessmentComponent,
     ProgressBarComponent,
-    RepositoryQuestionComponent
- 
+    RepositoryQuestionComponent,
+    CustomModuleComponent,
+    CustomModuleBaseComponent,
+    DetailCustomModuleComponent,
+    UpdateStudentScoreComponent,
+    EditCardComponent,
+    CustomModuleRubricComponent,
+    AddCardComponent,
+    DetailTableComponent,
+    DetailIndividualComponent,
   ],
   imports: [
     CommonModule,
@@ -164,7 +180,7 @@ import { ProgressBarComponent } from 'src/app/modules/dialogs/progress-bar/progr
     MatProgressSpinnerModule,
     MatAutocompleteModule,
     ChartsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
 })
 export class DefaultModule {}
