@@ -158,5 +158,10 @@ export class ChoosingClassroomComponent implements OnInit {
       niveles:this.niveles
     }  
   });
+  dialogRef.afterClosed().subscribe((result)=>{
+    if(result!==""&&result!=="undefined"&&result!=null){
+      this.classroomCards.push(result);
+    }
+  })
   }
 }

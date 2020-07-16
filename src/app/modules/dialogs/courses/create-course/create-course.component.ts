@@ -49,6 +49,24 @@ export class CreateCourseComponent implements OnInit {
     this.niveles=dataDialog["niveles"];
     this.nivelSelec=this.niveles[0].idNivel;
   }
+  Hour_toMYSQL(time) {
+    var partTime = time.split(" ");
+    if (partTime[1] === "PM") {
+      var horasplit = partTime[0].split(":");
+      if (horasplit[0] === "12") {
+        return partTime[0];
+      } else {
+        return String(Number(horasplit[0]) + 12) + ":" + horasplit[1];
+      }
+    } else {
+      var horasplit = partTime[0].split(":");
+      if (horasplit[0] === 12) {
+        return "00" + ":" + horasplit[1];
+      } else {
+        return partTime[0];
+      }
+    }
+  }
   agregarDias(data:Schedule[],curso:CardClassroom){
     var dias: string = "";
       var horarioini: Array<String> = [];
@@ -90,7 +108,10 @@ export class CreateCourseComponent implements OnInit {
     newCourse.curso=this.nombreClassroom;
     newCourse.idSemestre=this.semestreSelec;
     newCourse.idNivel=this.nivelSelec;
-    
+    for(let horario of this.horarioClase){
+      horario.horaFin=this.Hour_toMYSQL(horario.horaFin);
+      horario.horaInicio=this.Hour_toMYSQL(horario.horaInicio);
+    }
     newCourse.dias=this.horarioClase;
     this.agregarDias(newCourse.dias,newCourse);
     this.servCou.addCourse(newCourse).subscribe({
