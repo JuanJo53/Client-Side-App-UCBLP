@@ -82,7 +82,7 @@ import { CustomModuleComponent } from "src/app/modules/home/modules/custom-modul
 import { CustomModuleBaseComponent } from "src/app/modules/home/modules/custom-module-base/custom-module-base.component";
 import { DetailCustomModuleComponent } from "src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
 import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
-import { EditCardComponent } from "src/app/modules/dialogs/edit-card/edit-card.component";
+import { EditCardComponent } from "src/app/modules/dialogs/custom-modules/edit-card/edit-card.component";
 import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
 import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
 import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/detail-table/detail-table.component";

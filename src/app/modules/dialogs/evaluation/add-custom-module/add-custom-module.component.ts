@@ -84,6 +84,7 @@ export class AddCustomModuleComponent implements OnInit {
       },
       error: (error) => {
         console.log(error);
+        this.dialogRef.close();
       },
     });
   }
@@ -95,6 +96,9 @@ export class AddCustomModuleComponent implements OnInit {
     this.valueColor=Number(color.value);
     this.event.emit(this.color); // Return color
     this.show = false;
+  }
+  cancelar(){
+    this.dialogRef.close();
   }
 
   public defaultColors: string[] = [

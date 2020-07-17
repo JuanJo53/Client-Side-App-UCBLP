@@ -14,6 +14,7 @@ import { EditDefaultModuleComponent } from "../../dialogs/evaluation/edit-defaul
 import { ModulesRubricComponent } from "../../dialogs/evaluation/modules-rubric/modules-rubric.component";
 import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
+import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
 
 @Component({
   selector: "app-evaluation",
@@ -59,7 +60,8 @@ export class EvaluationComponent implements OnInit {
     private router: Router,
     private mdServ: EvaluationService,
     public dialog: MatDialog,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private servNav:SideBarControlService
   ) {}
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
@@ -166,6 +168,7 @@ export class EvaluationComponent implements OnInit {
           next: (data) => {
             data.modules.body = result;
             this.cargarDatos(result);
+            this.servNav.modulos(result);
           },
           error: (error) => {
             console.log("No se pudieron obtener las lecciones");
@@ -189,6 +192,7 @@ export class EvaluationComponent implements OnInit {
           next: (data) => {
             data.modules.body = result;
             this.cargarDatos(result);
+            this.servNav.modulos(result);
           },
           error: (error) => {
             console.log("No se pudieron obtener las lecciones");
@@ -198,24 +202,7 @@ export class EvaluationComponent implements OnInit {
     });
   }
   
-  cargarDatosSideBar(datos:any[]){
-    this.route.parent.data.subscribe({
-      next:(data)=>{
-        let newData=[];
-        for(let dato of datos){
-          if(dato.id_tipo_modulo==2){
-            newData.push({
-              "id_modulo":dato.id_modulo,
-              "nombre_modulo":dato.nombre_modulo,
-            })
-          }
-        }
-        console.log(data.modules);
-        console.log(newData);
-        data.modules.body=newData;
-      }
-    })
-  }
+ 
   configuracionModuloPersonalizado(modulo: Module) {
     
     const dialogRef = this.dialog.open(EditCustomModuleComponent, {
@@ -231,8 +218,8 @@ export class EvaluationComponent implements OnInit {
         this.route.data.subscribe({
           next: (data) => {
             data.modules.body = result;
-            this.cargarDatosSideBar(result);
             this.cargarDatos(result);
+            this.servNav.modulos(result);
           },
           error: (error) => {
             console.log("No se pudieron obtener las lecciones");
@@ -273,6 +260,7 @@ export class EvaluationComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result === "ok") {
         this.cardsModulosPers.splice(index, 1);
+        this.servNav.eliminarmodulos(index);
       }
     });
   }

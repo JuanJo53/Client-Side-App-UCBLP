@@ -8,7 +8,7 @@
     [class.menu-close]="!isSidebarOpen2"
     opened
   >
-    <app-sidebar (openEvent)="receiveOpen($event)"></app-sidebar>
+    <app-sidebar (openEvent)="receiveOpen($event)" #sidenav></app-sidebar>
   </mat-drawer>
   <mat-drawer-content [ngStyle]="{ 'margin-left.rem': contentMargin }">
     <app-header></app-header>
