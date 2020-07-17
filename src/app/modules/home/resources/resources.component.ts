@@ -146,7 +146,7 @@ export class ResourcesComponent implements OnInit {
     const dialogRef = this.dialog.open(AddDocumentComponent, { width: "500px" ,
     data:{
       idSeccion:seccion.idSeccion,
-      idCurso:this.idCurso
+      idCurso:this.idCurso 
     }
     });
     dialogRef.afterClosed().subscribe((res)=>{
