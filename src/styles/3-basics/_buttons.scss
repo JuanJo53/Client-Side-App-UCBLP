@@ -30,6 +30,12 @@
   &:focus {
     outline: 0;
   }
+  &.active {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+    border: 0.1rem solid $color-primary-blue;
+    opacity: 100%;
+  }
 }
 
 .circular-button {

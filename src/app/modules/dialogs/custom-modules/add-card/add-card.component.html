@@ -32,12 +32,17 @@
   <!-- #body -->
   <mat-dialog-actions align="end">
     <!--btn cancel-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel">
+    <button
+      mat-button
+      mat-dialog-close
+      (click)="cancelar()"
+      class="dialog-button-cancel"
+    >
       Cancel
     </button>
     <!--#btn cancel-->
     <!-- btn accept-->
-    <button mat-button class="dialog-button-accept" (click)=aceptar()>
+    <button mat-button class="dialog-button-accept" (click)="aceptar()">
       Accept
     </button>
   </mat-dialog-actions>

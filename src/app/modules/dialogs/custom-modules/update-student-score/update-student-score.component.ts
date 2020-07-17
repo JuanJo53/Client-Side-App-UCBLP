@@ -15,4 +15,5 @@ export class UpdateStudentScoreComponent implements OnInit {
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
+  aceptar() {}
 }
