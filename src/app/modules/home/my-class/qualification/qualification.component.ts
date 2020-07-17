@@ -62,8 +62,10 @@ export class QualificationComponent implements OnInit {
   cargarDatos(data){
     console.log(data);
     if(data.length>0){
-      for(let dat of data[0].modulos){
-        this.columns.push(dat.nombre_modulo+"\n"+String(dat.rubrica)+"%" );
+      if(data[0].modulos){
+        for(let dat of data[0].modulos){
+          this.columns.push(dat.nombre_modulo+"\n"+String(dat.rubrica)+"%" );
+        }
       }
       this.displayedColumns=this.columns.map(col => col);
       this.displayedColumns.splice(0, 0, "nombre");
@@ -84,9 +86,11 @@ export class QualificationComponent implements OnInit {
       newAsis.id_alumno_curso=data[i].id_curso_alumno;
       var a=[];
       var prom=0;
-      for(let nota of data[i].modulos){
-        a.push(Number(nota.rubrica/100*nota.nota_modulo).toPrecision(3));
-        prom+=nota.rubrica/100*nota.nota_modulo;
+      if(data[i].modulos){
+        for(let nota of data[i].modulos){
+          a.push(Number(nota.rubrica/100*nota.nota_modulo).toPrecision(3));
+          prom+=nota.rubrica/100*nota.nota_modulo;
+        }
       }
       newAsis.notas=a;
       newAsis.promedio=Number(prom.toPrecision(3));

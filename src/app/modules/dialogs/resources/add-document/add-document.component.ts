@@ -14,6 +14,8 @@ import {
   styleUrls: ['./add-document.component.scss']
 })
 export class AddDocumentComponent implements OnInit {
+  
+  dialogRef2:any;
   archivo:string="";
   nombre:string="";
   Url: string = "";
@@ -116,7 +118,10 @@ verificarTipo(tipo){
       }
       a.subscribe({
         next:(data)=>{
-          if(data.status==200){
+          if(data.status==200){ 
+            this.dialogRef2=this.dialog.open(ProgressBarComponent, {
+            width: "400px",
+          });
             this.subirArchivo(data.body.ruta,data.body.url[0],tipo);
           }
           else{
@@ -131,10 +136,8 @@ verificarTipo(tipo){
         }
       })
     }
-    const dialogRef = this.dialog.open(ProgressBarComponent, {
-      width: "400px",
-    });
     
+   
     
     // if(this.fileToUpload!=null){
     //   this.servRes.
@@ -152,25 +155,30 @@ verificarTipo(tipo){
           this.servSec.getSections(this.dataDialog["idCurso"]).subscribe({
             next:(data)=>{
               if(data.status==200){
+                this.dialogRef2.close();
                 this.dialogRef.close(data.body);
               }else{
+                this.dialogRef2.close();
                 console.log("Ocurrio un error");
                 this.dialogRef.close();
               }
             },
             error:(err)=>{
+              this.dialogRef2.close();
               console.log("Ocurrio un error");
               this.dialogRef.close();
       
             }
           })
         }else{
+          this.dialogRef2.close();
           console.log("Ocurrio un error");
           this.dialogRef.close();
           
         }
       },
       error:(err)=>{
+        this.dialogRef2.close();
         console.log("Ocurrio un error");
         this.dialogRef.close();
 
@@ -181,15 +189,18 @@ verificarTipo(tipo){
     this.servRes.subirArchivo(url,this.fileToUpload).subscribe({
       next:(data)=>{
         if(data.status==200){
+          
           this.subirRecurso(ruta,tipo);
         }
         else{
+          this.dialogRef2.close();
           console.log("Ocurrio un error");
           this.dialogRef.close();
 
         }
       },
       error:(err)=>{
+        this.dialogRef2.close();
         console.log("Ocurrio un error");
         this.dialogRef.close();
       }

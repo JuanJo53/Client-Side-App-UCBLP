@@ -234,7 +234,8 @@ export class EvaluationComponent implements OnInit {
         const dialogRef = this.dialog.open(ModulesRubricComponent, {
           width: "400px",
           data: {
-            modulos: data.modules.body,
+            modulosPred: this.cardsModulosPred,
+            modulosPers: this.cardsModulosPers,
           },
         });
         dialogRef.afterClosed().subscribe((result) => {

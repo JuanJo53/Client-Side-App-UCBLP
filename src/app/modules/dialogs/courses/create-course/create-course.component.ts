@@ -108,6 +108,7 @@ export class CreateCourseComponent implements OnInit {
     newCourse.curso=this.nombreClassroom;
     newCourse.idSemestre=this.semestreSelec;
     newCourse.idNivel=this.nivelSelec;
+    newCourse.totalEstudiantes=0;
     for(let horario of this.horarioClase){
       horario.horaFin=this.Hour_toMYSQL(horario.horaFin);
       horario.horaInicio=this.Hour_toMYSQL(horario.horaInicio);

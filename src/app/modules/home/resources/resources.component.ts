@@ -53,6 +53,41 @@ export class ResourcesComponent implements OnInit {
       error: (error) => {},
     });
   }
+  cargarSecciones2(data:ResourceSection[]){
+    var listaux=[];
+    for(let seccion of data){
+      let nuevaSeccion=new ResourceSection();
+      nuevaSeccion.nombreSeccion=seccion.nombreSeccion;
+      nuevaSeccion.idSeccion=seccion.idSeccion;
+      for(let recurso of seccion.resourceContent){
+        let nuevoRecurso=new ResourceContent();
+        nuevoRecurso.nombre=recurso.nombre;
+        nuevoRecurso.tipo=recurso.tipo;
+        nuevoRecurso.url=recurso.url;
+        nuevoRecurso.id=recurso.id;
+        nuevaSeccion.resourceContent.push(nuevoRecurso);
+      }
+
+      listaux.push(nuevaSeccion);
+    }
+    
+    this.ListaSecciones=[];
+    for(let seccion of listaux){
+      let nuevaSeccion=new ResourceSection();
+      nuevaSeccion.nombreSeccion=seccion.nombreSeccion;
+      nuevaSeccion.idSeccion=seccion.idSeccion;
+      for(let recurso of seccion.resourceContent){
+        let nuevoRecurso=new ResourceContent();
+        nuevoRecurso.nombre=recurso.nombre;
+        nuevoRecurso.tipo=recurso.tipo;
+        nuevoRecurso.url=recurso.url;
+        nuevoRecurso.id=recurso.id;
+        nuevaSeccion.resourceContent.push(nuevoRecurso);
+      }
+
+      this.ListaSecciones.push(nuevaSeccion);
+    }
+  }
   cargarSecciones(data){
     this.ListaSecciones=[];
     for(let seccion of data){
@@ -177,9 +212,10 @@ export class ResourcesComponent implements OnInit {
         next:(next)=>{
           if(next.sections.status==200){
             
-          next.sections.body[indexs].recursos.splice(index,1);
-            this.cargarSecciones(next.sections.body);
-            
+          if(result==="ok"){
+            this.ListaSecciones[indexs].resourceContent.splice(index,1);
+            this.cargarSecciones2(this.ListaSecciones);
+          }
           }
           else{console.log("error")}
         },
