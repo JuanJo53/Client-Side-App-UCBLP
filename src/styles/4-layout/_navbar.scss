@@ -5,8 +5,8 @@
   background-color: $color-primary-red !important;
   //padding:0!important;
   &__container {
-    background-color: transparent!important;
-    padding: 5rem 0rem!important;
+    background-color: transparent !important;
+    padding: 5rem 0rem !important;
     display: flex;
     justify-content: space-between;
   }
@@ -89,6 +89,15 @@
     //background-color: blue;
   }
   &__classroom {
-    @include custom-title-regular(1rem, 1.75rem, $color-primary-blue);
+    @include custom-title-regular(0.5rem, 1.75rem, $color-primary-blue);
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: center;
+    &:hover {
+      border-radius: 5px;
+      color: $color-primary-white;
+      background-color: $color-primary-blue;
+    }
   }
 }
