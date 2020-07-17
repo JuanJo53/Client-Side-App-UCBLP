@@ -33,7 +33,7 @@
             General Average :
           </div>
           <div class="card-profile-student__characteristic--content">
-            {{ estudiante.promedio}}
+            {{ estudiante.promedio }}
           </div>
         </div>
       </div>
@@ -46,24 +46,26 @@
     </div>
   </div>
   <!--#Subtitle-->
-  <!--row-->
-  <div class="row">
-    <!--evaluation-card-attendance  -->
+  <!--row dynamic-->
+  <!-- <div class="row">
     <div
       *ngFor="let preCard of defaultCard"
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img" [ngStyle]="{
-          'background-image': getImageUrl(getImageIndex(preCard.idImagen))}" >
+        <div
+          class="evaluation-card__img"
+          [ngStyle]="{
+            'background-image': getImageUrl(getImageIndex(preCard.idImagen))
+          }"
+        >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color':  sacarColor(preCard.idColor)+'A6'
+              'background-color': sacarColor(preCard.idColor) + 'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
-              <!--btn ver contenido-->
               <button
                 class="circular-button-custom-card"
                 (click)="verContenido(1)"
@@ -72,22 +74,175 @@
                   remove_red_eye
                 </mat-icon>
               </button>
-              <!--#btn ver contenido-->
             </div>
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': sacarColor(preCard.idColor)}"
+                [ngStyle]="{ 'background-color': sacarColor(preCard.idColor) }"
               >
                 {{ preCard.rubrica }}
               </div>
-              <div class="evaluation-card__title">{{ preCard.nombreModulo }}</div>
+              <div class="evaluation-card__title">
+                {{ preCard.nombreModulo }}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--#evaluation-card-attendance  -->
+  </div> -->
+  <!--#row dynamic-->
+  <div class="row">
+    <!--default attendance -->
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="default-card-attendance">
+        <div class="default-card-attendance__img">
+          <div class="default-card-attendance__img-overlay">
+            <div class="default-card-attendance__buttons-card">
+              <!--btn ver-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(defaultCard[0])"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  remove_red_eye
+                </mat-icon>
+              </button>
+              <!--#btn ver-->
+            </div>
+            <div class="default-card-attendance__content-card">
+              <div class="default-card-attendance__circle">
+                {{ defaultCard[0].rubrica }}
+              </div>
+              <div class="default-card-attendance__title">
+                {{ defaultCard[0].nombreModulo }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#default  attendance-->
+    <!--default themes -->
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="default-card-theme">
+        <div class="default-card-theme__img">
+          <div class="default-card-theme__img-overlay">
+            <div class="default-card-theme__buttons-card">
+              <!--btn configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(defaultCard[1])"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn configuraciones-->
+            </div>
+            <div class="default-card-theme__content-card">
+              <div class="default-card-theme__circle">
+                {{ defaultCard[1].rubrica }}
+              </div>
+              <div class="default-card-theme__title">
+                {{ defaultCard[1].nombreModulo }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#default  themes-->
+    <!--default practices -->
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="default-card-practices">
+        <div class="default-card-practices__img">
+          <div class="default-card-practices__img-overlay">
+            <div class="default-card-practices__buttons-card">
+              <!--btn configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(defaultCard[2])"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn configuraciones-->
+            </div>
+            <div class="default-card-practices__content-card">
+              <div class="default-card-practices__circle">
+                {{ defaultCard[2].rubrica }}
+              </div>
+              <div class="default-card-practices__title">
+                {{ defaultCard[2].nombreModulo }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#default  practices-->
+    <!--default Theme test -->
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="default-card-theme-test">
+        <div class="default-card-theme-test__img">
+          <div class="default-card-theme-test__img-overlay">
+            <div class="default-card-theme-test__buttons-card">
+              <!--btn configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(defaultCard[3])"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn configuraciones-->
+            </div>
+            <div class="default-card-theme-test__content-card">
+              <div class="default-card-theme-test__circle">
+                {{ defaultCard[3].rubrica }}
+              </div>
+              <div class="default-card-theme-test__title">
+                {{ defaultCard[3].nombreModulo }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#default  theme test-->
+    <!--default Assessments -->
+    <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="default-card-assessment">
+        <div class="default-card-assessment__img">
+          <div class="default-card-assessment__img-overlay">
+            <div class="default-card-assessment__buttons-card">
+              <!--btn configuraciones-->
+              <button
+                class="circular-button-custom-card"
+                (click)="verContenido(defaultCard[4])"
+              >
+                <mat-icon class="circular-button-custom-card__icon">
+                  settings
+                </mat-icon>
+              </button>
+              <!--#btn configuraciones-->
+            </div>
+            <div class="default-card-assessment__content-card">
+              <div class="default-card-assessment__circle">
+                {{ defaultCard[4].rubrica }}
+              </div>
+              <div class="default-card-assessment__title">
+                {{ defaultCard[4].nombreModulo }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#default  Assessments-->
   </div>
   <!--#row-->
   <!--Subtitle-->
@@ -105,12 +260,16 @@
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
-        <div class="evaluation-card__img" [ngStyle]="{
-          'background-image': getImageUrl(getImageIndex(custCards.idImagen))}" >
+        <div
+          class="evaluation-card__img"
+          [ngStyle]="{
+            'background-image': getImageUrl(getImageIndex(custCards.idImagen))
+          }"
+        >
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color':  sacarColor(custCards.idColor)+'A6'
+              'background-color': sacarColor(custCards.idColor) + 'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
@@ -128,11 +287,15 @@
             <div class="evaluation-card__content-card">
               <div
                 class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': sacarColor(custCards.idColor) }"
+                [ngStyle]="{
+                  'background-color': sacarColor(custCards.idColor)
+                }"
               >
                 {{ custCards.rubrica }}
               </div>
-              <div class="evaluation-card__title">{{ custCards.nombreModulo }}</div>
+              <div class="evaluation-card__title">
+                {{ custCards.nombreModulo }}
+              </div>
             </div>
           </div>
         </div>
