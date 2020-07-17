@@ -12,6 +12,7 @@ import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
+  preguntaAntigua:Pregunta=new Pregunta();
   tipoPreguntaSeleccionado: string;
   nuevaPregunta:Pregunta=new Pregunta();
   tipoPreguntaEscogida: string = "1";
@@ -37,6 +38,21 @@ export class CustomQuestionComponent implements OnInit {
   ngOnInit(): void {
     if(this.dataDialog["tipo"]==="modificar"){
       var preg=this.dataDialog["preg"] as Pregunta;
+      if(preg.tipo){
+        this.preguntaAntigua.pregunta=preg.pregunta;
+        this.preguntaAntigua.opciones=[];
+        for(let opci of preg.opciones){
+          this.preguntaAntigua.opciones.push(opci);
+        }
+        this.preguntaAntigua.respuesta=[];
+        for(let res of preg.respuesta){
+          this.preguntaAntigua.respuesta.push(res);
+        }
+        this.preguntaAntigua.idTipoPregunta=preg.idTipoPregunta;
+        this.preguntaAntigua.idTipoRespuesta=preg.idTipoRespuesta;
+      }
+      
+      console.log(preg);
       this.nuevaPregunta=preg;
       switch(preg.idTipoRespuesta){
         case "2":
@@ -158,6 +174,39 @@ export class CustomQuestionComponent implements OnInit {
         break;  
     }
   }
+  verificarRepo(nuevaPregunta:Pregunta):boolean{
+    var verOpci=true;
+    var verPreg=true;
+    var verResp=true;
+    var verTipoP=true;
+    var verTipoR=true;
+    for(let i in nuevaPregunta.opciones){
+      if(nuevaPregunta.opciones[i]!==this.preguntaAntigua.opciones[i]){
+        verOpci=false;
+      }
+    }
+    for(let i in nuevaPregunta.respuesta){
+      if(nuevaPregunta.respuesta[i]!==this.preguntaAntigua.respuesta[i]){
+        verResp=false;
+      }
+    }
+    if(nuevaPregunta.pregunta!==this.preguntaAntigua.pregunta){
+      verPreg=false;
+    }
+    if(nuevaPregunta.idTipoPregunta!==this.preguntaAntigua.idTipoPregunta){
+      verTipoP=false;
+    }
+    if(nuevaPregunta.idTipoRespuesta!==this.preguntaAntigua.idTipoRespuesta){
+      verTipoR=false;
+    }
+    if(verOpci&&verPreg&&verResp&&verTipoP&&verTipoR){
+      return true;
+    }
+    else{
+      return false;
+    }
+
+  }
   agregarPreguntaEnContenido() {
     
     this.nuevaPregunta.numeroPreg=this.dataDialog["numero"];
@@ -166,6 +215,11 @@ export class CustomQuestionComponent implements OnInit {
     console.log(this.nuevaPregunta);
    var ver=this.verificarContenido()
    if(ver){
+     if(this.nuevaPregunta.tipo){
+        if(!this.verificarRepo(this.nuevaPregunta)){
+          this.nuevaPregunta.tipo=false;
+        }
+     }
      this.dialogRef.close(this.nuevaPregunta);
    }
   }

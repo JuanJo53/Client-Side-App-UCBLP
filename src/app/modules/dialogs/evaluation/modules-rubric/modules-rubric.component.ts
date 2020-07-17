@@ -1,8 +1,7 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { EvaluationService } from "src/app/_services/teacher_services/evaluation.service";
-import { Module } from "src/app/models/Teacher/Evaluation/Module";
-import { CardClassroom } from "src/app/models/Teacher/CardClassroom";
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { EvaluationService } from 'src/app/_services/teacher_services/evaluation.service';
+import { Module } from 'src/app/models/Teacher/Evaluation/Module';
 
 @Component({
   selector: "app-modules-rubric",
@@ -37,8 +36,16 @@ export class ModulesRubricComponent implements OnInit {
     }
     console.log(this.porcentajes);
   }
+  cambio(){
+    var suma=0;
+    for(let rubrica of this.listaRubricas){
+      suma+=rubrica.rubrica;
+    }
+    this.total=suma;
+  }
   ngOnInit(): void {
-    this.listaRubricas = this.dataDialog["modulos"];
+    this.listaRubricas=this.dataDialog["modulos"];
+    this.cambio();
   }
   verificarRubricas() {
     var sum = 0;

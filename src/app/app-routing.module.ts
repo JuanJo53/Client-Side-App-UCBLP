@@ -19,7 +19,9 @@ import { AttendanceScoreComponent } from "./modules/home/my-class/students-profi
 import { OthersScoreComponent } from "./modules/home/my-class/students-profile/scores/others-score/others-score.component";
 import { ProfileDocenteResolver } from "./_resolvers/docente/profile-docente.resolver";
 import { AuthDocenteResolver } from "./_resolvers/docente/auth-docente.resolver";
-import { ClassroomDocenteResolver } from "./_resolvers/docente/classroom-info-docente.resolver";
+import { ClassroomDocenteResolver } from "./_resolvers/docente/classRoom/classroom-info-docente.resolver";
+import { GetLevelResolver } from "./_resolvers/docente/classRoom/get-level.resolver";
+import { GetSemesterResolver } from "./_resolvers/docente/classRoom/get-semester.resolver";
 import { ThemeContentComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemeLessonsComponent } from "./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
 import { ThemesBaseComponent } from "./modules/home/modules/themes-base/themes-base.component";
@@ -30,6 +32,7 @@ import { DetailAssessmentsComponent } from "./modules/home/modules/assessments-b
 import { StudentsGeneralResolver } from "./_resolvers/docente/my-class/get-students.resolver";
 import { GetProfileStudentResolver } from "./_resolvers/docente/my-class/get-profile-student.resolver";
 import { GetThemesTeacherResolver } from "./_resolvers/docente/modules/get-themes.resolver";
+import { GetContentModuleResolver } from "./_resolvers/docente/modules/get-content-module.resolver";
 import { GetImagesIdResolver } from "./_resolvers/docente/modules/get_imagesId.resolver";
 import { GetFechasAsistenciaResolver } from "./_resolvers/docente/my-class/get-fechas-asistencia.resolver";
 import { GetLessonsResolver } from "./_resolvers/docente/modules/themes/get-lessons.resolver";
@@ -43,6 +46,7 @@ import { CreatePracticeComponent } from "./modules/home/modules/themes-base/them
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
 import { GetPracticesResolver } from "./_resolvers/docente/practices/get-practices.resolver";
+import { GetQuestionsRepositoryResolver } from "./_resolvers/docente/practices/get-questions-repository.resolver";
 import { GetResourcesResolver } from "./_resolvers/docente/Resources/get-resources.resolver";
 import { GetModulesSimpleResolver } from "./_resolvers/docente/evaluation/get-modules-simple.resolver";
 import { CustomModuleBaseComponent } from "./modules/home/modules/custom-module-base/custom-module-base.component";
@@ -50,6 +54,7 @@ import { CustomModuleComponent } from "./modules/home/modules/custom-module-base
 import { DetailCustomModuleComponent } from "./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component";
 import { DetailTableComponent } from "./modules/home/modules/themes-base/themes/detail-table/detail-table.component";
 import { DetailIndividualComponent } from "./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
+import { GetQualificationResolver } from './_resolvers/docente/my-class/get-qualification.resolver';
 
 const routes: Routes = [
   {
@@ -69,6 +74,8 @@ const routes: Routes = [
     resolve: {
       profile: ProfileDocenteResolver,
       classroom: ClassroomDocenteResolver,
+      semester:GetSemesterResolver,
+      level:GetLevelResolver
     },
   },
   {
@@ -96,13 +103,13 @@ const routes: Routes = [
             },
             component: StudentsComponent,
           },
-          // {
-          //   path: "attendance",
-          //   resolve: {
-          //     fechas: GetFechasAsistenciaResolver,
-          //   },
-          //   component: AssistanceComponent,
-          // },
+          {
+            path: "attendance",
+            resolve: {
+              fechas: GetFechasAsistenciaResolver,
+            },
+            component: AssistanceComponent,
+          },
           {
             path: "profile/:idAlumnoCurso",
             resolve: {
@@ -118,6 +125,9 @@ const routes: Routes = [
               {
                 path: "",
                 component: QualificationComponent,
+                resolve:{
+                  qualifications:GetQualificationResolver
+                }
               },
               {
                 path: "profile-students",
@@ -164,11 +174,16 @@ const routes: Routes = [
         component: CustomModuleBaseComponent,
         children: [
           {
-            path: "custom/:id",
+            path: "custom/:idModulo",
             children: [
               {
                 path: "",
                 component: CustomModuleComponent,
+                resolve:{
+                  content:GetContentModuleResolver
+                },
+                runGuardsAndResolvers:"always"
+
               },
               {
                 path: "detail",
@@ -235,6 +250,9 @@ const routes: Routes = [
                       {
                         path: "practice",
                         component: CreatePracticeComponent,
+                        resolve:{
+                          repository:GetQuestionsRepositoryResolver
+                        }
                       },
                     ],
                   },

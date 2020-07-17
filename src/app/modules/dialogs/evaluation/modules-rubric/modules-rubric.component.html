@@ -24,12 +24,7 @@
         >
           <mat-label>%</mat-label>
           <!-- Input para el nombre del modulo-->
-          <input
-            type="number"
-            matInput
-            [(ngModel)]="element.rubrica"
-            name="nombreModulo+ {{ i }}"
-          />
+          <input type="number" matInput [(ngModel)]="element.rubrica" name="nombreModulo+ {{i}}" (change)=cambio() />
           <!-- //Input para el nombre del modulo-->
         </mat-form-field>
       </div>

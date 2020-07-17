@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class BuildingPageComponent implements OnInit {
   imageUrl: string = "/assets/building.gif";
-  constructor(private router: Router, private location: Location) {}
+  constructor(private router: Router, private location: Location,private route:ActivatedRoute) {}
   goBack() {
     // window.history.back();
     this.location.back();
@@ -18,7 +18,7 @@ export class BuildingPageComponent implements OnInit {
   }
   // Funcion para ir al dashboard, falta id de curso
   goDashboard() {
-    this.router.navigate(["teacher", "dashboard"]);
+    this.router.navigate(["/"]);
   }
 
   ngOnInit(): void {

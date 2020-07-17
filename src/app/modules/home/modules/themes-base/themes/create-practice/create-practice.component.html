@@ -521,19 +521,9 @@
                       <input
                         matInput
                         readonly
-                        [matDatepicker]="picker3"
                         [(ngModel)]="paso1.fechaini"
                         [ngModelOptions]="{ standalone: true }"
                       />
-                      <mat-datepicker-toggle
-                        matSuffix
-                        [for]="picker3"
-                      ></mat-datepicker-toggle>
-                      <mat-datepicker
-                        #picker3
-                        startView="year"
-                        [startAt]="startDate"
-                      ></mat-datepicker>
                     </mat-form-field>
                   </div>
                   <!--fecha-->
@@ -547,17 +537,8 @@
                           readonly
                           [(ngModel)]="paso1.horaini"
                           [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker3"
-                          [disableClick]="true"
                           readonly
                         />
-                        <ngx-material-timepicker-toggle
-                          matSuffix
-                          [for]="toggleTimepicker3"
-                        ></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker3
-                        ></ngx-material-timepicker>
                       </mat-form-field>
                     </div>
                   </div>
@@ -583,19 +564,9 @@
                       <input
                         matInput
                         readonly
-                        [matDatepicker]="picker4"
                         [(ngModel)]="paso1.fechafin"
                         [ngModelOptions]="{ standalone: startDate }"
                       />
-                      <mat-datepicker-toggle
-                        matSuffix
-                        [for]="picker4"
-                      ></mat-datepicker-toggle>
-                      <mat-datepicker
-                        #picker4
-                        startView="year"
-                        [startAt]="startDate"
-                      ></mat-datepicker>
                     </mat-form-field>
                     <!--fecha-->
                   </div>
@@ -609,17 +580,8 @@
                           readonly
                           [(ngModel)]="paso1.horafin"
                           [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker4"
-                          [disableClick]="true"
                           readonly
                         />
-                        <ngx-material-timepicker-toggle
-                          matSuffix
-                          [for]="toggleTimepicker4"
-                        ></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker4
-                        ></ngx-material-timepicker>
                       </mat-form-field>
                     </div>
                   </div>

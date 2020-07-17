@@ -8,6 +8,8 @@ import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 export class DetailIndividualComponent implements OnInit {
   preguntas: Pregunta[] = [
     {
+      id:1,
+      nivel:3,
       tipo: true,
       numeroPreg: 1,
       puntuacion: 30,
@@ -26,6 +28,8 @@ export class DetailIndividualComponent implements OnInit {
       bloqidtr: false,
     },
     {
+      id:1,
+      nivel:3,
       tipo: true,
       numeroPreg: 2,
       puntuacion: 30,
@@ -44,6 +48,8 @@ export class DetailIndividualComponent implements OnInit {
       bloqidtr: false,
     },
     {
+      id:1,
+      nivel:3,
       tipo: true,
       numeroPreg: 3,
       puntuacion: 40,

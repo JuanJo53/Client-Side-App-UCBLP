@@ -22,13 +22,35 @@ export class SidebarComponent implements OnInit {
   constructor(private data: SharedService,private route:ActivatedRoute,private router:Router) {}
   // constructor() {}
   // ngOnInit(): void {}
+  agregarModulos2(data){
+    this.mPersonalizados=[];
+    for(let datos of data){
+      if(datos.id_tipo_modulo==2&&datos.estado_modulo==1){
+        this.mPersonalizados.push({
+          id:datos.id_modulo,
+          nombre:datos.nombre_modulo
+        })
+      }
+    }
+  } 
+  modificarModulo(data,index){
+    this.mPersonalizados[index]=data;
+  }
+  eliminarModulo(index){
+    this.mPersonalizados.splice(index,1)
+  }
   agregarModulos(data){
+    console.log(data)
+    this.mPersonalizados=[];
     for(let datos of data){
       this.mPersonalizados.push({
         id:datos.id_modulo,
         nombre:datos.nombre_modulo
       })
     }
+  }
+  decirHola(){
+    console.log("hola");
   }
   navigateCustom(modulo){
     console.log(modulo);
