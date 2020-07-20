@@ -1,20 +1,22 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
-import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.component';
+import { SideBarControlService } from "src/app/_services/side-bar-control.service";
+import { SidebarComponent } from "src/app/shared/components/sidebar/sidebar.component";
 //import {MediaObserver , MediaChange} from '@angular/flex-layout';
 //import {Subscription} from 'rxjs';
-
+import { Location } from "@angular/common";
 @Component({
   selector: "app-default",
   templateUrl: "./default.component.html",
   styleUrls: ["./default.component.scss"],
 })
 export class DefaultComponent implements OnInit {
-  
-  @ViewChild('sidenav') public sidenav: SidebarComponent;
+  @ViewChild("sidenav") public sidenav: SidebarComponent;
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
-  constructor(private serv:SideBarControlService) {}
+  constructor(
+    private serv: SideBarControlService,
+    private _location: Location
+  ) {}
   ngOnInit() {}
   receiveOpen(event) {
     this.isSidebarOpen2 = event;
@@ -30,5 +32,10 @@ export class DefaultComponent implements OnInit {
   }
   ngAfterViewInit(): void {
     this.serv.setSidenav(this.sidenav);
+  }
+
+  backClicked() {
+    console.log("atras");
+    this._location.back();
   }
 }

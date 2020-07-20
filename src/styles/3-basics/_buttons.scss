@@ -275,3 +275,13 @@
   justify-content: flex-end;
   margin-top: 3rem;
 }
+
+.circular-back-button {
+  position: fixed !important;
+  bottom: 3.5rem;
+  right: 7rem;
+  background-color: $color-primary-blue !important;
+  &__icon {
+    color: $color-primary-white;
+  }
+}
