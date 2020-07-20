@@ -11,7 +11,7 @@
     <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
       <!-- Position Column -->
       <ng-container matColumnDef="posicion">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
           No.
         </th>
         <td mat-cell *matCellDef="let element" class="mat-cell">
@@ -19,108 +19,74 @@
         </td>
       </ng-container>
       <!-- #Position Column -->
+      
+
+      <!-- Father's Name Column -->
+      <ng-container matColumnDef="p_nombre">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Father's Name
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.p_nombre }}
+        </td>
+      </ng-container>
+      <!-- #Father's Name Column -->
+      <!-- Mother's Name Column -->
+      <ng-container matColumnDef="m_nombre">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Mother's Name
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.m_nombre }}
+        </td>
+      </ng-container>
+      <!-- #Mother's Name Column -->
       <!-- Name Column -->
       <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
           Name
         </th>
         <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
       </ng-container>
       <!-- #Name Column -->
+      <!-- 1/2 Column -->
 
-      <!-- Father's Name Column -->
-      <ng-container matColumnDef="p_nombre">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Father's Name
+      <ng-container
+        *ngFor="let column of columns; let i = index"
+        matColumnDef="{{ column }}"
+      >
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          {{ column }}
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
-      </ng-container>
-      <!-- #Father's Name Column -->
-      <!-- Mother's Name Column -->
-      <ng-container matColumnDef="m_nombre">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Mother's Name
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
-      </ng-container>
-      <!-- #Mother's Name Column -->
-      <!-- Assistance Column -->
-      <ng-container matColumnDef="asistencia">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Assistance
-          (5%)
-        </th>
-        <td mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.asistencia }}
+        <td mat-cell *cdkCellDef="let element">
+          <!-- <span class="circular-button-table__icon"><mat-icon class="circular-button-subtitle__icon">close</mat-icon>
+    </span> -->
+          {{element.notas[i]}}
         </td>
       </ng-container>
-      <!-- #Assistance Column -->
-      <!-- Activities Column -->
-      <ng-container matColumnDef="actividades">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Activities
-          (10%)
-        </th>
-        <td mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.actividades }}
-        </td>
-      </ng-container>
-      <!-- #Activities Column -->
-      <!-- Practices Column -->
-      <ng-container matColumnDef="practicas">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Practices
-          (20%)
-        </th>
-        <td mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.practicas }}
-        </td>
-      </ng-container>
-      <!-- #Practices Column -->
-      <!-- Theme Test Column -->
-      <ng-container matColumnDef="examenTemas">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Theme Test
-          (20%)
-        </th>
-        <td mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.examenTemas }}
-        </td>
-      </ng-container>
-      <!-- #Theme Test Column -->
-      <!-- Assessment Column -->
-      <ng-container matColumnDef="assessment">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
-          Assessment
-          (45%)
-        </th>
-        <td mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.assessment }}
-        </td>
-      </ng-container>
-      <!-- #Assessment Column -->
+      <!-- #1/2 Column -->
       <!-- Average Column -->
       <ng-container matColumnDef="promedioFinal">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
           Final Average
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.promedioFinal }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
       </ng-container>
-      <!-- #Average Column -->
-      <!-- Buttons Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef  class="header-table">
+      <ng-container matColumnDef="id_alumno_curso">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
           Actions
         </th>
         <td mat-cell *matCellDef="let element">
-          <button class="circular-button-table--normal" mat-mini-fab (click)="irPerfilEstudiante()">
-            <!--usuario-->
+          <button
+            class="circular-button-table--normal"
+            mat-mini-fab
+            (click)="perfil(element)"
+          >
+            <!--update usuario-->
             <span class="circular-button-table__icon"><i class="fas fa-user"></i>
             </span>
-            <!-- #usuario-->
+            <!-- #update usuario-->
           </button>
-
-          <!-- #Buttons Column -->
         </td>
       </ng-container>
 

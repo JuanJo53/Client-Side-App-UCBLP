@@ -7,4 +7,5 @@ export class ListaEstudiante {
   promedio: number;
   id: number;
   correo: string;
+  notas:any[];
 }

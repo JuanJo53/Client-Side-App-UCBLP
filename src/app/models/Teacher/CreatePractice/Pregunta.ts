@@ -1,5 +1,7 @@
 export class Pregunta{   
-    tipo:boolean; 
+    id:number;
+    tipo:boolean=false; 
+    nivel:number;
     numeroPreg:number;
     puntuacion: number;
     pregunta: string="";

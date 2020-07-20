@@ -52,9 +52,9 @@
             <div class="colors">
               <div
                 (click)="changeColor(paint)"
-                *ngFor="let paint of defaultColors"
+                *ngFor="let paint of colores"
                 class="circle"
-                [ngStyle]="{ background: paint }"
+                [ngStyle]="{ background: paint.display }"
               ></div>
             </div>
           </div>
@@ -78,7 +78,7 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <!--btn cancel-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel">
+    <button mat-button mat-dialog-close class="dialog-button-cancel" (click)=cancelar()>
       Cancel
     </button>
     <!--#btn cancel-->

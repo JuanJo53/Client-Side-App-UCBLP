@@ -11,7 +11,7 @@
         (dblclick)="toggleDisable()"
         class="input-disabled"
       >
-        <mat-label>Lesson's name</mat-label>
+        <mat-label>Card's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input
           [disabled]="disableTextbox"
@@ -28,13 +28,13 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <!--btn cancel-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel">
+    <button mat-button mat-dialog-close class="dialog-button-cancel" (click)=cancelar()>
       Cancel
     </button>
     <!--#btn cancel-->
     <!-- btn accept-->
-    <button mat-button class="dialog-button-accept" (click)="accept()">
-      Accept
+    <button mat-button class="dialog-button-accept" (click)="aceptar()">
+      Save changes
     </button>
   </mat-dialog-actions>
   <!-- #btn accept-->

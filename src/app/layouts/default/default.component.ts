@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
+import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.component';
 //import {MediaObserver , MediaChange} from '@angular/flex-layout';
 //import {Subscription} from 'rxjs';
 
@@ -8,9 +10,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./default.component.scss"],
 })
 export class DefaultComponent implements OnInit {
+  
+  @ViewChild('sidenav') public sidenav: SidebarComponent;
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
-  constructor() {}
+  constructor(private serv:SideBarControlService) {}
   ngOnInit() {}
   receiveOpen(event) {
     this.isSidebarOpen2 = event;
@@ -23,5 +27,8 @@ export class DefaultComponent implements OnInit {
     } else {
       this.contentMargin = 25; //css when it's open
     }
+  }
+  ngAfterViewInit(): void {
+    this.serv.setSidenav(this.sidenav);
   }
 }

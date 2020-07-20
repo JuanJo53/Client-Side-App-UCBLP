@@ -36,10 +36,17 @@
         <div class="custom-card--custom__img">
           <div class="custom-card--custom__img-overlay">
             <div class="custom-card--custom__buttons-card">
+              <!--btn Ver lista-->
+              <button class="circular-button-custom-card" (click)="verlistar()">
+                <mat-icon class="circular-button-custom-card__icon">
+                  list
+                </mat-icon>
+              </button>
+              <!--#btn Ver lista-->
               <!--btn configuraciones-->
               <button
                 class="circular-button-custom-card"
-                (click)="editarCard()"
+                (click)="editarCard(custCards)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   settings
@@ -49,7 +56,7 @@
               <!--btn eliminar-->
               <button
                 class="circular-button-custom-card"
-                (click)="eliminarCard()"
+                (click)="eliminarCard(custCards,indexcu)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
@@ -62,7 +69,7 @@
                 {{ custCards.rubrica }}%
               </div>
               <div class="custom-card--custom__title">
-                {{ custCards.nombreModulo }}
+                {{ custCards.nombreContenido }}
               </div>
             </div>
           </div>

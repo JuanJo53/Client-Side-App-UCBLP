@@ -3,7 +3,7 @@ import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Teacher } from 'src/app/models/Teacher/Teacher';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
-import { CardClassroom } from 'src/app/models/Teacher/CardClassroom';
+import { CardClassroom } from 'src/app/models/Teacher/ClassRoom/CardClassroom';
 
 @Component({
   selector: "app-header",
@@ -71,6 +71,10 @@ export class HeaderComponent implements OnInit {
   signout(): void {
     this.tokenServ.signOut();
     this.router.navigate(["/"]);
+  }
+  home(){
+    this.router.navigate(["classroom"]);
+
   }
   navigator(materia:CardClassroom){
     this.router.navigate(["/teacher/"+materia.id_curso+"/dashboard"]);

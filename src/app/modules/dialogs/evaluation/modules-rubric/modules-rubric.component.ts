@@ -1,8 +1,7 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { EvaluationService } from "src/app/_services/teacher_services/evaluation.service";
-import { Module } from "src/app/models/Teacher/Evaluation/Module";
-import { CardClassroom } from "src/app/models/Teacher/CardClassroom";
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { EvaluationService } from 'src/app/_services/teacher_services/evaluation.service';
+import { Module } from 'src/app/models/Teacher/Evaluation/Module';
 
 @Component({
   selector: "app-modules-rubric",
@@ -23,22 +22,30 @@ export class ModulesRubricComponent implements OnInit {
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
-  cargarDatos(rubricas) {
+  cargarDatos1(rubricas:Module[]) {
     for (let rubrica of rubricas) {
-      let newRubrica = new Module();
-      newRubrica.id = rubrica.id_modulo;
-      newRubrica.rubrica = rubrica.rubrica;
-
-      newRubrica.nombreModulo = rubrica.nombre_modulo;
-      this.listaRubricas.push(newRubrica);
-      this.porcentajes.push({
-        porcentaje: rubrica.rubrica,
+        this.listaRubricas.push({
+        id_modulo:rubrica.id,
+        rubrica:rubrica.rubrica,
+        nombre_modulo:rubrica.nombreModulo,
+        id_tipo_modulo:rubrica.idTipoModulo,
+        estado_modulo:rubrica.estado,
+        id_color:rubrica.idColor,
+        id_imagen:rubrica.idImagen,
       });
     }
-    console.log(this.porcentajes);
+  }
+  cambio(){
+    var suma=0;
+    for(let rubrica of this.listaRubricas){
+      suma+=rubrica.rubrica;
+    }
+    this.total=suma;
   }
   ngOnInit(): void {
-    this.listaRubricas = this.dataDialog["modulos"];
+    this.cargarDatos1(this.dataDialog["modulosPred"]);
+    this.cargarDatos1(this.dataDialog["modulosPers"]);
+    this.cambio();
   }
   verificarRubricas() {
     var sum = 0;

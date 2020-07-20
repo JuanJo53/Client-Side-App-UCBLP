@@ -11,25 +11,21 @@
         class="dialog__module-rubric"
         *ngFor="let element of listaRubricas; let i = index"
       >
-        <div class="dialog__module-rubric--left-side">
+        <div class="dialog__module-rubric--left-side" *ngIf="element.estado_modulo==1">
           <span class="dialog__module-rubric--text">{{
             element.nombre_modulo
           }}</span>
         </div>
 
         <mat-form-field
+        *ngIf="element.estado_modulo==1"
           appearance="outline"
           class="dialog__module-rubric--right-side input-disabled"
           (dblclick)="toggleDisable()"
         >
           <mat-label>%</mat-label>
           <!-- Input para el nombre del modulo-->
-          <input
-            type="number"
-            matInput
-            [(ngModel)]="element.rubrica"
-            name="nombreModulo+ {{ i }}"
-          />
+          <input type="number" matInput [(ngModel)]="element.rubrica" name="nombreModulo+ {{i}}" (change)=cambio() />
           <!-- //Input para el nombre del modulo-->
         </mat-form-field>
       </div>

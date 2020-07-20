@@ -12,6 +12,7 @@ import { LessonService } from "src/app/_services/teacher_services/lesson.service
 import { SectionsService } from 'src/app/_services/teacher_services/sections.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { EvaluationService } from 'src/app/_services/teacher_services/evaluation.service';
+import { ContenidoModuloService } from 'src/app/_services/teacher_services/contenido-modulo.service';
 @Component({
   selector: "app-delete-card",
   templateUrl: "./delete-card.component.html",
@@ -28,6 +29,7 @@ export class DeleteCardComponent implements OnInit {
     private servTh: ThemesService,
     private servSecc:SectionsService,
     private servMod:EvaluationService,
+    private servCont:ContenidoModuloService,
     private dialogRef: MatDialogRef<DeleteCardComponent>
   ) { }
   ngOnInit(): void {
@@ -59,6 +61,9 @@ export class DeleteCardComponent implements OnInit {
         break;
       case "Custom Module":
         this.eliminarModuloPersonalizado();
+        break;          
+      case "Custom Module Content":
+        this.eliminarContenidoModulo();
         break;  
     }
   }
@@ -172,6 +177,23 @@ export class DeleteCardComponent implements OnInit {
   }
   eliminarDocumentoRecursos() { 
     this.servSecc.delResource(this.dataDialog["id"]).subscribe({
+      next:(data)=>{
+        if(data.status==200){
+          this.dialogRef.close("ok");
+        }
+        else{
+          this.dialogRef.close();
+        }
+      },
+      error:(err)=>{
+        this.dialogRef.close();
+
+      }
+    })
+  }
+  //Funcion para eliminar el contenido de un modulo pérsonalizado
+  eliminarContenidoModulo(){
+    this.servCont.deleteContenidoModulos(this.dataDialog["id"]).subscribe({
       next:(data)=>{
         if(data.status==200){
           this.dialogRef.close("ok");

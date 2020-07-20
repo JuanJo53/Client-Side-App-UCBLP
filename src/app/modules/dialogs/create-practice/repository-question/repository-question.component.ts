@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import {
   FormBuilder,
   FormGroup,
@@ -10,6 +10,9 @@ import { map, startWith } from "rxjs/operators";
 import { MatTableDataSource } from "@angular/material/table";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { MatStepper } from "@angular/material/stepper";
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { RadioButtonQuestion } from 'src/app/models/Preguntas/RadioButton';
+import { CheckboxQuestion } from 'src/app/models/Preguntas/Checkbox';
 
 export interface ListaPreguntasPracticas {
   codigo: number;
@@ -27,63 +30,15 @@ export interface ListaPreguntasPracticas {
   styleUrls: ["./repository-question.component.scss"],
 })
 export class RepositoryQuestionComponent implements OnInit {
+  preguntaPaso2:Pregunta=new Pregunta();
   showSpinner = false;
-  checked: boolean;
+  checked: boolean;  
+  checkboxOpciones: CheckboxQuestion[] = [
+    { isChecked: true ,opcionRespuesta:""},
+  ];
   preguntas: Pregunta[] = [
-    {
-      tipo: true,
-      numeroPreg: 1,
-      puntuacion: 30,
-      pregunta: "abc",
-      opciones: ["a", "b"],
-      grupo: "1",
-      respuesta: [1, 0],
-      respuestasBool: [true, false],
-      idTipoPregunta: "1",
-      idTipoRespuesta: "1",
-      recurso: "",
-      bloqpunt: false,
-      bloqpreg: false,
-      bloqopci: false,
-      bloqidtp: false,
-      bloqidtr: false,
-    },
-    {
-      tipo: true,
-      numeroPreg: 2,
-      puntuacion: 30,
-      pregunta: "def2",
-      opciones: ["c", "d"],
-      grupo: "2",
-      respuesta: [0, 0],
-      respuestasBool: [true, false],
-      idTipoPregunta: "2",
-      idTipoRespuesta: "2",
-      recurso: "",
-      bloqpunt: false,
-      bloqpreg: false,
-      bloqopci: false,
-      bloqidtp: false,
-      bloqidtr: false,
-    },
-    {
-      tipo: true,
-      numeroPreg: 3,
-      puntuacion: 40,
-      pregunta: "def3",
-      opciones: ["ff", "dd"],
-      grupo: "2",
-      respuesta: [0, 1],
-      respuestasBool: [true, false],
-      idTipoPregunta: "2",
-      idTipoRespuesta: "1",
-      recurso: "",
-      bloqpunt: false,
-      bloqpreg: false,
-      bloqopci: false,
-      bloqidtp: false,
-      bloqidtr: false,
-    },
+  ];
+  preguntasElegidas: Pregunta[] = [
   ];
   ELEMENT_DATA: ListaPreguntasPracticas[] = [
     {
@@ -116,14 +71,13 @@ export class RepositoryQuestionComponent implements OnInit {
   ];
   displayedColumns: string[] = [
     "nivel",
-    "categoria",
     "tipoPregunta",
     "tipoRespuesta",
-    "habilidad",
     "codigo",
     "checkbox",
   ];
-  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  
+  dataSource = new MatTableDataSource(this.preguntas);
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -148,7 +102,9 @@ export class RepositoryQuestionComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ["One", "Two", "Three"];
   filteredOptions: Observable<string[]>;
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public dataDialog: any,
+    private dialogRef: MatDialogRef<RepositoryQuestionComponent>) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -164,6 +120,7 @@ export class RepositoryQuestionComponent implements OnInit {
       startWith(""),
       map((value) => this._filter(value))
     );
+    this.cargarDatos(this.dataDialog["repository"]);
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -180,13 +137,56 @@ export class RepositoryQuestionComponent implements OnInit {
     }, 5000);
   }
   irPasoDos(stepper: MatStepper, codigo: number) {
-    console.log("codigo : " + codigo);
+    this.preguntaPaso2=this.preguntas[codigo];
     stepper.next();
   }
   irPasoTres(stepper: MatStepper) {
-    stepper.selectedIndex = 2;
+    this.preguntasElegidas=[];
+    var elegido=false;
+    for(let i in this.checkboxOpciones){
+      if(this.checkboxOpciones[i].isChecked){
+        elegido=true;
+        this.preguntasElegidas.push(this.preguntas[i]);
+      }
+    }
+    if(elegido){
+      stepper.selectedIndex = 2;
+    }
   }
   volverPasoUno(stepper: MatStepper) {
     stepper.selectedIndex = 0;
+  }
+  cargarRespuestasBool(nuevaPregunta:Pregunta){
+    nuevaPregunta.respuestasBool=[];
+    for(let opcion of nuevaPregunta.opciones ){
+      nuevaPregunta.respuestasBool.push(false);
+    }
+    for(let respuesta of nuevaPregunta.respuesta ){
+      nuevaPregunta.respuestasBool[respuesta]=true;
+    }
+  }
+  cargarDatos(data){
+    this.checkboxOpciones=[];
+    for(let pregunta of data){
+      this.checkboxOpciones.push({isChecked:false,opcionRespuesta:""})
+      let nuevaPregunta=new Pregunta();
+      nuevaPregunta.idTipoPregunta=String(pregunta.id_tipo_pregunta);
+      nuevaPregunta.idTipoRespuesta=String(pregunta.id_tipo_respuesta);
+      nuevaPregunta.pregunta=pregunta.pregunta.pregunta;
+      nuevaPregunta.id=pregunta.id_pregunta;
+      nuevaPregunta.respuesta=pregunta.pregunta.respuestas;
+      nuevaPregunta.opciones=pregunta.pregunta.opciones;
+      nuevaPregunta.puntuacion=10;
+      nuevaPregunta.tipo=true;
+      console.log(nuevaPregunta);
+      this.cargarRespuestasBool(nuevaPregunta);
+      this.preguntas.push(nuevaPregunta)
+    }
+  }
+  aceptar(){
+    this.dialogRef.close(this.preguntasElegidas);
+  }
+  cancelar(){
+    this.dialogRef.close();
   }
 }

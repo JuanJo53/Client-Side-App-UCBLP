@@ -14,6 +14,7 @@ import { EditDefaultModuleComponent } from "../../dialogs/evaluation/edit-defaul
 import { ModulesRubricComponent } from "../../dialogs/evaluation/modules-rubric/modules-rubric.component";
 import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
+import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
 
 @Component({
   selector: "app-evaluation",
@@ -59,7 +60,8 @@ export class EvaluationComponent implements OnInit {
     private router: Router,
     private mdServ: EvaluationService,
     public dialog: MatDialog,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private servNav:SideBarControlService
   ) {}
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
@@ -166,6 +168,7 @@ export class EvaluationComponent implements OnInit {
           next: (data) => {
             data.modules.body = result;
             this.cargarDatos(result);
+            this.servNav.modulos(result);
           },
           error: (error) => {
             console.log("No se pudieron obtener las lecciones");
@@ -189,6 +192,7 @@ export class EvaluationComponent implements OnInit {
           next: (data) => {
             data.modules.body = result;
             this.cargarDatos(result);
+            this.servNav.modulos(result);
           },
           error: (error) => {
             console.log("No se pudieron obtener las lecciones");
@@ -197,7 +201,10 @@ export class EvaluationComponent implements OnInit {
       }
     });
   }
+  
+ 
   configuracionModuloPersonalizado(modulo: Module) {
+    
     const dialogRef = this.dialog.open(EditCustomModuleComponent, {
       width: "500px",
       data: {
@@ -212,6 +219,7 @@ export class EvaluationComponent implements OnInit {
           next: (data) => {
             data.modules.body = result;
             this.cargarDatos(result);
+            this.servNav.modulos(result);
           },
           error: (error) => {
             console.log("No se pudieron obtener las lecciones");
@@ -226,7 +234,8 @@ export class EvaluationComponent implements OnInit {
         const dialogRef = this.dialog.open(ModulesRubricComponent, {
           width: "400px",
           data: {
-            modulos: data.modules.body,
+            modulosPred: this.cardsModulosPred,
+            modulosPers: this.cardsModulosPers,
           },
         });
         dialogRef.afterClosed().subscribe((result) => {
@@ -252,6 +261,7 @@ export class EvaluationComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result === "ok") {
         this.cardsModulosPers.splice(index, 1);
+        this.servNav.eliminarmodulos(index);
       }
     });
   }
