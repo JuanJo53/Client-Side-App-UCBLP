@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { EvaluationService } from 'src/app/_services/teacher_services/evaluation.service';
-import { Module } from 'src/app/models/Teacher/Evaluation/Module';
+import { Component, OnInit, Inject } from "@angular/core";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { EvaluationService } from "src/app/_services/teacher_services/evaluation.service";
+import { Module } from "src/app/models/Teacher/Evaluation/Module";
 
 @Component({
   selector: "app-modules-rubric",
@@ -9,8 +9,7 @@ import { Module } from 'src/app/models/Teacher/Evaluation/Module';
   styleUrls: ["./modules-rubric.component.scss"],
 })
 export class ModulesRubricComponent implements OnInit {
-  total = 100;
-  valor = 30;
+  total: number = 95;
   disableTextbox = true;
   listaRubricas: any[] = [];
   porcentajes: any[] = [];
@@ -22,25 +21,25 @@ export class ModulesRubricComponent implements OnInit {
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
-  cargarDatos1(rubricas:Module[]) {
+  cargarDatos1(rubricas: Module[]) {
     for (let rubrica of rubricas) {
-        this.listaRubricas.push({
-        id_modulo:rubrica.id,
-        rubrica:rubrica.rubrica,
-        nombre_modulo:rubrica.nombreModulo,
-        id_tipo_modulo:rubrica.idTipoModulo,
-        estado_modulo:rubrica.estado,
-        id_color:rubrica.idColor,
-        id_imagen:rubrica.idImagen,
+      this.listaRubricas.push({
+        id_modulo: rubrica.id,
+        rubrica: rubrica.rubrica,
+        nombre_modulo: rubrica.nombreModulo,
+        id_tipo_modulo: rubrica.idTipoModulo,
+        estado_modulo: rubrica.estado,
+        id_color: rubrica.idColor,
+        id_imagen: rubrica.idImagen,
       });
     }
   }
-  cambio(){
-    var suma=0;
-    for(let rubrica of this.listaRubricas){
-      suma+=rubrica.rubrica;
+  cambio() {
+    var suma = 0;
+    for (let rubrica of this.listaRubricas) {
+      suma += rubrica.rubrica;
     }
-    this.total=suma;
+    this.total = suma;
   }
   ngOnInit(): void {
     this.cargarDatos1(this.dataDialog["modulosPred"]);

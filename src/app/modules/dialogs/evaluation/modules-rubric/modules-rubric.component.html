@@ -11,21 +11,30 @@
         class="dialog__module-rubric"
         *ngFor="let element of listaRubricas; let i = index"
       >
-        <div class="dialog__module-rubric--left-side" *ngIf="element.estado_modulo==1">
+        <div
+          class="dialog__module-rubric--left-side"
+          *ngIf="element.estado_modulo == 1"
+        >
           <span class="dialog__module-rubric--text">{{
             element.nombre_modulo
           }}</span>
         </div>
 
         <mat-form-field
-        *ngIf="element.estado_modulo==1"
+          *ngIf="element.estado_modulo == 1"
           appearance="outline"
           class="dialog__module-rubric--right-side input-disabled"
           (dblclick)="toggleDisable()"
         >
           <mat-label>%</mat-label>
           <!-- Input para el nombre del modulo-->
-          <input type="number" matInput [(ngModel)]="element.rubrica" name="nombreModulo+ {{i}}" (change)=cambio() />
+          <input
+            type="number"
+            matInput
+            [(ngModel)]="element.rubrica"
+            name="nombreModulo+ {{ i }}"
+            (change)="cambio()"
+          />
           <!-- //Input para el nombre del modulo-->
         </mat-form-field>
       </div>
@@ -35,8 +44,8 @@
     <div class="dialog-subtitle">
       <div class="dialog-subtitle__text"></div>
     </div>
-
-    <div *ngIf="total == 100; else menor100" class="colorRubric">
+    <!-- control de sumatoria == 100 -->
+    <!-- <div *ngIf="total == 100; else menor100" class="colorRubric">
       <div class="colorRubric--positive">
         <span>{{ total }}</span>
         <mat-icon class="colorRubric__icon--positive">
@@ -53,7 +62,34 @@
           </mat-icon>
         </div>
       </div>
+    </ng-template> -->
+    <!-- #control de sumatoria == 100 -->
+    <!-- control de sumatoria == 100 -->
+    <div *ngIf="total === 100; else menor100">
+      <div class="rubric">
+        <div class="rubric__content rubric--positive">
+          <div class="rubric__text">
+            <span>{{ total }}</span>
+          </div>
+          <mat-icon class="rubric__icon">
+            check
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+    <ng-template #menor100>
+      <div class="rubric">
+        <div class="rubric__content rubric--negative">
+          <div class="rubric__text">
+            <span>{{ total }}</span>
+          </div>
+          <mat-icon class="rubric__icon">
+            close
+          </mat-icon>
+        </div>
+      </div>
     </ng-template>
+    <!-- #control de sumatoria == 100 -->
     <!-- class="pModuleRubricResult" -->
   </mat-dialog-content>
   <mat-dialog-actions align="end">

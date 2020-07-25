@@ -452,6 +452,32 @@
           </div>
         </div>
         <!--#card-->
+        <!-- control de sumatoria == 100 -->
+        <div *ngIf="total === 100; else menor100">
+          <div class="rubric">
+            <div class="rubric__content rubric--positive">
+              <div class="rubric__text">
+                <span>Score : {{ total }}</span>
+              </div>
+              <mat-icon class="rubric__icon">
+                check
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <ng-template #menor100>
+          <div class="rubric">
+            <div class="rubric__content rubric--negative">
+              <div class="rubric__text">
+                <span>Score : {{ total }}</span>
+              </div>
+              <mat-icon class="rubric__icon">
+                close
+              </mat-icon>
+            </div>
+          </div>
+        </ng-template>
+        <!-- #control de sumatoria == 100 -->
         <!-- buttons -->
         <div class="progress-bar__bar">
           <!--back button-->

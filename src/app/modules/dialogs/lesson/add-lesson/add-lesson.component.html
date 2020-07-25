@@ -21,29 +21,28 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Lesson's number</mat-label>
-          <!-- Input para el nombre del tema-->
-          <input
-            type="number"
-            class="input-form"
-            matInput
-            placeholder="Number"
-            name="numero"
-            [(ngModel)]="numero"
-          />
-          <!-- //Input para el nombre del tema-->
+        <!-- Input para el nombre del tema-->
+        <input
+          type="number"
+          class="input-form"
+          matInput
+          placeholder="Number"
+          name="numero"
+          [(ngModel)]="numero"
+        />
+        <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <div class="combo-box">
-        <mat-form-field>
-          <mat-label>Type</mat-label>
-          <mat-select
-          [(value)]="typeSelected" >
-            <mat-option *ngFor="let elemento of types" [value]="elemento.value">
-              {{ elemento.display }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="combo-box">
+      <!-- <div class="combo-box"> -->
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select [(value)]="typeSelected">
+          <mat-option *ngFor="let elemento of types" [value]="elemento.value">
+            {{ elemento.display }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- </div> -->
+      <!-- <div class="combo-box">
         <mat-form-field>
           <mat-label>Images</mat-label>
           <mat-select [(value)]="imageSelected" >
@@ -52,7 +51,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </div>
+      </div> -->
       <!--<div class="dialog__container-image">
         <div class="dialog__container-image--left-side">
           <img [src]="imageUrl" class="settings-image" />
