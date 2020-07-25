@@ -3,41 +3,8 @@ import { MatTableDataSource } from "@angular/material/table";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
-export interface ListaDeNotas {
-  nombre: string;
-  posicion: number;
-  p_nombre: string; //apellido paterno
-  m_nombre: string; //pellido materno
-  puntuacion: string;
-  id: number;
-}
+import { NotasContenidoModulo } from 'src/app/models/Teacher/Modules/NotasContenidoModulo';
 
-const ELEMENT_DATA: ListaDeNotas[] = [
-  {
-    posicion: 1,
-    nombre: "Sergio",
-    p_nombre: "Prudencio",
-    m_nombre: "Flores",
-    puntuacion: "100",
-    id: 1,
-  },
-  {
-    posicion: 2,
-    nombre: "Ariel",
-    p_nombre: "Colque",
-    m_nombre: "Herrera",
-    puntuacion: "100",
-    id: 2,
-  },
-  {
-    posicion: 3,
-    nombre: "Ernesto",
-    p_nombre: "Vilela",
-    m_nombre: "Montero",
-    puntuacion: "100",
-    id: 3,
-  },
-];
 
 @Component({
   selector: "app-detail-custom-module",
@@ -45,6 +12,9 @@ const ELEMENT_DATA: ListaDeNotas[] = [
   styleUrls: ["./detail-custom-module.component.scss"],
 })
 export class DetailCustomModuleComponent implements OnInit {
+  
+ELEMENT_DATA: NotasContenidoModulo[] = [
+];
   displayedColumns: string[] = [
     "posicion",
     "nombre",
@@ -53,15 +23,44 @@ export class DetailCustomModuleComponent implements OnInit {
     "puntuacion",
     "id",
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private route:ActivatedRoute    
+    ) {}
+  cargarDatos(){
+    this.route.data.subscribe({
+      next:(data)=>{
+        if(data.notasContenido.status==200){
+          for(let i in data.notasContenido.body){
+            var nota=data.notasContenido.body[i];
+            let newCont=new NotasContenidoModulo();
+            newCont.id=nota.id_nota_contenido;
+            newCont.m_nombre=nota.ap_materno_alumno;
+            newCont.nombre=nota.nombre_alumno;
+            newCont.p_nombre=nota.ap_paterno_alumno;
+            newCont.puntuacion=nota.nota_contenido;
+            newCont.posicion=Number(i)+1;
+            this.ELEMENT_DATA.push(newCont);
+          }
+        }
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
+  }
+  ngOnInit(): void {
+    this.cargarDatos();
+  }
 
-  ngOnInit(): void {}
-
-  actualizarPuntuacion() {
+  actualizarPuntuacion(nota) {
     const dialogRef = this.dialog.open(UpdateStudentScoreComponent, {
       width: "400px",
+      data:{
+        notasContenido:nota
+      }
     });
   }
 }

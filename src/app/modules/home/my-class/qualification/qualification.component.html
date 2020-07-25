@@ -8,7 +8,7 @@
   <!--#Subtitle-->
   <!--tables-->
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row" id="TABLE" >
       <!-- Position Column -->
       <ng-container matColumnDef="posicion">
         <th mat-header-cell *matHeaderCellDef class="header-table">
@@ -73,7 +73,7 @@
         <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
       </ng-container>
       <ng-container matColumnDef="id_alumno_curso">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
+        <th mat-header-cell *matHeaderCellDef class="header-table" name="actions">
           Actions
         </th>
         <td mat-cell *matCellDef="let element">
@@ -97,5 +97,11 @@
     <!-- Paginator -->
     <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
     <!-- #Paginator -->
+    
   </div>
+<!--   
+  <button
+  (click)="ExportTOExcel()"
+>Excel</button> -->
+<br>
 </div>

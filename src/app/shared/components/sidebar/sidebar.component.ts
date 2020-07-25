@@ -33,6 +33,9 @@ export class SidebarComponent implements OnInit {
       }
     }
   } 
+  getModulos(){
+    return this.mPersonalizados;
+  }
   modificarModulo(data,index){
     this.mPersonalizados[index]=data;
   }

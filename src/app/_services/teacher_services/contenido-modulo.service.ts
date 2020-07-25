@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import apiKey from '../apiKey';
 import { Module } from 'src/app/models/Teacher/Evaluation/Module';
 import { ContentModule } from 'src/app/models/Teacher/Modules/ContentModule';
+import { NotasContenidoModulo } from 'src/app/models/Teacher/Modules/NotasContenidoModulo';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,11 @@ export class ContenidoModuloService {
   updateRubricasContenidoModulos(rubricas:any[]):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/cutson/module/content/rubric",rubricas,{ observe: 'response' });
 
+  }
+  getNotasContenidoModulos(idContenidoModulo):Observable<any>{
+    return this.http.get(apiKey.api+"/teacher/cutson/module/content/score/get/"+idContenidoModulo,{ observe: 'response' });
+  }
+  updateNotaContenidoModulos(notaContenido:NotasContenidoModulo):Observable<any>{
+    return this.http.put(apiKey.api+"/teacher/cutson/module/content/score",{notaContenido},{ observe: 'response' });
   }
 }

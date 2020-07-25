@@ -29,6 +29,7 @@ export class AddCardComponent implements OnInit {
     this.serv.addContenidoModulos(newcont).subscribe({
       next: (data) => {
         if (data.status == 200) {
+          newcont.id=data.body.id;
           this.dialogRef.close(newcont);
         } else {
           this.dialogRef.close();

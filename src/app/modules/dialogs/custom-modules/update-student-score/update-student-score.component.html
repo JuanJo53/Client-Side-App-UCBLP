@@ -12,7 +12,6 @@
       <mat-form-field
         appearance="outline"
         class="input-disabled"
-        (dblclick)="toggleDisable()"
       >
         <mat-label>Student's Name</mat-label>
         <!-- Input para el nombre de la seccion-->
@@ -21,8 +20,8 @@
           class="input-form"
           matInput
           placeholder=""
-          [disabled]="disableTextbox"
-          [(ngModel)]="nombreEstudiante"
+          readonly
+          [(ngModel)]="estudiante.p_nombre+' '+estudiante.m_nombre+' '+estudiante.nombre"
           name="nombreEstudiante"
         />
         <!-- //Input para el nombre de la seccion-->
@@ -40,7 +39,7 @@
           matInput
           placeholder=""
           [disabled]="disableTextbox"
-          [(ngModel)]="score"
+          [(ngModel)]="estudiante.puntuacion"
           name="puntuacionEstudiante"
         />
         <!-- //Input para el nombre de la seccion-->
