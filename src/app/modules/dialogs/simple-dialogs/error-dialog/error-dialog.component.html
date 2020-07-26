@@ -1,8 +1,10 @@
 <div class="simple-dialog">
   <div class="simple-dialog__content">
     <!--icon-->
-    <div class="simple-dialog__icon-content--negative">
-      <mat-icon class="simple-dialog__icon--negative">close</mat-icon>
+    <div class="simple-dialog__icon-content simple-dialog__icon-content--error">
+      <mat-icon class="simple-dialog__icon simple-dialog__icon--error"
+        >close</mat-icon
+      >
     </div>
     <!--#icon-->
     <!--Title simple dialog-->
@@ -11,9 +13,9 @@
     </div>
     <!--#title simple dialog-->
     <!--message-->
-    <mat-dialog-content class="simple-dialog__message">
+    <span class="simple-dialog__message">
       {{ message }}
-    </mat-dialog-content>
+    </span>
     <!--#message-->
   </div>
   <mat-dialog-actions align="center">
