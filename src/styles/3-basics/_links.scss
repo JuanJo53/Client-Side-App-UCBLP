@@ -1,7 +1,7 @@
 .link {
-  //background-color: red;
   border-bottom: 0.1rem solid $color-primary-white;
   color: $color-primary-white !important;
+
   &__icon {
     @include margin-left-right(1.5rem, 2rem);
   }
@@ -16,7 +16,7 @@
   }
 }
 .sublink {
-  font-size: 1.4rem!important;
+  font-size: 1.4rem !important;
   color: $color-primary-white !important;
   &__icon {
     @include margin-left-right(4rem, 2rem);
@@ -27,4 +27,8 @@
   &:hover {
     background-color: rgba($color-primary-white, 0.3) !important;
   }
+}
+.list-item-active-link {
+  //backdrop-filter: blur(10px);
+  background-color: $color-secondary-blue !important;
 }

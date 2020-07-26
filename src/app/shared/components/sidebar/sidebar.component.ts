@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { SharedService } from "../../shared.service";
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-sidebar",
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ["./sidebar.component.scss"],
 })
 export class SidebarComponent implements OnInit {
-  mPersonalizados:any[]=[];
+  mPersonalizados: any[] = [];
   isSidebarOpen: boolean = true;
   mylogo: string = "assets/logo.png";
   message: String = "link";
@@ -19,83 +19,92 @@ export class SidebarComponent implements OnInit {
     this.isSidebarOpen = !this.isSidebarOpen;
     this.openEvent.emit(this.isSidebarOpen);
   }
-  constructor(private data: SharedService,private route:ActivatedRoute,private router:Router) {}
+  constructor(
+    private data: SharedService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
   // constructor() {}
   // ngOnInit(): void {}
-  agregarModulos2(data){
-    this.mPersonalizados=[];
-    for(let datos of data){
-      if(datos.id_tipo_modulo==2&&datos.estado_modulo==1){
+  agregarModulos2(data) {
+    this.mPersonalizados = [];
+    for (let datos of data) {
+      if (datos.id_tipo_modulo == 2 && datos.estado_modulo == 1) {
         this.mPersonalizados.push({
-          id:datos.id_modulo,
-          nombre:datos.nombre_modulo
-        })
+          id: datos.id_modulo,
+          nombre: datos.nombre_modulo,
+        });
       }
     }
-  } 
-  modificarModulo(data,index){
-    this.mPersonalizados[index]=data;
   }
-  eliminarModulo(index){
-    this.mPersonalizados.splice(index,1)
+  modificarModulo(data, index) {
+    this.mPersonalizados[index] = data;
   }
-  agregarModulos(data){
-    console.log(data)
-    this.mPersonalizados=[];
-    for(let datos of data){
+  eliminarModulo(index) {
+    this.mPersonalizados.splice(index, 1);
+  }
+  agregarModulos(data) {
+    console.log(data);
+    this.mPersonalizados = [];
+    for (let datos of data) {
       this.mPersonalizados.push({
-        id:datos.id_modulo,
-        nombre:datos.nombre_modulo
-      })
+        id: datos.id_modulo,
+        nombre: datos.nombre_modulo,
+      });
     }
   }
-  decirHola(){
+  decirHola() {
     console.log("hola");
   }
-  navigateCustom(modulo){
+  navigateCustom(modulo) {
     console.log(modulo);
-    this.route.params.subscribe(
-      (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],"modules","custom",modulo.id]); 
-      }
-    );
+    this.route.params.subscribe((params) => {
+      this.router.navigate([
+        "teacher",
+        params["idCurso"],
+        "modules",
+        "custom",
+        modulo.id,
+      ]);
+    });
   }
   ngOnInit() {
     this.data.currentMessage.subscribe((message) => (this.message = message));
     this.route.data.subscribe({
-      next:(data)=>{
+      next: (data) => {
         this.agregarModulos(data.modules.body);
       },
-     error:(err)=>{
-       console.log(err);
-     }
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
-  navigateGeneral(link:string) {
+  navigateGeneral(link: string) {
     this.data.changeMessage(link);
-    this.route.params.subscribe(
-      (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],link.toLowerCase()]); 
-        
-      }
-    );
+    this.route.params.subscribe((params) => {
+      this.router.navigate(["teacher", params["idCurso"], link.toLowerCase()]);
+    });
   }
-  navigateModules(link:string) {
+  navigateModules(link: string) {
     this.data.changeMessage(link);
-    this.route.params.subscribe(
-      (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],"modules",link.toLowerCase()]); 
-        
-      }
-    );
+    this.route.params.subscribe((params) => {
+      this.router.navigate([
+        "teacher",
+        params["idCurso"],
+        "modules",
+        link.toLowerCase(),
+      ]);
+    });
   }
-  navigationMyClass(link:string) {
+  navigationMyClass(link: string) {
     this.data.changeMessage(link);
-    this.route.params.subscribe(
-      (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],"my-class",link.toLowerCase()]); 
-        
-      }
-    );
+    this.route.params.subscribe((params) => {
+      this.router.navigate([
+        "teacher",
+        params["idCurso"],
+        "my-class",
+        link.toLowerCase(),
+      ]);
+    });
   }
 }

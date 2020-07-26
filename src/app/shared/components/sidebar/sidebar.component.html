@@ -5,99 +5,102 @@
   </div>
   <!-- <mat-divider></mat-divider>
   <h2 matSubheader>Pages</h2> -->
+
   <a
+    routerLinkActive="list-item-active-link"
+    routerLink="/teacher/1/dashboard"
     class="link"
     mat-list-item
-    routerLinkActive="List-item-active"
     (click)="navigateGeneral('Dashboard')"
     ><mat-icon class="link__icon">dashboard</mat-icon
     ><span class="link__text">Dashboard</span></a
   >
+
   <mat-expansion-panel class="expansion-panel">
     <mat-expansion-panel-header class="expansion-panel__header">
       <mat-icon class="expansion-panel__header-icon">people</mat-icon
       ><span class="expansion-panel__header-text">My class</span>
     </mat-expansion-panel-header>
-    <a
-      class="sublink"
-      mat-list-item
-      routerLinkActive="List-item-active"
-      (click)="navigationMyClass('Students')"
-      ><mat-icon class="sublink__icon">people</mat-icon
-      ><span class="sublink__text">Students</span></a
-    >
-    <a
-      class="sublink"
-      mat-list-item
-      routerLinkActive="List-item-active"
-      (click)="navigationMyClass('Attendance')"
-      ><mat-icon class="sublink__icon">people</mat-icon
-      ><span class="sublink__text">Attendance</span></a
-    >
-    <a
-      class="sublink"
-      mat-list-item
-      routerLinkActive="List-item-active"
-      (click)="navigationMyClass('Qualification')"
-      ><mat-icon class="sublink__icon">people</mat-icon
-      ><span class="sublink__text">Qualification</span></a
-    >
+    <ul>
+      <li>
+        <a
+          class="sublink"
+          mat-list-item
+          routerLinkActive="list-item-active-link"
+          (click)="navigationMyClass('Students')"
+          ><mat-icon class="sublink__icon">people</mat-icon
+          ><span class="sublink__text">Students</span></a
+        >
+      </li>
+      <li>
+        <a
+          class="sublink"
+          mat-list-item
+          routerLinkActive="list-item-active-link"
+          (click)="navigationMyClass('Attendance')"
+          ><mat-icon class="sublink__icon">people</mat-icon
+          ><span class="sublink__text">Attendance</span></a
+        >
+      </li>
+      <li>
+        <a
+          class="sublink"
+          mat-list-item
+          routerLinkActive="list-item-active-link"
+          (click)="navigationMyClass('Qualification')"
+          ><mat-icon class="sublink__icon">people</mat-icon
+          ><span class="sublink__text">Qualification</span></a
+        >
+      </li>
+    </ul>
   </mat-expansion-panel>
   <!-- <a
     class="link"
     mat-list-item
-    routerLinkActive="List-item-active"
+    routerLinkActive="list-item-active-link"
     (click)="newMessage('My class')"
     routerLink="/myclass"
     ><mat-icon class="link__icon">people</mat-icon
     ><span class="link__text">My class</span></a
   > -->
   <!-- (click)="newMessage()" -->
+
   <a
+    routerLinkActive="list-item-active-link"
+    routerLink="/teacher/1/forums"
     class="link"
     mat-list-item
-    routerLinkActive="List-item-active"
     (click)="navigateGeneral('Forums')"
     ><mat-icon class="link__icon">forum</mat-icon
     ><span class="link__text">Forums</span></a
   >
+
   <mat-expansion-panel class="expansion-panel">
     <mat-expansion-panel-header class="expansion-panel__header">
       <mat-icon class="expansion-panel__header-icon">view_list</mat-icon
       ><span class="expansion-panel__header-text">Modules</span>
     </mat-expansion-panel-header>
-    <a
-      class="sublink"
-      mat-list-item
-      routerLinkActive="List-item-active"
-      (click)="navigateModules('Themes')"
+    <a class="sublink" mat-list-item (click)="navigateModules('Themes')"
       ><mat-icon class="sublink__icon">view_list</mat-icon
       ><span class="sublink__text">Themes</span></a
     >
-    <a
-      class="sublink"
-      mat-list-item
-      routerLinkActive="List-item-active"
-      (click)="navigateModules('Assessments')"
+    <a class="sublink" mat-list-item (click)="navigateModules('Assessments')"
       ><mat-icon class="sublink__icon">view_list</mat-icon
       ><span class="sublink__text">Assessments</span></a
     >
     <a
-    *ngFor="let modulos of mPersonalizados"
+      *ngFor="let modulos of mPersonalizados"
       class="sublink"
       mat-list-item
-      (click)=navigateCustom(modulos)
-      routerLinkActive="List-item-active"
+      (click)="navigateCustom(modulos)"
       ><mat-icon class="sublink__icon">view_list</mat-icon
-      ><span class="sublink__text">{{modulos.nombre}}</span>
-      </a
-    >
-
+      ><span class="sublink__text">{{ modulos.nombre }}</span>
+    </a>
   </mat-expansion-panel>
   <!-- <a
     class="link"
     mat-list-item
-    routerLinkActive="List-item-active"
+    routerLinkActive="list-item-active-link"
     routerLink="/modules"
     ><mat-icon class="link__icon">view_list</mat-icon
     ><span class="link__text">Modules</span></a
@@ -105,7 +108,8 @@
   <a
     class="link"
     mat-list-item
-    routerLinkActive="List-item-active"
+    routerLinkActive="list-item-active-link"
+    routerLink="/teacher/1/resources"
     (click)="navigateGeneral('Resources')"
     ><mat-icon class="link__icon">extension</mat-icon
     ><span class="link__text">Resources</span></a
@@ -113,7 +117,8 @@
   <a
     class="link"
     mat-list-item
-    routerLinkActive="List-item-active"
+    routerLink="/teacher/1/evaluation"
+    routerLinkActive="list-item-active-link"
     (click)="navigateGeneral('Evaluation')"
     ><mat-icon class="link__icon">account_tree</mat-icon
     ><span class="link__text">Evaluation</span></a
@@ -124,7 +129,7 @@
   </button>
 
   <!-- <h2 matSubheader>Tools</h2>
-  <a mat-list-item routerLinkActive="List-item-active" routerLink="/"
+  <a mat-list-item routerLinkActive="List-item-active-link" routerLink="/"
     ><mat-icon>import_contacts</mat-icon>Contacts</a
   > -->
 </mat-nav-list>
