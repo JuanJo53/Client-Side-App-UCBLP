@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           this.tokenStorage.getToken() === "undefined" ||
           this.tokenStorage.getToken() == null
         ) {
-          this.simpleAlert();
+          this.errorAlert();
           console.log("No se pudo iniciar sesión");
         } else {
           this.router.navigate(["/classroom"]);
@@ -50,9 +50,8 @@ export class LoginComponent implements OnInit {
     private tokenStorage: TokenStorageService,
     private router: Router,
     public dialog: MatDialog,
-    private route: ActivatedRoute
-  ) //private data: ErrorDialogComponent
-  {}
+    private route: ActivatedRoute //private data: ErrorDialogComponent
+  ) {}
   ngOnInit() {
     console.log(this.tokenStorage.getToken());
     if (
@@ -64,7 +63,7 @@ export class LoginComponent implements OnInit {
       return false;
     }
   }
-  simpleAlert() {
+  errorAlert() {
     const dialogRef = this.dialog.open(ErrorDialogComponent, {
       width: "400px",
     });

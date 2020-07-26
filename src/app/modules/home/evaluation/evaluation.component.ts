@@ -16,6 +16,7 @@ import { DeleteItemService } from "../../../services/dialogs/delete-item.service
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
 import { SideBarControlService } from "src/app/_services/side-bar-control.service";
 import { SharedService } from "src/app/shared/shared.service";
+import { ErrorDialogComponent } from "../../dialogs/simple-dialogs/error-dialog/error-dialog.component";
 
 @Component({
   selector: "app-evaluation",
@@ -23,6 +24,7 @@ import { SharedService } from "src/app/shared/shared.service";
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
+  controlPuntuacion100: number = 1;
   link: string = "Evaluation";
   colorNoDisponible: "#838282";
   getImageUrl(image) {
@@ -66,6 +68,36 @@ export class EvaluationComponent implements OnInit {
     private servNav: SideBarControlService,
     private data: SharedService
   ) {}
+  ngOnInit(): void {
+    if (this.controlPuntuacion100 == 1) {
+      this.errorAlert();
+    }
+    this.data.changeMessage(this.link);
+    this.route.parent.params.subscribe((param) => {
+      this.idCurso = param["idCurso"];
+    });
+    this.route.data.subscribe({
+      next: (data) => {
+        this.cargarDatos(data.modules.body);
+        this.cargarImagenes(data.images.body);
+        this.cargarColores(data.colors.body);
+        //this.addModulesPers();
+        //this.cardsModulosPers[0].estado=2;
+        //this.cardsModulosPers[0].idColor=1;
+        //this.cardsModulosPers[0].nombreModulo="Modulo per";
+        //this.cardsModulosPers[0].rubrica=10;
+        //this.updateModulesPers(this.cardsModulosPers[0]);
+
+        //this.cardsModulosPred[0].idColor=1;
+        //this.cardsModulosPred[0].estado=2;
+        //this.cardsModulosPred[0].rubrica=10;
+        //this.updateModulesPred(this.cardsModulosPred[0]);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
       next: (data) => {
@@ -129,33 +161,7 @@ export class EvaluationComponent implements OnInit {
     }
     console.log(this.images);
   }
-  ngOnInit(): void {
-    this.data.changeMessage(this.link);
-    this.route.parent.params.subscribe((param) => {
-      this.idCurso = param["idCurso"];
-    });
-    this.route.data.subscribe({
-      next: (data) => {
-        this.cargarDatos(data.modules.body);
-        this.cargarImagenes(data.images.body);
-        this.cargarColores(data.colors.body);
-        //this.addModulesPers();
-        //this.cardsModulosPers[0].estado=2;
-        //this.cardsModulosPers[0].idColor=1;
-        //this.cardsModulosPers[0].nombreModulo="Modulo per";
-        //this.cardsModulosPers[0].rubrica=10;
-        //this.updateModulesPers(this.cardsModulosPers[0]);
 
-        //this.cardsModulosPred[0].idColor=1;
-        //this.cardsModulosPred[0].estado=2;
-        //this.cardsModulosPred[0].rubrica=10;
-        //this.updateModulesPred(this.cardsModulosPred[0]);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  }
   customModulo() {
     const dialogRef = this.dialog.open(AddCustomModuleComponent, {
       width: "500px",
@@ -273,5 +279,16 @@ export class EvaluationComponent implements OnInit {
         return color.color;
       }
     }
+  }
+
+  errorAlert() {
+    const dialogRef = this.dialog.open(ErrorDialogComponent, {
+      width: "400px",
+      data: {
+        messageDialog:
+          "Rubric does not match with 100 points , please check it out.",
+        buttonMessage: "Ok",
+      },
+    });
   }
 }
