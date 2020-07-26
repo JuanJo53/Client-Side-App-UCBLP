@@ -72,7 +72,7 @@ export class EvaluationComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     if (this.controlPuntuacion100 == 1) {
-      this.warningAlert();
+      this.errorAlert();
     }
     this.data.changeMessage(this.link);
     this.route.parent.params.subscribe((param) => {
