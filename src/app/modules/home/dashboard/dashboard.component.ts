@@ -7,6 +7,7 @@ import { MultiDataSet, Label } from "ng2-charts";
 // import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 // import { MultiDataSet, Label } from 'ng2-charts';
 import { ChartOptions, ChartDataSets } from "chart.js";
+import { SharedService } from "src/app/shared/shared.service";
 
 @Component({
   selector: "app-dashboard",
@@ -25,7 +26,7 @@ import { ChartOptions, ChartDataSets } from "chart.js";
 
 // }
 export class DashboardComponent implements OnInit {
-  link = "Dashboard";
+  // link = "Dashboard";
   public doughnutChartType: ChartType = "doughnut";
 
   public doughnutChartLabels: Label[] = ["Yes", "No"];
@@ -83,6 +84,7 @@ export class DashboardComponent implements OnInit {
   public barChartType: ChartType = "bar";
   public barChartLegend = true;
   // public barChartPlugins = [pluginDataLabels];
+  link: string = "Dashboard";
 
   public barChartData: ChartDataSets[] = [
     {
@@ -93,9 +95,11 @@ export class DashboardComponent implements OnInit {
       borderColor: "#fff",
     },
   ];
-  constructor() {}
+  constructor(private data: SharedService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.data.changeMessage(this.link);
+  }
 
   // events
   public chartClicked({
@@ -117,5 +121,4 @@ export class DashboardComponent implements OnInit {
   }): void {
     console.log(event, active);
   }
-  
 }

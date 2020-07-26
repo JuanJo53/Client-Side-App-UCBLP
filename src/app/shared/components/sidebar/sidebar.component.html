@@ -27,6 +27,7 @@
           class="sublink"
           mat-list-item
           routerLinkActive="list-item-active-link"
+          routerLink="/teacher/1/my-class/students"
           (click)="navigationMyClass('Students')"
           ><mat-icon class="sublink__icon">people</mat-icon
           ><span class="sublink__text">Students</span></a
@@ -47,6 +48,7 @@
           class="sublink"
           mat-list-item
           routerLinkActive="list-item-active-link"
+          routerLink="/teacher/1/my-class/qualification"
           (click)="navigationMyClass('Qualification')"
           ><mat-icon class="sublink__icon">people</mat-icon
           ><span class="sublink__text">Qualification</span></a
@@ -80,11 +82,21 @@
       <mat-icon class="expansion-panel__header-icon">view_list</mat-icon
       ><span class="expansion-panel__header-text">Modules</span>
     </mat-expansion-panel-header>
-    <a class="sublink" mat-list-item (click)="navigateModules('Themes')"
+    <a
+      routerLinkActive="list-item-active-link"
+      routerLink="/teacher/1/modules/themes"
+      class="sublink"
+      mat-list-item
+      (click)="navigateModules('Themes')"
       ><mat-icon class="sublink__icon">view_list</mat-icon
       ><span class="sublink__text">Themes</span></a
     >
-    <a class="sublink" mat-list-item (click)="navigateModules('Assessments')"
+    <a
+      routerLinkActive="list-item-active-link"
+      routerLink="/teacher/1/modules/assessments"
+      class="sublink"
+      mat-list-item
+      (click)="navigateModules('Assessments')"
       ><mat-icon class="sublink__icon">view_list</mat-icon
       ><span class="sublink__text">Assessments</span></a
     >

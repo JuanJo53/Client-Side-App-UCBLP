@@ -14,7 +14,8 @@ import { EditDefaultModuleComponent } from "../../dialogs/evaluation/edit-defaul
 import { ModulesRubricComponent } from "../../dialogs/evaluation/modules-rubric/modules-rubric.component";
 import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
-import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
+import { SideBarControlService } from "src/app/_services/side-bar-control.service";
+import { SharedService } from "src/app/shared/shared.service";
 
 @Component({
   selector: "app-evaluation",
@@ -22,6 +23,7 @@ import { SideBarControlService } from 'src/app/_services/side-bar-control.servic
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
+  link: string = "Evaluation";
   colorNoDisponible: "#838282";
   getImageUrl(image) {
     return "url(" + image + ")";
@@ -61,7 +63,8 @@ export class EvaluationComponent implements OnInit {
     private mdServ: EvaluationService,
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private servNav:SideBarControlService
+    private servNav: SideBarControlService,
+    private data: SharedService
   ) {}
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
@@ -127,6 +130,7 @@ export class EvaluationComponent implements OnInit {
     console.log(this.images);
   }
   ngOnInit(): void {
+    this.data.changeMessage(this.link);
     this.route.parent.params.subscribe((param) => {
       this.idCurso = param["idCurso"];
     });
@@ -201,10 +205,8 @@ export class EvaluationComponent implements OnInit {
       }
     });
   }
-  
- 
+
   configuracionModuloPersonalizado(modulo: Module) {
-    
     const dialogRef = this.dialog.open(EditCustomModuleComponent, {
       width: "500px",
       data: {

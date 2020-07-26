@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import { SharedService } from "../../shared.service";
+// import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
     this.openEvent.emit(this.isSidebarOpen);
   }
   constructor(
-    private data: SharedService,
+    // private data: SharedService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -69,7 +69,7 @@ export class SidebarComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.data.currentMessage.subscribe((message) => (this.message = message));
+    // this.data.currentMessage.subscribe((message) => (this.message = message));
     this.route.data.subscribe({
       next: (data) => {
         this.agregarModulos(data.modules.body);
@@ -80,13 +80,13 @@ export class SidebarComponent implements OnInit {
     });
   }
   navigateGeneral(link: string) {
-    this.data.changeMessage(link);
+    // this.data.changeMessage(link);
     this.route.params.subscribe((params) => {
       this.router.navigate(["teacher", params["idCurso"], link.toLowerCase()]);
     });
   }
   navigateModules(link: string) {
-    this.data.changeMessage(link);
+    // this.data.changeMessage(link);
     this.route.params.subscribe((params) => {
       this.router.navigate([
         "teacher",
@@ -97,7 +97,7 @@ export class SidebarComponent implements OnInit {
     });
   }
   navigationMyClass(link: string) {
-    this.data.changeMessage(link);
+    // this.data.changeMessage(link);
     this.route.params.subscribe((params) => {
       this.router.navigate([
         "teacher",
