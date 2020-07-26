@@ -1,0 +1,27 @@
+.done {
+    //   margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-primary-white;
+      border-radius: 2.5rem;
+      font-size: 3rem;
+      padding: 2.5rem 1.5rem;
+    }
+    &--positive {
+      background-color: $color-primary-blue;
+    }
+    &--negative {
+      background-color: $color-primary-red;
+    }
+    &__text {
+      padding: 0 0.5rem;
+      // mat-icon {
+      //   vertical-align: middle;
+      // }
+    }
+  }
+  
