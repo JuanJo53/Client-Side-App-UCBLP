@@ -17,6 +17,8 @@ import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.compo
 import { SideBarControlService } from "src/app/_services/side-bar-control.service";
 import { SharedService } from "src/app/shared/shared.service";
 import { ErrorDialogComponent } from "../../dialogs/simple-dialogs/error-dialog/error-dialog.component";
+import { GoodDialogComponent } from "../../dialogs/simple-dialogs/good-dialog/good-dialog.component";
+import { WarningDialogComponent } from "../../dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
 
 @Component({
   selector: "app-evaluation",
@@ -70,7 +72,7 @@ export class EvaluationComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     if (this.controlPuntuacion100 == 1) {
-      this.errorAlert();
+      this.warningAlert();
     }
     this.data.changeMessage(this.link);
     this.route.parent.params.subscribe((param) => {
@@ -283,6 +285,26 @@ export class EvaluationComponent implements OnInit {
 
   errorAlert() {
     const dialogRef = this.dialog.open(ErrorDialogComponent, {
+      width: "400px",
+      data: {
+        messageDialog:
+          "Rubric does not match with 100 points , please check it out.",
+        buttonMessage: "Ok",
+      },
+    });
+  }
+  goodAlert() {
+    const dialogRef = this.dialog.open(GoodDialogComponent, {
+      width: "400px",
+      data: {
+        messageDialog:
+          "Rubric does not match with 100 points , please check it out.",
+        buttonMessage: "Ok",
+      },
+    });
+  }
+  warningAlert() {
+    const dialogRef = this.dialog.open(WarningDialogComponent, {
       width: "400px",
       data: {
         messageDialog:
