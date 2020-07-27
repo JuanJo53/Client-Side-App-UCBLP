@@ -23,5 +23,9 @@ export class SideBarControlService {
     console.log("serafd");
     return this.sideBar.agregarModulos2(data);
   }
+  public getmodulos() {
+    return this.sideBar.getModulos();
+  }
+
 
 }

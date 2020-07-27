@@ -35,6 +35,7 @@
     "ngx-material-timepicker": "^5.5.3",
     "rxjs": "~6.5.5",
     "tslib": "^1.13.0",
+    "xlsx": "^0.16.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

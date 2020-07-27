@@ -13,7 +13,7 @@
       >
         <div class="dialog__module-rubric--left-side">
           <span class="dialog__module-rubric--text">{{
-            element.nombre_contenido
+            element.nombreContenido
           }}</span>
         </div>
 
@@ -27,7 +27,7 @@
           <input
             type="number"
             matInput
-            [(ngModel)]="element.rubrica_contenido"
+            [(ngModel)]="element.rubrica"
             (change)=cambio()
             name="nombreModulo+ {{ i }}"
           />

@@ -8,7 +8,7 @@ export class DeleteItemService {
   currentMessage = this.messageSource.asObservable();
 
   constructor() {}
-  changeMessage(nombreItem: string) {
-    this.messageSource.next(nombreItem);
+  changeMessage(mensajeDialog: string) {
+    this.messageSource.next(mensajeDialog);
   }
 }

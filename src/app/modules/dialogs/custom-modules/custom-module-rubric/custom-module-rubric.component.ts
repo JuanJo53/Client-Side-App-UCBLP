@@ -13,7 +13,7 @@ export class CustomModuleRubricComponent implements OnInit {
   total = 100;
   valor = 30;
   disableTextbox = true;
-  listaRubricas: any[] = [];
+  listaRubricas: ContentModule[] = [];
   porcentajes: any[] = [];
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
@@ -23,14 +23,14 @@ export class CustomModuleRubricComponent implements OnInit {
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
-  cargarDatos(rubricas) {
+  cargarDatos(rubricas:ContentModule[]) {
     for (let rubrica of rubricas) {
       let newRubrica = new ContentModule();
-      console.log(rubrica);
-      newRubrica.id = rubrica.id_contenido_mod_per;
+      newRubrica.id = rubrica.id;
       newRubrica.rubrica = rubrica.rubrica; 
-
-      newRubrica.nombreContenido = rubrica.nombre_contenido;
+      newRubrica.estado= rubrica.estado;
+      newRubrica.idModulo = rubrica.idModulo; 
+      newRubrica.nombreContenido=rubrica.nombreContenido;
       this.listaRubricas.push(newRubrica);
       this.porcentajes.push({
         porcentaje: rubrica.rubrica,
@@ -41,20 +41,20 @@ export class CustomModuleRubricComponent implements OnInit {
   cambio(){
     var suma=0;
     for(let rubrica of this.listaRubricas){
-      suma+=rubrica.rubrica_contenido;
+      suma+=rubrica.rubrica;
     }
     this.total=suma;
   }
   ngOnInit(): void {
-    this.listaRubricas=this.dataDialog["rubricas"];
-    console.log(this.listaRubricas);
+    this.listaRubricas=[];
+    this.cargarDatos(this.dataDialog["rubricas"]);
     this.cambio();
   }
   verificarRubricas() {
     var sum = 0;
     for (let rubrica of this.listaRubricas) {
       console.log(rubrica);
-      sum += rubrica.rubrica_contenido;
+      sum += rubrica.rubrica;
     }
     if (sum != 100) {
       return false;

@@ -37,7 +37,9 @@ export class ModulesRubricComponent implements OnInit {
   cambio() {
     var suma = 0;
     for (let rubrica of this.listaRubricas) {
-      suma += rubrica.rubrica;
+      if (rubrica.estado_modulo == 1) {
+        suma += rubrica.rubrica;
+      }
     }
     this.total = suma;
   }

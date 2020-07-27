@@ -804,6 +804,15 @@
       <div class="spinner">
         <mat-spinner *ngIf="showSpinner"></mat-spinner>
       </div>
+      <div *ngIf="spinnerFinish == true" >
+        <div class="done">
+          <div class="done__content done--positive">
+            <div class="done__text">
+              <span>Done !</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <form>
         <ng-template matStepLabel>Done</ng-template>
 

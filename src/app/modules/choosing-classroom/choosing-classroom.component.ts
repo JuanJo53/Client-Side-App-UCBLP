@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Teacher } from "src/app/models/Teacher/Teacher";
 import { AuthService } from "src/app/_services/general_services/auth.service";
 import { UserService } from "src/app/_services/general_services/user.service";
@@ -11,12 +11,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateCourseComponent } from "../dialogs/courses/create-course/create-course.component";
 import { Semester } from 'src/app/models/Teacher/ClassRoom/Semester';
 import { Level } from 'src/app/models/Teacher/ClassRoom/Level';
+import { LoadingComponent } from 'src/app/shared/components/loading/loading.component';
+import { LoadingService } from 'src/app/_services/loading.service';
 @Component({
   selector: "app-choosing-classroom",
   templateUrl: "./choosing-classroom.component.html",
   styleUrls: ["./choosing-classroom.component.scss"],
 })
 export class ChoosingClassroomComponent implements OnInit {
+  
+  @ViewChild('loading') public loading: LoadingComponent;
   //-----variables-----
   semestres:Semester[]=[];
   niveles:Level[]=[];
@@ -43,7 +47,8 @@ export class ChoosingClassroomComponent implements OnInit {
     private tokenServ: TokenStorageService,
     private router: Router,
     public dialog: MatDialog,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,    
+    private servLoading:LoadingService
   ) {}
   obtenerSemestre(id){
     for(let semestre of this.semestres){
@@ -148,7 +153,12 @@ export class ChoosingClassroomComponent implements OnInit {
     this.router.navigate(["/"]);
   }
   cardClicked(idCurso: string) {
-    this.router.navigate(["teacher", idCurso, "dashboard"]);
+    this.servLoading.setLoading(this.loading);
+    this.servLoading.activar();
+    const nav=this.router.navigate(["teacher", idCurso, "dashboard"]);
+    nav.then((data)=>{
+      this.servLoading.desactivar();
+    })
   }
   agregarCurso() {
     console.log("agregar curso");

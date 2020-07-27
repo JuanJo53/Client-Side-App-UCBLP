@@ -12,8 +12,9 @@ import { EditDocumentComponent } from "../../dialogs/resources/edit-document/edi
 import { MatDialog } from "@angular/material/dialog";
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
-import { Router, ActivatedRoute } from '@angular/router';
-import { SectionsService } from 'src/app/_services/teacher_services/sections.service';
+import { Router, ActivatedRoute } from "@angular/router";
+import { SectionsService } from "src/app/_services/teacher_services/sections.service";
+import { SharedService } from "src/app/shared/shared.service";
 
 @Component({
   selector: "app-resources",
@@ -21,17 +22,18 @@ import { SectionsService } from 'src/app/_services/teacher_services/sections.ser
   styleUrls: ["./resources.component.scss"],
 })
 export class ResourcesComponent implements OnInit {
-  idCurso:number;
-  ListaSecciones: ResourceSection[] = [
-  ];
+  idCurso: number;
+  ListaSecciones: ResourceSection[] = [];
   file: any;
+  link: string = "Resources";
   constructor(
     private servUpload: UploadFilesService,
-    private servSec:SectionsService,
+    private servSec: SectionsService,
     public dialog: MatDialog,
     private router: Router,
-    private route: ActivatedRoute
-    ) {}
+    private route: ActivatedRoute,
+    private data: SharedService
+  ) {}
   fileChange(file) {
     this.file = file;
   }
@@ -53,53 +55,53 @@ export class ResourcesComponent implements OnInit {
       error: (error) => {},
     });
   }
-  cargarSecciones2(data:ResourceSection[]){
-    var listaux=[];
-    for(let seccion of data){
-      let nuevaSeccion=new ResourceSection();
-      nuevaSeccion.nombreSeccion=seccion.nombreSeccion;
-      nuevaSeccion.idSeccion=seccion.idSeccion;
-      for(let recurso of seccion.resourceContent){
-        let nuevoRecurso=new ResourceContent();
-        nuevoRecurso.nombre=recurso.nombre;
-        nuevoRecurso.tipo=recurso.tipo;
-        nuevoRecurso.url=recurso.url;
-        nuevoRecurso.id=recurso.id;
+  cargarSecciones2(data: ResourceSection[]) {
+    var listaux = [];
+    for (let seccion of data) {
+      let nuevaSeccion = new ResourceSection();
+      nuevaSeccion.nombreSeccion = seccion.nombreSeccion;
+      nuevaSeccion.idSeccion = seccion.idSeccion;
+      for (let recurso of seccion.resourceContent) {
+        let nuevoRecurso = new ResourceContent();
+        nuevoRecurso.nombre = recurso.nombre;
+        nuevoRecurso.tipo = recurso.tipo;
+        nuevoRecurso.url = recurso.url;
+        nuevoRecurso.id = recurso.id;
         nuevaSeccion.resourceContent.push(nuevoRecurso);
       }
 
       listaux.push(nuevaSeccion);
     }
-    
-    this.ListaSecciones=[];
-    for(let seccion of listaux){
-      let nuevaSeccion=new ResourceSection();
-      nuevaSeccion.nombreSeccion=seccion.nombreSeccion;
-      nuevaSeccion.idSeccion=seccion.idSeccion;
-      for(let recurso of seccion.resourceContent){
-        let nuevoRecurso=new ResourceContent();
-        nuevoRecurso.nombre=recurso.nombre;
-        nuevoRecurso.tipo=recurso.tipo;
-        nuevoRecurso.url=recurso.url;
-        nuevoRecurso.id=recurso.id;
+
+    this.ListaSecciones = [];
+    for (let seccion of listaux) {
+      let nuevaSeccion = new ResourceSection();
+      nuevaSeccion.nombreSeccion = seccion.nombreSeccion;
+      nuevaSeccion.idSeccion = seccion.idSeccion;
+      for (let recurso of seccion.resourceContent) {
+        let nuevoRecurso = new ResourceContent();
+        nuevoRecurso.nombre = recurso.nombre;
+        nuevoRecurso.tipo = recurso.tipo;
+        nuevoRecurso.url = recurso.url;
+        nuevoRecurso.id = recurso.id;
         nuevaSeccion.resourceContent.push(nuevoRecurso);
       }
 
       this.ListaSecciones.push(nuevaSeccion);
     }
   }
-  cargarSecciones(data){
-    this.ListaSecciones=[];
-    for(let seccion of data){
-      let nuevaSeccion=new ResourceSection();
-      nuevaSeccion.nombreSeccion=seccion.nombre_seccion;
-      nuevaSeccion.idSeccion=seccion.id_seccion;
-      for(let recurso of seccion.recursos){
-        let nuevoRecurso=new ResourceContent();
-        nuevoRecurso.nombre=recurso.nombre_recurso;
-        nuevoRecurso.tipo=recurso.id_tipo_recurso;
-        nuevoRecurso.url=recurso.ruta_recurso;
-        nuevoRecurso.id=recurso.id_recurso;
+  cargarSecciones(data) {
+    this.ListaSecciones = [];
+    for (let seccion of data) {
+      let nuevaSeccion = new ResourceSection();
+      nuevaSeccion.nombreSeccion = seccion.nombre_seccion;
+      nuevaSeccion.idSeccion = seccion.id_seccion;
+      for (let recurso of seccion.recursos) {
+        let nuevoRecurso = new ResourceContent();
+        nuevoRecurso.nombre = recurso.nombre_recurso;
+        nuevoRecurso.tipo = recurso.id_tipo_recurso;
+        nuevoRecurso.url = recurso.ruta_recurso;
+        nuevoRecurso.id = recurso.id_recurso;
         nuevaSeccion.resourceContent.push(nuevoRecurso);
       }
 
@@ -108,21 +110,22 @@ export class ResourcesComponent implements OnInit {
     console.log(this.ListaSecciones);
   }
   ngOnInit(): void {
-    this.route.parent.params.subscribe((param)=>{
-      this.idCurso=param["idCurso"];
+    this.data.changeMessage(this.link);
+    this.route.parent.params.subscribe((param) => {
+      this.idCurso = param["idCurso"];
     });
     this.route.data.subscribe({
-      next:(next)=>{
-        if(next.sections.status==200){
+      next: (next) => {
+        if (next.sections.status == 200) {
           this.cargarSecciones(next.sections.body);
-        }
-        else{console.log("error")}
-      },
-      error:(err)=>{
+        } else {
           console.log("error");
-      }
-
-    })    
+        }
+      },
+      error: (err) => {
+        console.log("error");
+      },
+    });
   }
 
   //dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -130,115 +133,114 @@ export class ResourcesComponent implements OnInit {
 
   //funciones
   agregarSeccion() {
-    const dialogRef = this.dialog.open(AddSectionComponent, { width: "500px" 
-    ,
-    data:{
-      idCurso:this.idCurso,
-    }
-  });
-  dialogRef.afterClosed().subscribe((res)=>{
-    if(res!==""&&res!=='undefined'&&res!=null){        
-    this.cargarSecciones(res);
-    }
-  })
-  }
-  agregarDocumento(seccion:ResourceSection) {
-    const dialogRef = this.dialog.open(AddDocumentComponent, { width: "500px" ,
-    data:{
-      idSeccion:seccion.idSeccion,
-      idCurso:this.idCurso 
-    }
+    const dialogRef = this.dialog.open(AddSectionComponent, {
+      width: "500px",
+      data: {
+        idCurso: this.idCurso,
+      },
     });
-    dialogRef.afterClosed().subscribe((res)=>{
-      if(res!==""&&res!=='undefined'&&res!=null){        
-      this.cargarSecciones(res);
-      }
-    })
-  }
-
-  editarDocumento(resource:ResourceContent) {
-    const dialogRef = this.dialog.open(EditDocumentComponent, { width: "500px" ,
-    data:{
-      resource:resource,
-      idCurso:this.idCurso
-    }
-    });
-    dialogRef.afterClosed().subscribe((res)=>{
-      if(res!==""&&res!=='undefined'&&res!=null){        
-      this.cargarSecciones(res);
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res !== "" && res !== "undefined" && res != null) {
+        this.cargarSecciones(res);
       }
     });
   }
-  editarSeccion(seccion:ResourceSection,index) {
-    const dialogRef = this.dialog.open(EditSectionComponent, { width: "500px",
-    data:{
-      idCurso:this.idCurso,
-      nombre:seccion.nombreSeccion,
-      idSeccion:seccion.idSeccion,
-
-
-    } });
-    dialogRef.afterClosed().subscribe((res)=>{
-      if(res!==""&&res!=='undefined'&&res!=null){        
-      this.cargarSecciones(res);
+  agregarDocumento(seccion: ResourceSection) {
+    const dialogRef = this.dialog.open(AddDocumentComponent, {
+      width: "500px",
+      data: {
+        idSeccion: seccion.idSeccion,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res !== "" && res !== "undefined" && res != null) {
+        this.cargarSecciones(res);
       }
-    })
+    });
   }
-  eliminarSeccion(seccion:ResourceSection,index) {
+
+  editarDocumento(resource: ResourceContent) {
+    const dialogRef = this.dialog.open(EditDocumentComponent, {
+      width: "500px",
+      data: {
+        resource: resource,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res !== "" && res !== "undefined" && res != null) {
+        this.cargarSecciones(res);
+      }
+    });
+  }
+  editarSeccion(seccion: ResourceSection, index) {
+    const dialogRef = this.dialog.open(EditSectionComponent, {
+      width: "500px",
+      data: {
+        idCurso: this.idCurso,
+        nombre: seccion.nombreSeccion,
+        idSeccion: seccion.idSeccion,
+      },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res !== "" && res !== "undefined" && res != null) {
+        this.cargarSecciones(res);
+      }
+    });
+  }
+  eliminarSeccion(seccion: ResourceSection, index) {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
       data: {
         tipo: "section",
-        idSeccion:seccion.idSeccion
+        idSeccion: seccion.idSeccion,
       },
     });
-    dialogRef.afterClosed().subscribe((result)=>{
-      if(result==="ok"){
-        this.ListaSecciones.splice(index,1);
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === "ok") {
+        this.ListaSecciones.splice(index, 1);
       }
-    })
+    });
   }
-  eliminarDocumento(resource:ResourceContent,indexs,index) {
+  eliminarDocumento(resource: ResourceContent, indexs, index) {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
       data: {
         tipo: "File",
-        id:resource.id,
-        idCurso:this.idCurso
+        id: resource.id,
+        idCurso: this.idCurso,
       },
     });
-    dialogRef.afterClosed().subscribe((result)=>{
+    dialogRef.afterClosed().subscribe((result) => {
       this.route.data.subscribe({
-        next:(next)=>{
-          if(next.sections.status==200){
-            
-          if(result==="ok"){
-            this.ListaSecciones[indexs].resourceContent.splice(index,1);
-            this.cargarSecciones2(this.ListaSecciones);
-          }
-          }
-          else{console.log("error")}
-        },
-        error:(err)=>{
+        next: (next) => {
+          if (next.sections.status == 200) {
+            if (result === "ok") {
+              this.ListaSecciones[indexs].resourceContent.splice(index, 1);
+              this.cargarSecciones2(this.ListaSecciones);
+            }
+          } else {
             console.log("error");
-        }
-  
-      }) 
-      
-    })
+          }
+        },
+        error: (err) => {
+          console.log("error");
+        },
+      });
+    });
   }
-  descargarArchivo(resource:ResourceContent){
+  descargarArchivo(resource: ResourceContent) {
     this.servSec.downloadResource(resource.url).subscribe({
-      next:(data)=>{
-        if(data.status==200){
+      next: (data) => {
+        if (data.status == 200) {
           window.open(data.body.url[0]);
         }
       },
-      error:(err)=>{
+      error: (err) => {
         console.log("ocurrio un error");
-
-      }
-    })
+      },
+    });
   }
 
   // file: any;

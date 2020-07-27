@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { SharedService } from "src/app/shared/shared.service";
 
 @Component({
   selector: "app-forums-base",
@@ -7,8 +7,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./forums-base.component.scss"],
 })
 export class ForumsBaseComponent implements OnInit {
-  constructor() {}
+  link: string = "Forums";
+  constructor(private data: SharedService) {}
 
-  ngOnInit(): void {}
-  
+  ngOnInit(): void {
+    this.data.changeMessage(this.link);
+  }
 }

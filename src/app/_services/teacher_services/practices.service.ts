@@ -29,4 +29,7 @@ export class PracticesService {
   getQuestions():Observable<any>{
     return this.http.get(apiKey.api+"/teacher/question",{ observe: 'response' });
   }
+  getScores(idPractica):Observable<any>{
+    return this.http.get(apiKey.api+"/teacher/practice/scores/"+idPractica,{ observe: 'response' });
+  }
 }

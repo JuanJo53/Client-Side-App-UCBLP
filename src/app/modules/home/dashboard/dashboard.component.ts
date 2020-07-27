@@ -7,6 +7,10 @@ import { MultiDataSet, Label } from "ng2-charts";
 // import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 // import { MultiDataSet, Label } from 'ng2-charts';
 import { ChartOptions, ChartDataSets } from "chart.js";
+import { ActivatedRoute } from "@angular/router";
+import { TokenStorageService } from "src/app/_services/general_services/token-storage.service";
+import { PracticeDashboard } from "src/app/models/DashBoard/PracticeDashboard";
+import { SharedService } from "src/app/shared/shared.service";
 
 @Component({
   selector: "app-dashboard",
@@ -25,7 +29,8 @@ import { ChartOptions, ChartDataSets } from "chart.js";
 
 // }
 export class DashboardComponent implements OnInit {
-  link = "Dashboard";
+  practicas: PracticeDashboard[] = [];
+  // link = "Dashboard";
   public doughnutChartType: ChartType = "doughnut";
 
   public doughnutChartLabels: Label[] = ["Yes", "No"];
@@ -54,7 +59,7 @@ export class DashboardComponent implements OnInit {
 
   public doughnutChartDataAssessment: MultiDataSet = [[70, 15, 15]];
 
-  public barChartOptions: ChartOptions = {
+  barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
     scales: {
@@ -79,12 +84,13 @@ export class DashboardComponent implements OnInit {
     },
   };
 
-  public barChartLabels: Label[] = ["T1", "T2", "T3", "T4", "T5", "T6"];
-  public barChartType: ChartType = "bar";
-  public barChartLegend = true;
+  barChartLabels: Label[] = ["T1", "T2", "T3", "T4", "T5", "T6"];
+  barChartType: ChartType = "bar";
+  barChartLegend = true;
   // public barChartPlugins = [pluginDataLabels];
+  link: string = "Dashboard";
 
-  public barChartData: ChartDataSets[] = [
+  barChartData: ChartDataSets[] = [
     {
       data: [10, 80, 81, 60, 60, 80],
       label: "Tests",
@@ -93,9 +99,38 @@ export class DashboardComponent implements OnInit {
       borderColor: "#fff",
     },
   ];
-  constructor() {}
-
-  ngOnInit() {}
+  constructor(
+    private route: ActivatedRoute,
+    private tokenServ: TokenStorageService
+  ) {}
+  cargarDatosPractica() {
+    this.practicas = [];
+    this.route.data.subscribe({
+      next: (data) => {
+        if (data.practices.status == 200) {
+          for (let practica of data.practices.body) {
+            let newPrac = new PracticeDashboard();
+            newPrac.idPractica = practica.id_practica;
+            newPrac.nombrePractica = practica.nombre_practica;
+            var a = practica.aprobados as number;
+            var r = practica.reprobados as number;
+            var n = 0;
+            newPrac.datos = [[a, r, n]];
+            this.practicas.push(newPrac);
+          }
+        }
+      },
+      error: (err) => {
+        if (err.status == 401) {
+          this.tokenServ.signOut();
+        }
+        console.log(err);
+      },
+    });
+  }
+  ngOnInit() {
+    this.cargarDatosPractica();
+  }
 
   // events
   public chartClicked({
@@ -117,5 +152,4 @@ export class DashboardComponent implements OnInit {
   }): void {
     console.log(event, active);
   }
-  
 }

@@ -1,45 +1,60 @@
 @import "1-helpers/mixins";
 .simple-dialog {
-  margin: 1.5rem 1rem 1rem 1rem;
+  margin: 1rem 1rem;
   .mat-icon {
     vertical-align: middle !important;
   }
-
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    //background-color: red;
     margin: 1rem 0rem;
-    height: 12.5rem;
   }
   &__title {
-    color: $color-primary-red;
     font-size: 2rem;
+    margin-top: 2rem;
+    &--error {
+      color: $color-primary-red;
+    }
+    &--good {
+      color: $color-primary-blue;
+    }
+    &--warning {
+      color: $color-primary-orange;
+    }
   }
   &__icon-content {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    &--negative {
+    border-radius: 50%;
+    padding: 1rem;
+    &--error {
       border: 0.25rem solid $color-primary-red;
-      border-radius: 50%;
-      padding: 1rem;
-      //background-color: red;
+    }
+    &--good {
+      border: 0.25rem solid $color-primary-blue;
+    }
+    &--warning {
+      border: 0.25rem solid $color-primary-orange;
     }
   }
   &__icon {
-    &--negative {
+    font-size: 3rem;
+    height: 3rem !important;
+    width: 3rem !important;
+    &--error {
       color: $color-primary-red;
-      font-size: 3rem;
-      height: 3rem !important;
-      width: 3rem !important;
+    }
+    &--good {
+      color: $color-primary-blue;
+    }
+    &--warning {
+      color: $color-primary-orange;
     }
   }
   &__message {
-    @include margin-left-right(0.5rem, 0.5rem);
+    margin-top: 1rem;
     color: $color-primary-gray;
     font-size: 1.5rem;
+    text-align: center;
   }
 }

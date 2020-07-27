@@ -5,12 +5,12 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root",
 })
 export class SharedService {
-  private messageSource = new BehaviorSubject<string>("English 2 / Dashboard");
+  private messageSource = new BehaviorSubject<string>("English 2 / Default");
   currentMessage = this.messageSource.asObservable();
 
   constructor() {}
 
   changeMessage(message: string) {
-    this.messageSource.next("English 2 / "+message);
+    this.messageSource.next("English 2 / " + message);
   }
 }

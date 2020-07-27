@@ -22,6 +22,7 @@ import { PracticesService } from "../../../../../../_services/teacher_services/p
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
+  spinnerFinish=false;
   total = 0;
   repository: any = [];
   showSpinner = false;
@@ -355,7 +356,7 @@ export class CreatePracticeComponent implements OnInit {
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
-      this.showSpinner = false;
+      this.showSpinner = false;this.spinnerFinish=true;
     }, 5000);
   }
 }

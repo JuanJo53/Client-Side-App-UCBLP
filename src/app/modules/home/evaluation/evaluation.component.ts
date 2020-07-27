@@ -14,7 +14,11 @@ import { EditDefaultModuleComponent } from "../../dialogs/evaluation/edit-defaul
 import { ModulesRubricComponent } from "../../dialogs/evaluation/modules-rubric/modules-rubric.component";
 import { DeleteItemService } from "../../../services/dialogs/delete-item.service";
 import { DeleteCardComponent } from "../../dialogs/delete-card/delete-card.component";
-import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
+import { SideBarControlService } from "src/app/_services/side-bar-control.service";
+import { SharedService } from "src/app/shared/shared.service";
+import { ErrorDialogComponent } from "../../dialogs/simple-dialogs/error-dialog/error-dialog.component";
+import { GoodDialogComponent } from "../../dialogs/simple-dialogs/good-dialog/good-dialog.component";
+import { WarningDialogComponent } from "../../dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
 
 @Component({
   selector: "app-evaluation",
@@ -22,6 +26,8 @@ import { SideBarControlService } from 'src/app/_services/side-bar-control.servic
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
+  controlPuntuacion100: number = 0;
+  link: string = "Evaluation";
   colorNoDisponible: "#838282";
   getImageUrl(image) {
     return "url(" + image + ")";
@@ -61,8 +67,39 @@ export class EvaluationComponent implements OnInit {
     private mdServ: EvaluationService,
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private servNav:SideBarControlService
+    private servNav: SideBarControlService,
+    private data: SharedService
   ) {}
+  ngOnInit(): void {
+    if (this.controlPuntuacion100 == 1) {
+      this.errorAlert();
+    }
+    this.data.changeMessage(this.link);
+    this.route.parent.params.subscribe((param) => {
+      this.idCurso = param["idCurso"];
+    });
+    this.route.data.subscribe({
+      next: (data) => {
+        this.cargarDatos(data.modules.body);
+        this.cargarImagenes(data.images.body);
+        this.cargarColores(data.colors.body);
+        //this.addModulesPers();
+        //this.cardsModulosPers[0].estado=2;
+        //this.cardsModulosPers[0].idColor=1;
+        //this.cardsModulosPers[0].nombreModulo="Modulo per";
+        //this.cardsModulosPers[0].rubrica=10;
+        //this.updateModulesPers(this.cardsModulosPers[0]);
+
+        //this.cardsModulosPred[0].idColor=1;
+        //this.cardsModulosPred[0].estado=2;
+        //this.cardsModulosPred[0].rubrica=10;
+        //this.updateModulesPred(this.cardsModulosPred[0]);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
   updateModulesPers(modulo: Module) {
     this.mdServ.updateModulePers(modulo).subscribe({
       next: (data) => {
@@ -126,32 +163,7 @@ export class EvaluationComponent implements OnInit {
     }
     console.log(this.images);
   }
-  ngOnInit(): void {
-    this.route.parent.params.subscribe((param) => {
-      this.idCurso = param["idCurso"];
-    });
-    this.route.data.subscribe({
-      next: (data) => {
-        this.cargarDatos(data.modules.body);
-        this.cargarImagenes(data.images.body);
-        this.cargarColores(data.colors.body);
-        //this.addModulesPers();
-        //this.cardsModulosPers[0].estado=2;
-        //this.cardsModulosPers[0].idColor=1;
-        //this.cardsModulosPers[0].nombreModulo="Modulo per";
-        //this.cardsModulosPers[0].rubrica=10;
-        //this.updateModulesPers(this.cardsModulosPers[0]);
 
-        //this.cardsModulosPred[0].idColor=1;
-        //this.cardsModulosPred[0].estado=2;
-        //this.cardsModulosPred[0].rubrica=10;
-        //this.updateModulesPred(this.cardsModulosPred[0]);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  }
   customModulo() {
     const dialogRef = this.dialog.open(AddCustomModuleComponent, {
       width: "500px",
@@ -201,10 +213,8 @@ export class EvaluationComponent implements OnInit {
       }
     });
   }
-  
- 
+
   configuracionModuloPersonalizado(modulo: Module) {
-    
     const dialogRef = this.dialog.open(EditCustomModuleComponent, {
       width: "500px",
       data: {
@@ -271,5 +281,36 @@ export class EvaluationComponent implements OnInit {
         return color.color;
       }
     }
+  }
+
+  errorAlert() {
+    const dialogRef = this.dialog.open(ErrorDialogComponent, {
+      width: "400px",
+      data: {
+        messageDialog:
+          "Rubric does not match with 100 points , please check it out.",
+        buttonMessage: "Ok",
+      },
+    });
+  }
+  goodAlert() {
+    const dialogRef = this.dialog.open(GoodDialogComponent, {
+      width: "400px",
+      data: {
+        messageDialog:
+          "Rubric does not match with 100 points , please check it out.",
+        buttonMessage: "Ok",
+      },
+    });
+  }
+  warningAlert() {
+    const dialogRef = this.dialog.open(WarningDialogComponent, {
+      width: "400px",
+      data: {
+        messageDialog:
+          "Rubric does not match with 100 points , please check it out.",
+        buttonMessage: "Ok",
+      },
+    });
   }
 }
