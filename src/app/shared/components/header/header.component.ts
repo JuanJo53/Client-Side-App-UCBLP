@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Teacher } from 'src/app/models/Teacher/Teacher';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 import { CardClassroom } from 'src/app/models/Teacher/ClassRoom/CardClassroom';
+import { LoadingService } from 'src/app/_services/loading.service';
 
 @Component({
   selector: "app-header",
@@ -25,7 +26,13 @@ export class HeaderComponent implements OnInit {
   simbCurso="";
   message: string;
   tituloNavbar: string;
-  constructor(private data: SharedService,private usService:ActivatedRoute,private router:Router,private tokenServ:TokenStorageService) {}
+  constructor(
+    private data: SharedService,
+    private usService:ActivatedRoute,
+    private router:Router,
+    private tokenServ:TokenStorageService,
+    private servLoading:LoadingService
+    ) {}
   ngOnInit() {
     var idCurso;
     this.usService.params.subscribe((data)=>{
@@ -69,14 +76,19 @@ export class HeaderComponent implements OnInit {
     })
   }
   signout(): void {
+    this.servLoading.activar();
     this.tokenServ.signOut();
-    this.router.navigate(["/"]);
   }
   home(){
+    this.servLoading.activar();
     this.router.navigate(["classroom"]);
 
   }
   navigator(materia:CardClassroom){
-    this.router.navigate(["/teacher/"+materia.id_curso+"/dashboard"]);
+    this.servLoading.activar();
+    const nav=this.router.navigate(["/teacher/"+materia.id_curso+"/dashboard"]);
+    nav.then((dat)=>{
+      this.servLoading.desactivar();
+    })
   }
 }

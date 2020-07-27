@@ -1,0 +1,23 @@
+html{
+    position:absolute;
+    z-index: 10000;
+
+}
+
+.loading{
+    position:absolute;
+    background-color: rgba(8, 8, 8, 0.356);
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 10;
+    display: table;
+    
+  }
+  .centro{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: calc(100vh - 20px);
+  }

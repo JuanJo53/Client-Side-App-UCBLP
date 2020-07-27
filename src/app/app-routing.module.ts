@@ -56,6 +56,8 @@ import { DetailTableComponent } from "./modules/home/modules/themes-base/themes/
 import { DetailIndividualComponent } from "./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
 import { GetQualificationResolver } from './_resolvers/docente/my-class/get-qualification.resolver';
 import { GetScoreContentModuleResolver } from './_resolvers/docente/modules/get-score-content-module.resolver';
+import { GetScoresPracticesResolver } from './_resolvers/docente/practices/get-scores-practices.resolver';
+import { GetPracticesDashBoardResolver } from './_resolvers/docente/dashBoards/get_practices-dashboard.resolver';
  
 const routes: Routes = [
   {
@@ -93,6 +95,9 @@ const routes: Routes = [
         // path: "building",
         // component: BuildingPageComponent,
         component: DashboardComponent,
+        resolve:{
+          practices:GetPracticesDashBoardResolver
+        }
       },
       {
         path: "my-class",
@@ -245,7 +250,10 @@ const routes: Routes = [
 
                             children: [
                               {
-                                path: "",
+                                path: ":idPractica",
+                                resolve:{
+                                  scores:GetScoresPracticesResolver
+                                },
                                 component: DetailTableComponent,
                               },
                               {

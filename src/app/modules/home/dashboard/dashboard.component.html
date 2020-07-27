@@ -104,17 +104,17 @@
   </div>
   <!--#Subtitle-->
   <div class="row last-component">
-    <div class="col-sm-4">
+    <div class="col-sm-4" *ngFor="let practica of practicas">
       <div class="dashboard-card">
         <div class="dashboard-card__description-dashboard">
           <div class="dashboard-card__description-dashboard-title">
-            <span>Practice 1</span>
+            <span>{{practica.nombrePractica}}</span>
           </div>
         </div>
         <div class="dashboard-card__grafics">
           <canvas
             baseChart
-            [data]="doughnutChartDataPractices"
+            [data]="practica.datos"
             [labels]="doughnutChartLabelsPractices"
             [chartType]="doughnutChartType"
             [colors]="doughnutChartColorsPractices"
@@ -123,43 +123,6 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="dashboard-card">
-        <div class="dashboard-card__description-dashboard">
-          <div class="dashboard-card__description-dashboard-title">
-            <span>Practice 2</span>
-          </div>
-        </div>
-        <div class="dashboard-card__grafics">
-          <canvas
-            baseChart
-            [data]="doughnutChartDataPractices"
-            [labels]="doughnutChartLabelsPractices"
-            [chartType]="doughnutChartType"
-            [colors]="doughnutChartColorsPractices"
-          >
-          </canvas>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="dashboard-card">
-        <div class="dashboard-card__description-dashboard">
-          <div class="dashboard-card__description-dashboard-title">
-            <span>Practice 3</span>
-          </div>
-        </div>
-        <div class="dashboard-card__grafics">
-          <canvas
-            baseChart
-            [data]="doughnutChartDataPractices"
-            [labels]="doughnutChartLabelsPractices"
-            [chartType]="doughnutChartType"
-            [colors]="doughnutChartColorsPractices"
-          >
-          </canvas>
-        </div>
-      </div>
-    </div>
+    
   </div>
 </div>
