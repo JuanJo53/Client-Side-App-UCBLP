@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { SideBarControlService } from "src/app/_services/side-bar-control.service";
 import { SidebarComponent } from "src/app/shared/components/sidebar/sidebar.component";
+import { LoadingService } from "src/app/_services/loading.service";
+import { LoadingComponent } from "src/app/shared/components/loading/loading.component";
 //import {MediaObserver , MediaChange} from '@angular/flex-layout';
 //import {Subscription} from 'rxjs';
 import { Location } from "@angular/common";
@@ -10,11 +12,15 @@ import { Location } from "@angular/common";
   styleUrls: ["./default.component.scss"],
 })
 export class DefaultComponent implements OnInit {
+  cargando: boolean = true;
+
   @ViewChild("sidenav") public sidenav: SidebarComponent;
+  @ViewChild("loading") public loading: LoadingComponent;
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
   constructor(
     private serv: SideBarControlService,
+    private servLoading: LoadingService,
     private _location: Location
   ) {}
   ngOnInit() {}
@@ -32,6 +38,7 @@ export class DefaultComponent implements OnInit {
   }
   ngAfterViewInit(): void {
     this.serv.setSidenav(this.sidenav);
+    this.servLoading.setLoading(this.loading);
   }
 
   backClicked() {

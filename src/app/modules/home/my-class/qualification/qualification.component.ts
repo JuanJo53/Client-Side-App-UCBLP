@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { Router, ActivatedRoute } from "@angular/router";
+import * as XLSX from 'xlsx';  
 import {
   MatDialog,
   MatDialogRef,
@@ -46,10 +47,36 @@ export class QualificationComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild('TABLE', { static: false }) TABLE: ElementRef;  
   constructor(private router: Router, private route: ActivatedRoute) {}
   cargarDatosBody(data){
     console.log(data);
   }
+  encColumna(posi:number){
+    var primaLetra=0;
+    var segunLetra=0;
+    if(posi>26){
+      primaLetra=(posi/26 - (posi/26) % 1)-1
+      console.log(primaLetra);
+      segunLetra=posi%26-1;
+      return String.fromCharCode(primaLetra+65)+String.fromCharCode(segunLetra+65);
+    }
+    else{
+    return String.fromCharCode(posi-1+65); 
+    }
+  }
+  /*name of the excel-file which will be downloaded. */ 
+  fileName= 'ExcelSheet.xlsx';  
+  ExportTOExcel() {  
+    let element = document.getElementById('TABLE'); 
+       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+       var eli=this.encColumna(this.displayedColumns.length);
+       delete(ws[String(eli)+"1"]);
+       const wb: XLSX.WorkBook = XLSX.utils.book_new();
+       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+       XLSX.writeFile(wb, this.fileName);
+  }
+
  cargarCabezera(cabe){
    console.log(cabe);
    for(let cabezera of cabe){

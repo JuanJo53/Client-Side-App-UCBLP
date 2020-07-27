@@ -10,7 +10,7 @@
   <!--Subtitle-->
   <div class="subtitle-compound">
     <div class="subtitle-compound__text">
-      <span>Expositions</span>
+      <span>{{nombreModulo}}</span>
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
@@ -37,7 +37,7 @@
           <div class="custom-card--custom__img-overlay">
             <div class="custom-card--custom__buttons-card">
               <!--btn Ver lista-->
-              <button class="circular-button-custom-card" (click)="verlistar()">
+              <button class="circular-button-custom-card" (click)="verlistar(custCards)">
                 <mat-icon class="circular-button-custom-card__icon">
                   list
                 </mat-icon>

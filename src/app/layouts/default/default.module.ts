@@ -87,6 +87,7 @@ import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modu
 import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
 import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/detail-table/detail-table.component";
 import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
+import { LoadingComponent } from "src/app/shared/components/loading/loading.component";
 
 @NgModule({
   declarations: [
@@ -148,7 +149,7 @@ import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-b
     CustomModuleRubricComponent,
     AddCardComponent,
     DetailTableComponent,
-    DetailIndividualComponent,
+    DetailIndividualComponent
   ],
   imports: [
     CommonModule,

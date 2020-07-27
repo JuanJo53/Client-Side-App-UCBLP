@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingService } from 'src/app/_services/loading.service';
 
 @Component({
   selector: "app-sidebar",
@@ -19,7 +20,11 @@ export class SidebarComponent implements OnInit {
     this.isSidebarOpen = !this.isSidebarOpen;
     this.openEvent.emit(this.isSidebarOpen);
   }
-  constructor(private data: SharedService,private route:ActivatedRoute,private router:Router) {}
+  constructor(
+    private data: SharedService,
+    private route:ActivatedRoute,
+    private router:Router,
+    private servLoading:LoadingService) {}
   // constructor() {}
   // ngOnInit(): void {}
   agregarModulos2(data){
@@ -33,6 +38,9 @@ export class SidebarComponent implements OnInit {
       }
     }
   } 
+  getModulos(){
+    return this.mPersonalizados;
+  }
   modificarModulo(data,index){
     this.mPersonalizados[index]=data;
   }
@@ -53,10 +61,15 @@ export class SidebarComponent implements OnInit {
     console.log("hola");
   }
   navigateCustom(modulo){
+    this.servLoading.activar();
     console.log(modulo);
     this.route.params.subscribe(
       (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],"modules","custom",modulo.id]); 
+        const nav=this.router.navigate(['teacher',params['idCurso'],"modules","custom",modulo.id]); 
+        nav.then((data)=>{
+          
+          this.servLoading.desactivar();
+        })
       }
     );
   }
@@ -72,29 +85,42 @@ export class SidebarComponent implements OnInit {
     });
   }
   navigateGeneral(link:string) {
+    this.servLoading.activar();
     this.data.changeMessage(link);
     this.route.params.subscribe(
       (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],link.toLowerCase()]); 
+        const nav=this.router.navigate(['teacher',params['idCurso'],link.toLowerCase()]); 
+        nav.then((data)=>{
+          
+          this.servLoading.desactivar();
+        })
         
       }
     );
   }
   navigateModules(link:string) {
+    this.servLoading.activar();
     this.data.changeMessage(link);
     this.route.params.subscribe(
       (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],"modules",link.toLowerCase()]); 
-        
+        const nav=this.router.navigate(['teacher',params['idCurso'],"modules",link.toLowerCase()]); 
+        nav.then((data)=>{
+          
+          this.servLoading.desactivar();
+        })
       }
     );
   }
   navigationMyClass(link:string) {
+    this.servLoading.activar();
     this.data.changeMessage(link);
     this.route.params.subscribe(
       (params)=>{      
-        this.router.navigate(['teacher',params['idCurso'],"my-class",link.toLowerCase()]); 
-        
+        const nav=this.router.navigate(['teacher',params['idCurso'],"my-class",link.toLowerCase()]); 
+        nav.then((data)=>{
+          
+          this.servLoading.desactivar();
+        })
       }
     );
   }

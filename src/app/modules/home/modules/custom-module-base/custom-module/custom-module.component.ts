@@ -9,6 +9,7 @@ import { Module } from "src/app/models/Teacher/Evaluation/Module";
 import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
 import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
 import { ContentModule } from 'src/app/models/Teacher/Modules/ContentModule';
+import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
 @Component({
   selector: "app-custom-module",
   templateUrl: "./custom-module.component.html",
@@ -16,13 +17,15 @@ import { ContentModule } from 'src/app/models/Teacher/Modules/ContentModule';
 })
 export class CustomModuleComponent implements OnInit {
   idModulo:number;
+  nombreModulo:string="";
   cardsModulosPers: ContentModule[] = [
   ];
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     public dialog: MatDialog,
-    private data: DeleteItemService
+    private data: DeleteItemService,
+    private sideBar:SideBarControlService
   ) {}
     cargarContenidoModulo(contenido){
       this.cardsModulosPers=[];
@@ -34,10 +37,28 @@ export class CustomModuleComponent implements OnInit {
         this.cardsModulosPers.push(newCon);
       }
     }
+  
+    cargarNombreModulo(){
+      this.route.parent.parent.parent.data.subscribe({
+        next:(data)=>{
+          if(data.modules.status==200){
+            for(let modulo of data.modules.body){
+              if(modulo.id_modulo==this.idModulo){
+                this.nombreModulo=modulo.nombre_modulo;
+              }
+            }
+          }
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
+    }
   ngOnInit(): void {
     this.route.params.subscribe((param)=>{
       this.idModulo=param["idModulo"];
       console.log("idMOdulo"+String(this.idModulo));
+      this.cargarNombreModulo();
     })
     this.route.data.subscribe({
       next:(data)=>{
@@ -69,8 +90,8 @@ export class CustomModuleComponent implements OnInit {
     
   }
   eliminarCustom() {}
-  verlistar() {
-    this.router.navigate(["detail"], { relativeTo: this.route });
+  verlistar(contenidoModulo:ContentModule) {
+    this.router.navigate(["detail",contenidoModulo.id], { relativeTo: this.route });
   }
 
   editarPorcentajes() {
@@ -79,13 +100,12 @@ export class CustomModuleComponent implements OnInit {
         const dialogRef = this.dialog.open(CustomModuleRubricComponent, {
           width: "400px",
           data: {
-            rubricas: data.content.body,
+            rubricas: this.cardsModulosPers
           },
         });
         dialogRef.afterClosed().subscribe((result) => {
           if (result !== "" && result != null && result !== "undefined") {
-            data.content.body = result;
-            this.cargarContenidoModulo(result);
+            this.cardsModulosPers=result;
           }
         });
       },

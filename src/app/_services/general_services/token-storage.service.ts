@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 const TOKEN_DOCENTE="token_doc";
 const TOKEN_USER="token_user";
 @Injectable({
@@ -6,9 +7,10 @@ const TOKEN_USER="token_user";
 })
 export class TokenStorageService {
 
-  constructor() { }
+  constructor(private router:Router) { }
   signOut(){
     window.sessionStorage.clear();
+    this.router.navigate(["/"]);
   }
   public saveToken(token:string){
     window.sessionStorage.removeItem(TOKEN_DOCENTE);
