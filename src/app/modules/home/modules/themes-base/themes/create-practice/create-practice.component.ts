@@ -22,7 +22,8 @@ import { PracticesService } from "../../../../../../_services/teacher_services/p
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
-  repository:any=[];
+  total = 0;
+  repository: any = [];
   showSpinner = false;
   // startDate = new Date(1990, 0, 1);
   // endDate = new Date(1990, 0, 1);
@@ -81,15 +82,13 @@ export class CreatePracticeComponent implements OnInit {
       this.idLeccion = param["idLeccion"];
     });
     this.route.data.subscribe({
-      next:(data)=>{
-        if(data.repository.status==200){
-          this.repository=data.repository.body;
+      next: (data) => {
+        if (data.repository.status == 200) {
+          this.repository = data.repository.body;
         }
       },
-      error:(err)=>{
-
-      }
-    })
+      error: (err) => {},
+    });
   }
   generateId(): string {
     // Alphanumeric characters
@@ -119,7 +118,7 @@ export class CreatePracticeComponent implements OnInit {
           console.log(this.preguntas);
           stepper.next();
         }
-        
+
         console.log(b);
 
         break;
@@ -131,7 +130,7 @@ export class CreatePracticeComponent implements OnInit {
     }
   }
   //Editar una pregunta
-  editarPregunta(pregunta:Pregunta) {
+  editarPregunta(pregunta: Pregunta) {
     const dialogRef = this.dialog.open(CustomQuestionComponent, {
       width: "1000px",
       maxHeight: "80vh",
@@ -186,7 +185,7 @@ export class CreatePracticeComponent implements OnInit {
       }
     });
   }
-  cambiarFecha(){    
+  cambiarFecha() {
     this.paso1.fechaini = this.Date_toDMY(this.paso1.fechaini);
     this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafin);
   }
@@ -194,18 +193,17 @@ export class CreatePracticeComponent implements OnInit {
     const dialogRef = this.dialog.open(RepositoryQuestionComponent, {
       width: "1000px",
       maxHeight: "80vh",
-      data:{
-        repository:this.repository
-      }
+      data: {
+        repository: this.repository,
+      },
     });
-    dialogRef.afterClosed().subscribe((result)=>{
-      if(result!==""&&result!=="undefined"&&result!=null){
-        for(let pregunta of result){
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== "" && result !== "undefined" && result != null) {
+        for (let pregunta of result) {
           this.preguntas.push(pregunta);
         }
       }
-      
-    })
+    });
   }
 
   //Funciones paso 1
@@ -259,32 +257,30 @@ export class CreatePracticeComponent implements OnInit {
   }
   //////////////////////////////
   Date_toYMD(date: string) {
-    var fecha=date.split("/");
-      return fecha[2] + "-" + fecha[1] + "-" + fecha[0];
-    
+    var fecha = date.split("/");
+    return fecha[2] + "-" + fecha[1] + "-" + fecha[0];
   }
   Date_toDMY(date: any) {
-    var datos=String(date).split("/");
-    if(datos.length!=3){
+    var datos = String(date).split("/");
+    if (datos.length != 3) {
       var year, month, day;
-    year = String(date.getFullYear());
-    month = String(date.getMonth() + 1);
-    if (month.length == 1) {
-      month = "0" + month;
-    }
-    day = String(date.getDate());
-    if (day.length == 1) {
-      day = "0" + day;
-    }
-    return day + "/" + month + "/" + year;
-    }
-    else{
+      year = String(date.getFullYear());
+      month = String(date.getMonth() + 1);
+      if (month.length == 1) {
+        month = "0" + month;
+      }
+      day = String(date.getDate());
+      if (day.length == 1) {
+        day = "0" + day;
+      }
+      return day + "/" + month + "/" + year;
+    } else {
       return date;
     }
   }
   Hour_toMYSQL(time) {
     var partTime = time.split(" ");
-    if(partTime.length==2){
+    if (partTime.length == 2) {
       if (partTime[1] === "PM") {
         var horasplit = partTime[0].split(":");
         if (horasplit[0] === "12") {
@@ -300,8 +296,7 @@ export class CreatePracticeComponent implements OnInit {
           return partTime[0];
         }
       }
-    }
-    else{
+    } else {
       return time;
     }
   }
