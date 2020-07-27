@@ -10,8 +10,10 @@ import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.comp
   styleUrls: ["./default.component.scss"],
 })
 export class DefaultComponent implements OnInit {
+  cargando:boolean=true;
   
   @ViewChild('sidenav') public sidenav: SidebarComponent;
+  // @ViewChild('loading') public loading: SidebarComponent;
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
   constructor(private serv:SideBarControlService) {}
