@@ -42,7 +42,11 @@ export class QualificationComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild("TABLE", { static: false }) TABLE: ElementRef;
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private data: SharedService
+  ) {}
   cargarDatosBody(data) {
     console.log(data);
   }

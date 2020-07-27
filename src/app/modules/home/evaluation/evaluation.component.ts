@@ -26,7 +26,7 @@ import { WarningDialogComponent } from "../../dialogs/simple-dialogs/warning-dia
   styleUrls: ["./evaluation.component.scss"],
 })
 export class EvaluationComponent implements OnInit {
-  controlPuntuacion100: number = 1;
+  controlPuntuacion100: number = 0;
   link: string = "Evaluation";
   colorNoDisponible: "#838282";
   getImageUrl(image) {
