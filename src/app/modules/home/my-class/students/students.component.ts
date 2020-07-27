@@ -16,6 +16,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { ListaEstudiante } from "src/app/models/Teacher/MyClass/ListaEstudiante";
 import { MyClassService } from "src/app/_services/teacher_services/my-class.service";
 import { THIS_EXPR, IfStmt } from "@angular/compiler/src/output/output_ast";
+import { SharedService } from "src/app/shared/shared.service";
 
 export interface ListaDeEstudiantes {
   nombre: string;
@@ -42,6 +43,7 @@ export class StudentsComponent implements OnInit {
     "promedio",
     "id",
   ];
+  link: string = "My class / Students";
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -55,7 +57,8 @@ export class StudentsComponent implements OnInit {
     private tokenServ: TokenStorageService,
     private router: Router,
     private stService: ActivatedRoute,
-    private servEst: MyClassService
+    private servEst: MyClassService,
+    private dataLink: SharedService
   ) {}
   agregarListaEstudiantes(data) {
     for (let i in data) {
@@ -86,6 +89,7 @@ export class StudentsComponent implements OnInit {
     });
   }
   ngOnInit() {
+    this.dataLink.changeMessage(this.link);
     if (this.tokenServ.getToken() === "undefined") {
       this.router.navigate(["/"]);
       return false;

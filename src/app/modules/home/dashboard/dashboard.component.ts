@@ -7,9 +7,10 @@ import { MultiDataSet, Label } from "ng2-charts";
 // import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 // import { MultiDataSet, Label } from 'ng2-charts';
 import { ChartOptions, ChartDataSets } from "chart.js";
-import { ActivatedRoute } from '@angular/router';
-import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
-import { PracticeDashboard } from 'src/app/models/DashBoard/PracticeDashboard';
+import { ActivatedRoute } from "@angular/router";
+import { TokenStorageService } from "src/app/_services/general_services/token-storage.service";
+import { PracticeDashboard } from "src/app/models/DashBoard/PracticeDashboard";
+import { SharedService } from "src/app/shared/shared.service";
 
 @Component({
   selector: "app-dashboard",
@@ -28,8 +29,8 @@ import { PracticeDashboard } from 'src/app/models/DashBoard/PracticeDashboard';
 
 // }
 export class DashboardComponent implements OnInit {
-  practicas:PracticeDashboard[]=[];
-  link = "Dashboard";
+  practicas: PracticeDashboard[] = [];
+  // link = "Dashboard";
   public doughnutChartType: ChartType = "doughnut";
 
   public doughnutChartLabels: Label[] = ["Yes", "No"];
@@ -87,6 +88,7 @@ export class DashboardComponent implements OnInit {
   barChartType: ChartType = "bar";
   barChartLegend = true;
   // public barChartPlugins = [pluginDataLabels];
+  link: string = "Dashboard";
 
   barChartData: ChartDataSets[] = [
     {
@@ -98,33 +100,33 @@ export class DashboardComponent implements OnInit {
     },
   ];
   constructor(
-    private route:ActivatedRoute,
-    private tokenServ:TokenStorageService
+    private route: ActivatedRoute,
+    private tokenServ: TokenStorageService
   ) {}
-  cargarDatosPractica(){
-    this.practicas=[];
+  cargarDatosPractica() {
+    this.practicas = [];
     this.route.data.subscribe({
-      next:(data)=>{
-        if(data.practices.status==200){
-          for(let practica of data.practices.body){
-            let newPrac=new PracticeDashboard();
-            newPrac.idPractica=practica.id_practica;
-            newPrac.nombrePractica=practica.nombre_practica;
-            var a=practica.aprobados as number;
-            var r=practica.reprobados as number;
-            var n=0;
-            newPrac.datos=[[a,r,n]]
+      next: (data) => {
+        if (data.practices.status == 200) {
+          for (let practica of data.practices.body) {
+            let newPrac = new PracticeDashboard();
+            newPrac.idPractica = practica.id_practica;
+            newPrac.nombrePractica = practica.nombre_practica;
+            var a = practica.aprobados as number;
+            var r = practica.reprobados as number;
+            var n = 0;
+            newPrac.datos = [[a, r, n]];
             this.practicas.push(newPrac);
           }
         }
       },
-      error:(err)=>{
-        if(err.status==401){
+      error: (err) => {
+        if (err.status == 401) {
           this.tokenServ.signOut();
         }
         console.log(err);
-      }
-    })
+      },
+    });
   }
   ngOnInit() {
     this.cargarDatosPractica();
@@ -150,5 +152,4 @@ export class DashboardComponent implements OnInit {
   }): void {
     console.log(event, active);
   }
-  
 }

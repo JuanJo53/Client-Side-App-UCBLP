@@ -10,15 +10,15 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { LoadingComponent } from 'src/app/shared/components/loading/loading.component';
-import { LoadingService } from 'src/app/_services/loading.service';
+import { LoadingComponent } from "src/app/shared/components/loading/loading.component";
+import { LoadingService } from "src/app/_services/loading.service";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('loading') public loading: LoadingComponent;
+  @ViewChild("loading") public loading: LoadingComponent;
   //-----variables
   textoLogo: string = "UCB English";
   imagenLogo: string = "assets/logo.png";
@@ -36,9 +36,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private servLoading:LoadingService
-  ) //private data: ErrorDialogComponent
-  {}
+    private servLoading: LoadingService //private data: ErrorDialogComponent
+  ) {}
   ngOnInit() {
     console.log(this.tokenStorage.getToken());
     if (
@@ -65,11 +64,10 @@ export class LoginComponent implements OnInit {
           this.simpleAlert();
           console.log("No se pudo iniciar sesión");
         } else {
-          const nav=this.router.navigate(["/classroom"]);
-          nav.then((data)=>{
-            
-          this.servLoading.desactivar();
-          })
+          const nav = this.router.navigate(["/classroom"]);
+          nav.then((data) => {
+            this.servLoading.desactivar();
+          });
         }
       },
       error: (error) => console.log(error),

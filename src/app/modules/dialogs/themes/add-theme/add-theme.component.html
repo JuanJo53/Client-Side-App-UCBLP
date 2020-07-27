@@ -9,22 +9,29 @@
       <mat-form-field appearance="outline">
         <mat-label>Theme's name</mat-label>
         <!-- Input para el nombre del tema-->
-        <input type="text" class="input-form" matInput placeholder="Name" name="nombreTema" [(ngModel)]="nombreTema" />
+        <input
+          type="text"
+          class="input-form"
+          matInput
+          placeholder="Name"
+          name="nombreTema"
+          [(ngModel)]="nombreTema"
+        />
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
-      <div class="dialog__container-image">
+      <!-- <div class="dialog__container-image">
         <div class="dialog__container-image--left-side">
           <img [src]="imageUrl" class="settings-image" />
         </div>
-        <div class="dialog__container-image--right-side">
-          <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)"> -->
-          <input #csvInput hidden="true" type="file" onclick="this.value=null"
+        <div class="dialog__container-image--right-side"> -->
+      <!-- <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)"> -->
+      <!-- <input #csvInput hidden="true" type="file" onclick="this.value=null"
             (change)="handleFileInput($event.target.files)" accept=".jpg" />
           <button class="dialog-circular-button" mat-mini-fab (click)="csvInput.click()">
             <mat-icon class="dialog-circular-button__icon">image</mat-icon>
           </button>
         </div>
-      </div>
+      </div> -->
     </form>
   </mat-dialog-content>
   <mat-dialog-actions align="end">

@@ -88,6 +88,8 @@ import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-car
 import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/detail-table/detail-table.component";
 import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
 import { LoadingComponent } from "src/app/shared/components/loading/loading.component";
+import { GoodDialogComponent } from "src/app/modules/dialogs/simple-dialogs/good-dialog/good-dialog.component";
+import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
 
 @NgModule({
   declarations: [
@@ -149,7 +151,9 @@ import { LoadingComponent } from "src/app/shared/components/loading/loading.comp
     CustomModuleRubricComponent,
     AddCardComponent,
     DetailTableComponent,
-    DetailIndividualComponent
+    DetailIndividualComponent,
+    GoodDialogComponent,
+    WarningDialogComponent,
   ],
   imports: [
     CommonModule,

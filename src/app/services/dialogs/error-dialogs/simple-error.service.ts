@@ -3,12 +3,11 @@ import { BehaviorSubject } from "rxjs";
 @Injectable({
   providedIn: "root",
 })
-export class DeleteItemService {
+export class SimpleErrorService {
   private messageSource = new BehaviorSubject<string>("default msg");
   currentMessage = this.messageSource.asObservable();
-
   constructor() {}
-  changeMessage(mensajeDialog: string) {
-    this.messageSource.next(mensajeDialog);
+  changeMessage(nombreItem: string) {
+    this.messageSource.next(nombreItem);
   }
 }
