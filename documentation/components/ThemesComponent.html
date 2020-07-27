@@ -1,0 +1,1386 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ThemesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/home/modules/themes-base/themes/themes.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-themes</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./themes.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./themes.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cardStatus">cardStatus</a>
+                            </li>
+                            <li>
+                                <a href="#cardTheme">cardTheme</a>
+                            </li>
+                            <li>
+                                <a href="#descripcion">descripcion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                <a href="#idCurso">idCurso</a>
+                            </li>
+                            <li>
+                                <a href="#item">item</a>
+                            </li>
+                            <li>
+                                <a href="#tema">tema</a>
+                            </li>
+                            <li>
+                                <a href="#themeCards">themeCards</a>
+                            </li>
+                            <li>
+                                <a href="#themeImages">themeImages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addThemesCards">addThemesCards</a>
+                            </li>
+                            <li>
+                                <a href="#addThemesImages">addThemesImages</a>
+                            </li>
+                            <li>
+                                <a href="#agregarTemas">agregarTemas</a>
+                            </li>
+                            <li>
+                                <a href="#configuraciones">configuraciones</a>
+                            </li>
+                            <li>
+                                <a href="#eliminar">eliminar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#verContenido">verContenido</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: MatDialog, data: <a href="../injectables/DeleteItemService.html">DeleteItemService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DeleteItemService.html" target="_self" >DeleteItemService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addThemesCards"></a>
+                    <span class="name">
+                        <b>
+                            addThemesCards
+                        </b>
+                        <a href="#addThemesCards"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addThemesCards(data, idCurso: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>idCurso</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addThemesImages"></a>
+                    <span class="name">
+                        <b>
+                            addThemesImages
+                        </b>
+                        <a href="#addThemesImages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addThemesImages(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarTemas"></a>
+                    <span class="name">
+                        <b>
+                            agregarTemas
+                        </b>
+                        <a href="#agregarTemas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarTemas()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuraciones"></a>
+                    <span class="name">
+                        <b>
+                            configuraciones
+                        </b>
+                        <a href="#configuraciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>configuraciones(tema)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tema</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminar"></a>
+                    <span class="name">
+                        <b>
+                            eliminar
+                        </b>
+                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminar(idTema)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idTema</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verContenido"></a>
+                    <span class="name">
+                        <b>
+                            verContenido
+                        </b>
+                        <a href="#verContenido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verContenido(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardStatus"></a>
+                        <span class="name">
+                            <b>
+                            cardStatus</b>
+                            <a href="#cardStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardTheme"></a>
+                        <span class="name">
+                            <b>
+                            cardTheme</b>
+                            <a href="#cardTheme"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CardThemes.html" target="_self" >CardThemes</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    id: 0,
+    titulo: &quot;&quot;,
+    subtitulo: &quot;&quot;,
+    color: &quot;&quot;,
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="descripcion"></a>
+                        <span class="name">
+                            <b>
+                            descripcion</b>
+                            <a href="#descripcion"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;Present&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="idCurso"></a>
+                        <span class="name">
+                            <b>
+                            idCurso</b>
+                            <a href="#idCurso"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="item"></a>
+                        <span class="name">
+                            <b>
+                            item</b>
+                            <a href="#item"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;theme&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tema"></a>
+                        <span class="name">
+                            <b>
+                            tema</b>
+                            <a href="#tema"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;Theme 1&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="themeCards"></a>
+                        <span class="name">
+                            <b>
+                            themeCards</b>
+                            <a href="#themeCards"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Theme.html" target="_self" >Theme[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="themeImages"></a>
+                        <span class="name">
+                            <b>
+                            themeImages</b>
+                            <a href="#themeImages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CardImage.html" target="_self" >CardImage[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/themes.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { CardThemes } from &quot;src/app/models/CardThemes&quot;;
+import { Router, ActivatedRoute } from &quot;@angular/router&quot;;
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from &quot;@angular/material/dialog&quot;;
+import { DeleteCardComponent } from &quot;../../../../dialogs/delete-card/delete-card.component&quot;;
+import { AddThemeComponent } from &quot;../../../../dialogs/themes/add-theme/add-theme.component&quot;;
+import { ConfigureThemeComponent } from &quot;../../../../dialogs/themes/configure-theme/configure-theme.component&quot;;
+import { DeleteItemService } from &quot;../../../../../services/dialogs/delete-item.service&quot;;
+
+import { Theme } from &quot;src/app/models/Teacher/Modules/Theme&quot;;
+import { CardImage } from &quot;src/app/models/CardImage&quot;;
+@Component({
+  selector: &quot;app-themes&quot;,
+  templateUrl: &quot;./themes.component.html&quot;,
+  styleUrls: [&quot;./themes.component.scss&quot;],
+})
+export class ThemesComponent implements OnInit {
+  //----variables-----
+  cardStatus: boolean &#x3D; false;
+  tema &#x3D; &quot;Theme 1&quot;;
+  descripcion &#x3D; &quot;Present&quot;;
+
+  item &#x3D; &quot;theme&quot;;
+  idCurso: string;
+  themeCards: Theme[] &#x3D; [];
+  themeImages: CardImage[] &#x3D; [];
+  cardTheme: CardThemes &#x3D; {
+    id: 0,
+    titulo: &quot;&quot;,
+    subtitulo: &quot;&quot;,
+    color: &quot;&quot;,
+  };
+  constructor(
+    public dialog: MatDialog,
+    private data: DeleteItemService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+  addThemesImages(data) {
+    for (let i in data) {
+      let newImgT &#x3D; new CardImage();
+      newImgT.idImagen &#x3D; data[i].id_imagen;
+      newImgT.url &#x3D; data[i].imagen;
+      this.themeImages.push(newImgT);
+    }
+  }
+  addThemesCards(data, idCurso: string) {
+    this.themeCards &#x3D; [];
+    for (let i in data) {
+      let newCardTheme &#x3D; new Theme();
+      newCardTheme.idImagen &#x3D; data[i].id_imagen;
+      newCardTheme.idTema &#x3D; data[i].id_tema;
+      newCardTheme.nombreTema &#x3D; data[i].nombre_tema;
+      newCardTheme.numeroTema &#x3D; data[i].numero_tema;
+      newCardTheme.idCurso &#x3D; idCurso;
+      newCardTheme.estado &#x3D; data[i].estado_tema;
+      this.themeCards.push(newCardTheme);
+    }
+  }
+  ngOnInit(): void {
+    this.data.changeMessage(this.item);
+    this.route.parent.parent.parent.params.subscribe((param) &#x3D;&gt; {
+      this.idCurso &#x3D; param[&quot;idCurso&quot;];
+      console.log(param);
+      this.route.data.subscribe({
+        next: (data) &#x3D;&gt; {
+          this.addThemesCards(data.themes.body, this.idCurso);
+          this.addThemesImages(data.images.body);
+        },
+        error: (error) &#x3D;&gt; {
+          console.log(error.error);
+        },
+      });
+    });
+  }
+  //----#variables-----
+  //-----funciones-----
+
+  agregarTemas() {
+    const dialogRef &#x3D; this.dialog.open(AddThemeComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        idCurso: this.idCurso,
+        images: this.themeImages,
+        numero_tema: this.themeCards.length,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      var route &#x3D; this.route;
+      console.log(result);
+      if (result !&#x3D;&#x3D; &quot;&quot; &amp;&amp; result !&#x3D; null &amp;&amp; result !&#x3D;&#x3D; &quot;undefined&quot;) {
+        route.data.subscribe({
+          next: (data) &#x3D;&gt; {
+            data.themes.body &#x3D; result;
+            console.log(data);
+            this.addThemesCards(result, this.idCurso);
+          },
+          error: (error) &#x3D;&gt; {
+            console.log(&quot;No se pudieron obtener las lecciones&quot;);
+          },
+        });
+      }
+      console.log(&#x60;Dialog result: ${result}&#x60;);
+    });
+  }
+  configuraciones(tema) {
+    const dialogRef &#x3D; this.dialog.open(ConfigureThemeComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        tema: tema,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      if (result !&#x3D; &quot;&quot;) {
+        this.route.data.subscribe({
+          next: (data) &#x3D;&gt; {
+            console.log(data.themes.body);
+            console.log(result);
+            data.themes.body &#x3D; result;
+          },
+          error: (error) &#x3D;&gt; {
+            console.log(&quot;no se pudo modificar el tema&quot;);
+          },
+        });
+      }
+    });
+  }
+  verContenido(id: number) {
+    //[where i wanna go] ,{where i am}
+
+    this.router.navigate([id], { relativeTo: this.route });
+  }
+  eliminar(idTema) {
+    const dialogRef &#x3D; this.dialog.open(DeleteCardComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        idTema: idTema,
+        tipo: &quot;theme&quot;,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      var temas &#x3D; this.themeCards;
+      var route &#x3D; this.route;
+      if (result !&#x3D; &quot;&quot;) {
+        route.data.subscribe({
+          next: (data) &#x3D;&gt; {
+            data.themes.body.find(function (valor, index) {
+              console.log(valor.id_tema);
+              if (valor.id_tema &#x3D;&#x3D; idTema) {
+                data.themes.body.splice(index, 1);
+                temas.splice(index, 1);
+                return true;
+              }
+            });
+          },
+          error: (error) &#x3D;&gt; {
+            console.log(&quot;No se pudieron obtener las lecciones&quot;);
+          },
+        });
+      }
+      console.log(&#x60;Dialog result: ${result}&#x60;);
+    });
+  }
+  //-----#funciones-----
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;!--Subtitle lesson--&gt;
+  &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
+      &lt;span&gt;Themes&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__buttons-container&quot;&gt;
+      &lt;!--Add button--&gt;
+      &lt;button
+        class&#x3D;&quot;circular-button-subtitle&quot;
+        mat-mini-fab
+        (click)&#x3D;&quot;agregarTemas()&quot;
+      &gt;
+        &lt;mat-icon class&#x3D;&quot;circular-button-subtitle__icon&quot;&gt;add&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;!--#Add button--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#Subtitle lesson--&gt;
+  &lt;!--row--&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let cards of themeCards&quot; class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;!--custom-cards  #D77A61  --&gt;
+      &lt;div class&#x3D;&quot;custom-card--themes&quot;&gt;
+        &lt;div class&#x3D;&quot;custom-card--themes__img&quot;&gt;
+          &lt;div class&#x3D;&quot;custom-card--themes__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;custom-card--themes__buttons-card&quot;&gt;
+              &lt;!--btn ver contenido--&gt;
+              &lt;button
+                [ngStyle]&#x3D;&quot;{
+                  &#x27;background-color&#x27;:
+                    cards.estado &#x3D;&#x3D; 2 ? &#x27;#808080&#x27; : &#x27;transparent&#x27;
+                }&quot;
+                [disabled]&#x3D;&quot;cards.estado &#x3D;&#x3D; 2&quot;
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;verContenido(cards.idTema)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  remove_red_eye
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn ver contenido--&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuraciones(cards)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+              &lt;!--btn eliminar--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                [ngStyle]&#x3D;&quot;{
+                  &#x27;background-color&#x27;:
+                    cards.estado &#x3D;&#x3D; 2 ? &#x27;transparent&#x27; : &#x27;#808080&#x27;
+                }&quot;
+                [disabled]&#x3D;&quot;cards.estado &#x3D;&#x3D; 2&quot;
+                (click)&#x3D;&quot;eliminar(cards.idTema)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  delete
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn eliminar--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--themes__content-card&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--themes__description-theme&quot;&gt;
+              &lt;span class&#x3D;&quot;custom-card--themes__description-theme--title&quot;
+                &gt;Theme {{ cards.numeroTema }}&lt;/span
+              &gt;
+              &lt;span class&#x3D;&quot;custom-card--themes__description-theme--subtitle&quot;&gt;
+                {{ cards.nombreTema }}
+              &lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--#custom-cards--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#row--&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./themes.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle lesson-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Themes</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button        class="circular-button-subtitle"        mat-mini-fab        (click)="agregarTemas()"      >        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle lesson-->  <!--row-->  <div class="row">    <div *ngFor="let cards of themeCards" class="col-lg-3 col-md-6 col-xs-12">      <!--custom-cards  #D77A61  -->      <div class="custom-card--themes">        <div class="custom-card--themes__img">          <div class="custom-card--themes__img-overlay">            <div class="custom-card--themes__buttons-card">              <!--btn ver contenido-->              <button                [ngStyle]="{                  \'background-color\':                    cards.estado == 2 ? \'#808080\' : \'transparent\'                }"                [disabled]="cards.estado == 2"                class="circular-button-custom-card"                (click)="verContenido(cards.idTema)"              >                <mat-icon class="circular-button-custom-card__icon">                  remove_red_eye                </mat-icon>              </button>              <!--#btn ver contenido-->              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->              <!--btn eliminar-->              <button                class="circular-button-custom-card"                [ngStyle]="{                  \'background-color\':                    cards.estado == 2 ? \'transparent\' : \'#808080\'                }"                [disabled]="cards.estado == 2"                (click)="eliminar(cards.idTema)"              >                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--themes__content-card"></div>            <div class="custom-card--themes__description-theme">              <span class="custom-card--themes__description-theme--title"                >Theme {{ cards.numeroTema }}</span              >              <span class="custom-card--themes__description-theme--subtitle">                {{ cards.nombreTema }}              </span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ThemesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ThemesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

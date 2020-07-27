@@ -1,0 +1,2453 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EvaluationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/home/evaluation/evaluation.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-evaluation</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./evaluation.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./evaluation.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cardsModulosPers">cardsModulosPers</a>
+                            </li>
+                            <li>
+                                <a href="#cardsModulosPred">cardsModulosPred</a>
+                            </li>
+                            <li>
+                                <a href="#colores">colores</a>
+                            </li>
+                            <li>
+                                <a href="#colorNoDisponible">colorNoDisponible</a>
+                            </li>
+                            <li>
+                                <a href="#controlPuntuacion100">controlPuntuacion100</a>
+                            </li>
+                            <li>
+                                <a href="#customCards">customCards</a>
+                            </li>
+                            <li>
+                                <a href="#defaultCard">defaultCard</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                <a href="#idCurso">idCurso</a>
+                            </li>
+                            <li>
+                                <a href="#images">images</a>
+                            </li>
+                            <li>
+                                <a href="#link">link</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargarColores">cargarColores</a>
+                            </li>
+                            <li>
+                                <a href="#cargarDatos">cargarDatos</a>
+                            </li>
+                            <li>
+                                <a href="#cargarImagenes">cargarImagenes</a>
+                            </li>
+                            <li>
+                                <a href="#configuracionModulo">configuracionModulo</a>
+                            </li>
+                            <li>
+                                <a href="#configuracionModuloPersonalizado">configuracionModuloPersonalizado</a>
+                            </li>
+                            <li>
+                                <a href="#customModulo">customModulo</a>
+                            </li>
+                            <li>
+                                <a href="#editarPorcentajes">editarPorcentajes</a>
+                            </li>
+                            <li>
+                                <a href="#eliminar">eliminar</a>
+                            </li>
+                            <li>
+                                <a href="#errorAlert">errorAlert</a>
+                            </li>
+                            <li>
+                                <a href="#getImageIndex">getImageIndex</a>
+                            </li>
+                            <li>
+                                <a href="#getImageUrl">getImageUrl</a>
+                            </li>
+                            <li>
+                                <a href="#goodAlert">goodAlert</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#sacarColor">sacarColor</a>
+                            </li>
+                            <li>
+                                <a href="#updateModulesPers">updateModulesPers</a>
+                            </li>
+                            <li>
+                                <a href="#updateModulesPred">updateModulesPred</a>
+                            </li>
+                            <li>
+                                <a href="#warningAlert">warningAlert</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tokenServ: <a href="../injectables/TokenStorageService.html">TokenStorageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, mdServ: <a href="../injectables/EvaluationService.html">EvaluationService</a>, dialog: MatDialog, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, servNav: <a href="../injectables/SideBarControlService.html">SideBarControlService</a>, data: <a href="../injectables/SharedService.html">SharedService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tokenServ</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TokenStorageService.html" target="_self" >TokenStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mdServ</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EvaluationService.html" target="_self" >EvaluationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>servNav</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SideBarControlService.html" target="_self" >SideBarControlService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SharedService.html" target="_self" >SharedService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarColores"></a>
+                    <span class="name">
+                        <b>
+                            cargarColores
+                        </b>
+                        <a href="#cargarColores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarColores(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarDatos"></a>
+                    <span class="name">
+                        <b>
+                            cargarDatos
+                        </b>
+                        <a href="#cargarDatos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarDatos(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarImagenes"></a>
+                    <span class="name">
+                        <b>
+                            cargarImagenes
+                        </b>
+                        <a href="#cargarImagenes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarImagenes(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:157</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuracionModulo"></a>
+                    <span class="name">
+                        <b>
+                            configuracionModulo
+                        </b>
+                        <a href="#configuracionModulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>configuracionModulo(modulo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modulo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuracionModuloPersonalizado"></a>
+                    <span class="name">
+                        <b>
+                            configuracionModuloPersonalizado
+                        </b>
+                        <a href="#configuracionModuloPersonalizado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>configuracionModuloPersonalizado(modulo: <a href="../classes/Module.html">Module</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="217"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:217</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modulo</td>
+                                    <td>
+                                                <code><a href="../classes/Module.html" target="_self" >Module</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customModulo"></a>
+                    <span class="name">
+                        <b>
+                            customModulo
+                        </b>
+                        <a href="#customModulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>customModulo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editarPorcentajes"></a>
+                    <span class="name">
+                        <b>
+                            editarPorcentajes
+                        </b>
+                        <a href="#editarPorcentajes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editarPorcentajes()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="241"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:241</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminar"></a>
+                    <span class="name">
+                        <b>
+                            eliminar
+                        </b>
+                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminar(modulo: <a href="../classes/Module.html">Module</a>, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="262"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:262</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modulo</td>
+                                    <td>
+                                                <code><a href="../classes/Module.html" target="_self" >Module</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorAlert"></a>
+                    <span class="name">
+                        <b>
+                            errorAlert
+                        </b>
+                        <a href="#errorAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>errorAlert()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="286"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:286</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getImageIndex"></a>
+                    <span class="name">
+                        <b>
+                            getImageIndex
+                        </b>
+                        <a href="#getImageIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getImageIndex(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getImageUrl"></a>
+                    <span class="name">
+                        <b>
+                            getImageUrl
+                        </b>
+                        <a href="#getImageUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getImageUrl(image)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>image</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goodAlert"></a>
+                    <span class="name">
+                        <b>
+                            goodAlert
+                        </b>
+                        <a href="#goodAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goodAlert()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="296"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:296</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sacarColor"></a>
+                    <span class="name">
+                        <b>
+                            sacarColor
+                        </b>
+                        <a href="#sacarColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sacarColor(id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="278"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:278</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateModulesPers"></a>
+                    <span class="name">
+                        <b>
+                            updateModulesPers
+                        </b>
+                        <a href="#updateModulesPers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateModulesPers(modulo: <a href="../classes/Module.html">Module</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modulo</td>
+                                    <td>
+                                                <code><a href="../classes/Module.html" target="_self" >Module</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateModulesPred"></a>
+                    <span class="name">
+                        <b>
+                            updateModulesPred
+                        </b>
+                        <a href="#updateModulesPred"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateModulesPred(modulo: <a href="../classes/Module.html">Module</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modulo</td>
+                                    <td>
+                                                <code><a href="../classes/Module.html" target="_self" >Module</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="warningAlert"></a>
+                    <span class="name">
+                        <b>
+                            warningAlert
+                        </b>
+                        <a href="#warningAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>warningAlert()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="306"
+                            class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:306</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardsModulosPers"></a>
+                        <span class="name">
+                            <b>
+                            cardsModulosPers</b>
+                            <a href="#cardsModulosPers"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Module.html" target="_self" >Module[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cardsModulosPred"></a>
+                        <span class="name">
+                            <b>
+                            cardsModulosPred</b>
+                            <a href="#cardsModulosPred"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Module.html" target="_self" >Module[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colores"></a>
+                        <span class="name">
+                            <b>
+                            colores</b>
+                            <a href="#colores"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CardColor.html" target="_self" >CardColor[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colorNoDisponible"></a>
+                        <span class="name">
+                            <b>
+                            colorNoDisponible</b>
+                            <a href="#colorNoDisponible"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="controlPuntuacion100"></a>
+                        <span class="name">
+                            <b>
+                            controlPuntuacion100</b>
+                            <a href="#controlPuntuacion100"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="customCards"></a>
+                        <span class="name">
+                            <b>
+                            customCards</b>
+                            <a href="#customCards"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Module.html" target="_self" >Module[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="defaultCard"></a>
+                        <span class="name">
+                            <b>
+                            defaultCard</b>
+                            <a href="#defaultCard"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/EvaluationCard.html" target="_self" >EvaluationCard[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      id_evaluationCard: 1,
+      titulo: &quot;Attendance&quot;,
+      porcentaje: &quot;10%&quot;,
+      colorFondo: &quot;#9c5fafbf&quot;,
+      colorCirculo: &quot;#9c5faf&quot;,
+    },
+    {
+      id_evaluationCard: 2,
+      titulo: &quot;Themes&quot;,
+      porcentaje: &quot;20%&quot;,
+      colorFondo: &quot;#d77a61bf&quot;,
+      colorCirculo: &quot;#d77a61&quot;,
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:68</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="idCurso"></a>
+                        <span class="name">
+                            <b>
+                            idCurso</b>
+                            <a href="#idCurso"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="images"></a>
+                        <span class="name">
+                            <b>
+                            images</b>
+                            <a href="#images"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CardImage.html" target="_self" >CardImage[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="link"></a>
+                        <span class="name">
+                            <b>
+                            link</b>
+                            <a href="#link"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;Evaluation&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/modules/home/evaluation/evaluation.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { EvaluationService } from &quot;src/app/_services/teacher_services/evaluation.service&quot;;
+import { ActivatedRoute, Router } from &quot;@angular/router&quot;;
+import { Route } from &quot;@angular/compiler/src/core&quot;;
+import { TokenStorageService } from &quot;src/app/_services/general_services/token-storage.service&quot;;
+import { Module } from &quot;src/app/models/Teacher/Evaluation/Module&quot;;
+import { CardColor } from &quot;src/app/models/CardColor&quot;;
+import { CardImage } from &quot;src/app/models/CardImage&quot;;
+import { EvaluationCard } from &quot;src/app/models/Teacher/EvaluationCard&quot;;
+import { MatDialog } from &quot;@angular/material/dialog&quot;;
+import { AddCustomModuleComponent } from &quot;../../dialogs/evaluation/add-custom-module/add-custom-module.component&quot;;
+import { EditCustomModuleComponent } from &quot;../../dialogs/evaluation/edit-custom-module/edit-custom-module.component&quot;;
+import { EditDefaultModuleComponent } from &quot;../../dialogs/evaluation/edit-default-module/edit-default-module.component&quot;;
+import { ModulesRubricComponent } from &quot;../../dialogs/evaluation/modules-rubric/modules-rubric.component&quot;;
+import { DeleteItemService } from &quot;../../../services/dialogs/delete-item.service&quot;;
+import { DeleteCardComponent } from &quot;../../dialogs/delete-card/delete-card.component&quot;;
+import { SideBarControlService } from &quot;src/app/_services/side-bar-control.service&quot;;
+import { SharedService } from &quot;src/app/shared/shared.service&quot;;
+import { ErrorDialogComponent } from &quot;../../dialogs/simple-dialogs/error-dialog/error-dialog.component&quot;;
+import { GoodDialogComponent } from &quot;../../dialogs/simple-dialogs/good-dialog/good-dialog.component&quot;;
+import { WarningDialogComponent } from &quot;../../dialogs/simple-dialogs/warning-dialog/warning-dialog.component&quot;;
+
+@Component({
+  selector: &quot;app-evaluation&quot;,
+  templateUrl: &quot;./evaluation.component.html&quot;,
+  styleUrls: [&quot;./evaluation.component.scss&quot;],
+})
+export class EvaluationComponent implements OnInit {
+  controlPuntuacion100: number &#x3D; 0;
+  link: string &#x3D; &quot;Evaluation&quot;;
+  colorNoDisponible: &quot;#838282&quot;;
+  getImageUrl(image) {
+    return &quot;url(&quot; + image + &quot;)&quot;;
+  }
+  getImageIndex(index: string) {
+    for (let image of this.images) {
+      if (image.idImagen &#x3D;&#x3D;&#x3D; index) {
+        return image.url;
+      }
+    }
+  }
+  defaultCard: EvaluationCard[] &#x3D; [
+    {
+      id_evaluationCard: 1,
+      titulo: &quot;Attendance&quot;,
+      porcentaje: &quot;10%&quot;,
+      colorFondo: &quot;#9c5fafbf&quot;,
+      colorCirculo: &quot;#9c5faf&quot;,
+    },
+    {
+      id_evaluationCard: 2,
+      titulo: &quot;Themes&quot;,
+      porcentaje: &quot;20%&quot;,
+      colorFondo: &quot;#d77a61bf&quot;,
+      colorCirculo: &quot;#d77a61&quot;,
+    },
+  ];
+  customCards: Module[] &#x3D; [];
+  idCurso &#x3D; &quot;&quot;;
+  cardsModulosPred: Module[] &#x3D; [];
+  cardsModulosPers: Module[] &#x3D; [];
+  colores: CardColor[] &#x3D; [];
+  images: CardImage[] &#x3D; [];
+  constructor(
+    private tokenServ: TokenStorageService,
+    private router: Router,
+    private mdServ: EvaluationService,
+    public dialog: MatDialog,
+    private route: ActivatedRoute,
+    private servNav: SideBarControlService,
+    private data: SharedService
+  ) {}
+  ngOnInit(): void {
+    if (this.controlPuntuacion100 &#x3D;&#x3D; 1) {
+      this.errorAlert();
+    }
+    this.data.changeMessage(this.link);
+    this.route.parent.params.subscribe((param) &#x3D;&gt; {
+      this.idCurso &#x3D; param[&quot;idCurso&quot;];
+    });
+    this.route.data.subscribe({
+      next: (data) &#x3D;&gt; {
+        this.cargarDatos(data.modules.body);
+        this.cargarImagenes(data.images.body);
+        this.cargarColores(data.colors.body);
+        //this.addModulesPers();
+        //this.cardsModulosPers[0].estado&#x3D;2;
+        //this.cardsModulosPers[0].idColor&#x3D;1;
+        //this.cardsModulosPers[0].nombreModulo&#x3D;&quot;Modulo per&quot;;
+        //this.cardsModulosPers[0].rubrica&#x3D;10;
+        //this.updateModulesPers(this.cardsModulosPers[0]);
+
+        //this.cardsModulosPred[0].idColor&#x3D;1;
+        //this.cardsModulosPred[0].estado&#x3D;2;
+        //this.cardsModulosPred[0].rubrica&#x3D;10;
+        //this.updateModulesPred(this.cardsModulosPred[0]);
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      },
+    });
+  }
+  updateModulesPers(modulo: Module) {
+    this.mdServ.updateModulePers(modulo).subscribe({
+      next: (data) &#x3D;&gt; {
+        console.log(data);
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      },
+    });
+  }
+  updateModulesPred(modulo: Module) {
+    this.mdServ.updateModulePred(modulo).subscribe({
+      next: (data) &#x3D;&gt; {
+        console.log(data);
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      },
+    });
+  }
+
+  cargarDatos(data) {
+    this.cardsModulosPred &#x3D; [];
+    this.cardsModulosPers &#x3D; [];
+    for (let i in data) {
+      let newModule &#x3D; new Module();
+      newModule.id &#x3D; data[i].id_modulo;
+      newModule.estado &#x3D; data[i].estado_modulo;
+      newModule.idColor &#x3D; data[i].id_color;
+      newModule.idImagen &#x3D; data[i].id_imagen;
+      newModule.nombreModulo &#x3D; data[i].nombre_modulo;
+      newModule.rubrica &#x3D; data[i].rubrica;
+      newModule.idTipoModulo &#x3D; data[i].id_tipo_modulo;
+      if (newModule.idTipoModulo &#x3D;&#x3D; 1) {
+        this.cardsModulosPred.push(newModule);
+      } else {
+        if (newModule.idTipoModulo &#x3D;&#x3D; 2) {
+          this.cardsModulosPers.push(newModule);
+        }
+      }
+    }
+    console.log(this.cardsModulosPers);
+    console.log(this.cardsModulosPred);
+  }
+
+  cargarColores(data) {
+    for (let i in data) {
+      let newCol &#x3D; new CardColor();
+      newCol.idColor &#x3D; data[i].id_color;
+      newCol.color &#x3D; data[i].valor;
+      this.colores.push(newCol);
+    }
+    console.log(this.colores);
+  }
+  cargarImagenes(data) {
+    for (let i in data) {
+      let newImg &#x3D; new CardImage();
+      newImg.idImagen &#x3D; data[i].id_imagen;
+      newImg.url &#x3D; data[i].imagen;
+      this.images.push(newImg);
+    }
+    console.log(this.images);
+  }
+
+  customModulo() {
+    const dialogRef &#x3D; this.dialog.open(AddCustomModuleComponent, {
+      width: &quot;500px&quot;,
+      data: {
+        colores: this.colores,
+        imagenes: this.images,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      if (result !&#x3D;&#x3D; &quot;&quot; &amp;&amp; result !&#x3D; null &amp;&amp; result !&#x3D;&#x3D; &quot;undefined&quot;) {
+        console.log(result);
+        this.route.data.subscribe({
+          next: (data) &#x3D;&gt; {
+            data.modules.body &#x3D; result;
+            this.cargarDatos(result);
+            this.servNav.modulos(result);
+          },
+          error: (error) &#x3D;&gt; {
+            console.log(&quot;No se pudieron obtener las lecciones&quot;);
+          },
+        });
+      }
+    });
+  }
+  configuracionModulo(modulo) {
+    const dialogRef &#x3D; this.dialog.open(EditDefaultModuleComponent, {
+      width: &quot;500px&quot;,
+      data: {
+        modulo: modulo,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      if (result !&#x3D;&#x3D; &quot;&quot; &amp;&amp; result !&#x3D; null &amp;&amp; result !&#x3D;&#x3D; &quot;undefined&quot;) {
+        console.log(result);
+        this.route.data.subscribe({
+          next: (data) &#x3D;&gt; {
+            data.modules.body &#x3D; result;
+            this.cargarDatos(result);
+            this.servNav.modulos(result);
+          },
+          error: (error) &#x3D;&gt; {
+            console.log(&quot;No se pudieron obtener las lecciones&quot;);
+          },
+        });
+      }
+    });
+  }
+
+  configuracionModuloPersonalizado(modulo: Module) {
+    const dialogRef &#x3D; this.dialog.open(EditCustomModuleComponent, {
+      width: &quot;500px&quot;,
+      data: {
+        modulo: modulo,
+        idCurso: this.idCurso,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      if (result !&#x3D;&#x3D; &quot;&quot; &amp;&amp; result !&#x3D; null &amp;&amp; result !&#x3D;&#x3D; &quot;undefined&quot;) {
+        console.log(result);
+        this.route.data.subscribe({
+          next: (data) &#x3D;&gt; {
+            data.modules.body &#x3D; result;
+            this.cargarDatos(result);
+            this.servNav.modulos(result);
+          },
+          error: (error) &#x3D;&gt; {
+            console.log(&quot;No se pudieron obtener las lecciones&quot;);
+          },
+        });
+      }
+    });
+  }
+  editarPorcentajes() {
+    this.route.data.subscribe({
+      next: (data) &#x3D;&gt; {
+        const dialogRef &#x3D; this.dialog.open(ModulesRubricComponent, {
+          width: &quot;400px&quot;,
+          data: {
+            modulosPred: this.cardsModulosPred,
+            modulosPers: this.cardsModulosPers,
+          },
+        });
+        dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+          if (result !&#x3D;&#x3D; &quot;&quot; &amp;&amp; result !&#x3D; null &amp;&amp; result !&#x3D;&#x3D; &quot;undefined&quot;) {
+            data.modules.body &#x3D; result;
+            this.cargarDatos(result);
+          }
+        });
+      },
+
+      error: (err) &#x3D;&gt; {},
+    });
+  }
+  eliminar(modulo: Module, index) {
+    console.log(modulo);
+    const dialogRef &#x3D; this.dialog.open(DeleteCardComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        tipo: &quot;Custom Module&quot;,
+        idModulo: modulo.id,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      if (result &#x3D;&#x3D;&#x3D; &quot;ok&quot;) {
+        this.cardsModulosPers.splice(index, 1);
+        this.servNav.eliminarmodulos(index);
+      }
+    });
+  }
+  sacarColor(id) {
+    for (let color of this.colores) {
+      if (color.idColor &#x3D;&#x3D; id) {
+        return color.color;
+      }
+    }
+  }
+
+  errorAlert() {
+    const dialogRef &#x3D; this.dialog.open(ErrorDialogComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        messageDialog:
+          &quot;Rubric does not match with 100 points , please check it out.&quot;,
+        buttonMessage: &quot;Ok&quot;,
+      },
+    });
+  }
+  goodAlert() {
+    const dialogRef &#x3D; this.dialog.open(GoodDialogComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        messageDialog:
+          &quot;Rubric does not match with 100 points , please check it out.&quot;,
+        buttonMessage: &quot;Ok&quot;,
+      },
+    });
+  }
+  warningAlert() {
+    const dialogRef &#x3D; this.dialog.open(WarningDialogComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        messageDialog:
+          &quot;Rubric does not match with 100 points , please check it out.&quot;,
+        buttonMessage: &quot;Ok&quot;,
+      },
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;!-- botton de editar porcentajes --&gt;
+  &lt;button class&#x3D;&quot;module-button&quot; (click)&#x3D;&quot;editarPorcentajes()&quot;&gt;
+    &lt;i class&#x3D;&quot;fas fa-edit module-button__icon&quot;&gt;&lt;/i&gt;
+    &lt;div class&#x3D;&quot;module-button__text&quot;&gt;
+      Edit Percentages
+    &lt;/div&gt;
+  &lt;/button&gt;
+  &lt;!-- //botton de editar porcentajes --&gt;
+  &lt;!--Subtitle--&gt;
+  &lt;div class&#x3D;&quot;subtitle&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle__text&quot;&gt;
+      &lt;span&gt;Default Modules&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#Subtitle--&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;!--default attendance --&gt;
+    &lt;div class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;default-card-attendance&quot;&gt;
+        &lt;div class&#x3D;&quot;default-card-attendance__img&quot;&gt;
+          &lt;div class&#x3D;&quot;default-card-attendance__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;default-card-attendance__buttons-card&quot;&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModulo(cardsModulosPred[0])&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;default-card-attendance__content-card&quot;&gt;
+              &lt;div class&#x3D;&quot;default-card-attendance__circle&quot;&gt;
+                {{ cardsModulosPred[0].rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;default-card-attendance__title&quot;&gt;
+                {{ cardsModulosPred[0].nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--#default  attendance--&gt;
+    &lt;!--default themes --&gt;
+    &lt;div class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;default-card-theme&quot;&gt;
+        &lt;div class&#x3D;&quot;default-card-theme__img&quot;&gt;
+          &lt;div class&#x3D;&quot;default-card-theme__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;default-card-theme__buttons-card&quot;&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModulo(cardsModulosPred[1])&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;default-card-theme__content-card&quot;&gt;
+              &lt;div class&#x3D;&quot;default-card-theme__circle&quot;&gt;
+                {{ cardsModulosPred[1].rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;default-card-theme__title&quot;&gt;
+                {{ cardsModulosPred[1].nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--#default  themes--&gt;
+    &lt;!--default practices --&gt;
+    &lt;div class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;default-card-practices&quot;&gt;
+        &lt;div class&#x3D;&quot;default-card-practices__img&quot;&gt;
+          &lt;div class&#x3D;&quot;default-card-practices__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;default-card-practices__buttons-card&quot;&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModulo(cardsModulosPred[2])&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;default-card-practices__content-card&quot;&gt;
+              &lt;div class&#x3D;&quot;default-card-practices__circle&quot;&gt;
+                {{ cardsModulosPred[2].rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;default-card-practices__title&quot;&gt;
+                {{ cardsModulosPred[2].nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--#default  practices--&gt;
+    &lt;!--default Theme test --&gt;
+    &lt;div class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;default-card-theme-test&quot;&gt;
+        &lt;div class&#x3D;&quot;default-card-theme-test__img&quot;&gt;
+          &lt;div class&#x3D;&quot;default-card-theme-test__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;default-card-theme-test__buttons-card&quot;&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModulo(cardsModulosPred[3])&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;default-card-theme-test__content-card&quot;&gt;
+              &lt;div class&#x3D;&quot;default-card-theme-test__circle&quot;&gt;
+                {{ cardsModulosPred[3].rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;default-card-theme-test__title&quot;&gt;
+                {{ cardsModulosPred[3].nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--#default  theme test--&gt;
+    &lt;!--default Assessments --&gt;
+    &lt;div class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;default-card-assessment&quot;&gt;
+        &lt;div class&#x3D;&quot;default-card-assessment__img&quot;&gt;
+          &lt;div class&#x3D;&quot;default-card-assessment__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;default-card-assessment__buttons-card&quot;&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModulo(cardsModulosPred[4])&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;default-card-assessment__content-card&quot;&gt;
+              &lt;div class&#x3D;&quot;default-card-assessment__circle&quot;&gt;
+                {{ cardsModulosPred[4].rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;default-card-assessment__title&quot;&gt;
+                {{ cardsModulosPred[4].nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--#default  Assessments--&gt;
+  &lt;/div&gt;
+  &lt;!--#row--&gt;
+
+  &lt;!-- &lt;div class&#x3D;&quot;subtitle&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle__text&quot;&gt;
+      &lt;span&gt;Default Modules&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div
+      *ngFor&#x3D;&quot;let preCard of cardsModulosPred&quot;
+      class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;
+    &gt;
+      &lt;div class&#x3D;&quot;evaluation-card&quot;&gt;
+        &lt;div
+          class&#x3D;&quot;evaluation-card__img&quot;
+          [ngStyle]&#x3D;&quot;{
+            &#x27;background-image&#x27;:
+              &#x27;url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDd9&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;1050&amp;q&#x3D;80)&#x27;
+          }&quot;
+        &gt;
+          &lt;div
+            class&#x3D;&quot;evaluation-card__img-overlay&quot;
+            [ngStyle]&#x3D;&quot;{
+              &#x27;background-color&#x27;: sacarColor(preCard.idColor) + &#x27;A6&#x27;
+            }&quot;
+          &gt;
+            &lt;div class&#x3D;&quot;evaluation-card__buttons-card&quot;&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModulo(preCard)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;evaluation-card__content-card&quot;&gt;
+              &lt;div
+                class&#x3D;&quot;evaluation-card__circle&quot;
+                [ngStyle]&#x3D;&quot;{ &#x27;background-color&#x27;: sacarColor(preCard.idColor) }&quot;
+              &gt;
+                {{ preCard.rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;evaluation-card__title&quot;&gt;
+                {{ preCard.nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; --&gt;
+
+  &lt;!--Subtitle--&gt;
+  &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
+      &lt;span&gt;Custom Modules&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__buttons-container&quot;&gt;
+      &lt;!--Add button--&gt;
+      &lt;button
+        class&#x3D;&quot;circular-button-subtitle&quot;
+        mat-mini-fab
+        (click)&#x3D;&quot;customModulo()&quot;
+      &gt;
+        &lt;mat-icon class&#x3D;&quot;circular-button-subtitle__icon&quot;&gt;add&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;!--#Add button--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#Subtitle--&gt;
+  &lt;!--row--&gt;
+  &lt;div class&#x3D;&quot;row last-component&quot;&gt;
+    &lt;!--evaluation-card-attendance  --&gt;
+    &lt;div
+      *ngFor&#x3D;&quot;let custCards of cardsModulosPers; let indexcu &#x3D; index&quot;
+      class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;
+    &gt;
+      &lt;div class&#x3D;&quot;evaluation-card&quot;&gt;
+        &lt;div
+          class&#x3D;&quot;evaluation-card__img&quot;
+          [ngStyle]&#x3D;&quot;{
+            &#x27;background-image&#x27;: getImageUrl(getImageIndex(custCards.idImagen))
+          }&quot;
+        &gt;
+          &lt;div
+            class&#x3D;&quot;evaluation-card__img-overlay&quot;
+            [ngStyle]&#x3D;&quot;{
+              &#x27;background-color&#x27;: sacarColor(custCards.idColor) + &#x27;A6&#x27;
+            }&quot;
+          &gt;
+            &lt;div class&#x3D;&quot;evaluation-card__buttons-card&quot;&gt;
+              &lt;!--btn configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuracionModuloPersonalizado(custCards)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn configuraciones--&gt;
+              &lt;!--btn eliminar--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;eliminar(custCards, indexcu)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  delete
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn eliminar--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;evaluation-card__content-card&quot;&gt;
+              &lt;div
+                class&#x3D;&quot;evaluation-card__circle&quot;
+                [ngStyle]&#x3D;&quot;{
+                  &#x27;background-color&#x27;: sacarColor(custCards.idColor)
+                }&quot;
+              &gt;
+                {{ custCards.rubrica }}%
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;evaluation-card__title&quot;&gt;
+                {{ custCards.nombreModulo }}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--#evaluation-card-attendance  --&gt;
+  &lt;/div&gt;
+  &lt;!--#row--&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./evaluation.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!-- botton de editar porcentajes -->  <button class="module-button" (click)="editarPorcentajes()">    <i class="fas fa-edit module-button__icon"></i>    <div class="module-button__text">      Edit Percentages    </div>  </button>  <!-- //botton de editar porcentajes -->  <!--Subtitle-->  <div class="subtitle">    <div class="subtitle__text">      <span>Default Modules</span>    </div>  </div>  <!--#Subtitle-->  <div class="row">    <!--default attendance -->    <div class="col-lg-3 col-md-6 col-xs-12">      <div class="default-card-attendance">        <div class="default-card-attendance__img">          <div class="default-card-attendance__img-overlay">            <div class="default-card-attendance__buttons-card">              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionModulo(cardsModulosPred[0])"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->            </div>            <div class="default-card-attendance__content-card">              <div class="default-card-attendance__circle">                {{ cardsModulosPred[0].rubrica }}%              </div>              <div class="default-card-attendance__title">                {{ cardsModulosPred[0].nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#default  attendance-->    <!--default themes -->    <div class="col-lg-3 col-md-6 col-xs-12">      <div class="default-card-theme">        <div class="default-card-theme__img">          <div class="default-card-theme__img-overlay">            <div class="default-card-theme__buttons-card">              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionModulo(cardsModulosPred[1])"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->            </div>            <div class="default-card-theme__content-card">              <div class="default-card-theme__circle">                {{ cardsModulosPred[1].rubrica }}%              </div>              <div class="default-card-theme__title">                {{ cardsModulosPred[1].nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#default  themes-->    <!--default practices -->    <div class="col-lg-3 col-md-6 col-xs-12">      <div class="default-card-practices">        <div class="default-card-practices__img">          <div class="default-card-practices__img-overlay">            <div class="default-card-practices__buttons-card">              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionModulo(cardsModulosPred[2])"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->            </div>            <div class="default-card-practices__content-card">              <div class="default-card-practices__circle">                {{ cardsModulosPred[2].rubrica }}%              </div>              <div class="default-card-practices__title">                {{ cardsModulosPred[2].nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#default  practices-->    <!--default Theme test -->    <div class="col-lg-3 col-md-6 col-xs-12">      <div class="default-card-theme-test">        <div class="default-card-theme-test__img">          <div class="default-card-theme-test__img-overlay">            <div class="default-card-theme-test__buttons-card">              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionModulo(cardsModulosPred[3])"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->            </div>            <div class="default-card-theme-test__content-card">              <div class="default-card-theme-test__circle">                {{ cardsModulosPred[3].rubrica }}%              </div>              <div class="default-card-theme-test__title">                {{ cardsModulosPred[3].nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#default  theme test-->    <!--default Assessments -->    <div class="col-lg-3 col-md-6 col-xs-12">      <div class="default-card-assessment">        <div class="default-card-assessment__img">          <div class="default-card-assessment__img-overlay">            <div class="default-card-assessment__buttons-card">              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionModulo(cardsModulosPred[4])"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->            </div>            <div class="default-card-assessment__content-card">              <div class="default-card-assessment__circle">                {{ cardsModulosPred[4].rubrica }}%              </div>              <div class="default-card-assessment__title">                {{ cardsModulosPred[4].nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#default  Assessments-->  </div>  <!--#row-->  <!-- <div class="subtitle">    <div class="subtitle__text">      <span>Default Modules</span>    </div>  </div>  <div class="row">    <div      *ngFor="let preCard of cardsModulosPred"      class="col-lg-3 col-md-6 col-xs-12"    >      <div class="evaluation-card">        <div          class="evaluation-card__img"          [ngStyle]="{            \'background-image\':              \'url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)\'          }"        >          <div            class="evaluation-card__img-overlay"            [ngStyle]="{              \'background-color\': sacarColor(preCard.idColor) + \'A6\'            }"          >            <div class="evaluation-card__buttons-card">              <button                class="circular-button-custom-card"                (click)="configuracionModulo(preCard)"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>            </div>            <div class="evaluation-card__content-card">              <div                class="evaluation-card__circle"                [ngStyle]="{ \'background-color\': sacarColor(preCard.idColor) }"              >                {{ preCard.rubrica }}%              </div>              <div class="evaluation-card__title">                {{ preCard.nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>  </div> -->  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Custom Modules</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button        class="circular-button-subtitle"        mat-mini-fab        (click)="customModulo()"      >        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle-->  <!--row-->  <div class="row last-component">    <!--evaluation-card-attendance  -->    <div      *ngFor="let custCards of cardsModulosPers; let indexcu = index"      class="col-lg-3 col-md-6 col-xs-12"    >      <div class="evaluation-card">        <div          class="evaluation-card__img"          [ngStyle]="{            \'background-image\': getImageUrl(getImageIndex(custCards.idImagen))          }"        >          <div            class="evaluation-card__img-overlay"            [ngStyle]="{              \'background-color\': sacarColor(custCards.idColor) + \'A6\'            }"          >            <div class="evaluation-card__buttons-card">              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionModuloPersonalizado(custCards)"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->              <!--btn eliminar-->              <button                class="circular-button-custom-card"                (click)="eliminar(custCards, indexcu)"              >                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="evaluation-card__content-card">              <div                class="evaluation-card__circle"                [ngStyle]="{                  \'background-color\': sacarColor(custCards.idColor)                }"              >                {{ custCards.rubrica }}%              </div>              <div class="evaluation-card__title">                {{ custCards.nombreModulo }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#evaluation-card-attendance  -->  </div>  <!--#row--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EvaluationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EvaluationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

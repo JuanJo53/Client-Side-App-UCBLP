@@ -1,0 +1,1573 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SidebarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/sidebar/sidebar.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-sidebar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./sidebar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sidebar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isSidebarOpen">isSidebarOpen</a>
+                            </li>
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#mPersonalizados">mPersonalizados</a>
+                            </li>
+                            <li>
+                                <a href="#mylogo">mylogo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarModulos">agregarModulos</a>
+                            </li>
+                            <li>
+                                <a href="#agregarModulos2">agregarModulos2</a>
+                            </li>
+                            <li>
+                                <a href="#decirHola">decirHola</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarModulo">eliminarModulo</a>
+                            </li>
+                            <li>
+                                <a href="#getModulos">getModulos</a>
+                            </li>
+                            <li>
+                                <a href="#modificarModulo">modificarModulo</a>
+                            </li>
+                            <li>
+                                <a href="#navigateCustom">navigateCustom</a>
+                            </li>
+                            <li>
+                                <a href="#navigateGeneral">navigateGeneral</a>
+                            </li>
+                            <li>
+                                <a href="#navigateModules">navigateModules</a>
+                            </li>
+                            <li>
+                                <a href="#navigationMyClass">navigationMyClass</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSidebarMenuToggle">onSidebarMenuToggle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#openEvent">openEvent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(data: <a href="../injectables/SharedService.html">SharedService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, servLoading: <a href="../injectables/LoadingService.html">LoadingService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SharedService.html" target="_self" >SharedService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>servLoading</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openEvent"></a>
+                        <b>openEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarModulos"></a>
+                    <span class="name">
+                        <b>
+                            agregarModulos
+                        </b>
+                        <a href="#agregarModulos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarModulos(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarModulos2"></a>
+                    <span class="name">
+                        <b>
+                            agregarModulos2
+                        </b>
+                        <a href="#agregarModulos2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarModulos2(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decirHola"></a>
+                    <span class="name">
+                        <b>
+                            decirHola
+                        </b>
+                        <a href="#decirHola"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>decirHola()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarModulo"></a>
+                    <span class="name">
+                        <b>
+                            eliminarModulo
+                        </b>
+                        <a href="#eliminarModulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarModulo(index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getModulos"></a>
+                    <span class="name">
+                        <b>
+                            getModulos
+                        </b>
+                        <a href="#getModulos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getModulos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modificarModulo"></a>
+                    <span class="name">
+                        <b>
+                            modificarModulo
+                        </b>
+                        <a href="#modificarModulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>modificarModulo(data, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateCustom"></a>
+                    <span class="name">
+                        <b>
+                            navigateCustom
+                        </b>
+                        <a href="#navigateCustom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateCustom(modulo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>modulo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateGeneral"></a>
+                    <span class="name">
+                        <b>
+                            navigateGeneral
+                        </b>
+                        <a href="#navigateGeneral"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateGeneral(link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>link</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateModules"></a>
+                    <span class="name">
+                        <b>
+                            navigateModules
+                        </b>
+                        <a href="#navigateModules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateModules(link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>link</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigationMyClass"></a>
+                    <span class="name">
+                        <b>
+                            navigationMyClass
+                        </b>
+                        <a href="#navigationMyClass"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigationMyClass(link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>link</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSidebarMenuToggle"></a>
+                    <span class="name">
+                        <b>
+                            onSidebarMenuToggle
+                        </b>
+                        <a href="#onSidebarMenuToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSidebarMenuToggle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isSidebarOpen"></a>
+                        <span class="name">
+                            <b>
+                            isSidebarOpen</b>
+                            <a href="#isSidebarOpen"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                            message</b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;link&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mPersonalizados"></a>
+                        <span class="name">
+                            <b>
+                            mPersonalizados</b>
+                            <a href="#mPersonalizados"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mylogo"></a>
+                        <span class="name">
+                            <b>
+                            mylogo</b>
+                            <a href="#mylogo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;assets/logo.png&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/sidebar/sidebar.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output, EventEmitter } from &quot;@angular/core&quot;;
+import { SharedService } from &quot;../../shared.service&quot;;
+import { ActivatedRoute, Router } from &quot;@angular/router&quot;;
+import { LoadingService } from &quot;src/app/_services/loading.service&quot;;
+// import { SharedService } from &quot;../../shared.service&quot;;
+
+@Component({
+  selector: &quot;app-sidebar&quot;,
+  templateUrl: &quot;./sidebar.component.html&quot;,
+  styleUrls: [&quot;./sidebar.component.scss&quot;],
+})
+export class SidebarComponent implements OnInit {
+  mPersonalizados: any[] &#x3D; [];
+  isSidebarOpen: boolean &#x3D; true;
+  mylogo: string &#x3D; &quot;assets/logo.png&quot;;
+  message: String &#x3D; &quot;link&quot;;
+
+  @Output() openEvent &#x3D; new EventEmitter&lt;boolean&gt;();
+  onSidebarMenuToggle() {
+    console.log(&quot;toogle : &quot;, this.isSidebarOpen);
+    this.isSidebarOpen &#x3D; !this.isSidebarOpen;
+    this.openEvent.emit(this.isSidebarOpen);
+  }
+  constructor(
+    private data: SharedService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private servLoading: LoadingService
+  ) {}
+  // constructor() {}
+  // ngOnInit(): void {}
+  agregarModulos2(data) {
+    this.mPersonalizados &#x3D; [];
+    for (let datos of data) {
+      if (datos.id_tipo_modulo &#x3D;&#x3D; 2 &amp;&amp; datos.estado_modulo &#x3D;&#x3D; 1) {
+        this.mPersonalizados.push({
+          id: datos.id_modulo,
+          nombre: datos.nombre_modulo,
+        });
+      }
+    }
+  }
+  getModulos() {
+    return this.mPersonalizados;
+  }
+  modificarModulo(data, index) {
+    this.mPersonalizados[index] &#x3D; data;
+  }
+  eliminarModulo(index) {
+    this.mPersonalizados.splice(index, 1);
+  }
+  agregarModulos(data) {
+    console.log(data);
+    this.mPersonalizados &#x3D; [];
+    for (let datos of data) {
+      this.mPersonalizados.push({
+        id: datos.id_modulo,
+        nombre: datos.nombre_modulo,
+      });
+    }
+  }
+  decirHola() {
+    console.log(&quot;hola&quot;);
+  }
+  navigateCustom(modulo) {
+    this.servLoading.activar();
+    console.log(modulo);
+    this.route.params.subscribe((params) &#x3D;&gt; {
+      const nav &#x3D; this.router.navigate([
+        &quot;teacher&quot;,
+        params[&quot;idCurso&quot;],
+        &quot;modules&quot;,
+        &quot;custom&quot;,
+        modulo.id,
+      ]);
+      nav.then((data) &#x3D;&gt; {
+        this.servLoading.desactivar();
+      });
+    });
+  }
+  ngOnInit() {
+    // this.data.currentMessage.subscribe((message) &#x3D;&gt; (this.message &#x3D; message));
+    this.route.data.subscribe({
+      next: (data) &#x3D;&gt; {
+        this.agregarModulos(data.modules.body);
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(err);
+      },
+    });
+  }
+  navigateGeneral(link: string) {
+    this.servLoading.activar();
+    this.data.changeMessage(link);
+    this.route.params.subscribe((params) &#x3D;&gt; {
+      const nav &#x3D; this.router.navigate([
+        &quot;teacher&quot;,
+        params[&quot;idCurso&quot;],
+        link.toLowerCase(),
+      ]);
+      nav.then((data) &#x3D;&gt; {
+        this.servLoading.desactivar();
+      });
+    });
+  }
+  navigateModules(link: string) {
+    this.servLoading.activar();
+    this.data.changeMessage(link);
+    this.route.params.subscribe((params) &#x3D;&gt; {
+      const nav &#x3D; this.router.navigate([
+        &quot;teacher&quot;,
+        params[&quot;idCurso&quot;],
+        &quot;modules&quot;,
+        link.toLowerCase(),
+      ]);
+      nav.then((data) &#x3D;&gt; {
+        this.servLoading.desactivar();
+      });
+    });
+  }
+  navigationMyClass(link: string) {
+    this.servLoading.activar();
+    this.data.changeMessage(link);
+    this.route.params.subscribe((params) &#x3D;&gt; {
+      const nav &#x3D; this.router.navigate([
+        &quot;teacher&quot;,
+        params[&quot;idCurso&quot;],
+        &quot;my-class&quot;,
+        link.toLowerCase(),
+      ]);
+      nav.then((data) &#x3D;&gt; {
+        this.servLoading.desactivar();
+      });
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-nav-list class&#x3D;&quot;sidebar__list&quot;&gt;
+  &lt;div class&#x3D;&quot;sidebar-brand&quot;&gt;
+    &lt;img [src]&#x3D;&quot;mylogo&quot; alt&#x3D;&quot;UcbLogo&quot; class&#x3D;&quot;sidebar-brand__logo&quot; /&gt;
+    &lt;span class&#x3D;&quot;sidebar-brand__subtitle&quot;&gt;Teachers&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;!-- &lt;mat-divider&gt;&lt;/mat-divider&gt;
+  &lt;h2 matSubheader&gt;Pages&lt;/h2&gt; --&gt;
+
+  &lt;a
+    routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+    routerLink&#x3D;&quot;/teacher/1/dashboard&quot;
+    class&#x3D;&quot;link&quot;
+    mat-list-item
+    (click)&#x3D;&quot;navigateGeneral(&#x27;Dashboard&#x27;)&quot;
+    &gt;&lt;mat-icon class&#x3D;&quot;link__icon&quot;&gt;dashboard&lt;/mat-icon
+    &gt;&lt;span class&#x3D;&quot;link__text&quot;&gt;Dashboard&lt;/span&gt;&lt;/a
+  &gt;
+
+  &lt;mat-expansion-panel class&#x3D;&quot;expansion-panel&quot;&gt;
+    &lt;mat-expansion-panel-header class&#x3D;&quot;expansion-panel__header&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;expansion-panel__header-icon&quot;&gt;people&lt;/mat-icon
+      &gt;&lt;span class&#x3D;&quot;expansion-panel__header-text&quot;&gt;My class&lt;/span&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a
+          class&#x3D;&quot;sublink&quot;
+          mat-list-item
+          routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+          routerLink&#x3D;&quot;/teacher/1/my-class/students&quot;
+          (click)&#x3D;&quot;navigationMyClass(&#x27;Students&#x27;)&quot;
+          &gt;&lt;mat-icon class&#x3D;&quot;sublink__icon&quot;&gt;people&lt;/mat-icon
+          &gt;&lt;span class&#x3D;&quot;sublink__text&quot;&gt;Students&lt;/span&gt;&lt;/a
+        &gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a
+          class&#x3D;&quot;sublink&quot;
+          mat-list-item
+          routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+          (click)&#x3D;&quot;navigationMyClass(&#x27;Attendance&#x27;)&quot;
+          &gt;&lt;mat-icon class&#x3D;&quot;sublink__icon&quot;&gt;people&lt;/mat-icon
+          &gt;&lt;span class&#x3D;&quot;sublink__text&quot;&gt;Attendance&lt;/span&gt;&lt;/a
+        &gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a
+          class&#x3D;&quot;sublink&quot;
+          mat-list-item
+          routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+          routerLink&#x3D;&quot;/teacher/1/my-class/qualification&quot;
+          (click)&#x3D;&quot;navigationMyClass(&#x27;Qualification&#x27;)&quot;
+          &gt;&lt;mat-icon class&#x3D;&quot;sublink__icon&quot;&gt;people&lt;/mat-icon
+          &gt;&lt;span class&#x3D;&quot;sublink__text&quot;&gt;Qualification&lt;/span&gt;&lt;/a
+        &gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/mat-expansion-panel&gt;
+  &lt;!-- &lt;a
+    class&#x3D;&quot;link&quot;
+    mat-list-item
+    routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+    (click)&#x3D;&quot;newMessage(&#x27;My class&#x27;)&quot;
+    routerLink&#x3D;&quot;/myclass&quot;
+    &gt;&lt;mat-icon class&#x3D;&quot;link__icon&quot;&gt;people&lt;/mat-icon
+    &gt;&lt;span class&#x3D;&quot;link__text&quot;&gt;My class&lt;/span&gt;&lt;/a
+  &gt; --&gt;
+  &lt;!-- (click)&#x3D;&quot;newMessage()&quot; --&gt;
+
+  &lt;a
+    routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+    routerLink&#x3D;&quot;/teacher/1/forums&quot;
+    class&#x3D;&quot;link&quot;
+    mat-list-item
+    (click)&#x3D;&quot;navigateGeneral(&#x27;Forums&#x27;)&quot;
+    &gt;&lt;mat-icon class&#x3D;&quot;link__icon&quot;&gt;forum&lt;/mat-icon
+    &gt;&lt;span class&#x3D;&quot;link__text&quot;&gt;Forums&lt;/span&gt;&lt;/a
+  &gt;
+
+  &lt;mat-expansion-panel class&#x3D;&quot;expansion-panel&quot;&gt;
+    &lt;mat-expansion-panel-header class&#x3D;&quot;expansion-panel__header&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;expansion-panel__header-icon&quot;&gt;view_list&lt;/mat-icon
+      &gt;&lt;span class&#x3D;&quot;expansion-panel__header-text&quot;&gt;Modules&lt;/span&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;a
+      routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+      routerLink&#x3D;&quot;/teacher/1/modules/themes&quot;
+      class&#x3D;&quot;sublink&quot;
+      mat-list-item
+      (click)&#x3D;&quot;navigateModules(&#x27;Themes&#x27;)&quot;
+      &gt;&lt;mat-icon class&#x3D;&quot;sublink__icon&quot;&gt;view_list&lt;/mat-icon
+      &gt;&lt;span class&#x3D;&quot;sublink__text&quot;&gt;Themes&lt;/span&gt;&lt;/a
+    &gt;
+    &lt;a
+      routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+      routerLink&#x3D;&quot;/teacher/1/modules/assessments&quot;
+      class&#x3D;&quot;sublink&quot;
+      mat-list-item
+      (click)&#x3D;&quot;navigateModules(&#x27;Assessments&#x27;)&quot;
+      &gt;&lt;mat-icon class&#x3D;&quot;sublink__icon&quot;&gt;view_list&lt;/mat-icon
+      &gt;&lt;span class&#x3D;&quot;sublink__text&quot;&gt;Assessments&lt;/span&gt;&lt;/a
+    &gt;
+    &lt;a
+      *ngFor&#x3D;&quot;let modulos of mPersonalizados&quot;
+      class&#x3D;&quot;sublink&quot;
+      mat-list-item
+      (click)&#x3D;&quot;navigateCustom(modulos)&quot;
+      &gt;&lt;mat-icon class&#x3D;&quot;sublink__icon&quot;&gt;view_list&lt;/mat-icon
+      &gt;&lt;span class&#x3D;&quot;sublink__text&quot;&gt;{{ modulos.nombre }}&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/mat-expansion-panel&gt;
+  &lt;!-- &lt;a
+    class&#x3D;&quot;link&quot;
+    mat-list-item
+    routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+    routerLink&#x3D;&quot;/modules&quot;
+    &gt;&lt;mat-icon class&#x3D;&quot;link__icon&quot;&gt;view_list&lt;/mat-icon
+    &gt;&lt;span class&#x3D;&quot;link__text&quot;&gt;Modules&lt;/span&gt;&lt;/a
+  &gt; --&gt;
+  &lt;a
+    class&#x3D;&quot;link&quot;
+    mat-list-item
+    routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+    routerLink&#x3D;&quot;/teacher/1/resources&quot;
+    (click)&#x3D;&quot;navigateGeneral(&#x27;Resources&#x27;)&quot;
+    &gt;&lt;mat-icon class&#x3D;&quot;link__icon&quot;&gt;extension&lt;/mat-icon
+    &gt;&lt;span class&#x3D;&quot;link__text&quot;&gt;Resources&lt;/span&gt;&lt;/a
+  &gt;
+  &lt;a
+    class&#x3D;&quot;link&quot;
+    mat-list-item
+    routerLink&#x3D;&quot;/teacher/1/evaluation&quot;
+    routerLinkActive&#x3D;&quot;list-item-active-link&quot;
+    (click)&#x3D;&quot;navigateGeneral(&#x27;Evaluation&#x27;)&quot;
+    &gt;&lt;mat-icon class&#x3D;&quot;link__icon&quot;&gt;account_tree&lt;/mat-icon
+    &gt;&lt;span class&#x3D;&quot;link__text&quot;&gt;Evaluation&lt;/span&gt;&lt;/a
+  &gt;
+
+  &lt;button (click)&#x3D;&quot;onSidebarMenuToggle()&quot; class&#x3D;&quot;toggle-button&quot; mat-mini-fab&gt;
+    &lt;mat-icon class&#x3D;&quot;toggle-button__icon&quot;&gt;chevron_left&lt;/mat-icon&gt;
+  &lt;/button&gt;
+
+  &lt;!-- &lt;h2 matSubheader&gt;Tools&lt;/h2&gt;
+  &lt;a mat-list-item routerLinkActive&#x3D;&quot;List-item-active-link&quot; routerLink&#x3D;&quot;/&quot;
+    &gt;&lt;mat-icon&gt;import_contacts&lt;/mat-icon&gt;Contacts&lt;/a
+  &gt; --&gt;
+&lt;/mat-nav-list&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./sidebar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-nav-list class="sidebar__list">  <div class="sidebar-brand">    <img [src]="mylogo" alt="UcbLogo" class="sidebar-brand__logo" />    <span class="sidebar-brand__subtitle">Teachers</span>  </div>  <!-- <mat-divider></mat-divider>  <h2 matSubheader>Pages</h2> -->  <a    routerLinkActive="list-item-active-link"    routerLink="/teacher/1/dashboard"    class="link"    mat-list-item    (click)="navigateGeneral(\'Dashboard\')"    ><mat-icon class="link__icon">dashboard</mat-icon    ><span class="link__text">Dashboard</span></a  >  <mat-expansion-panel class="expansion-panel">    <mat-expansion-panel-header class="expansion-panel__header">      <mat-icon class="expansion-panel__header-icon">people</mat-icon      ><span class="expansion-panel__header-text">My class</span>    </mat-expansion-panel-header>    <ul>      <li>        <a          class="sublink"          mat-list-item          routerLinkActive="list-item-active-link"          routerLink="/teacher/1/my-class/students"          (click)="navigationMyClass(\'Students\')"          ><mat-icon class="sublink__icon">people</mat-icon          ><span class="sublink__text">Students</span></a        >      </li>      <li>        <a          class="sublink"          mat-list-item          routerLinkActive="list-item-active-link"          (click)="navigationMyClass(\'Attendance\')"          ><mat-icon class="sublink__icon">people</mat-icon          ><span class="sublink__text">Attendance</span></a        >      </li>      <li>        <a          class="sublink"          mat-list-item          routerLinkActive="list-item-active-link"          routerLink="/teacher/1/my-class/qualification"          (click)="navigationMyClass(\'Qualification\')"          ><mat-icon class="sublink__icon">people</mat-icon          ><span class="sublink__text">Qualification</span></a        >      </li>    </ul>  </mat-expansion-panel>  <!-- <a    class="link"    mat-list-item    routerLinkActive="list-item-active-link"    (click)="newMessage(\'My class\')"    routerLink="/myclass"    ><mat-icon class="link__icon">people</mat-icon    ><span class="link__text">My class</span></a  > -->  <!-- (click)="newMessage()" -->  <a    routerLinkActive="list-item-active-link"    routerLink="/teacher/1/forums"    class="link"    mat-list-item    (click)="navigateGeneral(\'Forums\')"    ><mat-icon class="link__icon">forum</mat-icon    ><span class="link__text">Forums</span></a  >  <mat-expansion-panel class="expansion-panel">    <mat-expansion-panel-header class="expansion-panel__header">      <mat-icon class="expansion-panel__header-icon">view_list</mat-icon      ><span class="expansion-panel__header-text">Modules</span>    </mat-expansion-panel-header>    <a      routerLinkActive="list-item-active-link"      routerLink="/teacher/1/modules/themes"      class="sublink"      mat-list-item      (click)="navigateModules(\'Themes\')"      ><mat-icon class="sublink__icon">view_list</mat-icon      ><span class="sublink__text">Themes</span></a    >    <a      routerLinkActive="list-item-active-link"      routerLink="/teacher/1/modules/assessments"      class="sublink"      mat-list-item      (click)="navigateModules(\'Assessments\')"      ><mat-icon class="sublink__icon">view_list</mat-icon      ><span class="sublink__text">Assessments</span></a    >    <a      *ngFor="let modulos of mPersonalizados"      class="sublink"      mat-list-item      (click)="navigateCustom(modulos)"      ><mat-icon class="sublink__icon">view_list</mat-icon      ><span class="sublink__text">{{ modulos.nombre }}</span>    </a>  </mat-expansion-panel>  <!-- <a    class="link"    mat-list-item    routerLinkActive="list-item-active-link"    routerLink="/modules"    ><mat-icon class="link__icon">view_list</mat-icon    ><span class="link__text">Modules</span></a  > -->  <a    class="link"    mat-list-item    routerLinkActive="list-item-active-link"    routerLink="/teacher/1/resources"    (click)="navigateGeneral(\'Resources\')"    ><mat-icon class="link__icon">extension</mat-icon    ><span class="link__text">Resources</span></a  >  <a    class="link"    mat-list-item    routerLink="/teacher/1/evaluation"    routerLinkActive="list-item-active-link"    (click)="navigateGeneral(\'Evaluation\')"    ><mat-icon class="link__icon">account_tree</mat-icon    ><span class="link__text">Evaluation</span></a  >  <button (click)="onSidebarMenuToggle()" class="toggle-button" mat-mini-fab>    <mat-icon class="toggle-button__icon">chevron_left</mat-icon>  </button>  <!-- <h2 matSubheader>Tools</h2>  <a mat-list-item routerLinkActive="List-item-active-link" routerLink="/"    ><mat-icon>import_contacts</mat-icon>Contacts</a  > --></mat-nav-list></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SidebarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

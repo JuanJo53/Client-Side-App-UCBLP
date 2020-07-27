@@ -1,0 +1,673 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AssessmentsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-assessments</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./assessments.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./assessments.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#practices">practices</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#configuraciones">configuraciones</a>
+                            </li>
+                            <li>
+                                <a href="#eliminar">eliminar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#verlistar">verlistar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuraciones"></a>
+                    <span class="name">
+                        <b>
+                            configuraciones
+                        </b>
+                        <a href="#configuraciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>configuraciones()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminar"></a>
+                    <span class="name">
+                        <b>
+                            eliminar
+                        </b>
+                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verlistar"></a>
+                    <span class="name">
+                        <b>
+                            verlistar
+                        </b>
+                        <a href="#verlistar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verlistar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="practices"></a>
+                        <span class="name">
+                            <b>
+                            practices</b>
+                            <a href="#practices"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/SimpleCard.html" target="_self" >SimpleCard[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      id: 1,
+      titulo: &quot;Practice 1&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 2,
+      titulo: &quot;Practice 2&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 3,
+      titulo: &quot;Practice 3&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 4,
+      titulo: &quot;Practice 4&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/assessments.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { SimpleCard } from &quot;src/app/models/simpleCard&quot;;
+import { Router, ActivatedRoute } from &quot;@angular/router&quot;;
+@Component({
+  selector: &quot;app-assessments&quot;,
+  templateUrl: &quot;./assessments.component.html&quot;,
+  styleUrls: [&quot;./assessments.component.scss&quot;],
+})
+export class AssessmentsComponent implements OnInit {
+  practices: SimpleCard[] &#x3D; [
+    {
+      id: 1,
+      titulo: &quot;Practice 1&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 2,
+      titulo: &quot;Practice 2&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 3,
+      titulo: &quot;Practice 3&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 4,
+      titulo: &quot;Practice 4&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+  ];
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {}
+
+  verlistar() {
+    this.router.navigate([&quot;detail&quot;], { relativeTo: this.route });
+  }
+  configuraciones() {}
+  eliminar() {}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;!--Subtitle--&gt;
+  &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
+      &lt;span&gt;Assessments&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__buttons-container&quot;&gt;
+      &lt;!--Add button--&gt;
+      &lt;button class&#x3D;&quot;circular-button-subtitle&quot; mat-mini-fab&gt;
+        &lt;mat-icon class&#x3D;&quot;circular-button-subtitle__icon&quot;&gt;add&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;!--#Add button--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#Subtitle--&gt;
+  &lt;!--row--&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let cards of practices&quot; class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;custom-card--assessment&quot;&gt;
+        &lt;div class&#x3D;&quot;custom-card--assessment__img&quot;&gt;
+          &lt;div class&#x3D;&quot;custom-card--assessment__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;custom-card--assessment__buttons-card&quot;&gt;
+              &lt;!--btn Ver lista--&gt;
+              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;verlistar()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  list
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn Ver lista--&gt;
+              &lt;!--btn  configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuraciones()&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn  configuraciones--&gt;
+              &lt;!--btn eliminar--&gt;
+              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;eliminar()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  delete
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn eliminar--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--assessment__content-card&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--assessment__description-theme&quot;&gt;
+              &lt;span class&#x3D;&quot;custom-card--assessment__description-theme--title&quot;&gt;{{
+                cards.titulo
+              }}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--#custom-cards--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#row--&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./assessments.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Assessments</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle-->  <!--row-->  <div class="row">    <div *ngFor="let cards of practices" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--assessment">        <div class="custom-card--assessment__img">          <div class="custom-card--assessment__img-overlay">            <div class="custom-card--assessment__buttons-card">              <!--btn Ver lista-->              <button class="circular-button-custom-card" (click)="verlistar()">                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones()"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button class="circular-button-custom-card" (click)="eliminar()">                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--assessment__content-card"></div>            <div class="custom-card--assessment__description-theme">              <span class="custom-card--assessment__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AssessmentsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AssessmentsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

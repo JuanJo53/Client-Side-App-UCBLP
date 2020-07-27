@@ -1,0 +1,813 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EditCustomModuleComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-edit-custom-module</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./edit-custom-module.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./edit-custom-module.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataDialog">dataDialog</a>
+                            </li>
+                            <li>
+                                <a href="#disableTextbox">disableTextbox</a>
+                            </li>
+                            <li>
+                                <a href="#newModulo">newModulo</a>
+                            </li>
+                            <li>
+                                <a href="#nombre">nombre</a>
+                            </li>
+                            <li>
+                                <a href="#radioButtonValue">radioButtonValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aceptar">aceptar</a>
+                            </li>
+                            <li>
+                                <a href="#cancelar">cancelar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleDisable">toggleDisable</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataDialog: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, dialogRef: <a href="../classes/Module.html">MatDialogRef<EditCustomModuleComponent></a>, moduServ: <a href="../injectables/EvaluationService.html">EvaluationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Module.html" target="_self" >MatDialogRef&lt;EditCustomModuleComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>moduServ</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EvaluationService.html" target="_self" >EvaluationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aceptar"></a>
+                    <span class="name">
+                        <b>
+                            aceptar
+                        </b>
+                        <a href="#aceptar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aceptar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelar"></a>
+                    <span class="name">
+                        <b>
+                            cancelar
+                        </b>
+                        <a href="#cancelar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleDisable"></a>
+                    <span class="name">
+                        <b>
+                            toggleDisable
+                        </b>
+                        <a href="#toggleDisable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleDisable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataDialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataDialog</b>
+                            <a href="#dataDialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Inject(MAT_DIALOG_DATA)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disableTextbox"></a>
+                        <span class="name">
+                            <b>
+                            disableTextbox</b>
+                            <a href="#disableTextbox"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newModulo"></a>
+                        <span class="name">
+                            <b>
+                            newModulo</b>
+                            <a href="#newModulo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Module.html" target="_self" >Module</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Module()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nombre"></a>
+                        <span class="name">
+                            <b>
+                            nombre</b>
+                            <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="radioButtonValue"></a>
+                        <span class="name">
+                            <b>
+                            radioButtonValue</b>
+                            <a href="#radioButtonValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/dialogs/evaluation/edit-custom-module/edit-custom-module.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject } from &#x27;@angular/core&#x27;;
+import { MAT_DIALOG_DATA, MatDialogRef } from &#x27;@angular/material/dialog&#x27;;
+import { EvaluationService } from &#x27;src/app/_services/teacher_services/evaluation.service&#x27;;
+import { Module } from &#x27;src/app/models/Teacher/Evaluation/Module&#x27;;
+
+@Component({
+  selector: &#x27;app-edit-custom-module&#x27;,
+  templateUrl: &#x27;./edit-custom-module.component.html&#x27;,
+  styleUrls: [&#x27;./edit-custom-module.component.scss&#x27;]
+})
+export class EditCustomModuleComponent implements OnInit {
+  newModulo:Module&#x3D;new Module();
+  nombre:string&#x3D;&quot;&quot;;
+  radioButtonValue:string&#x3D;&quot;&quot;;
+  disableTextbox &#x3D;  true;
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public dataDialog: any,
+    private dialogRef: MatDialogRef&lt;EditCustomModuleComponent&gt;, 
+    private moduServ:EvaluationService){}
+  toggleDisable() {
+    this.disableTextbox &#x3D; !this.disableTextbox;
+  }
+  ngOnInit(): void {
+    this.newModulo&#x3D;this.dataDialog[&quot;modulo&quot;];
+    console.log(this.dataDialog[&quot;modulo&quot;]);
+    this.nombre&#x3D;this.newModulo.nombreModulo;
+    if(this.newModulo.estado&#x3D;&#x3D;2){
+      this.radioButtonValue&#x3D;&quot;unable&quot;;
+    }
+    else{
+      this.radioButtonValue&#x3D;&quot;enable&quot;;
+    }
+  }
+  aceptar(){
+    if(this.radioButtonValue&#x3D;&#x3D;&#x3D;&quot;unable&quot;){
+      this.newModulo.estado&#x3D;2;
+    }
+    else{
+      this.newModulo.estado&#x3D;1;
+    }
+    this.newModulo.nombreModulo&#x3D;this.nombre;
+    this.moduServ.updateModulePers(this.newModulo).subscribe({
+      next: (data) &#x3D;&gt; {
+        if(data.status&#x3D;&#x3D;200){            
+          this.moduServ.getModules(this.dataDialog[&#x27;idCurso&#x27;]).subscribe({
+            next:(data2)&#x3D;&gt;{
+                if(data2.status&#x3D;&#x3D;200){
+                    this.dialogRef.close(data2.body);
+                }
+                else{                
+                  this.dialogRef.close();
+                }
+            },
+            error:(error)&#x3D;&gt;{
+              this.dialogRef.close();
+            }
+          });
+        }
+        else{
+          console.log(&quot;error&quot;);
+          this.dialogRef.close();
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(&quot;error&quot;);
+        this.dialogRef.close()
+      },
+    });
+  }
+  cancelar(){
+    this.dialogRef.close()
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;dialog&quot;&gt;
+    &lt;div class&#x3D;&quot;dialog-subtitle&quot;&gt;
+        &lt;div class&#x3D;&quot;dialog-subtitle__text&quot;&gt;
+            &lt;span&gt;Edit Custom Module&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
+        &lt;form class&#x3D;&quot;dialogforms&quot; enctype&#x3D;&quot;multipart/form-data&quot;&gt;
+        
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;input-disabled&quot; (dblclick)&#x3D;&#x27;toggleDisable()&#x27;&gt;
+                &lt;mat-label&gt;Module&#x27;s name&lt;/mat-label&gt;
+                &lt;!-- Input para el nombre del modulo--&gt;
+                &lt;input [disabled]&#x3D;&#x27;disableTextbox&#x27; [(ngModel)]&#x3D;nombre type&#x3D;&quot;text&quot; class&#x3D;&quot;input-form&quot; matInput placeholder&#x3D;&quot;Module&#x27;s name&quot; name&#x3D;&quot;nombreModulo&quot; /&gt;
+                &lt;!-- //Input para el nombre del modulo--&gt;
+            &lt;/mat-form-field&gt;
+            &lt;div class&#x3D;&quot;radio-buttons-dialog&quot;&gt;
+                &lt;div class&#x3D;&quot;radio-buttons-dialog__title&quot;&gt;Module Status :&lt;/div&gt;
+                &lt;mat-radio-group aria-label&#x3D;&quot;Select an option&quot;  name&#x3D;&quot;radiobuttonvalue&quot; [(ngModel)]&#x3D;&quot;radioButtonValue&quot;&gt;
+                    &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;enable&quot; checked&gt;Enable&lt;/mat-radio-button&gt;
+                    &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;unable&quot;&gt;Unable&lt;/mat-radio-button&gt;
+                &lt;/mat-radio-group&gt;
+                &lt;br /&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/mat-dialog-content&gt;
+    &lt;mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+        &lt;!--btn cancel--&gt;
+        &lt;button mat-button mat-dialog-close class&#x3D;&quot;dialog-button-cancel&quot; (click)&#x3D;cancelar()&gt;
+            Cancel
+        &lt;/button&gt;
+        &lt;!--#btn cancel--&gt;
+        &lt;!-- btn accept--&gt;
+        &lt;button mat-button class&#x3D;&quot;dialog-button-accept&quot; (click)&#x3D;aceptar() &gt;
+            Save changes
+        &lt;/button&gt;
+    &lt;/mat-dialog-actions&gt;
+    &lt;!-- #btn accept--&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./edit-custom-module.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="dialog">    <div class="dialog-subtitle">        <div class="dialog-subtitle__text">            <span>Edit Custom Module</span>        </div>    </div>    <mat-dialog-content class="mat-typography">        <form class="dialogforms" enctype="multipart/form-data">                    <mat-form-field appearance="outline" class="input-disabled" (dblclick)=\'toggleDisable()\'>                <mat-label>Module\'s name</mat-label>                <!-- Input para el nombre del modulo-->                <input [disabled]=\'disableTextbox\' [(ngModel)]=nombre type="text" class="input-form" matInput placeholder="Module\'s name" name="nombreModulo" />                <!-- //Input para el nombre del modulo-->            </mat-form-field>            <div class="radio-buttons-dialog">                <div class="radio-buttons-dialog__title">Module Status :</div>                <mat-radio-group aria-label="Select an option"  name="radiobuttonvalue" [(ngModel)]="radioButtonValue">                    <mat-radio-button class="radio-button" value="enable" checked>Enable</mat-radio-button>                    <mat-radio-button class="radio-button" value="unable">Unable</mat-radio-button>                </mat-radio-group>                <br />            </div>        </form>    </mat-dialog-content>    <mat-dialog-actions align="end">        <!--btn cancel-->        <button mat-button mat-dialog-close class="dialog-button-cancel" (click)=cancelar()>            Cancel        </button>        <!--#btn cancel-->        <!-- btn accept-->        <button mat-button class="dialog-button-accept" (click)=aceptar() >            Save changes        </button>    </mat-dialog-actions>    <!-- #btn accept--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EditCustomModuleComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EditCustomModuleComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

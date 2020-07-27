@@ -1,0 +1,2673 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RepositoryQuestionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-repository-question</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./repository-question.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./repository-question.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkboxOpciones">checkboxOpciones</a>
+                            </li>
+                            <li>
+                                <a href="#checked">checked</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataDialog">dataDialog</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#ELEMENT_DATA">ELEMENT_DATA</a>
+                            </li>
+                            <li>
+                                <a href="#filteredOptions">filteredOptions</a>
+                            </li>
+                            <li>
+                                <a href="#firstFormGroup">firstFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#isLinear">isLinear</a>
+                            </li>
+                            <li>
+                                <a href="#myControl">myControl</a>
+                            </li>
+                            <li>
+                                <a href="#nivelIngles">nivelIngles</a>
+                            </li>
+                            <li>
+                                <a href="#options">options</a>
+                            </li>
+                            <li>
+                                <a href="#preguntaPaso2">preguntaPaso2</a>
+                            </li>
+                            <li>
+                                <a href="#preguntas">preguntas</a>
+                            </li>
+                            <li>
+                                <a href="#preguntasElegidas">preguntasElegidas</a>
+                            </li>
+                            <li>
+                                <a href="#secondFormGroup">secondFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#showSpinner">showSpinner</a>
+                            </li>
+                            <li>
+                                <a href="#thirdFormGroup">thirdFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#tipoCategoriasRepositorio">tipoCategoriasRepositorio</a>
+                            </li>
+                            <li>
+                                <a href="#tipoHabilidadRepositorio">tipoHabilidadRepositorio</a>
+                            </li>
+                            <li>
+                                <a href="#tipoPreguntasRepositorio">tipoPreguntasRepositorio</a>
+                            </li>
+                            <li>
+                                <a href="#tipoRespuestasRepositorio">tipoRespuestasRepositorio</a>
+                            </li>
+                            <li>
+                                <a href="#valueNivelIngles">valueNivelIngles</a>
+                            </li>
+                            <li>
+                                <a href="#valueTipoCategoria">valueTipoCategoria</a>
+                            </li>
+                            <li>
+                                <a href="#valueTipoHabilidad">valueTipoHabilidad</a>
+                            </li>
+                            <li>
+                                <a href="#valueTipoPregunta">valueTipoPregunta</a>
+                            </li>
+                            <li>
+                                <a href="#valueTipoRespuesta">valueTipoRespuesta</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_filter">_filter</a>
+                            </li>
+                            <li>
+                                <a href="#aceptar">aceptar</a>
+                            </li>
+                            <li>
+                                <a href="#cancelar">cancelar</a>
+                            </li>
+                            <li>
+                                <a href="#cargarDatos">cargarDatos</a>
+                            </li>
+                            <li>
+                                <a href="#cargarRespuestasBool">cargarRespuestasBool</a>
+                            </li>
+                            <li>
+                                <a href="#irPasoDos">irPasoDos</a>
+                            </li>
+                            <li>
+                                <a href="#irPasoTres">irPasoTres</a>
+                            </li>
+                            <li>
+                                <a href="#loadData">loadData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#volverPasoUno">volverPasoUno</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, dataDialog: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, dialogRef: <a href="../components/RepositoryQuestionComponent.html">MatDialogRef<RepositoryQuestionComponent></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:104</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dataDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../components/RepositoryQuestionComponent.html" target="_self" >MatDialogRef&lt;RepositoryQuestionComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_filter"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            _filter
+                        </b>
+                        <a href="#_filter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>_filter(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aceptar"></a>
+                    <span class="name">
+                        <b>
+                            aceptar
+                        </b>
+                        <a href="#aceptar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aceptar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="186"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:186</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelar"></a>
+                    <span class="name">
+                        <b>
+                            cancelar
+                        </b>
+                        <a href="#cancelar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarDatos"></a>
+                    <span class="name">
+                        <b>
+                            cargarDatos
+                        </b>
+                        <a href="#cargarDatos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarDatos(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarRespuestasBool"></a>
+                    <span class="name">
+                        <b>
+                            cargarRespuestasBool
+                        </b>
+                        <a href="#cargarRespuestasBool"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarRespuestasBool(nuevaPregunta: <a href="../classes/Pregunta.html">Pregunta</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:159</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nuevaPregunta</td>
+                                    <td>
+                                                <code><a href="../classes/Pregunta.html" target="_self" >Pregunta</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="irPasoDos"></a>
+                    <span class="name">
+                        <b>
+                            irPasoDos
+                        </b>
+                        <a href="#irPasoDos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>irPasoDos(stepper: MatStepper, codigo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stepper</td>
+                                    <td>
+                                            <code>MatStepper</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>codigo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="irPasoTres"></a>
+                    <span class="name">
+                        <b>
+                            irPasoTres
+                        </b>
+                        <a href="#irPasoTres"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>irPasoTres(stepper: MatStepper)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stepper</td>
+                                    <td>
+                                            <code>MatStepper</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadData"></a>
+                    <span class="name">
+                        <b>
+                            loadData
+                        </b>
+                        <a href="#loadData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="volverPasoUno"></a>
+                    <span class="name">
+                        <b>
+                            volverPasoUno
+                        </b>
+                        <a href="#volverPasoUno"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>volverPasoUno(stepper: MatStepper)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:156</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stepper</td>
+                                    <td>
+                                            <code>MatStepper</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkboxOpciones"></a>
+                        <span class="name">
+                            <b>
+                            checkboxOpciones</b>
+                            <a href="#checkboxOpciones"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CheckboxQuestion.html" target="_self" >CheckboxQuestion[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { isChecked: true ,opcionRespuesta:&quot;&quot;},
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checked"></a>
+                        <span class="name">
+                            <b>
+                            checked</b>
+                            <a href="#checked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataDialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataDialog</b>
+                            <a href="#dataDialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Inject(MAT_DIALOG_DATA)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:106</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new MatTableDataSource(this.preguntas)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    &quot;nivel&quot;,
+    &quot;tipoPregunta&quot;,
+    &quot;tipoRespuesta&quot;,
+    &quot;codigo&quot;,
+    &quot;checkbox&quot;,
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:72</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ELEMENT_DATA"></a>
+                        <span class="name">
+                            <b>
+                            ELEMENT_DATA</b>
+                            <a href="#ELEMENT_DATA"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Pregunta.html" target="_self" >ListaPreguntasPracticas[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      codigo: 1,
+      nivel: &quot;Level 1&quot;,
+      categoria: &quot;vegetables&quot;,
+      tipoPregunta: &quot;simple&quot;,
+      tipoRespuesta: &quot;multiple choice&quot;,
+      habilidad: &quot;reading&quot;,
+      checkbox: 0,
+    },
+    {
+      codigo: 2,
+      nivel: &quot;Level 1&quot;,
+      categoria: &quot;vegetables&quot;,
+      tipoPregunta: &quot;simple&quot;,
+      tipoRespuesta: &quot;multiple choice&quot;,
+      habilidad: &quot;reading&quot;,
+      checkbox: 0,
+    },
+    {
+      codigo: 3,
+      nivel: &quot;Level 1&quot;,
+      categoria: &quot;vegetables&quot;,
+      tipoPregunta: &quot;simple&quot;,
+      tipoRespuesta: &quot;multiple choice&quot;,
+      habilidad: &quot;reading&quot;,
+      checkbox: 0,
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filteredOptions"></a>
+                        <span class="name">
+                            <b>
+                            filteredOptions</b>
+                            <a href="#filteredOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;string[]&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:104</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="firstFormGroup"></a>
+                        <span class="name">
+                            <b>
+                            firstFormGroup</b>
+                            <a href="#firstFormGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLinear"></a>
+                        <span class="name">
+                            <b>
+                            isLinear</b>
+                            <a href="#isLinear"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="myControl"></a>
+                        <span class="name">
+                            <b>
+                            myControl</b>
+                            <a href="#myControl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:102</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nivelIngles"></a>
+                        <span class="name">
+                            <b>
+                            nivelIngles</b>
+                            <a href="#nivelIngles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;Level 1&quot;, &quot;Level 2&quot;, &quot;Level 3&quot;, &quot;Level 4&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="options"></a>
+                        <span class="name">
+                            <b>
+                            options</b>
+                            <a href="#options"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:103</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preguntaPaso2"></a>
+                        <span class="name">
+                            <b>
+                            preguntaPaso2</b>
+                            <a href="#preguntaPaso2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Pregunta.html" target="_self" >Pregunta</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Pregunta()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preguntas"></a>
+                        <span class="name">
+                            <b>
+                            preguntas</b>
+                            <a href="#preguntas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Pregunta.html" target="_self" >Pregunta[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preguntasElegidas"></a>
+                        <span class="name">
+                            <b>
+                            preguntasElegidas</b>
+                            <a href="#preguntasElegidas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Pregunta.html" target="_self" >Pregunta[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="secondFormGroup"></a>
+                        <span class="name">
+                            <b>
+                            secondFormGroup</b>
+                            <a href="#secondFormGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSpinner"></a>
+                        <span class="name">
+                            <b>
+                            showSpinner</b>
+                            <a href="#showSpinner"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="thirdFormGroup"></a>
+                        <span class="name">
+                            <b>
+                            thirdFormGroup</b>
+                            <a href="#thirdFormGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tipoCategoriasRepositorio"></a>
+                        <span class="name">
+                            <b>
+                            tipoCategoriasRepositorio</b>
+                            <a href="#tipoCategoriasRepositorio"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;Animals&quot;, &quot;Vegetables&quot;, &quot;Technology&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tipoHabilidadRepositorio"></a>
+                        <span class="name">
+                            <b>
+                            tipoHabilidadRepositorio</b>
+                            <a href="#tipoHabilidadRepositorio"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    &quot;Listening&quot;,
+    &quot;Reading&quot;,
+    &quot;Wrinting&quot;,
+    &quot;Grammar&quot;,
+    &quot;Speaking&quot;,
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:89</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tipoPreguntasRepositorio"></a>
+                        <span class="name">
+                            <b>
+                            tipoPreguntasRepositorio</b>
+                            <a href="#tipoPreguntasRepositorio"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;Simple&quot;, &quot;Drag and Drop&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:87</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tipoRespuestasRepositorio"></a>
+                        <span class="name">
+                            <b>
+                            tipoRespuestasRepositorio</b>
+                            <a href="#tipoRespuestasRepositorio"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;One choice&quot;, &quot;Multiple choices&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:88</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueNivelIngles"></a>
+                        <span class="name">
+                            <b>
+                            valueNivelIngles</b>
+                            <a href="#valueNivelIngles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:96</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueTipoCategoria"></a>
+                        <span class="name">
+                            <b>
+                            valueTipoCategoria</b>
+                            <a href="#valueTipoCategoria"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:97</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueTipoHabilidad"></a>
+                        <span class="name">
+                            <b>
+                            valueTipoHabilidad</b>
+                            <a href="#valueTipoHabilidad"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:100</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueTipoPregunta"></a>
+                        <span class="name">
+                            <b>
+                            valueTipoPregunta</b>
+                            <a href="#valueTipoPregunta"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:99</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueTipoRespuesta"></a>
+                        <span class="name">
+                            <b>
+                            valueTipoRespuesta</b>
+                            <a href="#valueTipoRespuesta"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/modules/dialogs/create-practice/repository-question/repository-question.component.ts:98</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject } from &quot;@angular/core&quot;;
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from &quot;@angular/forms&quot;;
+import { Observable } from &quot;rxjs&quot;;
+import { map, startWith } from &quot;rxjs/operators&quot;;
+import { MatTableDataSource } from &quot;@angular/material/table&quot;;
+import { Pregunta } from &quot;src/app/models/Teacher/CreatePractice/Pregunta&quot;;
+import { MatStepper } from &quot;@angular/material/stepper&quot;;
+import { MAT_DIALOG_DATA, MatDialogRef } from &#x27;@angular/material/dialog&#x27;;
+import { RadioButtonQuestion } from &#x27;src/app/models/Preguntas/RadioButton&#x27;;
+import { CheckboxQuestion } from &#x27;src/app/models/Preguntas/Checkbox&#x27;;
+
+export interface ListaPreguntasPracticas {
+  codigo: number;
+  nivel: string;
+  categoria: string;
+  tipoPregunta: string;
+  tipoRespuesta: string;
+  habilidad: string;
+  checkbox: number;
+}
+
+@Component({
+  selector: &quot;app-repository-question&quot;,
+  templateUrl: &quot;./repository-question.component.html&quot;,
+  styleUrls: [&quot;./repository-question.component.scss&quot;],
+})
+export class RepositoryQuestionComponent implements OnInit {
+  preguntaPaso2:Pregunta&#x3D;new Pregunta();
+  showSpinner &#x3D; false;
+  checked: boolean;  
+  checkboxOpciones: CheckboxQuestion[] &#x3D; [
+    { isChecked: true ,opcionRespuesta:&quot;&quot;},
+  ];
+  preguntas: Pregunta[] &#x3D; [
+  ];
+  preguntasElegidas: Pregunta[] &#x3D; [
+  ];
+  ELEMENT_DATA: ListaPreguntasPracticas[] &#x3D; [
+    {
+      codigo: 1,
+      nivel: &quot;Level 1&quot;,
+      categoria: &quot;vegetables&quot;,
+      tipoPregunta: &quot;simple&quot;,
+      tipoRespuesta: &quot;multiple choice&quot;,
+      habilidad: &quot;reading&quot;,
+      checkbox: 0,
+    },
+    {
+      codigo: 2,
+      nivel: &quot;Level 1&quot;,
+      categoria: &quot;vegetables&quot;,
+      tipoPregunta: &quot;simple&quot;,
+      tipoRespuesta: &quot;multiple choice&quot;,
+      habilidad: &quot;reading&quot;,
+      checkbox: 0,
+    },
+    {
+      codigo: 3,
+      nivel: &quot;Level 1&quot;,
+      categoria: &quot;vegetables&quot;,
+      tipoPregunta: &quot;simple&quot;,
+      tipoRespuesta: &quot;multiple choice&quot;,
+      habilidad: &quot;reading&quot;,
+      checkbox: 0,
+    },
+  ];
+  displayedColumns: string[] &#x3D; [
+    &quot;nivel&quot;,
+    &quot;tipoPregunta&quot;,
+    &quot;tipoRespuesta&quot;,
+    &quot;codigo&quot;,
+    &quot;checkbox&quot;,
+  ];
+  
+  dataSource &#x3D; new MatTableDataSource(this.preguntas);
+  isLinear &#x3D; false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  nivelIngles: string[] &#x3D; [&quot;Level 1&quot;, &quot;Level 2&quot;, &quot;Level 3&quot;, &quot;Level 4&quot;];
+  tipoCategoriasRepositorio: string[] &#x3D; [&quot;Animals&quot;, &quot;Vegetables&quot;, &quot;Technology&quot;];
+  tipoPreguntasRepositorio: string[] &#x3D; [&quot;Simple&quot;, &quot;Drag and Drop&quot;];
+  tipoRespuestasRepositorio: string[] &#x3D; [&quot;One choice&quot;, &quot;Multiple choices&quot;];
+  tipoHabilidadRepositorio: string[] &#x3D; [
+    &quot;Listening&quot;,
+    &quot;Reading&quot;,
+    &quot;Wrinting&quot;,
+    &quot;Grammar&quot;,
+    &quot;Speaking&quot;,
+  ];
+  valueNivelIngles: string;
+  valueTipoCategoria: string;
+  valueTipoRespuesta: string;
+  valueTipoPregunta: string;
+  valueTipoHabilidad: string;
+
+  myControl &#x3D; new FormControl();
+  options: string[] &#x3D; [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;];
+  filteredOptions: Observable&lt;string[]&gt;;
+  constructor(private _formBuilder: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public dataDialog: any,
+    private dialogRef: MatDialogRef&lt;RepositoryQuestionComponent&gt;) {}
+
+  ngOnInit(): void {
+    this.firstFormGroup &#x3D; this._formBuilder.group({
+      firstCtrl: [&quot;&quot;, Validators.required],
+    });
+    this.secondFormGroup &#x3D; this._formBuilder.group({
+      secondCtrl: [&quot;&quot;, Validators.required],
+    });
+    this.thirdFormGroup &#x3D; this._formBuilder.group({
+      thirdCtrl: [&quot;&quot;, Validators.required],
+    });
+    this.filteredOptions &#x3D; this.myControl.valueChanges.pipe(
+      startWith(&quot;&quot;),
+      map((value) &#x3D;&gt; this._filter(value))
+    );
+    this.cargarDatos(this.dataDialog[&quot;repository&quot;]);
+  }
+  private _filter(value: string): string[] {
+    const filterValue &#x3D; value.toLowerCase();
+
+    return this.options.filter(
+      (option) &#x3D;&gt; option.toLowerCase().indexOf(filterValue) &#x3D;&#x3D;&#x3D; 0
+    );
+  }
+  // funciones
+  loadData() {
+    this.showSpinner &#x3D; true;
+    setTimeout(() &#x3D;&gt; {
+      this.showSpinner &#x3D; false;
+    }, 5000);
+  }
+  irPasoDos(stepper: MatStepper, codigo: number) {
+    this.preguntaPaso2&#x3D;this.preguntas[codigo];
+    stepper.next();
+  }
+  irPasoTres(stepper: MatStepper) {
+    this.preguntasElegidas&#x3D;[];
+    var elegido&#x3D;false;
+    for(let i in this.checkboxOpciones){
+      if(this.checkboxOpciones[i].isChecked){
+        elegido&#x3D;true;
+        this.preguntasElegidas.push(this.preguntas[i]);
+      }
+    }
+    if(elegido){
+      stepper.selectedIndex &#x3D; 2;
+    }
+  }
+  volverPasoUno(stepper: MatStepper) {
+    stepper.selectedIndex &#x3D; 0;
+  }
+  cargarRespuestasBool(nuevaPregunta:Pregunta){
+    nuevaPregunta.respuestasBool&#x3D;[];
+    for(let opcion of nuevaPregunta.opciones ){
+      nuevaPregunta.respuestasBool.push(false);
+    }
+    for(let respuesta of nuevaPregunta.respuesta ){
+      nuevaPregunta.respuestasBool[respuesta]&#x3D;true;
+    }
+  }
+  cargarDatos(data){
+    this.checkboxOpciones&#x3D;[];
+    for(let pregunta of data){
+      this.checkboxOpciones.push({isChecked:false,opcionRespuesta:&quot;&quot;})
+      let nuevaPregunta&#x3D;new Pregunta();
+      nuevaPregunta.idTipoPregunta&#x3D;String(pregunta.id_tipo_pregunta);
+      nuevaPregunta.idTipoRespuesta&#x3D;String(pregunta.id_tipo_respuesta);
+      nuevaPregunta.pregunta&#x3D;pregunta.pregunta.pregunta;
+      nuevaPregunta.id&#x3D;pregunta.id_pregunta;
+      nuevaPregunta.respuesta&#x3D;pregunta.pregunta.respuestas;
+      nuevaPregunta.opciones&#x3D;pregunta.pregunta.opciones;
+      nuevaPregunta.puntuacion&#x3D;10;
+      nuevaPregunta.tipo&#x3D;true;
+      console.log(nuevaPregunta);
+      this.cargarRespuestasBool(nuevaPregunta);
+      this.preguntas.push(nuevaPregunta)
+    }
+  }
+  aceptar(){
+    this.dialogRef.close(this.preguntasElegidas);
+  }
+  cancelar(){
+    this.dialogRef.close();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-horizontal-stepper labelPosition&#x3D;&quot;bottom&quot; #stepper&gt;
+  &lt;!-- primer paso --&gt;
+  &lt;mat-step [stepControl]&#x3D;&quot;firstFormGroup&quot;&gt;
+    &lt;form &gt;
+      &lt;ng-template matStepLabel&gt;Repository&lt;/ng-template&gt;
+      &lt;!-- contenido --&gt;
+      &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
+        &lt;!-- &lt;div class&#x3D;&quot;row&quot;&gt; --&gt;
+          &lt;!--cantidad estudiantes--&gt;
+          &lt;!-- &lt;mat-form-field class&#x3D;&quot;col-sm-2&quot;&gt;
+            &lt;mat-label&gt;English Level&lt;/mat-label&gt;
+            &lt;mat-select [(value)]&#x3D;&quot;valueNivelIngles&quot;&gt;
+              &lt;mat-option
+                *ngFor&#x3D;&quot;let elemento of nivelIngles&quot;
+                [value]&#x3D;&quot;elemento&quot;
+              &gt;
+                {{ elemento }}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+          &lt;!--#cantidad estudiantes--&gt;
+          &lt;!--cantidad categoria pregunta--&gt;
+          &lt;!-- &lt;mat-form-field class&#x3D;&quot;col-sm-2&quot;&gt;
+            &lt;mat-label&gt;Category&lt;/mat-label&gt;
+            &lt;mat-select [(value)]&#x3D;&quot;valueTipoCategoria&quot;&gt;
+              &lt;mat-option
+                *ngFor&#x3D;&quot;let elemento of tipoCategoriasRepositorio&quot;
+                [value]&#x3D;&quot;elemento&quot;
+              &gt;
+                {{ elemento }}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt; --&gt;
+          &lt;!--#cantidad categoria pregunta--&gt;
+          &lt;!-- tipo preguntas--&gt;
+          &lt;!-- &lt;mat-form-field class&#x3D;&quot;col-sm-2&quot;&gt;
+            &lt;mat-label&gt;Type of question&lt;/mat-label&gt;
+            &lt;mat-select [(value)]&#x3D;&quot;valueTipoPregunta&quot;&gt;
+              &lt;mat-option
+                *ngFor&#x3D;&quot;let elemento of tipoPreguntasRepositorio&quot;
+                [value]&#x3D;&quot;elemento&quot;
+              &gt;
+                {{ elemento }}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt; --&gt;
+          &lt;!--# tipo preguntas--&gt;
+          &lt;!-- tipo respuestas--&gt;
+          &lt;!-- &lt;mat-form-field class&#x3D;&quot;col-sm-2&quot;&gt;
+            &lt;mat-label&gt;Type of answer&lt;/mat-label&gt;
+            &lt;mat-select [(value)]&#x3D;&quot;valueTipoRespuesta&quot;&gt;
+              &lt;mat-option
+                *ngFor&#x3D;&quot;let elemento of tipoRespuestasRepositorio&quot;
+                [value]&#x3D;&quot;elemento&quot;
+              &gt;
+                {{ elemento }}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt; --&gt;
+          &lt;!--# tipo respuestas--&gt;
+          &lt;!-- tipo skill--&gt;
+          &lt;!-- &lt;mat-form-field class&#x3D;&quot;col-sm-2&quot;&gt;
+            &lt;mat-label&gt;Type of skill&lt;/mat-label&gt;
+            &lt;mat-select [(value)]&#x3D;&quot;valueTipoHabilidad&quot;&gt;
+              &lt;mat-option
+                *ngFor&#x3D;&quot;let elemento of tipoHabilidadRepositorio&quot;
+                [value]&#x3D;&quot;elemento&quot;
+              &gt;
+                {{ elemento }}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt; --&gt;
+          &lt;!--# tipo skill--&gt;
+          &lt;!-- search bar --&gt;
+          &lt;!-- &lt;mat-form-field class&#x3D;&quot;col-sm-2&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              placeholder&#x3D;&quot;Search&quot;
+              aria-label&#x3D;&quot;Number&quot;
+              matInput
+              [formControl]&#x3D;&quot;myControl&quot;
+              [matAutocomplete]&#x3D;&quot;auto&quot;
+            /&gt;
+            &lt;mat-autocomplete autoActiveFirstOption #auto&#x3D;&quot;matAutocomplete&quot;&gt;
+              &lt;mat-option
+                *ngFor&#x3D;&quot;let option of filteredOptions | async&quot;
+                [value]&#x3D;&quot;option&quot;
+              &gt;
+                {{ option }}
+              &lt;/mat-option&gt;
+            &lt;/mat-autocomplete&gt;
+          &lt;/mat-form-field&gt; --&gt;
+          &lt;!-- #search bar --&gt;
+        &lt;!-- &lt;/div&gt; --&gt;
+        &lt;!-- tabla --&gt;
+
+        &lt;table
+          mat-table
+          [dataSource]&#x3D;&quot;dataSource&quot;
+          matSort
+          class&#x3D;&quot;mat-header-row&quot;
+        &gt;
+          &lt;!-- nivel Column --&gt;
+          &lt;!-- &lt;ng-container matColumnDef&#x3D;&quot;nivel&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Level
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;mat-cell&quot;&gt;
+              {{ element.nivel }}
+            &lt;/td&gt;
+          &lt;/ng-container&gt; --&gt;
+          &lt;!-- #nivel Column --&gt;
+          &lt;!-- pregunta column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;nivel&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Pregunta
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;mat-cell&quot;&gt;
+              {{ element.pregunta }}
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- #pregunta column --&gt;
+          &lt;!-- Category Column --&gt;
+          &lt;!-- &lt;ng-container matColumnDef&#x3D;&quot;categoria&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Category
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.categoria }}&lt;/td&gt;
+          &lt;/ng-container&gt; --&gt;
+          &lt;!-- #Category Column --&gt;
+          &lt;!-- question  Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;tipoPregunta&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Type of Question
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+              {{ tipoPreguntasRepositorio[element.idTipoPregunta-1] }}
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- #question  Column --&gt;
+          &lt;!-- type of answer Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;tipoRespuesta&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Type of Answer
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+              {{ tipoRespuestasRepositorio[element.idTipoRespuesta-1] }}
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- #type of answer Column --&gt;
+          &lt;!-- Skill Column --&gt;
+          &lt;!-- &lt;ng-container matColumnDef&#x3D;&quot;habilidad&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Skill
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.habilidad }}&lt;/td&gt;
+          &lt;/ng-container&gt; --&gt;
+          &lt;!-- #Skill Column --&gt;
+
+          &lt;!-- Buttons Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;codigo&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              View
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element,let xele&#x3D;index&quot;&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-table--normal&quot;
+                mat-mini-fab
+                (click)&#x3D;&quot;irPasoDos(stepper, xele)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-subtitle__icon&quot;
+                  &gt;remove_red_eye&lt;/mat-icon
+                &gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;checkbox&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+              Mark
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element,let i&#x3D;index&quot;&gt;
+              &lt;mat-checkbox class&#x3D;&quot;example-margin&quot; 
+              [(ngModel)]&#x3D;checkboxOpciones[i].isChecked
+              [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+              &gt;
+            &lt;/mat-checkbox&gt;
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+          &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+          &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns&quot;&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/mat-dialog-content&gt;
+      &lt;!-- #tabla --&gt;
+      &lt;!-- #contenido --&gt;
+      &lt;div class&#x3D;&quot;group-buttons__dialog&quot;&gt;
+        &lt;button
+          mat-button
+          matStepperPrevious
+          class&#x3D;&quot;progress-bar__button-negative&quot;
+          (click)&#x3D;cancelar()
+        &gt;
+          Cancel
+        &lt;/button&gt;
+        &lt;button
+          mat-button
+          class&#x3D;&quot;progress-bar__button-normal&quot;
+          (click)&#x3D;&quot;irPasoTres(stepper)&quot;
+        &gt;
+          Add questions
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/mat-step&gt;
+  &lt;!-- #primer paso --&gt;
+  &lt;!-- segundo paso --&gt;
+  &lt;mat-step [stepControl]&#x3D;&quot;secondFormGroup&quot;&gt;
+    &lt;form&gt;
+      &lt;ng-template matStepLabel&gt;View&lt;/ng-template&gt;
+      &lt;div
+          [ngSwitch]&#x3D;&quot;preguntaPaso2.idTipoRespuesta&quot;
+          #template
+        &gt;
+          &lt;!--radio button case--&gt;
+          &lt;div class&#x3D;&quot;question-card-added&quot; *ngSwitchCase&#x3D;&quot;&#x27;1&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;question-card-added__content&quot;&gt;
+              &lt;div class&#x3D;&quot;question-card-added__header&quot;&gt;
+                &lt;!--input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--question&quot;&gt;
+                  &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Question Name&lt;/mat-label&gt;
+                    &lt;input
+                      [(ngModel)]&#x3D;&quot;preguntaPaso2.pregunta&quot;
+                      type&#x3D;&quot;text&quot;
+                      readonly
+                      class&#x3D;&quot;input-form&quot;
+                      matInput
+                      placeholder&#x3D;&quot;Question Name&quot;
+                      [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                &lt;!--#input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--score&quot;&gt;
+                  &lt;!--input para pregunta--&gt;
+                  &lt;div class&#x3D;&quot;card-question__input&quot;&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                      &lt;mat-label&gt;Score&lt;/mat-label&gt;
+                      &lt;input
+                        [(ngModel)]&#x3D;&quot;preguntaPaso2.puntuacion&quot;
+                        type&#x3D;&quot;text&quot;
+                        readonly
+                        class&#x3D;&quot;input-form&quot;
+                        matInput
+                        placeholder&#x3D;&quot;Score Name&quot;
+                        [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                      /&gt;
+                    &lt;/mat-form-field&gt;
+                  &lt;/div&gt;
+                  &lt;!--#input para pregunta--&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;question-card-added__content-question&quot;&gt;
+                &lt;!-- &lt;form class&#x3D;&quot;example-form&quot;&gt; --&gt;
+                &lt;mat-radio-group
+                  aria-label&#x3D;&quot;Select an option&quot;
+                  class&#x3D;&quot;example-radio-group&quot;
+                  [disabled]&#x3D;&quot;true&quot;
+                  [(ngModel)]&#x3D;&quot;preguntaPaso2.respuesta[0]&quot;
+                  [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                &gt;
+                  &lt;!-- radio button option --&gt;
+                  &lt;mat-radio-button
+                    class&#x3D;&quot;question-card-added__choice&quot;
+                    *ngFor&#x3D;&quot;
+                      let opcionesRadioButton of preguntaPaso2.opciones;
+                      let x &#x3D; index
+                    &quot;
+                    [value]&#x3D;&quot;x&quot;
+                  &gt;
+                    &lt;mat-form-field class&#x3D;&quot;full-width-field&quot;&gt;
+                      &lt;input
+                        [(value)]&#x3D;&quot;preguntaPaso2.opciones[x]&quot;
+                        style&#x3D;&quot;color: black;&quot;
+                        readonly
+                        class&#x3D;&quot;question-card-added__choice--input&quot;
+                        matInput
+                        placeholder&#x3D;&quot;opcion {{ x + 1 }}&quot;
+                      /&gt;
+                    &lt;/mat-form-field&gt;
+                    &lt;!--#radio button option--&gt;
+                  &lt;/mat-radio-button&gt;
+                &lt;/mat-radio-group&gt;
+                &lt;!-- &lt;/form&gt; --&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!--checkbox case--&gt;
+          &lt;div class&#x3D;&quot;question-card-added&quot; *ngSwitchCase&#x3D;&quot;&#x27;2&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;question-card-added__content&quot;&gt;
+              &lt;div class&#x3D;&quot;question-card-added__header&quot;&gt;
+                &lt;!--input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--question&quot;&gt;
+                  &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Question Name&lt;/mat-label&gt;
+                    &lt;input
+                      [(ngModel)]&#x3D;&quot;preguntaPaso2.pregunta&quot;
+                      type&#x3D;&quot;text&quot;
+                      class&#x3D;&quot;input-form&quot;
+                      matInput
+                      readonly
+                      placeholder&#x3D;&quot;Question Name&quot;
+                      [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                &lt;!--#input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--score&quot;&gt;
+                  &lt;!--input para pregunta--&gt;
+                  &lt;div class&#x3D;&quot;card-question__input&quot;&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                      &lt;mat-label&gt;Score&lt;/mat-label&gt;
+                      &lt;input
+                        [(ngModel)]&#x3D;&quot;preguntaPaso2.puntuacion&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;input-form&quot;
+                        readonly
+                        matInput
+                        placeholder&#x3D;&quot;Score Name&quot;
+                        [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                      /&gt;
+                    &lt;/mat-form-field&gt;
+                  &lt;/div&gt;
+                  &lt;!--#input para pregunta--&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;question-card-added__content-question&quot;&gt;
+                &lt;!-- &lt;form class&#x3D;&quot;example-form&quot;&gt; --&gt;
+                &lt;mat-checkbox
+                  class&#x3D;&quot;card-question__choice&quot;
+                  [disabled]&#x3D;&quot;true&quot;
+                  *ngFor&#x3D;&quot;let opcionesCB of preguntaPaso2.opciones; let x &#x3D; index&quot;
+                  [(ngModel)]&#x3D;&quot;preguntaPaso2.respuestasBool[x]&quot;
+                  name&#x3D;&quot;respuestacheckPas3{{ x }}&quot;
+                &gt;
+                  &lt;mat-form-field class&#x3D;&quot;full-width-field&quot;&gt;
+                    &lt;input
+                      [(value)]&#x3D;&quot;preguntaPaso2.opciones[x]&quot;
+                      style&#x3D;&quot;color: black;&quot;
+                      readonly
+                      name&#x3D;&quot;aPas3{{ x }}&quot;
+                      class&#x3D;&quot;card-question__choice--input&quot;
+                      matInput
+                      placeholder&#x3D;&quot;opcion&quot;
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;!--#radio button option--&gt;
+                &lt;/mat-checkbox&gt;
+
+                &lt;!-- &lt;/form&gt; --&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;div class&#x3D;&quot;group-buttons__dialog&quot;&gt;
+        &lt;button
+          mat-button
+          matStepperPrevious
+          class&#x3D;&quot;progress-bar__button-negative&quot;
+        &gt;
+          Back
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/mat-step&gt;
+  &lt;!-- #segundo paso --&gt;
+  &lt;!-- tercer paso --&gt;
+  &lt;mat-step [stepControl]&#x3D;&quot;thirdFormGroup&quot;&gt;
+    &lt;form&gt;
+      &lt;ng-template matStepLabel&gt;Preview&lt;/ng-template&gt;
+      &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
+        &lt;!--row added row--&gt;
+        &lt;div
+          *ngFor&#x3D;&quot;let card of preguntasElegidas; let i &#x3D; index&quot;
+          [ngSwitch]&#x3D;&quot;card.idTipoRespuesta&quot;
+          #template
+        &gt;
+          &lt;!--radio button case--&gt;
+          &lt;div class&#x3D;&quot;question-card-added&quot; *ngSwitchCase&#x3D;&quot;&#x27;1&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;question-card-added__content&quot;&gt;
+              &lt;div class&#x3D;&quot;question-card-added__header&quot;&gt;
+                &lt;!--input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--question&quot;&gt;
+                  &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Question Name&lt;/mat-label&gt;
+                    &lt;input
+                      [(ngModel)]&#x3D;&quot;card.pregunta&quot;
+                      type&#x3D;&quot;text&quot;
+                      readonly
+                      class&#x3D;&quot;input-form&quot;
+                      matInput
+                      placeholder&#x3D;&quot;Question Name&quot;
+                      name&#x3D;&quot;nombre preguntaPas3{{ i }}&quot;
+                      [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                &lt;!--#input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--score&quot;&gt;
+                  &lt;!--input para pregunta--&gt;
+                  &lt;div class&#x3D;&quot;card-question__input&quot;&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                      &lt;mat-label&gt;Score&lt;/mat-label&gt;
+                      &lt;input
+                        [(ngModel)]&#x3D;&quot;card.puntuacion&quot;
+                        type&#x3D;&quot;text&quot;
+                        readonly
+                        class&#x3D;&quot;input-form&quot;
+                        matInput
+                        placeholder&#x3D;&quot;Score Name&quot;
+                        name&#x3D;&quot;puntuacionPas3{{ i }}&quot;
+                        [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                      /&gt;
+                    &lt;/mat-form-field&gt;
+                  &lt;/div&gt;
+                  &lt;!--#input para pregunta--&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;question-card-added__content-question&quot;&gt;
+                &lt;!-- &lt;form class&#x3D;&quot;example-form&quot;&gt; --&gt;
+                &lt;mat-radio-group
+                  aria-label&#x3D;&quot;Select an option&quot;
+                  class&#x3D;&quot;example-radio-group&quot;
+                  name&#x3D;&quot;radioButtonsGroupPas3{{ i }}&quot;
+                  [disabled]&#x3D;&quot;true&quot;
+                  [(ngModel)]&#x3D;&quot;card.respuesta[0]&quot;
+                  [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                &gt;
+                  &lt;!-- radio button option --&gt;
+                  &lt;mat-radio-button
+                    name&#x3D;&quot;grupo{{ i }}&quot;
+                    class&#x3D;&quot;question-card-added__choice&quot;
+                    *ngFor&#x3D;&quot;
+                      let opcionesRadioButton of card.opciones;
+                      let x &#x3D; index
+                    &quot;
+                    [value]&#x3D;&quot;x&quot;
+                  &gt;
+                    &lt;mat-form-field class&#x3D;&quot;full-width-field&quot;&gt;
+                      &lt;input
+                        [(value)]&#x3D;&quot;card.opciones[x]&quot;
+                        name&#x3D;&quot;grupoPas3{{ x }}{{ i }}&quot;
+                        style&#x3D;&quot;color: black;&quot;
+                        readonly
+                        class&#x3D;&quot;question-card-added__choice--input&quot;
+                        matInput
+                        placeholder&#x3D;&quot;opcion {{ x + 1 }}&quot;
+                      /&gt;
+                    &lt;/mat-form-field&gt;
+                    &lt;!--#radio button option--&gt;
+                  &lt;/mat-radio-button&gt;
+                &lt;/mat-radio-group&gt;
+                &lt;!-- &lt;/form&gt; --&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;!--checkbox case--&gt;
+          &lt;div class&#x3D;&quot;question-card-added&quot; *ngSwitchCase&#x3D;&quot;&#x27;2&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;question-card-added__content&quot;&gt;
+              &lt;div class&#x3D;&quot;question-card-added__header&quot;&gt;
+                &lt;!--input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--question&quot;&gt;
+                  &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Question Name&lt;/mat-label&gt;
+                    &lt;input
+                      [(ngModel)]&#x3D;&quot;card.pregunta&quot;
+                      type&#x3D;&quot;text&quot;
+                      class&#x3D;&quot;input-form&quot;
+                      matInput
+                      readonly
+                      placeholder&#x3D;&quot;Question Name&quot;
+                      name&#x3D;&quot;nombre preguntaPas3{{ i }}&quot;
+                      [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                &lt;!--#input para pregunta--&gt;
+                &lt;div class&#x3D;&quot;question-card-added__header--score&quot;&gt;
+                  &lt;!--input para pregunta--&gt;
+                  &lt;div class&#x3D;&quot;card-question__input&quot;&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                      &lt;mat-label&gt;Score&lt;/mat-label&gt;
+                      &lt;input
+                        [(ngModel)]&#x3D;&quot;card.puntuacion&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;input-form&quot;
+                        readonly
+                        matInput
+                        placeholder&#x3D;&quot;Score Name&quot;
+                        name&#x3D;&quot;puntuacionPas3{{ i }}&quot;
+                        [ngModelOptions]&#x3D;&quot;{ standalone: true }&quot;
+                      /&gt;
+                    &lt;/mat-form-field&gt;
+                  &lt;/div&gt;
+                  &lt;!--#input para pregunta--&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;question-card-added__content-question&quot;&gt;
+                &lt;!-- &lt;form class&#x3D;&quot;example-form&quot;&gt; --&gt;
+                &lt;mat-checkbox
+                  class&#x3D;&quot;card-question__choice&quot;
+                  [disabled]&#x3D;&quot;true&quot;
+                  *ngFor&#x3D;&quot;let opcionesCB of card.opciones; let x &#x3D; index&quot;
+                  [(ngModel)]&#x3D;&quot;card.respuestasBool[x]&quot;
+                  name&#x3D;&quot;respuestacheckPas3{{ x }}&quot;
+                &gt;
+                  &lt;mat-form-field class&#x3D;&quot;full-width-field&quot;&gt;
+                    &lt;input
+                      [(value)]&#x3D;&quot;card.opciones[x]&quot;
+                      style&#x3D;&quot;color: black;&quot;
+                      readonly
+                      name&#x3D;&quot;aPas3{{ x }}&quot;
+                      class&#x3D;&quot;card-question__choice--input&quot;
+                      matInput
+                      placeholder&#x3D;&quot;opcion&quot;
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;!--#radio button option--&gt;
+                &lt;/mat-checkbox&gt;
+
+                &lt;!-- &lt;/form&gt; --&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--#row--&gt;
+      &lt;/mat-dialog-content&gt;
+
+      &lt;div class&#x3D;&quot;group-buttons__dialog&quot;&gt;
+        &lt;button
+          mat-button
+          (click)&#x3D;&quot;volverPasoUno(stepper)&quot;
+          class&#x3D;&quot;progress-bar__button-negative&quot;
+        &gt;
+          Back
+        &lt;/button&gt;
+        &lt;button
+          mat-button
+          matStepperNext
+          class&#x3D;&quot;progress-bar__button-normal&quot;
+          (click)&#x3D;&quot;aceptar()&quot;
+        &gt;
+          Add questions to practice
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/mat-step&gt;
+  &lt;!-- #tercer paso --&gt;
+  &lt;!-- cuarto paso --&gt;
+  &lt;!-- &lt;mat-step&gt;
+    &lt;ng-template matStepLabel&gt;Done&lt;/ng-template&gt;
+    &lt;div class&#x3D;&quot;spinner&quot;&gt;
+      &lt;mat-spinner *ngIf&#x3D;&quot;showSpinner&quot;&gt;&lt;/mat-spinner&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;group-buttons__dialog&quot;&gt;
+      &lt;button
+        mat-button
+        matStepperPrevious
+        class&#x3D;&quot;progress-bar__button-negative&quot;
+      &gt;
+        Back
+      &lt;/button&gt;
+      &lt;button
+        mat-button
+        (click)&#x3D;&quot;stepper.reset()&quot;
+        class&#x3D;&quot;progress-bar__button-normal&quot;
+      &gt;
+        Reset
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/mat-step&gt; --&gt;
+  &lt;!-- #cuarto paso --&gt;
+&lt;/mat-horizontal-stepper&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./repository-question.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-horizontal-stepper labelPosition="bottom" #stepper>  <!-- primer paso -->  <mat-step [stepControl]="firstFormGroup">    <form >      <ng-template matStepLabel>Repository</ng-template>      <!-- contenido -->      <mat-dialog-content class="mat-typography">        <!-- <div class="row"> -->          <!--cantidad estudiantes-->          <!-- <mat-form-field class="col-sm-2">            <mat-label>English Level</mat-label>            <mat-select [(value)]="valueNivelIngles">              <mat-option                *ngFor="let elemento of nivelIngles"                [value]="elemento"              >                {{ elemento }}              </mat-option>            </mat-select>          </mat-form-field>          <!--#cantidad estudiantes-->          <!--cantidad categoria pregunta-->          <!-- <mat-form-field class="col-sm-2">            <mat-label>Category</mat-label>            <mat-select [(value)]="valueTipoCategoria">              <mat-option                *ngFor="let elemento of tipoCategoriasRepositorio"                [value]="elemento"              >                {{ elemento }}              </mat-option>            </mat-select>          </mat-form-field> -->          <!--#cantidad categoria pregunta-->          <!-- tipo preguntas-->          <!-- <mat-form-field class="col-sm-2">            <mat-label>Type of question</mat-label>            <mat-select [(value)]="valueTipoPregunta">              <mat-option                *ngFor="let elemento of tipoPreguntasRepositorio"                [value]="elemento"              >                {{ elemento }}              </mat-option>            </mat-select>          </mat-form-field> -->          <!--# tipo preguntas-->          <!-- tipo respuestas-->          <!-- <mat-form-field class="col-sm-2">            <mat-label>Type of answer</mat-label>            <mat-select [(value)]="valueTipoRespuesta">              <mat-option                *ngFor="let elemento of tipoRespuestasRepositorio"                [value]="elemento"              >                {{ elemento }}              </mat-option>            </mat-select>          </mat-form-field> -->          <!--# tipo respuestas-->          <!-- tipo skill-->          <!-- <mat-form-field class="col-sm-2">            <mat-label>Type of skill</mat-label>            <mat-select [(value)]="valueTipoHabilidad">              <mat-option                *ngFor="let elemento of tipoHabilidadRepositorio"                [value]="elemento"              >                {{ elemento }}              </mat-option>            </mat-select>          </mat-form-field> -->          <!--# tipo skill-->          <!-- search bar -->          <!-- <mat-form-field class="col-sm-2">            <input              type="text"              placeholder="Search"              aria-label="Number"              matInput              [formControl]="myControl"              [matAutocomplete]="auto"            />            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">              <mat-option                *ngFor="let option of filteredOptions | async"                [value]="option"              >                {{ option }}              </mat-option>            </mat-autocomplete>          </mat-form-field> -->          <!-- #search bar -->        <!-- </div> -->        <!-- tabla -->        <table          mat-table          [dataSource]="dataSource"          matSort          class="mat-header-row"        >          <!-- nivel Column -->          <!-- <ng-container matColumnDef="nivel">            <th mat-header-cell *matHeaderCellDef class="header-table">              Level            </th>            <td mat-cell *matCellDef="let element" class="mat-cell">              {{ element.nivel }}            </td>          </ng-container> -->          <!-- #nivel Column -->          <!-- pregunta column -->          <ng-container matColumnDef="nivel">            <th mat-header-cell *matHeaderCellDef class="header-table">              Pregunta            </th>            <td mat-cell *matCellDef="let element" class="mat-cell">              {{ element.pregunta }}            </td>          </ng-container>          <!-- #pregunta column -->          <!-- Category Column -->          <!-- <ng-container matColumnDef="categoria">            <th mat-header-cell *matHeaderCellDef class="header-table">              Category            </th>            <td mat-cell *matCellDef="let element">{{ element.categoria }}</td>          </ng-container> -->          <!-- #Category Column -->          <!-- question  Column -->          <ng-container matColumnDef="tipoPregunta">            <th mat-header-cell *matHeaderCellDef class="header-table">              Type of Question            </th>            <td mat-cell *matCellDef="let element">              {{ tipoPreguntasRepositorio[element.idTipoPregunta-1] }}            </td>          </ng-container>          <!-- #question  Column -->          <!-- type of answer Column -->          <ng-container matColumnDef="tipoRespuesta">            <th mat-header-cell *matHeaderCellDef class="header-table">              Type of Answer            </th>            <td mat-cell *matCellDef="let element">              {{ tipoRespuestasRepositorio[element.idTipoRespuesta-1] }}            </td>          </ng-container>          <!-- #type of answer Column -->          <!-- Skill Column -->          <!-- <ng-container matColumnDef="habilidad">            <th mat-header-cell *matHeaderCellDef class="header-table">              Skill            </th>            <td mat-cell *matCellDef="let element">{{ element.habilidad }}</td>          </ng-container> -->          <!-- #Skill Column -->          <!-- Buttons Column -->          <ng-container matColumnDef="codigo">            <th mat-header-cell *matHeaderCellDef class="header-table">              View            </th>            <td mat-cell *matCellDef="let element,let xele=index">              <button                class="circular-button-table--normal"                mat-mini-fab                (click)="irPasoDos(stepper, xele)"              >                <mat-icon class="circular-button-subtitle__icon"                  >remove_red_eye</mat-icon                >              </button>            </td>          </ng-container>          <ng-container matColumnDef="checkbox">            <th mat-header-cell *matHeaderCellDef class="header-table">              Mark            </th>            <td mat-cell *matCellDef="let element,let i=index">              <mat-checkbox class="example-margin"               [(ngModel)]=checkboxOpciones[i].isChecked              [ngModelOptions]="{ standalone: true }"              >            </mat-checkbox>            </td>          </ng-container>          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>        </table>      </mat-dialog-content>      <!-- #tabla -->      <!-- #contenido -->      <div class="group-buttons__dialog">        <button          mat-button          matStepperPrevious          class="progress-bar__button-negative"          (click)=cancelar()        >          Cancel        </button>        <button          mat-button          class="progress-bar__button-normal"          (click)="irPasoTres(stepper)"        >          Add questions        </button>      </div>    </form>  </mat-step>  <!-- #primer paso -->  <!-- segundo paso -->  <mat-step [stepControl]="secondFormGroup">    <form>      <ng-template matStepLabel>View</ng-template>      <div          [ngSwitch]="preguntaPaso2.idTipoRespuesta"          #template        >          <!--radio button case-->          <div class="question-card-added" *ngSwitchCase="\'1\'">            <div class="question-card-added__content">              <div class="question-card-added__header">                <!--input para pregunta-->                <div class="question-card-added__header--question">                  <mat-form-field appearance="outline">                    <mat-label>Question Name</mat-label>                    <input                      [(ngModel)]="preguntaPaso2.pregunta"                      type="text"                      readonly                      class="input-form"                      matInput                      placeholder="Question Name"                      [ngModelOptions]="{ standalone: true }"                    />                  </mat-form-field>                </div>                <!--#input para pregunta-->                <div class="question-card-added__header--score">                  <!--input para pregunta-->                  <div class="card-question__input">                    <mat-form-field appearance="outline">                      <mat-label>Score</mat-label>                      <input                        [(ngModel)]="preguntaPaso2.puntuacion"                        type="text"                        readonly                        class="input-form"                        matInput                        placeholder="Score Name"                        [ngModelOptions]="{ standalone: true }"                      />                    </mat-form-field>                  </div>                  <!--#input para pregunta-->                </div>              </div>              <div class="question-card-added__content-question">                <!-- <form class="example-form"> -->                <mat-radio-group                  aria-label="Select an option"                  class="example-radio-group"                  [disabled]="true"                  [(ngModel)]="preguntaPaso2.respuesta[0]"                  [ngModelOptions]="{ standalone: true }"                >                  <!-- radio button option -->                  <mat-radio-button                    class="question-card-added__choice"                    *ngFor="                      let opcionesRadioButton of preguntaPaso2.opciones;                      let x = index                    "                    [value]="x"                  >                    <mat-form-field class="full-width-field">                      <input                        [(value)]="preguntaPaso2.opciones[x]"                        style="color: black;"                        readonly                        class="question-card-added__choice--input"                        matInput                        placeholder="opcion {{ x + 1 }}"                      />                    </mat-form-field>                    <!--#radio button option-->                  </mat-radio-button>                </mat-radio-group>                <!-- </form> -->              </div>            </div>          </div>          <!--checkbox case-->          <div class="question-card-added" *ngSwitchCase="\'2\'">            <div class="question-card-added__content">              <div class="question-card-added__header">                <!--input para pregunta-->                <div class="question-card-added__header--question">                  <mat-form-field appearance="outline">                    <mat-label>Question Name</mat-label>                    <input                      [(ngModel)]="preguntaPaso2.pregunta"                      type="text"                      class="input-form"                      matInput                      readonly                      placeholder="Question Name"                      [ngModelOptions]="{ standalone: true }"                    />                  </mat-form-field>                </div>                <!--#input para pregunta-->                <div class="question-card-added__header--score">                  <!--input para pregunta-->                  <div class="card-question__input">                    <mat-form-field appearance="outline">                      <mat-label>Score</mat-label>                      <input                        [(ngModel)]="preguntaPaso2.puntuacion"                        type="text"                        class="input-form"                        readonly                        matInput                        placeholder="Score Name"                        [ngModelOptions]="{ standalone: true }"                      />                    </mat-form-field>                  </div>                  <!--#input para pregunta-->                </div>              </div>              <div class="question-card-added__content-question">                <!-- <form class="example-form"> -->                <mat-checkbox                  class="card-question__choice"                  [disabled]="true"                  *ngFor="let opcionesCB of preguntaPaso2.opciones; let x = index"                  [(ngModel)]="preguntaPaso2.respuestasBool[x]"                  name="respuestacheckPas3{{ x }}"                >                  <mat-form-field class="full-width-field">                    <input                      [(value)]="preguntaPaso2.opciones[x]"                      style="color: black;"                      readonly                      name="aPas3{{ x }}"                      class="card-question__choice--input"                      matInput                      placeholder="opcion"                    />                  </mat-form-field>                  <!--#radio button option-->                </mat-checkbox>                <!-- </form> -->              </div>            </div>          </div>        </div>      <div class="group-buttons__dialog">        <button          mat-button          matStepperPrevious          class="progress-bar__button-negative"        >          Back        </button>      </div>    </form>  </mat-step>  <!-- #segundo paso -->  <!-- tercer paso -->  <mat-step [stepControl]="thirdFormGroup">    <form>      <ng-template matStepLabel>Preview</ng-template>      <mat-dialog-content class="mat-typography">        <!--row added row-->        <div          *ngFor="let card of preguntasElegidas; let i = index"          [ngSwitch]="card.idTipoRespuesta"          #template        >          <!--radio button case-->          <div class="question-card-added" *ngSwitchCase="\'1\'">            <div class="question-card-added__content">              <div class="question-card-added__header">                <!--input para pregunta-->                <div class="question-card-added__header--question">                  <mat-form-field appearance="outline">                    <mat-label>Question Name</mat-label>                    <input                      [(ngModel)]="card.pregunta"                      type="text"                      readonly                      class="input-form"                      matInput                      placeholder="Question Name"                      name="nombre preguntaPas3{{ i }}"                      [ngModelOptions]="{ standalone: true }"                    />                  </mat-form-field>                </div>                <!--#input para pregunta-->                <div class="question-card-added__header--score">                  <!--input para pregunta-->                  <div class="card-question__input">                    <mat-form-field appearance="outline">                      <mat-label>Score</mat-label>                      <input                        [(ngModel)]="card.puntuacion"                        type="text"                        readonly                        class="input-form"                        matInput                        placeholder="Score Name"                        name="puntuacionPas3{{ i }}"                        [ngModelOptions]="{ standalone: true }"                      />                    </mat-form-field>                  </div>                  <!--#input para pregunta-->                </div>              </div>              <div class="question-card-added__content-question">                <!-- <form class="example-form"> -->                <mat-radio-group                  aria-label="Select an option"                  class="example-radio-group"                  name="radioButtonsGroupPas3{{ i }}"                  [disabled]="true"                  [(ngModel)]="card.respuesta[0]"                  [ngModelOptions]="{ standalone: true }"                >                  <!-- radio button option -->                  <mat-radio-button                    name="grupo{{ i }}"                    class="question-card-added__choice"                    *ngFor="                      let opcionesRadioButton of card.opciones;                      let x = index                    "                    [value]="x"                  >                    <mat-form-field class="full-width-field">                      <input                        [(value)]="card.opciones[x]"                        name="grupoPas3{{ x }}{{ i }}"                        style="color: black;"                        readonly                        class="question-card-added__choice--input"                        matInput                        placeholder="opcion {{ x + 1 }}"                      />                    </mat-form-field>                    <!--#radio button option-->                  </mat-radio-button>                </mat-radio-group>                <!-- </form> -->              </div>            </div>          </div>          <!--checkbox case-->          <div class="question-card-added" *ngSwitchCase="\'2\'">            <div class="question-card-added__content">              <div class="question-card-added__header">                <!--input para pregunta-->                <div class="question-card-added__header--question">                  <mat-form-field appearance="outline">                    <mat-label>Question Name</mat-label>                    <input                      [(ngModel)]="card.pregunta"                      type="text"                      class="input-form"                      matInput                      readonly                      placeholder="Question Name"                      name="nombre preguntaPas3{{ i }}"                      [ngModelOptions]="{ standalone: true }"                    />                  </mat-form-field>                </div>                <!--#input para pregunta-->                <div class="question-card-added__header--score">                  <!--input para pregunta-->                  <div class="card-question__input">                    <mat-form-field appearance="outline">                      <mat-label>Score</mat-label>                      <input                        [(ngModel)]="card.puntuacion"                        type="text"                        class="input-form"                        readonly                        matInput                        placeholder="Score Name"                        name="puntuacionPas3{{ i }}"                        [ngModelOptions]="{ standalone: true }"                      />                    </mat-form-field>                  </div>                  <!--#input para pregunta-->                </div>              </div>              <div class="question-card-added__content-question">                <!-- <form class="example-form"> -->                <mat-checkbox                  class="card-question__choice"                  [disabled]="true"                  *ngFor="let opcionesCB of card.opciones; let x = index"                  [(ngModel)]="card.respuestasBool[x]"                  name="respuestacheckPas3{{ x }}"                >                  <mat-form-field class="full-width-field">                    <input                      [(value)]="card.opciones[x]"                      style="color: black;"                      readonly                      name="aPas3{{ x }}"                      class="card-question__choice--input"                      matInput                      placeholder="opcion"                    />                  </mat-form-field>                  <!--#radio button option-->                </mat-checkbox>                <!-- </form> -->              </div>            </div>          </div>        </div>        <!--#row-->      </mat-dialog-content>      <div class="group-buttons__dialog">        <button          mat-button          (click)="volverPasoUno(stepper)"          class="progress-bar__button-negative"        >          Back        </button>        <button          mat-button          matStepperNext          class="progress-bar__button-normal"          (click)="aceptar()"        >          Add questions to practice        </button>      </div>    </form>  </mat-step>  <!-- #tercer paso -->  <!-- cuarto paso -->  <!-- <mat-step>    <ng-template matStepLabel>Done</ng-template>    <div class="spinner">      <mat-spinner *ngIf="showSpinner"></mat-spinner>    </div>    <div class="group-buttons__dialog">      <button        mat-button        matStepperPrevious        class="progress-bar__button-negative"      >        Back      </button>      <button        mat-button        (click)="stepper.reset()"        class="progress-bar__button-normal"      >        Reset      </button>    </div>  </mat-step> -->  <!-- #cuarto paso --></mat-horizontal-stepper></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RepositoryQuestionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RepositoryQuestionComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

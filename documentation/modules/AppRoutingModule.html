@@ -1,0 +1,474 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li>AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule, Component } from &quot;@angular/core&quot;;
+import { Routes, RouterModule } from &quot;@angular/router&quot;;
+import { DefaultComponent } from &quot;./layouts/default/default.component&quot;;
+import { LoginComponent } from &quot;./modules/login/login.component&quot;;
+import { ChoosingClassroomComponent } from &quot;./modules/choosing-classroom/choosing-classroom.component&quot;;
+import { DashboardComponent } from &quot;./modules/home/dashboard/dashboard.component&quot;;
+
+//import { ModulesComponent } from &quot;./modules/modules/modules.component&quot;;
+import { ResourcesComponent } from &quot;./modules/home/resources/resources.component&quot;;
+import { EvaluationComponent } from &quot;./modules/home/evaluation/evaluation.component&quot;;
+import { ThemesComponent } from &quot;./modules/home/modules/themes-base/themes/themes.component&quot;;
+import { AssessmentsComponent } from &quot;./modules/home/modules/assessments-base/assessments/assessments.component&quot;;
+import { StudentsComponent } from &quot;./modules/home/my-class/students/students.component&quot;;
+import { AssistanceComponent } from &quot;./modules/home/my-class/assistance/assistance.component&quot;;
+import { QualificationComponent } from &quot;./modules/home/my-class/qualification/qualification.component&quot;;
+import { StudentsProfileComponent } from &quot;./modules/home/my-class/students-profile/students-profile.component&quot;;
+import { AttendanceScoreComponent } from &quot;./modules/home/my-class/students-profile/scores/attendance-score/attendance-score.component&quot;;
+
+import { OthersScoreComponent } from &quot;./modules/home/my-class/students-profile/scores/others-score/others-score.component&quot;;
+import { ProfileDocenteResolver } from &quot;./_resolvers/docente/profile-docente.resolver&quot;;
+import { AuthDocenteResolver } from &quot;./_resolvers/docente/auth-docente.resolver&quot;;
+import { ClassroomDocenteResolver } from &quot;./_resolvers/docente/classRoom/classroom-info-docente.resolver&quot;;
+import { GetLevelResolver } from &quot;./_resolvers/docente/classRoom/get-level.resolver&quot;;
+import { GetSemesterResolver } from &quot;./_resolvers/docente/classRoom/get-semester.resolver&quot;;
+import { ThemeContentComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-content.component&quot;;
+import { ThemeLessonsComponent } from &quot;./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component&quot;;
+import { ThemesBaseComponent } from &quot;./modules/home/modules/themes-base/themes-base.component&quot;;
+import { AssessmentsBaseComponent } from &quot;./modules/home/modules/assessments-base/assessments-base.component&quot;;
+import { IndividualAssessmentComponent } from &quot;./modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component&quot;;
+
+import { DetailAssessmentsComponent } from &quot;./modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component&quot;;
+import { StudentsGeneralResolver } from &quot;./_resolvers/docente/my-class/get-students.resolver&quot;;
+import { GetProfileStudentResolver } from &quot;./_resolvers/docente/my-class/get-profile-student.resolver&quot;;
+import { GetThemesTeacherResolver } from &quot;./_resolvers/docente/modules/get-themes.resolver&quot;;
+import { GetContentModuleResolver } from &quot;./_resolvers/docente/modules/get-content-module.resolver&quot;;
+import { GetImagesIdResolver } from &quot;./_resolvers/docente/modules/get_imagesId.resolver&quot;;
+import { GetFechasAsistenciaResolver } from &quot;./_resolvers/docente/my-class/get-fechas-asistencia.resolver&quot;;
+import { GetLessonsResolver } from &quot;./_resolvers/docente/modules/themes/get-lessons.resolver&quot;;
+import { ForumContentComponent } from &quot;./modules/home/forums-base/forums/forum-content/forum-content.component&quot;;
+import { ForumsComponent } from &quot;./modules/home/forums-base/forums/forums.component&quot;;
+import { ForumsBaseComponent } from &quot;./modules/home/forums-base/forums-base.component&quot;;
+import { GetTypeLessonsResolver } from &quot;./_resolvers/docente/modules/themes/get-type-lessons.resolver&quot;;
+import { GetModulesResolver } from &quot;./_resolvers/docente/evaluation/get_modules.resolver&quot;;
+import { GetColorsResolver } from &quot;./_resolvers/docente/evaluation/get-colores.resolver&quot;;
+import { CreatePracticeComponent } from &quot;./modules/home/modules/themes-base/themes/create-practice/create-practice.component&quot;;
+import { BuildingPageComponent } from &quot;./modules/aux-pages/building-page/building-page.component&quot;;
+import { GetForumsResolver } from &quot;./_resolvers/docente/forums/get-forums.resolver&quot;;
+import { GetPracticesResolver } from &quot;./_resolvers/docente/practices/get-practices.resolver&quot;;
+import { GetQuestionsRepositoryResolver } from &quot;./_resolvers/docente/practices/get-questions-repository.resolver&quot;;
+import { GetResourcesResolver } from &quot;./_resolvers/docente/Resources/get-resources.resolver&quot;;
+import { GetModulesSimpleResolver } from &quot;./_resolvers/docente/evaluation/get-modules-simple.resolver&quot;;
+import { CustomModuleBaseComponent } from &quot;./modules/home/modules/custom-module-base/custom-module-base.component&quot;;
+import { CustomModuleComponent } from &quot;./modules/home/modules/custom-module-base/custom-module/custom-module.component&quot;;
+import { DetailCustomModuleComponent } from &quot;./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component&quot;;
+import { DetailTableComponent } from &quot;./modules/home/modules/themes-base/themes/detail-table/detail-table.component&quot;;
+import { DetailIndividualComponent } from &quot;./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component&quot;;
+import { GetQualificationResolver } from &#x27;./_resolvers/docente/my-class/get-qualification.resolver&#x27;;
+import { GetScoreContentModuleResolver } from &#x27;./_resolvers/docente/modules/get-score-content-module.resolver&#x27;;
+import { GetScoresPracticesResolver } from &#x27;./_resolvers/docente/practices/get-scores-practices.resolver&#x27;;
+import { GetPracticesDashBoardResolver } from &#x27;./_resolvers/docente/dashBoards/get_practices-dashboard.resolver&#x27;;
+ 
+const routes: Routes &#x3D; [
+  {
+    path: &quot;&quot;,
+
+    component: LoginComponent,
+    resolve: { login: AuthDocenteResolver },
+  },
+  {
+    path: &quot;building&quot;,
+    component: BuildingPageComponent,
+  },
+
+  {
+    path: &quot;classroom&quot;,
+    component: ChoosingClassroomComponent,
+    resolve: {
+      profile: ProfileDocenteResolver,
+      classroom: ClassroomDocenteResolver,
+      semester:GetSemesterResolver,
+      level:GetLevelResolver
+    },
+  },
+  {
+    path: &quot;teacher/:idCurso&quot;,
+    component: DefaultComponent,
+    resolve: {
+      profile: ProfileDocenteResolver,
+      classroom: ClassroomDocenteResolver,
+      modules: GetModulesSimpleResolver,
+    },
+    children: [
+      {
+        path: &quot;dashboard&quot;,
+        // path: &quot;building&quot;,
+        // component: BuildingPageComponent,
+        component: DashboardComponent,
+        resolve:{
+          practices:GetPracticesDashBoardResolver
+        }
+      },
+      {
+        path: &quot;my-class&quot;,
+        children: [
+          {
+            path: &quot;students&quot;,
+            resolve: {
+              students: StudentsGeneralResolver,
+            },
+            component: StudentsComponent,
+          },
+          // {
+          //   path: &quot;attendance&quot;,
+          //   resolve: {
+          //     fechas: GetFechasAsistenciaResolver,
+          //   },
+          //   component: AssistanceComponent,
+          // },
+          {
+            path: &quot;profile/:idAlumnoCurso&quot;,
+            resolve: {
+              students: GetProfileStudentResolver,
+              colors: GetColorsResolver,
+              images: GetImagesIdResolver,
+            },
+            component: StudentsProfileComponent,
+          },
+          {
+            path: &quot;qualification&quot;,
+            children: [
+              {
+                path: &quot;&quot;,
+                component: QualificationComponent,
+                resolve:{
+                  qualifications:GetQualificationResolver
+                }
+              },
+              {
+                path: &quot;profile-students&quot;,
+                children: [
+                  {
+                    path: &quot;&quot;,
+                    component: StudentsProfileComponent,
+                  },
+                  {
+                    path: &quot;attendance-score&quot;,
+                    component: AttendanceScoreComponent,
+                  },
+                  {
+                    path: &quot;others-score&quot;,
+                    component: OthersScoreComponent,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        // path: &quot;forums&quot;,
+        // component: ForumsComponent,
+        path: &quot;forums&quot;,
+        component: ForumsBaseComponent,
+        children: [
+          {
+            path: &quot;&quot;,
+            resolve: {
+              forums: GetForumsResolver,
+            },
+            component: ForumsComponent,
+          },
+          {
+            path: &quot;:id&quot;,
+            component: ForumContentComponent,
+          },
+        ],
+      },
+      {
+        path: &quot;modules&quot;,
+        component: CustomModuleBaseComponent,
+        children: [
+          {
+            path: &quot;custom/:idModulo&quot;,
+            children: [
+              {
+                path: &quot;&quot;,
+                component: CustomModuleComponent,
+                resolve:{
+                  content:GetContentModuleResolver
+                },
+                runGuardsAndResolvers:&quot;always&quot;
+
+              },
+              {
+                path: &quot;detail&quot;,
+                children:[
+                  {
+                    path:&quot;:idContenidoModulo&quot;,
+                    component: DetailCustomModuleComponent,
+                    resolve:{
+                      notasContenido:GetScoreContentModuleResolver
+                    }
+                  }
+                ]
+              },
+            ],
+          },
+          {
+            path: &quot;themes&quot;,
+            component: ThemesBaseComponent,
+            resolve: {
+              themes: GetThemesTeacherResolver,
+              images: GetImagesIdResolver,
+            },
+            children: [
+              {
+                path: &quot;&quot;,
+                component: ThemesComponent,
+              },
+              {
+                path: &quot;:idTema&quot;,
+                children: [
+                  {
+                    path: &quot;&quot;,
+                    resolve: {
+                      lessons: GetLessonsResolver,
+                      images: GetImagesIdResolver,
+                      types: GetTypeLessonsResolver,
+                    },
+                    component: ThemeContentComponent,
+                  },
+                  {
+                    path: &quot;:idLeccion&quot;,
+                    //component: ThemeLessonsComponent,
+                    children: [
+                      {
+                        path: &quot;&quot;,
+                        resolve: {
+                          practicas: GetPracticesResolver,
+                        },
+                        runGuardsAndResolvers: &quot;always&quot;,
+
+                        children: [
+                          {
+                            path: &quot;&quot;,
+                            component: ThemeLessonsComponent,
+                          },
+                          {
+                            path: &quot;detail&quot;,
+
+                            children: [
+                              {
+                                path: &quot;:idPractica&quot;,
+                                resolve:{
+                                  scores:GetScoresPracticesResolver
+                                },
+                                component: DetailTableComponent,
+                              },
+                              {
+                                path: &quot;individual&quot;,
+                                component: DetailIndividualComponent,
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        path: &quot;practice&quot;,
+                        component: CreatePracticeComponent,
+                        resolve:{
+                          repository:GetQuestionsRepositoryResolver
+                        }
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            path: &quot;assessments&quot;,
+            component: AssessmentsBaseComponent,
+            children: [
+              {
+                path: &quot;&quot;,
+                component: AssessmentsComponent,
+              },
+              {
+                path: &quot;detail&quot;,
+                children: [
+                  {
+                    path: &quot;&quot;,
+                    component: DetailAssessmentsComponent,
+                  },
+                  {
+                    path: &quot;individual-test&quot;,
+                    component: IndividualAssessmentComponent,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: &quot;resources&quot;,
+        component: ResourcesComponent,
+        runGuardsAndResolvers: &quot;always&quot;,
+        resolve: {
+          sections: GetResourcesResolver,
+        },
+      },
+      {
+        path: &quot;evaluation&quot;,
+        component: EvaluationComponent,
+        resolve: {
+          modules: GetModulesResolver,
+          colors: GetColorsResolver,
+          images: GetImagesIdResolver,
+        },
+      },
+    ],
+  },
+  {
+    path: &quot;**&quot;,
+    redirectTo: &quot;building&quot;,
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1712 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ChoosingClassroomComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/choosing-classroom/choosing-classroom.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-choosing-classroom</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./choosing-classroom.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./choosing-classroom.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#classroomCards">classroomCards</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                <a href="#diasMateria">diasMateria</a>
+                            </li>
+                            <li>
+                                <a href="#horarioMateria">horarioMateria</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#materia">materia</a>
+                            </li>
+                            <li>
+                                <a href="#mylogo">mylogo</a>
+                            </li>
+                            <li>
+                                <a href="#niveles">niveles</a>
+                            </li>
+                            <li>
+                                <a href="#numeroCards">numeroCards</a>
+                            </li>
+                            <li>
+                                <a href="#semestre">semestre</a>
+                            </li>
+                            <li>
+                                <a href="#semestres">semestres</a>
+                            </li>
+                            <li>
+                                <a href="#totalEstudiantes">totalEstudiantes</a>
+                            </li>
+                            <li>
+                                <a href="#userDocente">userDocente</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarCards">agregarCards</a>
+                            </li>
+                            <li>
+                                <a href="#agregarCurso">agregarCurso</a>
+                            </li>
+                            <li>
+                                <a href="#agregarNiveles">agregarNiveles</a>
+                            </li>
+                            <li>
+                                <a href="#agregarPerfil">agregarPerfil</a>
+                            </li>
+                            <li>
+                                <a href="#agregarSemestres">agregarSemestres</a>
+                            </li>
+                            <li>
+                                <a href="#cardClicked">cardClicked</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#obtenerSemestre">obtenerSemestre</a>
+                            </li>
+                            <li>
+                                <a href="#signout">signout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(usService: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, tokenServ: <a href="../injectables/TokenStorageService.html">TokenStorageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, dialog: MatDialog, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, servLoading: <a href="../injectables/LoadingService.html">LoadingService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>usService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenServ</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TokenStorageService.html" target="_self" >TokenStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>servLoading</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarCards"></a>
+                    <span class="name">
+                        <b>
+                            agregarCards
+                        </b>
+                        <a href="#agregarCards"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarCards(datos)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>datos</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarCurso"></a>
+                    <span class="name">
+                        <b>
+                            agregarCurso
+                        </b>
+                        <a href="#agregarCurso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarCurso()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarNiveles"></a>
+                    <span class="name">
+                        <b>
+                            agregarNiveles
+                        </b>
+                        <a href="#agregarNiveles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarNiveles(listaNiveles)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>listaNiveles</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarPerfil"></a>
+                    <span class="name">
+                        <b>
+                            agregarPerfil
+                        </b>
+                        <a href="#agregarPerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarPerfil(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarSemestres"></a>
+                    <span class="name">
+                        <b>
+                            agregarSemestres
+                        </b>
+                        <a href="#agregarSemestres"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarSemestres(listaSemestres)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>listaSemestres</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cardClicked"></a>
+                    <span class="name">
+                        <b>
+                            cardClicked
+                        </b>
+                        <a href="#cardClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cardClicked(idCurso: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:155</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idCurso</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerSemestre"></a>
+                    <span class="name">
+                        <b>
+                            obtenerSemestre
+                        </b>
+                        <a href="#obtenerSemestre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>obtenerSemestre(id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signout"></a>
+                    <span class="name">
+                        <b>
+                            signout
+                        </b>
+                        <a href="#signout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signout()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="classroomCards"></a>
+                        <span class="name">
+                            <b>
+                            classroomCards</b>
+                            <a href="#classroomCards"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CardClassroom.html" target="_self" >CardClassroom[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="diasMateria"></a>
+                        <span class="name">
+                            <b>
+                            diasMateria</b>
+                            <a href="#diasMateria"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;Mon - Tue - Wed - Thu&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="horarioMateria"></a>
+                        <span class="name">
+                            <b>
+                            horarioMateria</b>
+                            <a href="#horarioMateria"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;7:30 - 9:00&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/LoadingComponent.html" target="_self" >LoadingComponent</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;loading&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="materia"></a>
+                        <span class="name">
+                            <b>
+                            materia</b>
+                            <a href="#materia"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;English 1&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mylogo"></a>
+                        <span class="name">
+                            <b>
+                            mylogo</b>
+                            <a href="#mylogo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;assets/logo.png&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="niveles"></a>
+                        <span class="name">
+                            <b>
+                            niveles</b>
+                            <a href="#niveles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Level.html" target="_self" >Level[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numeroCards"></a>
+                        <span class="name">
+                            <b>
+                            numeroCards</b>
+                            <a href="#numeroCards"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="semestre"></a>
+                        <span class="name">
+                            <b>
+                            semestre</b>
+                            <a href="#semestre"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;1/2020&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="semestres"></a>
+                        <span class="name">
+                            <b>
+                            semestres</b>
+                            <a href="#semestres"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Semester.html" target="_self" >Semester[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="totalEstudiantes"></a>
+                        <span class="name">
+                            <b>
+                            totalEstudiantes</b>
+                            <a href="#totalEstudiantes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>25</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userDocente"></a>
+                        <span class="name">
+                            <b>
+                            userDocente</b>
+                            <a href="#userDocente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Teacher.html" target="_self" >Teacher</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    nombreDocente: &quot;&quot;,
+    apellidoDocente: &quot;&quot;,
+    correoDocente: &quot;&quot;,
+    primaLetra: &quot;&quot;,
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/choosing-classroom/choosing-classroom.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &quot;@angular/core&quot;;
+import { Teacher } from &quot;src/app/models/Teacher/Teacher&quot;;
+import { AuthService } from &quot;src/app/_services/general_services/auth.service&quot;;
+import { UserService } from &quot;src/app/_services/general_services/user.service&quot;;
+import { TokenStorageService } from &quot;src/app/_services/general_services/token-storage.service&quot;;
+import { Router, ActivatedRoute } from &quot;@angular/router&quot;;
+import { CardClassroom } from &quot;src/app/models/Teacher/ClassRoom/CardClassroom&quot;;
+import { CardClassroomComponent } from &quot;src/app/shared/components/cards/card-classroom/card-classroom.component&quot;;
+import { ClassroomDocenteResolver } from &quot;src/app/_resolvers/docente/classRoom/classroom-info-docente.resolver&quot;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { CreateCourseComponent } from &quot;../dialogs/courses/create-course/create-course.component&quot;;
+import { Semester } from &#x27;src/app/models/Teacher/ClassRoom/Semester&#x27;;
+import { Level } from &#x27;src/app/models/Teacher/ClassRoom/Level&#x27;;
+import { LoadingComponent } from &#x27;src/app/shared/components/loading/loading.component&#x27;;
+import { LoadingService } from &#x27;src/app/_services/loading.service&#x27;;
+@Component({
+  selector: &quot;app-choosing-classroom&quot;,
+  templateUrl: &quot;./choosing-classroom.component.html&quot;,
+  styleUrls: [&quot;./choosing-classroom.component.scss&quot;],
+})
+export class ChoosingClassroomComponent implements OnInit {
+  
+  @ViewChild(&#x27;loading&#x27;) public loading: LoadingComponent;
+  //-----variables-----
+  semestres:Semester[]&#x3D;[];
+  niveles:Level[]&#x3D;[];
+  classroomCards: CardClassroom[] &#x3D; [];
+  userDocente: Teacher &#x3D; {
+    nombreDocente: &quot;&quot;,
+    apellidoDocente: &quot;&quot;,
+    correoDocente: &quot;&quot;,
+    primaLetra: &quot;&quot;,
+  };
+  numeroCards: number;
+  mylogo: string &#x3D; &quot;assets/logo.png&quot;;
+  materia &#x3D; &quot;English 1&quot;;
+  diasMateria &#x3D; &quot;Mon - Tue - Wed - Thu&quot;;
+  horarioMateria &#x3D; &quot;7:30 - 9:00&quot;;
+  totalEstudiantes &#x3D; 25;
+  semestre &#x3D; &quot;1/2020&quot;;
+  //-----#variables-----
+  //-----funciones-----
+
+  //-----#funciones-----
+  constructor(
+    private usService: ActivatedRoute,
+    private tokenServ: TokenStorageService,
+    private router: Router,
+    public dialog: MatDialog,
+    private route: ActivatedRoute,    
+    private servLoading:LoadingService
+  ) {}
+  obtenerSemestre(id){
+    for(let semestre of this.semestres){
+      if(id&#x3D;&#x3D;semestre.idSemestre){
+        return semestre.semestre;
+      }
+    }
+  }
+  agregarCards(datos) {
+    for (let i in datos) {
+      console.log(datos[i]);
+      var dias: string &#x3D; &quot;&quot;;
+      var horarioini: Array&lt;String&gt; &#x3D; [];
+      var horariofin: Array&lt;String&gt; &#x3D; [];
+      var horario: string &#x3D; &quot;&quot;;
+      for (let j in datos[i].dias) {
+        var datadi &#x3D; datos[i].dias[j];
+        if (dias &#x3D;&#x3D;&#x3D; &quot;&quot;) {
+          dias +&#x3D; datadi.diaSemana;
+        } else {
+          dias +&#x3D; &quot; - &quot; + datadi.diaSemana;
+        }
+        if (
+          !horarioini.includes(datadi.horaInicio) &amp;&amp;
+          !horariofin.includes(datadi.horaConclusion)
+        ) {
+          horarioini.push(datadi.horaInicio);
+          horariofin.push(datadi.horaConclusion);
+          if (horario &#x3D;&#x3D;&#x3D; &quot;&quot;) {
+            horario +&#x3D;
+              datadi.horaInicio.substring(0, 5) +
+              &quot; - &quot; +
+              datadi.horaConclusion.substring(0, 5);
+          } else {
+            horario +&#x3D;
+              &quot; | &quot; +
+              datadi.horaInicio.substring(0, 5) +
+              &quot; - &quot; +
+              datadi.horaConclusion.substring(0, 5);
+          }
+        }
+      }
+      let auxCard &#x3D; new CardClassroom();
+      auxCard.id_curso &#x3D; datos[i].id_curso;
+      auxCard.curso &#x3D; datos[i].nombre_curso;
+      auxCard.diasCurso &#x3D; dias;
+      auxCard.horarioCurso &#x3D; horario;
+      auxCard.idSemestre &#x3D; datos[i].id_semestre;
+      auxCard.totalEstudiantes &#x3D; datos[i].estudiantes;
+      this.classroomCards.push(auxCard);
+    }
+    this.numeroCards &#x3D; this.classroomCards.length;
+  }
+  agregarPerfil(data){
+    this.userDocente.correoDocente &#x3D; data.profile.correo_docente;
+          this.userDocente.nombreDocente &#x3D; data.profile.nombre_docente;
+          this.userDocente.apellidoDocente &#x3D;
+            data.profile.ap_pat_docente + &quot; &quot; + data.profile.ap_mat_docente;
+          this.userDocente.primaLetra &#x3D; data.profile.nombre_docente.substring(
+            0,
+            1
+          );
+  }
+  agregarSemestres(listaSemestres){
+    for(let semestre of listaSemestres){
+      let newSemestre&#x3D;new Semester();
+      newSemestre.idSemestre&#x3D;semestre.id_semestre;
+      newSemestre.semestre&#x3D;semestre.semestre;
+      this.semestres.push(newSemestre);
+    }
+  }
+  agregarNiveles(listaNiveles){
+    for(let nivel of listaNiveles){
+      let newNivel&#x3D;new Level();
+      newNivel.idNivel&#x3D;nivel.id_nivel;
+      newNivel.nivel&#x3D;nivel.nivel;
+      this.niveles.push(newNivel);
+    }
+  }
+  ngOnInit() {
+    console.log(&quot;size : &quot; + this.numeroCards);
+    if (this.tokenServ.getToken() &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
+      this.router.navigate([&quot;/&quot;]);
+      return false;
+    } else {
+      this.usService.data.subscribe({
+        next: (data) &#x3D;&gt; {
+          this.agregarCards(data.classroom);
+          console.log(data);
+          this.agregarPerfil(data);
+          this.agregarSemestres(data.semester);
+          this.agregarNiveles(data.level);
+        },
+        error: (err) &#x3D;&gt; {
+          this.router.navigate([&quot;/&quot;]);
+        },
+      });
+    }
+  }
+  signout(): void {
+    this.tokenServ.signOut();
+    this.router.navigate([&quot;/&quot;]);
+  }
+  cardClicked(idCurso: string) {
+    this.servLoading.setLoading(this.loading);
+    this.servLoading.activar();
+    const nav&#x3D;this.router.navigate([&quot;teacher&quot;, idCurso, &quot;dashboard&quot;]);
+    nav.then((data)&#x3D;&gt;{
+      this.servLoading.desactivar();
+    })
+  }
+  agregarCurso() {
+    console.log(&quot;agregar curso&quot;);
+    const dialogRef &#x3D; this.dialog.open(CreateCourseComponent, { width: &quot;400px&quot;
+    ,data:{
+      semestres:this.semestres,
+      niveles:this.niveles
+    }  
+  });
+  dialogRef.afterClosed().subscribe((result)&#x3D;&gt;{
+    if(result!&#x3D;&#x3D;&quot;&quot;&amp;&amp;result!&#x3D;&#x3D;&quot;undefined&quot;&amp;&amp;result!&#x3D;null){
+      this.classroomCards.push(result);
+    }
+  })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-loading #loading&gt;&lt;/app-loading&gt;
+&lt;div class&#x3D;&quot;bg-top-img&quot;&gt;
+  &lt;div class&#x3D;&quot;bg-top-img__overlay&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;!--logo y text--&gt;
+      &lt;div class&#x3D;&quot;navbar-brand&quot;&gt;
+        &lt;div class&#x3D;&quot;navbar-brand__container&quot;&gt;
+          &lt;!-- logo--&gt;
+          &lt;img [src]&#x3D;&quot;mylogo&quot; class&#x3D;&quot;navbar-brand__img&quot; /&gt;
+          &lt;!-- #logo--&gt;
+          &lt;!-- texto--&gt;
+          &lt;div class&#x3D;&quot;navbar-brand__text&quot;&gt;UCB English for teachers&lt;/div&gt;
+          &lt;!-- #texto--&gt;
+          &lt;!-- button icono de usuario--&gt;
+        &lt;/div&gt;
+        &lt;!-- &lt;div class&#x3D;&quot;navbar-brand__buttons&quot;&gt; --&gt;
+        &lt;div class&#x3D;&quot;navbar-brand__header-buttons&quot;&gt;
+          &lt;!-- agregar classroom--&gt;
+          &lt;button
+            class&#x3D;&quot;circular-button-navbar&quot;
+            mat-mini-fab (click)&#x3D;&quot;agregarCurso()&quot;
+          &gt;
+            &lt;!-- primera letra de nombre de usuario--&gt;
+            &lt;mat-icon class&#x3D;&quot;circular-button__first-word&quot;&gt;add&lt;/mat-icon&gt;
+            &lt;!-- #primera letra de nombre de usuario--&gt;
+          &lt;/button&gt;
+          &lt;!-- #agregar classroom--&gt;
+          &lt;!-- button icono de usuario--&gt;
+          &lt;button
+            class&#x3D;&quot;circular-button-navbar&quot;
+            mat-mini-fab
+            [matMenuTriggerFor]&#x3D;&quot;usermodal&quot;
+          &gt;
+            &lt;!-- primera letra de nombre de usuario--&gt;
+            &lt;span class&#x3D;&quot;circular-button__first-word&quot;&gt;{{
+              userDocente.primaLetra
+            }}&lt;/span&gt;
+            &lt;!-- #primera letra de nombre de usuario--&gt;
+          &lt;/button&gt;
+          &lt;!-- #button icono de usuario--&gt;
+          &lt;!-- &lt;/div&gt; --&gt;
+          &lt;!-- modal de avatar para usuario--&gt;
+          &lt;mat-menu class&#x3D;&quot;user-card&quot; #usermodal&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
+            &lt;div class&#x3D;&quot;user-card__content&quot;&gt;
+              &lt;!-- icono de avatar--&gt;
+              &lt;button class&#x3D;&quot;user-card__icon&quot; mat-fab&gt;
+                &lt;span class&#x3D;&quot;user-card__first-word&quot;&gt;{{
+                  userDocente.primaLetra
+                }}&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;!-- //icono de avatar--&gt;
+              &lt;!-- nombre de usuario--&gt;
+              &lt;span class&#x3D;&quot;user-card__name&quot;&gt;{{
+                userDocente.nombreDocente
+              }}&lt;/span&gt;
+              &lt;!-- #nombre de usuario--&gt;
+              &lt;!-- nombre de apellido--&gt;
+              &lt;span class&#x3D;&quot;user-card__lastname&quot;&gt;{{
+                userDocente.apellidoDocente
+              }}&lt;/span&gt;
+              &lt;!-- #nombre de apellido--&gt;
+              &lt;!-- correo de usuario--&gt;
+              &lt;span class&#x3D;&quot;user-card__email&quot;&gt;{{
+                userDocente.correoDocente
+              }}&lt;/span&gt;
+              &lt;!-- #correo de usuario--&gt;
+              &lt;!--btn para salir--&gt;
+              &lt;button
+                (click)&#x3D;&quot;signout()&quot;
+                mat-stroked-button
+                class&#x3D;&quot;user-card__button-logout&quot;
+              &gt;
+                &lt;mat-icon&gt;exit_to_app&lt;/mat-icon&gt;
+                Sign out
+              &lt;/button&gt;
+              &lt;!--#btn para salir--&gt;
+            &lt;/div&gt;
+          &lt;/mat-menu&gt;
+          &lt;!-- #modal de avatar para usuario--&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--#logo y text--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;container card-container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div
+      *ngFor&#x3D;&quot;let cards of classroomCards&quot;
+      class&#x3D;&quot;cols&quot;
+      [ngClass]&#x3D;&quot;{
+        &#x27;col-lg-6 col-md-6&#x27;: numeroCards &#x3D;&#x3D;&#x3D; 4,
+        &#x27;col-lg-4 col-sm-12 col-xs-12&#x27;: numeroCards &#x3D;&#x3D;&#x3D; 3,
+        &#x27;col-md-6 col-sm-6 col-xs-12&#x27;: numeroCards &#x3D;&#x3D;&#x3D; 2,
+        &#x27;col-xs-12&#x27;: numeroCards &#x3D;&#x3D;&#x3D; 1
+      }&quot;
+    &gt;
+      &lt;!--card--&gt;
+      &lt;div class&#x3D;&quot;classroom-card&quot; (click)&#x3D;&quot;cardClicked(cards.id_curso)&quot;&gt;
+        &lt;!--titulo de la clase--&gt;
+        &lt;p class&#x3D;&quot;classroom-card__description-classroom&quot;&gt;
+          {{ cards.curso }}
+        &lt;/p&gt;
+        &lt;!--#titulo de la clase--&gt;
+        &lt;span class&#x3D;&quot;classroom-card__description-detail&quot;&gt;
+          &lt;i class&#x3D;&quot;far fa-calendar-alt&quot;&gt;&lt;/i
+          &gt;&lt;!--horario--&gt;
+          &lt;span class&#x3D;&quot;classroom-card__description-detail-text&quot;
+            &gt;Days: {{ cards.diasCurso }}&lt;/span
+          &gt;
+          &lt;!--#horario--&gt;
+        &lt;/span&gt;
+        &lt;p class&#x3D;&quot;classroom-card__description-detail&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-clock&quot;&gt;&lt;/i
+          &gt;&lt;!--horario--&gt;
+          &lt;span class&#x3D;&quot;classroom-card__description-detail-text&quot;
+            &gt;Schedule: {{ cards.horarioCurso }}&lt;/span
+          &gt;
+          &lt;!--#horario--&gt;
+        &lt;/p&gt;
+        &lt;span class&#x3D;&quot;classroom-card__description-detail&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-user-friends&quot;&gt;&lt;/i&gt;
+          &lt;!--total de estudiantes--&gt;
+          &lt;span class&#x3D;&quot;classroom-card__description-detail-text&quot;
+            &gt;Students: {{ cards.totalEstudiantes }}&lt;/span
+          &gt;
+          &lt;!--#total de estudiantes--&gt;
+        &lt;/span&gt;
+        &lt;!--semestre en que se da la materia--&gt;
+        &lt;span class&#x3D;&quot;classroom-card__description-semester&quot;&gt;
+          {{ obtenerSemestre(cards.idSemestre) }}
+        &lt;/span&gt;
+        &lt;!--#semestre en que se da la materia--&gt;
+      &lt;/div&gt;
+      &lt;!--#card--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./choosing-classroom.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-loading #loading></app-loading><div class="bg-top-img">  <div class="bg-top-img__overlay">    <div class="container">      <!--logo y text-->      <div class="navbar-brand">        <div class="navbar-brand__container">          <!-- logo-->          <img [src]="mylogo" class="navbar-brand__img" />          <!-- #logo-->          <!-- texto-->          <div class="navbar-brand__text">UCB English for teachers</div>          <!-- #texto-->          <!-- button icono de usuario-->        </div>        <!-- <div class="navbar-brand__buttons"> -->        <div class="navbar-brand__header-buttons">          <!-- agregar classroom-->          <button            class="circular-button-navbar"            mat-mini-fab (click)="agregarCurso()"          >            <!-- primera letra de nombre de usuario-->            <mat-icon class="circular-button__first-word">add</mat-icon>            <!-- #primera letra de nombre de usuario-->          </button>          <!-- #agregar classroom-->          <!-- button icono de usuario-->          <button            class="circular-button-navbar"            mat-mini-fab            [matMenuTriggerFor]="usermodal"          >            <!-- primera letra de nombre de usuario-->            <span class="circular-button__first-word">{{              userDocente.primaLetra            }}</span>            <!-- #primera letra de nombre de usuario-->          </button>          <!-- #button icono de usuario-->          <!-- </div> -->          <!-- modal de avatar para usuario-->          <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">            <div class="user-card__content">              <!-- icono de avatar-->              <button class="user-card__icon" mat-fab>                <span class="user-card__first-word">{{                  userDocente.primaLetra                }}</span>              </button>              <!-- //icono de avatar-->              <!-- nombre de usuario-->              <span class="user-card__name">{{                userDocente.nombreDocente              }}</span>              <!-- #nombre de usuario-->              <!-- nombre de apellido-->              <span class="user-card__lastname">{{                userDocente.apellidoDocente              }}</span>              <!-- #nombre de apellido-->              <!-- correo de usuario-->              <span class="user-card__email">{{                userDocente.correoDocente              }}</span>              <!-- #correo de usuario-->              <!--btn para salir-->              <button                (click)="signout()"                mat-stroked-button                class="user-card__button-logout"              >                <mat-icon>exit_to_app</mat-icon>                Sign out              </button>              <!--#btn para salir-->            </div>          </mat-menu>          <!-- #modal de avatar para usuario-->        </div>      </div>      <!--#logo y text-->    </div>  </div></div><div class="container card-container">  <div class="row">    <div      *ngFor="let cards of classroomCards"      class="cols"      [ngClass]="{        \'col-lg-6 col-md-6\': numeroCards === 4,        \'col-lg-4 col-sm-12 col-xs-12\': numeroCards === 3,        \'col-md-6 col-sm-6 col-xs-12\': numeroCards === 2,        \'col-xs-12\': numeroCards === 1      }"    >      <!--card-->      <div class="classroom-card" (click)="cardClicked(cards.id_curso)">        <!--titulo de la clase-->        <p class="classroom-card__description-classroom">          {{ cards.curso }}        </p>        <!--#titulo de la clase-->        <span class="classroom-card__description-detail">          <i class="far fa-calendar-alt"></i          ><!--horario-->          <span class="classroom-card__description-detail-text"            >Days: {{ cards.diasCurso }}</span          >          <!--#horario-->        </span>        <p class="classroom-card__description-detail">          <i class="fas fa-clock"></i          ><!--horario-->          <span class="classroom-card__description-detail-text"            >Schedule: {{ cards.horarioCurso }}</span          >          <!--#horario-->        </p>        <span class="classroom-card__description-detail">          <i class="fas fa-user-friends"></i>          <!--total de estudiantes-->          <span class="classroom-card__description-detail-text"            >Students: {{ cards.totalEstudiantes }}</span          >          <!--#total de estudiantes-->        </span>        <!--semestre en que se da la materia-->        <span class="classroom-card__description-semester">          {{ obtenerSemestre(cards.idSemestre) }}        </span>        <!--#semestre en que se da la materia-->      </div>      <!--#card-->    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ChoosingClassroomComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChoosingClassroomComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

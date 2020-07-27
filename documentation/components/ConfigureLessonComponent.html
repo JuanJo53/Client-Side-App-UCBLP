@@ -1,0 +1,1156 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ConfigureLessonComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-configure-lesson</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./configure-lesson.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./configure-lesson.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataDialog">dataDialog</a>
+                            </li>
+                            <li>
+                                <a href="#disableTextbox">disableTextbox</a>
+                            </li>
+                            <li>
+                                <a href="#images">images</a>
+                            </li>
+                            <li>
+                                <a href="#imageSelected">imageSelected</a>
+                            </li>
+                            <li>
+                                <a href="#nombre">nombre</a>
+                            </li>
+                            <li>
+                                <a href="#numero">numero</a>
+                            </li>
+                            <li>
+                                <a href="#radioButtonValue">radioButtonValue</a>
+                            </li>
+                            <li>
+                                <a href="#types">types</a>
+                            </li>
+                            <li>
+                                <a href="#typeSelected">typeSelected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#accept">accept</a>
+                            </li>
+                            <li>
+                                <a href="#cargarDatos">cargarDatos</a>
+                            </li>
+                            <li>
+                                <a href="#compareObjects">compareObjects</a>
+                            </li>
+                            <li>
+                                <a href="#modificarLeccion">modificarLeccion</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleDisable">toggleDisable</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataDialog: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, servLes: <a href="../injectables/LessonService.html">LessonService</a>, dialogRef: <a href="../classes/Lesson.html">MatDialogRef<ConfigureLessonComponent></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>servLes</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LessonService.html" target="_self" >LessonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Lesson.html" target="_self" >MatDialogRef&lt;ConfigureLessonComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accept"></a>
+                    <span class="name">
+                        <b>
+                            accept
+                        </b>
+                        <a href="#accept"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>accept()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarDatos"></a>
+                    <span class="name">
+                        <b>
+                            cargarDatos
+                        </b>
+                        <a href="#cargarDatos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarDatos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compareObjects"></a>
+                    <span class="name">
+                        <b>
+                            compareObjects
+                        </b>
+                        <a href="#compareObjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compareObjects(o1: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, o2: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>o1</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>o2</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modificarLeccion"></a>
+                    <span class="name">
+                        <b>
+                            modificarLeccion
+                        </b>
+                        <a href="#modificarLeccion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>modificarLeccion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleDisable"></a>
+                    <span class="name">
+                        <b>
+                            toggleDisable
+                        </b>
+                        <a href="#toggleDisable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleDisable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataDialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataDialog</b>
+                            <a href="#dataDialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Inject(MAT_DIALOG_DATA)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disableTextbox"></a>
+                        <span class="name">
+                            <b>
+                            disableTextbox</b>
+                            <a href="#disableTextbox"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="images"></a>
+                        <span class="name">
+                            <b>
+                            images</b>
+                            <a href="#images"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Combo[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageSelected"></a>
+                        <span class="name">
+                            <b>
+                            imageSelected</b>
+                            <a href="#imageSelected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nombre"></a>
+                        <span class="name">
+                            <b>
+                            nombre</b>
+                            <a href="#nombre"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numero"></a>
+                        <span class="name">
+                            <b>
+                            numero</b>
+                            <a href="#numero"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="radioButtonValue"></a>
+                        <span class="name">
+                            <b>
+                            radioButtonValue</b>
+                            <a href="#radioButtonValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="types"></a>
+                        <span class="name">
+                            <b>
+                            types</b>
+                            <a href="#types"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Combo[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="typeSelected"></a>
+                        <span class="name">
+                            <b>
+                            typeSelected</b>
+                            <a href="#typeSelected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject } from &quot;@angular/core&quot;;
+import { MAT_DIALOG_DATA, MatDialogRef } from &quot;@angular/material/dialog&quot;;
+import { LessonService } from &quot;src/app/_services/teacher_services/lesson.service&quot;;
+import { Combo } from &#x27;src/app/models/combo&#x27;;
+@Component({
+  selector: &quot;app-configure-lesson&quot;,
+  templateUrl: &quot;./configure-lesson.component.html&quot;,
+  styleUrls: [&quot;./configure-lesson.component.scss&quot;],
+})
+export class ConfigureLessonComponent implements OnInit {
+  nombre: string &#x3D; &quot;&quot;;
+  numero:number&#x3D;0;
+  radioButtonValue: string &#x3D; &quot;&quot;;
+  typeSelected:number;
+  imageSelected:number;
+  types:Combo[]&#x3D;[];
+  images:Combo[]&#x3D;[];
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public dataDialog: any,
+    private servLes: LessonService,
+    private dialogRef: MatDialogRef&lt;ConfigureLessonComponent&gt;
+  ) {}
+  disableTextbox &#x3D;  true;
+
+  toggleDisable() {
+    this.disableTextbox &#x3D; !this.disableTextbox;
+  }
+  ngOnInit(): void {
+    this.cargarDatos();
+  }
+  accept() {
+   this.modificarLeccion();
+  }
+  modificarLeccion(){
+    if(this.radioButtonValue&#x3D;&#x3D;&#x3D;&quot;enable&quot;){
+      this.dataDialog[&#x27;leccion&#x27;].estado&#x3D;1;
+    }
+    else{
+      this.dataDialog[&#x27;leccion&#x27;].estado&#x3D;2;}
+    
+      this.dataDialog[&#x27;leccion&#x27;].nombre&#x3D;this.nombre;
+      this.dataDialog[&#x27;leccion&#x27;].idTipoLeccion&#x3D;this.typeSelected;
+      this.dataDialog[&#x27;leccion&#x27;].idImage&#x3D;this.imageSelected;
+      this.dataDialog[&#x27;leccion&#x27;].numeroLeccion&#x3D;this.numero;
+    this.servLes.updateLesson(this.dataDialog[&#x27;leccion&#x27;]).subscribe({
+      next:(data)&#x3D;&gt;{
+        if(data.status&#x3D;&#x3D;200){
+          this.servLes.getLessons(this.dataDialog[&#x27;idTema&#x27;]).subscribe({
+            next:(data)&#x3D;&gt;{                
+                  this.dialogRef.close(data.body);
+            },
+            error:(error)&#x3D;&gt;{
+              this.dialogRef.close();
+
+            }
+          });
+        }
+        else{
+          console.log(&quot;No se pudo Actualizar la Leccion&quot;);
+          this.dialogRef.close();
+        }
+      },
+      error:(error)&#x3D;&gt;{
+        console.log(&quot;No se pudo Actualizar la Leccion&quot;);
+        this.dialogRef.close();
+      }
+
+    });
+  }
+  compareObjects(o1: any, o2: number): boolean {
+    return o1.value &#x3D;&#x3D; o2 ;
+  }
+  cargarDatos(){
+        for(let i in this.dataDialog[&#x27;images&#x27;]){
+          this.images.push(
+            { value: this.dataDialog[&#x27;images&#x27;][i].idImagen, display: this.dataDialog[&#x27;images&#x27;][i].url}
+          )
+        }
+        for(let i in this.dataDialog[&#x27;types&#x27;]){
+          this.types.push(
+            { value: this.dataDialog[&#x27;types&#x27;][i].idTipo, display: this.dataDialog[&#x27;types&#x27;][i].tipo}
+          )
+        }
+        this.imageSelected&#x3D;this.dataDialog[&#x27;leccion&#x27;].idImagen;
+        this.typeSelected&#x3D;this.dataDialog[&#x27;leccion&#x27;].idTipoLeccion;;
+        this.nombre&#x3D;this.dataDialog[&#x27;leccion&#x27;].nombre;
+        this.numero&#x3D;this.dataDialog[&#x27;leccion&#x27;].numeroLeccion;
+        
+        if(this.dataDialog[&#x27;leccion&#x27;].estado&#x3D;&#x3D;1){
+
+          this.radioButtonValue&#x3D;&quot;enable&quot;;
+        }
+        else{
+          this.radioButtonValue&#x3D;&quot;unable&quot;;
+    
+        }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;dialog&quot;&gt;
+  &lt;div class&#x3D;&quot;dialog-subtitle&quot;&gt;
+    &lt;div class&#x3D;&quot;dialog-subtitle__text&quot;&gt;
+      &lt;span&gt;Configurar Lesson&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
+    &lt;form class&#x3D;&quot;dialogforms&quot; enctype&#x3D;&quot;multipart/form-data&quot;&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot; (dblclick)&#x3D;&#x27;toggleDisable()&#x27; class&#x3D;&quot;input-disabled&quot;&gt;
+        &lt;mat-label&gt;Lesson&#x27;s name&lt;/mat-label&gt;
+        &lt;!-- Input para el nombre del tema--&gt;
+        &lt;input
+        [disabled]&#x3D;&#x27;disableTextbox&#x27;
+          type&#x3D;&quot;text&quot;
+          class&#x3D;&quot;input-form&quot;
+          matInput
+          placeholder&#x3D;&quot;Name&quot;
+          name&#x3D;&quot;nombre&quot;
+          [(ngModel)]&#x3D;&quot;nombre&quot;
+        /&gt;
+        &lt;!-- //Input para el nombre del tema--&gt;
+      &lt;/mat-form-field&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot; (dblclick)&#x3D;&#x27;toggleDisable()&#x27; class&#x3D;&quot;input-disabled&quot;&gt;
+        &lt;mat-label&gt;Lesson&#x27;s number&lt;/mat-label&gt;
+          &lt;!-- Input para el nombre del tema--&gt;
+          &lt;input
+          [disabled]&#x3D;&#x27;disableTextbox&#x27;
+            type&#x3D;&quot;number&quot;
+            class&#x3D;&quot;input-form&quot;
+            matInput
+            placeholder&#x3D;&quot;Number&quot;
+            name&#x3D;&quot;numero&quot;
+            [(ngModel)]&#x3D;&quot;numero&quot;
+          /&gt;
+        &lt;!-- //Input para el nombre del tema--&gt;
+      &lt;/mat-form-field&gt;
+      &lt;div class&#x3D;&quot;combo-box&quot;&gt;
+        &lt;mat-form-field&gt;
+          &lt;mat-label&gt;Type&lt;/mat-label&gt;
+          &lt;mat-select
+          [(value)]&#x3D;&quot;typeSelected&quot; &gt;
+            &lt;mat-option *ngFor&#x3D;&quot;let elemento of types&quot; [value]&#x3D;&quot;elemento.value&quot;&gt;
+              {{ elemento.display }}
+            &lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;combo-box&quot;&gt;
+        &lt;mat-form-field&gt;
+          &lt;mat-label&gt;Images&lt;/mat-label&gt;
+          &lt;mat-select [(value)]&#x3D;&quot;imageSelected&quot; &gt;
+            &lt;mat-option *ngFor&#x3D;&quot;let elemento of images&quot; [value]&#x3D;&quot;elemento.value&quot;&gt;
+              {{ elemento.display }}
+            &lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;radio-buttons-dialog&quot;&gt;
+        &lt;div class&#x3D;&quot;radio-buttons-dialog__title&quot;&gt;Lesson Status :&lt;/div&gt;
+        &lt;!-- &lt;mat-radio-group
+            aria-label&#x3D;&quot;Select an option&quot;
+            [(ngModel)]&#x3D;&quot;radioButto nValue&quot;
+          &gt;
+            &lt;mat-radio-button
+              class&#x3D;&quot;radio-button&quot;
+              *ngFor&#x3D;&quot;let estado of cardEstado&quot;
+              [value]&#x3D;&quot;estado&quot;
+            &gt;
+              {{ estado }}
+            &lt;/mat-radio-button&gt; --&gt;
+        &lt;mat-radio-group
+          aria-label&#x3D;&quot;Select an option&quot;
+          [(ngModel)]&#x3D;&quot;radioButtonValue&quot;
+          name&#x3D;&quot;radiobuttonvalue&quot;
+        &gt;
+          &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;enable&quot; checked
+            &gt;Enable&lt;/mat-radio-button
+          &gt;
+          &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;unable&quot;
+            &gt;Unable&lt;/mat-radio-button
+          &gt;
+        &lt;/mat-radio-group&gt;
+        &lt;br /&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/mat-dialog-content&gt;
+  &lt;mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+    &lt;!--btn cancel--&gt;
+    &lt;button mat-button mat-dialog-close class&#x3D;&quot;dialog-button-cancel&quot;&gt;
+      Cancel
+    &lt;/button&gt;
+    &lt;!--#btn cancel--&gt;
+    &lt;!-- btn accept--&gt;
+    &lt;button mat-button class&#x3D;&quot;dialog-button-accept&quot; (click)&#x3D;&quot;accept()&quot;&gt;
+      Accept
+    &lt;/button&gt;
+  &lt;/mat-dialog-actions&gt;
+  &lt;!-- #btn accept--&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./configure-lesson.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="dialog">  <div class="dialog-subtitle">    <div class="dialog-subtitle__text">      <span>Configurar Lesson</span>    </div>  </div>  <mat-dialog-content class="mat-typography">    <form class="dialogforms" enctype="multipart/form-data">      <mat-form-field appearance="outline" (dblclick)=\'toggleDisable()\' class="input-disabled">        <mat-label>Lesson\'s name</mat-label>        <!-- Input para el nombre del tema-->        <input        [disabled]=\'disableTextbox\'          type="text"          class="input-form"          matInput          placeholder="Name"          name="nombre"          [(ngModel)]="nombre"        />        <!-- //Input para el nombre del tema-->      </mat-form-field>      <mat-form-field appearance="outline" (dblclick)=\'toggleDisable()\' class="input-disabled">        <mat-label>Lesson\'s number</mat-label>          <!-- Input para el nombre del tema-->          <input          [disabled]=\'disableTextbox\'            type="number"            class="input-form"            matInput            placeholder="Number"            name="numero"            [(ngModel)]="numero"          />        <!-- //Input para el nombre del tema-->      </mat-form-field>      <div class="combo-box">        <mat-form-field>          <mat-label>Type</mat-label>          <mat-select          [(value)]="typeSelected" >            <mat-option *ngFor="let elemento of types" [value]="elemento.value">              {{ elemento.display }}            </mat-option>          </mat-select>        </mat-form-field>      </div>      <div class="combo-box">        <mat-form-field>          <mat-label>Images</mat-label>          <mat-select [(value)]="imageSelected" >            <mat-option *ngFor="let elemento of images" [value]="elemento.value">              {{ elemento.display }}            </mat-option>          </mat-select>        </mat-form-field>      </div>      <div class="radio-buttons-dialog">        <div class="radio-buttons-dialog__title">Lesson Status :</div>        <!-- <mat-radio-group            aria-label="Select an option"            [(ngModel)]="radioButto nValue"          >            <mat-radio-button              class="radio-button"              *ngFor="let estado of cardEstado"              [value]="estado"            >              {{ estado }}            </mat-radio-button> -->        <mat-radio-group          aria-label="Select an option"          [(ngModel)]="radioButtonValue"          name="radiobuttonvalue"        >          <mat-radio-button class="radio-button" value="enable" checked            >Enable</mat-radio-button          >          <mat-radio-button class="radio-button" value="unable"            >Unable</mat-radio-button          >        </mat-radio-group>        <br />      </div>    </form>  </mat-dialog-content>  <mat-dialog-actions align="end">    <!--btn cancel-->    <button mat-button mat-dialog-close class="dialog-button-cancel">      Cancel    </button>    <!--#btn cancel-->    <!-- btn accept-->    <button mat-button class="dialog-button-accept" (click)="accept()">      Accept    </button>  </mat-dialog-actions>  <!-- #btn accept--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConfigureLessonComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConfigureLessonComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1024 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>HeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/header/header.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-header</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./header.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#materia">materia</a>
+                            </li>
+                            <li>
+                                <a href="#materias">materias</a>
+                            </li>
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#mylogo">mylogo</a>
+                            </li>
+                            <li>
+                                <a href="#simbCurso">simbCurso</a>
+                            </li>
+                            <li>
+                                <a href="#tituloNavbar">tituloNavbar</a>
+                            </li>
+                            <li>
+                                <a href="#userDocente">userDocente</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#home">home</a>
+                            </li>
+                            <li>
+                                <a href="#navigator">navigator</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#signout">signout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(data: <a href="../injectables/SharedService.html">SharedService</a>, usService: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, tokenServ: <a href="../injectables/TokenStorageService.html">TokenStorageService</a>, servLoading: <a href="../injectables/LoadingService.html">LoadingService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/shared/components/header/header.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SharedService.html" target="_self" >SharedService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenServ</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TokenStorageService.html" target="_self" >TokenStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>servLoading</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="home"></a>
+                    <span class="name">
+                        <b>
+                            home
+                        </b>
+                        <a href="#home"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>home()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/shared/components/header/header.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigator"></a>
+                    <span class="name">
+                        <b>
+                            navigator
+                        </b>
+                        <a href="#navigator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigator(materia: <a href="../classes/CardClassroom.html">CardClassroom</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/shared/components/header/header.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>materia</td>
+                                    <td>
+                                                <code><a href="../classes/CardClassroom.html" target="_self" >CardClassroom</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/shared/components/header/header.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signout"></a>
+                    <span class="name">
+                        <b>
+                            signout
+                        </b>
+                        <a href="#signout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signout()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/shared/components/header/header.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="materia"></a>
+                        <span class="name">
+                            <b>
+                            materia</b>
+                            <a href="#materia"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/components/header/header.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="materias"></a>
+                        <span class="name">
+                            <b>
+                            materias</b>
+                            <a href="#materias"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CardClassroom.html" target="_self" >CardClassroom[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/header/header.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                            message</b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/shared/components/header/header.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mylogo"></a>
+                        <span class="name">
+                            <b>
+                            mylogo</b>
+                            <a href="#mylogo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;assets/logo.png&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/shared/components/header/header.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="simbCurso"></a>
+                        <span class="name">
+                            <b>
+                            simbCurso</b>
+                            <a href="#simbCurso"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/shared/components/header/header.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tituloNavbar"></a>
+                        <span class="name">
+                            <b>
+                            tituloNavbar</b>
+                            <a href="#tituloNavbar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/shared/components/header/header.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userDocente"></a>
+                        <span class="name">
+                            <b>
+                            userDocente</b>
+                            <a href="#userDocente"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Teacher.html" target="_self" >Teacher</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    apellidoDocente:&quot;&quot;,
+    nombreDocente:&quot;&quot;,
+    correoDocente:&quot;&quot;,
+    primaLetra:&quot;&quot;
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/header/header.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { SharedService } from &quot;../../shared.service&quot;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Teacher } from &#x27;src/app/models/Teacher/Teacher&#x27;;
+import { TokenStorageService } from &#x27;src/app/_services/general_services/token-storage.service&#x27;;
+import { CardClassroom } from &#x27;src/app/models/Teacher/ClassRoom/CardClassroom&#x27;;
+import { LoadingService } from &#x27;src/app/_services/loading.service&#x27;;
+
+@Component({
+  selector: &quot;app-header&quot;,
+  templateUrl: &quot;./header.component.html&quot;,
+  styleUrls: [&quot;./header.component.scss&quot;],
+})
+
+export class HeaderComponent implements OnInit {
+  userDocente:Teacher&#x3D;{
+    apellidoDocente:&quot;&quot;,
+    nombreDocente:&quot;&quot;,
+    correoDocente:&quot;&quot;,
+    primaLetra:&quot;&quot;
+  }
+  materias:CardClassroom[]&#x3D;[]
+  
+  mylogo: string &#x3D; &quot;assets/logo.png&quot;;
+  materia &#x3D; &quot;&quot;;
+  simbCurso&#x3D;&quot;&quot;;
+  message: string;
+  tituloNavbar: string;
+  constructor(
+    private data: SharedService,
+    private usService:ActivatedRoute,
+    private router:Router,
+    private tokenServ:TokenStorageService,
+    private servLoading:LoadingService
+    ) {}
+  ngOnInit() {
+    var idCurso;
+    this.usService.params.subscribe((data)&#x3D;&gt;{
+      idCurso&#x3D;data[&quot;idCurso&quot;];
+      console.log(idCurso);
+    })
+    
+    this.data.currentMessage.subscribe((message) &#x3D;&gt; (this.message &#x3D; message));
+    this.usService.data.subscribe({
+      next:data&#x3D;&gt;{
+        this.materias&#x3D;[];
+        for(let materia of data.classroom){
+          console.log(materia);
+          let newCurso&#x3D;new CardClassroom();
+          newCurso.curso&#x3D;materia.nombre_curso;
+          newCurso.id_curso&#x3D;materia.id_curso;
+          this.materias.push(newCurso);
+          if(materia.id_curso&#x3D;&#x3D;idCurso){
+            this.materia&#x3D;materia.nombre_curso;
+            var ini&#x3D;this.materia.substring(0,1);
+            var fin&#x3D;this.materia.substring(this.materia.length-1,this.materia.length);
+            this.simbCurso&#x3D;ini+fin;
+          }
+        }
+        console.log(this.materias);
+        this.userDocente.correoDocente &#x3D; data.profile.correo_docente;
+          this.userDocente.nombreDocente &#x3D;
+            data.profile.nombre_docente;
+          this.userDocente.apellidoDocente&#x3D;
+          data.profile.ap_pat_docente +
+          &quot; &quot; +
+          data.profile.ap_mat_docente;
+          this.userDocente.primaLetra &#x3D; data.profile.nombre_docente.substring(
+            0,
+            1
+          );
+      },
+      error:err&#x3D;&gt;{
+        this.router.navigate([&#x27;/&#x27;]);
+      }
+    })
+  }
+  signout(): void {
+    this.servLoading.activar();
+    this.tokenServ.signOut();
+  }
+  home(){
+    this.servLoading.activar();
+    this.router.navigate([&quot;classroom&quot;]);
+
+  }
+  navigator(materia:CardClassroom){
+    this.servLoading.activar();
+    const nav&#x3D;this.router.navigate([&quot;/teacher/&quot;+materia.id_curso+&quot;/dashboard&quot;]);
+    nav.then((dat)&#x3D;&gt;{
+      this.servLoading.desactivar();
+    })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;mat-toolbar class&#x3D;&quot;header__container&quot;&gt;
+      &lt;span class&#x3D;&quot;header__text&quot;&gt;{{ materia }}&lt;/span&gt;
+      &lt;div class&#x3D;&quot;header__buttons&quot;&gt;
+        &lt;button
+          class&#x3D;&quot;circular-button-navbar&quot;
+          mat-mini-fab
+          [matMenuTriggerFor]&#x3D;&quot;classmodal&quot;
+        &gt;
+          &lt;span class&#x3D;&quot;circular-button__class&quot;&gt;{{ simbCurso }}&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;mat-menu
+          class&#x3D;&quot;classroom-choose-card&quot;
+          #classmodal&#x3D;&quot;matMenu&quot;
+          xPosition&#x3D;&quot;before&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;classroom-choose-card__content&quot;&gt;
+            &lt;div
+              (click)&#x3D;&quot;navigator(materia)&quot;
+              class&#x3D;&quot;classroom-choose-card__classroom&quot;
+              *ngFor&#x3D;&quot;let materia of materias&quot;
+            &gt;
+              {{ materia.curso }}
+            &lt;/div&gt;
+            &lt;div (click)&#x3D;&quot;home()&quot; class&#x3D;&quot;classroom-choose-card__classroom&quot;&gt;
+              Home
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/mat-menu&gt;
+
+        &lt;button
+          class&#x3D;&quot;circular-button-navbar&quot;
+          mat-mini-fab
+          [matMenuTriggerFor]&#x3D;&quot;notificationmodal&quot;
+        &gt;
+          &lt;mat-icon class&#x3D;&quot;circular-button__icon&quot;&gt;notifications_none&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;mat-menu
+          class&#x3D;&quot;notification-card&quot;
+          #notificationmodal&#x3D;&quot;matMenu&quot;
+          xPosition&#x3D;&quot;before&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;notification-card__content&quot;&gt;
+            &lt;span class&#x3D;&quot;notification-card__notification&quot;&gt;Final Test&lt;/span&gt;
+            &lt;span class&#x3D;&quot;notification-card__notification&quot;&gt;Practice 1&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/mat-menu&gt;
+
+        &lt;button
+          class&#x3D;&quot;circular-button-navbar&quot;
+          mat-mini-fab
+          [matMenuTriggerFor]&#x3D;&quot;usermodal&quot;
+        &gt;
+          &lt;span class&#x3D;&quot;circular-button__first-word&quot;&gt;{{
+            userDocente.primaLetra
+          }}&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;mat-menu class&#x3D;&quot;user-card&quot; #usermodal&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
+          &lt;div class&#x3D;&quot;user-card__content&quot;&gt;
+            &lt;button class&#x3D;&quot;user-card__icon&quot; mat-fab&gt;
+              &lt;span class&#x3D;&quot;user-card__first-word&quot;&gt;{{
+                userDocente.primaLetra
+              }}&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;span class&#x3D;&quot;user-card__name&quot;&gt;{{ userDocente.nombreDocente }}&lt;/span&gt;
+            &lt;span class&#x3D;&quot;user-card__lastname&quot;&gt;{{
+              userDocente.apellidoDocente
+            }}&lt;/span&gt;
+            &lt;span class&#x3D;&quot;user-card__email&quot;&gt;{{
+              userDocente.correoDocente
+            }}&lt;/span&gt;
+            &lt;span class&#x3D;&quot;user-card__classroom&quot;&gt;Class : {{ materia }}&lt;/span&gt;
+            &lt;button
+              mat-stroked-button
+              class&#x3D;&quot;user-card__button-logout&quot;
+              (click)&#x3D;&quot;signout()&quot;
+            &gt;
+              &lt;mat-icon&gt;exit_to_app&lt;/mat-icon&gt;
+              Sign out
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;mat-menu class&#x3D;&quot;user-card&quot; #usermodal&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
+            &lt;div class&#x3D;&quot;user-card__content&quot;&gt;
+              &lt;button class&#x3D;&quot;user-card__icon&quot; mat-fab&gt;
+                &lt;span class&#x3D;&quot;user-card__first-word&quot;&gt;{{
+                  userDocente.primaLetra
+                }}&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;span class&#x3D;&quot;user-card__name&quot;&gt;{{
+                userDocente.nombreDocente
+              }}&lt;/span&gt;
+              &lt;span class&#x3D;&quot;user-card__email&quot;&gt;{{
+                userDocente.correoDocente
+              }}&lt;/span&gt;
+              &lt;span class&#x3D;&quot;user-card__classroom&quot;&gt;Class : {{ materia }}&lt;/span&gt;
+              &lt;button mat-stroked-button class&#x3D;&quot;user-card__button-logout&quot;&gt;
+                &lt;mat-icon&gt;exit_to_app&lt;/mat-icon&gt;
+                Sign out
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/mat-menu&gt;
+        &lt;/mat-menu&gt;
+      &lt;/div&gt;
+      &lt;!-- &lt;/div&gt; --&gt;
+    &lt;/mat-toolbar&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./header.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <div class="container">    <mat-toolbar class="header__container">      <span class="header__text">{{ materia }}</span>      <div class="header__buttons">        <button          class="circular-button-navbar"          mat-mini-fab          [matMenuTriggerFor]="classmodal"        >          <span class="circular-button__class">{{ simbCurso }}</span>        </button>        <mat-menu          class="classroom-choose-card"          #classmodal="matMenu"          xPosition="before"        >          <div class="classroom-choose-card__content">            <div              (click)="navigator(materia)"              class="classroom-choose-card__classroom"              *ngFor="let materia of materias"            >              {{ materia.curso }}            </div>            <div (click)="home()" class="classroom-choose-card__classroom">              Home            </div>          </div>        </mat-menu>        <button          class="circular-button-navbar"          mat-mini-fab          [matMenuTriggerFor]="notificationmodal"        >          <mat-icon class="circular-button__icon">notifications_none</mat-icon>        </button>        <mat-menu          class="notification-card"          #notificationmodal="matMenu"          xPosition="before"        >          <div class="notification-card__content">            <span class="notification-card__notification">Final Test</span>            <span class="notification-card__notification">Practice 1</span>          </div>        </mat-menu>        <button          class="circular-button-navbar"          mat-mini-fab          [matMenuTriggerFor]="usermodal"        >          <span class="circular-button__first-word">{{            userDocente.primaLetra          }}</span>        </button>        <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">          <div class="user-card__content">            <button class="user-card__icon" mat-fab>              <span class="user-card__first-word">{{                userDocente.primaLetra              }}</span>            </button>            <span class="user-card__name">{{ userDocente.nombreDocente }}</span>            <span class="user-card__lastname">{{              userDocente.apellidoDocente            }}</span>            <span class="user-card__email">{{              userDocente.correoDocente            }}</span>            <span class="user-card__classroom">Class : {{ materia }}</span>            <button              mat-stroked-button              class="user-card__button-logout"              (click)="signout()"            >              <mat-icon>exit_to_app</mat-icon>              Sign out            </button>          </div>          <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">            <div class="user-card__content">              <button class="user-card__icon" mat-fab>                <span class="user-card__first-word">{{                  userDocente.primaLetra                }}</span>              </button>              <span class="user-card__name">{{                userDocente.nombreDocente              }}</span>              <span class="user-card__email">{{                userDocente.correoDocente              }}</span>              <span class="user-card__classroom">Class : {{ materia }}</span>              <button mat-stroked-button class="user-card__button-logout">                <mat-icon>exit_to_app</mat-icon>                Sign out              </button>            </div>          </mat-menu>        </mat-menu>      </div>      <!-- </div> -->    </mat-toolbar>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeaderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

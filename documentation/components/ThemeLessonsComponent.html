@@ -1,0 +1,1178 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ucb-english-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ucb-english-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ThemeLessonsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-theme-lessons</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./theme-lessons.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./theme-lessons.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                <a href="#practices">practices</a>
+                            </li>
+                            <li>
+                                <a href="#simpleCards">simpleCards</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarPractica">agregarPractica</a>
+                            </li>
+                            <li>
+                                <a href="#agregarPracticas">agregarPracticas</a>
+                            </li>
+                            <li>
+                                <a href="#agregarTemas">agregarTemas</a>
+                            </li>
+                            <li>
+                                <a href="#configuraciones">configuraciones</a>
+                            </li>
+                            <li>
+                                <a href="#eliminar">eliminar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#verContenido">verContenido</a>
+                            </li>
+                            <li>
+                                <a href="#verDetalle">verDetalle</a>
+                            </li>
+                            <li>
+                                <a href="#verLecciones">verLecciones</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: MatDialog, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarPractica"></a>
+                    <span class="name">
+                        <b>
+                            agregarPractica
+                        </b>
+                        <a href="#agregarPractica"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarPractica()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarPracticas"></a>
+                    <span class="name">
+                        <b>
+                            agregarPracticas
+                        </b>
+                        <a href="#agregarPracticas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarPracticas(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarTemas"></a>
+                    <span class="name">
+                        <b>
+                            agregarTemas
+                        </b>
+                        <a href="#agregarTemas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarTemas()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuraciones"></a>
+                    <span class="name">
+                        <b>
+                            configuraciones
+                        </b>
+                        <a href="#configuraciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>configuraciones()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminar"></a>
+                    <span class="name">
+                        <b>
+                            eliminar
+                        </b>
+                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verContenido"></a>
+                    <span class="name">
+                        <b>
+                            verContenido
+                        </b>
+                        <a href="#verContenido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verContenido(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verDetalle"></a>
+                    <span class="name">
+                        <b>
+                            verDetalle
+                        </b>
+                        <a href="#verDetalle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verDetalle(practice: <a href="../classes/SimpleCard.html">SimpleCard</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>practice</td>
+                                    <td>
+                                                <code><a href="../classes/SimpleCard.html" target="_self" >SimpleCard</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verLecciones"></a>
+                    <span class="name">
+                        <b>
+                            verLecciones
+                        </b>
+                        <a href="#verLecciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verLecciones()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="practices"></a>
+                        <span class="name">
+                            <b>
+                            practices</b>
+                            <a href="#practices"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/SimpleCard.html" target="_self" >SimpleCard[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="simpleCards"></a>
+                        <span class="name">
+                            <b>
+                            simpleCards</b>
+                            <a href="#simpleCards"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/SimpleCard.html" target="_self" >SimpleCard[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      id: 1,
+      titulo: &quot;Theme Test 1&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 2,
+      titulo: &quot;Theme Test 2&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { SimpleCard } from &quot;src/app/models/simpleCard&quot;;
+import { ActivatedRoute, Params, Router } from &quot;@angular/router&quot;;
+import { InitialInformationComponent } from &quot;../../../../../dialogs/create-practice/initial-information/initial-information.component&quot;;
+import { AddLessonComponent } from &quot;../../../../../dialogs/lesson/add-lesson/add-lesson.component&quot;;
+import { DeleteItemService } from &quot;../../../../../../services/dialogs/delete-item.service&quot;;
+
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from &quot;@angular/material/dialog&quot;;
+@Component({
+  selector: &quot;app-theme-lessons&quot;,
+  templateUrl: &quot;./theme-lessons.component.html&quot;,
+  styleUrls: [&quot;./theme-lessons.component.scss&quot;],
+})
+export class ThemeLessonsComponent implements OnInit {
+  simpleCards: SimpleCard[] &#x3D; [
+    {
+      id: 1,
+      titulo: &quot;Theme Test 1&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+    {
+      id: 2,
+      titulo: &quot;Theme Test 2&quot;,
+      color: &quot;#D77A61&quot;,
+    },
+  ];
+  practices: SimpleCard[] &#x3D; [
+  ];
+
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+  agregarPracticas(data) {
+    this.practices &#x3D; [];
+    for (let practica of data) {
+      this.practices.push({
+        color: &quot;#D77A61&quot;,
+        titulo: practica.nombre_practica,
+        id: practica.id_practica,
+      });
+    }
+  }
+  ngOnInit(): void {
+    this.route.data.subscribe({
+      next: (data) &#x3D;&gt; {
+        if (data.practicas.status &#x3D;&#x3D; 200) {
+          this.agregarPracticas(data.practicas.body);
+        } else {
+          console.log(&quot;error&quot;);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      },
+    });
+  }
+  //-----funciones-----
+
+  agregarTemas() {
+    // const dialogRef &#x3D; this.dialog.open(AddThemeComponent, { width: &quot;400px&quot; });
+    // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+    //   console.log(&#x60;Dialog result: ${result}&#x60;);
+    // });
+  }
+  configuraciones() {
+    // const dialogRef &#x3D; this.dialog.open(ConfigureThemeComponent, {
+    //   width: &quot;400px&quot;,
+    // });
+    // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+    //   console.log(&#x60;Dialog result: ${result}&#x60;);
+    // });
+  }
+  verDetalle(practice:SimpleCard) {
+    this.router.navigate([&quot;detail&quot;,practice.id], { relativeTo: this.route });
+    console.log(&quot;click on list&quot;);
+  }
+  verContenido(id: number) {
+    //[where i wanna go] ,{where i am}
+    //this.router.navigate([&quot;/themes&quot;, id], { relativeTo: this.route });
+  }
+  eliminar() {
+    // const dialogRef &#x3D; this.dialog.open(DeleteCardComponent, { width: &quot;400px&quot; });
+    // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+    //   console.log(&#x60;Dialog result: ${result}&#x60;);
+    // });
+  }
+  verLecciones() {
+    //[where i wanna go] ,{where i am}
+    //this.router.navigate([&quot;lessons&quot;], { relativeTo: this.route });
+  }
+  agregarPractica() {
+    // const dialogRef &#x3D; this.dialog.open(ProgressBarComponent, {
+    //   width: &quot;1000px&quot;,
+    // });
+    // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+    //   console.log(&#x60;Dialog result: ${result}&#x60;);
+    // });
+    this.router.navigate([&quot;practice&quot;], { relativeTo: this.route });
+    console.log(&quot;clicked&quot;);
+  }
+  //-----#funciones-----
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;!--Subtitle lesson--&gt;
+  &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
+      &lt;span&gt;Lesson Content&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__buttons-container&quot;&gt;
+      &lt;!--Add button--&gt;
+      &lt;button class&#x3D;&quot;circular-button-subtitle&quot; mat-mini-fab&gt;
+        &lt;mat-icon class&#x3D;&quot;circular-button-subtitle__icon&quot;&gt;add&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;!--#Add button--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#Subtitle lesson--&gt;
+  &lt;!--row--&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let cards of simpleCards&quot; class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;custom-card--lessons&quot;&gt;
+        &lt;div class&#x3D;&quot;custom-card--lessons__img&quot;&gt;
+          &lt;div class&#x3D;&quot;custom-card--lessons__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;custom-card--lessons__buttons-card&quot;&gt;
+              &lt;!--btn Ver lista--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;verDetalle(cards)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  list
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn Ver lista--&gt;
+              &lt;!--btn  configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuraciones()&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn  configuraciones--&gt;
+              &lt;!--btn eliminar--&gt;
+              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;eliminar()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  delete
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn eliminar--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--lessons__content-card&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--lessons__description-theme&quot;&gt;
+              &lt;span class&#x3D;&quot;custom-card--lessons__description-theme--title&quot;&gt;{{
+                cards.titulo
+              }}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--#custom-cards--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#row--&gt;
+  &lt;!--Subtitle practices--&gt;
+  &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
+      &lt;span&gt;Practices&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;subtitle-compound__buttons-container&quot;&gt;
+      &lt;!--Add button--&gt;
+      &lt;button class&#x3D;&quot;circular-button-subtitle&quot; mat-mini-fab&gt;
+        &lt;mat-icon
+          class&#x3D;&quot;circular-button-subtitle__icon&quot;
+          (click)&#x3D;&quot;agregarPractica()&quot;
+          &gt;add&lt;/mat-icon
+        &gt;
+      &lt;/button&gt;
+      &lt;!--#Add button--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#Subtitle practices--&gt;
+  &lt;!--row--&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let cards of practices&quot; class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+      &lt;div class&#x3D;&quot;custom-card--practices&quot;&gt;
+        &lt;div class&#x3D;&quot;custom-card--practices__img&quot;&gt;
+          &lt;div class&#x3D;&quot;custom-card--practices__img-overlay&quot;&gt;
+            &lt;div class&#x3D;&quot;custom-card--practices__buttons-card&quot;&gt;
+              &lt;!--btn Ver lista--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;verDetalle(cards)&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  list
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn Ver lista--&gt;
+              &lt;!--btn  configuraciones--&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;configuraciones()&quot;
+              &gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  settings
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn  configuraciones--&gt;
+              &lt;!--btn eliminar--&gt;
+              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;eliminar()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
+                  delete
+                &lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;!--#btn eliminar--&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--practices__content-card&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;custom-card--practices__description-theme&quot;&gt;
+              &lt;span class&#x3D;&quot;custom-card--practices__description-theme--title&quot;&gt;{{
+                cards.titulo
+              }}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--#custom-cards--&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--#row--&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./theme-lessons.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle lesson-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Lesson Content</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle lesson-->  <!--row-->  <div class="row">    <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--lessons">        <div class="custom-card--lessons__img">          <div class="custom-card--lessons__img-overlay">            <div class="custom-card--lessons__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verDetalle(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones()"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button class="circular-button-custom-card" (click)="eliminar()">                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--lessons__content-card"></div>            <div class="custom-card--lessons__description-theme">              <span class="custom-card--lessons__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row-->  <!--Subtitle practices-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Practices</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon          class="circular-button-subtitle__icon"          (click)="agregarPractica()"          >add</mat-icon        >      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle practices-->  <!--row-->  <div class="row">    <div *ngFor="let cards of practices" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--practices">        <div class="custom-card--practices__img">          <div class="custom-card--practices__img-overlay">            <div class="custom-card--practices__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verDetalle(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones()"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button class="circular-button-custom-card" (click)="eliminar()">                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--practices__content-card"></div>            <div class="custom-card--practices__description-theme">              <span class="custom-card--practices__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ThemeLessonsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ThemeLessonsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
