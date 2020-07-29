@@ -5,6 +5,7 @@
     <div class="button-module-container--actions">
       <button
         class="module-button module-button--actions"
+        [ngClass]="{ 'module-button--error': this.controlPuntuacion100 === 1 }"
         (click)="editarPorcentajes()"
       >
         <i class="fas fa-edit module-button__icon"></i>

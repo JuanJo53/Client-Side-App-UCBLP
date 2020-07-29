@@ -231,6 +231,10 @@
     background-color: $color-primary-blue;
     color: $color-primary-white;
   }
+  &--error {
+    background-color: $color-primary-red;
+    color: $color-primary-white;
+  }
   &--excel {
     background-color: $color-primary-excel;
     color: $color-primary-white;
