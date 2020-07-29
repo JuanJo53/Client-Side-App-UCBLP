@@ -217,11 +217,8 @@
 // module buttons
 .module-button {
   cursor: pointer;
-  margin-top: 4rem;
-  background-color: $color-primary-white;
-  color: $color-primary-blue;
-  border: 0.1rem solid $color-primary-blue;
-  opacity: 60%;
+  margin-top: 2rem;
+  opacity: 55%;
   border-radius: 2.5rem;
   text-align: right;
   font-size: 1.25rem;
@@ -229,6 +226,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  &--actions {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+  &--excel {
+    background-color: $color-primary-excel;
+    color: $color-primary-white;
+  }
+
   &__text {
     padding-right: 0.75rem;
     padding-left: 0.5rem;
@@ -238,17 +245,24 @@
     padding-right: 0.5rem;
   }
   &:hover {
-    // background-color: $color-primary-blue;
-    // color: $color-primary-white;
-    border: 0.1rem solid $color-primary-blue;
-    opacity: 100%;
-    transition: 0.25s;
+    opacity: 90%;
+    transition: all 0.5s;
   }
   &:focus {
     outline: 0;
   }
 }
-
+.button-module-container {
+  display: flex;
+  align-items: center;
+  &--actions {
+    margin-right: auto;
+  }
+  &--imports {
+    margin-left: auto;
+  }
+}
+// --- module buttons
 .dialog-circular-minus {
   background-color: $color-secondary-blue;
   border-radius: 50%;

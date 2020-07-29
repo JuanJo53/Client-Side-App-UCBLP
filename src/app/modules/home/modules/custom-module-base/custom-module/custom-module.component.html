@@ -1,16 +1,31 @@
 <div class="container">
-  <!-- botton de editar porcentajes -->
-  <button class="module-button" (click)="editarPorcentajes()">
-    <i class="fas fa-edit module-button__icon"></i>
-    <div class="module-button__text">
-      Edit Percentages
+  <!-- buttons de agregar seccion -->
+  <div class="button-module-container">
+    <!-- container for buttons with simple actions-->
+    <div class="button-module-container--actions">
+      <button
+        class="module-button module-button--actions"
+        (click)="editarPorcentajes()"
+      >
+        <i class="fas fa-edit module-button__icon"></i>
+        <div class="module-button__text">
+          Edit Percentages
+        </div>
+      </button>
     </div>
-  </button>
-  <!-- //botton de editar porcentajes -->
+    <!-- #container for buttons with simple actions-->
+    <!-- container for buttons like excel svg word etc -->
+    <div class="button-module-container-imports">
+      <!-- INSERT BUTTONS IMPORTS HERE!!! -->
+    </div>
+    <!-- #container for buttons like excel svg word etc -->
+  </div>
+  <!-- //buttons de agregar seccion -->
+
   <!--Subtitle-->
   <div class="subtitle-compound">
     <div class="subtitle-compound__text">
-      <span>{{nombreModulo}}</span>
+      <span>{{ nombreModulo }}</span>
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
@@ -37,7 +52,10 @@
           <div class="custom-card--custom__img-overlay">
             <div class="custom-card--custom__buttons-card">
               <!--btn Ver lista-->
-              <button class="circular-button-custom-card" (click)="verlistar(custCards)">
+              <button
+                class="circular-button-custom-card"
+                (click)="verlistar(custCards)"
+              >
                 <mat-icon class="circular-button-custom-card__icon">
                   list
                 </mat-icon>
@@ -56,7 +74,7 @@
               <!--btn eliminar-->
               <button
                 class="circular-button-custom-card"
-                (click)="eliminarCard(custCards,indexcu)"
+                (click)="eliminarCard(custCards, indexcu)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
