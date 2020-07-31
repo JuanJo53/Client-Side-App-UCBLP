@@ -101,6 +101,8 @@
       ><span class="sublink__text">Assessments</span></a
     >
     <a
+      routerLinkActive="list-item-active-link"
+      routerLink="/teacher/1/modules/custom/{{modulos.id}}"
       *ngFor="let modulos of mPersonalizados"
       class="sublink"
       mat-list-item

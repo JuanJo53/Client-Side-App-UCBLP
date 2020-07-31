@@ -78,6 +78,12 @@ export class CreatePracticeComponent implements OnInit {
     private location: Location
   ) {}
 
+  actPuntaje(){
+    this.total=0;
+    for(let preg of this.preguntas){
+      this.total+=preg.puntuacion;
+    }
+  }
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
       this.idLeccion = param["idLeccion"];
@@ -85,10 +91,13 @@ export class CreatePracticeComponent implements OnInit {
     this.route.data.subscribe({
       next: (data) => {
         if (data.repository.status == 200) {
+          console.log(data.repository.body);
           this.repository = data.repository.body;
         }
       },
-      error: (err) => {},
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
   generateId(): string {
@@ -150,7 +159,8 @@ export class CreatePracticeComponent implements OnInit {
             console.log("no se pudo agregar la pregunta");
           },
         });
-      }
+      }      
+      this.actPuntaje();
     });
   }
   //Retroceder en el proceso
@@ -183,7 +193,8 @@ export class CreatePracticeComponent implements OnInit {
             console.log("no se pudo agregar la pregunta");
           },
         });
-      }
+      }      
+      this.actPuntaje();
     });
   }
   cambiarFecha() {
@@ -199,11 +210,13 @@ export class CreatePracticeComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
+      this.actPuntaje();
       if (result !== "" && result !== "undefined" && result != null) {
         for (let pregunta of result) {
           this.preguntas.push(pregunta);
         }
-      }
+      }      
+      this.actPuntaje();
     });
   }
 

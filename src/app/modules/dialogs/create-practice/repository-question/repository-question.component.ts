@@ -120,7 +120,7 @@ export class RepositoryQuestionComponent implements OnInit {
       startWith(""),
       map((value) => this._filter(value))
     );
-    this.cargarDatos(this.dataDialog["repository"]);
+    this.cargarDatosSQL(this.dataDialog["repository"]);
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -176,6 +176,24 @@ export class RepositoryQuestionComponent implements OnInit {
       nuevaPregunta.id=pregunta.id_pregunta;
       nuevaPregunta.respuesta=pregunta.pregunta.respuestas;
       nuevaPregunta.opciones=pregunta.pregunta.opciones;
+      nuevaPregunta.puntuacion=10;
+      nuevaPregunta.tipo=true;
+      console.log(nuevaPregunta);
+      this.cargarRespuestasBool(nuevaPregunta);
+      this.preguntas.push(nuevaPregunta)
+    }
+  }
+  cargarDatosSQL(data){
+    this.checkboxOpciones=[];
+    for(let pregunta of data){
+      this.checkboxOpciones.push({isChecked:false,opcionRespuesta:""})
+      let nuevaPregunta=new Pregunta();
+      nuevaPregunta.idTipoPregunta=String(pregunta.id_tipo_pregunta);
+      nuevaPregunta.idTipoRespuesta=String(pregunta.id_tipo_respuesta);
+      nuevaPregunta.pregunta=pregunta.pregunta;
+      nuevaPregunta.id=pregunta.id_pregunta;
+      nuevaPregunta.respuesta=pregunta.respuesta;
+      nuevaPregunta.opciones=pregunta.opciones;
       nuevaPregunta.puntuacion=10;
       nuevaPregunta.tipo=true;
       console.log(nuevaPregunta);
