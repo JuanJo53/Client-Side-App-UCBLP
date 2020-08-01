@@ -116,5 +116,8 @@ export class ThemeLessonsComponent implements OnInit {
     this.router.navigate(["practice"], { relativeTo: this.route });
     console.log("clicked");
   }
+  configuracionPractica() {
+    this.router.navigate(["edit-practice"], { relativeTo: this.route });
+  }
   //-----#funciones-----
 }

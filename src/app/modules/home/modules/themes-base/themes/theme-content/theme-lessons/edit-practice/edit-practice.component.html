@@ -2,7 +2,7 @@
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
-      <span>Practice creation</span>
+      <span>Edit Practice</span>
     </div>
   </div>
 
@@ -15,493 +15,6 @@
     class="question-maker-container"
   >
     <!--1 paso-->
-    <mat-step>
-      <form>
-        <ng-template matStepLabel>Initial Information</ng-template>
-        <!-- card -->
-        <div class="card">
-          <div class="container-dialog">
-            <!--subtitle-->
-            <div class="dialog-subtitle">
-              <div class="dialog-subtitle__text">
-                <span *ngIf="!paso1.bloqnombre">Name</span>
-                <span *ngIf="paso1.bloqnombre" style="color: red;">Name *</span>
-              </div>
-            </div>
-            <!--#subtitle-->
-            <mat-form-field appearance="outline">
-              <mat-label>Practice name</mat-label>
-              <!-- Input para el email-->
-              <input
-                class="input-form"
-                type="text"
-                matInput
-                [(ngModel)]="paso1.nombre"
-                placeholder="Practice name"
-                name="nombrePractica"
-              />
-              <!-- //Input para el email-->
-            </mat-form-field>
-
-            <div class="row">
-              <!--start date-->
-              <div class="col-sm-6">
-                <!--subtitle-->
-                <div class="dialog-subtitle">
-                  <div class="dialog-subtitle__text">
-                    <span>Start date and hour</span>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <!--fecha-->
-                    <mat-form-field>
-                      <mat-label *ngIf="!paso1.bloqfecha1"
-                        >Choose a date</mat-label
-                      >
-                      <mat-label *ngIf="paso1.bloqfecha1" style="color: red;"
-                        >Choose a date*</mat-label
-                      >
-                      <input
-                        matInput
-                        [matDatepicker]="picker1"
-                        [(ngModel)]="paso1.fechaini"
-                        [ngModelOptions]="{ standalone: true }"
-                      />
-                      <mat-datepicker-toggle
-                        matSuffix
-                        [for]="picker1"
-                      ></mat-datepicker-toggle>
-                      <mat-datepicker
-                        #picker1
-                        startView="year"
-                        [startAt]="startDate"
-                      ></mat-datepicker>
-                    </mat-form-field>
-                  </div>
-                  <!--fecha-->
-                  <!--hora-->
-                  <div class="col-sm-6">
-                    <div class="toggle-example">
-                      <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqhora1"
-                          >Choose an hour</mat-label
-                        >
-                        <mat-label *ngIf="paso1.bloqhora1" style="color: red;"
-                          >Choose an hour*</mat-label
-                        >
-                        <input
-                          matInput
-                          [(ngModel)]="paso1.horaini"
-                          [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker1"
-                          [disableClick]="true"
-                          readonly
-                        />
-                        <ngx-material-timepicker-toggle
-                          matSuffix
-                          [for]="toggleTimepicker1"
-                        ></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker1
-                        ></ngx-material-timepicker>
-                      </mat-form-field>
-                    </div>
-                  </div>
-                  <!--#hora-->
-                </div>
-              </div>
-              <!--#start date-->
-              <!--end date-->
-              <div class="col-sm-6">
-                <!--subtitle-->
-                <div class="dialog-subtitle">
-                  <div class="dialog-subtitle__text">
-                    <span>End date and hour</span>
-                  </div>
-                </div>
-                <!--#subtitle-->
-                <!--row-->
-                <div class="row">
-                  <div class="col-sm-6">
-                    <!--fecha-->
-                    <mat-form-field>
-                      <mat-label *ngIf="!paso1.bloqfecha2"
-                        >Choose a date</mat-label
-                      >
-                      <mat-label *ngIf="paso1.bloqfecha2" style="color: red;"
-                        >Choose a date*</mat-label
-                      >
-                      <input
-                        matInput
-                        [matDatepicker]="picker2"
-                        [(ngModel)]="paso1.fechafin"
-                        [ngModelOptions]="{ standalone: startDate }"
-                      />
-                      <mat-datepicker-toggle
-                        matSuffix
-                        [for]="picker2"
-                      ></mat-datepicker-toggle>
-                      <mat-datepicker
-                        #picker2
-                        startView="year"
-                        [startAt]="startDate"
-                      ></mat-datepicker>
-                    </mat-form-field>
-                    <!--fecha-->
-                  </div>
-                  <!--hora-->
-                  <div class="col-sm-6">
-                    <div class="toggle-example">
-                      <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqhora2"
-                          >Choose an hour</mat-label
-                        >
-                        <mat-label *ngIf="paso1.bloqhora2" style="color: red;"
-                          >Choose an hour*</mat-label
-                        >
-                        <input
-                          matInput
-                          [(ngModel)]="paso1.horafin"
-                          [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker2"
-                          [disableClick]="true"
-                          readonly
-                        />
-                        <ngx-material-timepicker-toggle
-                          matSuffix
-                          [for]="toggleTimepicker2"
-                        ></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker2
-                        ></ngx-material-timepicker>
-                      </mat-form-field>
-                    </div>
-                  </div>
-                  <!--#hora-->
-                </div>
-              </div>
-              <!--end date-->
-            </div>
-          </div>
-        </div>
-        <!-- #card -->
-        <!-- <button mat-button matStepperNext>Next</button> -->
-        <!-- buttons -->
-        <div class="progress-bar__bar">
-          <!--back button-->
-          <div class="progress-bar__previous" (click)="previous(stepper)">
-            <button class="progress-bar__button-previous" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
-            </button>
-            <span class="progress-bar__text-previous">Back</span>
-          </div>
-          <!--#back button-->
-          <!--next button-->
-          <div class="progress-bar__next" (click)="next(stepper)">
-            <span class="progress-bar__text-next">Next</span>
-            <button class="progress-bar__button-next" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
-            </button>
-          </div>
-          <!--#next button-->
-        </div>
-        <!-- #buttons -->
-      </form>
-    </mat-step>
-    <!--#1 paso-->
-    <!--2 paso-->
-    <mat-step>
-      <form>
-        <ng-template matStepLabel>Building Question</ng-template>
-        <!--card-->
-        <div class="card">
-          <div
-            class="card__text--no-content"
-            *ngIf="preguntas.length == 0; else negative"
-          >
-            <div *ngIf="!paso2bloq">No questions added</div>
-            <div *ngIf="paso2bloq" style="color: red;">*No questions added</div>
-          </div>
-          <!--row added row-->
-          <ng-template #negative>
-            <div
-              *ngFor="let card of preguntas; let i = index"
-              [ngSwitch]="card.idTipoRespuesta"
-              #template
-            >
-              <!--radio button case-->
-              <div class="question-card-added" *ngSwitchCase="'1'">
-                <div class="question-card-added__content">
-                  <div class="question-card-added__header">
-                    <!--input para pregunta-->
-                    <div class="question-card-added__header--question">
-                      <mat-form-field appearance="outline">
-                        <mat-label>Question Name</mat-label>
-                        <input
-                          [(ngModel)]="card.pregunta"
-                          type="text"
-                          readonly
-                          class="input-form"
-                          matInput
-                          placeholder="Question Name"
-                          [ngModelOptions]="{ standalone: true }"
-                        />
-                      </mat-form-field>
-                    </div>
-                    <!--#input para pregunta-->
-                    <div class="question-card-added__header--score">
-                      <!--input para pregunta-->
-                      <div class="card-question__input">
-                        <mat-form-field appearance="outline">
-                          <mat-label>Score</mat-label>
-                          <input
-                            [(ngModel)]="card.puntuacion"
-                            type="text"
-                            readonly
-                            class="input-form"
-                            matInput
-                            placeholder="Score Name"
-                            [ngModelOptions]="{ standalone: true }"
-                          />
-                        </mat-form-field>
-                      </div>
-                      <!--#input para pregunta-->
-                    </div>
-                  </div>
-                  <div class="question-card-added__content-question">
-                    <!-- <form class="example-form"> -->
-                    <mat-radio-group
-                      aria-label="Select an option"
-                      class="example-radio-group"
-                      [disabled]="true"
-                      [ngModelOptions]="{ standalone: true }"
-                      [(ngModel)]="card.respuesta[0]"
-                    >
-                      <!-- radio button option -->
-                      <mat-radio-button
-                        class="question-card-added__choice"
-                        *ngFor="
-                          let opcionesRadioButton of card.opciones;
-                          let x = index
-                        "
-                        [value]="x"
-                      >
-                        <mat-form-field class="full-width-field">
-                          <input
-                            [(value)]="card.opciones[x]"
-                            style="color: black;"
-                            readonly
-                            class="question-card-added__choice--input"
-                            matInput
-                            placeholder="opcion {{ x + 1 }}"
-                          />
-                        </mat-form-field>
-                        <!--#radio button option-->
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <!-- </form> -->
-                  </div>
-                </div>
-                <!--button-->
-                <div class="question-card-added__button">
-                  <button
-                    mat-mini-fab
-                    (click)="editarPregunta(card)"
-                    class="question-card-added__button--positive"
-                  >
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  <button
-                    mat-mini-fab
-                    (click)="eliminarPreg(i)"
-                    class="question-card-added__button--negative"
-                  >
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                </div>
-                <!--#button-->
-              </div>
-
-              <!--checkbox case-->
-              <div class="question-card-added" *ngSwitchCase="'2'">
-                <div class="question-card-added__content">
-                  <div class="question-card-added__header">
-                    <!--input para pregunta-->
-                    <div class="question-card-added__header--question">
-                      <mat-form-field appearance="outline">
-                        <mat-label>Question Name</mat-label>
-                        <input
-                          [(ngModel)]="card.pregunta"
-                          type="text"
-                          class="input-form"
-                          matInput
-                          readonly
-                          placeholder="Question Name"
-                          [ngModelOptions]="{ standalone: true }"
-                        />
-                      </mat-form-field>
-                    </div>
-                    <!--#input para pregunta-->
-                    <div class="question-card-added__header--score">
-                      <!--input para pregunta-->
-                      <div class="card-question__input">
-                        <mat-form-field appearance="outline">
-                          <mat-label>Score</mat-label>
-                          <input
-                            [(ngModel)]="card.puntuacion"
-                            type="text"
-                            readonly
-                            class="input-form"
-                            matInput
-                            placeholder="Score Name"
-                            [ngModelOptions]="{ standalone: true }"
-                          />
-                        </mat-form-field>
-                      </div>
-                      <!--#input para pregunta-->
-                    </div>
-                  </div>
-                  <div class="question-card-added__content-question">
-                    <!-- <form class="example-form"> -->
-                    <mat-checkbox
-                      class="card-question__choice"
-                      [disabled]="true"
-                      *ngFor="let opcionesCB of card.opciones; let x = index"
-                      [(ngModel)]="card.respuestasBool[x]"
-                      [ngModelOptions]="{ standalone: true }"
-                    >
-                      <mat-form-field class="full-width-field">
-                        <input
-                          [(value)]="card.opciones[x]"
-                          style="color: black;"
-                          readonly
-                          class="card-question__choice--input"
-                          matInput
-                          placeholder="opcion"
-                        />
-                      </mat-form-field>
-                      <!--#radio button option-->
-                    </mat-checkbox>
-
-                    <!-- </form> -->
-                  </div>
-                </div>
-                <!--button-->
-                <div class="question-card-added__button">
-                  <button
-                    mat-mini-fab
-                    (click)="editarPregunta(card)"
-                    class="question-card-added__button--positive"
-                  >
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  <button
-                    mat-mini-fab
-                    (click)="eliminarPreg(i)"
-                    class="question-card-added__button--negative"
-                  >
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                </div>
-                <!--#button-->
-              </div>
-            </div>
-          </ng-template>
-          <h4
-            *ngIf="paso2bloqScore"
-            style="color: red; padding-left: 1rem; margin-bottom: -2rem;"
-          >
-            *check the total score
-          </h4>
-          <!--#row-->
-        </div>
-
-        <div class="row progress-bar__choose-buttons-container">
-          <div class="col-sm-6 progress-bar__content">
-            <button
-              mat-raised-button
-              class="progress-bar__button-normal"
-              (click)="preguntasPersonalizadas()"
-            >
-              <div class="progress-bar__button-container">
-                <mat-icon class="progress-bar__button-normal--icon"
-                  >add_circle</mat-icon
-                >
-                <span class="progress-bar__button-normal--text"
-                  >Add customed question</span
-                >
-              </div>
-            </button>
-          </div>
-          <div class="col-sm-6 progress-bar__content">
-            <button
-              (click)="preguntasRepositorio()"
-              mat-raised-button
-              class="progress-bar__button-normal"
-            >
-              <div class="progress-bar__button-container">
-                <mat-icon class="progress-bar__button-normal--icon"
-                  >account_balance</mat-icon
-                >
-                <span class="progress-bar__button-normal--text"
-                  >Add From Repository</span
-                >
-              </div>
-            </button>
-          </div>
-        </div>
-        <!--#card-->
-        <!-- control de sumatoria == 100 -->
-        <div *ngIf="total === 100; else menor100">
-          <div class="rubric">
-            <div class="rubric__content rubric--positive">
-              <div class="rubric__text">
-                <span>Score : {{ total }}</span>
-              </div>
-              <mat-icon class="rubric__icon">
-                check
-              </mat-icon>
-            </div>
-          </div>
-        </div>
-        <ng-template #menor100>
-          <div class="rubric">
-            <div class="rubric__content rubric--negative">
-              <div class="rubric__text">
-                <span>Score : {{ total }}</span>
-              </div>
-              <mat-icon class="rubric__icon">
-                close
-              </mat-icon>
-            </div>
-          </div>
-        </ng-template>
-        <!-- #control de sumatoria == 100 -->
-        <!-- buttons -->
-        <div class="progress-bar__bar">
-          <!--back button-->
-          <div class="progress-bar__previous" (click)="previous(stepper)">
-            <button class="progress-bar__button-previous" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
-            </button>
-            <span class="progress-bar__text-previous">Back</span>
-          </div>
-          <!--#back button-->
-          <!--next button-->
-          <div class="progress-bar__next" (click)="next(stepper)">
-            <span class="progress-bar__text-next">Next</span>
-            <button class="progress-bar__button-next" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
-            </button>
-          </div>
-          <!--#next button-->
-        </div>
-        <!-- #buttons -->
-      </form>
-    </mat-step>
-    <!--#2 paso-->
-    <!--3 paso-->
     <mat-step>
       <form>
         <ng-template matStepLabel>Review Questions</ng-template>
@@ -797,14 +310,313 @@
 
     <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
 
-    <!--#3 paso-->
-    <!--4 paso-->
+    <!--#1 paso-->
+    <!--2 paso-->
+
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Review Questions</ng-template>
+        <!-- card -->
+        <div class="card">
+          <div class="container-dialog">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Name</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-form-field
+              appearance="outline"
+              (dblclick)="toggleDisable()"
+              class="input-disabled"
+            >
+              <mat-label>Practice name</mat-label>
+              <!-- Input para el email-->
+              <input
+                class="input-form"
+                type="text"
+                matInput
+                readonly
+                [(ngModel)]="paso1.nombre"
+                placeholder="Practice name"
+                name="nombrePractica"
+              />
+              <!-- //Input para el email-->
+            </mat-form-field>
+
+            <div class="row">
+              <!--start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Start date and hour</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field class="input-disabled--date">
+                      <mat-label>Choose a date</mat-label>
+                      <input
+                        matInput
+                        readonly
+                        [(ngModel)]="paso1.fechaini"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--fecha-->
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field class="input-disabled--hour">
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          readonly
+                          [(ngModel)]="paso1.horaini"
+                          [ngModelOptions]="{ standalone: true }"
+                          readonly
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--#start date-->
+              <!--end date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>End date and hour</span>
+                  </div>
+                </div>
+                <!--#subtitle-->
+                <!--row-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field class="input-disabled--date">
+                      <mat-label>Choose a date</mat-label>
+                      <input
+                        matInput
+                        readonly
+                        [(ngModel)]="paso1.fechafin"
+                        [ngModelOptions]="{ standalone: startDate }"
+                      />
+                    </mat-form-field>
+                    <!--fecha-->
+                  </div>
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field class="input-disabled--hour">
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          readonly
+                          [(ngModel)]="paso1.horafin"
+                          [ngModelOptions]="{ standalone: true }"
+                          readonly
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--end date-->
+            </div>
+          </div>
+          <!--row added row-->
+          <div
+            *ngFor="let card of preguntas; let i = index"
+            [ngSwitch]="card.idTipoRespuesta"
+            #template
+          >
+            <!--radio button case-->
+            <div class="question-card-added" *ngSwitchCase="'1'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        readonly
+                        class="input-form"
+                        matInput
+                        placeholder="Question Name"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          readonly
+                          class="input-form"
+                          matInput
+                          placeholder="Score Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    class="example-radio-group"
+                    [ngModelOptions]="{ standalone: true }"
+                    [disabled]="true"
+                    [(ngModel)]="card.respuesta[0]"
+                  >
+                    <!-- radio button option -->
+                    <mat-radio-button
+                      class="question-card-added__choice"
+                      *ngFor="
+                        let opcionesRadioButton of card.opciones;
+                        let x = index
+                      "
+                      [value]="x"
+                    >
+                      <mat-form-field class="full-width-field">
+                        <input
+                          [(value)]="card.opciones[x]"
+                          style="color: black;"
+                          readonly
+                          class="question-card-added__choice--input"
+                          matInput
+                          placeholder="opcion {{ x + 1 }}"
+                        />
+                      </mat-form-field>
+                      <!--#radio button option-->
+                    </mat-radio-button>
+                  </mat-radio-group>
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+
+            <!--checkbox case-->
+            <div class="question-card-added" *ngSwitchCase="'2'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        class="input-form"
+                        matInput
+                        readonly
+                        placeholder="Question Name"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          class="input-form"
+                          readonly
+                          matInput
+                          placeholder="Score Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-checkbox
+                    class="card-question__choice"
+                    [disabled]="true"
+                    *ngFor="let opcionesCB of card.opciones; let x = index"
+                    [(ngModel)]="card.respuestasBool[x]"
+                    [ngModelOptions]="{ standalone: true }"
+                  >
+                    <mat-form-field class="full-width-field">
+                      <input
+                        [(value)]="card.opciones[x]"
+                        style="color: black;"
+                        readonly
+                        class="card-question__choice--input"
+                        matInput
+                        placeholder="opcion"
+                      />
+                    </mat-form-field>
+                    <!--#radio button option-->
+                  </mat-checkbox>
+
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--#row-->
+        </div>
+
+        <!-- buttons -->
+        <div class="progress-bar__bar">
+          <!--back button-->
+          <div class="progress-bar__previous" (click)="previous(stepper)">
+            <button class="progress-bar__button-previous" mat-mini-fab>
+              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+            </button>
+            <span class="progress-bar__text-previous">Back</span>
+          </div>
+          <!--#back button-->
+          <!--next button-->
+          <div class="progress-bar__next" (click)="Generar(stepper)">
+            <span class="progress-bar__text-next">Generate</span>
+            <button
+              (click)="next(stepper)"
+              (click)="loadData()"
+              class="progress-bar__button-next"
+              mat-mini-fab
+            >
+              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+            </button>
+          </div>
+          <!--#next button-->
+        </div>
+        <!-- #buttons -->
+      </form>
+    </mat-step>
+    <!--#2 paso-->
+    <!--3 paso-->
 
     <mat-step>
       <div class="spinner">
         <mat-spinner *ngIf="showSpinner"></mat-spinner>
       </div>
-      <div *ngIf="spinnerFinish == true" >
+      <div *ngIf="spinnerFinish == true">
         <div class="done">
           <div class="done__content done--positive">
             <div class="done__text">
@@ -833,6 +645,6 @@
         </div>
       </form>
     </mat-step>
-    <!--#4 paso-->
+    <!--#3 paso-->
   </mat-horizontal-stepper>
 </div>

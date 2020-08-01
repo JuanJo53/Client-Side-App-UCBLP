@@ -91,6 +91,7 @@ import { LoadingComponent } from "src/app/shared/components/loading/loading.comp
 import { GoodDialogComponent } from "src/app/modules/dialogs/simple-dialogs/good-dialog/good-dialog.component";
 import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
 import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
+import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
 
 @NgModule({
   declarations: [
@@ -156,6 +157,7 @@ import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/
     GoodDialogComponent,
     WarningDialogComponent,
     ConfigureLessonContentComponent,
+    EditPracticeComponent,
   ],
   imports: [
     CommonModule,
