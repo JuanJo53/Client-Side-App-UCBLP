@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { SimpleCard } from "src/app/models/simpleCard";
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
-import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add-lesson.component";
-import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
-import { ConfigureLessonContentComponent } from "../../../../../dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
+import { InitialInformationComponent } from "../../../../../../dialogs/create-practice/initial-information/initial-information.component";
+import { AddLessonComponent } from "../../../../../../dialogs/lesson/add-lesson/add-lesson.component";
+import { DeleteItemService } from "../../../../../../../services/dialogs/delete-item.service";
+import { ConfigureLessonContentComponent } from "../../../../../../dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
 
 import {
   MatDialog,

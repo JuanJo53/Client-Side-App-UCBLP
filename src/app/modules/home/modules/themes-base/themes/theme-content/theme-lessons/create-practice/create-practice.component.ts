@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
-import { CustomQuestionComponent } from "../../../../../dialogs/create-practice/custom-question/custom-question.component";
-import { RepositoryQuestionComponent } from "../../../../../dialogs/create-practice/repository-question/repository-question.component";
+import { CustomQuestionComponent } from "../../../../../../../dialogs/create-practice/custom-question/custom-question.component";
+import { RepositoryQuestionComponent } from "../../../../../../../dialogs/create-practice/repository-question/repository-question.component";
 import {
   MatDialog,
   MatDialogRef,
@@ -15,14 +15,14 @@ import { TIME_LOCALE } from "ngx-material-timepicker/src/app/material-timepicker
 import { windowTime } from "rxjs/operators";
 import { Config1 } from "src/app/models/Teacher/CreatePractice/Paso1";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
-import { PracticesService } from "../../../../../../_services/teacher_services/practices.service";
+import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 @Component({
   selector: "app-create-practice",
   templateUrl: "./create-practice.component.html",
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
-  spinnerFinish=false;
+  spinnerFinish = false;
   total = 0;
   repository: any = [];
   showSpinner = false;
@@ -356,7 +356,8 @@ export class CreatePracticeComponent implements OnInit {
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
-      this.showSpinner = false;this.spinnerFinish=true;
+      this.showSpinner = false;
+      this.spinnerFinish = true;
     }, 5000);
   }
 }
