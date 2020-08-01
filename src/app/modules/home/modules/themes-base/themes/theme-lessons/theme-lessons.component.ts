@@ -4,12 +4,14 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 import { InitialInformationComponent } from "../../../../../dialogs/create-practice/initial-information/initial-information.component";
 import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add-lesson.component";
 import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
+import { ConfigureLessonContentComponent } from "../../../../../dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
 
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+import { DeleteCardComponent } from "src/app/modules/dialogs/delete-card/delete-card.component";
 @Component({
   selector: "app-theme-lessons",
   templateUrl: "./theme-lessons.component.html",
@@ -28,8 +30,7 @@ export class ThemeLessonsComponent implements OnInit {
       color: "#D77A61",
     },
   ];
-  practices: SimpleCard[] = [
-  ];
+  practices: SimpleCard[] = [];
 
   constructor(
     public dialog: MatDialog,
@@ -69,27 +70,38 @@ export class ThemeLessonsComponent implements OnInit {
     // });
   }
   configuraciones() {
-    // const dialogRef = this.dialog.open(ConfigureThemeComponent, {
-    //   width: "400px",
-    // });
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+    const dialogRef = this.dialog.open(ConfigureLessonContentComponent, {
+      width: "400px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-  verDetalle(practice:SimpleCard) {
-    this.router.navigate(["detail",practice.id], { relativeTo: this.route });
+  verDetalle(practice: SimpleCard) {
+    this.router.navigate(["detail", practice.id], { relativeTo: this.route });
     console.log("click on list");
   }
   verContenido(id: number) {
     //[where i wanna go] ,{where i am}
     //this.router.navigate(["/themes", id], { relativeTo: this.route });
   }
-  eliminar() {
-    // const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" });
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+  eliminarLessonContent() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        tipo: "lesson Content",
+      },
+    });
   }
+  eliminarPractica() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        tipo: "practice",
+      },
+    });
+  }
+
   verLecciones() {
     //[where i wanna go] ,{where i am}
     //this.router.navigate(["lessons"], { relativeTo: this.route });

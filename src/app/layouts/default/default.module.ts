@@ -90,6 +90,7 @@ import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-b
 import { LoadingComponent } from "src/app/shared/components/loading/loading.component";
 import { GoodDialogComponent } from "src/app/modules/dialogs/simple-dialogs/good-dialog/good-dialog.component";
 import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
+import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
 
 @NgModule({
   declarations: [
@@ -154,6 +155,7 @@ import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/w
     DetailIndividualComponent,
     GoodDialogComponent,
     WarningDialogComponent,
+    ConfigureLessonContentComponent,
   ],
   imports: [
     CommonModule,
