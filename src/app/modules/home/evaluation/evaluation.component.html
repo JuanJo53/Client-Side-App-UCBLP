@@ -1,11 +1,29 @@
 <div class="container">
-  <!-- botton de editar porcentajes -->
-  <button class="module-button" (click)="editarPorcentajes()">
-    <i class="fas fa-edit module-button__icon"></i>
-    <div class="module-button__text">
-      Edit Percentages
+  <!-- buttons de agregar seccion -->
+  <div class="button-module-container">
+    <!-- container for buttons with simple actions-->
+    <div class="button-module-container--actions">
+      <button
+        class="module-button module-button--actions"
+        [ngClass]="{ 'module-button--error': this.controlPuntuacion100 === 1 }"
+        (click)="editarPorcentajes()"
+      >
+        <i class="fas fa-edit module-button__icon"></i>
+        <div class="module-button__text">
+          Edit Percentages
+        </div>
+      </button>
     </div>
-  </button>
+    <!-- #container for buttons with simple actions-->
+    <!-- container for buttons like excel svg word etc -->
+    <div class="button-module-container-imports">
+      <!-- INSERT BUTTONS IMPORTS HERE!!! -->
+    </div>
+    <!-- #container for buttons like excel svg word etc -->
+  </div>
+  <!-- //buttons de agregar seccion -->
+  <!-- botton de editar porcentajes -->
+
   <!-- //botton de editar porcentajes -->
   <!--Subtitle-->
   <div class="subtitle">

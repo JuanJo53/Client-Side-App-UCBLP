@@ -1,7 +1,7 @@
 <div class="dialog">
   <div class="dialog-subtitle">
     <div class="dialog-subtitle__text">
-      <span>Configurar Lesson</span>
+      <span>Configurar Lesson Content</span>
     </div>
   </div>
   <mat-dialog-content class="mat-typography">
@@ -11,7 +11,7 @@
         (dblclick)="toggleDisable()"
         class="input-disabled"
       >
-        <mat-label>Lesson's name</mat-label>
+        <mat-label>Lesson content's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input
           [disabled]="disableTextbox"
@@ -29,7 +29,7 @@
         (dblclick)="toggleDisable()"
         class="input-disabled"
       >
-        <mat-label>Lesson's number</mat-label>
+        <mat-label>Lesson Content's number</mat-label>
         <!-- Input para el nombre del tema-->
         <input
           [disabled]="disableTextbox"
@@ -43,37 +43,40 @@
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
 
-      <!-- <mat-form-field>
-          <mat-label>Type</mat-label>
-          <mat-select [(value)]="typeSelected">
-            <mat-option *ngFor="let elemento of types" [value]="elemento.value">
-              {{ elemento.display }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field> -->
-
-      <!-- <mat-form-field>
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select [(value)]="typeSelected">
+          <mat-option *ngFor="let elemento of types" [value]="elemento.value">
+            {{ elemento.display }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- <div class="combo-box">
+        <mat-form-field>
           <mat-label>Images</mat-label>
-          <mat-select [(value)]="imageSelected" >
-            <mat-option *ngFor="let elemento of images" [value]="elemento.value">
+          <mat-select [(value)]="imageSelected">
+            <mat-option
+              *ngFor="let elemento of images"
+              [value]="elemento.value"
+            >
               {{ elemento.display }}
             </mat-option>
           </mat-select>
-        </mat-form-field> -->
-
+        </mat-form-field>
+      </div> -->
       <div class="radio-buttons-dialog">
         <div class="radio-buttons-dialog__title">Lesson Status :</div>
         <!-- <mat-radio-group
-            aria-label="Select an option"
-            [(ngModel)]="radioButto nValue"
-          >
-            <mat-radio-button
-              class="radio-button"
-              *ngFor="let estado of cardEstado"
-              [value]="estado"
+              aria-label="Select an option"
+              [(ngModel)]="radioButto nValue"
             >
-              {{ estado }}
-            </mat-radio-button> -->
+              <mat-radio-button
+                class="radio-button"
+                *ngFor="let estado of cardEstado"
+                [value]="estado"
+              >
+                {{ estado }}
+              </mat-radio-button> -->
         <mat-radio-group
           aria-label="Select an option"
           [(ngModel)]="radioButtonValue"

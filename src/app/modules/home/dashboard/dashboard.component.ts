@@ -101,7 +101,8 @@ export class DashboardComponent implements OnInit {
   ];
   constructor(
     private route: ActivatedRoute,
-    private tokenServ: TokenStorageService
+    private tokenServ: TokenStorageService,
+    private datalink: SharedService
   ) {}
   cargarDatosPractica() {
     this.practicas = [];
@@ -129,6 +130,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   ngOnInit() {
+    this.datalink.changeMessage(this.link);
     this.cargarDatosPractica();
   }
 

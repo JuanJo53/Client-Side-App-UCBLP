@@ -12,16 +12,15 @@ import { AddLessonComponent } from "../../../../../dialogs/lesson/add-lesson/add
 import { DeleteItemService } from "../../../../../../services/dialogs/delete-item.service";
 import { ConfigureLessonComponent } from "../../../../../dialogs/lesson/configure-lesson/configure-lesson.component";
 
-import { Lesson } from 'src/app/models/Teacher/Modules/Lesson';
-import { CardImage } from 'src/app/models/CardImage';
-import { TypeLesson } from 'src/app/models/Teacher/Modules/TYpeLesson';
+import { Lesson } from "src/app/models/Teacher/Modules/Lesson";
+import { CardImage } from "src/app/models/CardImage";
+import { TypeLesson } from "src/app/models/Teacher/Modules/TYpeLesson";
 @Component({
   selector: "app-theme-content",
   templateUrl: "./theme-content.component.html",
   styleUrls: ["./theme-content.component.scss"],
 })
 export class ThemeContentComponent implements OnInit {
-
   theme: {
     id: number;
     titulo: string;
@@ -31,27 +30,25 @@ export class ThemeContentComponent implements OnInit {
   tema = "Theme 1";
   descripcion = "Present";
   item = "theme";
-  idCurso="";
-  idTema="";
-  lessonCards: Lesson[] = [
-    
-  ];
-  cardImages:CardImage[]=[];
-  typesofLessons:TypeLesson[]=[];
-  addImages(data){
-    for(let i in data){
-     let newImgT=new CardImage();
-     newImgT.idImagen=data[i].id_imagen;
-     newImgT.url=data[i].imagen;
-     this.cardImages.push(newImgT);
+  idCurso = "";
+  idTema = "";
+  lessonCards: Lesson[] = [];
+  cardImages: CardImage[] = [];
+  typesofLessons: TypeLesson[] = [];
+  addImages(data) {
+    for (let i in data) {
+      let newImgT = new CardImage();
+      newImgT.idImagen = data[i].id_imagen;
+      newImgT.url = data[i].imagen;
+      this.cardImages.push(newImgT);
     }
   }
-  addTypeLesson(data){
-    for(let i in data){
-     let newTLes=new TypeLesson();
-     newTLes.idTipo=data[i].id_tipo_leccion;
-     newTLes.tipo=data[i].tipo_leccion;
-     this.typesofLessons.push(newTLes);
+  addTypeLesson(data) {
+    for (let i in data) {
+      let newTLes = new TypeLesson();
+      newTLes.idTipo = data[i].id_tipo_leccion;
+      newTLes.tipo = data[i].tipo_leccion;
+      this.typesofLessons.push(newTLes);
     }
   }
   simpleCards: SimpleCard[] = [
@@ -86,48 +83,45 @@ export class ThemeContentComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  agregarCardsLecciones(datales){
-    for(let i in datales)
-          {
-            let newLesson=new Lesson();
-            newLesson.id=datales[i].id_leccion;
-            newLesson.idImagen=datales[i].id_imagen;
-            newLesson.numeroLeccion=datales[i].numero_leccion;
-            newLesson.nombre=datales[i].nombre_leccion;
-            newLesson.idTipoLeccion=datales[i].id_tipo_leccion;
-            newLesson.estado=datales[i].estado_leccion;
-            this.lessonCards.push(newLesson);
-          }
+  agregarCardsLecciones(datales) {
+    for (let i in datales) {
+      let newLesson = new Lesson();
+      newLesson.id = datales[i].id_leccion;
+      newLesson.idImagen = datales[i].id_imagen;
+      newLesson.numeroLeccion = datales[i].numero_leccion;
+      newLesson.nombre = datales[i].nombre_leccion;
+      newLesson.idTipoLeccion = datales[i].id_tipo_leccion;
+      newLesson.estado = datales[i].estado_leccion;
+      this.lessonCards.push(newLesson);
+    }
   }
-  agregarDatos(){
+  agregarDatos() {
     this.route.data.subscribe({
-      next:(data)=>{
-        if(data.lessons.status==200){
-          var datales=data.lessons.body;
-          var images=data.images.body;
-          var types=data.types.body;
+      next: (data) => {
+        if (data.lessons.status == 200) {
+          var datales = data.lessons.body;
+          var images = data.images.body;
+          var types = data.types.body;
           console.log(datales);
           this.agregarCardsLecciones(datales);
           this.addImages(images);
           this.addTypeLesson(types);
-        }
-        else{
+        } else {
           console.log("No se pudieron obtener las lecciones");
-
         }
       },
-      error:(error)=>{
+      error: (error) => {
         console.log("No se pudieron obtener las lecciones");
-      }
+      },
     });
   }
-  cargarId(){
-    this.route.parent.parent.parent.parent.params.subscribe((param)=>{
-      this.idCurso=param['idCurso'];
-    })
-    this.route.parent.params.subscribe((param)=>{
-      this.idTema=param['idTema'];
-    })
+  cargarId() {
+    this.route.parent.parent.parent.parent.params.subscribe((param) => {
+      this.idCurso = param["idCurso"];
+    });
+    this.route.parent.params.subscribe((param) => {
+      this.idTema = param["idTema"];
+    });
   }
   ngOnInit(): void {
     this.cargarId();
@@ -141,58 +135,58 @@ export class ThemeContentComponent implements OnInit {
       this.theme.id = params["id"];
     });
     this.data.changeMessage(this.item);
-    
   }
   //-----funciones-----
 
   agregarLeccion() {
     console.log(this.idTema);
-    const dialogRef = this.dialog.open(AddLessonComponent, { width: "400px" 
-    ,data:{
-      types:this.typesofLessons,
-      images:this.cardImages,
-      numero:this.lessonCards.length+1,
-      idTema:this.idTema
-    }
+    const dialogRef = this.dialog.open(AddLessonComponent, {
+      width: "400px",
+      data: {
+        types: this.typesofLessons,
+        images: this.cardImages,
+        numero: this.lessonCards.length + 1,
+        idTema: this.idTema,
+      },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if(result!=""){
+      if (result != "") {
         this.route.data.subscribe({
-          next:(data)=>{
+          next: (data) => {
             console.log(data.lessons.body);
             console.log(result);
-            data.lessons.body=result;
-            this.lessonCards=[];
+            data.lessons.body = result;
+            this.lessonCards = [];
             this.agregarCardsLecciones(result);
           },
-          error:(error)=>{
+          error: (error) => {
             console.log("no se pudo añadir el tema");
-          }
-        })
+          },
+        });
       }
     });
   }
   configuraciones(leccion) {
     const dialogRef = this.dialog.open(ConfigureLessonComponent, {
       width: "400px",
-      data:{
-        leccion:leccion,
-        idCurso:this.idCurso,
-        images:this.cardImages,
-        types:this.typesofLessons,
-        idTema:this.idTema,
-      }
+      data: {
+        leccion: leccion,
+        idCurso: this.idCurso,
+        images: this.cardImages,
+        types: this.typesofLessons,
+        idTema: this.idTema,
+      },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if(result!=""){
+      if (result != "") {
         this.route.data.subscribe({
-          next:(data)=>{
-            data.lessons.body=result;
+          next: (data) => {
+            data.lessons.body = result;
           },
-          error:(error)=>{
+          error: (error) => {
             console.log("no se pudo modificar el tema");
-          }
-        })
+          },
+        });
       }
     });
   }
@@ -203,45 +197,49 @@ export class ThemeContentComponent implements OnInit {
     //[where i wanna go] ,{where i am}
     this.router.navigate(["/themes", id], { relativeTo: this.route });
   }
-  
-  eliminar(idLec) {
-    const dialogRef = this.dialog.open(DeleteCardComponent, { width: "400px" 
-    ,data:{
-      idLec:idLec,
-      tipo:"lesson"
-    }  
-  });
-  dialogRef.afterClosed().subscribe((result)  => {
-    var lessons=this.lessonCards;
-    var route=this.route;
-    if(result!=""){
-      route.data.subscribe({
-        next:(data)=>{
-          this.lessonCards.find(function(valor,index){
-            if(valor.id===idLec){
-              lessons.splice(index,1);
-              data.lessons.body.splice(index,1);
-            }
-          });
-        },
-        error:(error)=>{
-          console.log("No se pudieron obtener las lecciones");
-        }
-      });
-      
 
-    }
-    console.log(`Dialog result: ${result}`);
-  });
+  eliminar(idLec) {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        idLec: idLec,
+        tipo: "lesson",
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      var lessons = this.lessonCards;
+      var route = this.route;
+      if (result != "") {
+        route.data.subscribe({
+          next: (data) => {
+            this.lessonCards.find(function (valor, index) {
+              if (valor.id === idLec) {
+                lessons.splice(index, 1);
+                data.lessons.body.splice(index, 1);
+              }
+            });
+          },
+          error: (error) => {
+            console.log("No se pudieron obtener las lecciones");
+          },
+        });
+      }
+      console.log(`Dialog result: ${result}`);
+    });
   }
   verLecciones(idLeccion) {
     //[where i wanna go] ,{where i am}
 
     this.router.navigate([idLeccion], { relativeTo: this.route });
   }
-  eliminar2(){}
+  eliminarThemeTest() {
+    const dialogRef = this.dialog.open(DeleteCardComponent, {
+      width: "400px",
+      data: {
+        tipo: "theme test",
+      },
+    });
+  }
 
   //-----#funciones-----
-
- 
 }
