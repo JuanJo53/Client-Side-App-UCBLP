@@ -29,9 +29,6 @@ export class UploadFilesService {
     let formData:FormData = new FormData();
     
     formData.append('fileKey', file, file.name);
-    let httpheader=new HttpHeaders;
-    httpheader.append("Content-Type","application/octet-stream'")   
-    console.log(formData.get('fileKey'));       
     var r=this.httpClient.put(url,formData.get('fileKey'),{ observe: 'response' }); 
     return r;
   }
