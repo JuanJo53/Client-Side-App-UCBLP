@@ -83,7 +83,7 @@
         matColumnDef="{{ column }}"
       >
         <th mat-header-cell *matHeaderCellDef class="header-table">
-          {{ column }}
+          {{ column }}<br>{{columnsPor[i]}}
         </th>
         <td mat-cell *cdkCellDef="let element">
           <!-- <span class="circular-button-table__icon"><mat-icon class="circular-button-subtitle__icon">close</mat-icon>
@@ -134,7 +134,4 @@
     ></mat-paginator>
     <!-- #Paginator -->
   </div>
-
-  <button (click)="ExportTOExcel()">Excel</button>
-  <br />
 </div>

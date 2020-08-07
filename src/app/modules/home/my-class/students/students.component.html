@@ -8,7 +8,7 @@
     <!-- #container for buttons with simple actions-->
     <!-- container for buttons like excel svg word etc -->
     <div class="button-module-container-imports">
-      <button class="module-button module-button--excel">
+      <button class="module-button module-button--excel" (click)=ExportExcel()>
         <i class="far fa-file-excel module-button__icon"></i>
         <div class="module-button__text">
           Excel
@@ -39,7 +39,8 @@
 
   <!--tables-->
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row"
+    id="TABLE">
       <!-- Position Column -->
       <ng-container matColumnDef="posicion">
         <th mat-header-cell *matHeaderCellDef class="header-table">

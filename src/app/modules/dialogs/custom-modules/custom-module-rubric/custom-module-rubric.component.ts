@@ -64,7 +64,7 @@ export class CustomModuleRubricComponent implements OnInit {
   }
   aceptar(): void {
     if (this.verificarRubricas()) {
-      this.serv.updateRubricasContenidoModulos(this.listaRubricas).subscribe({
+      this.serv.updateRubricasContenidoModulos(this.listaRubricas,this.dataDialog["idModulo"]).subscribe({
         next: (data) => {
           if (data.status == 200) {
             this.dialogRef.close(this.listaRubricas);
