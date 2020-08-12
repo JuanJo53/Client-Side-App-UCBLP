@@ -13,6 +13,7 @@ import { DeleteItemService } from "../../../../../services/dialogs/delete-item.s
 
 import { Theme } from "src/app/models/Teacher/Modules/Theme";
 import { CardImage } from "src/app/models/CardImage";
+import { LoadingService } from 'src/app/_services/loading.service';
 @Component({
   selector: "app-themes",
   templateUrl: "./themes.component.html",
@@ -38,7 +39,8 @@ export class ThemesComponent implements OnInit {
     public dialog: MatDialog,
     private data: DeleteItemService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loading:LoadingService
   ) {}
   addThemesImages(data) {
     for (let i in data) {
@@ -132,8 +134,12 @@ export class ThemesComponent implements OnInit {
   }
   verContenido(id: number) {
     //[where i wanna go] ,{where i am}
+    this.loading.activar();
 
-    this.router.navigate([id], { relativeTo: this.route });
+    const route=this.router.navigate([id], { relativeTo: this.route });
+    route.then((result)=>{
+      this.loading.desactivar();
+    })
   }
   eliminar(idTema) {
     const dialogRef = this.dialog.open(DeleteCardComponent, {

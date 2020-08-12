@@ -15,8 +15,8 @@ export class PracticesService {
   //Servicios para el control de los estudiantes
 
   //APIRoute Obtener lista de los estudiantes para la tabla principal
-  addPractica(Practica):Observable<any>{
-    return this.http.post(apiKey.api+"/teacher/practice",Practica,{ observe: 'response' });
+  addPractica(Practica,Preguntas):Observable<any>{
+    return this.http.post(apiKey.api+"/teacher/practice",{practica:Practica,preguntas:Preguntas},{ observe: 'response' });
   }
   addPracticaPreguntas(PracticaPregunta:Pregunta[],idPractica):Observable<any>{
     

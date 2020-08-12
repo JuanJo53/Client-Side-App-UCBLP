@@ -70,10 +70,28 @@ export class EvaluationComponent implements OnInit {
     private servNav: SideBarControlService,
     private data: SharedService
   ) {}
-  ngOnInit(): void {
-    if (this.controlPuntuacion100 == 1) {
+  verificarRubrica(){
+    var total=0;
+    for(let modPer of this.cardsModulosPers){
+      if(modPer.estado==1){
+        total+=modPer.rubrica;
+      }
+    }
+    for(let modPred of this.cardsModulosPred){
+      if(modPred.estado==1){
+        total+=modPred.rubrica;
+      }
+    }
+    if(total!=100){
+      this.controlPuntuacion100=1;
       this.errorAlert();
     }
+    else{
+      this.controlPuntuacion100=0;
+
+    }
+  }
+  ngOnInit(): void {
     this.data.changeMessage(this.link);
     this.route.parent.params.subscribe((param) => {
       this.idCurso = param["idCurso"];
@@ -94,6 +112,7 @@ export class EvaluationComponent implements OnInit {
         //this.cardsModulosPred[0].estado=2;
         //this.cardsModulosPred[0].rubrica=10;
         //this.updateModulesPred(this.cardsModulosPred[0]);
+        this.verificarRubrica();
       },
       error: (error) => {
         console.log(error);
@@ -174,6 +193,7 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
+      this.verificarRubrica();
       if (result !== "" && result != null && result !== "undefined") {
         console.log(result);
         this.route.data.subscribe({
@@ -198,6 +218,7 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
+      this.verificarRubrica();
       if (result !== "" && result != null && result !== "undefined") {
         console.log(result);
         this.route.data.subscribe({
@@ -223,6 +244,7 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
+      this.verificarRubrica();
       if (result !== "" && result != null && result !== "undefined") {
         console.log(result);
         this.route.data.subscribe({
@@ -249,6 +271,7 @@ export class EvaluationComponent implements OnInit {
           },
         });
         dialogRef.afterClosed().subscribe((result) => {
+          this.verificarRubrica();
           if (result !== "" && result != null && result !== "undefined") {
             data.modules.body = result;
             this.cargarDatos(result);
@@ -269,6 +292,7 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
+      this.verificarRubrica();
       if (result === "ok") {
         this.cardsModulosPers.splice(index, 1);
         this.servNav.eliminarmodulos(index);

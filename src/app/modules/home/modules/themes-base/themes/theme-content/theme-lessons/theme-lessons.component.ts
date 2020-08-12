@@ -12,6 +12,7 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DeleteCardComponent } from "src/app/modules/dialogs/delete-card/delete-card.component";
+import { LoadingService } from 'src/app/_services/loading.service';
 @Component({
   selector: "app-theme-lessons",
   templateUrl: "./theme-lessons.component.html",
@@ -35,7 +36,8 @@ export class ThemeLessonsComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loading:LoadingService
   ) {}
   agregarPracticas(data) {
     this.practices = [];
@@ -113,8 +115,14 @@ export class ThemeLessonsComponent implements OnInit {
     // dialogRef.afterClosed().subscribe((result) => {
     //   console.log(`Dialog result: ${result}`);
     // });
+    this.loading.activar();
+
+    const route=
     this.router.navigate(["practice"], { relativeTo: this.route });
     console.log("clicked");
+    route.then((result)=>{
+      this.loading.desactivar();
+    })
   }
   //-----#funciones-----
 }

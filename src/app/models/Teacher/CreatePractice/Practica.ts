@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 
-export class Config1{
+export class Practica{
+  tiempoLimite:number=30;
   numero:number;
   idLeccion:string;
   fechaini:any=new Date();

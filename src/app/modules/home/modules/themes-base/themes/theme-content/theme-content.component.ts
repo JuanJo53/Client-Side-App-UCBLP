@@ -15,6 +15,7 @@ import { ConfigureLessonComponent } from "../../../../../dialogs/lesson/configur
 import { Lesson } from "src/app/models/Teacher/Modules/Lesson";
 import { CardImage } from "src/app/models/CardImage";
 import { TypeLesson } from "src/app/models/Teacher/Modules/TYpeLesson";
+import { LoadingService } from 'src/app/_services/loading.service';
 @Component({
   selector: "app-theme-content",
   templateUrl: "./theme-content.component.html",
@@ -80,7 +81,8 @@ export class ThemeContentComponent implements OnInit {
     public dialog: MatDialog,
     private data: DeleteItemService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loading:LoadingService
   ) {}
 
   agregarCardsLecciones(datales) {
@@ -194,8 +196,14 @@ export class ThemeContentComponent implements OnInit {
     console.log("click on list");
   }
   verContenido(id: number) {
-    //[where i wanna go] ,{where i am}
-    this.router.navigate(["/themes", id], { relativeTo: this.route });
+    //[where i wanna go] ,{where i am}this.loading.activar();
+      this.loading.activar();
+
+    const route=this.router.navigate(["/themes", id], { relativeTo: this.route });
+    route.then((result)=>{
+      this.loading.desactivar();
+    })
+    
   }
 
   eliminar(idLec) {
@@ -229,8 +237,12 @@ export class ThemeContentComponent implements OnInit {
   }
   verLecciones(idLeccion) {
     //[where i wanna go] ,{where i am}
+    this.loading.activar();
 
-    this.router.navigate([idLeccion], { relativeTo: this.route });
+    const route=this.router.navigate([idLeccion], { relativeTo: this.route });
+    route.then((result)=>{
+      this.loading.desactivar();
+    })
   }
   eliminarThemeTest() {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
