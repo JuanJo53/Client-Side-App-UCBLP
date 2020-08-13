@@ -193,7 +193,7 @@ export class DeleteCardComponent implements OnInit {
   }
   //Funcion para eliminar el contenido de un modulo pérsonalizado
   eliminarContenidoModulo(){
-    this.servCont.deleteContenidoModulos(this.dataDialog["id"]).subscribe({
+    this.servCont.deleteContenidoModulos(this.dataDialog["id"],this.dataDialog["idModulo"]).subscribe({
       next:(data)=>{
         if(data.status==200){
           this.dialogRef.close("ok");

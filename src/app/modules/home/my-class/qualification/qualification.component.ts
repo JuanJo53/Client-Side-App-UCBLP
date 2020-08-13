@@ -12,6 +12,7 @@ import {
 import { TitleCasePipe } from "@angular/common";
 import { ListaEstudiante } from "src/app/models/Teacher/MyClass/ListaEstudiante";
 import { SharedService } from "src/app/shared/shared.service";
+import { ExportExcelService } from 'src/app/_services/export-excel.service';
 export interface ListaDeNotas {
   nombre: string;
   posicion: number;
@@ -34,6 +35,7 @@ export interface ListaDeNotas {
 export class QualificationComponent implements OnInit {
   link: string = "My class / Qualification";
   columns: string[] = [];
+  columnsPor: string[] = [];
 
   ELEMENT_DATA: ListaEstudiante[] = [];
   displayedColumns: string[] = ["posicion", "p_nombre", "m_nombre", "nombre"];
@@ -45,37 +47,16 @@ export class QualificationComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private data: SharedService
+    private data: SharedService,
+    private exc:ExportExcelService
   ) {}
   cargarDatosBody(data) {
     console.log(data);
   }
-  encColumna(posi: number) {
-    var primaLetra = 0;
-    var segunLetra = 0;
-    if (posi > 26) {
-      primaLetra = posi / 26 - ((posi / 26) % 1) - 1;
-      console.log(primaLetra);
-      segunLetra = (posi % 26) - 1;
-      return (
-        String.fromCharCode(primaLetra + 65) +
-        String.fromCharCode(segunLetra + 65)
-      );
-    } else {
-      return String.fromCharCode(posi - 1 + 65);
-    }
-  }
-  /*name of the excel-file which will be downloaded. */
-
-  fileName = "ExcelSheet.xlsx";
+ 
   ExportTOExcel() {
     let element = document.getElementById("TABLE");
-    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-    var eli = this.encColumna(this.displayedColumns.length);
-    delete ws[String(eli) + "1"];
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-    XLSX.writeFile(wb, this.fileName);
+    this.exc.export(element,"General Notes",this.displayedColumns.length);
   }
 
   cargarCabezera(cabe) {
@@ -91,8 +72,11 @@ export class QualificationComponent implements OnInit {
       if (data[0].modulos) {
         for (let dat of data[0].modulos) {
           this.columns.push(
-            dat.nombre_modulo + "\n" + String(dat.rubrica) + "%"
+            dat.nombre_modulo
           );
+          this.columnsPor.push(
+            String(dat.rubrica) + "%"
+          )
         }
       }
       this.displayedColumns = this.columns.map((col) => col);

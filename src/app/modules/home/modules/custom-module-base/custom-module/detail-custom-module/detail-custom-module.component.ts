@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
 import { NotasContenidoModulo } from 'src/app/models/Teacher/Modules/NotasContenidoModulo';
+import { ExportExcelService } from 'src/app/_services/export-excel.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { NotasContenidoModulo } from 'src/app/models/Teacher/Modules/NotasConten
   styleUrls: ["./detail-custom-module.component.scss"],
 })
 export class DetailCustomModuleComponent implements OnInit {
-  
+titulo:string="";
 ELEMENT_DATA: NotasContenidoModulo[] = [
 ];
   displayedColumns: string[] = [
@@ -27,12 +28,23 @@ ELEMENT_DATA: NotasContenidoModulo[] = [
 
   constructor(
     public dialog: MatDialog,
-    private route:ActivatedRoute    
-    ) {}
+    private route:ActivatedRoute ,
+    private exc:ExportExcelService
+  ) {}
+  ExportExcel(){
+      let element = document.getElementById("TABLE");
+      this.exc.export(element,"ContentModule Notes",this.displayedColumns.length);
+  }
+  cargarTitulo(data:any[]){
+    if(data.length!=0){
+      this.titulo=data[0].nombre_modulo;
+    }
+  }
   cargarDatos(){
     this.route.data.subscribe({
       next:(data)=>{
         if(data.notasContenido.status==200){
+          this.cargarTitulo(data.notasContenido.body);
           for(let i in data.notasContenido.body){
             var nota=data.notasContenido.body[i];
             let newCont=new NotasContenidoModulo();

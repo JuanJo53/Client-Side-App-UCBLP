@@ -19,15 +19,23 @@ export class PracticesService {
     return this.http.post(apiKey.api+"/teacher/practice",Practica,{ observe: 'response' });
   }
   addPracticaPreguntas(PracticaPregunta:Pregunta[],idPractica):Observable<any>{
-    return this.http.post(apiKey.api+"/teacher/practice/questions",
+    
+    return this.http.post(apiKey.api+"/teacher/practice/questionsSQL",
     {idPractica:idPractica,
       preguntas:PracticaPregunta},{ observe: 'response' });
+      
+
+      // Preguntas con Firebase
+    // return this.http.post(apiKey.api+"/teacher/practice/questions",
+    // {idPractica:idPractica,
+    //   preguntas:PracticaPregunta},{ observe: 'response' });
   }
   getPractica(idLeccion):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/practice/"+idLeccion,{ observe: 'response' });
   }
   getQuestions():Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/question",{ observe: 'response' });
+    return this.http.get(apiKey.api+"/teacher/questionSQL",{ observe: 'response' });
+    // return this.http.get(apiKey.api+"/teacher/question",{ observe: 'response' });
   }
   getScores(idPractica):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/practice/scores/"+idPractica,{ observe: 'response' });

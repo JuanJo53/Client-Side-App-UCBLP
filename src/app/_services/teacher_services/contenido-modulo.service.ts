@@ -22,11 +22,11 @@ export class ContenidoModuloService {
     return this.http.put(apiKey.api+"/teacher/cutson/module/content",contenidoModulo,{ observe: 'response' });
 
   }
-  deleteContenidoModulos(id:number):Observable<any>{
-    return this.http.delete(apiKey.api+"/teacher/cutson/module/content/"+id,{ observe: 'response' });
+  deleteContenidoModulos(id:number,idModulo):Observable<any>{
+    return this.http.post(apiKey.api+"/teacher/cutson/module/deleteContent/"+id,{idModulo:idModulo},{ observe: 'response' });
   }
-  updateRubricasContenidoModulos(rubricas:any[]):Observable<any>{
-    return this.http.post(apiKey.api+"/teacher/cutson/module/content/rubric",rubricas,{ observe: 'response' });
+  updateRubricasContenidoModulos(rubricas:any[],idModulo):Observable<any>{
+    return this.http.post(apiKey.api+"/teacher/cutson/module/content/rubric",{rubricas:rubricas,idModulo:idModulo},{ observe: 'response' });
 
   }
   getNotasContenidoModulos(idContenidoModulo):Observable<any>{

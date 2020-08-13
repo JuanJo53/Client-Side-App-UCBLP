@@ -115,7 +115,7 @@ export class DashboardComponent implements OnInit {
             newPrac.nombrePractica = practica.nombre_practica;
             var a = practica.aprobados as number;
             var r = practica.reprobados as number;
-            var n = 0;
+            var n = practica.sin_dar as number;
             newPrac.datos = [[a, r, n]];
             this.practicas.push(newPrac);
           }
