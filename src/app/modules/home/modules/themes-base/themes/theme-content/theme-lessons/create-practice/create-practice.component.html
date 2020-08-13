@@ -66,145 +66,147 @@
 
             <!--  //radio button -->
 
-            <div class="row">
-              <!--start date-->
-              <div class="col-sm-6">
-                <!--subtitle-->
-                <div class="dialog-subtitle">
-                  <div class="dialog-subtitle__text">
-                    <span>Start date and hour</span>
+            <div class="" *ngIf="radioButtonValue == 'enable'">
+              <div class="row">
+                <!--start date-->
+                <div class="col-sm-6">
+                  <!--subtitle-->
+                  <div class="dialog-subtitle">
+                    <div class="dialog-subtitle__text">
+                      <span>Start date and hour</span>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <!--fecha-->
-                    <mat-form-field>
-                      <mat-label *ngIf="!paso1.bloqfecha1"
-                        >Choose a date</mat-label
-                      >
-                      <mat-label *ngIf="paso1.bloqfecha1" style="color: red;"
-                        >Choose a date*</mat-label
-                      >
-                      <input
-                        matInput
-                        [matDatepicker]="picker1"
-                        [(ngModel)]="paso1.fechaini"
-                        [ngModelOptions]="{ standalone: true }"
-                      />
-                      <mat-datepicker-toggle
-                        matSuffix
-                        [for]="picker1"
-                      ></mat-datepicker-toggle>
-                      <mat-datepicker
-                        #picker1
-                        startView="year"
-                        [startAt]="startDate"
-                      ></mat-datepicker>
-                    </mat-form-field>
-                  </div>
-                  <!--fecha-->
-                  <!--hora-->
-                  <div class="col-sm-6">
-                    <div class="toggle-example">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!--fecha-->
                       <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqhora1"
-                          >Choose an hour</mat-label
+                        <mat-label *ngIf="!paso1.bloqfecha1"
+                          >Choose a date</mat-label
                         >
-                        <mat-label *ngIf="paso1.bloqhora1" style="color: red;"
-                          >Choose an hour*</mat-label
+                        <mat-label *ngIf="paso1.bloqfecha1" style="color: red;"
+                          >Choose a date*</mat-label
                         >
                         <input
                           matInput
-                          [(ngModel)]="paso1.horaini"
+                          [matDatepicker]="picker1"
+                          [(ngModel)]="paso1.fechaini"
                           [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker1"
-                          [disableClick]="true"
-                          readonly
                         />
-                        <ngx-material-timepicker-toggle
+                        <mat-datepicker-toggle
                           matSuffix
-                          [for]="toggleTimepicker1"
-                        ></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker1
-                        ></ngx-material-timepicker>
+                          [for]="picker1"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker
+                          #picker1
+                          startView="year"
+                          [startAt]="startDate"
+                        ></mat-datepicker>
                       </mat-form-field>
                     </div>
-                  </div>
-                  <!--#hora-->
-                </div>
-              </div>
-              <!--#start date-->
-              <!--end date-->
-              <div class="col-sm-6">
-                <!--subtitle-->
-                <div class="dialog-subtitle">
-                  <div class="dialog-subtitle__text">
-                    <span>End date and hour</span>
-                  </div>
-                </div>
-                <!--#subtitle-->
-                <!--row-->
-                <div class="row">
-                  <div class="col-sm-6">
                     <!--fecha-->
-                    <mat-form-field>
-                      <mat-label *ngIf="!paso1.bloqfecha2"
-                        >Choose a date</mat-label
-                      >
-                      <mat-label *ngIf="paso1.bloqfecha2" style="color: red;"
-                        >Choose a date*</mat-label
-                      >
-                      <input
-                        matInput
-                        [matDatepicker]="picker2"
-                        [(ngModel)]="paso1.fechafin"
-                        [ngModelOptions]="{ standalone: startDate }"
-                      />
-                      <mat-datepicker-toggle
-                        matSuffix
-                        [for]="picker2"
-                      ></mat-datepicker-toggle>
-                      <mat-datepicker
-                        #picker2
-                        startView="year"
-                        [startAt]="startDate"
-                      ></mat-datepicker>
-                    </mat-form-field>
-                    <!--fecha-->
+                    <!--hora-->
+                    <div class="col-sm-6">
+                      <div class="toggle-example">
+                        <mat-form-field>
+                          <mat-label *ngIf="!paso1.bloqhora1"
+                            >Choose an hour</mat-label
+                          >
+                          <mat-label *ngIf="paso1.bloqhora1" style="color: red;"
+                            >Choose an hour*</mat-label
+                          >
+                          <input
+                            matInput
+                            [(ngModel)]="paso1.horaini"
+                            [ngModelOptions]="{ standalone: true }"
+                            [ngxTimepicker]="toggleTimepicker1"
+                            [disableClick]="true"
+                            readonly
+                          />
+                          <ngx-material-timepicker-toggle
+                            matSuffix
+                            [for]="toggleTimepicker1"
+                          ></ngx-material-timepicker-toggle>
+                          <ngx-material-timepicker
+                            #toggleTimepicker1
+                          ></ngx-material-timepicker>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!--#hora-->
                   </div>
-                  <!--hora-->
-                  <div class="col-sm-6">
-                    <div class="toggle-example">
+                </div>
+                <!--#start date-->
+                <!--end date-->
+                <div class="col-sm-6">
+                  <!--subtitle-->
+                  <div class="dialog-subtitle">
+                    <div class="dialog-subtitle__text">
+                      <span>End date and hour</span>
+                    </div>
+                  </div>
+                  <!--#subtitle-->
+                  <!--row-->
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!--fecha-->
                       <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqhora2"
-                          >Choose an hour</mat-label
+                        <mat-label *ngIf="!paso1.bloqfecha2"
+                          >Choose a date</mat-label
                         >
-                        <mat-label *ngIf="paso1.bloqhora2" style="color: red;"
-                          >Choose an hour*</mat-label
+                        <mat-label *ngIf="paso1.bloqfecha2" style="color: red;"
+                          >Choose a date*</mat-label
                         >
                         <input
                           matInput
-                          [(ngModel)]="paso1.horafin"
-                          [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker2"
-                          [disableClick]="true"
-                          readonly
+                          [matDatepicker]="picker2"
+                          [(ngModel)]="paso1.fechafin"
+                          [ngModelOptions]="{ standalone: startDate }"
                         />
-                        <ngx-material-timepicker-toggle
+                        <mat-datepicker-toggle
                           matSuffix
-                          [for]="toggleTimepicker2"
-                        ></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker2
-                        ></ngx-material-timepicker>
+                          [for]="picker2"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker
+                          #picker2
+                          startView="year"
+                          [startAt]="startDate"
+                        ></mat-datepicker>
                       </mat-form-field>
+                      <!--fecha-->
                     </div>
+                    <!--hora-->
+                    <div class="col-sm-6">
+                      <div class="toggle-example">
+                        <mat-form-field>
+                          <mat-label *ngIf="!paso1.bloqhora2"
+                            >Choose an hour</mat-label
+                          >
+                          <mat-label *ngIf="paso1.bloqhora2" style="color: red;"
+                            >Choose an hour*</mat-label
+                          >
+                          <input
+                            matInput
+                            [(ngModel)]="paso1.horafin"
+                            [ngModelOptions]="{ standalone: true }"
+                            [ngxTimepicker]="toggleTimepicker2"
+                            [disableClick]="true"
+                            readonly
+                          />
+                          <ngx-material-timepicker-toggle
+                            matSuffix
+                            [for]="toggleTimepicker2"
+                          ></ngx-material-timepicker-toggle>
+                          <ngx-material-timepicker
+                            #toggleTimepicker2
+                          ></ngx-material-timepicker>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!--#hora-->
                   </div>
-                  <!--#hora-->
                 </div>
+                <!--end date-->
               </div>
-              <!--end date-->
             </div>
           </div>
         </div>
