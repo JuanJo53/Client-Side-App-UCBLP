@@ -1,38 +1,59 @@
 <div class="dialog">
-    <div class="dialog-subtitle">
-        <div class="dialog-subtitle__text">
-            <span>Edit Default Module</span>
-        </div>
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Edit Default Module</span>
     </div>
-    <mat-dialog-content class="mat-typography">
-        <form class="dialogforms" enctype="multipart/form-data">
-
-            <mat-form-field appearance="outline" class="input-disabled">
-                <mat-label>Module's name</mat-label>
-                <!-- Input para el nombre del modulo-->
-                <input type="text" [(ngModel)]=nombre  class="input-form" matInput placeholder="Module's name" disabled="disabled"   name="nombreModulo" />
-                <!-- //Input para el nombre del modulo-->
-            </mat-form-field>
-            <div class="radio-buttons-dialog">
-                <div class="radio-buttons-dialog__title">Module Status :</div>
-                <mat-radio-group aria-label="Select an option"  name="radiobuttonvalue" [(ngModel)]="radioButtonValue">
-                    <mat-radio-button class="radio-button" value="enable" checked>Enable</mat-radio-button>
-                    <mat-radio-button class="radio-button" value="unable">Unable</mat-radio-button>
-                </mat-radio-group>
-                <br />
-            </div>
-        </form>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-        <!--btn cancel-->
-        <button mat-button mat-dialog-close class="dialog-button-cancel"(click)=cancelar()>
-            Cancel
-        </button>
-        <!--#btn cancel-->
-        <!-- btn accept-->
-        <button mat-button class="dialog-button-accept" (click)=aceptar()>
-            Save changes
-        </button>
-    </mat-dialog-actions>
-    <!-- #btn accept-->
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form class="dialogforms" enctype="multipart/form-data">
+      <mat-form-field appearance="outline" class="input-disabled">
+        <mat-label>Module's name</mat-label>
+        <!-- Input para el nombre del modulo-->
+        <input
+          type="text"
+          [(ngModel)]="nombre"
+          class="input-form"
+          matInput
+          placeholder="Module's name"
+          disabled="disabled"
+          name="nombreModulo"
+        />
+        <!-- //Input para el nombre del modulo-->
+      </mat-form-field>
+      <div class="radio-buttons-dialog">
+        <div class="radio-buttons-dialog__title">Module Status :</div>
+        <div class="radio-buttons-dialog__content">
+          <mat-radio-group
+            aria-label="Select an option"
+            name="radiobuttonvalue"
+            [(ngModel)]="radioButtonValue"
+          >
+            <mat-radio-button class="radio-button" value="enable" checked
+              >Enable</mat-radio-button
+            >
+            <mat-radio-button class="radio-button" value="unable"
+              >Unable</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!--btn cancel-->
+    <button
+      mat-button
+      mat-dialog-close
+      class="dialog-button-cancel"
+      (click)="cancelar()"
+    >
+      Cancel
+    </button>
+    <!--#btn cancel-->
+    <!-- btn accept-->
+    <button mat-button class="dialog-button-accept" (click)="aceptar()">
+      Save changes
+    </button>
+  </mat-dialog-actions>
+  <!-- #btn accept-->
 </div>

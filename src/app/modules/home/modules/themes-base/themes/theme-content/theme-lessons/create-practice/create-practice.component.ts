@@ -16,12 +16,15 @@ import { windowTime } from "rxjs/operators";
 import { Config1 } from "src/app/models/Teacher/CreatePractice/Paso1";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
+import { Module } from "src/app/models/Teacher/Evaluation/Module";
 @Component({
   selector: "app-create-practice",
   templateUrl: "./create-practice.component.html",
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
+  newModulo: Module = new Module();
+  radioButtonValue: string = "";
   spinnerFinish = false;
   total = 0;
   repository: any = [];
@@ -78,10 +81,10 @@ export class CreatePracticeComponent implements OnInit {
     private location: Location
   ) {}
 
-  actPuntaje(){
-    this.total=0;
-    for(let preg of this.preguntas){
-      this.total+=preg.puntuacion;
+  actPuntaje() {
+    this.total = 0;
+    for (let preg of this.preguntas) {
+      this.total += preg.puntuacion;
     }
   }
   ngOnInit(): void {
@@ -99,6 +102,11 @@ export class CreatePracticeComponent implements OnInit {
         console.log(err);
       },
     });
+    if (this.newModulo.estado == 2) {
+      this.radioButtonValue = "unable";
+    } else {
+      this.radioButtonValue = "enable";
+    }
   }
   generateId(): string {
     // Alphanumeric characters
@@ -159,7 +167,7 @@ export class CreatePracticeComponent implements OnInit {
             console.log("no se pudo agregar la pregunta");
           },
         });
-      }      
+      }
       this.actPuntaje();
     });
   }
@@ -193,7 +201,7 @@ export class CreatePracticeComponent implements OnInit {
             console.log("no se pudo agregar la pregunta");
           },
         });
-      }      
+      }
       this.actPuntaje();
     });
   }
@@ -215,7 +223,7 @@ export class CreatePracticeComponent implements OnInit {
         for (let pregunta of result) {
           this.preguntas.push(pregunta);
         }
-      }      
+      }
       this.actPuntaje();
     });
   }
