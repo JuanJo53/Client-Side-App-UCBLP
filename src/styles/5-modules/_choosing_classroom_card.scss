@@ -11,7 +11,7 @@
 .classroom-card {
   @include custom-card(27rem, 16rem, $color-primary-white);
   cursor: pointer;
-  margin: auto;
+  margin: 1rem 0rem;
   display: flex;
   flex-direction: column;
   color: $color-primary-black;

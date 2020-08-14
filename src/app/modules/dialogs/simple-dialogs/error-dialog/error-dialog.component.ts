@@ -17,7 +17,6 @@ export class ErrorDialogComponent implements OnInit {
     public dataDialog: any,
     private dialogRef: MatDialogRef<ErrorDialogComponent>
   ) {}
-
   ngOnInit(): void {
     this.message = this.dataDialog["messageDialog"];
     this.buttonMessage = this.dataDialog["buttonMessage"];

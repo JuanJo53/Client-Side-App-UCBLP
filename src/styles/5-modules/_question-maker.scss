@@ -101,6 +101,9 @@
       }
     }
   }
+  &__finish {
+    margin-left: auto;
+  }
 }
 .mat-step-icon-selected {
   background-color: $color-primary-blue !important;

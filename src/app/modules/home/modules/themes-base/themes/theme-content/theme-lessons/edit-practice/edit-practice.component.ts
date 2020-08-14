@@ -13,65 +13,52 @@ import { MatStepper } from "@angular/material/stepper";
 import { Time, Location } from "@angular/common";
 import { TIME_LOCALE } from "ngx-material-timepicker/src/app/material-timepicker/tokens/time-locale.token";
 import { windowTime } from "rxjs/operators";
-import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
+import { Config1 } from "src/app/models/Teacher/CreatePractice/Paso1";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
-import { Module } from "src/app/models/Teacher/Evaluation/Module";
+
 @Component({
-  selector: "app-create-practice",
-  templateUrl: "./create-practice.component.html",
-  styleUrls: ["./create-practice.component.scss"],
+  selector: "app-edit-practice",
+  templateUrl: "./edit-practice.component.html",
+  styleUrls: ["./edit-practice.component.scss"],
 })
-export class CreatePracticeComponent implements OnInit {
-  newModulo: Module = new Module();
-  radioButtonValue: string = "";
+export class EditPracticeComponent implements OnInit {
+  disableTextbox = true;
   spinnerFinish = false;
   total = 0;
   repository: any = [];
   showSpinner = false;
-  // startDate = new Date(1990, 0, 1);
-  // endDate = new Date(1990, 0, 1);
 
-  // radioButtonCompleteCard: RadioButtonCompleteCard[] = [
-  //   {
-  //     id: 1,
-  //     puntuacion: 10,
-  //     preguntaCard: "fill the answer",
-  //     radioButtonContent: [
-  //       { opcionRespuesta: "123" },
-  //       { opcionRespuesta: "1234" },
-  //       { opcionRespuesta: "12345" },
-  //       { opcionRespuesta: "123456" },
-  //     ],
-  //   },
-  //   {
-  //     id: 2,
-  //     puntuacion: 20,
-  //     preguntaCard: "fill the answer 2",
-  //     radioButtonContent: [
-  //       { opcionRespuesta: "aa" },
-  //       { opcionRespuesta: "bb" },
-  //       { opcionRespuesta: "cc" },
-  //     ],
-  //   },
-  //   {
-  //     id: 3,
-  //     puntuacion: 30,
-  //     preguntaCard: "fill the answer 3",
-  //     radioButtonContent: [
-  //       { opcionRespuesta: "falso" },
-  //       { opcionRespuesta: "verdadero" },
-  //     ],
-  //   },
-  // ]
   correcto = "";
   startDate = Date.now();
   endDate = new Date(2020, 0, 1);
   paso2bloq = false;
   idLeccion: string;
   paso2bloqScore = false;
-  paso1: Practica = new Practica();
-  preguntas: Pregunta[] = [];
+  paso1: Config1 = new Config1();
+  // preguntas: Pregunta[] = [];
+  preguntas: Pregunta[] = [
+    {
+      id: 1,
+      tipo: false,
+      nivel: 2,
+      numeroPreg: 1,
+      puntuacion: 100,
+      pregunta: "abc",
+      opciones: ["a", "a", "a", "a"],
+      grupo: "a",
+      respuesta: [1],
+      respuestasBool: [true],
+      idTipoPregunta: "1",
+      idTipoRespuesta: "1",
+      recurso: "a",
+      bloqpunt: false,
+      bloqpreg: false,
+      bloqopci: false,
+      bloqidtp: false,
+      bloqidtr: false,
+    },
+  ];
 
   constructor(
     public dialog: MatDialog,
@@ -81,12 +68,6 @@ export class CreatePracticeComponent implements OnInit {
     private location: Location
   ) {}
 
-  actPuntaje() {
-    this.total = 0;
-    for (let preg of this.preguntas) {
-      this.total += preg.puntuacion;
-    }
-  }
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
       this.idLeccion = param["idLeccion"];
@@ -94,19 +75,11 @@ export class CreatePracticeComponent implements OnInit {
     this.route.data.subscribe({
       next: (data) => {
         if (data.repository.status == 200) {
-          console.log(data.repository.body);
           this.repository = data.repository.body;
         }
       },
-      error: (err) => {
-        console.log(err);
-      },
+      error: (err) => {},
     });
-    if (this.newModulo.estado == 2) {
-      this.radioButtonValue = "unable";
-    } else {
-      this.radioButtonValue = "enable";
-    }
   }
   generateId(): string {
     // Alphanumeric characters
@@ -121,31 +94,32 @@ export class CreatePracticeComponent implements OnInit {
   }
   //funciones
   next(stepper: MatStepper) {
-    switch (stepper.selectedIndex) {
-      case 0:
-        var a = this.verificarpaso1();
-        if (a) {
-          stepper.next();
-        }
-        console.log(a);
-        break;
-      case 1:
-        var b = this.verificarpaso2();
-        if (b) {
-          this.cambiarFecha();
-          console.log(this.preguntas);
-          stepper.next();
-        }
+    stepper.next();
+    // switch (stepper.selectedIndex) {
+    //   case 0:
+    //     var a = this.verificarpaso1();
+    //     if (a) {
+    //       stepper.next();
+    //     }
+    //     console.log(a);
+    //     break;
+    //   case 1:
+    //     var b = this.verificarpaso2();
+    //     if (b) {
+    //       this.cambiarFecha();
+    //       console.log(this.preguntas);
+    //       stepper.next();
+    //     }
 
-        console.log(b);
+    //     console.log(b);
 
-        break;
-      case 2:
-        stepper.next();
-        break;
-      case 3:
-        break;
-    }
+    //     break;
+    //   case 2:
+    //     stepper.next();
+    //     break;
+    //   case 3:
+    //     break;
+    // }
   }
   //Editar una pregunta
   editarPregunta(pregunta: Pregunta) {
@@ -168,7 +142,6 @@ export class CreatePracticeComponent implements OnInit {
           },
         });
       }
-      this.actPuntaje();
     });
   }
   //Retroceder en el proceso
@@ -202,7 +175,6 @@ export class CreatePracticeComponent implements OnInit {
           },
         });
       }
-      this.actPuntaje();
     });
   }
   cambiarFecha() {
@@ -218,13 +190,11 @@ export class CreatePracticeComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.actPuntaje();
       if (result !== "" && result !== "undefined" && result != null) {
         for (let pregunta of result) {
           this.preguntas.push(pregunta);
         }
       }
-      this.actPuntaje();
     });
   }
 
@@ -333,29 +303,29 @@ export class CreatePracticeComponent implements OnInit {
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
     console.log(this.paso1.fechaini);
 
-    this.servPrac.addPractica(this.paso1,this.preguntas).subscribe({
+    this.servPrac.addPractica(this.paso1).subscribe({
       next: (data) => {
         if (data.status == 200) {
-          // this.servPrac
-          //   .addPracticaPreguntas(this.preguntas, data.body.idPractica)
-          //   .subscribe({
-          //     next: (dataFin) => {
-          //       if (dataFin.status == 200) {
-          //         console.log(dataFin.body);
-          //         this.correcto = "Se Agregaron Correctamente las preguntas";
-          //         stepper.next();
-          //       } else {
-          //         console.log("error");
-          //         this.correcto = "No se pudieron agregar las preguntas";
-          //         stepper.next();
-          //       }
-          //     },
-          //     error: (errorFin) => {
-          //       console.log("error");
-          //       this.correcto = "No se pudieron agregar las preguntas";
-          //       stepper.next();
-          //     },
-          //   });
+          this.servPrac
+            .addPracticaPreguntas(this.preguntas, data.body.idPractica)
+            .subscribe({
+              next: (dataFin) => {
+                if (dataFin.status == 200) {
+                  console.log(dataFin.body);
+                  this.correcto = "Se Agregaron Correctamente las preguntas";
+                  stepper.next();
+                } else {
+                  console.log("error");
+                  this.correcto = "No se pudieron agregar las preguntas";
+                  stepper.next();
+                }
+              },
+              error: (errorFin) => {
+                console.log("error");
+                this.correcto = "No se pudieron agregar las preguntas";
+                stepper.next();
+              },
+            });
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";
@@ -380,5 +350,9 @@ export class CreatePracticeComponent implements OnInit {
       this.showSpinner = false;
       this.spinnerFinish = true;
     }, 5000);
+  }
+
+  toggleDisable() {
+    this.disableTextbox = !this.disableTextbox;
   }
 }

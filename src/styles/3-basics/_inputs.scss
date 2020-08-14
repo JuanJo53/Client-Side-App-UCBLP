@@ -1,6 +1,3 @@
-@import "1-helpers/variables";
-@import "1-helpers/mixins";
-@import "3-basics/links";
 // color input button
 
 // mat-icon-stepper selected color change
@@ -40,7 +37,13 @@
 .input-disabled {
   .mat-form-field-outline {
     background-color: $color-secondary-gray;
+
     // cursor: pointer!important;
+  }
+  &--date,
+  &--hour {
+    background-color: $color-secondary-gray !important;
+    border-radius: 5px;
   }
 }
 
@@ -63,6 +66,4 @@
 
 .input-form {
   font-size: 1.25rem !important;
-  &.disabled {
-  }
 }

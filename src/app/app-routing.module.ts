@@ -58,6 +58,7 @@ import { GetQualificationResolver } from "./_resolvers/docente/my-class/get-qual
 import { GetScoreContentModuleResolver } from "./_resolvers/docente/modules/get-score-content-module.resolver";
 import { GetScoresPracticesResolver } from "./_resolvers/docente/practices/get-scores-practices.resolver";
 import { GetPracticesDashBoardResolver } from "./_resolvers/docente/dashBoards/get_practices-dashboard.resolver";
+import { EditPracticeComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
 
 const routes: Routes = [
   {
@@ -269,6 +270,10 @@ const routes: Routes = [
                         resolve: {
                           repository: GetQuestionsRepositoryResolver,
                         },
+                      },
+                      {
+                        path: "edit-practice",
+                        component: EditPracticeComponent,
                       },
                     ],
                   },

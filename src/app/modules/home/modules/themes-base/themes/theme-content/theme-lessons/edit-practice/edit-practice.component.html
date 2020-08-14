@@ -1,0 +1,650 @@
+<div class="container">
+  <!--Subtitle-->
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Edit Practice</span>
+    </div>
+  </div>
+
+  <!--#Subtitle-->
+  <!-------------------------------------------------------------------------->
+  <mat-horizontal-stepper
+    labelPosition="bottom"
+    #stepper
+    draggable="false"
+    class="question-maker-container"
+  >
+    <!--1 paso-->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Review Questions</ng-template>
+        <!-- card -->
+        <div class="card">
+          <div class="container-dialog">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Name</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-form-field appearance="outline">
+              <mat-label>Practice name</mat-label>
+              <!-- Input para el email-->
+              <input
+                class="input-form"
+                type="text"
+                matInput
+                readonly
+                [(ngModel)]="paso1.nombre"
+                placeholder="Practice name"
+                name="nombrePractica"
+              />
+              <!-- //Input para el email-->
+            </mat-form-field>
+
+            <div class="row">
+              <!--start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Start date and hour</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label>Choose a date</mat-label>
+                      <input
+                        matInput
+                        readonly
+                        [(ngModel)]="paso1.fechaini"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--fecha-->
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field>
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          readonly
+                          [(ngModel)]="paso1.horaini"
+                          [ngModelOptions]="{ standalone: true }"
+                          readonly
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--#start date-->
+              <!--end date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>End date and hour</span>
+                  </div>
+                </div>
+                <!--#subtitle-->
+                <!--row-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label>Choose a date</mat-label>
+                      <input
+                        matInput
+                        readonly
+                        [(ngModel)]="paso1.fechafin"
+                        [ngModelOptions]="{ standalone: startDate }"
+                      />
+                    </mat-form-field>
+                    <!--fecha-->
+                  </div>
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field>
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          readonly
+                          [(ngModel)]="paso1.horafin"
+                          [ngModelOptions]="{ standalone: true }"
+                          readonly
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--end date-->
+            </div>
+          </div>
+          <!--row added row-->
+          <div
+            *ngFor="let card of preguntas; let i = index"
+            [ngSwitch]="card.idTipoRespuesta"
+            #template
+          >
+            <!--radio button case-->
+            <div class="question-card-added" *ngSwitchCase="'1'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        readonly
+                        class="input-form"
+                        matInput
+                        placeholder="Question Name"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          readonly
+                          class="input-form"
+                          matInput
+                          placeholder="Score Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    class="example-radio-group"
+                    [ngModelOptions]="{ standalone: true }"
+                    [disabled]="true"
+                    [(ngModel)]="card.respuesta[0]"
+                  >
+                    <!-- radio button option -->
+                    <mat-radio-button
+                      class="question-card-added__choice"
+                      *ngFor="
+                        let opcionesRadioButton of card.opciones;
+                        let x = index
+                      "
+                      [value]="x"
+                    >
+                      <mat-form-field class="full-width-field">
+                        <input
+                          [(value)]="card.opciones[x]"
+                          style="color: black;"
+                          readonly
+                          class="question-card-added__choice--input"
+                          matInput
+                          placeholder="opcion {{ x + 1 }}"
+                        />
+                      </mat-form-field>
+                      <!--#radio button option-->
+                    </mat-radio-button>
+                  </mat-radio-group>
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+
+            <!--checkbox case-->
+            <div class="question-card-added" *ngSwitchCase="'2'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        class="input-form"
+                        matInput
+                        readonly
+                        placeholder="Question Name"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          class="input-form"
+                          readonly
+                          matInput
+                          placeholder="Score Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-checkbox
+                    class="card-question__choice"
+                    [disabled]="true"
+                    *ngFor="let opcionesCB of card.opciones; let x = index"
+                    [(ngModel)]="card.respuestasBool[x]"
+                    [ngModelOptions]="{ standalone: true }"
+                  >
+                    <mat-form-field class="full-width-field">
+                      <input
+                        [(value)]="card.opciones[x]"
+                        style="color: black;"
+                        readonly
+                        class="card-question__choice--input"
+                        matInput
+                        placeholder="opcion"
+                      />
+                    </mat-form-field>
+                    <!--#radio button option-->
+                  </mat-checkbox>
+
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--#row-->
+        </div>
+
+        <!-- buttons -->
+        <div class="progress-bar__bar">
+          <!--back button-->
+          <div class="progress-bar__previous" (click)="previous(stepper)">
+            <button class="progress-bar__button-previous" mat-mini-fab>
+              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+            </button>
+            <span class="progress-bar__text-previous">Back</span>
+          </div>
+          <!--#back button-->
+          <!--next button-->
+          <div class="progress-bar__next" (click)="Generar(stepper)">
+            <span class="progress-bar__text-next">Generate</span>
+            <button
+              (click)="next(stepper)"
+              (click)="loadData()"
+              class="progress-bar__button-next"
+              mat-mini-fab
+            >
+              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+            </button>
+          </div>
+          <!--#next button-->
+        </div>
+        <!-- #buttons -->
+      </form>
+    </mat-step>
+
+    <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+
+    <!--#1 paso-->
+    <!--2 paso-->
+
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Review Questions</ng-template>
+        <!-- card -->
+        <div class="card">
+          <div class="container-dialog">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Name</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-form-field
+              appearance="outline"
+              (dblclick)="toggleDisable()"
+              class="input-disabled"
+            >
+              <mat-label>Practice name</mat-label>
+              <!-- Input para el email-->
+              <input
+                class="input-form"
+                type="text"
+                matInput
+                readonly
+                [(ngModel)]="paso1.nombre"
+                placeholder="Practice name"
+                name="nombrePractica"
+              />
+              <!-- //Input para el email-->
+            </mat-form-field>
+
+            <div class="row">
+              <!--start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Start date and hour</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field class="input-disabled--date">
+                      <mat-label>Choose a date</mat-label>
+                      <input
+                        matInput
+                        readonly
+                        [(ngModel)]="paso1.fechaini"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--fecha-->
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field class="input-disabled--hour">
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          readonly
+                          [(ngModel)]="paso1.horaini"
+                          [ngModelOptions]="{ standalone: true }"
+                          readonly
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--#start date-->
+              <!--end date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>End date and hour</span>
+                  </div>
+                </div>
+                <!--#subtitle-->
+                <!--row-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field class="input-disabled--date">
+                      <mat-label>Choose a date</mat-label>
+                      <input
+                        matInput
+                        readonly
+                        [(ngModel)]="paso1.fechafin"
+                        [ngModelOptions]="{ standalone: startDate }"
+                      />
+                    </mat-form-field>
+                    <!--fecha-->
+                  </div>
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field class="input-disabled--hour">
+                        <mat-label>Choose an hour</mat-label>
+                        <input
+                          matInput
+                          readonly
+                          [(ngModel)]="paso1.horafin"
+                          [ngModelOptions]="{ standalone: true }"
+                          readonly
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--end date-->
+            </div>
+          </div>
+          <!--row added row-->
+          <div
+            *ngFor="let card of preguntas; let i = index"
+            [ngSwitch]="card.idTipoRespuesta"
+            #template
+          >
+            <!--radio button case-->
+            <div class="question-card-added" *ngSwitchCase="'1'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        readonly
+                        class="input-form"
+                        matInput
+                        placeholder="Question Name"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          readonly
+                          class="input-form"
+                          matInput
+                          placeholder="Score Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    class="example-radio-group"
+                    [ngModelOptions]="{ standalone: true }"
+                    [disabled]="true"
+                    [(ngModel)]="card.respuesta[0]"
+                  >
+                    <!-- radio button option -->
+                    <mat-radio-button
+                      class="question-card-added__choice"
+                      *ngFor="
+                        let opcionesRadioButton of card.opciones;
+                        let x = index
+                      "
+                      [value]="x"
+                    >
+                      <mat-form-field class="full-width-field">
+                        <input
+                          [(value)]="card.opciones[x]"
+                          style="color: black;"
+                          readonly
+                          class="question-card-added__choice--input"
+                          matInput
+                          placeholder="opcion {{ x + 1 }}"
+                        />
+                      </mat-form-field>
+                      <!--#radio button option-->
+                    </mat-radio-button>
+                  </mat-radio-group>
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+
+            <!--checkbox case-->
+            <div class="question-card-added" *ngSwitchCase="'2'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Question Name</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        class="input-form"
+                        matInput
+                        readonly
+                        placeholder="Question Name"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="text"
+                          class="input-form"
+                          readonly
+                          matInput
+                          placeholder="Score Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                <div class="question-card-added__content-question">
+                  <!-- <form class="example-form"> -->
+                  <mat-checkbox
+                    class="card-question__choice"
+                    [disabled]="true"
+                    *ngFor="let opcionesCB of card.opciones; let x = index"
+                    [(ngModel)]="card.respuestasBool[x]"
+                    [ngModelOptions]="{ standalone: true }"
+                  >
+                    <mat-form-field class="full-width-field">
+                      <input
+                        [(value)]="card.opciones[x]"
+                        style="color: black;"
+                        readonly
+                        class="card-question__choice--input"
+                        matInput
+                        placeholder="opcion"
+                      />
+                    </mat-form-field>
+                    <!--#radio button option-->
+                  </mat-checkbox>
+
+                  <!-- </form> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--#row-->
+        </div>
+
+        <!-- buttons -->
+        <div class="progress-bar__bar">
+          <!--back button-->
+          <div class="progress-bar__previous" (click)="previous(stepper)">
+            <button class="progress-bar__button-previous" mat-mini-fab>
+              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+            </button>
+            <span class="progress-bar__text-previous">Back</span>
+          </div>
+          <!--#back button-->
+          <!--next button-->
+          <div class="progress-bar__next" (click)="Generar(stepper)">
+            <span class="progress-bar__text-next">Generate</span>
+            <button
+              (click)="next(stepper)"
+              (click)="loadData()"
+              class="progress-bar__button-next"
+              mat-mini-fab
+            >
+              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+            </button>
+          </div>
+          <!--#next button-->
+        </div>
+        <!-- #buttons -->
+      </form>
+    </mat-step>
+    <!--#2 paso-->
+    <!--3 paso-->
+
+    <mat-step>
+      <div class="spinner">
+        <mat-spinner *ngIf="showSpinner"></mat-spinner>
+      </div>
+      <div *ngIf="spinnerFinish == true">
+        <div class="done">
+          <div class="done__content done--positive">
+            <div class="done__text">
+              <span>Done !</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form>
+        <ng-template matStepLabel>Done</ng-template>
+
+        <div>
+          <!-- <button mat-button matStepperNext>Next</button> -->
+          <!-- buttons -->
+          <div class="progress-bar__bar">
+            <!--next button-->
+            <div class="progress-bar__finish" (click)="finish()">
+              <span class="progress-bar__text-next">Finish</span>
+              <button class="progress-bar__button-next" mat-mini-fab>
+                <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+              </button>
+            </div>
+            <!--#next button-->
+          </div>
+          <!-- #buttons -->
+        </div>
+      </form>
+    </mat-step>
+    <!--#3 paso-->
+  </mat-horizontal-stepper>
+</div>

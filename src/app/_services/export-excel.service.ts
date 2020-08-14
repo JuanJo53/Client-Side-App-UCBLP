@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as XLSX from "xlsx";
-import * as EXCEL from "exceljs" 
-import * as fs from "file-saver";
 
 @Injectable({
   providedIn: 'root'
