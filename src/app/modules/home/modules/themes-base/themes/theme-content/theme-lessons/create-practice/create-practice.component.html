@@ -43,30 +43,64 @@
               <!-- //Input para el email-->
             </mat-form-field>
             <!--  radio button -->
-            <div class="dialog-subtitle__text">
-              <span>Set schedule</span>
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text" *ngIf="!paso1.bloqtiempo">
+                <span>Time Limit</span>
+              </div>
             </div>
-
-            <div class="radio-buttons-practice">
-              <div class="radio-buttons-practice__content">
-                <mat-radio-group
-                  aria-label="Select an option"
-                  name="radiobuttonvaluePractice"
-                  [(ngModel)]="radioButtonValue"
-                >
-                  <mat-radio-button class="radio-button" value="enable" checked
-                    >Enable</mat-radio-button
-                  >
-                  <mat-radio-button class="radio-button" value="unable"
-                    >Unable</mat-radio-button
-                  >
-                </mat-radio-group>
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text" *ngIf="paso1.bloqtiempo" style="color: red;">
+                <span>*Time Limit</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <!--fecha-->
+                <div *ngIf="radioButtonValue==='enable'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      [(ngModel)]="paso1.tiempoLimite"
+                      [ngModelOptions]="{ standalone: true }"
+                      type="number"
+                    />
+                  </mat-form-field>
+                </div>
+                <div *ngIf="radioButtonValue!=='enable'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      disabled
+                      placeholder="UNLIMITED"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              
+              
+              <div class="col-sm-6">
+                <div class="radio-buttons-practice">
+                  <div class="radio-buttons-practice__content">
+                    <mat-radio-group
+                      aria-label="Select an option"
+                      name="radiobuttonvaluePractice"
+                      [(ngModel)]="radioButtonValue"
+                    >
+                      <mat-radio-button class="radio-button" value="enable" checked
+                        >Enable</mat-radio-button
+                      >
+                      <mat-radio-button class="radio-button" value="unable"
+                        >Unable</mat-radio-button
+                      >
+                    </mat-radio-group>
+                  </div>
+                </div>
               </div>
             </div>
 
+
             <!--  //radio button -->
 
-            <div *ngIf="radioButtonValue == 'enable'">
               <div class="row">
                 <!--start date-->
                 <div class="col-sm-6">
@@ -89,7 +123,7 @@
                         <input
                           matInput
                           [matDatepicker]="picker1"
-                          [(ngModel)]="paso1.fechaini"
+                          [(ngModel)]="paso1.fechainiDate"
                           [ngModelOptions]="{ standalone: true }"
                         />
                         <mat-datepicker-toggle
@@ -159,7 +193,7 @@
                         <input
                           matInput
                           [matDatepicker]="picker2"
-                          [(ngModel)]="paso1.fechafin"
+                          [(ngModel)]="paso1.fechafinDate"
                           [ngModelOptions]="{ standalone: startDate }"
                         />
                         <mat-datepicker-toggle
@@ -207,7 +241,6 @@
                 </div>
                 <!--end date-->
               </div>
-            </div>
           </div>
         </div>
         <!-- #card -->
@@ -554,7 +587,41 @@
               />
               <!-- //Input para el email-->
             </mat-form-field>
-
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text" *ngIf="!paso1.bloqtiempo">
+                <span>Time Limit</span>
+              </div>
+            </div>
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text" *ngIf="paso1.bloqtiempo" style="color: red;">
+                <span>*Time Limit</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <!--fecha-->
+                <div *ngIf="radioButtonValue==='enable'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      readonly
+                      [(ngModel)]="paso1.tiempoLimite"
+                      [ngModelOptions]="{ standalone: true }"
+                      type="number"
+                    />
+                  </mat-form-field>
+                </div>
+                <div *ngIf="radioButtonValue!=='enable'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      readonly
+                      placeholder="UNLIMITED"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <!--start date-->
               <div class="col-sm-6">

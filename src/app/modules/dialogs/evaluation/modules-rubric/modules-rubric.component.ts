@@ -49,15 +49,12 @@ export class ModulesRubricComponent implements OnInit {
     this.cambio();
   }
   verificarRubricas() {
-    var sum = 0;
-    for (let rubrica of this.listaRubricas) {
-      console.log(rubrica);
-      sum += rubrica.rubrica;
-    }
-    if (sum != 100) {
-      return false;
-    } else {
+    if(this.total==100)
+    {
       return true;
+    }
+    else{
+      return false;
     }
   }
   aceptar(): void {

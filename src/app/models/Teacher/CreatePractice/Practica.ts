@@ -1,11 +1,13 @@
 import { Time } from '@angular/common';
 
 export class Practica{
-  tiempoLimite:number=30;
+  tiempoLimite:number=10;
   numero:number;
   idLeccion:string;
-  fechaini:any=new Date();
-  fechafin:any=new Date();;
+  fechainiDate:any=new Date();
+  fechafinDate:any=new Date();;
+  fechaini:any;
+  fechafin:any;
   horaini:any;
   horafin:any;
   nombre:string="";
@@ -14,4 +16,5 @@ export class Practica{
   bloqhora1:boolean=false;
   bloqhora2:boolean=false;
   bloqnombre:boolean=false;
+  bloqtiempo:boolean=false;
 }

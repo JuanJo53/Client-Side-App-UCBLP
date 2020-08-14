@@ -13,7 +13,7 @@ import { MatStepper } from "@angular/material/stepper";
 import { Time, Location } from "@angular/common";
 import { TIME_LOCALE } from "ngx-material-timepicker/src/app/material-timepicker/tokens/time-locale.token";
 import { windowTime } from "rxjs/operators";
-import { Config1 } from "src/app/models/Teacher/CreatePractice/Paso1";
+import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 
@@ -35,7 +35,7 @@ export class EditPracticeComponent implements OnInit {
   paso2bloq = false;
   idLeccion: string;
   paso2bloqScore = false;
-  paso1: Config1 = new Config1();
+  paso1: Practica = new Practica();
   // preguntas: Pregunta[] = [];
   preguntas: Pregunta[] = [
     {
@@ -303,29 +303,11 @@ export class EditPracticeComponent implements OnInit {
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
     console.log(this.paso1.fechaini);
 
-    this.servPrac.addPractica(this.paso1).subscribe({
+    this.servPrac.addPractica(this.paso1,this.preguntas).subscribe({
       next: (data) => {
         if (data.status == 200) {
-          this.servPrac
-            .addPracticaPreguntas(this.preguntas, data.body.idPractica)
-            .subscribe({
-              next: (dataFin) => {
-                if (dataFin.status == 200) {
-                  console.log(dataFin.body);
-                  this.correcto = "Se Agregaron Correctamente las preguntas";
-                  stepper.next();
-                } else {
-                  console.log("error");
-                  this.correcto = "No se pudieron agregar las preguntas";
-                  stepper.next();
-                }
-              },
-              error: (errorFin) => {
-                console.log("error");
-                this.correcto = "No se pudieron agregar las preguntas";
-                stepper.next();
-              },
-            });
+          this.correcto = "Se Agregaron Correctamente las preguntas";
+          stepper.next();
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";

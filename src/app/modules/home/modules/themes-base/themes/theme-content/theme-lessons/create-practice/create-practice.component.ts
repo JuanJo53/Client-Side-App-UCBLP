@@ -23,8 +23,7 @@ import { Module } from "src/app/models/Teacher/Evaluation/Module";
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
-  newModulo: Module = new Module();
-  radioButtonValue: string = "";
+  radioButtonValue: string = "unable";
   spinnerFinish = false;
   total = 0;
   repository: any = [];
@@ -102,11 +101,6 @@ export class CreatePracticeComponent implements OnInit {
         console.log(err);
       },
     });
-    if (this.newModulo.estado == 2) {
-      this.radioButtonValue = "unable";
-    } else {
-      this.radioButtonValue = "enable";
-    }
   }
   generateId(): string {
     // Alphanumeric characters
@@ -206,8 +200,8 @@ export class CreatePracticeComponent implements OnInit {
     });
   }
   cambiarFecha() {
-    this.paso1.fechaini = this.Date_toDMY(this.paso1.fechaini);
-    this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafin);
+    this.paso1.fechaini = this.Date_toDMY(this.paso1.fechainiDate);
+    this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafinDate);
   }
   preguntasRepositorio() {
     const dialogRef = this.dialog.open(RepositoryQuestionComponent, {
@@ -230,20 +224,26 @@ export class CreatePracticeComponent implements OnInit {
 
   //Funciones paso 1
   verificarpaso1(): boolean {
+    if(this.radioButtonValue==="unable"){
+      this.paso1.tiempoLimite=null;
+    }
     console.log("se verficia");
-    if (this.paso1.fechaini == null) {
+    if (this.paso1.fechainiDate == null) {
       this.paso1.bloqfecha1 = true;
     } else this.paso1.bloqfecha1 = false;
-    if (this.paso1.fechafin == null) {
+    if (this.paso1.fechafinDate == null) {
       this.paso1.bloqfecha2 = true;
     } else this.paso1.bloqfecha2 = false;
     if (this.paso1.horaini == null) {
       this.paso1.bloqhora1 = true;
     } else this.paso1.bloqhora1 = false;
+    if((this.paso1.tiempoLimite==null||this.paso1.tiempoLimite<5)&&this.radioButtonValue==="enable"){
+      this.paso1.bloqtiempo=true;
+    } else this.paso1.bloqtiempo=false;
     if (
       this.paso1.horafin == null ||
       (String(this.paso1.horafin) === String(this.paso1.horaini) &&
-        String(this.paso1.fechaini) === String(this.paso1.fechafin))
+        String(this.paso1.fechainiDate) === String(this.paso1.fechafinDate))
     ) {
       this.paso1.bloqhora2 = true;
     } else this.paso1.bloqhora2 = false;
@@ -255,7 +255,8 @@ export class CreatePracticeComponent implements OnInit {
       this.paso1.bloqfecha2 == false &&
       this.paso1.bloqhora1 == false &&
       this.paso1.bloqhora2 == false &&
-      this.paso1.bloqnombre == false
+      this.paso1.bloqnombre == false&&
+      this.paso1.bloqtiempo==false
     ) {
       return true;
     } else return false;

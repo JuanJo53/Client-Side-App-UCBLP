@@ -193,7 +193,6 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.verificarRubrica();
       if (result !== "" && result != null && result !== "undefined") {
         console.log(result);
         this.route.data.subscribe({
@@ -207,6 +206,7 @@ export class EvaluationComponent implements OnInit {
           },
         });
       }
+      this.verificarRubrica();
     });
   }
   configuracionModulo(modulo) {
@@ -218,7 +218,6 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.verificarRubrica();
       if (result !== "" && result != null && result !== "undefined") {
         console.log(result);
         this.route.data.subscribe({
@@ -232,6 +231,7 @@ export class EvaluationComponent implements OnInit {
           },
         });
       }
+      this.verificarRubrica();
     });
   }
 
@@ -244,7 +244,6 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.verificarRubrica();
       if (result !== "" && result != null && result !== "undefined") {
         console.log(result);
         this.route.data.subscribe({
@@ -258,6 +257,7 @@ export class EvaluationComponent implements OnInit {
           },
         });
       }
+      this.verificarRubrica();
     });
   }
   editarPorcentajes() {
@@ -271,11 +271,11 @@ export class EvaluationComponent implements OnInit {
           },
         });
         dialogRef.afterClosed().subscribe((result) => {
-          this.verificarRubrica();
           if (result !== "" && result != null && result !== "undefined") {
             data.modules.body = result;
             this.cargarDatos(result);
-          }
+          }          
+          this.verificarRubrica();
         });
       },
 
@@ -292,11 +292,11 @@ export class EvaluationComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.verificarRubrica();
       if (result === "ok") {
         this.cardsModulosPers.splice(index, 1);
         this.servNav.eliminarmodulos(index);
-      }
+      }      
+      this.verificarRubrica();
     });
   }
   sacarColor(id) {
