@@ -1,0 +1,31 @@
+.schedule {
+    //   margin-top: 4rem;
+    
+    display: flex;
+    justify-content: center;
+    &__content {
+      margin-bottom: 2rem;
+      display: flex;
+      width: 100%;
+      color: $color-primary-white;
+      border-radius: 1.5rem;
+      font-size: 1.5rem;
+      padding: 1rem 1.5rem;
+    }
+    &--positive {
+      background-color: $color-primary-blue;
+    }
+    &__text {
+        flex: 1;
+        padding: 0 0.5rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__textTime{
+        flex: 0 1 50%;
+        padding: 0 0.5rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+  }
+  
