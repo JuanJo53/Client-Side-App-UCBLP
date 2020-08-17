@@ -12,6 +12,7 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
+import { MatChipsModule } from "@angular/material/chips";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ThemesComponent } from "src/app/modules/home/modules/themes-base/themes/themes.component";
@@ -92,7 +93,7 @@ import { GoodDialogComponent } from "src/app/modules/dialogs/simple-dialogs/good
 import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
 import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
 import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
-import { ScheduleComponent } from 'src/app/modules/dialogs/schedule/schedule/schedule.component';
+import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/schedule.component";
 
 @NgModule({
   declarations: [
@@ -159,7 +160,7 @@ import { ScheduleComponent } from 'src/app/modules/dialogs/schedule/schedule/sch
     WarningDialogComponent,
     ConfigureLessonContentComponent,
     EditPracticeComponent,
-    ScheduleComponent
+    ScheduleComponent,
   ],
   imports: [
     CommonModule,
@@ -192,6 +193,7 @@ import { ScheduleComponent } from 'src/app/modules/dialogs/schedule/schedule/sch
     MatAutocompleteModule,
     ChartsModule,
     MatProgressBarModule,
+    MatChipsModule,
   ],
 })
 export class DefaultModule {}
