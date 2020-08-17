@@ -1,0 +1,31 @@
+<div class="dialog">
+  <div class="dialog-subtitle">
+    <div class="dialog-subtitle__text">
+      <span>Schedule</span>
+    </div>
+  </div>
+  <div *ngFor="let cards of ScheduleContent" >
+    
+    <div class="schedule">
+      <div class="schedule__content schedule--positive">
+        <div class="schedule__text schedule--positive">
+          <span>{{cards.dia}}</span>
+        </div>
+        <div class="schedule__textTime">
+          <span>{{cards.hora}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ 
+  <mat-dialog-actions align="end">
+    <!--btn cancel-->
+    <button mat-button mat-dialog-close class="dialog-button-cancel">
+      Back
+    </button>
+    <!--#btn cancel-->
+
+
+  </mat-dialog-actions>
+</div>

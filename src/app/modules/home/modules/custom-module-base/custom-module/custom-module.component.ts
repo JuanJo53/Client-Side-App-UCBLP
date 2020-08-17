@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SimpleCard } from "src/app/models/simpleCard";
+import { SimpleCard } from "src/app/models/SimpleCard";
 import { ActivatedRoute, Router } from "@angular/router";
 import { DeleteCardComponent } from "src/app/modules/dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "src/app/services/dialogs/delete-item.service";

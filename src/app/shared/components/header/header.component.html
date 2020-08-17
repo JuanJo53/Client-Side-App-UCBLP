@@ -5,24 +5,18 @@
       <!-- <span class="header__text">{{ message }}</span> -->
       <span class="header__text">{{ materia }}</span>
       <div class="header__buttons">
-        <button
-          class="circular-button-navbar"
-          mat-mini-fab
-          [matMenuTriggerFor]="classmodal"
-        >
+
+        <button class="circular-button-navbar" mat-mini-fab [matMenuTriggerFor]="" (click)="horario()"> 
+          <mat-icon class="circular-button__icon">info_outline</mat-icon>
+        </button>
+
+        <button class="circular-button-navbar" mat-mini-fab [matMenuTriggerFor]="classmodal">
           <span class="circular-button__class">{{ simbCurso }}</span>
         </button>
-        <mat-menu
-          class="classroom-choose-card"
-          #classmodal="matMenu"
-          xPosition="before"
-        >
+
+        <mat-menu class="classroom-choose-card" #classmodal="matMenu" xPosition="before">
           <div class="classroom-choose-card__content">
-            <div
-              (click)="navigator(materia)"
-              class="classroom-choose-card__classroom"
-              *ngFor="let materia of materias"
-            >
+            <div (click)="navigator(materia)" class="classroom-choose-card__classroom" *ngFor="let materia of materias">
               {{ materia.curso }}
             </div>
             <div (click)="home()" class="classroom-choose-card__classroom">
@@ -31,33 +25,27 @@
           </div>
         </mat-menu>
 
-        <button
-          class="circular-button-navbar"
-          mat-mini-fab
-          [matMenuTriggerFor]="notificationmodal"
-        >
+        <button class="circular-button-navbar" mat-mini-fab [matMenuTriggerFor]="notificationmodal">
           <mat-icon class="circular-button__icon">notifications_none</mat-icon>
         </button>
-        <mat-menu
-          class="notification-card"
-          #notificationmodal="matMenu"
-          xPosition="before"
-        >
+
+ 
+
+        <mat-menu class="notification-card" #notificationmodal="matMenu" xPosition="before">
           <div class="notification-card__content">
             <span class="notification-card__notification">Final Test</span>
             <span class="notification-card__notification">Practice 1</span>
           </div>
         </mat-menu>
 
-        <button
-          class="circular-button-navbar"
-          mat-mini-fab
-          [matMenuTriggerFor]="usermodal"
-        >
+        <button class="circular-button-navbar" mat-mini-fab [matMenuTriggerFor]="usermodal">
           <span class="circular-button__first-word">{{
             userDocente.primaLetra
           }}</span>
         </button>
+
+     
+
         <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
           <div class="user-card__content">
             <button class="user-card__icon" mat-fab>
@@ -73,11 +61,7 @@
               userDocente.correoDocente
             }}</span>
             <span class="user-card__classroom">Class : {{ materia }}</span>
-            <button
-              mat-stroked-button
-              class="user-card__button-logout"
-              (click)="signout()"
-            >
+            <button mat-stroked-button class="user-card__button-logout" (click)="signout()">
               <mat-icon>exit_to_app</mat-icon>
               Sign out
             </button>
