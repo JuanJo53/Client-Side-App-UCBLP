@@ -1,17 +1,37 @@
 .drag-drop__header {
-  display: flex;
-  justify-content: flex-end;
+  background-color: skyblue;
 }
-// .drag-drop__chips--horizontal {
-//   background-color: greenyellow;
-// }
+.drag-drop__maker {
+  display: flex;
+  justify-content: space-between;
+}
+.drag-drop__add-option {
+  display: flex;
+  align-items: center;
+  background-color: slateblue;
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+}
+.drag-drop__chips--horizontal {
+  background-color: greenyellow;
+  margin: 1rem 0;
+}
 // .example-chip-list {
 //   width: 100%;
 // }
 .example-box.cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
-
-.example-chip .cdk-drop-list-dragging {
+.cdk-drop-list-dragging {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.mat-chip.mat-standard-chip {
+  background-color: $color-primary-blue !important;
+
+  color: $color-primary-white !important;
+}
+.mat-chip.mat-standard-chip .mat-chip-remove {
+  color: $color-primary-white !important;
+  opacity: 1 !important;
 }

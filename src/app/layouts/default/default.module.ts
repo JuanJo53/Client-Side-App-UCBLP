@@ -94,6 +94,8 @@ import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/w
 import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
 import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
 import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/schedule.component";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -194,6 +196,8 @@ import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/sch
     ChartsModule,
     MatProgressBarModule,
     MatChipsModule,
+    DragDropModule,
+    ScrollingModule,
   ],
 })
 export class DefaultModule {}

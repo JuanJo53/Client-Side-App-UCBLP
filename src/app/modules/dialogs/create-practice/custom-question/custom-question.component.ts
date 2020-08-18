@@ -9,13 +9,9 @@ import { THIS_EXPR, ThrowStmt } from "@angular/compiler/src/output/output_ast";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
-export interface Fruit {
+export interface ChipOption {
   name: string;
 }
-export interface Vegetable {
-  name: string;
-}
-
 @Component({
   selector: "app-custom-question",
   templateUrl: "./custom-question.component.html",
@@ -267,18 +263,31 @@ export class CustomQuestionComponent implements OnInit {
   }
 
   //drag and drop
-  vegetables: Vegetable[] = [
-    { name: "apple" },
-    { name: "banana" },
-    { name: "strawberry" },
-    { name: "orange" },
-    { name: "kiwi" },
-    { name: "cherry" },
-  ];
-
-  drop(event: CdkDragDrop<Vegetable[]>) {
-    moveItemInArray(this.vegetables, event.previousIndex, event.currentIndex);
+  optionChipName: string;
+  options: ChipOption[] = [];
+  // aux: number = 0;
+  removable = true;
+  drop(event: CdkDragDrop<ChipOption[]>) {
+    moveItemInArray(this.options, event.previousIndex, event.currentIndex);
   }
+  remove(option: ChipOption): void {
+    const index = this.options.indexOf(option);
+
+    if (index >= 0) {
+      this.options.splice(index, 1);
+    }
+  }
+  agregarOpcion() {
+    var auxChip = {
+      name: "",
+    };
+    console.log("name : " + this.optionChipName);
+    auxChip.name = this.optionChipName;
+    this.options.push(auxChip);
+    // this.aux++;
+    // console.log("aux" + this.aux);
+  }
+  //
 
   //
   // agregarPreguntaEnContenido(tipoDePregunta) {
