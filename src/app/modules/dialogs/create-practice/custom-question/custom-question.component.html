@@ -366,11 +366,29 @@
             <div class="drag-drop__columns">
               <div
                 class="drag-drop__column"
-                *ngFor="let column of listColumnsChips.columns"
+                *ngFor="let column of listColumnsChips2"
               >
-                <div class="drag-drop__column-title">
+                <mat-form-field class="example-form-field">
+                  <mat-label>Column title</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    [(ngModel)]="column.columnTitle"
+                  />
+                  <button
+                    mat-button
+                    *ngIf="value"
+                    matSuffix
+                    mat-icon-button
+                    aria-label="Column title"
+                    (click)="column.columnTitle = ''"
+                  >
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+                <!-- <div class="drag-drop__column-title">
                   {{ column.columnTitle }}
-                </div>
+                </div> -->
                 <div
                   class="drag-drop__task-container"
                   cdkDropList
@@ -381,7 +399,7 @@
                     class="example-box"
                     cdkDrag
                     *ngFor="let option of column.chip"
-                    (removed)="remove(option)"
+                    (removed)="remove2(option)"
                   >
                     {{ option.chipName }}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>

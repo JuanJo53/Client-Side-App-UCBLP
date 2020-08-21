@@ -265,12 +265,17 @@ export class CustomQuestionComponent implements OnInit {
   }
 
   //drag and drop
-
+  value = "Clear me";
   listColumnsChips: DragandDropColumns = new DragandDropColumns("test board", [
     new Column("column 1", [{ chipName: "the" }, { chipName: "play" }]),
     new Column("column 2", [{ chipName: "the2" }, { chipName: "play2" }]),
     new Column("column 3", [{ chipName: "the3" }, { chipName: "play3" }]),
   ]);
+  listColumnsChips2: Column[] = [
+    new Column("column 1x", [{ chipName: "thex" }, { chipName: "playx" }]),
+    new Column("column 2x", [{ chipName: "the2x" }, { chipName: "play2x" }]),
+    new Column("column 3x", [{ chipName: "the3x" }, { chipName: "play3x" }]),
+  ];
 
   optionChipName: string;
   options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
@@ -307,6 +312,12 @@ export class CustomQuestionComponent implements OnInit {
     if (index >= 0) {
       this.options.splice(index, 1);
     }
+  }
+  remove2(option: Column): void {
+    // const index = this.listColumnsChips2.indexOf(option.chip);
+    // if (index >= 0) {
+    //   this.listColumnsChips2.splice(index, 1);
+    // }
   }
   agregarOpcion() {
     var auxChip = {
