@@ -360,83 +360,66 @@
             </mat-form-field>
           </div>
         </div>
-        <!-- cards wrapper columns-->
-        <div class="drag-drop__wrapper">
-          <div class="drag-drop__columns" cdkDropListGroup>
-            <div class="drag-drop__column">
-              <div class="drag-drop__column-title">
-                Column title
-              </div>
+        <div class="drag-drop__area" cdkDropListGroup>
+          <!-- cards wrapper columns-->
+          <div class="drag-drop__wrapper">
+            <div class="drag-drop__columns">
               <div
-                class="drag-drop__task-container"
-                cdkDropList
-                [cdkDropListData]="todo"
-                (cdkDropListDropped)="drop2($event)"
+                class="drag-drop__column"
+                *ngFor="let column of listColumnsChips.columns"
               >
-                <mat-chip
-                  class="example-box"
-                  cdkDrag
-                  *ngFor="let option of todo"
-                  (removed)="remove(option)"
+                <div class="drag-drop__column-title">
+                  {{ column.columnTitle }}
+                </div>
+                <div
+                  class="drag-drop__task-container"
+                  cdkDropList
+                  [cdkDropListData]="column.chip"
+                  (cdkDropListDropped)="drop2($event)"
                 >
-                  {{ option }}
-                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                </mat-chip>
+                  <mat-chip
+                    class="example-box"
+                    cdkDrag
+                    *ngFor="let option of column.chip"
+                    (removed)="remove(option)"
+                  >
+                    {{ option.chipName }}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                </div>
               </div>
-            </div>
-            <div class="drag-drop__column">
-              <div class="drag-drop__column-title">
-                Column title
-              </div>
-              <div
-                class="drag-drop__task-container"
-                cdkDropList
-                [cdkDropListData]="done"
-                (cdkDropListDropped)="drop2($event)"
-              >
-                <mat-chip
-                  class="example-box"
-                  cdkDrag
-                  *ngFor="let option of done"
-                  (removed)="remove(option)"
-                >
-                  {{ option }}
-                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                </mat-chip>
-              </div>
-            </div>
-            <div class="drag-drop__column"></div>
-            <div class="drag-drop__column"></div>
-            <div class="drag-drop__column"></div>
-          </div>
-        </div>
-        <!-- #cards wrapper columns-->
-        <div class="drag-drop__chips--horizontal">
-          <!--subtitle-->
-          <div class="dialog-subtitle">
-            <div class="dialog-subtitle__text">
-              <span>Options</span>
             </div>
           </div>
-          <!--#subtitle-->
-          <mat-chip-list
-            cdkDropList
-            cdkDropListOrientation="horizontal"
-            (cdkDropListDropped)="drop($event)"
-          >
-            <mat-chip
-              class="example-box"
-              cdkDrag
-              *ngFor="let option of options"
-              (removed)="remove(option)"
+          <!-- #cards wrapper columns-->
+          <!-- #Drag and drop chips -->
+          <div class="drag-drop__chips--horizontal">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Options</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-chip-list
+              class="tasks-list"
+              cdkDropList
+              cdkDropListOrientation="horizontal"
+              [cdkDropListData]="options"
+              (cdkDropListDropped)="drop2($event)"
             >
-              {{ option.name }}
-              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-            </mat-chip>
-          </mat-chip-list>
+              <mat-chip
+                class="task"
+                cdkDrag
+                *ngFor="let option of options"
+                (removed)="remove(option)"
+              >
+                {{ option.chipName }}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+          <!-- #Drag and drop chips -->
         </div>
-        <!-- </div> -->
-        <!-- #Drag and drop content -->
       </div>
     </div>
     <!-- #drag and drop column-->

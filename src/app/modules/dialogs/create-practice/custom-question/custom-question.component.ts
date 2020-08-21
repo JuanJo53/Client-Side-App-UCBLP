@@ -10,10 +10,10 @@ import { MatChipInputEvent } from "@angular/material/chips";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 import { transferArrayItem } from "@angular/cdk/drag-drop";
+import { ChipOption } from "src/app/models/Dragandrop/ChipOption";
+import { DragandDropColumns } from "src/app/models/Dragandrop/DragandDropColumn";
+import { Column } from "src/app/models/Dragandrop/Column";
 
-export interface ChipOption {
-  name: string;
-}
 @Component({
   selector: "app-custom-question",
   templateUrl: "./custom-question.component.html",
@@ -265,10 +265,17 @@ export class CustomQuestionComponent implements OnInit {
   }
 
   //drag and drop
+
+  listColumnsChips: DragandDropColumns = new DragandDropColumns("test board", [
+    new Column("column 1", [{ chipName: "the" }, { chipName: "play" }]),
+    new Column("column 2", [{ chipName: "the2" }, { chipName: "play2" }]),
+    new Column("column 3", [{ chipName: "the3" }, { chipName: "play3" }]),
+  ]);
+
   optionChipName: string;
-  options: ChipOption[] = [{ name: "the" }, { name: "play" }];
-  options2: ChipOption[] = [{ name: "the2" }, { name: "play2" }];
-  options3: ChipOption[] = [{ name: "the3" }, { name: "play3" }];
+  options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
+  options2: ChipOption[] = [{ chipName: "the2" }, { chipName: "play2" }];
+  options3: ChipOption[] = [{ chipName: "the3" }, { chipName: "play3" }];
   todo = ["Get", "Pick up", "Go home", "Fall"];
 
   done = ["Get", "Brush", "Take", "Check", "Walk dog"];
@@ -303,11 +310,12 @@ export class CustomQuestionComponent implements OnInit {
   }
   agregarOpcion() {
     var auxChip = {
-      name: "",
+      chipName: "",
     };
     console.log("name : " + this.optionChipName);
-    auxChip.name = this.optionChipName;
+    auxChip.chipName = this.optionChipName;
     this.options.push(auxChip);
+    this.optionChipName = "";
     // this.aux++;
     // console.log("aux" + this.aux);
   }
