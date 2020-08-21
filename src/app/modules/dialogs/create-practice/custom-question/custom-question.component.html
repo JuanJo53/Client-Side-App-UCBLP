@@ -360,6 +360,57 @@
             </mat-form-field>
           </div>
         </div>
+        <!-- cards wrapper columns-->
+        <div class="drag-drop__wrapper">
+          <div class="drag-drop__columns" cdkDropListGroup>
+            <div class="drag-drop__column">
+              <div class="drag-drop__column-title">
+                Column title
+              </div>
+              <div
+                class="drag-drop__task-container"
+                cdkDropList
+                [cdkDropListData]="todo"
+                (cdkDropListDropped)="drop2($event)"
+              >
+                <mat-chip
+                  class="example-box"
+                  cdkDrag
+                  *ngFor="let option of todo"
+                  (removed)="remove(option)"
+                >
+                  {{ option }}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+              </div>
+            </div>
+            <div class="drag-drop__column">
+              <div class="drag-drop__column-title">
+                Column title
+              </div>
+              <div
+                class="drag-drop__task-container"
+                cdkDropList
+                [cdkDropListData]="done"
+                (cdkDropListDropped)="drop2($event)"
+              >
+                <mat-chip
+                  class="example-box"
+                  cdkDrag
+                  *ngFor="let option of done"
+                  (removed)="remove(option)"
+                >
+                  {{ option }}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+              </div>
+            </div>
+            <div class="drag-drop__column"></div>
+            <div class="drag-drop__column"></div>
+            <div class="drag-drop__column"></div>
+          </div>
+        </div>
+        <!-- #cards wrapper columns-->
         <div class="drag-drop__chips--horizontal">
           <!--subtitle-->
           <div class="dialog-subtitle">

@@ -15,7 +15,7 @@
 }
 .drag-drop__chips--horizontal {
   background-color: greenyellow;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 // .example-chip-list {
 //   width: 100%;
@@ -30,8 +30,54 @@
   background-color: $color-primary-blue !important;
 
   color: $color-primary-white !important;
+  margin: 0.5rem 0rem;
 }
 .mat-chip.mat-standard-chip .mat-chip-remove {
   color: $color-primary-white !important;
   opacity: 1 !important;
 }
+
+// drag and drop
+.drag-drop {
+  &__wrapper {
+    display: flex;
+    flex-grow: 1;
+    overflow-x: auto;
+  }
+  &__columns {
+    display: flex;
+    flex-grow: 1;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    background: rgba($color-primary-blue, 0.5);
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 100px;
+    padding: 10px;
+    margin: 3rem 1rem;
+    border-radius: 4px;
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+  &__column-title {
+    font-size: 1.25rem;
+    color: $color-primary-white;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  &__task-container {
+    flex-grow: 1;
+  }
+
+  // &__task {
+  //   display: flex;
+  //   padding: 15px;
+  //   background-color: $color-primary-white;
+  //   border-bottom: solid 1px #ddd;
+  // }
+}
+//#drag and drop

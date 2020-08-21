@@ -9,6 +9,8 @@ import { THIS_EXPR, ThrowStmt } from "@angular/compiler/src/output/output_ast";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { transferArrayItem } from "@angular/cdk/drag-drop";
+
 export interface ChipOption {
   name: string;
 }
@@ -264,11 +266,33 @@ export class CustomQuestionComponent implements OnInit {
 
   //drag and drop
   optionChipName: string;
-  options: ChipOption[] = [];
+  options: ChipOption[] = [{ name: "the" }, { name: "play" }];
+  options2: ChipOption[] = [{ name: "the2" }, { name: "play2" }];
+  options3: ChipOption[] = [{ name: "the3" }, { name: "play3" }];
+  todo = ["Get", "Pick up", "Go home", "Fall"];
+
+  done = ["Get", "Brush", "Take", "Check", "Walk dog"];
   // aux: number = 0;
   removable = true;
   drop(event: CdkDragDrop<ChipOption[]>) {
     moveItemInArray(this.options, event.previousIndex, event.currentIndex);
+  }
+
+  drop2(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
   }
   remove(option: ChipOption): void {
     const index = this.options.indexOf(option);
