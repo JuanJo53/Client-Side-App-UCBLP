@@ -320,15 +320,19 @@ export class CustomQuestionComponent implements OnInit {
     // }
   }
   agregarOpcion() {
-    var auxChip = {
-      chipName: "",
-    };
-    console.log("name : " + this.optionChipName);
-    auxChip.chipName = this.optionChipName;
-    this.options.push(auxChip);
-    this.optionChipName = "";
-    // this.aux++;
-    // console.log("aux" + this.aux);
+    if (this.optionChipName !== "") {
+      var auxChip = {
+        chipName: "",
+      };
+      console.log("name : " + this.optionChipName);
+      auxChip.chipName = this.optionChipName;
+      this.options.push(auxChip);
+      this.optionChipName = "";
+      // this.aux++;
+      // console.log("aux" + this.aux);
+    } else {
+      console.log("esta vacio");
+    }
   }
   //
 
