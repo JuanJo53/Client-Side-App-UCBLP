@@ -16,6 +16,7 @@ import { windowTime } from "rxjs/operators";
 import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
+import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 
 @Component({
   selector: "app-edit-practice",
@@ -23,41 +24,21 @@ import { PracticesService } from "../../../../../../../../_services/teacher_serv
   styleUrls: ["./edit-practice.component.scss"],
 })
 export class EditPracticeComponent implements OnInit {
+  radioButtonValue: string = "unable";
   disableTextbox = true;
   spinnerFinish = false;
   total = 0;
   repository: any = [];
   showSpinner = false;
-
   correcto = "";
   startDate = Date.now();
   endDate = new Date(2020, 0, 1);
   paso2bloq = false;
-  idLeccion: string;
+  idPractica: string;
   paso2bloqScore = false;
   paso1: Practica = new Practica();
   // preguntas: Pregunta[] = [];
   preguntas: Pregunta[] = [
-    {
-      id: 1,
-      tipo: false,
-      nivel: 2,
-      numeroPreg: 1,
-      puntuacion: 100,
-      pregunta: "abc",
-      opciones: ["a", "a", "a", "a"],
-      grupo: "a",
-      respuesta: [1],
-      respuestasBool: [true],
-      idTipoPregunta: "1",
-      idTipoRespuesta: "1",
-      recurso: "a",
-      bloqpunt: false,
-      bloqpreg: false,
-      bloqopci: false,
-      bloqidtp: false,
-      bloqidtr: false,
-    },
   ];
 
   constructor(
@@ -65,20 +46,65 @@ export class EditPracticeComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private servPrac: PracticesService,
-    private location: Location
+    private location: Location,
+    private tokenServ:TokenStorageService
   ) {}
-
+  agregarPreguntas(preguntasData){
+    for(let pregunta of preguntasData){
+      let newPreg=new Pregunta();
+      newPreg.pregunta=pregunta.pregunta;
+      newPreg.respuesta=pregunta.respuesta;
+      newPreg.opciones=pregunta.opciones;
+      newPreg.idTipoPregunta=pregunta.id_tipo_pregunta;
+      newPreg.idTipoRespuesta=pregunta.id_tipo_respuesta;
+      newPreg.recurso=pregunta.recurso;
+      newPreg.respuestasBool=[];
+      for(let op of newPreg.opciones){
+        newPreg.respuestasBool.push(false);
+      }
+      for(let resp of newPreg.respuesta){
+        newPreg.respuestasBool[resp]=true;
+      }
+      this.preguntas.push(newPreg);
+    }
+  }
+agregarDatos(data){
+  this.paso1.id=data.practica.id_practica;
+  this.paso1.nombre=data.practica.nombre_practica;
+  this.paso1.fechafin=data.practica.fin_fecha;
+  this.paso1.fechaini=data.practica.inicio_fecha;
+  var horaIni=data.practica.inicio_hora.split(":");
+  var horaFin=data.practica.fin_hora.split(":");
+  this.paso1.horafin=horaFin[0]+":"+horaFin[1];
+  this.paso1.horaini=horaIni[0]+":"+horaIni[1];
+  this.paso1.fechainiDate=data.practica.inicio_fecha;
+  this.paso1.fechafinDate=data.practica.fin_fecha;
+  if(data.practica.tiempo_limite==null){
+    this.radioButtonValue="unable";
+  }
+  else{
+    this.radioButtonValue="enable";
+    this.paso1.tiempoLimite=data.practica.tiempo_limite;
+  }
+  console.log(data.preguntas);
+  this.agregarPreguntas(data.preguntas);
+}
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
-      this.idLeccion = param["idLeccion"];
+      this.idPractica = param["idPractica"];
+      console.log(this.idPractica);
     });
     this.route.data.subscribe({
       next: (data) => {
-        if (data.repository.status == 200) {
-          this.repository = data.repository.body;
+        if (data.practice.status == 200) {
+          this.agregarDatos(data.practice.body);
         }
       },
-      error: (err) => {},
+      error: (err) => {
+        if(err.status==403){
+          this.tokenServ.signOut();
+        }
+      },
     });
   }
   generateId(): string {
@@ -294,7 +320,7 @@ export class EditPracticeComponent implements OnInit {
   }
   //Funciones paso 3
   Generar(stepper) {
-    this.paso1.idLeccion = this.idLeccion;
+    this.paso1.idLeccion = "0";
     this.paso1.numero = 1;
     this.paso1.fechaini = this.Date_toYMD(this.paso1.fechaini);
     this.paso1.fechafin = this.Date_toYMD(this.paso1.fechafin);

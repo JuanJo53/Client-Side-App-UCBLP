@@ -124,8 +124,9 @@ export class ThemeLessonsComponent implements OnInit {
       this.loading.desactivar();
     })
   }
-  configuracionPractica() {
-    this.router.navigate(["edit-practice"], { relativeTo: this.route });
+  configuracionPractica(idPractica) {
+    console.log(idPractica);
+    this.router.navigate(["edit-practice",idPractica], { relativeTo: this.route });
   }
   //-----#funciones-----
 }
