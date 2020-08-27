@@ -8,7 +8,7 @@
           <mat-label *ngIf="!nuevaPregunta.bloqidtp"
             >Type of Question</mat-label
           >
-          <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red;"
+          <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
             >*Type of Question</mat-label
           >
           <mat-select
@@ -30,7 +30,7 @@
       <div class="combo-box">
         <mat-form-field>
           <mat-label *ngIf="!nuevaPregunta.bloqidtr">Type of answer</mat-label>
-          <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red;"
+          <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red"
             >*Type of answer</mat-label
           >
           <mat-select
@@ -81,7 +81,7 @@
               <mat-label *ngIf="!nuevaPregunta.bloqpreg"
                 >Question Name</mat-label
               >
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;"
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
                 >*Question Name</mat-label
               >
               <input
@@ -100,7 +100,7 @@
             <div class="card-question__input">
               <mat-form-field appearance="outline">
                 <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;"
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
                   >*Score</mat-label
                 >
                 <input
@@ -117,7 +117,7 @@
           </div>
         </div>
 
-        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">
+        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
           *Check the answers
         </h5>
 
@@ -180,7 +180,7 @@
               <mat-label *ngIf="!nuevaPregunta.bloqpreg"
                 >Question Name</mat-label
               >
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;"
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
                 >*Question Name</mat-label
               >
               <input
@@ -199,7 +199,7 @@
             <div class="card-question__input">
               <mat-form-field appearance="outline">
                 <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;"
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
                   >*Score</mat-label
                 >
                 <input
@@ -215,7 +215,7 @@
             <!--#input para pregunta-->
           </div>
         </div>
-        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">
+        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
           *Check the answers
         </h5>
 
@@ -271,7 +271,7 @@
               class="card-question__instruction"
             >
               <mat-label *ngIf="!nuevaPregunta.bloqpreg">Instruction</mat-label>
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;"
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
                 >*Instruction</mat-label
               >
               <input
@@ -289,7 +289,7 @@
             <div class="card-question__input">
               <mat-form-field appearance="outline">
                 <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;"
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
                   >*Score</mat-label
                 >
                 <input
@@ -345,7 +345,7 @@
               <mat-label *ngIf="!nuevaPregunta.bloqidtp"
                 >Number of Columns</mat-label
               >
-              <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red;"
+              <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
                 >Number of Columns</mat-label
               >
               <mat-select>
@@ -441,6 +441,56 @@
       </div>
     </div>
     <!-- #drag and drop column-->
+
+    <!-- matching combo box-->
+    <div class="card-question-radio-button" *ngSwitchCase="'5'">
+      <div class="container-dialog">
+        <div class="card-question__header">
+          <!--input para pregunta-->
+          <div class="card-question__header--question">
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg"
+                >Instruction Dropbox</mat-label
+              >
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+                >*Instruction Dropbox</mat-label
+              >
+              <input
+                type="text"
+                class="input-form"
+                matInput
+                placeholder="Instruction dorpbox"
+                name="nombre pregunta"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+          <div class="card-question__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+                  >*Score</mat-label
+                >
+                <input
+                  type="number"
+                  class="input-form"
+                  matInput
+                  placeholder="Score"
+                  name="puntuacion"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #matching combo box-->
   </div>
   <!--#card-->
 </mat-dialog-content>

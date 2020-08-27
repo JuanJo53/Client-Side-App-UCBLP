@@ -33,12 +33,17 @@ export class CustomQuestionComponent implements OnInit {
   tipoPregunta: Combo[] = [
     { value: "1", display: "Simple" },
     { value: "2", display: "Drag and Drop" },
+    { value: "3", display: "Match the words" },
   ];
+
   tipoRespuesta: Combo[] = [
     { value: "1", display: "Unique" },
     { value: "2", display: "Multiple" },
     { value: "3", display: "Columns" },
+    { value: "4", display: "Fill in the blanks" },
+    { value: "5", display: "Combobox's" },
   ];
+
   dragAndDropColumn: Combo[] = [
     { value: "1", display: "One" },
     { value: "2", display: "Two" },
