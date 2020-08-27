@@ -13,6 +13,7 @@ import { transferArrayItem } from "@angular/cdk/drag-drop";
 import { ChipOption } from "src/app/models/Dragandrop/ChipOption";
 import { DragandDropColumns } from "src/app/models/Dragandrop/DragandDropColumn";
 import { Column } from "src/app/models/Dragandrop/Column";
+import { matching } from "src/app/models/Preguntas/Matching";
 
 @Component({
   selector: "app-custom-question",
@@ -51,6 +52,7 @@ export class CustomQuestionComponent implements OnInit {
     { value: "4", display: "Four" },
     { value: "5", display: "Five" },
   ];
+  matchingInputs: matching[] = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
@@ -341,6 +343,20 @@ export class CustomQuestionComponent implements OnInit {
   }
   //
 
+  //agregar a input match question
+  agregarInputMatch() {
+    var auxInputMatch = {
+      keyword: "",
+      match: "",
+    };
+    // console.log("name : " + this.optionChipName);
+    this.matchingInputs.push(auxInputMatch);
+  }
+  eliminarInputMatch(i) {
+    this.matchingInputs.splice(i, 1);
+  }
+
+  //
   //
   // agregarPreguntaEnContenido(tipoDePregunta) {
   //   switch (tipoDePregunta) {

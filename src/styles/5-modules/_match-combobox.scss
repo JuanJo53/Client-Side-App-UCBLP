@@ -28,7 +28,16 @@
   &--button-delete {
     background-color: $color-primary-red !important;
   }
-  &--button-delete-icon {
+  &--button-add {
+    background-color: $color-primary-blue !important;
+  }
+  &--button-delete-icon,
+  &--button-add-icon {
     color: white !important;
   }
+}
+.match-combobox__add {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
 }
