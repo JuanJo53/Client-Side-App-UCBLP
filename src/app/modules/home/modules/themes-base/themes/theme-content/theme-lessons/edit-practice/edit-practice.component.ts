@@ -24,6 +24,7 @@ import { TokenStorageService } from 'src/app/_services/general_services/token-st
   styleUrls: ["./edit-practice.component.scss"],
 })
 export class EditPracticeComponent implements OnInit {
+  preguntasEli:number[]=[];
   radioButtonValue: string = "unable";
   disableTextbox = true;
   spinnerFinish = false;
@@ -49,15 +50,25 @@ export class EditPracticeComponent implements OnInit {
     private location: Location,
     private tokenServ:TokenStorageService
   ) {}
+  
+  actPuntaje() {
+    this.total = 0;
+    for (let preg of this.preguntas) {
+      this.total += preg.puntuacion;
+    }
+  }
   agregarPreguntas(preguntasData){
     for(let pregunta of preguntasData){
       let newPreg=new Pregunta();
+      newPreg.id=pregunta.id_pregunta_practica;
+      newPreg.tipo=3;
       newPreg.pregunta=pregunta.pregunta;
       newPreg.respuesta=pregunta.respuesta;
       newPreg.opciones=pregunta.opciones;
-      newPreg.idTipoPregunta=pregunta.id_tipo_pregunta;
-      newPreg.idTipoRespuesta=pregunta.id_tipo_respuesta;
+      newPreg.idTipoPregunta=String(pregunta.id_tipo_pregunta);
+      newPreg.idTipoRespuesta=String(pregunta.id_tipo_respuesta);
       newPreg.recurso=pregunta.recurso;
+      newPreg.puntuacion=pregunta.puntuacion_practica_pregunta;
       newPreg.respuestasBool=[];
       for(let op of newPreg.opciones){
         newPreg.respuestasBool.push(false);
@@ -66,6 +77,7 @@ export class EditPracticeComponent implements OnInit {
         newPreg.respuestasBool[resp]=true;
       }
       this.preguntas.push(newPreg);
+      console.log(newPreg);
     }
   }
 agregarDatos(data){
@@ -88,6 +100,7 @@ agregarDatos(data){
   }
   console.log(data.preguntas);
   this.agregarPreguntas(data.preguntas);
+  this.actPuntaje();
 }
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
@@ -98,6 +111,10 @@ agregarDatos(data){
       next: (data) => {
         if (data.practice.status == 200) {
           this.agregarDatos(data.practice.body);
+        }        
+        if (data.repository.status == 200) {
+          console.log(data.repository.body);
+          this.repository = data.repository.body;
         }
       },
       error: (err) => {
@@ -149,6 +166,8 @@ agregarDatos(data){
   }
   //Editar una pregunta
   editarPregunta(pregunta: Pregunta) {
+    console.log(pregunta);
+    var tipo=pregunta.tipo;
     const dialogRef = this.dialog.open(CustomQuestionComponent, {
       width: "1000px",
       maxHeight: "80vh",
@@ -161,13 +180,13 @@ agregarDatos(data){
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result !== "" && result !== "undefined" && result != null) {
-        this.route.data.subscribe({
-          next: (data) => {},
-          error: (error) => {
-            console.log("no se pudo agregar la pregunta");
-          },
-        });
+        if((tipo==3||tipo==2)&&pregunta.tipo==0){
+          if(!this.preguntasEli.some(e=>e==pregunta.id)){
+            this.preguntasEli.push(pregunta.id);
+          }
+        }
       }
+      this.actPuntaje();
     });
   }
   //Retroceder en el proceso
@@ -175,8 +194,10 @@ agregarDatos(data){
     stepper.previous();
     console.log("previous");
   }
-  eliminarPreg(index) {
+  eliminarPreg(index,pregunta:Pregunta) {
+    console.log(pregunta);
     this.preguntas.splice(index, 1);
+    this.preguntasEli.push(pregunta.id);
   }
   //Agregar una pregunta personalizada
   preguntasPersonalizadas() {
@@ -201,6 +222,7 @@ agregarDatos(data){
           },
         });
       }
+      this.actPuntaje();
     });
   }
   cambiarFecha() {
@@ -221,6 +243,7 @@ agregarDatos(data){
           this.preguntas.push(pregunta);
         }
       }
+      this.actPuntaje();
     });
   }
 
@@ -279,7 +302,13 @@ agregarDatos(data){
     return fecha[2] + "-" + fecha[1] + "-" + fecha[0];
   }
   Date_toDMY(date: any) {
-    var datos = String(date).split("/");
+    var dato2=String(date).split("-")
+    console.log(dato2);
+    if(dato2.length==3){
+      return dato2[2].substring(0,2)+"/"+dato2[1]+"/"+dato2[0];
+    }
+    else{
+      var datos = String(date).split("/");
     if (datos.length != 3) {
       var year, month, day;
       year = String(date.getFullYear());
@@ -294,6 +323,7 @@ agregarDatos(data){
       return day + "/" + month + "/" + year;
     } else {
       return date;
+    }
     }
   }
   Hour_toMYSQL(time) {
@@ -322,14 +352,23 @@ agregarDatos(data){
   Generar(stepper) {
     this.paso1.idLeccion = "0";
     this.paso1.numero = 1;
+    console.log("asdf");
+    console.log(this.paso1.horaini);
+    console.log(this.paso1.fechaini);
+    console.log(this.paso1.horafin);
+    console.log(this.paso1.fechafin);
+    this.paso1.fechaini = this.Date_toDMY(this.paso1.fechainiDate);
+    this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafinDate);
     this.paso1.fechaini = this.Date_toYMD(this.paso1.fechaini);
     this.paso1.fechafin = this.Date_toYMD(this.paso1.fechafin);
-    console.log(this.paso1.fechaini);
     this.paso1.horaini = this.Hour_toMYSQL(this.paso1.horaini);
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
+    console.log(this.paso1.horaini);
     console.log(this.paso1.fechaini);
+    console.log(this.paso1.horafin);
+    console.log(this.paso1.fechafin);
 
-    this.servPrac.addPractica(this.paso1,this.preguntas).subscribe({
+    this.servPrac.modPractica(this.paso1,this.preguntas,this.preguntasEli).subscribe({
       next: (data) => {
         if (data.status == 200) {
           this.correcto = "Se Agregaron Correctamente las preguntas";

@@ -18,8 +18,8 @@ export class PracticesService {
   addPractica(Practica,Preguntas):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/practice",{practica:Practica,preguntas:Preguntas},{ observe: 'response' });
   }
-  modPractica(Practica,Preguntas):Observable<any>{
-    return this.http.put(apiKey.api+"/teacher/practice",{practica:Practica,preguntas:Preguntas},{ observe: 'response' });
+  modPractica(Practica,Preguntas,preguntasEli):Observable<any>{
+    return this.http.put(apiKey.api+"/teacher/practice",{practica:Practica,preguntas:Preguntas,preguntasEli:preguntasEli},{ observe: 'response' });
   }
   getPracticaMod(idPractica):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/practice/mod/"+idPractica,{ observe: 'response' });

@@ -275,7 +275,8 @@ const routes: Routes = [
                       {
                         path: "edit-practice/:idPractica",
                         resolve:{
-                          practice:GetPracticeModResolver
+                          practice:GetPracticeModResolver,
+                          repository: GetQuestionsRepositoryResolver,
                         },
                         component: EditPracticeComponent,
                       },

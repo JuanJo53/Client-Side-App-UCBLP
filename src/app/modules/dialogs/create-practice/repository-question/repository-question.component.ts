@@ -177,7 +177,7 @@ export class RepositoryQuestionComponent implements OnInit {
       nuevaPregunta.respuesta=pregunta.pregunta.respuestas;
       nuevaPregunta.opciones=pregunta.pregunta.opciones;
       nuevaPregunta.puntuacion=10;
-      nuevaPregunta.tipo=true;
+      nuevaPregunta.tipo=1;
       console.log(nuevaPregunta);
       this.cargarRespuestasBool(nuevaPregunta);
       this.preguntas.push(nuevaPregunta)
@@ -195,7 +195,7 @@ export class RepositoryQuestionComponent implements OnInit {
       nuevaPregunta.respuesta=pregunta.respuesta;
       nuevaPregunta.opciones=pregunta.opciones;
       nuevaPregunta.puntuacion=10;
-      nuevaPregunta.tipo=true;
+      nuevaPregunta.tipo=1;
       console.log(nuevaPregunta);
       this.cargarRespuestasBool(nuevaPregunta);
       this.preguntas.push(nuevaPregunta)
