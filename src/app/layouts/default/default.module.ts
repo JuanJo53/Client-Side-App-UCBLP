@@ -96,6 +96,7 @@ import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/
 import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/schedule.component";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -198,6 +199,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
     MatChipsModule,
     DragDropModule,
     ScrollingModule,
+    MatDividerModule,
   ],
 })
 export class DefaultModule {}

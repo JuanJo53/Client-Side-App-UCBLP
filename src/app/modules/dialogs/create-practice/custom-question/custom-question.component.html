@@ -488,42 +488,21 @@
             <!--#input para pregunta-->
           </div>
         </div>
-
-        <div
-          class="match-combobox__input-box"
-          *ngFor="let opcion of matchingInputs; let i = index"
-        >
+        <div class="match-combobox__input-box-titles">
           <div class="match-combobox__inputs">
-            <mat-form-field class="match-combobox__keyword">
-              <mat-label>Keyword</mat-label>
-              <input
-                matInput
-                placeholder="Write a keyword"
-                [(ngModel)]="opcion.keyword"
-              />
-            </mat-form-field>
-            <mat-form-field class="match-combobox__complement">
-              <mat-label>Match</mat-label>
-              <input
-                matInput
-                placeholder="Write the match of the keyword"
-                [(ngModel)]="opcion.match"
-              />
-            </mat-form-field>
+            <!--subtitle-->
+            <div class="dialog-subtitle match-combobox__keyword">
+              <div class="dialog-subtitle__text">
+                <span>Set Keywords</span>
+              </div>
+            </div>
+            <div class="dialog-subtitle match-combobox__complement">
+              <div class="dialog-subtitle__text">
+                <span>Set Matches</span>
+              </div>
+            </div>
+            <!--#subtitle-->
           </div>
-          <!-- eliminar -->
-          <button
-            mat-mini-fab
-            class="match-combobox__choice--button-delete"
-            (click)="eliminarInputMatch(i)"
-          >
-            <mat-icon class="match-combobox__choice--button-delete-icon"
-              >close</mat-icon
-            >
-          </button>
-          <!-- eliminar -->
-        </div>
-        <div class="match-combobox__add">
           <button
             mat-mini-fab
             class="match-combobox__choice--button-add"
@@ -533,6 +512,40 @@
               >add</mat-icon
             >
           </button>
+        </div>
+        <div class="" *ngFor="let opcion of matchingInputs; let i = index">
+          <div class="match-combobox__input-box">
+            <div class="match-combobox__inputs">
+              <mat-form-field class="match-combobox__keyword">
+                <mat-label>Keyword</mat-label>
+                <input
+                  matInput
+                  placeholder="Write a keyword"
+                  [(ngModel)]="opcion.keyword"
+                />
+              </mat-form-field>
+              <mat-form-field class="match-combobox__complement">
+                <mat-label>Match</mat-label>
+                <input
+                  matInput
+                  placeholder="Write the match of the keyword"
+                  [(ngModel)]="opcion.match"
+                />
+              </mat-form-field>
+            </div>
+            <!-- eliminar -->
+            <button
+              mat-mini-fab
+              class="match-combobox__choice--button-delete"
+              (click)="eliminarInputMatch(i)"
+            >
+              <mat-icon class="match-combobox__choice--button-delete-icon"
+                >close</mat-icon
+              >
+            </button>
+            <!-- eliminar -->
+          </div>
+          <mat-divider></mat-divider>
         </div>
       </div>
     </div>
