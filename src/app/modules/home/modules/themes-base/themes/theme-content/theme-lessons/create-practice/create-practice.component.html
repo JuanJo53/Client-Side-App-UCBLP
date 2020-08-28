@@ -515,8 +515,73 @@
                       <!--#input para pregunta-->
                     </div>
                   </div>
-                  <div class="question-card-added__content-question">
-                    combox
+
+                  <!-- combox -->
+                  <div class="match-combobox__input-box-titles">
+                    <div class="match-combobox__inputs">
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__keyword">
+                        <div class="dialog-subtitle__text">
+                          <span>Keywords</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__complement">
+                        <div class="dialog-subtitle__text">
+                          <span>Matches</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                    </div>
+                  </div>
+                  <div
+                    class="match-combobox-answer__box"
+                    *ngFor="let opcion of matchingInputs; let i = index"
+                  >
+                    <!-- <div class="match-combobox-answer__input-box"> -->
+                    <div class="match-combobox-answer__inputs">
+                      <div class="match-combobox-answer__keyword">
+                        {{ opcion.keyword }}
+                      </div>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Options</mat-label>
+                        <mat-select
+                          [(ngModel)]="opcion.match"
+                          name="input{{ i }}"
+                        >
+                          <mat-option
+                            *ngFor="let options of comboOptions"
+                            [value]="options.value"
+                          >
+                            {{ options.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <!-- </div> -->
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- combobox -->
+                  <!--subtitle-->
+                  <div class="dialog-subtitle">
+                    <div class="dialog-subtitle__text">
+                      <span>Options</span>
+                    </div>
+                  </div>
+                  <div
+                    class="match-combobox-answer__box"
+                    *ngFor="let options of matchingInputs; let i = index"
+                  >
+                    <!--#subtitle-->
+                    <mat-form-field class="match-combobox-answer__options">
+                      <mat-label style="text-align: center"
+                        >Option {{ i + 1 }}</mat-label
+                      >
+                      <textarea style="text-align: center" matInput>{{
+                        options.match
+                      }}</textarea>
+                    </mat-form-field>
                   </div>
                 </div>
                 <!--button-->

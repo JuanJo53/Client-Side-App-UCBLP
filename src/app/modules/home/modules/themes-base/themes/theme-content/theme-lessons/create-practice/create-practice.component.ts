@@ -16,9 +16,14 @@ import { windowTime } from "rxjs/operators";
 import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
+import { matching } from "src/app/models/Preguntas/Matching";
 
 export interface ChipOption {
   name: string;
+}
+interface comboInputOption {
+  value: number;
+  viewValue: number;
 }
 
 @Component({
@@ -389,4 +394,30 @@ export class CreatePracticeComponent implements OnInit {
       this.spinnerFinish = true;
     }, 5000);
   }
+
+  // combobox matching
+
+  comboOptions: comboInputOption[] = [
+    { value: 1, viewValue: 1 },
+    { value: 2, viewValue: 2 },
+    { value: 3, viewValue: 3 },
+  ];
+  matchingInputs: matching[] = [
+    {
+      keyword: "the",
+      match: "prepositions",
+    },
+    {
+      keyword: "play",
+      match: "verb",
+    },
+    {
+      keyword: "beautiful",
+      match: "adjective",
+    },
+    {
+      keyword: "likely",
+      match: "adverb",
+    },
+  ];
 }

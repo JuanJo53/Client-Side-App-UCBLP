@@ -53,3 +53,39 @@
 // .mat-divider {
 //   border-top-color: rgba($color-secondary-blue, 0.5) !important;
 // }
+
+//-----ANSWERS-----
+
+.match-combobox-answer__inputs {
+  display: flex;
+  //background-color: yellowgreen;
+  margin-top: 1.81rem;
+}
+.match-combobox-answer__keyword {
+  font-size: 1.5rem;
+  color: $color-primary-blue;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.81rem;
+}
+.match-combobox-answer {
+  &__keyword {
+    //background-color: orchid;
+    flex: 0 1 35%;
+    margin-right: 2rem;
+    //width: 25%;
+  }
+  &__complement {
+    //background-color: palegoldenrod;
+    flex: 1;
+    margin-right: 1rem;
+  }
+}
+.match-combobox-answer__box {
+  margin-bottom: 1.5rem;
+}
+.match-combobox-answer__options {
+  width: 100%;
+}
