@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 
 export class Practica{
+  id:number;
   tiempoLimite:number=10;
   numero:number;
   idLeccion:string;

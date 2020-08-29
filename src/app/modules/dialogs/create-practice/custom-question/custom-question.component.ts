@@ -21,7 +21,7 @@ import { matching } from "src/app/models/Preguntas/Matching";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
-  preguntaAntigua: Pregunta = new Pregunta();
+   origin preguntaAntigua: Pregunta = new Pregunta();
   tipoPreguntaSeleccionado: string;
   nuevaPregunta: Pregunta = new Pregunta();
   tipoPreguntaEscogida: string = "1";
@@ -60,12 +60,14 @@ export class CustomQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.dataDialog["tipo"] === "modificar") {
-      var preg = this.dataDialog["preg"] as Pregunta;
-      if (preg.tipo) {
-        this.preguntaAntigua.pregunta = preg.pregunta;
-        this.preguntaAntigua.opciones = [];
-        for (let opci of preg.opciones) {
+    if(this.dataDialog["tipo"]==="modificar"){
+      var preg=this.dataDialog["preg"] as Pregunta;
+      if(preg.tipo){
+        this.preguntaAntigua.pregunta=preg.pregunta;
+        this.preguntaAntigua.puntuacion=preg.puntuacion;
+        this.preguntaAntigua.tipo=preg.tipo;
+        this.preguntaAntigua.opciones=[];
+        for(let opci of preg.opciones){
           this.preguntaAntigua.opciones.push(opci);
         }
         this.preguntaAntigua.respuesta = [];
@@ -224,7 +226,10 @@ export class CustomQuestionComponent implements OnInit {
     ) {
       verTipoR = false;
     }
-    if (verOpci && verPreg && verResp && verTipoP && verTipoR) {
+    if(verOpci&&verPreg&&verResp&&verTipoP&&verTipoR){
+      if(nuevaPregunta.puntuacion!=this.preguntaAntigua.puntuacion&&this.preguntaAntigua.tipo==3){
+        nuevaPregunta.tipo=2;
+            }
       return true;
     } else {
       return false;
@@ -235,11 +240,11 @@ export class CustomQuestionComponent implements OnInit {
     this.nuevaPregunta.opciones = [];
     this.agregarRespuestasNuevo();
     console.log(this.nuevaPregunta);
-    var ver = this.verificarContenido();
-    if (ver) {
-      if (this.nuevaPregunta.tipo) {
-        if (!this.verificarRepo(this.nuevaPregunta)) {
-          this.nuevaPregunta.tipo = false;
+   var ver=this.verificarContenido()
+   if(ver){
+     if(this.nuevaPregunta.tipo!=0){
+        if(!this.verificarRepo(this.nuevaPregunta)){
+          this.nuevaPregunta.tipo=0;
         }
       }
       this.dialogRef.close(this.nuevaPregunta);

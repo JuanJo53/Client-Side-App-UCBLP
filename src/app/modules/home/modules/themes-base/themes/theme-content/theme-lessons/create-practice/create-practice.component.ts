@@ -126,6 +126,7 @@ export class CreatePracticeComponent implements OnInit {
   next(stepper: MatStepper) {
     switch (stepper.selectedIndex) {
       case 0:
+        console.log(this.paso1);
         var a = this.verificarpaso1();
         if (a) {
           stepper.next();

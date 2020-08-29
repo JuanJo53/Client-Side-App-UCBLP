@@ -95,13 +95,19 @@ export class ThemeLessonsComponent implements OnInit {
       },
     });
   }
-  eliminarPractica() {
+  eliminarPractica(practica:SimpleCard,index) {
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
       data: {
-        tipo: "practice",
+        idPractica:practica.id,
+        tipo: "Practice",
       },
     });
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result==="ok"){
+        this.practices.splice(index,1);
+      }
+    })
   }
 
   verLecciones() {
@@ -124,8 +130,9 @@ export class ThemeLessonsComponent implements OnInit {
       this.loading.desactivar();
     })
   }
-  configuracionPractica() {
-    this.router.navigate(["edit-practice"], { relativeTo: this.route });
+  configuracionPractica(idPractica) {
+    console.log(idPractica);
+    this.router.navigate(["edit-practice",idPractica], { relativeTo: this.route });
   }
   //-----#funciones-----
 }
