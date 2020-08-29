@@ -10,7 +10,7 @@ export class DetailIndividualComponent implements OnInit {
     {
       id:1,
       nivel:3,
-      tipo: true,
+      tipo: 1,
       numeroPreg: 1,
       puntuacion: 30,
       pregunta: "abc",
@@ -30,7 +30,7 @@ export class DetailIndividualComponent implements OnInit {
     {
       id:1,
       nivel:3,
-      tipo: true,
+      tipo: 1,
       numeroPreg: 2,
       puntuacion: 30,
       pregunta: "def2",
@@ -50,7 +50,7 @@ export class DetailIndividualComponent implements OnInit {
     {
       id:1,
       nivel:3,
-      tipo: true,
+      tipo: 1,
       numeroPreg: 3,
       puntuacion: 40,
       pregunta: "def3",
