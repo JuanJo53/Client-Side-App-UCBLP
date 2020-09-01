@@ -21,7 +21,7 @@ import { matching } from "src/app/models/Preguntas/Matching";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
-   origin preguntaAntigua: Pregunta = new Pregunta();
+  origin; preguntaAntigua: Pregunta = new Pregunta();
   tipoPreguntaSeleccionado: string;
   nuevaPregunta: Pregunta = new Pregunta();
   tipoPreguntaEscogida: string = "1";
