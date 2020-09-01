@@ -123,3 +123,23 @@
   min-height: 30px !important;
   //background-color: red !important;
 }
+
+//input drag and drop
+
+.drag-drop__input {
+  //background-color: greenyellow;
+  //display: flex;
+  //align-items: center;
+  // height: 4.25rem;
+  //display: inline-block;
+}
+.drag-drop__chip-container {
+  //background-color: grey;
+  display: inline-block;
+  border-radius: 2.5rem;
+  border: 2.5px solid $color-primary-blue;
+  height: 4.25rem;
+  width: 9.5rem;
+  margin: 0 0.5rem;
+  top: 2rem;
+}

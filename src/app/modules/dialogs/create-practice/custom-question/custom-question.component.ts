@@ -296,7 +296,7 @@ export class CustomQuestionComponent implements OnInit {
   options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
   options2: ChipOption[] = [{ chipName: "the2" }, { chipName: "play2" }];
   options3: ChipOption[] = [{ chipName: "the3" }, { chipName: "play3" }];
-  todo = ["Get", "Pick up", "Go home", "Fall"];
+  todo = [];
 
   done = ["Get", "Brush", "Take", "Check", "Walk dog"];
   // aux: number = 0;
@@ -364,7 +364,7 @@ export class CustomQuestionComponent implements OnInit {
     this.matchingInputs.splice(i, 1);
   }
 
-  //
+  auxinput = "";
   //
   // agregarPreguntaEnContenido(tipoDePregunta) {
   //   switch (tipoDePregunta) {
