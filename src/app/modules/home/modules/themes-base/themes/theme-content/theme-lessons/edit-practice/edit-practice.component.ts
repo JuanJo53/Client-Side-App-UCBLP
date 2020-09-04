@@ -367,27 +367,37 @@ agregarDatos(data){
     console.log(this.paso1.fechaini);
     console.log(this.paso1.horafin);
     console.log(this.paso1.fechafin);
-
+    if(this.radioButtonValue=="unable"){
+      this.paso1.tiempoLimite=null;
+    }
+    this.showSpinner = true;
+    this.spinnerFinish = false;
+    stepper.next();
     this.servPrac.modPractica(this.paso1,this.preguntas,this.preguntasEli).subscribe({
       next: (data) => {
         if (data.status == 200) {
           this.correcto = "Se Agregaron Correctamente las preguntas";
-          stepper.next();
+          this.showSpinner = false;
+          this.spinnerFinish = true;
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";
-          stepper.next();
+          this.showSpinner = false;
+          this.spinnerFinish = true;
         }
       },
       error: (error) => {
         console.log("error");
         this.correcto = "No se pudieron agregar las preguntas";
-        stepper.next();
+        this.showSpinner = false;
+        this.spinnerFinish = true;
       },
     });
   }
   finish() {
-    this.location.back();
+    if(this.spinnerFinish){
+      this.location.back();
+    }
   }
 
   //funcion del loader
