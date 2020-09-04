@@ -294,7 +294,7 @@ export class CustomQuestionComponent implements OnInit {
 
   optionChipName: string;
   options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
-  options2: ChipOption[] = [{ chipName: "the2" }, { chipName: "play2" }];
+  options2: ChipOption[] = [{ chipName: "prueba" }];
   options3: ChipOption[] = [{ chipName: "the3" }, { chipName: "play3" }];
   todo = [];
 

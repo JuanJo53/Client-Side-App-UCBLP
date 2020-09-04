@@ -616,18 +616,32 @@
           <!--#subtitle-->
         </div>
         <div class="drag-drop__area" cdkDropListGroup>
-          <div class="drag-drop__input">
-            laksdk kadad kadfasfk kadsfka dadfasd
-            <div
-              class=""
+          <!-- <div class="drag-drop__input">
+            laksdk kadad kadfasfk kadsfka dadfasd laksdk kadad kadfasfk
+            <mat-chip-list
+              class="drag-drop__column--container"
               cdkDropList
-              [cdkDropListData]="auxinput"
+              [cdkDropListData]="options2"
               (cdkDropListDropped)="drop2($event)"
             >
-              <div class="drag-drop__chip-container" cdkDrag></div>
-            </div>
+              <mat-chip
+                class="task"
+                cdkDrag
+                *ngFor="let option of options2"
+                (removed)="remove(option)"
+              >
+                {{ option.chipName }}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+            ghhjikji adfads adsf as adf daf asdf a dasf das dasgf asf
+            dasdasfnjok podasfoinji daspodfsi podasfidjais i pdasfiadf
+          </div> -->
+          <br />
+          <div class="drag-drop__input">
+            adadf kdasfklha dasoifa oaidhfoaodfo dfaioasdi odfasi oidjas
             <mat-chip-list
-              class="drag-drop__column--horizontal"
+              class="drag-drop__chip-container-tasks"
               cdkDropList
               cdkDropListOrientation="horizontal"
               [cdkDropListData]="options2"
@@ -643,7 +657,10 @@
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
             </mat-chip-list>
+            adfaf ijpdfda pdaisjf pi pdfa pojif pidasfp ij kdasfkj dkasfma
+            kdfasm ldasmfasdo asdomf odsmfoasmf
           </div>
+
           <!-- cards wrapper columns-->
           <!-- <div class="drag-drop__wrapper">
             <div class="drag-drop__columns">

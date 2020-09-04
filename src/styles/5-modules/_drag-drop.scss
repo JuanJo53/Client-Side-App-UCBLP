@@ -80,6 +80,27 @@
       margin: 1rem 0;
       border-radius: 1rem;
     }
+    &--container {
+      //display: flex;
+      background: rgba($color-primary-red, 0.5);
+      //flex-grow: 1;
+      //flex-basis: 0;
+      min-height: 30px;
+      margin: 0rem 1rem;
+      border-radius: 1rem;
+      .mat-chip-list-wrapper {
+        min-height: 50px;
+        min-width: 60px;
+        background-color: red !important;
+        padding: 2px !important;
+        //background: rgba($color-secondary-blue, 0.5);
+        border-radius: 2.5rem;
+        border: 2.5px solid $color-primary-blue;
+      }
+    }
+    &--container2 {
+      background-color: yellowgreen;
+    }
   }
   &__column-title {
     font-size: 1.25rem;
@@ -128,10 +149,11 @@
 
 .drag-drop__input {
   //background-color: greenyellow;
-  //display: flex;
-  //align-items: center;
+  // display: flex;
+  // align-items: center;
   // height: 4.25rem;
-  //display: inline-block;
+  display: inline-block;
+  //display: block;
 }
 .drag-drop__chip-container {
   //background-color: grey;
@@ -142,4 +164,18 @@
   width: 9.5rem;
   margin: 0 0.5rem;
   top: 2rem;
+}
+
+.drag-drop__chip-container-tasks {
+  //background-color: grey;
+  display: inline-block;
+  min-height: 50px;
+  min-width: 60px;
+  padding: 2px !important;
+  //background: rgba($color-secondary-blue, 0.5);
+  border-radius: 2.5rem;
+  border: 2.5px solid $color-primary-blue;
+  .mat-chip-list-wrapper {
+    padding: 2px !important;
+  }
 }
