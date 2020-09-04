@@ -5,8 +5,12 @@
     <div class="combo-box-container--left">
       <div class="combo-box">
         <mat-form-field>
-          <mat-label *ngIf="!nuevaPregunta.bloqidtp">Type of Question</mat-label>
-          <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red;">*Type of Question</mat-label>
+          <mat-label *ngIf="!nuevaPregunta.bloqidtp"
+            >Type of Question</mat-label
+          >
+          <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
+            >*Type of Question</mat-label
+          >
           <mat-select
             [(ngModel)]="nuevaPregunta.idTipoPregunta"
             [(value)]="nuevaPregunta.idTipoPregunta"
@@ -26,7 +30,9 @@
       <div class="combo-box">
         <mat-form-field>
           <mat-label *ngIf="!nuevaPregunta.bloqidtr">Type of answer</mat-label>
-          <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red;">*Type of answer</mat-label>
+          <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red"
+            >*Type of answer</mat-label
+          >
           <mat-select
             [(value)]="nuevaPregunta.idTipoRespuesta"
             (selectionChange)="changeClient($event.value)"
@@ -68,9 +74,16 @@
         <div class="card-question__header">
           <!--input para pregunta-->
           <div class="card-question__header--question">
-            <mat-form-field appearance="outline">
-              <mat-label *ngIf="!nuevaPregunta.bloqpreg" >Question Name</mat-label>
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;">*Question Name</mat-label>
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg"
+                >Question Name</mat-label
+              >
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+                >*Question Name</mat-label
+              >
               <input
                 [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
@@ -87,7 +100,9 @@
             <div class="card-question__input">
               <mat-form-field appearance="outline">
                 <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+                  >*Score</mat-label
+                >
                 <input
                   type="number"
                   class="input-form"
@@ -101,9 +116,11 @@
             <!--#input para pregunta-->
           </div>
         </div>
-        
-        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">*Check the answers</h5>
-  
+
+        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
+          *Check the answers
+        </h5>
+
         <div class="card-question__content">
           <!-- <form class="example-form"> -->
           <mat-radio-group
@@ -121,7 +138,7 @@
               <mat-form-field class="full-width-field">
                 <input
                   [(ngModel)]="opcion.opcionRespuesta"
-                  [ngModelOptions]="{standalone: true}"
+                  [ngModelOptions]="{ standalone: true }"
                   class="card-question__choice--input"
                   matInput
                   placeholder="opcion"
@@ -137,8 +154,12 @@
               <!--#radio button option-->
             </mat-radio-button>
           </mat-radio-group>
-          <button mat-mini-fab class="card-question__button--add" (click)="agregarRespuesta()">
-            <mat-icon >add</mat-icon>
+          <button
+            mat-mini-fab
+            class="card-question__button--add"
+            (click)="agregarRespuesta()"
+          >
+            <mat-icon>add</mat-icon>
           </button>
           <!-- </form> -->
         </div>
@@ -152,10 +173,17 @@
         <div class="card-question__header">
           <!--input para pregunta-->
           <div class="card-question__header--question">
-            <mat-form-field appearance="outline">
-              <mat-label *ngIf="!nuevaPregunta.bloqpreg" >Question Name</mat-label>
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red;">*Question Name</mat-label>
-               <input
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg"
+                >Question Name</mat-label
+              >
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+                >*Question Name</mat-label
+              >
+              <input
                 [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
                 class="input-form"
@@ -171,7 +199,9 @@
             <div class="card-question__input">
               <mat-form-field appearance="outline">
                 <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red;">*Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+                  >*Score</mat-label
+                >
                 <input
                   type="number"
                   class="input-form"
@@ -185,8 +215,10 @@
             <!--#input para pregunta-->
           </div>
         </div>
-        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red;">*Check the answers</h5>
-  
+        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
+          *Check the answers
+        </h5>
+
         <div class="card-question__content">
           <!-- <form class="example-form"> -->
           <!-- radio button option -->
@@ -204,46 +236,338 @@
                 placeholder="opcion"
               />
             </mat-form-field>
-            <button 
-            
-            (click)="eliminarElemento(i)"
-            class="card-question__choice--button-delete">
-              <mat-icon
-                class="card-question__choice--button-delete-icon"
+            <button
+              (click)="eliminarElemento(i)"
+              class="card-question__choice--button-delete"
+            >
+              <mat-icon class="card-question__choice--button-delete-icon"
                 >close</mat-icon
               >
             </button>
             <!--#radio button option-->
           </mat-checkbox>
 
-          <button 
-          (click)="agregarRespuesta()"
-          mat-mini-fab class="card-question__button--add">
-            <mat-icon 
-              >add</mat-icon
-            >
+          <button
+            (click)="agregarRespuesta()"
+            mat-mini-fab
+            class="card-question__button--add"
+          >
+            <mat-icon>add</mat-icon>
           </button>
           <!-- </form> -->
         </div>
       </div>
     </div>
     <!-- #checkbox question-->
+
+    <!-- drag and drop column-->
+    <div class="card-question-radio-button" *ngSwitchCase="'3'">
+      <div class="container-dialog">
+        <div class="card-question__header">
+          <!--input para pregunta-->
+          <div class="card-question__header--question">
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg">Instruction</mat-label>
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+                >*Instruction</mat-label
+              >
+              <input
+                type="text"
+                class="input-form"
+                matInput
+                placeholder="Instruction"
+                name="nombre pregunta"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+          <div class="card-question__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+                  >*Score</mat-label
+                >
+                <input
+                  type="number"
+                  class="input-form"
+                  matInput
+                  placeholder="Score"
+                  name="puntuacion"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+
+        <!-- Drag and drop content -->
+        <!-- <div class="card-question__content"> -->
+        <div class="drag-drop__header">
+          <!--subtitle-->
+          <div class="dialog-subtitle">
+            <div class="dialog-subtitle__text">
+              <span>Maker</span>
+            </div>
+          </div>
+          <!--#subtitle-->
+          <div class="drag-drop__maker">
+            <div class="drag-drop__add-option">
+              <mat-form-field appearance="outline">
+                <mat-label>Option</mat-label>
+                <!-- Input para el email-->
+                <input
+                  class="input-form"
+                  type="text"
+                  matInput
+                  placeholder="Write an option"
+                  name="chipOption{{ options.length }}"
+                  id="name{{ options.length }}"
+                  [(ngModel)]="optionChipName"
+                />
+                <!-- //Input para el email-->
+              </mat-form-field>
+              <!--Add button-->
+              <button
+                class="circular-button-subtitle"
+                mat-mini-fab
+                (click)="agregarOpcion()"
+              >
+                <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+              </button>
+              <!--#Add button-->
+            </div>
+            <mat-form-field>
+              <mat-label *ngIf="!nuevaPregunta.bloqidtp"
+                >Number of Columns</mat-label
+              >
+              <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
+                >Number of Columns</mat-label
+              >
+              <mat-select>
+                <mat-option
+                  *ngFor="let columnsOption of dragAndDropColumn"
+                  [value]="columnsOption.value"
+                >
+                  <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
+                  {{ columnsOption.display }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="drag-drop__area" cdkDropListGroup>
+          <!-- cards wrapper columns-->
+          <div class="drag-drop__wrapper">
+            <div class="drag-drop__columns">
+              <div
+                class="drag-drop__column"
+                *ngFor="let column of listColumnsChips2"
+              >
+                <mat-form-field class="example-form-field">
+                  <mat-label>Column title</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    [(ngModel)]="column.columnTitle"
+                  />
+                  <button
+                    mat-button
+                    *ngIf="value"
+                    matSuffix
+                    mat-icon-button
+                    aria-label="Column title"
+                    (click)="column.columnTitle = ''"
+                  >
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+                <!-- <div class="drag-drop__column-title">
+                  {{ column.columnTitle }}
+                </div> -->
+                <div
+                  class="drag-drop__task-container"
+                  cdkDropList
+                  [cdkDropListData]="column.chip"
+                  (cdkDropListDropped)="drop2($event)"
+                >
+                  <mat-chip
+                    class="example-box"
+                    cdkDrag
+                    *ngFor="let option of column.chip"
+                    (removed)="remove2(option)"
+                  >
+                    {{ option.chipName }}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- #cards wrapper columns-->
+          <!-- #Drag and drop chips -->
+          <div class="drag-drop__chips--horizontal">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Options</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-chip-list
+              class="drag-drop__column--horizontal"
+              cdkDropList
+              cdkDropListOrientation="horizontal"
+              [cdkDropListData]="options"
+              (cdkDropListDropped)="drop2($event)"
+            >
+              <mat-chip
+                class="task"
+                cdkDrag
+                *ngFor="let option of options"
+                (removed)="remove(option)"
+              >
+                {{ option.chipName }}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+          <!-- #Drag and drop chips -->
+        </div>
+      </div>
+    </div>
+    <!-- #drag and drop column-->
+
+    <!-- matching combo box-->
+    <div class="card-question-radio-button" *ngSwitchCase="'5'">
+      <div class="container-dialog">
+        <div class="card-question__header">
+          <!--input para pregunta-->
+          <div class="card-question__header--question">
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label *ngIf="!nuevaPregunta.bloqpreg"
+                >Instruction Dropbox</mat-label
+              >
+              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+                >*Instruction Dropbox</mat-label
+              >
+              <input
+                type="text"
+                class="input-form"
+                matInput
+                placeholder="Instruction dorpbox"
+                name="nombre pregunta"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+          <div class="card-question__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+                  >*Score</mat-label
+                >
+                <input
+                  type="number"
+                  class="input-form"
+                  matInput
+                  placeholder="Score"
+                  name="puntuacion"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+        <div class="match-combobox__input-box-titles">
+          <div class="match-combobox__inputs">
+            <!--subtitle-->
+            <div class="dialog-subtitle match-combobox__keyword">
+              <div class="dialog-subtitle__text">
+                <span>Set Keywords</span>
+              </div>
+            </div>
+            <div class="dialog-subtitle match-combobox__complement">
+              <div class="dialog-subtitle__text">
+                <span>Set Matches</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+          </div>
+          <button
+            mat-mini-fab
+            class="match-combobox__choice--button-add"
+            (click)="agregarInputMatch()"
+          >
+            <mat-icon class="match-combobox__choice--button-add-icon"
+              >add</mat-icon
+            >
+          </button>
+        </div>
+        <div class="" *ngFor="let opcion of matchingInputs; let i = index">
+          <div class="match-combobox__input-box">
+            <div class="match-combobox__inputs">
+              <mat-form-field class="match-combobox__keyword">
+                <mat-label>Keyword</mat-label>
+                <input
+                  matInput
+                  placeholder="Write a keyword"
+                  [(ngModel)]="opcion.keyword"
+                />
+              </mat-form-field>
+              <mat-form-field class="match-combobox__complement">
+                <mat-label>Match</mat-label>
+                <input
+                  matInput
+                  placeholder="Write the match of the keyword"
+                  [(ngModel)]="opcion.match"
+                />
+              </mat-form-field>
+            </div>
+            <!-- eliminar -->
+            <button
+              mat-mini-fab
+              class="match-combobox__choice--button-delete"
+              (click)="eliminarInputMatch(i)"
+            >
+              <mat-icon class="match-combobox__choice--button-delete-icon"
+                >close</mat-icon
+              >
+            </button>
+            <!-- eliminar -->
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+    </div>
+    <!-- #matching combo box-->
   </div>
   <!--#card-->
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <div class="progress-bar__container-mix">
-    <button mat-raised-button class="progress-bar__button-negative"
-    (click)="cancelar()">
+    <button
+      mat-raised-button
+      class="progress-bar__button-negative"
+      (click)="cancelar()"
+    >
       <span class="progress-bar__button-normal--text">Cancel</span>
     </button>
-    <button 
-    (click)="agregarPreguntaEnContenido()"
-    mat-raised-button class="progress-bar__button-normal">
-      <span
-        class="progress-bar__button-normal--text"
-        >Add question</span
-      >
+    <button
+      (click)="agregarPreguntaEnContenido()"
+      mat-raised-button
+      class="progress-bar__button-normal"
+    >
+      <span class="progress-bar__button-normal--text">Add question</span>
     </button>
   </div>
 </mat-dialog-actions>

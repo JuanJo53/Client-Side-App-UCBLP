@@ -5,6 +5,10 @@
       <!-- <span class="header__text">{{ message }}</span> -->
       <span class="header__text">{{ materia }}</span>
       <div class="header__buttons">
+        <button class="circular-button-navbar" mat-mini-fab (click)="horario()">
+          <mat-icon class="circular-button__icon">info_outline</mat-icon>
+        </button>
+
         <button
           class="circular-button-navbar"
           mat-mini-fab
@@ -12,6 +16,7 @@
         >
           <span class="circular-button__class">{{ simbCurso }}</span>
         </button>
+
         <mat-menu
           class="classroom-choose-card"
           #classmodal="matMenu"
@@ -38,6 +43,7 @@
         >
           <mat-icon class="circular-button__icon">notifications_none</mat-icon>
         </button>
+
         <mat-menu
           class="notification-card"
           #notificationmodal="matMenu"
@@ -58,6 +64,7 @@
             userDocente.primaLetra
           }}</span>
         </button>
+
         <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
           <div class="user-card__content">
             <button class="user-card__icon" mat-fab>

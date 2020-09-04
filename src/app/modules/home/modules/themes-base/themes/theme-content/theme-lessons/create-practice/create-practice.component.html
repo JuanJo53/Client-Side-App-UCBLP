@@ -25,7 +25,7 @@
             <div class="dialog-subtitle">
               <div class="dialog-subtitle__text">
                 <span *ngIf="!paso1.bloqnombre">Name</span>
-                <span *ngIf="paso1.bloqnombre" style="color: red;">Name *</span>
+                <span *ngIf="paso1.bloqnombre" style="color: red">Name *</span>
               </div>
             </div>
             <!--#subtitle-->
@@ -49,35 +49,41 @@
               </div>
             </div>
             <div class="dialog-subtitle">
-              <div class="dialog-subtitle__text" *ngIf="paso1.bloqtiempo" style="color: red;">
+              <div
+                class="dialog-subtitle__text"
+                *ngIf="paso1.bloqtiempo"
+                style="color: red"
+              >
                 <span>*Time Limit</span>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <!--fecha-->
-                <div *ngIf="radioButtonValue==='enable'">
-                  <mat-form-field>
-                    <input
-                      matInput
-                      [(ngModel)]="paso1.tiempoLimite"
-                      [ngModelOptions]="{ standalone: true }"
-                      type="number"
-                    />
-                  </mat-form-field>
+                <div *ngIf="radioButtonValue === 'enable'">
+                  <div class="detail-minutes">
+                    <mat-form-field>
+                      <input
+                        matInput
+                        [(ngModel)]="paso1.tiempoLimite"
+                        [ngModelOptions]="{ standalone: true }"
+                        type="number"
+                      />
+                    </mat-form-field>
+                    <span class="input-minutes">minutes</span>
+                  </div>
                 </div>
-                <div *ngIf="radioButtonValue!=='enable'">
-                  <mat-form-field>
-                    <input
-                      matInput
-                      disabled
-                      placeholder="UNLIMITED"
-                    />
-                  </mat-form-field>
+
+                <div *ngIf="radioButtonValue !== 'enable'">
+                  <div class="detail-minutes">
+                    <mat-form-field>
+                      <input matInput disabled placeholder="UNLIMITED" />
+                    </mat-form-field>
+                    <span class="input-minutes">minutes</span>
+                  </div>
                 </div>
               </div>
-              
-              
+
               <div class="col-sm-6">
                 <div class="radio-buttons-practice">
                   <div class="radio-buttons-practice__content">
@@ -86,7 +92,10 @@
                       name="radiobuttonvaluePractice"
                       [(ngModel)]="radioButtonValue"
                     >
-                      <mat-radio-button class="radio-button" value="enable" checked
+                      <mat-radio-button
+                        class="radio-button"
+                        value="enable"
+                        checked
                         >Enable</mat-radio-button
                       >
                       <mat-radio-button class="radio-button" value="unable"
@@ -98,149 +107,150 @@
               </div>
             </div>
 
-
             <!--  //radio button -->
 
-              <div class="row">
-                <!--start date-->
-                <div class="col-sm-6">
-                  <!--subtitle-->
-                  <div class="dialog-subtitle">
-                    <div class="dialog-subtitle__text">
-                      <span>Start date and hour</span>
-                    </div>
+            <div class="row">
+              <!--start date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>Start date and hour</span>
                   </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!--fecha-->
-                      <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqfecha1"
-                          >Choose a date</mat-label
-                        >
-                        <mat-label *ngIf="paso1.bloqfecha1" style="color: red;"
-                          >Choose a date*</mat-label
-                        >
-                        <input
-                          matInput
-                          [matDatepicker]="picker1"
-                          [(ngModel)]="paso1.fechainiDate"
-                          [ngModelOptions]="{ standalone: true }"
-                        />
-                        <mat-datepicker-toggle
-                          matSuffix
-                          [for]="picker1"
-                        ></mat-datepicker-toggle>
-                        <mat-datepicker
-                          #picker1
-                          startView="year"
-                          [startAt]="startDate"
-                        ></mat-datepicker>
-                      </mat-form-field>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
                     <!--fecha-->
-                    <!--hora-->
-                    <div class="col-sm-6">
-                      <div class="toggle-example">
-                        <mat-form-field>
-                          <mat-label *ngIf="!paso1.bloqhora1"
-                            >Choose an hour</mat-label
-                          >
-                          <mat-label *ngIf="paso1.bloqhora1" style="color: red;"
-                            >Choose an hour*</mat-label
-                          >
-                          <input
-                            matInput
-                            [(ngModel)]="paso1.horaini"
-                            [ngModelOptions]="{ standalone: true }"
-                            [ngxTimepicker]="toggleTimepicker1"
-                            [disableClick]="true"
-                            readonly
-                          />
-                          <ngx-material-timepicker-toggle
-                            matSuffix
-                            [for]="toggleTimepicker1"
-                          ></ngx-material-timepicker-toggle>
-                          <ngx-material-timepicker
-                            #toggleTimepicker1
-                          ></ngx-material-timepicker>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                    <!--#hora-->
+                    <mat-form-field>
+                      <mat-label *ngIf="!paso1.bloqfecha1"
+                        >Choose a date</mat-label
+                      >
+                      <mat-label *ngIf="paso1.bloqfecha1" style="color: red"
+                        >Choose a date*</mat-label
+                      >
+                      <input
+                        matInput
+                        [matDatepicker]="picker1"
+                        [(ngModel)]="paso1.fechainiDate"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="picker1"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker
+                        #picker1
+                        startView="year"
+                        [startAt]="startDate"
+                      ></mat-datepicker>
+                    </mat-form-field>
                   </div>
-                </div>
-                <!--#start date-->
-                <!--end date-->
-                <div class="col-sm-6">
-                  <!--subtitle-->
-                  <div class="dialog-subtitle">
-                    <div class="dialog-subtitle__text">
-                      <span>End date and hour</span>
-                    </div>
-                  </div>
-                  <!--#subtitle-->
-                  <!--row-->
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!--fecha-->
+                  <!--fecha-->
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
                       <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqfecha2"
-                          >Choose a date</mat-label
+                        <mat-label *ngIf="!paso1.bloqhora1"
+                          >Choose an hour</mat-label
                         >
-                        <mat-label *ngIf="paso1.bloqfecha2" style="color: red;"
-                          >Choose a date*</mat-label
+                        <mat-label *ngIf="paso1.bloqhora1" style="color: red"
+                          >Choose an hour*</mat-label
                         >
                         <input
                           matInput
-                          [matDatepicker]="picker2"
-                          [(ngModel)]="paso1.fechafinDate"
-                          [ngModelOptions]="{ standalone: startDate }"
+                          [(ngModel)]="paso1.horaini"
+                          [ngModelOptions]="{ standalone: true }"
+                          [ngxTimepicker]="toggleTimepicker1"
+                          [disableClick]="true"
+                          readonly
                         />
-                        <mat-datepicker-toggle
+                        <ngx-material-timepicker-toggle
                           matSuffix
-                          [for]="picker2"
-                        ></mat-datepicker-toggle>
-                        <mat-datepicker
-                          #picker2
-                          startView="year"
-                          [startAt]="startDate"
-                        ></mat-datepicker>
+                          [for]="toggleTimepicker1"
+                        >
+                        </ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker
+                          #toggleTimepicker1
+                        ></ngx-material-timepicker>
                       </mat-form-field>
-                      <!--fecha-->
                     </div>
-                    <!--hora-->
-                    <div class="col-sm-6">
-                      <div class="toggle-example">
-                        <mat-form-field>
-                          <mat-label *ngIf="!paso1.bloqhora2"
-                            >Choose an hour</mat-label
-                          >
-                          <mat-label *ngIf="paso1.bloqhora2" style="color: red;"
-                            >Choose an hour*</mat-label
-                          >
-                          <input
-                            matInput
-                            [(ngModel)]="paso1.horafin"
-                            [ngModelOptions]="{ standalone: true }"
-                            [ngxTimepicker]="toggleTimepicker2"
-                            [disableClick]="true"
-                            readonly
-                          />
-                          <ngx-material-timepicker-toggle
-                            matSuffix
-                            [for]="toggleTimepicker2"
-                          ></ngx-material-timepicker-toggle>
-                          <ngx-material-timepicker
-                            #toggleTimepicker2
-                          ></ngx-material-timepicker>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                    <!--#hora-->
+                  </div>
+                  <!--#hora-->
+                </div>
+              </div>
+              <!--#start date-->
+              <!--end date-->
+              <div class="col-sm-6">
+                <!--subtitle-->
+                <div class="dialog-subtitle">
+                  <div class="dialog-subtitle__text">
+                    <span>End date and hour</span>
                   </div>
                 </div>
-                <!--end date-->
+                <!--#subtitle-->
+                <!--row-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--fecha-->
+                    <mat-form-field>
+                      <mat-label *ngIf="!paso1.bloqfecha2"
+                        >Choose a date</mat-label
+                      >
+                      <mat-label *ngIf="paso1.bloqfecha2" style="color: red"
+                        >Choose a date*</mat-label
+                      >
+                      <input
+                        matInput
+                        [matDatepicker]="picker2"
+                        [(ngModel)]="paso1.fechafinDate"
+                        [ngModelOptions]="{ standalone: startDate }"
+                      />
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="picker2"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker
+                        #picker2
+                        startView="year"
+                        [startAt]="startDate"
+                      ></mat-datepicker>
+                    </mat-form-field>
+                    <!--fecha-->
+                  </div>
+                  <!--hora-->
+                  <div class="col-sm-6">
+                    <div class="toggle-example">
+                      <mat-form-field>
+                        <mat-label *ngIf="!paso1.bloqhora2"
+                          >Choose an hour</mat-label
+                        >
+                        <mat-label *ngIf="paso1.bloqhora2" style="color: red"
+                          >Choose an hour*</mat-label
+                        >
+                        <input
+                          matInput
+                          [(ngModel)]="paso1.horafin"
+                          [ngModelOptions]="{ standalone: true }"
+                          [ngxTimepicker]="toggleTimepicker2"
+                          [disableClick]="true"
+                          readonly
+                        />
+                        <ngx-material-timepicker-toggle
+                          matSuffix
+                          [for]="toggleTimepicker2"
+                        >
+                        </ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker
+                          #toggleTimepicker2
+                        ></ngx-material-timepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!--#hora-->
+                </div>
               </div>
+              <!--end date-->
+            </div>
           </div>
         </div>
         <!-- #card -->
@@ -279,7 +289,7 @@
             *ngIf="preguntas.length == 0; else negative"
           >
             <div *ngIf="!paso2bloq">No questions added</div>
-            <div *ngIf="paso2bloq" style="color: red;">*No questions added</div>
+            <div *ngIf="paso2bloq" style="color: red">*No questions added</div>
           </div>
           <!--row added row-->
           <ng-template #negative>
@@ -348,7 +358,7 @@
                         <mat-form-field class="full-width-field">
                           <input
                             [(value)]="card.opciones[x]"
-                            style="color: black;"
+                            style="color: black"
                             readonly
                             class="question-card-added__choice--input"
                             matInput
@@ -432,7 +442,7 @@
                       <mat-form-field class="full-width-field">
                         <input
                           [(value)]="card.opciones[x]"
-                          style="color: black;"
+                          style="color: black"
                           readonly
                           class="card-question__choice--input"
                           matInput
@@ -464,11 +474,141 @@
                 </div>
                 <!--#button-->
               </div>
+              <!--#checkbox case-->
+
+              <!--combobox matching questions-->
+              <div class="question-card-added">
+                <div class="question-card-added__content">
+                  <div class="question-card-added__header">
+                    <!--input para pregunta-->
+                    <div class="question-card-added__header--question">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Question Name</mat-label>
+                        <input
+                          [(ngModel)]="card.pregunta"
+                          type="text"
+                          class="input-form"
+                          matInput
+                          readonly
+                          placeholder="Question Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                    <div class="question-card-added__header--score">
+                      <!--input para pregunta-->
+                      <div class="card-question__input">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Score</mat-label>
+                          <input
+                            [(ngModel)]="card.puntuacion"
+                            type="text"
+                            readonly
+                            class="input-form"
+                            matInput
+                            placeholder="Score Name"
+                            [ngModelOptions]="{ standalone: true }"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <!--#input para pregunta-->
+                    </div>
+                  </div>
+
+                  <!-- combox -->
+                  <div class="match-combobox__input-box-titles">
+                    <div class="match-combobox__inputs">
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__keyword">
+                        <div class="dialog-subtitle__text">
+                          <span>Keywords</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__complement">
+                        <div class="dialog-subtitle__text">
+                          <span>Matches</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                    </div>
+                  </div>
+                  <div
+                    class="match-combobox-answer__box"
+                    *ngFor="let opcion of matchingInputs; let i = index"
+                  >
+                    <!-- <div class="match-combobox-answer__input-box"> -->
+                    <div class="match-combobox-answer__inputs">
+                      <div class="match-combobox-answer__keyword">
+                        {{ opcion.keyword }}
+                      </div>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Options</mat-label>
+                        <mat-select
+                          [(ngModel)]="opcion.match"
+                          name="input{{ i }}"
+                        >
+                          <mat-option
+                            *ngFor="let options of comboOptions"
+                            [value]="options.value"
+                          >
+                            {{ options.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <!-- </div> -->
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- combobox -->
+                  <!--subtitle-->
+                  <div class="dialog-subtitle">
+                    <div class="dialog-subtitle__text">
+                      <span>Options</span>
+                    </div>
+                  </div>
+                  <div
+                    class="match-combobox-answer__box"
+                    *ngFor="let options of matchingInputs; let i = index"
+                  >
+                    <!--#subtitle-->
+                    <mat-form-field class="match-combobox-answer__options">
+                      <mat-label style="text-align: center"
+                        >Option {{ i + 1 }}</mat-label
+                      >
+                      <textarea style="text-align: center" matInput>{{
+                        options.match
+                      }}</textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!--button-->
+                <div class="question-card-added__button">
+                  <button
+                    mat-mini-fab
+                    (click)="editarPregunta(card)"
+                    class="question-card-added__button--positive"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    mat-mini-fab
+                    (click)="eliminarPreg(i)"
+                    class="question-card-added__button--negative"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+                <!--#button-->
+              </div>
+              <!--#combobox matching questions-->
             </div>
           </ng-template>
           <h4
             *ngIf="paso2bloqScore"
-            style="color: red; padding-left: 1rem; margin-bottom: -2rem;"
+            style="color: red; padding-left: 1rem; margin-bottom: -2rem"
           >
             *check the total score
           </h4>
@@ -517,9 +657,7 @@
               <div class="rubric__text">
                 <span>Score : {{ total }}</span>
               </div>
-              <mat-icon class="rubric__icon">
-                check
-              </mat-icon>
+              <mat-icon class="rubric__icon"> check </mat-icon>
             </div>
           </div>
         </div>
@@ -529,9 +667,7 @@
               <div class="rubric__text">
                 <span>Score : {{ total }}</span>
               </div>
-              <mat-icon class="rubric__icon">
-                close
-              </mat-icon>
+              <mat-icon class="rubric__icon"> close </mat-icon>
             </div>
           </div>
         </ng-template>
@@ -593,14 +729,18 @@
               </div>
             </div>
             <div class="dialog-subtitle">
-              <div class="dialog-subtitle__text" *ngIf="paso1.bloqtiempo" style="color: red;">
+              <div
+                class="dialog-subtitle__text"
+                *ngIf="paso1.bloqtiempo"
+                style="color: red"
+              >
                 <span>*Time Limit</span>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <!--fecha-->
-                <div *ngIf="radioButtonValue==='enable'">
+                <div *ngIf="radioButtonValue === 'enable'">
                   <mat-form-field>
                     <input
                       matInput
@@ -611,13 +751,9 @@
                     />
                   </mat-form-field>
                 </div>
-                <div *ngIf="radioButtonValue!=='enable'">
+                <div *ngIf="radioButtonValue !== 'enable'">
                   <mat-form-field>
-                    <input
-                      matInput
-                      readonly
-                      placeholder="UNLIMITED"
-                    />
+                    <input matInput readonly placeholder="UNLIMITED" />
                   </mat-form-field>
                 </div>
               </div>
@@ -775,7 +911,7 @@
                       <mat-form-field class="full-width-field">
                         <input
                           [(value)]="card.opciones[x]"
-                          style="color: black;"
+                          style="color: black"
                           readonly
                           class="question-card-added__choice--input"
                           matInput
@@ -841,7 +977,7 @@
                     <mat-form-field class="full-width-field">
                       <input
                         [(value)]="card.opciones[x]"
-                        style="color: black;"
+                        style="color: black"
                         readonly
                         class="card-question__choice--input"
                         matInput

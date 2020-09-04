@@ -67,3 +67,14 @@
 .input-form {
   font-size: 1.25rem !important;
 }
+.input-minutes{
+  margin-left: 1rem;
+  color: $color-primary-blue;
+  font-weight: bold;
+
+}
+.detail-minutes{
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { CardThemes } from "src/app/models/CardThemes";
-import { SimpleCard } from "src/app/models/simpleCard";
+import { SimpleCard } from "src/app/models/SimpleCard";
 import {
   MatDialog,
   MatDialogRef,
@@ -14,7 +14,7 @@ import { ConfigureLessonComponent } from "../../../../../dialogs/lesson/configur
 
 import { Lesson } from "src/app/models/Teacher/Modules/Lesson";
 import { CardImage } from "src/app/models/CardImage";
-import { TypeLesson } from "src/app/models/Teacher/Modules/TYpeLesson";
+import { TypeLesson } from "src/app/models/Teacher/Modules/TypeLesson";
 import { LoadingService } from 'src/app/_services/loading.service';
 @Component({
   selector: "app-theme-content",

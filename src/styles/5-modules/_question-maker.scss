@@ -117,9 +117,10 @@
   //padding: 4rem 0rem;
   border: $card-width solid $color-primary-blue;
   border-radius: $border-radious-standard;
-  mat-form-field {
+  &__instruction {
     width: 100%;
   }
+  //
   &__text {
     &--no-content {
       color: $color-primary-gray;

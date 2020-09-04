@@ -5,6 +5,12 @@ import { Teacher } from 'src/app/models/Teacher/Teacher';
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 import { CardClassroom } from 'src/app/models/Teacher/ClassRoom/CardClassroom';
 import { LoadingService } from 'src/app/_services/loading.service';
+import { ScheduleComponent } from 'src/app/modules/dialogs/schedule/schedule/schedule.component';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from "@angular/material/dialog";
 
 @Component({
   selector: "app-header",
@@ -27,6 +33,7 @@ export class HeaderComponent implements OnInit {
   message: string;
   tituloNavbar: string;
   constructor(
+    public dialog: MatDialog,
     private data: SharedService,
     private usService:ActivatedRoute,
     private router:Router,
@@ -74,6 +81,9 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['/']);
       }
     })
+  }
+  horario() {
+    const dialogRef = this.dialog.open( ScheduleComponent ,{ width: "400px" });
   }
   signout(): void {
     this.servLoading.activar();

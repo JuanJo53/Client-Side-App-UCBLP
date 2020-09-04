@@ -16,7 +16,16 @@ import { windowTime } from "rxjs/operators";
 import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
-import { Module } from "src/app/models/Teacher/Evaluation/Module";
+import { matching } from "src/app/models/Preguntas/Matching";
+
+export interface ChipOption {
+  name: string;
+}
+interface comboInputOption {
+  value: number;
+  viewValue: number;
+}
+
 @Component({
   selector: "app-create-practice",
   templateUrl: "./create-practice.component.html",
@@ -225,8 +234,8 @@ export class CreatePracticeComponent implements OnInit {
 
   //Funciones paso 1
   verificarpaso1(): boolean {
-    if(this.radioButtonValue==="unable"){
-      this.paso1.tiempoLimite=null;
+    if (this.radioButtonValue === "unable") {
+      this.paso1.tiempoLimite = null;
     }
     console.log("se verficia");
     if (this.paso1.fechainiDate == null) {
@@ -238,9 +247,12 @@ export class CreatePracticeComponent implements OnInit {
     if (this.paso1.horaini == null) {
       this.paso1.bloqhora1 = true;
     } else this.paso1.bloqhora1 = false;
-    if((this.paso1.tiempoLimite==null||this.paso1.tiempoLimite<5)&&this.radioButtonValue==="enable"){
-      this.paso1.bloqtiempo=true;
-    } else this.paso1.bloqtiempo=false;
+    if (
+      (this.paso1.tiempoLimite == null || this.paso1.tiempoLimite < 5) &&
+      this.radioButtonValue === "enable"
+    ) {
+      this.paso1.bloqtiempo = true;
+    } else this.paso1.bloqtiempo = false;
     if (
       this.paso1.horafin == null ||
       (String(this.paso1.horafin) === String(this.paso1.horaini) &&
@@ -256,8 +268,8 @@ export class CreatePracticeComponent implements OnInit {
       this.paso1.bloqfecha2 == false &&
       this.paso1.bloqhora1 == false &&
       this.paso1.bloqhora2 == false &&
-      this.paso1.bloqnombre == false&&
-      this.paso1.bloqtiempo==false
+      this.paso1.bloqnombre == false &&
+      this.paso1.bloqtiempo == false
     ) {
       return true;
     } else return false;
@@ -335,7 +347,7 @@ export class CreatePracticeComponent implements OnInit {
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
     console.log(this.paso1.fechaini);
 
-    this.servPrac.addPractica(this.paso1,this.preguntas).subscribe({
+    this.servPrac.addPractica(this.paso1, this.preguntas).subscribe({
       next: (data) => {
         if (data.status == 200) {
           // this.servPrac
@@ -383,4 +395,30 @@ export class CreatePracticeComponent implements OnInit {
       this.spinnerFinish = true;
     }, 5000);
   }
+
+  // combobox matching
+
+  comboOptions: comboInputOption[] = [
+    { value: 1, viewValue: 1 },
+    { value: 2, viewValue: 2 },
+    { value: 3, viewValue: 3 },
+  ];
+  matchingInputs: matching[] = [
+    {
+      keyword: "the",
+      match: "prepositions",
+    },
+    {
+      keyword: "play",
+      match: "verb",
+    },
+    {
+      keyword: "beautiful",
+      match: "adjective",
+    },
+    {
+      keyword: "likely",
+      match: "adverb",
+    },
+  ];
 }

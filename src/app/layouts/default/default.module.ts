@@ -12,6 +12,7 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
+import { MatChipsModule } from "@angular/material/chips";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ThemesComponent } from "src/app/modules/home/modules/themes-base/themes/themes.component";
@@ -92,6 +93,10 @@ import { GoodDialogComponent } from "src/app/modules/dialogs/simple-dialogs/good
 import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
 import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
 import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
+import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/schedule.component";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -158,6 +163,7 @@ import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/
     WarningDialogComponent,
     ConfigureLessonContentComponent,
     EditPracticeComponent,
+    ScheduleComponent,
   ],
   imports: [
     CommonModule,
@@ -190,6 +196,10 @@ import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/
     MatAutocompleteModule,
     ChartsModule,
     MatProgressBarModule,
+    MatChipsModule,
+    DragDropModule,
+    ScrollingModule,
+    MatDividerModule,
   ],
 })
 export class DefaultModule {}
