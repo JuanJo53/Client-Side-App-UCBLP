@@ -6,6 +6,21 @@
 }
 html {
   font-size: 62.5%;
+  @include respond(big-desktop) {
+    background-color: violet;
+  }
+  @include respond(normal) {
+    background-color: orange;
+  }
+  @include respond(tab-lan) {
+    background-color: green;
+  }
+  @include respond(tab-por) {
+    background-color: pink;
+  }
+  @include respond(phone) {
+    background-color: red;
+  }
 }
 body {
   font-family: Roboto;
