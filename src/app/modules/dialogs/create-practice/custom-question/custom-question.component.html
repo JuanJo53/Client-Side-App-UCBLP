@@ -14,6 +14,7 @@
           <mat-select
             [(ngModel)]="nuevaPregunta.idTipoPregunta"
             [(value)]="nuevaPregunta.idTipoPregunta"
+            (selectionChange)="cargarRespuestas()"
           >
             <mat-option
               *ngFor="let elemento of tipoPregunta"
@@ -275,6 +276,7 @@
                 >*Instruction</mat-label
               >
               <input
+              [(ngModel)]=nuevaPregunta.pregunta
                 type="text"
                 class="input-form"
                 matInput
@@ -293,6 +295,7 @@
                   >*Score</mat-label
                 >
                 <input
+                  [(ngModel)]=nuevaPregunta.puntuacion
                   type="number"
                   class="input-form"
                   matInput
@@ -348,10 +351,13 @@
               <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
                 >Number of Columns</mat-label
               >
-              <mat-select>
-                <mat-option
+              <mat-select
+              (selectionChange)="ponerColumnas()"   
+              [(ngModel)]="numColumnas"
+              >
+                <mat-option                
                   *ngFor="let columnsOption of dragAndDropColumn"
-                  [value]="columnsOption.value"
+                  [value]="columnsOption.value"        
                 >
                   <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
                   {{ columnsOption.display }}
@@ -459,6 +465,7 @@
                 >*Instruction Dropbox</mat-label
               >
               <input
+              [(ngModel)]=nuevaPregunta.pregunta
                 type="text"
                 class="input-form"
                 matInput
@@ -477,6 +484,7 @@
                   >*Score</mat-label
                 >
                 <input
+                [(ngModel)]=nuevaPregunta.puntuacion
                   type="number"
                   class="input-form"
                   matInput
