@@ -21,7 +21,9 @@ import { matching } from "src/app/models/Preguntas/Matching";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
-   origin preguntaAntigua: Pregunta = new Pregunta();
+  tipoR=["Unique","Multiple","Columns","Fill in the blanks","Combobox's"];
+  numColumnas:string="1";
+  preguntaAntigua: Pregunta = new Pregunta();
   tipoPreguntaSeleccionado: string;
   nuevaPregunta: Pregunta = new Pregunta();
   tipoPreguntaEscogida: string = "1";
@@ -38,27 +40,77 @@ export class CustomQuestionComponent implements OnInit {
   ];
 
   tipoRespuesta: Combo[] = [
-    { value: "1", display: "Unique" },
-    { value: "2", display: "Multiple" },
-    { value: "3", display: "Columns" },
-    { value: "4", display: "Fill in the blanks" },
-    { value: "5", display: "Combobox's" },
   ];
 
   dragAndDropColumn: Combo[] = [
     { value: "1", display: "One" },
-    { value: "2", display: "Two" },
+    { value: "2", display: "Two"},
     { value: "3", display: "Three" },
     { value: "4", display: "Four" },
     { value: "5", display: "Five" },
   ];
   matchingInputs: matching[] = [];
 
+    //drag and drop
+    value = "Clear me";
+    listColumnsChips: DragandDropColumns = new DragandDropColumns("test board", [
+    ]);
+    listColumnsChips2: Column[] = [
+    ];
+  
+    optionChipName: string;
+    options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
+    options2: ChipOption[] = [{ chipName: "the2" }, { chipName: "play2" }];
+    options3: ChipOption[] = [{ chipName: "the3" }, { chipName: "play3" }];
+    todo = ["Get", "Pick up", "Go home", "Fall"];
+  
+    done = ["Get", "Brush", "Take", "Check", "Walk dog"];
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private dialogRef: MatDialogRef<CustomQuestionComponent>
   ) {}
+  cargarRespuestas(){
+    switch(this.nuevaPregunta.idTipoPregunta){
+      case "1":
+        this.tipoRespuesta=[];
+        this.tipoRespuesta.push({value:"1",display:this.tipoR[0]});
+        this.tipoRespuesta.push({value:"2",display:this.tipoR[1]});
+        this.nuevaPregunta.idTipoRespuesta="1";
+        break;
+      case "2":
+        this.tipoRespuesta=[];
+        this.tipoRespuesta.push({value:"3",display:this.tipoR[2]});
+        this.tipoRespuesta.push({value:"4",display:this.tipoR[3]});
+        this.nuevaPregunta.idTipoRespuesta="3";
+        break;
+      case "3":
+        this.tipoRespuesta=[];
+        this.tipoRespuesta.push({value:"5",display:this.tipoR[4]});
+        this.nuevaPregunta.idTipoRespuesta="5";
+        break;
+    }
+  }
+  ponerColumnas(){
+    var numerCol=this.listColumnsChips2.length;
+    console.log(this.numColumnas);
+    if(numerCol>Number(this.numColumnas)){
+      for(let i=0;i<numerCol-Number(this.numColumnas);i++){
+        this.listColumnsChips2.splice(this.listColumnsChips2.length-1,1);
+      }
+    }
+    else{
+      if(numerCol<Number(this.numColumnas)){
+        for(let i=0;i<Number(this.numColumnas)-numerCol;i++){
+          let newColumn=new Column();
+          newColumn.chip=[];
+          newColumn.columnTitle="Column "+(this.listColumnsChips2.length+1);
+          this.listColumnsChips2.push(newColumn);
+        }
+      }
+    }
+    console.log(this.listColumnsChips2);
 
+  }
   ngOnInit(): void {
     if(this.dataDialog["tipo"]==="modificar"){
       var preg=this.dataDialog["preg"] as Pregunta;
@@ -99,6 +151,8 @@ export class CustomQuestionComponent implements OnInit {
           }
       }
     }
+    this.cargarRespuestas();
+    this.ponerColumnas();
   }
   //funciones
 
@@ -137,7 +191,7 @@ export class CustomQuestionComponent implements OnInit {
     if (this.nuevaPregunta.idTipoRespuesta == null)
       this.nuevaPregunta.bloqidtr = true;
     else this.nuevaPregunta.bloqidtr = false;
-
+    
     if (
       this.nuevaPregunta.bloqidtp == false &&
       this.nuevaPregunta.bloqidtr == false &&
@@ -197,7 +251,12 @@ export class CustomQuestionComponent implements OnInit {
           i++;
         }
         break;
+      case "3":
+        this.nuevaPregunta.respuesta=this.listColumnsChips2;
     }
+  }
+  cambiarColumnas(valor){
+    console.log(valor);
   }
   verificarRepo(nuevaPregunta: Pregunta): boolean {
     var verOpci = true;
@@ -270,32 +329,14 @@ export class CustomQuestionComponent implements OnInit {
 
   changeClient(event) {
     this.tipoPreguntaEscogida = event;
+    
     console.log("tipo de pregunta : " + this.tipoPreguntaEscogida);
   }
   cancelar() {
     this.dialogRef.close();
   }
 
-  //drag and drop
-  value = "Clear me";
-  listColumnsChips: DragandDropColumns = new DragandDropColumns("test board", [
-    new Column("column 1", [{ chipName: "the" }, { chipName: "play" }]),
-    new Column("column 2", [{ chipName: "the2" }, { chipName: "play2" }]),
-    new Column("column 3", [{ chipName: "the3" }, { chipName: "play3" }]),
-  ]);
-  listColumnsChips2: Column[] = [
-    new Column("column 1x", [{ chipName: "thex" }, { chipName: "playx" }]),
-    new Column("column 2x", [{ chipName: "the2x" }, { chipName: "play2x" }]),
-    new Column("column 3x", [{ chipName: "the3x" }, { chipName: "play3x" }]),
-  ];
 
-  optionChipName: string;
-  options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
-  options2: ChipOption[] = [{ chipName: "the2" }, { chipName: "play2" }];
-  options3: ChipOption[] = [{ chipName: "the3" }, { chipName: "play3" }];
-  todo = ["Get", "Pick up", "Go home", "Fall"];
-
-  done = ["Get", "Brush", "Take", "Check", "Walk dog"];
   // aux: number = 0;
   removable = true;
   drop(event: CdkDragDrop<ChipOption[]>) {
