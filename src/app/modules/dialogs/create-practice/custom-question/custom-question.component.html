@@ -276,7 +276,7 @@
                 >*Instruction</mat-label
               >
               <input
-              [(ngModel)]=nuevaPregunta.pregunta
+                [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
                 class="input-form"
                 matInput
@@ -295,7 +295,7 @@
                   >*Score</mat-label
                 >
                 <input
-                  [(ngModel)]=nuevaPregunta.puntuacion
+                  [(ngModel)]="nuevaPregunta.puntuacion"
                   type="number"
                   class="input-form"
                   matInput
@@ -352,12 +352,12 @@
                 >Number of Columns</mat-label
               >
               <mat-select
-              (selectionChange)="ponerColumnas()"   
-              [(ngModel)]="numColumnas"
+                (selectionChange)="ponerColumnas()"
+                [(ngModel)]="numColumnas"
               >
-                <mat-option                
+                <mat-option
                   *ngFor="let columnsOption of dragAndDropColumn"
-                  [value]="columnsOption.value"        
+                  [value]="columnsOption.value"
                 >
                   <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
                   {{ columnsOption.display }}
@@ -465,7 +465,7 @@
                 >*Instruction Dropbox</mat-label
               >
               <input
-              [(ngModel)]=nuevaPregunta.pregunta
+                [(ngModel)]="nuevaPregunta.pregunta"
                 type="text"
                 class="input-form"
                 matInput
@@ -484,7 +484,7 @@
                   >*Score</mat-label
                 >
                 <input
-                [(ngModel)]=nuevaPregunta.puntuacion
+                  [(ngModel)]="nuevaPregunta.puntuacion"
                   type="number"
                   class="input-form"
                   matInput
@@ -614,7 +614,25 @@
             </div>
           </div>
           <!--#subtitle-->
-
+          <mat-form-field class="drag-drop__text-area">
+            <mat-label>Write content</mat-label>
+            <textarea
+              matInput
+              placeholder="Write the text here"
+              [(ngModel)]="dragdropText"
+            ></textarea>
+          </mat-form-field>
+          <div class="u-button-right">
+            <button
+              class="circular-button-subtitle"
+              mat-mini-fab
+              (click)="textareaview()"
+            >
+              <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="drag-drop__area" cdkDropListGroup>
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
@@ -622,30 +640,24 @@
             </div>
           </div>
           <!--#subtitle-->
-        </div>
-        <div class="drag-drop__area" cdkDropListGroup>
-          <!-- <div class="drag-drop__input">
-            laksdk kadad kadfasfk kadsfka dadfasd laksdk kadad kadfasfk
-            <mat-chip-list
-              class="drag-drop__column--container"
-              cdkDropList
-              [cdkDropListData]="options2"
-              (cdkDropListDropped)="drop2($event)"
+          <mat-chip-list
+            class="drag-drop__column--horizontal"
+            cdkDropList
+            cdkDropListOrientation="horizontal"
+            [cdkDropListData]="optionsTextarea"
+            (cdkDropListDropped)="drop2($event)"
+          >
+            <mat-chip
+              class="task"
+              cdkDrag
+              *ngFor="let option of optionsTextarea"
+              (removed)="remove(option)"
             >
-              <mat-chip
-                class="task"
-                cdkDrag
-                *ngFor="let option of options2"
-                (removed)="remove(option)"
-              >
-                {{ option.chipName }}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-              </mat-chip>
-            </mat-chip-list>
-            ghhjikji adfads adsf as adf daf asdf a dasf das dasgf asf
-            dasdasfnjok podasfoinji daspodfsi podasfidjais i pdasfiadf
-          </div> -->
-          <br />
+              {{ option.chipName }}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+          <!-- <br />
           <div class="drag-drop__input">
             adadf kdasfklha dasoifa oaidhfoaodfo dfaioasdi odfasi oidjas
             <mat-chip-list
@@ -667,7 +679,7 @@
             </mat-chip-list>
             adfaf ijpdfda pdaisjf pi pdfa pojif pidasfp ij kdasfkj dkasfma
             kdfasm ldasmfasdo asdomf odsmfoasmf
-          </div>
+          </div> -->
 
           <!-- cards wrapper columns-->
           <!-- <div class="drag-drop__wrapper">
@@ -725,12 +737,12 @@
             </div>
             <!--#subtitle-->
             <!-- add chip option -->
-            <div class="drag-drop__maker">
+            <!-- <div class="drag-drop__maker">
               <div class="drag-drop__add-option">
                 <mat-form-field appearance="outline">
-                  <mat-label>Option</mat-label>
-                  <!-- Input para el email-->
-                  <input
+                  <mat-label>Option</mat-label> -->
+            <!-- Input para el email-->
+            <!-- <input
                     class="input-form"
                     type="text"
                     matInput
@@ -738,11 +750,11 @@
                     name="chipOption{{ options.length }}"
                     id="name{{ options.length }}"
                     [(ngModel)]="optionChipName"
-                  />
-                  <!-- //Input para el email-->
-                </mat-form-field>
-                <!--Add button-->
-                <button
+                  /> -->
+            <!-- //Input para el email-->
+            <!-- </mat-form-field> -->
+            <!--Add button-->
+            <!-- <button
                   class="circular-button-subtitle"
                   mat-mini-fab
                   (click)="agregarOpcion()"
@@ -750,10 +762,10 @@
                   <mat-icon class="circular-button-subtitle__icon"
                     >add</mat-icon
                   >
-                </button>
-                <!--#Add button-->
-              </div>
-            </div>
+                </button> -->
+            <!--#Add button-->
+            <!-- </div>
+            </div> -->
             <!-- #add chip option -->
             <mat-chip-list
               class="drag-drop__column--horizontal"

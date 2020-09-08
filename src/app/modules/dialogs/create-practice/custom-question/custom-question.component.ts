@@ -433,4 +433,27 @@ export class CustomQuestionComponent implements OnInit {
   //       break;
   //   }
   // }
+
+  //drag drop version 2
+  optionsTextarea: ChipOption[] = [];
+  dragdropText: string;
+  textareaview() {
+    var x = this.dragdropText;
+    var arrayWords = x.split(" ");
+    for (var i = 0; i < arrayWords.length; i += 1) {
+      //console.log("En el índice '" + i + "' hay este valor: " + arrayWords[i]);
+      this.crearChipsParaOpciones(arrayWords[i]);
+    }
+    this.dragdropText = "";
+    //console.log(this.dragdropText);
+  }
+
+  crearChipsParaOpciones(word) {
+    var auxChip = {
+      chipName: "",
+    };
+    auxChip.chipName = word;
+    this.optionsTextarea.push(auxChip);
+  }
+  //
 }
