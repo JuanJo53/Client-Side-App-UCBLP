@@ -8,7 +8,11 @@ import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { THIS_EXPR, ThrowStmt } from "@angular/compiler/src/output/output_ast";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
-import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  copyArrayItem,
+} from "@angular/cdk/drag-drop";
 import { transferArrayItem } from "@angular/cdk/drag-drop";
 import { ChipOption } from "src/app/models/Dragandrop/ChipOption";
 import { DragandDropColumns } from "src/app/models/Dragandrop/DragandDropColumn";
@@ -435,6 +439,8 @@ export class CustomQuestionComponent implements OnInit {
   // }
 
   //drag drop version 2
+
+  token: ChipOption = { chipName: "*" };
   optionsTextarea: ChipOption[] = [];
   dragdropText: string;
   textareaview() {
@@ -454,6 +460,23 @@ export class CustomQuestionComponent implements OnInit {
     };
     auxChip.chipName = word;
     this.optionsTextarea.push(auxChip);
+  }
+
+  drop3(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      copyArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
   }
   //
 }

@@ -640,12 +640,13 @@
             </div>
           </div>
           <!--#subtitle-->
+          <!-- matchips options list -->
           <mat-chip-list
             class="drag-drop__column--horizontal"
             cdkDropList
             cdkDropListOrientation="horizontal"
             [cdkDropListData]="optionsTextarea"
-            (cdkDropListDropped)="drop2($event)"
+            (cdkDropListDropped)="drop3($event)"
           >
             <mat-chip
               class="task"
@@ -657,28 +658,33 @@
               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
           </mat-chip-list>
-          <!-- <br />
-          <div class="drag-drop__input">
-            adadf kdasfklha dasoifa oaidhfoaodfo dfaioasdi odfasi oidjas
-            <mat-chip-list
-              class="drag-drop__chip-container-tasks"
-              cdkDropList
-              cdkDropListOrientation="horizontal"
-              [cdkDropListData]="options2"
-              (cdkDropListDropped)="drop2($event)"
-            >
-              <mat-chip
-                class="task"
-                cdkDrag
-                *ngFor="let option of options2"
-                (removed)="remove(option)"
-              >
+          <!-- #matchips options list -->
+
+          <!-- <div class="" *ngFor="let option of optionsTextarea; let i = index">
+            <div class="drag-drop__input">
+              <p *ngIf="option !== this.token; else templateName">
                 {{ option.chipName }}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-              </mat-chip>
-            </mat-chip-list>
-            adfaf ijpdfda pdaisjf pi pdfa pojif pidasfp ij kdasfkj dkasfma
-            kdfasm ldasmfasdo asdomf odsmfoasmf
+              </p>
+              <ng-template #templateName
+                ><mat-chip-list
+                  class="drag-drop__chip-container-tasks"
+                  cdkDropList
+                  cdkDropListOrientation="horizontal"
+                  [cdkDropListData]="options2"
+                  (cdkDropListDropped)="drop2($event)"
+                >
+                  <mat-chip
+                    class="task"
+                    cdkDrag
+                    *ngFor="let option of options2"
+                    (removed)="remove(option)"
+                  >
+                    {{ option.chipName }}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                </mat-chip-list></ng-template
+              >
+            </div>
           </div> -->
 
           <!-- cards wrapper columns-->
@@ -772,7 +778,7 @@
               cdkDropList
               cdkDropListOrientation="horizontal"
               [cdkDropListData]="options"
-              (cdkDropListDropped)="drop2($event)"
+              (cdkDropListDropped)="drop3($event)"
             >
               <mat-chip
                 class="task"
