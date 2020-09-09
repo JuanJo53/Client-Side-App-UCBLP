@@ -15,6 +15,7 @@ import {
 } from "@angular/cdk/drag-drop";
 import { transferArrayItem } from "@angular/cdk/drag-drop";
 import { ChipOption } from "src/app/models/Dragandrop/ChipOption";
+import { ChipOptionNumber } from "src/app/models/Dragandrop/ChipOptionNumber";
 import { DragandDropColumns } from "src/app/models/Dragandrop/DragandDropColumn";
 import { Column } from "src/app/models/Dragandrop/Column";
 import { matching } from "src/app/models/Preguntas/Matching";
@@ -25,6 +26,7 @@ import { matching } from "src/app/models/Preguntas/Matching";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
+  ocultarFillQuestion=false;
   tipoR = ["Unique", "Multiple", "Columns", "Fill in the blanks", "Combobox's"];
   numColumnas: string = "1";
   preguntaAntigua: Pregunta = new Pregunta();
@@ -63,8 +65,8 @@ export class CustomQuestionComponent implements OnInit {
   listColumnsChips2: Column[] = [];
 
   optionChipName: string;
-  options: ChipOption[] = [{ chipName: "the" }, { chipName: "play" }];
-  options2: ChipOption[] = [{ chipName: "the2" }, { chipName: "play2" }];
+  options: ChipOptionNumber[] = [];
+  options2: ChipOption[] = [];
   options3: ChipOption[] = [{ chipName: "the3" }, { chipName: "play3" }];
   todo = ["Get", "Pick up", "Go home", "Fall"];
 
@@ -261,6 +263,25 @@ export class CustomQuestionComponent implements OnInit {
   cambiarColumnas(valor) {
     console.log(valor);
   }
+  clickChip(chip:number){
+    if(this.optionsTextarea[chip].chipName.split(". ")[0]===this.optionsTextarea[chip].chipName){
+      var relleno="";
+      for(let i=0;i<this.optionsTextarea[chip].chipName.length;i++){
+        relleno+=". ";
+      }
+      console.log(relleno);
+      console.log(this.optionsTextarea[chip].chipName.length);
+      this.options.push({chipName:this.optionsTextarea[chip].chipName,numero:chip})
+      this.optionsTextarea.splice(chip,1,{chipName:relleno});
+
+    }
+
+  }
+  clickChipOptions(chip:number){
+    this.optionsTextarea.splice(this.options[chip].numero,1,{chipName:this.options[chip].chipName})
+    this.options.splice(chip,1);
+
+  }
   verificarRepo(nuevaPregunta: Pregunta): boolean {
     var verOpci = true;
     var verPreg = true;
@@ -365,7 +386,7 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   remove(option: ChipOption): void {
-    const index = this.options.indexOf(option);
+    const index = this.options2.indexOf(option);
 
     if (index >= 0) {
       this.options.splice(index, 1);
@@ -384,7 +405,7 @@ export class CustomQuestionComponent implements OnInit {
       };
       console.log("name : " + this.optionChipName);
       auxChip.chipName = this.optionChipName;
-      this.options.push(auxChip);
+      this.options2.push(auxChip);
       this.optionChipName = "";
       // this.aux++;
       // console.log("aux" + this.aux);
@@ -444,11 +465,13 @@ export class CustomQuestionComponent implements OnInit {
   optionsTextarea: ChipOption[] = [];
   dragdropText: string;
   textareaview() {
+    this.ocultarFillQuestion=true;
     var x = this.dragdropText;
     var arrayWords = x.split(" ");
     for (var i = 0; i < arrayWords.length; i += 1) {
       //console.log("En el índice '" + i + "' hay este valor: " + arrayWords[i]);
-      this.crearChipsParaOpciones(arrayWords[i]);
+      if(arrayWords[i]!=""){
+      this.crearChipsParaOpciones(arrayWords[i]);}
     }
     this.dragdropText = "";
     //console.log(this.dragdropText);

@@ -328,8 +328,8 @@
                   type="text"
                   matInput
                   placeholder="Write an option"
-                  name="chipOption{{ options.length }}"
-                  id="name{{ options.length }}"
+                  name="chipOption{{ options2.length }}"
+                  id="name{{ options2.length }}"
                   [(ngModel)]="optionChipName"
                 />
                 <!-- //Input para el email-->
@@ -428,13 +428,13 @@
               class="drag-drop__column--horizontal"
               cdkDropList
               cdkDropListOrientation="horizontal"
-              [cdkDropListData]="options"
+              [cdkDropListData]="options2"
               (cdkDropListDropped)="drop2($event)"
             >
               <mat-chip
                 class="task"
                 cdkDrag
-                *ngFor="let option of options"
+                *ngFor="let option of options2"
                 (removed)="remove(option)"
               >
                 {{ option.chipName }}
@@ -606,7 +606,7 @@
 
         <!-- Drag and drop content -->
         <!-- <div class="card-question__content"> -->
-        <div class="drag-drop__header">
+        <div class="drag-drop__header" *ngIf="!ocultarFillQuestion">
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
@@ -632,11 +632,17 @@
             </button>
           </div>
         </div>
-        <div class="drag-drop__area" cdkDropListGroup>
+        <div class="drag-drop__area" cdkDropListGroup *ngIf="ocultarFillQuestion">
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
               <span>Question Setup</span>
+            </div>
+          </div>
+          
+          <div >
+            <div class="">
+              <span>* Click the word to delete it</span>
             </div>
           </div>
           <!--#subtitle-->
@@ -649,13 +655,11 @@
             (cdkDropListDropped)="drop3($event)"
           >
             <mat-chip
+             (click)="clickChip(iOption)"
               class="task"
-              cdkDrag
-              *ngFor="let option of optionsTextarea"
-              (removed)="remove(option)"
+              *ngFor="let option of optionsTextarea,let iOption=index"
             >
               {{ option.chipName }}
-              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
           </mat-chip-list>
           <!-- #matchips options list -->
@@ -781,13 +785,11 @@
               (cdkDropListDropped)="drop3($event)"
             >
               <mat-chip
+                (click)="clickChipOptions(iOption2)"
                 class="task"
-                cdkDrag
-                *ngFor="let option of options"
-                (removed)="remove(option)"
+                *ngFor="let option of options,let iOption2=index"
               >
                 {{ option.chipName }}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
             </mat-chip-list>
           </div>
