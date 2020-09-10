@@ -26,7 +26,7 @@ import { matching } from "src/app/models/Preguntas/Matching";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
-  ocultarFillQuestion=false;
+  ocultarFillQuestion = false;
   tipoR = ["Unique", "Multiple", "Columns", "Fill in the blanks", "Combobox's"];
   numColumnas: string = "1";
   preguntaAntigua: Pregunta = new Pregunta();
@@ -263,24 +263,29 @@ export class CustomQuestionComponent implements OnInit {
   cambiarColumnas(valor) {
     console.log(valor);
   }
-  clickChip(chip:number){
-    if(this.optionsTextarea[chip].chipName.split(". ")[0]===this.optionsTextarea[chip].chipName){
-      var relleno="";
-      for(let i=0;i<this.optionsTextarea[chip].chipName.length;i++){
-        relleno+=". ";
+  clickChip(chip: number) {
+    if (
+      this.optionsTextarea[chip].chipName.split(". ")[0] ===
+      this.optionsTextarea[chip].chipName
+    ) {
+      var relleno = "";
+      for (let i = 0; i < this.optionsTextarea[chip].chipName.length; i++) {
+        relleno += ". ";
       }
       console.log(relleno);
       console.log(this.optionsTextarea[chip].chipName.length);
-      this.options.push({chipName:this.optionsTextarea[chip].chipName,numero:chip})
-      this.optionsTextarea.splice(chip,1,{chipName:relleno});
-
+      this.options.push({
+        chipName: this.optionsTextarea[chip].chipName,
+        numero: chip,
+      });
+      this.optionsTextarea.splice(chip, 1, { chipName: relleno });
     }
-
   }
-  clickChipOptions(chip:number){
-    this.optionsTextarea.splice(this.options[chip].numero,1,{chipName:this.options[chip].chipName})
-    this.options.splice(chip,1);
-
+  clickChipOptions(chip: number) {
+    this.optionsTextarea.splice(this.options[chip].numero, 1, {
+      chipName: this.options[chip].chipName,
+    });
+    this.options.splice(chip, 1);
   }
   verificarRepo(nuevaPregunta: Pregunta): boolean {
     var verOpci = true;
@@ -335,23 +340,6 @@ export class CustomQuestionComponent implements OnInit {
       }
       this.dialogRef.close(this.nuevaPregunta);
     }
-  }
-
-  limpiar() {
-    this.nuevaPregunta.pregunta = "";
-    this.nuevaPregunta.puntuacion = null;
-    this.nuevaPregunta.opciones = [""];
-    this.radioButtonOpciones = [
-      {
-        opcionRespuesta: "",
-      },
-    ];
-    this.checkboxOpciones = [
-      {
-        isChecked: true,
-        opcionRespuesta: "",
-      },
-    ];
   }
 
   changeClient(event) {
@@ -465,13 +453,14 @@ export class CustomQuestionComponent implements OnInit {
   optionsTextarea: ChipOption[] = [];
   dragdropText: string;
   textareaview() {
-    this.ocultarFillQuestion=true;
+    this.ocultarFillQuestion = true;
     var x = this.dragdropText;
     var arrayWords = x.split(" ");
     for (var i = 0; i < arrayWords.length; i += 1) {
       //console.log("En el índice '" + i + "' hay este valor: " + arrayWords[i]);
-      if(arrayWords[i]!=""){
-      this.crearChipsParaOpciones(arrayWords[i]);}
+      if (arrayWords[i] != "") {
+        this.crearChipsParaOpciones(arrayWords[i]);
+      }
     }
     this.dragdropText = "";
     //console.log(this.dragdropText);
@@ -502,4 +491,26 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   //
+  limpiar() {
+    this.nuevaPregunta.pregunta = "";
+    this.nuevaPregunta.puntuacion = null;
+    this.nuevaPregunta.opciones = [""];
+    this.radioButtonOpciones = [
+      {
+        opcionRespuesta: "",
+      },
+    ];
+    this.checkboxOpciones = [
+      {
+        isChecked: true,
+        opcionRespuesta: "",
+      },
+    ];
+
+    // drag and drop
+    this.ocultarFillQuestion = false;
+    this.dragdropText = "";
+    this.optionsTextarea = [];
+    // # drag and drop
+  }
 }

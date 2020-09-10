@@ -50,6 +50,7 @@
       <!--#combo tipo de respuestas-->
     </div>
     <div class="progress-bar__button-actions-container--right">
+      <!-- clear button -->
       <button
         mat-raised-button
         class="progress-bar__button-normal"
@@ -62,6 +63,7 @@
           <span class="progress-bar__button-normal--text">Clear</span>
         </div>
       </button>
+      <!-- #clear button -->
     </div>
     <!--#combo tipo de respuestas-->
   </div>
@@ -628,19 +630,23 @@
               mat-mini-fab
               (click)="textareaview()"
             >
-              <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+              <mat-icon class="circular-button-subtitle__icon">line_style</mat-icon>
             </button>
           </div>
         </div>
-        <div class="drag-drop__area" cdkDropListGroup *ngIf="ocultarFillQuestion">
+        <div
+          class="drag-drop__area"
+          cdkDropListGroup
+          *ngIf="ocultarFillQuestion"
+        >
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
               <span>Question Setup</span>
             </div>
           </div>
-          
-          <div >
+
+          <div>
             <div class="">
               <span>* Click the word to delete it</span>
             </div>
@@ -655,9 +661,9 @@
             (cdkDropListDropped)="drop3($event)"
           >
             <mat-chip
-             (click)="clickChip(iOption)"
               class="task"
-              *ngFor="let option of optionsTextarea,let iOption=index"
+              *ngFor="let option of optionsTextarea; let iOption = index"
+              (click)="clickChip(iOption)"
             >
               {{ option.chipName }}
             </mat-chip>
@@ -787,7 +793,7 @@
               <mat-chip
                 (click)="clickChipOptions(iOption2)"
                 class="task"
-                *ngFor="let option of options,let iOption2=index"
+                *ngFor="let option of options; let iOption2 = index"
               >
                 {{ option.chipName }}
               </mat-chip>
