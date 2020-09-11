@@ -162,12 +162,14 @@
 .drag-drop__chip-container-tasks {
   //background-color: grey;
   display: inline-block;
-  min-height: 30px;
-  min-width: 40px;
+  min-height: 35px;
+  min-width: 60px;
   padding: 2px !important;
+  margin-right: 0.5rem;
   //background: rgba($color-secondary-blue, 0.5);
   border-radius: 2.5rem;
   border: 2.5px solid $color-primary-blue;
+  outline-color: none;
   .mat-chip-list-wrapper {
     padding: 2px !important;
   }
@@ -187,8 +189,8 @@
   align-items: center;
 }
 .auxliar_span {
-  display: inline-flex;
-  background-color: aquamarine;
+  //display: inline-flex;
+  //background-color: aquamarine;
   margin-right: 0.5rem;
 }
 .auxliar-container {
@@ -196,8 +198,9 @@
 }
 .drag-drop__input {
   display: flex;
-  //background-color: greenyellow;
-  // align-items: center;
-  // height: 4.25rem;
-  //display: block;
+  flex: 0 1 auto;
+  //flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
 }

@@ -777,36 +777,63 @@
           </div>
           <!-- #Drag and drop chips -->
           <!-- divs with tags -->
-          <div class="drag-drop__input">
-            <div *ngFor="let option of oracionEjemplo; let i = index">
-              <div *ngIf="option !== '1'; else templateName">
-                <div class="auxliar_span">
-                  {{ option }}
-                </div>
+          <div class="drag-drop__respuesta" cdkDropListGroup>
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Complete the sentence</span>
               </div>
-              <ng-template #templateName>
-                <!-- <span> token </span> -->
-                <mat-chip-list
-                  class="drag-drop__chip-container-tasks"
-                  cdkDropList
-                  cdkDropListOrientation="horizontal"
-                  [cdkDropListData]="options2"
-                  (cdkDropListDropped)="drop2($event)"
-                >
-                  <mat-chip
-                    class="task"
-                    cdkDrag
-                    *ngFor="let option of options2"
-                    (removed)="remove(option)"
-                  >
-                    {{ option.chipName }}
-                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                  </mat-chip>
-                </mat-chip-list>
-              </ng-template>
             </div>
+            <div class="drag-drop__input">
+              <div *ngFor="let option of oracionEjemplo; let i = index">
+                <div *ngIf="option !== '*'; else templateName">
+                  <div class="auxliar_span">
+                    {{ option }}
+                  </div>
+                </div>
+                <ng-template #templateName>
+                  <!-- <span> token </span> -->
+                  <mat-chip-list
+                    class="drag-drop__chip-container-tasks"
+                    cdkDropList
+                    cdkDropListOrientation="horizontal"
+                    [cdkDropListData]="oracionRespuestas"
+                    (cdkDropListDropped)="drop2($event)"
+                  >
+                    <mat-chip
+                      class="task"
+                      cdkDrag
+                      *ngFor="let option of oracionRespuestas"
+                    >
+                      {{ option.chipName }}
+                    </mat-chip>
+                  </mat-chip-list>
+                </ng-template>
+              </div>
+            </div>
+            <!-- #divs with tags -->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Options</span>
+              </div>
+            </div>
+            <!--  opciones respuesta-->
+            <mat-chip-list
+              class="drag-drop__column--horizontal"
+              cdkDropList
+              cdkDropListOrientation="horizontal"
+              [cdkDropListData]="optionsRespuestas"
+              (cdkDropListDropped)="drop2($event)"
+            >
+              <mat-chip
+                cdkDrag
+                class="task"
+                *ngFor="let option of optionsRespuestas"
+              >
+                {{ option.chipName }}
+              </mat-chip>
+            </mat-chip-list>
+            <!--  #opciones respuesta-->
           </div>
-          <!-- #divs with tags -->
         </div>
       </div>
     </div>
