@@ -76,8 +76,8 @@
       flex-grow: 1;
       flex-basis: 0;
       min-width: 100px;
-      min-height: 100px;
-      margin: 1rem 0;
+      min-height: 80px;
+      margin: 1.5rem 0;
       border-radius: 1rem;
       outline: none;
     }
@@ -187,4 +187,10 @@
 .u-button-right {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.u-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

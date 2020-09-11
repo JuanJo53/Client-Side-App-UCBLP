@@ -612,15 +612,15 @@
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
-              <span>Question Maker</span>
+              <span>Sentence</span>
             </div>
           </div>
           <!--#subtitle-->
           <mat-form-field class="drag-drop__text-area">
-            <mat-label>Write content</mat-label>
+            <mat-label>Text</mat-label>
             <textarea
               matInput
-              placeholder="Write the text here"
+              placeholder="Write here ..."
               [(ngModel)]="dragdropText"
             ></textarea>
           </mat-form-field>
@@ -630,7 +630,7 @@
               mat-mini-fab
               (click)="textareaview()"
             >
-              <mat-icon class="circular-button-subtitle__icon">line_style</mat-icon>
+              <mat-icon class="circular-button-subtitle__icon">link</mat-icon>
             </button>
           </div>
         </div>
@@ -642,15 +642,14 @@
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
-              <span>Question Setup</span>
+              <span>Sentence to complete</span>
             </div>
           </div>
 
-          <div>
-            <div class="">
-              <span>* Click the word to delete it</span>
-            </div>
-          </div>
+          <span class="question__suggestion"
+            >Click a word to set it as an option</span
+          >
+
           <!--#subtitle-->
           <!-- matchips options list -->
           <mat-chip-list
@@ -748,17 +747,21 @@
             <!--subtitle-->
             <div class="dialog-subtitle">
               <div class="dialog-subtitle__text">
-                <span>Options</span>
+                <span>Options to complete the sentence</span>
               </div>
             </div>
-            <!--#subtitle-->
-            <!-- add chip option -->
-            <!-- <div class="drag-drop__maker">
+
+            <div class="u-space-between">
+              <span class="question__suggestion"
+                >The student will have this options to complete the
+                sentece</span
+              >
+              <!--#subtitle-->
+              <!-- add chip option -->
               <div class="drag-drop__add-option">
                 <mat-form-field appearance="outline">
-                  <mat-label>Option</mat-label> -->
-            <!-- Input para el email-->
-            <!-- <input
+                  <mat-label>Add option</mat-label>
+                  <input
                     class="input-form"
                     type="text"
                     matInput
@@ -766,11 +769,10 @@
                     name="chipOption{{ options.length }}"
                     id="name{{ options.length }}"
                     [(ngModel)]="optionChipName"
-                  /> -->
-            <!-- //Input para el email-->
-            <!-- </mat-form-field> -->
-            <!--Add button-->
-            <!-- <button
+                  />
+                </mat-form-field>
+                <!--Add button-->
+                <button
                   class="circular-button-subtitle"
                   mat-mini-fab
                   (click)="agregarOpcion()"
@@ -778,10 +780,11 @@
                   <mat-icon class="circular-button-subtitle__icon"
                     >add</mat-icon
                   >
-                </button> -->
-            <!--#Add button-->
-            <!-- </div>
-            </div> -->
+                </button>
+                <!--#Add button-->
+              </div>
+            </div>
+
             <!-- #add chip option -->
             <mat-chip-list
               class="drag-drop__column--horizontal"

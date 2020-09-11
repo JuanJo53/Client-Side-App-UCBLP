@@ -390,10 +390,11 @@ export class CustomQuestionComponent implements OnInit {
     if (this.optionChipName !== "") {
       var auxChip = {
         chipName: "",
+        numero: -1,
       };
       console.log("name : " + this.optionChipName);
       auxChip.chipName = this.optionChipName;
-      this.options2.push(auxChip);
+      this.options.push(auxChip);
       this.optionChipName = "";
       // this.aux++;
       // console.log("aux" + this.aux);
