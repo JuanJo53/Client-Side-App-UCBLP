@@ -783,6 +783,10 @@
                 <span>Complete the sentence</span>
               </div>
             </div>
+            <span class="question__suggestion"
+              >Complete the sentence with the options below</span
+            >
+
             <div class="drag-drop__input">
               <div *ngFor="let option of oracionEjemplo; let i = index">
                 <div *ngIf="option !== '*'; else templateName">
@@ -816,6 +820,9 @@
                 <span>Options</span>
               </div>
             </div>
+            <span class="question__suggestion"
+              >Options to fill the sentence</span
+            >
             <!--  opciones respuesta-->
             <mat-chip-list
               class="drag-drop__column--horizontal"

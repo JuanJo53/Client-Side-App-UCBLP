@@ -14,13 +14,10 @@
     @include center;
     @include custom-card(30rem, 35rem, $color-primary-white);
   }
-  
-
 
   @include center;
   @include custom-card(90rem, 50rem, $color-primary-white);
   &__left-side {
-
     @include respond(tab-por) {
       flex: 0 1 0%;
     }
@@ -73,7 +70,6 @@
   }
   &__description {
     @include respond(phone) {
-    
       margin-right: 3rem;
     }
     flex: 0 1 25%;
