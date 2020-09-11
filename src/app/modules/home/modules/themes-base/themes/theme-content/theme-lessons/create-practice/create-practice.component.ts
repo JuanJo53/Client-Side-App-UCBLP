@@ -197,14 +197,8 @@ export class CreatePracticeComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result !== "" && result !== "undefined" && result != null) {
-        this.route.data.subscribe({
-          next: (data) => {
             this.preguntas.push(result);
-          },
-          error: (error) => {
-            console.log("no se pudo agregar la pregunta");
-          },
-        });
+        
       }
       this.actPuntaje();
     });
