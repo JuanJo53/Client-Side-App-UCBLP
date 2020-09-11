@@ -97,7 +97,7 @@
     }
   }
   @if $breakpoint == tab-por {
-    @media (max-width: 48em) {
+    @media (max-width: 50em) {
       // 480px/16=30
       @content;
     }
