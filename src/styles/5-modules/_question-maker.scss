@@ -200,3 +200,12 @@
   background-color: pink;
   width: 100%;
 }
+
+//specials
+.mat-stepper__edit {
+  &.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+    padding: 24px 200px !important;
+    //margin: 0 200px;
+    //background-color: red !important;
+  }
+}

@@ -148,14 +148,6 @@
 
 //input drag and drop
 
-.drag-drop__input {
-  //background-color: greenyellow;
-  // display: flex;
-  // align-items: center;
-  // height: 4.25rem;
-  display: inline-block;
-  //display: block;
-}
 .drag-drop__chip-container {
   //background-color: grey;
   display: inline-block;
@@ -170,8 +162,8 @@
 .drag-drop__chip-container-tasks {
   //background-color: grey;
   display: inline-block;
-  min-height: 50px;
-  min-width: 60px;
+  min-height: 30px;
+  min-width: 40px;
   padding: 2px !important;
   //background: rgba($color-secondary-blue, 0.5);
   border-radius: 2.5rem;
@@ -193,4 +185,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.auxliar_span {
+  display: inline-flex;
+  background-color: aquamarine;
+  margin-right: 0.5rem;
+}
+.auxliar-container {
+  display: flex;
+}
+.drag-drop__input {
+  display: flex;
+  //background-color: greenyellow;
+  // align-items: center;
+  // height: 4.25rem;
+  //display: block;
 }

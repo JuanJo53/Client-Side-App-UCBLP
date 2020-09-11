@@ -491,6 +491,50 @@ export class CustomQuestionComponent implements OnInit {
       );
     }
   }
+
+  oracionEjemplo = [
+    "I",
+    "*",
+    "deserve",
+    "this",
+    "you",
+    "look",
+    "*",
+    "tonight",
+    "I",
+    "*",
+    "deserve",
+    "this",
+    "you",
+    "look",
+    "*",
+    "tonight",
+    "I",
+    "*",
+    "deserve",
+    "this",
+    "you",
+    "look",
+    "*",
+    "tonight",
+    "I",
+    "*",
+    "deserve",
+    "this",
+    "you",
+    "look",
+    "*",
+    "tonight",
+    "I",
+    "*",
+    "deserve",
+    "this",
+    "you",
+    "look",
+    "*",
+    "tonight",
+  ];
+
   //
   limpiar() {
     this.nuevaPregunta.pregunta = "";
@@ -512,6 +556,7 @@ export class CustomQuestionComponent implements OnInit {
     this.ocultarFillQuestion = false;
     this.dragdropText = "";
     this.optionsTextarea = [];
+    this.options = [];
     // # drag and drop
   }
 }
