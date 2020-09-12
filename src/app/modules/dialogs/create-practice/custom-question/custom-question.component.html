@@ -407,7 +407,7 @@
                     class="example-box"
                     cdkDrag
                     *ngFor="let option of column.chip"
-                    (removed)="remove2(option)"
+                    (removed)="remove(option)"
                   >
                     {{ option.chipName }}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
