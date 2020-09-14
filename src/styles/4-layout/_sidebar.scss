@@ -74,7 +74,7 @@
   font-size: 1.6rem;
 }
 .mat-expansion-indicator::after {
-  color: $color-primary-white!important;
+  color: $color-primary-white !important;
 }
 .mat-content {
   align-items: center;
@@ -97,7 +97,7 @@ mat-expansion-panel {
       @include margin-left-right(1.5rem, 2rem);
     }
     &:hover {
-      background-color: rgba($color-primary-white, 0.3) !important;
+      //background-color: rgba(green, 0.3) !important;
     }
   }
 }
