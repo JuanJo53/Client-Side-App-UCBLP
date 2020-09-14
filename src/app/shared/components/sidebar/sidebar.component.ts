@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  HostListener,
+} from "@angular/core";
 import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LoadingService } from "src/app/_services/loading.service";
@@ -59,9 +65,7 @@ export class SidebarComponent implements OnInit {
       });
     }
   }
-  decirHola() {
-    console.log("hola");
-  }
+
   navigateCustom(modulo) {
     this.servLoading.activar();
     console.log(modulo);
@@ -132,5 +136,11 @@ export class SidebarComponent implements OnInit {
         this.servLoading.desactivar();
       });
     });
+  }
+
+  @HostListener("document:keydown.escape", ["$event"]) onKeydownHandler(
+    event: KeyboardEvent
+  ) {
+    console.log("Esc pressed");
   }
 }
