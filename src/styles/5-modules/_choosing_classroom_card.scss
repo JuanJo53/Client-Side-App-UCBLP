@@ -2,8 +2,16 @@
 @import "1-helpers/mixins";
 @import "3-basics/links";
 .card-container {
+  @include respond(normal) {
+    @include center();
+    padding-left: 5rem;
+  }
+  @include respond(tab-lan) {
+    @include center();
+    }
+ 
   @include respond(phone) {
-    padding-top: 15rem;
+    padding-top: 4.5rem;
 
   }
   @include center();
@@ -13,6 +21,13 @@
   justify-content: center;
 }
 .classroom-card {
+  @include respond(normal) {
+    margin-right: 3rem;
+  }
+ 
+  @include respond(phone) {
+    margin-left: 0%;
+  }
  
   @include custom-card(27rem, 16rem, $color-primary-white);
   cursor: pointer;
