@@ -23,7 +23,6 @@ export class SidebarComponent implements OnInit {
 
   @Output() openEvent = new EventEmitter<boolean>();
   onSidebarMenuToggle() {
-    console.log("toogle : ", this.isSidebarOpen);
     this.isSidebarOpen = !this.isSidebarOpen;
     this.openEvent.emit(this.isSidebarOpen);
   }
