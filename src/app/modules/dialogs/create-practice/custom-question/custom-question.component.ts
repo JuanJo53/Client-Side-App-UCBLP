@@ -53,7 +53,6 @@ export class CustomQuestionComponent implements OnInit {
     { value: "2", display: "Two" },
     { value: "3", display: "Three" },
     { value: "4", display: "Four" },
-    { value: "5", display: "Five" },
   ];
   matchingInputs: matching[] = [];
 
