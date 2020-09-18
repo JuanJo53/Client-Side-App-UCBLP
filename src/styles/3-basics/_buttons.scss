@@ -146,10 +146,22 @@
   right: 2rem;
   background-color: $color-primary-white !important;
   color: $color-primary-blue !important;
-  &:hover {
-    background-color: $color-primary-blue;
-    color: $color-primary-white;
+  &__icon.menu-open:hover {
+    transform: translateX(-3px);
+    transition: 0.3s;
   }
+  &__icon.menu-close:hover {
+    transform: translateX(3px);
+    transition: 0.3s;
+  }
+  // &__icon.menu-open {
+  //   transform: rotate(0deg);
+  //   transition: 0.3s;
+  // }
+  // &__icon.menu-close {
+  //   transform: rotate(180deg);
+  //   transition: 0.3s;
+  // }
 }
 //-----#sidevar-----
 //-----button inside subtitle-----

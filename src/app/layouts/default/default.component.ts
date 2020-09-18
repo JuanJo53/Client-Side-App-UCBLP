@@ -17,7 +17,7 @@ export class DefaultComponent implements OnInit {
   @ViewChild("sidenav") public sidenav: SidebarComponent;
   @ViewChild("loading") public loading: LoadingComponent;
   isSidebarOpen2: boolean = true;
-  contentMargin = 25;
+  contentMargin = 26;
   constructor(
     private serv: SideBarControlService,
     private servLoading: LoadingService,
@@ -33,7 +33,7 @@ export class DefaultComponent implements OnInit {
     if (!this.isSidebarOpen2) {
       this.contentMargin = 9; //css when it's close
     } else {
-      this.contentMargin = 25; //css when it's open
+      this.contentMargin = 26; //css when it's open
     }
   }
   ngAfterViewInit(): void {

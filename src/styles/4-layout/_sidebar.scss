@@ -2,6 +2,7 @@
 @import "1-helpers/mixins";
 @import "3-basics/buttons";
 .sidebar.menu-close {
+  transition: $transition-5;
   width: 9rem;
   .sidebar-brand {
     height: 20rem;
@@ -12,6 +13,7 @@
     //background-color: orange;
     margin-top: 1rem;
     &__logo {
+      transition: $transition-5;
       //background-color: red;
       margin-top: 1rem;
       flex: 0 1 50%;
@@ -20,15 +22,23 @@
       display: block;
     }
     &__subtitle {
+      transition: $transition-5;
       display: flex;
       //background-color: green;
       flex: 1;
       @include custom-title(0rem, 1.5rem, $color-primary-white);
     }
   }
+  .link span {
+    display: none;
+  }
+  .expansion-panel .expansion-panel__header .expansion-panel__header-text {
+    display: none;
+  }
 }
 .sidebar.menu-open {
   width: 26rem;
+  transition: 0.5s;
 }
 .sidebar {
   width: 26rem;
@@ -43,6 +53,7 @@
     padding: 0;
   }
   .sidebar-brand {
+    transition: $transition-5;
     height: 20rem;
     display: flex;
     flex-direction: column;
@@ -51,6 +62,7 @@
     //background-color: orange;
     margin-top: 1rem;
     &__logo {
+      transition: $transition-5;
       //background-color: red;
       flex: 0 1 60%;
       width: 10rem;
@@ -58,6 +70,7 @@
       display: block;
     }
     &__subtitle {
+      transition: $transition-5;
       display: flex;
       //background-color: green;
       flex: 1;

@@ -137,10 +137,4 @@ export class SidebarComponent implements OnInit {
       });
     });
   }
-
-  @HostListener("document:keydown.escape", ["$event"]) onKeydownHandler(
-    event: KeyboardEvent
-  ) {
-    console.log("Esc pressed");
-  }
 }

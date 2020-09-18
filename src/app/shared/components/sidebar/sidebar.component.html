@@ -139,7 +139,14 @@
   >
 
   <button (click)="onSidebarMenuToggle()" class="toggle-button" mat-mini-fab>
-    <mat-icon class="toggle-button__icon">chevron_left</mat-icon>
+    <mat-icon
+      class="toggle-button__icon"
+      [class.menu-open]="isSidebarOpen"
+      [class.menu-close]="!isSidebarOpen"
+    >
+      <div *ngIf="isSidebarOpen; else templateName">chevron_left</div>
+      <ng-template #templateName>chevron_right</ng-template>
+    </mat-icon>
   </button>
 
   <!-- <h2 matSubheader>Tools</h2>

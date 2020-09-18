@@ -41,7 +41,7 @@
   color: $color-primary-white !important;
   position: relative;
   &__icon {
-    @include margin-left-right(4rem, 2rem);
+    @include margin-left-right(1.5rem, 2rem);
     z-index: 10;
     position: relative;
   }
