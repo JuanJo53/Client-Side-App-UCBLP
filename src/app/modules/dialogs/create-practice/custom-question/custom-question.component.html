@@ -581,6 +581,7 @@
                 matInput
                 placeholder="Instruction"
                 name="nombre pregunta"
+                [(ngModel)]="this.nuevaPregunta.pregunta"
               />
             </mat-form-field>
           </div>
@@ -599,6 +600,9 @@
                   matInput
                   placeholder="Score"
                   name="puntuacion"
+                  min="1"
+                  max="100"
+                  [(ngModel)]="this.nuevaPregunta.puntuacion"
                 />
               </mat-form-field>
             </div>
@@ -639,6 +643,16 @@
           cdkDropListGroup
           *ngIf="ocultarFillQuestion"
         >
+        
+        <div class="u-button-right">
+          <button
+            class="circular-button-subtitle"
+            mat-mini-fab
+            (click)="textAreaEdit()"
+          >
+            <mat-icon class="circular-button-subtitle__icon">link</mat-icon>
+          </button>
+        </div>
           <!--subtitle-->
           <div class="dialog-subtitle">
             <div class="dialog-subtitle__text">
@@ -748,7 +762,7 @@
                 <button
                   class="circular-button-subtitle"
                   mat-mini-fab
-                  (click)="agregarOpcion()"
+                  (click)="agregarOpcionExtraFill()"
                 >
                   <mat-icon class="circular-button-subtitle__icon"
                     >add</mat-icon
@@ -768,6 +782,7 @@
             >
               <mat-chip
                 (click)="clickChipOptions(iOption2)"
+                [ngClass]="option.numero==-1&&'redChip'"
                 class="task"
                 *ngFor="let option of options; let iOption2 = index"
               >
@@ -777,7 +792,7 @@
           </div>
           <!-- #Drag and drop chips -->
           <!-- divs with tags -->
-          <div class="drag-drop__respuesta" cdkDropListGroup>
+          <!-- <div class="drag-drop__respuesta" cdkDropListGroup>
             <div class="dialog-subtitle">
               <div class="dialog-subtitle__text">
                 <span>Complete the sentence</span>
@@ -794,9 +809,9 @@
                     {{ option }}
                   </div>
                 </div>
-                <ng-template #templateName>
+                <ng-template #templateName> -->
                   <!-- <span> token </span> -->
-                  <mat-chip-list
+                  <!-- <mat-chip-list
                     class="drag-drop__chip-container-tasks"
                     cdkDropList
                     cdkDropListOrientation="horizontal"
@@ -813,9 +828,9 @@
                   </mat-chip-list>
                 </ng-template>
               </div>
-            </div>
+            </div> -->
             <!-- #divs with tags -->
-            <div class="dialog-subtitle">
+            <!-- <div class="dialog-subtitle">
               <div class="dialog-subtitle__text">
                 <span>Options</span>
               </div>
@@ -824,7 +839,7 @@
               >Options to fill the sentence</span
             >
             <!--  opciones respuesta-->
-            <mat-chip-list
+            <!-- <mat-chip-list
               class="drag-drop__column--horizontal"
               cdkDropList
               cdkDropListOrientation="horizontal"
@@ -838,9 +853,9 @@
               >
                 {{ option.chipName }}
               </mat-chip>
-            </mat-chip-list>
+            </mat-chip-list> -->
             <!--  #opciones respuesta-->
-          </div>
+          <!-- </div> -->
         </div>
       </div>
     </div>
