@@ -58,6 +58,7 @@
   }
   &__column {
     display: flex;
+    background-color: red;
     flex-direction: column;
     background: rgba($color-secondary-blue, 0.5);
     flex-grow: 1;

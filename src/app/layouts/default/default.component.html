@@ -1,4 +1,3 @@
-
 <app-loading #loading></app-loading>
 <mat-drawer-container>
   <mat-drawer
@@ -6,9 +5,14 @@
     mode="side"
     [class.menu-open]="isSidebarOpen2"
     [class.menu-close]="!isSidebarOpen2"
+    [disableClose]="true"
     opened
   >
-    <app-sidebar (openEvent)="receiveOpen($event)" #sidenav></app-sidebar>
+    <app-sidebar
+      (openEvent)="receiveOpen($event)"
+      (keydown.escape)="$event.stopPropagation()"
+      #sidenav
+    ></app-sidebar>
   </mat-drawer>
   <mat-drawer-content [ngStyle]="{ 'margin-left.rem': contentMargin }">
     <app-header></app-header>
