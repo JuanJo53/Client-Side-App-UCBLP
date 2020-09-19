@@ -81,18 +81,22 @@ export class CustomQuestionComponent implements OnInit {
         this.tipoRespuesta = [];
         this.tipoRespuesta.push({ value: "1", display: this.tipoR[0] });
         this.tipoRespuesta.push({ value: "2", display: this.tipoR[1] });
-        this.nuevaPregunta.idTipoRespuesta = "1";
+        if(this.nuevaPregunta.idTipoRespuesta !=="2"){
+          this.nuevaPregunta.idTipoRespuesta = "1";
+        }
         break;
       case "2":
         this.tipoRespuesta = [];
         this.tipoRespuesta.push({ value: "3", display: this.tipoR[2] });
         this.tipoRespuesta.push({ value: "4", display: this.tipoR[3] });
-        this.nuevaPregunta.idTipoRespuesta = "3";
+        if(this.nuevaPregunta.idTipoRespuesta !=="4"){
+          this.nuevaPregunta.idTipoRespuesta = "3";
+        }
         break;
       case "3":
         this.tipoRespuesta = [];
         this.tipoRespuesta.push({ value: "5", display: this.tipoR[4] });
-        this.nuevaPregunta.idTipoRespuesta = "5";
+          this.nuevaPregunta.idTipoRespuesta = "5";
         break;
     }
   }
@@ -118,7 +122,8 @@ export class CustomQuestionComponent implements OnInit {
   }
   cargarPreguntaModificar() {
     var preg = this.dataDialog["preg"] as Pregunta;
-    if (preg.tipo) {
+    console.log(preg);
+    if (preg.tipo) {      
       this.preguntaAntigua.pregunta = preg.pregunta;
       this.preguntaAntigua.puntuacion = preg.puntuacion;
       this.preguntaAntigua.tipo = preg.tipo;
@@ -134,10 +139,10 @@ export class CustomQuestionComponent implements OnInit {
       this.preguntaAntigua.idTipoRespuesta = preg.idTipoRespuesta;
     }
 
-    console.log(preg);
     this.nuevaPregunta = preg;
     switch (preg.idTipoRespuesta) {
       case "2":
+
         this.checkboxOpciones = [];
         for (let i in preg.opciones) {
           this.checkboxOpciones.push({
@@ -170,10 +175,51 @@ export class CustomQuestionComponent implements OnInit {
           this.options2.push({ chipName: preg.opciones[i] });
         }
         this.numColumnas = String(preg.respuesta.length);
+        break;
+        //Caso 4 para Fill in the blanks 
+      case "4":       
+      this.dragdropText="";
+        var indiceOpciones=[];
+        this.ocultarFillQuestion = true;
+        var chipTextArea=preg.respuesta;
+        var contA=0;
+        var cOpci=0;
+        for(let chip of chipTextArea){
+          if(chip==="*"){     
+            this.dragdropText+=preg.opciones[cOpci]+" ";       
+            var relleno = "";
+            for (let i = 0; i < preg.opciones[cOpci].length; i++) {
+              relleno += ". ";
+            }
+            this.optionsTextarea.push({chipName:relleno});
+            indiceOpciones.push(contA);
+            cOpci++
+
+          }
+          else{
+            this.dragdropText+=chip+" ";
+            this.optionsTextarea.push({chipName:chip});
+          }          
+          contA++;        
+        }
+        var contO=0;
+        for(let opcion of preg.opciones){
+          if(contO<indiceOpciones.length){
+            this.options.push({chipName:opcion,numero:indiceOpciones[contO]});
+          }
+          else{
+            this.options.push({chipName:opcion,numero:-1});
+          }
+          contO++;
+        }
+        break;
+
+
     }
   }
   ngOnInit(): void {
     if (this.dataDialog["tipo"] === "modificar") {
+      console.log("asdf");
       this.cargarPreguntaModificar();
     }
     this.cargarRespuestas();
@@ -235,6 +281,15 @@ export class CustomQuestionComponent implements OnInit {
           else this.nuevaPregunta.bloqopci = false;
         }
         break;
+
+      case "4":
+          if (this.nuevaPregunta.opciones.length == 0)
+            this.nuevaPregunta.bloqopci = true;
+          else {
+            if (this.nuevaPregunta.respuesta.length==0) this.nuevaPregunta.bloqopci = true;
+            else this.nuevaPregunta.bloqopci = false;
+          }
+          break;  
     }
 
     if (this.nuevaPregunta.pregunta === "") this.nuevaPregunta.bloqpreg = true;
@@ -333,6 +388,46 @@ export class CustomQuestionComponent implements OnInit {
         this.nuevaPregunta.respuesta = respuestas;
         this.nuevaPregunta.opciones = opciones;
         return true;
+      case "4":
+        var respuestas=[];
+        var opciones=[];
+        var pivot=0;
+        for(let i=1;i<this.options.length;i++){
+          console.log(this.options);
+          pivot=Number(i);
+          while(pivot>0&&this.options[pivot].numero<this.options[pivot-1].numero){
+            var auxi=this.options[pivot-1];
+            this.options[pivot-1]=this.options[pivot];
+            this.options[pivot]=auxi;
+            pivot--;
+          }
+        } 
+        var extras=[]; 
+        this.nuevaPregunta.opciones=[];
+        for(let option of this.options){
+          if(option.numero==-1){
+            extras.push(option.chipName);
+          }
+          else{
+            this.nuevaPregunta.opciones.push(option.chipName);
+          }
+        }
+        for(let extra of extras){
+          this.nuevaPregunta.opciones.push(extra);
+        }
+        for(let option of this.optionsTextarea){
+          if (
+            option.chipName.split(". ")[0] ===
+            option.chipName
+          ){
+            respuestas.push(option.chipName);
+          }
+          else{
+            respuestas.push("*");
+          }
+        }
+        this.nuevaPregunta.respuesta=respuestas;
+        return true;
     }
   }
   cambiarColumnas(valor) {
@@ -357,10 +452,12 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   clickChipOptions(chip: number) {
-    this.optionsTextarea.splice(this.options[chip].numero, 1, {
-      chipName: this.options[chip].chipName,
-    });
-    this.options.splice(chip, 1);
+    if(this.options[chip].numero!=-1){
+      this.optionsTextarea.splice(this.options[chip].numero, 1, {
+        chipName: this.options[chip].chipName,
+      });
+    }
+      this.options.splice(chip, 1);
   }
   verificarRepo(nuevaPregunta: Pregunta): boolean {
     try {
@@ -466,7 +563,23 @@ export class CustomQuestionComponent implements OnInit {
                 verOpci = false;
               }
             }
-          } else verOpci = false;
+            } else verOpci = false;
+            break;
+          case "4":
+            for(let resp in nuevaPregunta.respuesta){
+              if(this.preguntaAntigua.respuesta[resp]!=nuevaPregunta.respuesta[resp]){
+                verOpci=false;
+                
+              }
+            }
+            
+            for(let opci in nuevaPregunta.opciones){
+              if(this.preguntaAntigua.opciones[opci]!=nuevaPregunta.opciones[opci]){
+                verOpci=false;                
+              }
+            }    
+
+            break
       }
 
       if (nuevaPregunta.pregunta !== this.preguntaAntigua.pregunta) {
@@ -626,13 +739,32 @@ export class CustomQuestionComponent implements OnInit {
   //   }
   // }
 
+
+
+
+
+
+
+
+
   //drag drop version 2
 
   token: ChipOption = { chipName: "*" };
   optionsTextarea: ChipOption[] = [];
-  dragdropText: string;
+  dragdropText: string="";
   textareaview() {
-    this.ocultarFillQuestion = true;
+    
+    this.optionsTextarea=[];
+    this.options=[];
+    var splitText=this.dragdropText.split(" ");
+    var contEsp=0;
+    for(let pal of splitText){
+      if(pal===""){
+        contEsp++;
+      }
+    }
+    if(contEsp!=splitText.length){
+      this.ocultarFillQuestion = true;
     var x = this.dragdropText;
     var arrayWords = x.split(" ");
     for (var i = 0; i < arrayWords.length; i += 1) {
@@ -641,8 +773,12 @@ export class CustomQuestionComponent implements OnInit {
         this.crearChipsParaOpciones(arrayWords[i]);
       }
     }
-    this.dragdropText = "";
     //console.log(this.dragdropText);
+    }
+  }
+  textAreaEdit(){
+    this.ocultarFillQuestion = false;   
+
   }
 
   crearChipsParaOpciones(word) {
@@ -652,6 +788,27 @@ export class CustomQuestionComponent implements OnInit {
     auxChip.chipName = word;
     this.optionsTextarea.push(auxChip);
   }
+  agregarOpcionExtraFill(){    
+    if(this.optionChipName!==""){
+      this.options.push({
+        chipName: this.optionChipName,
+        numero: -1,
+      });
+      this.optionChipName="";
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
   drop3(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

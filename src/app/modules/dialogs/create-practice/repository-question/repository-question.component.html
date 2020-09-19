@@ -464,6 +464,100 @@
             </div>
           </div>
         </div> 
+             <!-- drag and drop fill in the blancks-->
+             <div class="question-card-added" *ngSwitchCase="'4'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field
+                      appearance="outline"
+                      class="card-question__instruction"
+                    >
+                      <mat-label>Instruction</mat-label>
+                      <input
+                        type="text"
+                        class="input-form"
+                        matInput
+                        placeholder="Instruction"
+                        [ngModelOptions]="{ standalone: true }"
+                        [(ngModel)]="preguntaPaso2.pregunta"
+  
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="card-question__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          type="number"
+                          class="input-form"
+                          matInput
+                          placeholder="Score"
+                          [ngModelOptions]="{ standalone: true }"
+                          [(ngModel)]="preguntaPaso2.puntuacion"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                  <div class="drag-drop__respuesta" cdkDropListGroup>
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Complete the sentence</span>
+                      </div>
+                    </div>
+                    <span class="question__suggestion"
+                      >Complete the sentence with the options below</span
+                    >
+  
+                    <div class="drag-drop__input">
+                      <div *ngFor="let option of preguntaPaso2.respuesta; let i = index">
+                        <div *ngIf="option !== '*'; else templateName">
+                          <div class="auxliar_span">
+                            {{ option }}
+                          </div>
+                        </div>
+                        <ng-template #templateName>
+                          <!-- <span> token </span> -->
+                          <mat-chip-list
+                            class="drag-drop__chip-container-tasks"
+                            cdkDropListOrientation="horizontal"
+                          >
+                          </mat-chip-list>
+                        </ng-template>
+                      </div>
+                    </div>
+                    <!-- #divs with tags -->
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Options</span>
+                      </div>
+                    </div>
+                    <span class="question__suggestion"
+                      >Options to fill the sentence</span
+                    >
+                    <!--  opciones respuesta-->
+                    <mat-chip-list
+                      class="drag-drop__column--horizontal"
+                      cdkDropListOrientation="horizontal"
+                    >
+                      <mat-chip
+                        class="task"
+                        *ngFor="let option of preguntaPaso2.opciones"
+                      >
+                        {{ option }}
+                      </mat-chip>
+                    </mat-chip-list>
+                    <!--  #opciones respuesta-->
+                  </div>
+                </div>
+              </div>
+              <!-- #drag and drop fill in the blancks-->
         </div>
       <div class="group-buttons__dialog">
         <button
@@ -739,6 +833,100 @@
             </div>
           </div>
         </div>
+             <!-- drag and drop fill in the blancks-->
+             <div class="question-card-added" *ngSwitchCase="'4'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field
+                      appearance="outline"
+                      class="card-question__instruction"
+                    >
+                      <mat-label>Instruction</mat-label>
+                      <input
+                        type="text"
+                        class="input-form"
+                        matInput
+                        placeholder="Instruction"
+                        [ngModelOptions]="{ standalone: true }"
+                        [(ngModel)]="card.pregunta"
+  
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="card-question__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          type="number"
+                          class="input-form"
+                          matInput
+                          placeholder="Score"
+                          [ngModelOptions]="{ standalone: true }"
+                          [(ngModel)]="card.puntuacion"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                  <div class="drag-drop__respuesta" cdkDropListGroup>
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Complete the sentence</span>
+                      </div>
+                    </div>
+                    <span class="question__suggestion"
+                      >Complete the sentence with the options below</span
+                    >
+  
+                    <div class="drag-drop__input">
+                      <div *ngFor="let option of card.respuesta; let i = index">
+                        <div *ngIf="option !== '*'; else templateName">
+                          <div class="auxliar_span">
+                            {{ option }}
+                          </div>
+                        </div>
+                        <ng-template #templateName>
+                          <!-- <span> token </span> -->
+                          <mat-chip-list
+                            class="drag-drop__chip-container-tasks"
+                            cdkDropListOrientation="horizontal"
+                          >
+                          </mat-chip-list>
+                        </ng-template>
+                      </div>
+                    </div>
+                    <!-- #divs with tags -->
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Options</span>
+                      </div>
+                    </div>
+                    <span class="question__suggestion"
+                      >Options to fill the sentence</span
+                    >
+                    <!--  opciones respuesta-->
+                    <mat-chip-list
+                      class="drag-drop__column--horizontal"
+                      cdkDropListOrientation="horizontal"
+                    >
+                      <mat-chip
+                        class="task"
+                        *ngFor="let option of card.opciones"
+                      >
+                        {{ option }}
+                      </mat-chip>
+                    </mat-chip-list>
+                    <!--  #opciones respuesta-->
+                  </div>
+                </div>
+              </div>
+              <!-- #drag and drop fill in the blancks-->
         </div>
         <!--#row-->
       </mat-dialog-content>
