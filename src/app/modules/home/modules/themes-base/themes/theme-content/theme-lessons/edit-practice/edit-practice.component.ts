@@ -137,6 +137,7 @@ agregarDatos(data){
   }
   //funciones
   next(stepper: MatStepper) {
+    
     stepper.next();
     // switch (stepper.selectedIndex) {
     //   case 0:
@@ -183,6 +184,7 @@ agregarDatos(data){
         if((tipo==3||tipo==2)&&pregunta.tipo==0){
           if(!this.preguntasEli.some(e=>e==pregunta.id)){
             this.preguntasEli.push(pregunta.id);
+            console.log(this.preguntasEli);
           }
         }
       }
