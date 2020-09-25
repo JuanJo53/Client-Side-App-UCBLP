@@ -1,5 +1,5 @@
 .dashboard-card {
-  @include custom-card-dashboard(32.5rem, $color-primary-white);
+  @include custom-card-dashboard($color-primary-white);
   cursor: pointer;
   margin: auto;
   display: flex;

@@ -97,6 +97,7 @@ import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/sch
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { MatDividerModule } from "@angular/material/divider";
+import { NgxGlideModule } from "ngx-glide";
 
 @NgModule({
   declarations: [
@@ -200,6 +201,7 @@ import { MatDividerModule } from "@angular/material/divider";
     DragDropModule,
     ScrollingModule,
     MatDividerModule,
+    NgxGlideModule,
   ],
 })
 export class DefaultModule {}

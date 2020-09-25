@@ -39,11 +39,10 @@
   display: flex;
   overflow: hidden;
 }
-@mixin custom-card-dashboard($width, $color) {
+@mixin custom-card-dashboard($color) {
   //z-index: 5;
   //position: absolute;
   //transform: translate(-50%, -50%);
-  width: $width;
   background-color: $color;
   box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
   border-radius: 3rem;

@@ -1,0 +1,28 @@
+@import "~@glidejs/glide/src/assets/sass/glide.core";
+@import "~@glidejs/glide/src/assets/sass/glide.theme";
+.glide__arrow {
+  color: $color-primary-blue;
+  border: 2px solid $color-primary-blue;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 2rem;
+  &:hover {
+    border: 2px solid $color-primary-blue;
+  }
+}
+.glide__bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0.25em;
+}
+.glide__bullet--active {
+  background-color: $color-primary-blue;
+}
