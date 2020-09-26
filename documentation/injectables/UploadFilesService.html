@@ -450,9 +450,6 @@ export class UploadFilesService {
     let formData:FormData &#x3D; new FormData();
     
     formData.append(&#x27;fileKey&#x27;, file, file.name);
-    let httpheader&#x3D;new HttpHeaders;
-    httpheader.append(&quot;Content-Type&quot;,&quot;application/octet-stream&#x27;&quot;)   
-    console.log(formData.get(&#x27;fileKey&#x27;));       
     var r&#x3D;this.httpClient.put(url,formData.get(&#x27;fileKey&#x27;),{ observe: &#x27;response&#x27; }); 
     return r;
   }

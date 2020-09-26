@@ -95,7 +95,7 @@ import { ClassroomDocenteResolver } from &quot;./_resolvers/docente/classRoom/cl
 import { GetLevelResolver } from &quot;./_resolvers/docente/classRoom/get-level.resolver&quot;;
 import { GetSemesterResolver } from &quot;./_resolvers/docente/classRoom/get-semester.resolver&quot;;
 import { ThemeContentComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-content.component&quot;;
-import { ThemeLessonsComponent } from &quot;./modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component&quot;;
+import { ThemeLessonsComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component&quot;;
 import { ThemesBaseComponent } from &quot;./modules/home/modules/themes-base/themes-base.component&quot;;
 import { AssessmentsBaseComponent } from &quot;./modules/home/modules/assessments-base/assessments-base.component&quot;;
 import { IndividualAssessmentComponent } from &quot;./modules/home/modules/assessments-base/assessments/individual-assessment/individual-assessment.component&quot;;
@@ -114,7 +114,7 @@ import { ForumsBaseComponent } from &quot;./modules/home/forums-base/forums-base
 import { GetTypeLessonsResolver } from &quot;./_resolvers/docente/modules/themes/get-type-lessons.resolver&quot;;
 import { GetModulesResolver } from &quot;./_resolvers/docente/evaluation/get_modules.resolver&quot;;
 import { GetColorsResolver } from &quot;./_resolvers/docente/evaluation/get-colores.resolver&quot;;
-import { CreatePracticeComponent } from &quot;./modules/home/modules/themes-base/themes/create-practice/create-practice.component&quot;;
+import { CreatePracticeComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-lessons/create-practice/create-practice.component&quot;;
 import { BuildingPageComponent } from &quot;./modules/aux-pages/building-page/building-page.component&quot;;
 import { GetForumsResolver } from &quot;./_resolvers/docente/forums/get-forums.resolver&quot;;
 import { GetPracticesResolver } from &quot;./_resolvers/docente/practices/get-practices.resolver&quot;;
@@ -124,13 +124,15 @@ import { GetModulesSimpleResolver } from &quot;./_resolvers/docente/evaluation/g
 import { CustomModuleBaseComponent } from &quot;./modules/home/modules/custom-module-base/custom-module-base.component&quot;;
 import { CustomModuleComponent } from &quot;./modules/home/modules/custom-module-base/custom-module/custom-module.component&quot;;
 import { DetailCustomModuleComponent } from &quot;./modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component&quot;;
-import { DetailTableComponent } from &quot;./modules/home/modules/themes-base/themes/detail-table/detail-table.component&quot;;
-import { DetailIndividualComponent } from &quot;./modules/home/modules/themes-base/themes/detail-individual/detail-individual.component&quot;;
-import { GetQualificationResolver } from &#x27;./_resolvers/docente/my-class/get-qualification.resolver&#x27;;
-import { GetScoreContentModuleResolver } from &#x27;./_resolvers/docente/modules/get-score-content-module.resolver&#x27;;
-import { GetScoresPracticesResolver } from &#x27;./_resolvers/docente/practices/get-scores-practices.resolver&#x27;;
-import { GetPracticesDashBoardResolver } from &#x27;./_resolvers/docente/dashBoards/get_practices-dashboard.resolver&#x27;;
- 
+import { DetailTableComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-lessons/detail-table/detail-table.component&quot;;
+import { DetailIndividualComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-lessons/detail-table/detail-individual/detail-individual.component&quot;;
+import { GetQualificationResolver } from &quot;./_resolvers/docente/my-class/get-qualification.resolver&quot;;
+import { GetScoreContentModuleResolver } from &quot;./_resolvers/docente/modules/get-score-content-module.resolver&quot;;
+import { GetScoresPracticesResolver } from &quot;./_resolvers/docente/practices/get-scores-practices.resolver&quot;;
+import { GetPracticesDashBoardResolver } from &quot;./_resolvers/docente/dashBoards/get_practices-dashboard.resolver&quot;;
+import { EditPracticeComponent } from &quot;./modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component&quot;;
+import { GetPracticeModResolver } from &#x27;./_resolvers/docente/practices/get-practice-mod.resolver&#x27;;
+
 const routes: Routes &#x3D; [
   {
     path: &quot;&quot;,
@@ -149,8 +151,8 @@ const routes: Routes &#x3D; [
     resolve: {
       profile: ProfileDocenteResolver,
       classroom: ClassroomDocenteResolver,
-      semester:GetSemesterResolver,
-      level:GetLevelResolver
+      semester: GetSemesterResolver,
+      level: GetLevelResolver,
     },
   },
   {
@@ -167,9 +169,9 @@ const routes: Routes &#x3D; [
         // path: &quot;building&quot;,
         // component: BuildingPageComponent,
         component: DashboardComponent,
-        resolve:{
-          practices:GetPracticesDashBoardResolver
-        }
+        resolve: {
+          practices: GetPracticesDashBoardResolver,
+        },
       },
       {
         path: &quot;my-class&quot;,
@@ -203,9 +205,9 @@ const routes: Routes &#x3D; [
               {
                 path: &quot;&quot;,
                 component: QualificationComponent,
-                resolve:{
-                  qualifications:GetQualificationResolver
-                }
+                resolve: {
+                  qualifications: GetQualificationResolver,
+                },
               },
               {
                 path: &quot;profile-students&quot;,
@@ -257,23 +259,22 @@ const routes: Routes &#x3D; [
               {
                 path: &quot;&quot;,
                 component: CustomModuleComponent,
-                resolve:{
-                  content:GetContentModuleResolver
+                resolve: {
+                  content: GetContentModuleResolver,
                 },
-                runGuardsAndResolvers:&quot;always&quot;
-
+                runGuardsAndResolvers: &quot;always&quot;,
               },
               {
                 path: &quot;detail&quot;,
-                children:[
+                children: [
                   {
-                    path:&quot;:idContenidoModulo&quot;,
+                    path: &quot;:idContenidoModulo&quot;,
                     component: DetailCustomModuleComponent,
-                    resolve:{
-                      notasContenido:GetScoreContentModuleResolver
-                    }
-                  }
-                ]
+                    resolve: {
+                      notasContenido: GetScoreContentModuleResolver,
+                    },
+                  },
+                ],
               },
             ],
           },
@@ -323,8 +324,8 @@ const routes: Routes &#x3D; [
                             children: [
                               {
                                 path: &quot;:idPractica&quot;,
-                                resolve:{
-                                  scores:GetScoresPracticesResolver
+                                resolve: {
+                                  scores: GetScoresPracticesResolver,
                                 },
                                 component: DetailTableComponent,
                               },
@@ -339,9 +340,17 @@ const routes: Routes &#x3D; [
                       {
                         path: &quot;practice&quot;,
                         component: CreatePracticeComponent,
+                        resolve: {
+                          repository: GetQuestionsRepositoryResolver,
+                        },
+                      },
+                      {
+                        path: &quot;edit-practice/:idPractica&quot;,
                         resolve:{
-                          repository:GetQuestionsRepositoryResolver
-                        }
+                          practice:GetPracticeModResolver,
+                          repository: GetQuestionsRepositoryResolver,
+                        },
+                        component: EditPracticeComponent,
                       },
                     ],
                   },

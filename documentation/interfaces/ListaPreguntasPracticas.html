@@ -440,7 +440,7 @@ export class RepositoryQuestionComponent implements OnInit {
       startWith(&quot;&quot;),
       map((value) &#x3D;&gt; this._filter(value))
     );
-    this.cargarDatos(this.dataDialog[&quot;repository&quot;]);
+    this.cargarDatosSQL(this.dataDialog[&quot;repository&quot;]);
   }
   private _filter(value: string): string[] {
     const filterValue &#x3D; value.toLowerCase();
@@ -497,7 +497,25 @@ export class RepositoryQuestionComponent implements OnInit {
       nuevaPregunta.respuesta&#x3D;pregunta.pregunta.respuestas;
       nuevaPregunta.opciones&#x3D;pregunta.pregunta.opciones;
       nuevaPregunta.puntuacion&#x3D;10;
-      nuevaPregunta.tipo&#x3D;true;
+      nuevaPregunta.tipo&#x3D;1;
+      console.log(nuevaPregunta);
+      this.cargarRespuestasBool(nuevaPregunta);
+      this.preguntas.push(nuevaPregunta)
+    }
+  }
+  cargarDatosSQL(data){
+    this.checkboxOpciones&#x3D;[];
+    for(let pregunta of data){
+      this.checkboxOpciones.push({isChecked:false,opcionRespuesta:&quot;&quot;})
+      let nuevaPregunta&#x3D;new Pregunta();
+      nuevaPregunta.idTipoPregunta&#x3D;String(pregunta.id_tipo_pregunta);
+      nuevaPregunta.idTipoRespuesta&#x3D;String(pregunta.id_tipo_respuesta);
+      nuevaPregunta.pregunta&#x3D;pregunta.pregunta;
+      nuevaPregunta.id&#x3D;pregunta.id_pregunta;
+      nuevaPregunta.respuesta&#x3D;pregunta.respuesta;
+      nuevaPregunta.opciones&#x3D;pregunta.opciones;
+      nuevaPregunta.puntuacion&#x3D;10;
+      nuevaPregunta.tipo&#x3D;1;
       console.log(nuevaPregunta);
       this.cargarRespuestasBool(nuevaPregunta);
       this.preguntas.push(nuevaPregunta)

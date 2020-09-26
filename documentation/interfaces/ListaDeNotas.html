@@ -460,6 +460,7 @@ import {
 import { TitleCasePipe } from &quot;@angular/common&quot;;
 import { ListaEstudiante } from &quot;src/app/models/Teacher/MyClass/ListaEstudiante&quot;;
 import { SharedService } from &quot;src/app/shared/shared.service&quot;;
+import { ExportExcelService } from &#x27;src/app/_services/export-excel.service&#x27;;
 export interface ListaDeNotas {
   nombre: string;
   posicion: number;
@@ -482,6 +483,7 @@ export interface ListaDeNotas {
 export class QualificationComponent implements OnInit {
   link: string &#x3D; &quot;My class / Qualification&quot;;
   columns: string[] &#x3D; [];
+  columnsPor: string[] &#x3D; [];
 
   ELEMENT_DATA: ListaEstudiante[] &#x3D; [];
   displayedColumns: string[] &#x3D; [&quot;posicion&quot;, &quot;p_nombre&quot;, &quot;m_nombre&quot;, &quot;nombre&quot;];
@@ -493,37 +495,16 @@ export class QualificationComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private data: SharedService
+    private data: SharedService,
+    private exc:ExportExcelService
   ) {}
   cargarDatosBody(data) {
     console.log(data);
   }
-  encColumna(posi: number) {
-    var primaLetra &#x3D; 0;
-    var segunLetra &#x3D; 0;
-    if (posi &gt; 26) {
-      primaLetra &#x3D; posi / 26 - ((posi / 26) % 1) - 1;
-      console.log(primaLetra);
-      segunLetra &#x3D; (posi % 26) - 1;
-      return (
-        String.fromCharCode(primaLetra + 65) +
-        String.fromCharCode(segunLetra + 65)
-      );
-    } else {
-      return String.fromCharCode(posi - 1 + 65);
-    }
-  }
-  /*name of the excel-file which will be downloaded. */
-
-  fileName &#x3D; &quot;ExcelSheet.xlsx&quot;;
+ 
   ExportTOExcel() {
     let element &#x3D; document.getElementById(&quot;TABLE&quot;);
-    const ws: XLSX.WorkSheet &#x3D; XLSX.utils.table_to_sheet(element);
-    var eli &#x3D; this.encColumna(this.displayedColumns.length);
-    delete ws[String(eli) + &quot;1&quot;];
-    const wb: XLSX.WorkBook &#x3D; XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, &quot;Sheet1&quot;);
-    XLSX.writeFile(wb, this.fileName);
+    this.exc.export(element,&quot;General Notes&quot;,this.displayedColumns.length);
   }
 
   cargarCabezera(cabe) {
@@ -539,8 +520,11 @@ export class QualificationComponent implements OnInit {
       if (data[0].modulos) {
         for (let dat of data[0].modulos) {
           this.columns.push(
-            dat.nombre_modulo + &quot;\n&quot; + String(dat.rubrica) + &quot;%&quot;
+            dat.nombre_modulo
           );
+          this.columnsPor.push(
+            String(dat.rubrica) + &quot;%&quot;
+          )
         }
       }
       this.displayedColumns &#x3D; this.columns.map((col) &#x3D;&gt; col);

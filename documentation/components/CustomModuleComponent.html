@@ -468,8 +468,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="117"
-                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component.ts:117</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component.ts:118</a></div>
                 </td>
             </tr>
 
@@ -573,8 +573,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component.ts:126</a></div>
                 </td>
             </tr>
 
@@ -732,8 +732,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/custom-module.component.ts:141</a></div>
                 </td>
             </tr>
 
@@ -979,7 +979,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { SimpleCard } from &quot;src/app/models/simpleCard&quot;;
+import { SimpleCard } from &quot;src/app/models/SimpleCard&quot;;
 import { ActivatedRoute, Router } from &quot;@angular/router&quot;;
 import { DeleteCardComponent } from &quot;src/app/modules/dialogs/delete-card/delete-card.component&quot;;
 import { DeleteItemService } from &quot;src/app/services/dialogs/delete-item.service&quot;;
@@ -1080,7 +1080,8 @@ export class CustomModuleComponent implements OnInit {
         const dialogRef &#x3D; this.dialog.open(CustomModuleRubricComponent, {
           width: &quot;400px&quot;,
           data: {
-            rubricas: this.cardsModulosPers
+            rubricas: this.cardsModulosPers,
+            idModulo:this.idModulo
           },
         });
         dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
@@ -1107,7 +1108,8 @@ export class CustomModuleComponent implements OnInit {
       width: &quot;400px&quot;,
       data:{
         id:contenido.id,
-        tipo:&quot;Custom Module Content&quot;
+        tipo:&quot;Custom Module Content&quot;,
+        idModulo:this.idModulo
       }
     });
     dialogRef.afterClosed().subscribe((result)&#x3D;&gt;{
@@ -1123,18 +1125,33 @@ export class CustomModuleComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
-  &lt;!-- botton de editar porcentajes --&gt;
-  &lt;button class&#x3D;&quot;module-button&quot; (click)&#x3D;&quot;editarPorcentajes()&quot;&gt;
-    &lt;i class&#x3D;&quot;fas fa-edit module-button__icon&quot;&gt;&lt;/i&gt;
-    &lt;div class&#x3D;&quot;module-button__text&quot;&gt;
-      Edit Percentages
+  &lt;!-- buttons de agregar seccion --&gt;
+  &lt;div class&#x3D;&quot;button-module-container&quot;&gt;
+    &lt;!-- container for buttons with simple actions--&gt;
+    &lt;div class&#x3D;&quot;button-module-container--actions&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;module-button module-button--actions&quot;
+        (click)&#x3D;&quot;editarPorcentajes()&quot;
+      &gt;
+        &lt;i class&#x3D;&quot;fas fa-edit module-button__icon&quot;&gt;&lt;/i&gt;
+        &lt;div class&#x3D;&quot;module-button__text&quot;&gt;
+          Edit Percentages
+        &lt;/div&gt;
+      &lt;/button&gt;
     &lt;/div&gt;
-  &lt;/button&gt;
-  &lt;!-- //botton de editar porcentajes --&gt;
+    &lt;!-- #container for buttons with simple actions--&gt;
+    &lt;!-- container for buttons like excel svg word etc --&gt;
+    &lt;div class&#x3D;&quot;button-module-container-imports&quot;&gt;
+      &lt;!-- INSERT BUTTONS IMPORTS HERE!!! --&gt;
+    &lt;/div&gt;
+    &lt;!-- #container for buttons like excel svg word etc --&gt;
+  &lt;/div&gt;
+  &lt;!-- //buttons de agregar seccion --&gt;
+
   &lt;!--Subtitle--&gt;
   &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
     &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
-      &lt;span&gt;{{nombreModulo}}&lt;/span&gt;
+      &lt;span&gt;{{ nombreModulo }}&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;subtitle-compound__buttons-container&quot;&gt;
       &lt;!--Add button--&gt;
@@ -1161,7 +1178,10 @@ export class CustomModuleComponent implements OnInit {
           &lt;div class&#x3D;&quot;custom-card--custom__img-overlay&quot;&gt;
             &lt;div class&#x3D;&quot;custom-card--custom__buttons-card&quot;&gt;
               &lt;!--btn Ver lista--&gt;
-              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;verlistar(custCards)&quot;&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;verlistar(custCards)&quot;
+              &gt;
                 &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
                   list
                 &lt;/mat-icon&gt;
@@ -1180,7 +1200,7 @@ export class CustomModuleComponent implements OnInit {
               &lt;!--btn eliminar--&gt;
               &lt;button
                 class&#x3D;&quot;circular-button-custom-card&quot;
-                (click)&#x3D;&quot;eliminarCard(custCards,indexcu)&quot;
+                (click)&#x3D;&quot;eliminarCard(custCards, indexcu)&quot;
               &gt;
                 &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
                   delete
@@ -1239,8 +1259,8 @@ export class CustomModuleComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <!-- botton de editar porcentajes -->  <button class="module-button" (click)="editarPorcentajes()">    <i class="fas fa-edit module-button__icon"></i>    <div class="module-button__text">      Edit Percentages    </div>  </button>  <!-- //botton de editar porcentajes -->  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>{{nombreModulo}}</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button        class="circular-button-subtitle"        mat-mini-fab        (click)="agregarModulo()"      >        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle-->  <!--row-->  <div class="row">    <!--evaluation-card-attendance  -->    <div      *ngFor="let custCards of cardsModulosPers; let indexcu = index"      class="col-lg-3 col-md-6 col-xs-12"    >      <div class="custom-card--custom">        <div class="custom-card--custom__img">          <div class="custom-card--custom__img-overlay">            <div class="custom-card--custom__buttons-card">              <!--btn Ver lista-->              <button class="circular-button-custom-card" (click)="verlistar(custCards)">                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="editarCard(custCards)"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->              <!--btn eliminar-->              <button                class="circular-button-custom-card"                (click)="eliminarCard(custCards,indexcu)"              >                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--custom__content-card">              <div class="custom-card--custom__circle">                {{ custCards.rubrica }}%              </div>              <div class="custom-card--custom__title">                {{ custCards.nombreContenido }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#evaluation-card-attendance  -->  </div>  <!--#row--></div></div>'
-    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!-- buttons de agregar seccion -->  <div class="button-module-container">    <!-- container for buttons with simple actions-->    <div class="button-module-container--actions">      <button        class="module-button module-button--actions"        (click)="editarPorcentajes()"      >        <i class="fas fa-edit module-button__icon"></i>        <div class="module-button__text">          Edit Percentages        </div>      </button>    </div>    <!-- #container for buttons with simple actions-->    <!-- container for buttons like excel svg word etc -->    <div class="button-module-container-imports">      <!-- INSERT BUTTONS IMPORTS HERE!!! -->    </div>    <!-- #container for buttons like excel svg word etc -->  </div>  <!-- //buttons de agregar seccion -->  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>{{ nombreModulo }}</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button        class="circular-button-subtitle"        mat-mini-fab        (click)="agregarModulo()"      >        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle-->  <!--row-->  <div class="row">    <!--evaluation-card-attendance  -->    <div      *ngFor="let custCards of cardsModulosPers; let indexcu = index"      class="col-lg-3 col-md-6 col-xs-12"    >      <div class="custom-card--custom">        <div class="custom-card--custom__img">          <div class="custom-card--custom__img-overlay">            <div class="custom-card--custom__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verlistar(custCards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn configuraciones-->              <button                class="circular-button-custom-card"                (click)="editarCard(custCards)"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn configuraciones-->              <!--btn eliminar-->              <button                class="circular-button-custom-card"                (click)="eliminarCard(custCards, indexcu)"              >                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--custom__content-card">              <div class="custom-card--custom__circle">                {{ custCards.rubrica }}%              </div>              <div class="custom-card--custom__title">                {{ custCards.nombreContenido }}              </div>            </div>          </div>        </div>      </div>    </div>    <!--#evaluation-card-attendance  -->  </div>  <!--#row--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureLessonContentComponent', 'selector': 'app-configure-lesson-content'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditPracticeComponent', 'selector': 'app-edit-practice'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CustomModuleComponent'};
 </script>

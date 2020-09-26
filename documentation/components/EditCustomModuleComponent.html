@@ -669,43 +669,69 @@ export class EditCustomModuleComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;dialog&quot;&gt;
-    &lt;div class&#x3D;&quot;dialog-subtitle&quot;&gt;
-        &lt;div class&#x3D;&quot;dialog-subtitle__text&quot;&gt;
-            &lt;span&gt;Edit Custom Module&lt;/span&gt;
-        &lt;/div&gt;
+  &lt;div class&#x3D;&quot;dialog-subtitle&quot;&gt;
+    &lt;div class&#x3D;&quot;dialog-subtitle__text&quot;&gt;
+      &lt;span&gt;Edit Custom Module&lt;/span&gt;
     &lt;/div&gt;
-    &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
-        &lt;form class&#x3D;&quot;dialogforms&quot; enctype&#x3D;&quot;multipart/form-data&quot;&gt;
-        
-            &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;input-disabled&quot; (dblclick)&#x3D;&#x27;toggleDisable()&#x27;&gt;
-                &lt;mat-label&gt;Module&#x27;s name&lt;/mat-label&gt;
-                &lt;!-- Input para el nombre del modulo--&gt;
-                &lt;input [disabled]&#x3D;&#x27;disableTextbox&#x27; [(ngModel)]&#x3D;nombre type&#x3D;&quot;text&quot; class&#x3D;&quot;input-form&quot; matInput placeholder&#x3D;&quot;Module&#x27;s name&quot; name&#x3D;&quot;nombreModulo&quot; /&gt;
-                &lt;!-- //Input para el nombre del modulo--&gt;
-            &lt;/mat-form-field&gt;
-            &lt;div class&#x3D;&quot;radio-buttons-dialog&quot;&gt;
-                &lt;div class&#x3D;&quot;radio-buttons-dialog__title&quot;&gt;Module Status :&lt;/div&gt;
-                &lt;mat-radio-group aria-label&#x3D;&quot;Select an option&quot;  name&#x3D;&quot;radiobuttonvalue&quot; [(ngModel)]&#x3D;&quot;radioButtonValue&quot;&gt;
-                    &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;enable&quot; checked&gt;Enable&lt;/mat-radio-button&gt;
-                    &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;unable&quot;&gt;Unable&lt;/mat-radio-button&gt;
-                &lt;/mat-radio-group&gt;
-                &lt;br /&gt;
-            &lt;/div&gt;
-        &lt;/form&gt;
-    &lt;/mat-dialog-content&gt;
-    &lt;mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
-        &lt;!--btn cancel--&gt;
-        &lt;button mat-button mat-dialog-close class&#x3D;&quot;dialog-button-cancel&quot; (click)&#x3D;cancelar()&gt;
-            Cancel
-        &lt;/button&gt;
-        &lt;!--#btn cancel--&gt;
-        &lt;!-- btn accept--&gt;
-        &lt;button mat-button class&#x3D;&quot;dialog-button-accept&quot; (click)&#x3D;aceptar() &gt;
-            Save changes
-        &lt;/button&gt;
-    &lt;/mat-dialog-actions&gt;
-    &lt;!-- #btn accept--&gt;
-&lt;/div&gt;</code></pre>
+  &lt;/div&gt;
+  &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
+    &lt;form class&#x3D;&quot;dialogforms&quot; enctype&#x3D;&quot;multipart/form-data&quot;&gt;
+      &lt;mat-form-field
+        appearance&#x3D;&quot;outline&quot;
+        class&#x3D;&quot;input-disabled&quot;
+        (dblclick)&#x3D;&quot;toggleDisable()&quot;
+      &gt;
+        &lt;mat-label&gt;Module&#x27;s name&lt;/mat-label&gt;
+        &lt;!-- Input para el nombre del modulo--&gt;
+        &lt;input
+          [disabled]&#x3D;&quot;disableTextbox&quot;
+          [(ngModel)]&#x3D;&quot;nombre&quot;
+          type&#x3D;&quot;text&quot;
+          class&#x3D;&quot;input-form&quot;
+          matInput
+          placeholder&#x3D;&quot;Module&#x27;s name&quot;
+          name&#x3D;&quot;nombreModulo&quot;
+        /&gt;
+        &lt;!-- //Input para el nombre del modulo--&gt;
+      &lt;/mat-form-field&gt;
+      &lt;div class&#x3D;&quot;radio-buttons-dialog&quot;&gt;
+        &lt;div class&#x3D;&quot;radio-buttons-dialog__title&quot;&gt;Module Status :&lt;/div&gt;
+        &lt;div class&#x3D;&quot;radio-buttons-dialog__content&quot;&gt;
+          &lt;mat-radio-group
+            aria-label&#x3D;&quot;Select an option&quot;
+            name&#x3D;&quot;radiobuttonvalue&quot;
+            [(ngModel)]&#x3D;&quot;radioButtonValue&quot;
+          &gt;
+            &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;enable&quot; checked
+              &gt;Enable&lt;/mat-radio-button
+            &gt;
+            &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; value&#x3D;&quot;unable&quot;
+              &gt;Unable&lt;/mat-radio-button
+            &gt;
+          &lt;/mat-radio-group&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/mat-dialog-content&gt;
+  &lt;mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+    &lt;!--btn cancel--&gt;
+    &lt;button
+      mat-button
+      mat-dialog-close
+      class&#x3D;&quot;dialog-button-cancel&quot;
+      (click)&#x3D;&quot;cancelar()&quot;
+    &gt;
+      Cancel
+    &lt;/button&gt;
+    &lt;!--#btn cancel--&gt;
+    &lt;!-- btn accept--&gt;
+    &lt;button mat-button class&#x3D;&quot;dialog-button-accept&quot; (click)&#x3D;&quot;aceptar()&quot;&gt;
+      Save changes
+    &lt;/button&gt;
+  &lt;/mat-dialog-actions&gt;
+  &lt;!-- #btn accept--&gt;
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -740,8 +766,8 @@ export class EditCustomModuleComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="dialog">    <div class="dialog-subtitle">        <div class="dialog-subtitle__text">            <span>Edit Custom Module</span>        </div>    </div>    <mat-dialog-content class="mat-typography">        <form class="dialogforms" enctype="multipart/form-data">                    <mat-form-field appearance="outline" class="input-disabled" (dblclick)=\'toggleDisable()\'>                <mat-label>Module\'s name</mat-label>                <!-- Input para el nombre del modulo-->                <input [disabled]=\'disableTextbox\' [(ngModel)]=nombre type="text" class="input-form" matInput placeholder="Module\'s name" name="nombreModulo" />                <!-- //Input para el nombre del modulo-->            </mat-form-field>            <div class="radio-buttons-dialog">                <div class="radio-buttons-dialog__title">Module Status :</div>                <mat-radio-group aria-label="Select an option"  name="radiobuttonvalue" [(ngModel)]="radioButtonValue">                    <mat-radio-button class="radio-button" value="enable" checked>Enable</mat-radio-button>                    <mat-radio-button class="radio-button" value="unable">Unable</mat-radio-button>                </mat-radio-group>                <br />            </div>        </form>    </mat-dialog-content>    <mat-dialog-actions align="end">        <!--btn cancel-->        <button mat-button mat-dialog-close class="dialog-button-cancel" (click)=cancelar()>            Cancel        </button>        <!--#btn cancel-->        <!-- btn accept-->        <button mat-button class="dialog-button-accept" (click)=aceptar() >            Save changes        </button>    </mat-dialog-actions>    <!-- #btn accept--></div></div>'
-    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+        var COMPONENT_TEMPLATE = '<div><div class="dialog">  <div class="dialog-subtitle">    <div class="dialog-subtitle__text">      <span>Edit Custom Module</span>    </div>  </div>  <mat-dialog-content class="mat-typography">    <form class="dialogforms" enctype="multipart/form-data">      <mat-form-field        appearance="outline"        class="input-disabled"        (dblclick)="toggleDisable()"      >        <mat-label>Module\'s name</mat-label>        <!-- Input para el nombre del modulo-->        <input          [disabled]="disableTextbox"          [(ngModel)]="nombre"          type="text"          class="input-form"          matInput          placeholder="Module\'s name"          name="nombreModulo"        />        <!-- //Input para el nombre del modulo-->      </mat-form-field>      <div class="radio-buttons-dialog">        <div class="radio-buttons-dialog__title">Module Status :</div>        <div class="radio-buttons-dialog__content">          <mat-radio-group            aria-label="Select an option"            name="radiobuttonvalue"            [(ngModel)]="radioButtonValue"          >            <mat-radio-button class="radio-button" value="enable" checked              >Enable</mat-radio-button            >            <mat-radio-button class="radio-button" value="unable"              >Unable</mat-radio-button            >          </mat-radio-group>        </div>      </div>    </form>  </mat-dialog-content>  <mat-dialog-actions align="end">    <!--btn cancel-->    <button      mat-button      mat-dialog-close      class="dialog-button-cancel"      (click)="cancelar()"    >      Cancel    </button>    <!--#btn cancel-->    <!-- btn accept-->    <button mat-button class="dialog-button-accept" (click)="aceptar()">      Save changes    </button>  </mat-dialog-actions>  <!-- #btn accept--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureLessonContentComponent', 'selector': 'app-configure-lesson-content'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditPracticeComponent', 'selector': 'app-edit-practice'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'EditCustomModuleComponent'};
 </script>

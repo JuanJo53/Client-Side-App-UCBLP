@@ -142,6 +142,9 @@
                             <li>
                                 <a href="#ELEMENT_DATA">ELEMENT_DATA</a>
                             </li>
+                            <li>
+                                <a href="#titulo">titulo</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -159,6 +162,12 @@
                             </li>
                             <li>
                                 <a href="#cargarDatos">cargarDatos</a>
+                            </li>
+                            <li>
+                                <a href="#cargarTitulo">cargarTitulo</a>
+                            </li>
+                            <li>
+                                <a href="#ExportExcel">ExportExcel</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
@@ -181,12 +190,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dialog: MatDialog, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+<code>constructor(dialog: MatDialog, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, exc: <a href="../injectables/ExportExcelService.html">ExportExcelService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -220,6 +229,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>exc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ExportExcelService.html" target="_self" >ExportExcelService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -267,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -333,6 +354,115 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarTitulo"></a>
+                    <span class="name">
+                        <b>
+                            cargarTitulo
+                        </b>
+                        <a href="#cargarTitulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarTitulo(data: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ExportExcel"></a>
+                    <span class="name">
+                        <b>
+                            ExportExcel
+                        </b>
+                        <a href="#ExportExcel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ExportExcel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="32"
                             class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:32</a></div>
                 </td>
@@ -372,8 +502,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:68</a></div>
                 </td>
             </tr>
 
@@ -414,7 +544,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -442,7 +572,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -471,9 +601,9 @@
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
     &quot;posicion&quot;,
-    &quot;nombre&quot;,
     &quot;p_nombre&quot;,
     &quot;m_nombre&quot;,
+    &quot;nombre&quot;,
     &quot;puntuacion&quot;,
     &quot;id&quot;,
   ]</code>
@@ -481,7 +611,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -508,13 +638,44 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[
-]</code>
+                            <i>Default value : </i><code>[]</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titulo"></a>
+                        <span class="name">
+                            <b>
+                            titulo</b>
+                            <a href="#titulo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/modules/home/modules/custom-module-base/custom-module/detail-custom-module/detail-custom-module.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -532,8 +693,8 @@ import { MatTableDataSource } from &quot;@angular/material/table&quot;;
 import { Router, ActivatedRoute } from &quot;@angular/router&quot;;
 import { MatDialog } from &quot;@angular/material/dialog&quot;;
 import { UpdateStudentScoreComponent } from &quot;src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component&quot;;
-import { NotasContenidoModulo } from &#x27;src/app/models/Teacher/Modules/NotasContenidoModulo&#x27;;
-
+import { NotasContenidoModulo } from &quot;src/app/models/Teacher/Modules/NotasContenidoModulo&quot;;
+import { ExportExcelService } from &quot;src/app/_services/export-excel.service&quot;;
 
 @Component({
   selector: &quot;app-detail-custom-module&quot;,
@@ -541,14 +702,13 @@ import { NotasContenidoModulo } from &#x27;src/app/models/Teacher/Modules/NotasC
   styleUrls: [&quot;./detail-custom-module.component.scss&quot;],
 })
 export class DetailCustomModuleComponent implements OnInit {
-  
-ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
-];
+  titulo: string &#x3D; &quot;&quot;;
+  ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [];
   displayedColumns: string[] &#x3D; [
     &quot;posicion&quot;,
-    &quot;nombre&quot;,
     &quot;p_nombre&quot;,
     &quot;m_nombre&quot;,
+    &quot;nombre&quot;,
     &quot;puntuacion&quot;,
     &quot;id&quot;,
   ];
@@ -556,29 +716,44 @@ ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
 
   constructor(
     public dialog: MatDialog,
-    private route:ActivatedRoute    
-    ) {}
-  cargarDatos(){
+    private route: ActivatedRoute,
+    private exc: ExportExcelService
+  ) {}
+  ExportExcel() {
+    let element &#x3D; document.getElementById(&quot;TABLE&quot;);
+    this.exc.export(
+      element,
+      &quot;ContentModule Notes&quot;,
+      this.displayedColumns.length
+    );
+  }
+  cargarTitulo(data: any[]) {
+    if (data.length !&#x3D; 0) {
+      this.titulo &#x3D; data[0].nombre_modulo;
+    }
+  }
+  cargarDatos() {
     this.route.data.subscribe({
-      next:(data)&#x3D;&gt;{
-        if(data.notasContenido.status&#x3D;&#x3D;200){
-          for(let i in data.notasContenido.body){
-            var nota&#x3D;data.notasContenido.body[i];
-            let newCont&#x3D;new NotasContenidoModulo();
-            newCont.id&#x3D;nota.id_nota_contenido;
-            newCont.m_nombre&#x3D;nota.ap_materno_alumno;
-            newCont.nombre&#x3D;nota.nombre_alumno;
-            newCont.p_nombre&#x3D;nota.ap_paterno_alumno;
-            newCont.puntuacion&#x3D;nota.nota_contenido;
-            newCont.posicion&#x3D;Number(i)+1;
+      next: (data) &#x3D;&gt; {
+        if (data.notasContenido.status &#x3D;&#x3D; 200) {
+          this.cargarTitulo(data.notasContenido.body);
+          for (let i in data.notasContenido.body) {
+            var nota &#x3D; data.notasContenido.body[i];
+            let newCont &#x3D; new NotasContenidoModulo();
+            newCont.id &#x3D; nota.id_nota_contenido;
+            newCont.m_nombre &#x3D; nota.ap_materno_alumno;
+            newCont.nombre &#x3D; nota.nombre_alumno;
+            newCont.p_nombre &#x3D; nota.ap_paterno_alumno;
+            newCont.puntuacion &#x3D; nota.nota_contenido;
+            newCont.posicion &#x3D; Number(i) + 1;
             this.ELEMENT_DATA.push(newCont);
           }
         }
       },
-      error:(err)&#x3D;&gt;{
+      error: (err) &#x3D;&gt; {
         console.log(err);
-      }
-    })
+      },
+    });
   }
   ngOnInit(): void {
     this.cargarDatos();
@@ -587,9 +762,9 @@ ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
   actualizarPuntuacion(nota) {
     const dialogRef &#x3D; this.dialog.open(UpdateStudentScoreComponent, {
       width: &quot;400px&quot;,
-      data:{
-        notasContenido:nota
-      }
+      data: {
+        notasContenido: nota,
+      },
     });
   }
 }
@@ -598,16 +773,44 @@ ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;!-- buttons de agregar seccion --&gt;
+  &lt;div class&#x3D;&quot;button-module-container&quot;&gt;
+    &lt;!-- container for buttons with simple actions--&gt;
+    &lt;div class&#x3D;&quot;button-module-container--actions&quot;&gt;
+      &lt;!-- INSERT BUTTONS ACTIONS HERE!!! --&gt;
+    &lt;/div&gt;
+    &lt;!-- #container for buttons with simple actions--&gt;
+    &lt;!-- container for buttons like excel svg word etc --&gt;
+    &lt;div class&#x3D;&quot;button-module-container-imports&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;module-button module-button--excel&quot;
+        (click)&#x3D;&quot;ExportExcel()&quot;
+      &gt;
+        &lt;i class&#x3D;&quot;far fa-file-excel module-button__icon&quot;&gt;&lt;/i&gt;
+        &lt;div class&#x3D;&quot;module-button__text&quot;&gt;
+          Excel
+        &lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- #container for buttons like excel svg word etc --&gt;
+  &lt;/div&gt;
+  &lt;!-- //buttons de agregar seccion --&gt;
   &lt;!--Subtitle--&gt;
   &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
     &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
-      &lt;span&gt;Exposition 1&lt;/span&gt;
+      &lt;span&gt;{{ titulo }}&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;!--#Subtitle--&gt;
   &lt;!--tables--&gt;
   &lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
-    &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort class&#x3D;&quot;mat-header-row&quot;&gt;
+    &lt;table
+      mat-table
+      [dataSource]&#x3D;&quot;dataSource&quot;
+      matSort
+      class&#x3D;&quot;mat-header-row&quot;
+      id&#x3D;&quot;TABLE&quot;
+    &gt;
       &lt;!-- Position Column --&gt;
       &lt;ng-container matColumnDef&#x3D;&quot;posicion&quot;&gt;
         &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
@@ -618,14 +821,6 @@ ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
         &lt;/td&gt;
       &lt;/ng-container&gt;
       &lt;!-- #Position Column --&gt;
-      &lt;!-- Name Column --&gt;
-      &lt;ng-container matColumnDef&#x3D;&quot;nombre&quot;&gt;
-        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
-          Name
-        &lt;/th&gt;
-        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.nombre }}&lt;/td&gt;
-      &lt;/ng-container&gt;
-      &lt;!-- #Name Column --&gt;
 
       &lt;!-- Father&#x27;s Name Column --&gt;
       &lt;ng-container matColumnDef&#x3D;&quot;p_nombre&quot;&gt;
@@ -643,6 +838,14 @@ ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
         &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.m_nombre }}&lt;/td&gt;
       &lt;/ng-container&gt;
       &lt;!-- #Mother&#x27;s Name Column --&gt;
+      &lt;!-- Name Column --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;nombre&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+          Name
+        &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.nombre }}&lt;/td&gt;
+      &lt;/ng-container&gt;
+      &lt;!-- #Name Column --&gt;
       &lt;!-- Assistance Column --&gt;
       &lt;ng-container matColumnDef&#x3D;&quot;puntuacion&quot;&gt;
         &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
@@ -721,8 +924,8 @@ ELEMENT_DATA: NotasContenidoModulo[] &#x3D; [
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Exposition 1</span>    </div>  </div>  <!--#Subtitle-->  <!--tables-->  <div class="mat-elevation-z8">    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">      <!-- Position Column -->      <ng-container matColumnDef="posicion">        <th mat-header-cell *matHeaderCellDef class="header-table">          No.        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.posicion }}        </td>      </ng-container>      <!-- #Position Column -->      <!-- Name Column -->      <ng-container matColumnDef="nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Name        </th>        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>      </ng-container>      <!-- #Name Column -->      <!-- Father\'s Name Column -->      <ng-container matColumnDef="p_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Father\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>      </ng-container>      <!-- #Father\'s Name Column -->      <!-- Mother\'s Name Column -->      <ng-container matColumnDef="m_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Mother\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>      </ng-container>      <!-- #Mother\'s Name Column -->      <!-- Assistance Column -->      <ng-container matColumnDef="puntuacion">        <th mat-header-cell *matHeaderCellDef class="header-table">          Score        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.puntuacion }}        </td>      </ng-container>      <!-- #Assistance Column -->      <!-- Buttons Column -->      <ng-container matColumnDef="id">        <th mat-header-cell *matHeaderCellDef class="header-table">          Actions        </th>        <td mat-cell *matCellDef="let element">          <button            class="circular-button-table--normal"            mat-mini-fab            (click)="actualizarPuntuacion(element)"          >            <!--usuario-->            <mat-icon class="dialog-circular-button__icon">edit</mat-icon>            <!-- #usuario-->          </button>          <!-- #Buttons Column -->        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>    </table>    <!--#tables-->    <!-- Paginator -->    <mat-paginator      [pageSizeOptions]="[10, 20]"      showFirstLastButtons    ></mat-paginator>    <!-- #Paginator -->  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!-- buttons de agregar seccion -->  <div class="button-module-container">    <!-- container for buttons with simple actions-->    <div class="button-module-container--actions">      <!-- INSERT BUTTONS ACTIONS HERE!!! -->    </div>    <!-- #container for buttons with simple actions-->    <!-- container for buttons like excel svg word etc -->    <div class="button-module-container-imports">      <button        class="module-button module-button--excel"        (click)="ExportExcel()"      >        <i class="far fa-file-excel module-button__icon"></i>        <div class="module-button__text">          Excel        </div>      </button>    </div>    <!-- #container for buttons like excel svg word etc -->  </div>  <!-- //buttons de agregar seccion -->  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>{{ titulo }}</span>    </div>  </div>  <!--#Subtitle-->  <!--tables-->  <div class="mat-elevation-z8">    <table      mat-table      [dataSource]="dataSource"      matSort      class="mat-header-row"      id="TABLE"    >      <!-- Position Column -->      <ng-container matColumnDef="posicion">        <th mat-header-cell *matHeaderCellDef class="header-table">          No.        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.posicion }}        </td>      </ng-container>      <!-- #Position Column -->      <!-- Father\'s Name Column -->      <ng-container matColumnDef="p_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Father\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>      </ng-container>      <!-- #Father\'s Name Column -->      <!-- Mother\'s Name Column -->      <ng-container matColumnDef="m_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Mother\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>      </ng-container>      <!-- #Mother\'s Name Column -->      <!-- Name Column -->      <ng-container matColumnDef="nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Name        </th>        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>      </ng-container>      <!-- #Name Column -->      <!-- Assistance Column -->      <ng-container matColumnDef="puntuacion">        <th mat-header-cell *matHeaderCellDef class="header-table">          Score        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.puntuacion }}        </td>      </ng-container>      <!-- #Assistance Column -->      <!-- Buttons Column -->      <ng-container matColumnDef="id">        <th mat-header-cell *matHeaderCellDef class="header-table">          Actions        </th>        <td mat-cell *matCellDef="let element">          <button            class="circular-button-table--normal"            mat-mini-fab            (click)="actualizarPuntuacion(element)"          >            <!--usuario-->            <mat-icon class="dialog-circular-button__icon">edit</mat-icon>            <!-- #usuario-->          </button>          <!-- #Buttons Column -->        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>    </table>    <!--#tables-->    <!-- Paginator -->    <mat-paginator      [pageSizeOptions]="[10, 20]"      showFirstLastButtons    ></mat-paginator>    <!-- #Paginator -->  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureLessonContentComponent', 'selector': 'app-configure-lesson-content'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditPracticeComponent', 'selector': 'app-edit-practice'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DetailCustomModuleComponent'};
 </script>

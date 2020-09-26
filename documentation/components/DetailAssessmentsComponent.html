@@ -176,7 +176,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:80</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -257,8 +257,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:84</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -296,8 +296,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -338,7 +338,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -367,9 +367,9 @@
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
     &quot;posicion&quot;,
-    &quot;nombre&quot;,
     &quot;p_nombre&quot;,
     &quot;m_nombre&quot;,
+    &quot;nombre&quot;,
     &quot;asistencia&quot;,
     &quot;actividades&quot;,
     &quot;practicas&quot;,
@@ -382,7 +382,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:67</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/modules/home/modules/assessments-base/assessments/detail-assessments/detail-assessments.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -400,10 +400,10 @@ import { MatTableDataSource } from &quot;@angular/material/table&quot;;
 import { Router, ActivatedRoute } from &quot;@angular/router&quot;;
 import { MatDialog } from &quot;@angular/material/dialog&quot;;
 export interface ListaDeNotas {
-  nombre: string;
   posicion: number;
   p_nombre: string; //apellido paterno
   m_nombre: string; //pellido materno
+  nombre: string;
   pregunta1: string;
   pregunta2: string;
   pregunta3: string;
@@ -427,32 +427,6 @@ const ELEMENT_DATA: ListaDeNotas[] &#x3D; [
     promedioFinal: 100,
     id: 1,
   },
-  {
-    posicion: 2,
-    nombre: &quot;Ariel&quot;,
-    p_nombre: &quot;Colque&quot;,
-    m_nombre: &quot;Herrera&quot;,
-    pregunta1: &quot;10/20&quot;,
-    pregunta2: &quot;15/20&quot;,
-    pregunta3: &quot;10/30&quot;,
-    pregunta4: &quot;10/10&quot;,
-    pregunta5: &quot;20/20&quot;,
-    promedioFinal: 55,
-    id: 2,
-  },
-  {
-    posicion: 3,
-    nombre: &quot;Ernesto&quot;,
-    p_nombre: &quot;Vilela&quot;,
-    m_nombre: &quot;Montero&quot;,
-    pregunta1: &quot;20/20&quot;,
-    pregunta2: &quot;20/20&quot;,
-    pregunta3: &quot;30/30&quot;,
-    pregunta4: &quot;10/10&quot;,
-    pregunta5: &quot;20/20&quot;,
-    promedioFinal: 100,
-    id: 3,
-  },
 ];
 
 @Component({
@@ -463,9 +437,9 @@ const ELEMENT_DATA: ListaDeNotas[] &#x3D; [
 export class DetailAssessmentsComponent implements OnInit {
   displayedColumns: string[] &#x3D; [
     &quot;posicion&quot;,
-    &quot;nombre&quot;,
     &quot;p_nombre&quot;,
     &quot;m_nombre&quot;,
+    &quot;nombre&quot;,
     &quot;asistencia&quot;,
     &quot;actividades&quot;,
     &quot;practicas&quot;,
@@ -488,6 +462,25 @@ export class DetailAssessmentsComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;!-- buttons de agregar seccion --&gt;
+  &lt;div class&#x3D;&quot;button-module-container&quot;&gt;
+    &lt;!-- container for buttons with simple actions--&gt;
+    &lt;div class&#x3D;&quot;button-module-container--actions&quot;&gt;
+      &lt;!-- INSERT BUTTONS ACTIONS HERE!!! --&gt;
+    &lt;/div&gt;
+    &lt;!-- #container for buttons with simple actions--&gt;
+    &lt;!-- container for buttons like excel svg word etc --&gt;
+    &lt;div class&#x3D;&quot;button-module-container-imports&quot;&gt;
+      &lt;button class&#x3D;&quot;module-button module-button--excel&quot;&gt;
+        &lt;i class&#x3D;&quot;far fa-file-excel module-button__icon&quot;&gt;&lt;/i&gt;
+        &lt;div class&#x3D;&quot;module-button__text&quot;&gt;
+          Excel
+        &lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- #container for buttons like excel svg word etc --&gt;
+  &lt;/div&gt;
+  &lt;!-- //buttons de agregar seccion --&gt;
   &lt;!--Subtitle--&gt;
   &lt;div class&#x3D;&quot;subtitle-compound&quot;&gt;
     &lt;div class&#x3D;&quot;subtitle-compound__text&quot;&gt;
@@ -508,15 +501,6 @@ export class DetailAssessmentsComponent implements OnInit {
         &lt;/td&gt;
       &lt;/ng-container&gt;
       &lt;!-- #Position Column --&gt;
-      &lt;!-- Name Column --&gt;
-      &lt;ng-container matColumnDef&#x3D;&quot;nombre&quot;&gt;
-        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
-          Name
-        &lt;/th&gt;
-        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.nombre }}&lt;/td&gt;
-      &lt;/ng-container&gt;
-      &lt;!-- #Name Column --&gt;
-
       &lt;!-- Father&#x27;s Name Column --&gt;
       &lt;ng-container matColumnDef&#x3D;&quot;p_nombre&quot;&gt;
         &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
@@ -533,6 +517,14 @@ export class DetailAssessmentsComponent implements OnInit {
         &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.m_nombre }}&lt;/td&gt;
       &lt;/ng-container&gt;
       &lt;!-- #Mother&#x27;s Name Column --&gt;
+      &lt;!-- Name Column --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;nombre&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
+          Name
+        &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{ element.nombre }}&lt;/td&gt;
+      &lt;/ng-container&gt;
+      &lt;!-- #Name Column --&gt;
       &lt;!-- Assistance Column --&gt;
       &lt;ng-container matColumnDef&#x3D;&quot;asistencia&quot;&gt;
         &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;header-table&quot;&gt;
@@ -597,9 +589,15 @@ export class DetailAssessmentsComponent implements OnInit {
           Actions
         &lt;/th&gt;
         &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
-          &lt;button class&#x3D;&quot;circular-button-table--normal&quot; mat-mini-fab (click)&#x3D;&quot;verDetalles()&quot;&gt;
+          &lt;button
+            class&#x3D;&quot;circular-button-table--normal&quot;
+            mat-mini-fab
+            (click)&#x3D;&quot;verDetalles()&quot;
+          &gt;
             &lt;!--usuario--&gt;
-            &lt;mat-icon class&#x3D;&quot;dialog-circular-button__icon&quot;&gt;remove_red_eye&lt;/mat-icon&gt;
+            &lt;mat-icon class&#x3D;&quot;dialog-circular-button__icon&quot;
+              &gt;remove_red_eye&lt;/mat-icon
+            &gt;
             &lt;!-- #usuario--&gt;
           &lt;/button&gt;
 
@@ -654,8 +652,8 @@ export class DetailAssessmentsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Assessment X detail</span>    </div>  </div>  <!--#Subtitle-->  <!--tables-->  <div class="mat-elevation-z8">    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">      <!-- Position Column -->      <ng-container matColumnDef="posicion">        <th mat-header-cell *matHeaderCellDef class="header-table">          No.        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.posicion }}        </td>      </ng-container>      <!-- #Position Column -->      <!-- Name Column -->      <ng-container matColumnDef="nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Name        </th>        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>      </ng-container>      <!-- #Name Column -->      <!-- Father\'s Name Column -->      <ng-container matColumnDef="p_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Father\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>      </ng-container>      <!-- #Father\'s Name Column -->      <!-- Mother\'s Name Column -->      <ng-container matColumnDef="m_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Mother\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>      </ng-container>      <!-- #Mother\'s Name Column -->      <!-- Assistance Column -->      <ng-container matColumnDef="asistencia">        <th mat-header-cell *matHeaderCellDef class="header-table">          1        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta1 }}        </td>      </ng-container>      <!-- #Assistance Column -->      <!-- Activities Column -->      <ng-container matColumnDef="actividades">        <th mat-header-cell *matHeaderCellDef class="header-table">          2        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta2 }}        </td>      </ng-container>      <!-- #Activities Column -->      <!-- Practices Column -->      <ng-container matColumnDef="practicas">        <th mat-header-cell *matHeaderCellDef class="header-table">          3        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta3 }}        </td>      </ng-container>      <!-- #Practices Column -->      <!-- Theme Test Column -->      <ng-container matColumnDef="examenTemas">        <th mat-header-cell *matHeaderCellDef class="header-table">          4        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta4 }}        </td>      </ng-container>      <!-- #Theme Test Column -->      <!-- Assessment Column -->      <ng-container matColumnDef="assessment">        <th mat-header-cell *matHeaderCellDef class="header-table">          5        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta5 }}        </td>      </ng-container>      <!-- #Assessment Column -->      <!-- Average Column -->      <ng-container matColumnDef="promedioFinal">        <th mat-header-cell *matHeaderCellDef class="header-table">          Final Average        </th>        <td mat-cell *matCellDef="let element">{{ element.promedioFinal }}</td>      </ng-container>      <!-- #Average Column -->      <!-- Buttons Column -->      <ng-container matColumnDef="id">        <th mat-header-cell *matHeaderCellDef class="header-table">          Actions        </th>        <td mat-cell *matCellDef="let element">          <button class="circular-button-table--normal" mat-mini-fab (click)="verDetalles()">            <!--usuario-->            <mat-icon class="dialog-circular-button__icon">remove_red_eye</mat-icon>            <!-- #usuario-->          </button>          <!-- #Buttons Column -->        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>    </table>    <!--#tables-->    <!-- Paginator -->    <mat-paginator      [pageSizeOptions]="[10, 20]"      showFirstLastButtons    ></mat-paginator>    <!-- #Paginator -->  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!-- buttons de agregar seccion -->  <div class="button-module-container">    <!-- container for buttons with simple actions-->    <div class="button-module-container--actions">      <!-- INSERT BUTTONS ACTIONS HERE!!! -->    </div>    <!-- #container for buttons with simple actions-->    <!-- container for buttons like excel svg word etc -->    <div class="button-module-container-imports">      <button class="module-button module-button--excel">        <i class="far fa-file-excel module-button__icon"></i>        <div class="module-button__text">          Excel        </div>      </button>    </div>    <!-- #container for buttons like excel svg word etc -->  </div>  <!-- //buttons de agregar seccion -->  <!--Subtitle-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Assessment X detail</span>    </div>  </div>  <!--#Subtitle-->  <!--tables-->  <div class="mat-elevation-z8">    <table mat-table [dataSource]="dataSource" matSort class="mat-header-row">      <!-- Position Column -->      <ng-container matColumnDef="posicion">        <th mat-header-cell *matHeaderCellDef class="header-table">          No.        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.posicion }}        </td>      </ng-container>      <!-- #Position Column -->      <!-- Father\'s Name Column -->      <ng-container matColumnDef="p_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Father\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>      </ng-container>      <!-- #Father\'s Name Column -->      <!-- Mother\'s Name Column -->      <ng-container matColumnDef="m_nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Mother\'s Name        </th>        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>      </ng-container>      <!-- #Mother\'s Name Column -->      <!-- Name Column -->      <ng-container matColumnDef="nombre">        <th mat-header-cell *matHeaderCellDef class="header-table">          Name        </th>        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>      </ng-container>      <!-- #Name Column -->      <!-- Assistance Column -->      <ng-container matColumnDef="asistencia">        <th mat-header-cell *matHeaderCellDef class="header-table">          1        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta1 }}        </td>      </ng-container>      <!-- #Assistance Column -->      <!-- Activities Column -->      <ng-container matColumnDef="actividades">        <th mat-header-cell *matHeaderCellDef class="header-table">          2        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta2 }}        </td>      </ng-container>      <!-- #Activities Column -->      <!-- Practices Column -->      <ng-container matColumnDef="practicas">        <th mat-header-cell *matHeaderCellDef class="header-table">          3        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta3 }}        </td>      </ng-container>      <!-- #Practices Column -->      <!-- Theme Test Column -->      <ng-container matColumnDef="examenTemas">        <th mat-header-cell *matHeaderCellDef class="header-table">          4        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta4 }}        </td>      </ng-container>      <!-- #Theme Test Column -->      <!-- Assessment Column -->      <ng-container matColumnDef="assessment">        <th mat-header-cell *matHeaderCellDef class="header-table">          5        </th>        <td mat-cell *matCellDef="let element" class="mat-cell">          {{ element.pregunta5 }}        </td>      </ng-container>      <!-- #Assessment Column -->      <!-- Average Column -->      <ng-container matColumnDef="promedioFinal">        <th mat-header-cell *matHeaderCellDef class="header-table">          Final Average        </th>        <td mat-cell *matCellDef="let element">{{ element.promedioFinal }}</td>      </ng-container>      <!-- #Average Column -->      <!-- Buttons Column -->      <ng-container matColumnDef="id">        <th mat-header-cell *matHeaderCellDef class="header-table">          Actions        </th>        <td mat-cell *matCellDef="let element">          <button            class="circular-button-table--normal"            mat-mini-fab            (click)="verDetalles()"          >            <!--usuario-->            <mat-icon class="dialog-circular-button__icon"              >remove_red_eye</mat-icon            >            <!-- #usuario-->          </button>          <!-- #Buttons Column -->        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>    </table>    <!--#tables-->    <!-- Paginator -->    <mat-paginator      [pageSizeOptions]="[10, 20]"      showFirstLastButtons    ></mat-paginator>    <!-- #Paginator -->  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureLessonContentComponent', 'selector': 'app-configure-lesson-content'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditPracticeComponent', 'selector': 'app-edit-practice'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DetailAssessmentsComponent'};
 </script>

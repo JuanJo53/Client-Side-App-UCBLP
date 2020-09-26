@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts</code>
+    <code>src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts</code>
 </p>
 
 
@@ -164,7 +164,13 @@
                                 <a href="#configuraciones">configuraciones</a>
                             </li>
                             <li>
-                                <a href="#eliminar">eliminar</a>
+                                <a href="#configuracionPractica">configuracionPractica</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarLessonContent">eliminarLessonContent</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarPractica">eliminarPractica</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
@@ -196,12 +202,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dialog: MatDialog, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+<code>constructor(dialog: MatDialog, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, loading: <a href="../injectables/LoadingService.html">LoadingService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -254,6 +260,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>loading</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -294,8 +312,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:117</a></div>
                 </td>
             </tr>
 
@@ -333,8 +351,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -399,8 +417,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:68</a></div>
                 </td>
             </tr>
 
@@ -438,8 +456,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -459,26 +477,92 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="eliminar"></a>
+                    <a name="configuracionPractica"></a>
                     <span class="name">
                         <b>
-                            eliminar
+                            configuracionPractica
                         </b>
-                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                        <a href="#configuracionPractica"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>eliminar()</code>
+<code>configuracionPractica(idPractica)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idPractica</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarLessonContent"></a>
+                    <span class="name">
+                        <b>
+                            eliminarLessonContent
+                        </b>
+                        <a href="#eliminarLessonContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarLessonContent()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:90</a></div>
                 </td>
             </tr>
 
@@ -489,6 +573,87 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarPractica"></a>
+                    <span class="name">
+                        <b>
+                            eliminarPractica
+                        </b>
+                        <a href="#eliminarPractica"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarPractica(practica: <a href="../classes/SimpleCard.html">SimpleCard</a>, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>practica</td>
+                                    <td>
+                                                <code><a href="../classes/SimpleCard.html" target="_self" >SimpleCard</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -516,8 +681,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:52</a></div>
                 </td>
             </tr>
 
@@ -555,8 +720,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:86</a></div>
                 </td>
             </tr>
 
@@ -625,8 +790,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:82</a></div>
                 </td>
             </tr>
 
@@ -695,8 +860,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="93"
-                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:93</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:113</a></div>
                 </td>
             </tr>
 
@@ -739,7 +904,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -766,13 +931,12 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[
-  ]</code>
+                            <i>Default value : </i><code>[]</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -815,7 +979,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -829,17 +993,20 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { SimpleCard } from &quot;src/app/models/simpleCard&quot;;
+import { SimpleCard } from &quot;src/app/models/SimpleCard&quot;;
 import { ActivatedRoute, Params, Router } from &quot;@angular/router&quot;;
-import { InitialInformationComponent } from &quot;../../../../../dialogs/create-practice/initial-information/initial-information.component&quot;;
-import { AddLessonComponent } from &quot;../../../../../dialogs/lesson/add-lesson/add-lesson.component&quot;;
-import { DeleteItemService } from &quot;../../../../../../services/dialogs/delete-item.service&quot;;
+import { InitialInformationComponent } from &quot;../../../../../../dialogs/create-practice/initial-information/initial-information.component&quot;;
+import { AddLessonComponent } from &quot;../../../../../../dialogs/lesson/add-lesson/add-lesson.component&quot;;
+import { DeleteItemService } from &quot;../../../../../../../services/dialogs/delete-item.service&quot;;
+import { ConfigureLessonContentComponent } from &quot;../../../../../../dialogs/lesson/configure-lesson-content/configure-lesson-content.component&quot;;
 
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from &quot;@angular/material/dialog&quot;;
+import { DeleteCardComponent } from &quot;src/app/modules/dialogs/delete-card/delete-card.component&quot;;
+import { LoadingService } from &#x27;src/app/_services/loading.service&#x27;;
 @Component({
   selector: &quot;app-theme-lessons&quot;,
   templateUrl: &quot;./theme-lessons.component.html&quot;,
@@ -858,13 +1025,13 @@ export class ThemeLessonsComponent implements OnInit {
       color: &quot;#D77A61&quot;,
     },
   ];
-  practices: SimpleCard[] &#x3D; [
-  ];
+  practices: SimpleCard[] &#x3D; [];
 
   constructor(
     public dialog: MatDialog,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loading:LoadingService
   ) {}
   agregarPracticas(data) {
     this.practices &#x3D; [];
@@ -899,27 +1066,44 @@ export class ThemeLessonsComponent implements OnInit {
     // });
   }
   configuraciones() {
-    // const dialogRef &#x3D; this.dialog.open(ConfigureThemeComponent, {
-    //   width: &quot;400px&quot;,
-    // });
-    // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
-    //   console.log(&#x60;Dialog result: ${result}&#x60;);
-    // });
+    const dialogRef &#x3D; this.dialog.open(ConfigureLessonContentComponent, {
+      width: &quot;400px&quot;,
+    });
+    dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
+      console.log(&#x60;Dialog result: ${result}&#x60;);
+    });
   }
-  verDetalle(practice:SimpleCard) {
-    this.router.navigate([&quot;detail&quot;,practice.id], { relativeTo: this.route });
+  verDetalle(practice: SimpleCard) {
+    this.router.navigate([&quot;detail&quot;, practice.id], { relativeTo: this.route });
     console.log(&quot;click on list&quot;);
   }
   verContenido(id: number) {
     //[where i wanna go] ,{where i am}
     //this.router.navigate([&quot;/themes&quot;, id], { relativeTo: this.route });
   }
-  eliminar() {
-    // const dialogRef &#x3D; this.dialog.open(DeleteCardComponent, { width: &quot;400px&quot; });
-    // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
-    //   console.log(&#x60;Dialog result: ${result}&#x60;);
-    // });
+  eliminarLessonContent() {
+    const dialogRef &#x3D; this.dialog.open(DeleteCardComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        tipo: &quot;lesson Content&quot;,
+      },
+    });
   }
+  eliminarPractica(practica:SimpleCard,index) {
+    const dialogRef &#x3D; this.dialog.open(DeleteCardComponent, {
+      width: &quot;400px&quot;,
+      data: {
+        idPractica:practica.id,
+        tipo: &quot;Practice&quot;,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result)&#x3D;&gt;{
+      if(result&#x3D;&#x3D;&#x3D;&quot;ok&quot;){
+        this.practices.splice(index,1);
+      }
+    })
+  }
+
   verLecciones() {
     //[where i wanna go] ,{where i am}
     //this.router.navigate([&quot;lessons&quot;], { relativeTo: this.route });
@@ -931,8 +1115,18 @@ export class ThemeLessonsComponent implements OnInit {
     // dialogRef.afterClosed().subscribe((result) &#x3D;&gt; {
     //   console.log(&#x60;Dialog result: ${result}&#x60;);
     // });
+    this.loading.activar();
+
+    const route&#x3D;
     this.router.navigate([&quot;practice&quot;], { relativeTo: this.route });
     console.log(&quot;clicked&quot;);
+    route.then((result)&#x3D;&gt;{
+      this.loading.desactivar();
+    })
+  }
+  configuracionPractica(idPractica) {
+    console.log(idPractica);
+    this.router.navigate([&quot;edit-practice&quot;,idPractica], { relativeTo: this.route });
   }
   //-----#funciones-----
 }
@@ -983,7 +1177,10 @@ export class ThemeLessonsComponent implements OnInit {
               &lt;/button&gt;
               &lt;!--#btn  configuraciones--&gt;
               &lt;!--btn eliminar--&gt;
-              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;eliminar()&quot;&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;eliminarLessonContent()&quot;
+              &gt;
                 &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
                   delete
                 &lt;/mat-icon&gt;
@@ -1023,7 +1220,7 @@ export class ThemeLessonsComponent implements OnInit {
   &lt;!--#Subtitle practices--&gt;
   &lt;!--row--&gt;
   &lt;div class&#x3D;&quot;row&quot;&gt;
-    &lt;div *ngFor&#x3D;&quot;let cards of practices&quot; class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
+    &lt;div *ngFor&#x3D;&quot;let cards of practices,let indexpra&#x3D;index&quot; class&#x3D;&quot;col-lg-3 col-md-6 col-xs-12&quot;&gt;
       &lt;div class&#x3D;&quot;custom-card--practices&quot;&gt;
         &lt;div class&#x3D;&quot;custom-card--practices__img&quot;&gt;
           &lt;div class&#x3D;&quot;custom-card--practices__img-overlay&quot;&gt;
@@ -1041,7 +1238,7 @@ export class ThemeLessonsComponent implements OnInit {
               &lt;!--btn  configuraciones--&gt;
               &lt;button
                 class&#x3D;&quot;circular-button-custom-card&quot;
-                (click)&#x3D;&quot;configuraciones()&quot;
+                (click)&#x3D;&quot;configuracionPractica(cards.id)&quot;
               &gt;
                 &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
                   settings
@@ -1049,7 +1246,10 @@ export class ThemeLessonsComponent implements OnInit {
               &lt;/button&gt;
               &lt;!--#btn  configuraciones--&gt;
               &lt;!--btn eliminar--&gt;
-              &lt;button class&#x3D;&quot;circular-button-custom-card&quot; (click)&#x3D;&quot;eliminar()&quot;&gt;
+              &lt;button
+                class&#x3D;&quot;circular-button-custom-card&quot;
+                (click)&#x3D;&quot;eliminarPractica(cards,indexpra)&quot;
+              &gt;
                 &lt;mat-icon class&#x3D;&quot;circular-button-custom-card__icon&quot;&gt;
                   delete
                 &lt;/mat-icon&gt;
@@ -1105,8 +1305,8 @@ export class ThemeLessonsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle lesson-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Lesson Content</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle lesson-->  <!--row-->  <div class="row">    <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--lessons">        <div class="custom-card--lessons__img">          <div class="custom-card--lessons__img-overlay">            <div class="custom-card--lessons__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verDetalle(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones()"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button class="circular-button-custom-card" (click)="eliminar()">                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--lessons__content-card"></div>            <div class="custom-card--lessons__description-theme">              <span class="custom-card--lessons__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row-->  <!--Subtitle practices-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Practices</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon          class="circular-button-subtitle__icon"          (click)="agregarPractica()"          >add</mat-icon        >      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle practices-->  <!--row-->  <div class="row">    <div *ngFor="let cards of practices" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--practices">        <div class="custom-card--practices__img">          <div class="custom-card--practices__img-overlay">            <div class="custom-card--practices__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verDetalle(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones()"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button class="circular-button-custom-card" (click)="eliminar()">                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--practices__content-card"></div>            <div class="custom-card--practices__description-theme">              <span class="custom-card--practices__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row--></div></div>'
-    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <!--Subtitle lesson-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Lesson Content</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle lesson-->  <!--row-->  <div class="row">    <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--lessons">        <div class="custom-card--lessons__img">          <div class="custom-card--lessons__img-overlay">            <div class="custom-card--lessons__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verDetalle(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuraciones()"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button                class="circular-button-custom-card"                (click)="eliminarLessonContent()"              >                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--lessons__content-card"></div>            <div class="custom-card--lessons__description-theme">              <span class="custom-card--lessons__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row-->  <!--Subtitle practices-->  <div class="subtitle-compound">    <div class="subtitle-compound__text">      <span>Practices</span>    </div>    <div class="subtitle-compound__buttons-container">      <!--Add button-->      <button class="circular-button-subtitle" mat-mini-fab>        <mat-icon          class="circular-button-subtitle__icon"          (click)="agregarPractica()"          >add</mat-icon        >      </button>      <!--#Add button-->    </div>  </div>  <!--#Subtitle practices-->  <!--row-->  <div class="row">    <div *ngFor="let cards of practices,let indexpra=index" class="col-lg-3 col-md-6 col-xs-12">      <div class="custom-card--practices">        <div class="custom-card--practices__img">          <div class="custom-card--practices__img-overlay">            <div class="custom-card--practices__buttons-card">              <!--btn Ver lista-->              <button                class="circular-button-custom-card"                (click)="verDetalle(cards)"              >                <mat-icon class="circular-button-custom-card__icon">                  list                </mat-icon>              </button>              <!--#btn Ver lista-->              <!--btn  configuraciones-->              <button                class="circular-button-custom-card"                (click)="configuracionPractica(cards.id)"              >                <mat-icon class="circular-button-custom-card__icon">                  settings                </mat-icon>              </button>              <!--#btn  configuraciones-->              <!--btn eliminar-->              <button                class="circular-button-custom-card"                (click)="eliminarPractica(cards,indexpra)"              >                <mat-icon class="circular-button-custom-card__icon">                  delete                </mat-icon>              </button>              <!--#btn eliminar-->            </div>            <div class="custom-card--practices__content-card"></div>            <div class="custom-card--practices__description-theme">              <span class="custom-card--practices__description-theme--title">{{                cards.titulo              }}</span>            </div>          </div>        </div>      </div>      <!--#custom-cards-->    </div>  </div>  <!--#row--></div></div>'
+    var COMPONENTS = [{'name': 'AddCardComponent', 'selector': 'app-add-card'},{'name': 'AddCustomModuleComponent', 'selector': 'app-add-custom-module'},{'name': 'AddDocumentComponent', 'selector': 'app-add-document'},{'name': 'AddForumComponent', 'selector': 'app-add-forum'},{'name': 'AddLessonComponent', 'selector': 'app-add-lesson'},{'name': 'AddSectionComponent', 'selector': 'app-add-section'},{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddThemeComponent', 'selector': 'app-add-theme'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentsBaseComponent', 'selector': 'app-assessments-base'},{'name': 'AssessmentsComponent', 'selector': 'app-assessments'},{'name': 'AssistanceComponent', 'selector': 'app-assistance'},{'name': 'AttendanceScoreComponent', 'selector': 'app-attendance-score'},{'name': 'BuildingPageComponent', 'selector': 'app-building-page'},{'name': 'CardClassroomComponent', 'selector': 'app-card-classroom'},{'name': 'ChoosingClassroomComponent', 'selector': 'app-choosing-classroom'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'ConfigureLessonComponent', 'selector': 'app-configure-lesson'},{'name': 'ConfigureLessonContentComponent', 'selector': 'app-configure-lesson-content'},{'name': 'ConfigureThemeComponent', 'selector': 'app-configure-theme'},{'name': 'CreateCourseComponent', 'selector': 'app-create-course'},{'name': 'CreatePracticeComponent', 'selector': 'app-create-practice'},{'name': 'CustomModuleBaseComponent', 'selector': 'app-custom-module-base'},{'name': 'CustomModuleComponent', 'selector': 'app-custom-module'},{'name': 'CustomModuleRubricComponent', 'selector': 'app-custom-module-rubric'},{'name': 'CustomQuestionComponent', 'selector': 'app-custom-question'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DefaultComponent', 'selector': 'app-default'},{'name': 'DeleteCardComponent', 'selector': 'app-delete-card'},{'name': 'DetailAssessmentsComponent', 'selector': 'app-detail-assessments'},{'name': 'DetailCustomModuleComponent', 'selector': 'app-detail-custom-module'},{'name': 'DetailIndividualComponent', 'selector': 'app-detail-individual'},{'name': 'DetailTableComponent', 'selector': 'app-detail-table'},{'name': 'EditCardComponent', 'selector': 'app-edit-card'},{'name': 'EditCustomModuleComponent', 'selector': 'app-edit-custom-module'},{'name': 'EditDefaultModuleComponent', 'selector': 'app-edit-default-module'},{'name': 'EditDocumentComponent', 'selector': 'app-add-document'},{'name': 'EditForumComponent', 'selector': 'app-edit-forum'},{'name': 'EditPracticeComponent', 'selector': 'app-edit-practice'},{'name': 'EditSectionComponent', 'selector': 'app-edit-section'},{'name': 'EditStudentComponent', 'selector': 'app-edit-student'},{'name': 'ErrorDialogComponent', 'selector': 'app-error-dialog'},{'name': 'EvaluationComponent', 'selector': 'app-evaluation'},{'name': 'ForumContentComponent', 'selector': 'app-forum-content'},{'name': 'ForumsBaseComponent', 'selector': 'app-forums-base'},{'name': 'ForumsComponent', 'selector': 'app-forums'},{'name': 'GoodDialogComponent', 'selector': 'app-good-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IndividualAssessmentComponent', 'selector': 'app-individual-assessment'},{'name': 'InitialInformationComponent', 'selector': 'app-initial-information'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModulesRubricComponent', 'selector': 'app-modules-rubric'},{'name': 'OthersScoreComponent', 'selector': 'app-others-score'},{'name': 'ProgressBarComponent', 'selector': 'app-progress-bar'},{'name': 'QualificationComponent', 'selector': 'app-qualification'},{'name': 'RepositoryQuestionComponent', 'selector': 'app-repository-question'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'StudentsProfileComponent', 'selector': 'app-students-profile'},{'name': 'TestDetailComponent', 'selector': 'app-test-detail'},{'name': 'ThemeContentComponent', 'selector': 'app-theme-content'},{'name': 'ThemeLessonsComponent', 'selector': 'app-theme-lessons'},{'name': 'ThemesBaseComponent', 'selector': 'app-themes-base'},{'name': 'ThemesComponent', 'selector': 'app-themes'},{'name': 'UpdateStudentScoreComponent', 'selector': 'app-update-student-score'},{'name': 'ViewResponseComponent', 'selector': 'app-view-response'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ThemeLessonsComponent'};
 </script>

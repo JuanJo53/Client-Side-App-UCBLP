@@ -247,7 +247,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>deleteContenidoModulos(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>deleteContenidoModulos(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idModulo)</code>
                 </td>
             </tr>
 
@@ -278,6 +278,17 @@
                                     <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>idModulo</td>
+                                    <td>
                                     </td>
 
                                     <td>
@@ -598,7 +609,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>updateRubricasContenidoModulos(rubricas: any[])</code>
+<code>updateRubricasContenidoModulos(rubricas: any[], idModulo)</code>
                 </td>
             </tr>
 
@@ -629,6 +640,17 @@
                                     <td>rubricas</td>
                                     <td>
                                             <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>idModulo</td>
+                                    <td>
                                     </td>
 
                                     <td>
@@ -683,11 +705,11 @@ export class ContenidoModuloService {
     return this.http.put(apiKey.api+&quot;/teacher/cutson/module/content&quot;,contenidoModulo,{ observe: &#x27;response&#x27; });
 
   }
-  deleteContenidoModulos(id:number):Observable&lt;any&gt;{
-    return this.http.delete(apiKey.api+&quot;/teacher/cutson/module/content/&quot;+id,{ observe: &#x27;response&#x27; });
+  deleteContenidoModulos(id:number,idModulo):Observable&lt;any&gt;{
+    return this.http.post(apiKey.api+&quot;/teacher/cutson/module/deleteContent/&quot;+id,{idModulo:idModulo},{ observe: &#x27;response&#x27; });
   }
-  updateRubricasContenidoModulos(rubricas:any[]):Observable&lt;any&gt;{
-    return this.http.post(apiKey.api+&quot;/teacher/cutson/module/content/rubric&quot;,rubricas,{ observe: &#x27;response&#x27; });
+  updateRubricasContenidoModulos(rubricas:any[],idModulo):Observable&lt;any&gt;{
+    return this.http.post(apiKey.api+&quot;/teacher/cutson/module/content/rubric&quot;,{rubricas:rubricas,idModulo:idModulo},{ observe: &#x27;response&#x27; });
 
   }
   getNotasContenidoModulos(idContenidoModulo):Observable&lt;any&gt;{
