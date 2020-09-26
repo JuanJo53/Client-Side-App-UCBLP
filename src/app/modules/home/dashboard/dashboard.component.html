@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
@@ -39,7 +39,7 @@
   <!--#Subtitle-->
   <div class="row">
     <div class="col-sm-4">
-      <div class="dashboard-card">
+      <!-- <div class="dashboard-card">
         <div class="dashboard-card__description-dashboard">
           <div class="dashboard-card__description-dashboard-title">
             <span>February</span>
@@ -55,10 +55,10 @@
           >
           </canvas>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="col-sm-4">
-      <div class="dashboard-card">
+      <!-- <div class="dashboard-card">
         <div class="dashboard-card__description-dashboard">
           <div class="dashboard-card__description-dashboard-title">
             <span>March</span>
@@ -74,10 +74,10 @@
           >
           </canvas>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="col-sm-4">
-      <div class="dashboard-card">
+      <!-- <div class="dashboard-card">
         <div class="dashboard-card__description-dashboard">
           <div class="dashboard-card__description-dashboard-title">
             <span>April</span>
@@ -93,22 +93,22 @@
           >
           </canvas>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!--Subtitle-->
-  <div class="subtitle">
+  <!-- <div class="subtitle">
     <div class="subtitle__text">
       <span>Practices</span>
     </div>
-  </div>
+  </div> -->
   <!--#Subtitle-->
-  <div class="row last-component">
+  <!-- <div class="row last-component">
     <div class="col-sm-4" *ngFor="let practica of practicas">
       <div class="dashboard-card">
         <div class="dashboard-card__description-dashboard">
           <div class="dashboard-card__description-dashboard-title">
-            <span>{{practica.nombrePractica}}</span>
+            <span>{{ practica.nombrePractica }}</span>
           </div>
         </div>
         <div class="dashboard-card__grafics">
@@ -123,6 +123,92 @@
         </div>
       </div>
     </div>
-    
+  </div> -->
+  <!--Subtitle-->
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Slider</span>
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <div class="carousel">
+    <div class="carousel__contenedor">
+      <ngx-glide
+        [perView]="3"
+        arrowLeftLabel="<"
+        arrowRightLabel=">"
+        [gap]="10"
+      >
+        <div *ngFor="let practica of practicas">
+          <div class="dashboard-card">
+            <div class="dashboard-card__description-dashboard">
+              <div class="dashboard-card__description-dashboard-title">
+                <span>{{ practica.nombrePractica }}</span>
+              </div>
+            </div>
+            <div class="dashboard-card__grafics">
+              <canvas
+                baseChart
+                [data]="practica.datos"
+                [labels]="doughnutChartLabelsPractices"
+                [chartType]="doughnutChartType"
+                [colors]="doughnutChartColorsPractices"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </ngx-glide>
+    </div>
+    <div role="tablist" class="carousel__indicadores"></div>
+  </div>
+  <!-- <div class="slider-horizontal">
+    <div *ngFor="let practica of practicas">
+      <div class="dashboard-card">
+        <div class="dashboard-card__description-dashboard">
+          <div class="dashboard-card__description-dashboard-title">
+            <span>{{ practica.nombrePractica }}</span>
+          </div>
+        </div>
+        <div class="dashboard-card__grafics">
+          <canvas
+            baseChart
+            [data]="practica.datos"
+            [labels]="doughnutChartLabelsPractices"
+            [chartType]="doughnutChartType"
+            [colors]="doughnutChartColorsPractices"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!--Subtitle-->
+  <div class="subtitle">
+    <div class="subtitle__text">
+      <span>Practices 2</span>
+    </div>
+  </div>
+  <!--#Subtitle-->
+  <div class="slider-horizontal">
+    <div *ngFor="let practica of practicas">
+      <div class="dashboard-card">
+        <div class="dashboard-card__description-dashboard">
+          <div class="dashboard-card__description-dashboard-title">
+            <span>{{ practica.nombrePractica }}</span>
+          </div>
+        </div>
+        <div class="dashboard-card__grafics">
+          <canvas
+            baseChart
+            [data]="practica.datos"
+            [labels]="doughnutChartLabelsPractices"
+            [chartType]="doughnutChartType"
+            [colors]="doughnutChartColorsPractices"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

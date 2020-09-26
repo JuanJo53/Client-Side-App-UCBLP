@@ -101,6 +101,9 @@
       }
     }
   }
+  &__finish {
+    margin-left: auto;
+  }
 }
 .mat-step-icon-selected {
   background-color: $color-primary-blue !important;
@@ -114,9 +117,10 @@
   //padding: 4rem 0rem;
   border: $card-width solid $color-primary-blue;
   border-radius: $border-radious-standard;
-  mat-form-field {
+  &__instruction {
     width: 100%;
   }
+  //
   &__text {
     &--no-content {
       color: $color-primary-gray;
@@ -195,4 +199,13 @@
 .box {
   background-color: pink;
   width: 100%;
+}
+
+//specials
+.mat-stepper__edit {
+  &.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+    padding: 24px 200px !important;
+    //margin: 0 200px;
+    //background-color: red !important;
+  }
 }

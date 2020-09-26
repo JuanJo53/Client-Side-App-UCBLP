@@ -12,6 +12,7 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
+import { MatChipsModule } from "@angular/material/chips";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ThemesComponent } from "src/app/modules/home/modules/themes-base/themes/themes.component";
@@ -31,7 +32,7 @@ import { EvaluationComponent } from "src/app/modules/home/evaluation/evaluation.
 import { ForumsComponent } from "src/app/modules/home/forums-base/forums/forums.component";
 import { ResourcesComponent } from "src/app/modules/home/resources/resources.component";
 import { AssessmentsComponent } from "src/app/modules/home/modules/assessments-base/assessments/assessments.component";
-import { ThemeLessonsComponent } from "src/app/modules/home/modules/themes-base/themes/theme-lessons/theme-lessons.component";
+import { ThemeLessonsComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/theme-lessons.component";
 import { ThemeContentComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-content.component";
 import { ThemesBaseComponent } from "src/app/modules/home/modules/themes-base/themes-base.component";
 import { ConfigureThemeComponent } from "src/app/modules/dialogs/themes/configure-theme/configure-theme.component";
@@ -50,7 +51,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AddLessonComponent } from "src/app/modules/dialogs/lesson/add-lesson/add-lesson.component";
 import { ConfigureLessonComponent } from "src/app/modules/dialogs/lesson/configure-lesson/configure-lesson.component";
 import { ErrorDialogComponent } from "src/app/modules/dialogs/simple-dialogs/error-dialog/error-dialog.component";
-import { CreatePracticeComponent } from "src/app/modules/home/modules/themes-base/themes/create-practice/create-practice.component";
+import { CreatePracticeComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/create-practice/create-practice.component";
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
 import { ViewResponseComponent } from "src/app/modules/dialogs/forums/view-response/view-response.component";
 import { AddCustomModuleComponent } from "src/app/modules/dialogs/evaluation/add-custom-module/add-custom-module.component";
@@ -85,11 +86,18 @@ import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modu
 import { EditCardComponent } from "src/app/modules/dialogs/custom-modules/edit-card/edit-card.component";
 import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modules/custom-module-rubric/custom-module-rubric.component";
 import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
-import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/detail-table/detail-table.component";
-import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-base/themes/detail-individual/detail-individual.component";
+import { DetailTableComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/detail-table/detail-table.component";
+import { DetailIndividualComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/detail-table/detail-individual/detail-individual.component";
 import { LoadingComponent } from "src/app/shared/components/loading/loading.component";
 import { GoodDialogComponent } from "src/app/modules/dialogs/simple-dialogs/good-dialog/good-dialog.component";
 import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/warning-dialog/warning-dialog.component";
+import { ConfigureLessonContentComponent } from "src/app/modules/dialogs/lesson/configure-lesson-content/configure-lesson-content.component";
+import { EditPracticeComponent } from "src/app/modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
+import { ScheduleComponent } from "src/app/modules/dialogs/schedule/schedule/schedule.component";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { MatDividerModule } from "@angular/material/divider";
+import { NgxGlideModule } from "ngx-glide";
 
 @NgModule({
   declarations: [
@@ -154,6 +162,9 @@ import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/w
     DetailIndividualComponent,
     GoodDialogComponent,
     WarningDialogComponent,
+    ConfigureLessonContentComponent,
+    EditPracticeComponent,
+    ScheduleComponent,
   ],
   imports: [
     CommonModule,
@@ -186,6 +197,11 @@ import { WarningDialogComponent } from "src/app/modules/dialogs/simple-dialogs/w
     MatAutocompleteModule,
     ChartsModule,
     MatProgressBarModule,
+    MatChipsModule,
+    DragDropModule,
+    ScrollingModule,
+    MatDividerModule,
+    NgxGlideModule,
   ],
 })
 export class DefaultModule {}

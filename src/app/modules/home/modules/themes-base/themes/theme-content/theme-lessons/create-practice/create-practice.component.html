@@ -25,7 +25,7 @@
             <div class="dialog-subtitle">
               <div class="dialog-subtitle__text">
                 <span *ngIf="!paso1.bloqnombre">Name</span>
-                <span *ngIf="paso1.bloqnombre" style="color: red;">Name *</span>
+                <span *ngIf="paso1.bloqnombre" style="color: red">Name *</span>
               </div>
             </div>
             <!--#subtitle-->
@@ -42,6 +42,72 @@
               />
               <!-- //Input para el email-->
             </mat-form-field>
+            <!--  radio button -->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text" *ngIf="!paso1.bloqtiempo">
+                <span>Time Limit</span>
+              </div>
+            </div>
+            <div class="dialog-subtitle">
+              <div
+                class="dialog-subtitle__text"
+                *ngIf="paso1.bloqtiempo"
+                style="color: red"
+              >
+                <span>*Time Limit</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <!--fecha-->
+                <div *ngIf="radioButtonValue === 'enable'">
+                  <div class="detail-minutes">
+                    <mat-form-field>
+                      <input
+                        matInput
+                        [(ngModel)]="paso1.tiempoLimite"
+                        [ngModelOptions]="{ standalone: true }"
+                        type="number"
+                      />
+                    </mat-form-field>
+                    <span class="input-minutes">minutes</span>
+                  </div>
+                </div>
+
+                <div *ngIf="radioButtonValue !== 'enable'">
+                  <div class="detail-minutes">
+                    <mat-form-field>
+                      <input matInput disabled placeholder="UNLIMITED" />
+                    </mat-form-field>
+                    <span class="input-minutes">minutes</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="radio-buttons-practice">
+                  <div class="radio-buttons-practice__content">
+                    <mat-radio-group
+                      aria-label="Select an option"
+                      name="radiobuttonvaluePractice"
+                      [(ngModel)]="radioButtonValue"
+                    >
+                      <mat-radio-button
+                        class="radio-button"
+                        value="enable"
+                        checked
+                        >Enable</mat-radio-button
+                      >
+                      <mat-radio-button class="radio-button" value="unable"
+                        >Unable</mat-radio-button
+                      >
+                    </mat-radio-group>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--  //radio button -->
 
             <div class="row">
               <!--start date-->
@@ -59,13 +125,13 @@
                       <mat-label *ngIf="!paso1.bloqfecha1"
                         >Choose a date</mat-label
                       >
-                      <mat-label *ngIf="paso1.bloqfecha1" style="color: red;"
+                      <mat-label *ngIf="paso1.bloqfecha1" style="color: red"
                         >Choose a date*</mat-label
                       >
                       <input
                         matInput
                         [matDatepicker]="picker1"
-                        [(ngModel)]="paso1.fechaini"
+                        [(ngModel)]="paso1.fechainiDate"
                         [ngModelOptions]="{ standalone: true }"
                       />
                       <mat-datepicker-toggle
@@ -87,7 +153,7 @@
                         <mat-label *ngIf="!paso1.bloqhora1"
                           >Choose an hour</mat-label
                         >
-                        <mat-label *ngIf="paso1.bloqhora1" style="color: red;"
+                        <mat-label *ngIf="paso1.bloqhora1" style="color: red"
                           >Choose an hour*</mat-label
                         >
                         <input
@@ -101,7 +167,8 @@
                         <ngx-material-timepicker-toggle
                           matSuffix
                           [for]="toggleTimepicker1"
-                        ></ngx-material-timepicker-toggle>
+                        >
+                        </ngx-material-timepicker-toggle>
                         <ngx-material-timepicker
                           #toggleTimepicker1
                         ></ngx-material-timepicker>
@@ -129,13 +196,13 @@
                       <mat-label *ngIf="!paso1.bloqfecha2"
                         >Choose a date</mat-label
                       >
-                      <mat-label *ngIf="paso1.bloqfecha2" style="color: red;"
+                      <mat-label *ngIf="paso1.bloqfecha2" style="color: red"
                         >Choose a date*</mat-label
                       >
                       <input
                         matInput
                         [matDatepicker]="picker2"
-                        [(ngModel)]="paso1.fechafin"
+                        [(ngModel)]="paso1.fechafinDate"
                         [ngModelOptions]="{ standalone: startDate }"
                       />
                       <mat-datepicker-toggle
@@ -157,7 +224,7 @@
                         <mat-label *ngIf="!paso1.bloqhora2"
                           >Choose an hour</mat-label
                         >
-                        <mat-label *ngIf="paso1.bloqhora2" style="color: red;"
+                        <mat-label *ngIf="paso1.bloqhora2" style="color: red"
                           >Choose an hour*</mat-label
                         >
                         <input
@@ -171,7 +238,8 @@
                         <ngx-material-timepicker-toggle
                           matSuffix
                           [for]="toggleTimepicker2"
-                        ></ngx-material-timepicker-toggle>
+                        >
+                        </ngx-material-timepicker-toggle>
                         <ngx-material-timepicker
                           #toggleTimepicker2
                         ></ngx-material-timepicker>
@@ -221,7 +289,7 @@
             *ngIf="preguntas.length == 0; else negative"
           >
             <div *ngIf="!paso2bloq">No questions added</div>
-            <div *ngIf="paso2bloq" style="color: red;">*No questions added</div>
+            <div *ngIf="paso2bloq" style="color: red">*No questions added</div>
           </div>
           <!--row added row-->
           <ng-template #negative>
@@ -290,7 +358,7 @@
                         <mat-form-field class="full-width-field">
                           <input
                             [(value)]="card.opciones[x]"
-                            style="color: black;"
+                            style="color: black"
                             readonly
                             class="question-card-added__choice--input"
                             matInput
@@ -374,7 +442,7 @@
                       <mat-form-field class="full-width-field">
                         <input
                           [(value)]="card.opciones[x]"
-                          style="color: black;"
+                          style="color: black"
                           readonly
                           class="card-question__choice--input"
                           matInput
@@ -406,11 +474,371 @@
                 </div>
                 <!--#button-->
               </div>
+              <!--#checkbox case-->
+               <!-- drag and drop column-->
+              <div class="question-card-added" *ngSwitchCase="'3'">
+                <div class="question-card-added__content">
+                  <div class="question-card-added__header">
+                    <!--input para pregunta-->
+                    <div class="question-card-added__header--question">
+                      <mat-form-field
+                        appearance="outline"
+                        class="card-question__instruction"
+                      >
+                        <mat-label>Instruction</mat-label>
+                        <input
+                          [(ngModel)]="card.pregunta"
+                          type="text"
+                          readonly
+                          class="input-form"
+                          matInput
+                          placeholder="Instruction"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                    <div class="question-card-added__header--score">
+                      <!--input para pregunta-->
+                      <div class="card-question__input">
+                        <mat-form-field appearance="outline">
+                          <mat-label >Score</mat-label>
+                          <input
+                            [(ngModel)]="card.puntuacion"
+                            type="number"
+                            readonly
+                            class="input-form"
+                            matInput
+                            placeholder="Score"
+                            [ngModelOptions]="{ standalone: true }"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <!--#input para pregunta-->
+                    </div>
+                  </div>
+
+                  <!-- Drag and drop content -->
+                  <div class="drag-drop__area" cdkDropListGroup>
+                    <!-- cards wrapper columns-->
+                    <div class="drag-drop__wrapper">
+                      <div class="drag-drop__columns">
+                        <div
+                          class="drag-drop__column"
+                          *ngFor="let column of card.respuesta"
+                        >
+                          <mat-form-field class="example-form-field">
+                            <mat-label>Column title</mat-label>
+                            <input
+                              matInput
+                              type="text"
+                              [(ngModel)]="column.titulo"  
+                              [ngModelOptions]="{ standalone: true }"     
+                            />
+                          </mat-form-field>
+                          <!-- <div class="drag-drop__column-title">
+                            {{ column.columnTitle }}
+                          </div> -->
+                          <div
+                            class="drag-drop__task-container"
+                          >
+                            <mat-chip
+                              class="example-box"
+                              *ngFor="let option of column.cards"
+                            >
+                              {{ card.opciones[option] }}
+                            </mat-chip>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- #cards wrapper columns-->
+                    <!-- #Drag and drop chips -->
+                    <div class="drag-drop__chips--horizontal">
+                      <!--subtitle-->
+                      <div class="dialog-subtitle">
+                        <div class="dialog-subtitle__text">
+                          <span>Options</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                      <mat-chip-list
+                        class="drag-drop__column--horizontal"
+                        cdkDropListOrientation="horizontal"
+                      >
+                        <mat-chip
+                          class="task"
+                          *ngFor="let option of card.opciones"
+                        >
+                          {{ option}}
+                        </mat-chip>
+                      </mat-chip-list>
+                    </div>
+                    <!-- #Drag and drop chips -->
+                  </div>
+                </div>
+                
+                <div class="question-card-added__button">
+                  <button
+                    mat-mini-fab
+                    (click)="editarPregunta(card)"
+                    class="question-card-added__button--positive"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    mat-mini-fab
+                    (click)="eliminarPreg(i)"
+                    class="question-card-added__button--negative"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <!-- #drag and drop column-->
+                  <!-- drag and drop fill in the blancks-->
+            <div class="question-card-added" *ngSwitchCase="'4'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field
+                      appearance="outline"
+                      class="card-question__instruction"
+                    >
+                      <mat-label>Instruction</mat-label>
+                      <input
+                        type="text"
+                        class="input-form"
+                        matInput
+                        placeholder="Instruction"
+                        [ngModelOptions]="{ standalone: true }"
+                        [(ngModel)]="card.pregunta"
+
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="card-question__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input
+                          type="number"
+                          class="input-form"
+                          matInput
+                          placeholder="Score"
+                          [ngModelOptions]="{ standalone: true }"
+                          [(ngModel)]="card.puntuacion"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+                  <div class="drag-drop__respuesta" cdkDropListGroup>
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Complete the sentence</span>
+                      </div>
+                    </div>
+                    <span class="question__suggestion"
+                      >Complete the sentence with the options below</span
+                    >
+
+                    <div class="drag-drop__input">
+                      <div *ngFor="let option of card.respuesta; let i = index">
+                        <div *ngIf="option !== '*'; else templateName">
+                          <div class="auxliar_span">
+                            {{ option }}
+                          </div>
+                        </div>
+                        <ng-template #templateName>
+                          <!-- <span> token </span> -->
+                          <mat-chip-list
+                            class="drag-drop__chip-container-tasks"
+                            cdkDropListOrientation="horizontal"
+                          >
+                          </mat-chip-list>
+                        </ng-template>
+                      </div>
+                    </div>
+                    <!-- #divs with tags -->
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Options</span>
+                      </div>
+                    </div>
+                    <span class="question__suggestion"
+                      >Options to fill the sentence</span
+                    >
+                    <!--  opciones respuesta-->
+                    <mat-chip-list
+                      class="drag-drop__column--horizontal"
+                      cdkDropListOrientation="horizontal"
+                    >
+                      <mat-chip
+                        class="task"
+                        *ngFor="let option of card.opciones"
+                      >
+                        {{ option }}
+                      </mat-chip>
+                    </mat-chip-list>
+                    <!--  #opciones respuesta-->
+                  </div>
+                </div>
+                <div class="question-card-added__button">
+                  <button
+                    mat-mini-fab
+                    (click)="editarPregunta(card)"
+                    class="question-card-added__button--positive"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    mat-mini-fab
+                    (click)="eliminarPreg(i)"
+                    class="question-card-added__button--negative"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <!-- #drag and drop fill in the blancks-->
+              <!--combobox matching questions-->
+              <div class="question-card-added"  *ngSwitchCase="'5'">
+                <div class="question-card-added__content">
+                  <div class="question-card-added__header">
+                    <!--input para pregunta-->
+                    <div class="question-card-added__header--question">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Question Name</mat-label>
+                        <input
+                          [(ngModel)]="card.pregunta"
+                          type="text"
+                          class="input-form"
+                          matInput
+                          readonly
+                          placeholder="Question Name"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                    <div class="question-card-added__header--score">
+                      <!--input para pregunta-->
+                      <div class="card-question__input">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Score</mat-label>
+                          <input
+                            [(ngModel)]="card.puntuacion"
+                            type="text"
+                            readonly
+                            class="input-form"
+                            matInput
+                            placeholder="Score Name"
+                            [ngModelOptions]="{ standalone: true }"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <!--#input para pregunta-->
+                    </div>
+                  </div>
+
+                  <!-- combox -->
+                  <div class="match-combobox__input-box-titles">
+                    <div class="match-combobox__inputs">
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__keyword">
+                        <div class="dialog-subtitle__text">
+                          <span>Keywords</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__complement">
+                        <div class="dialog-subtitle__text">
+                          <span>Matches</span>
+                        </div>
+                      </div>
+                      <!--#subtitle-->
+                    </div>
+                  </div>
+                  <div
+                    class="match-combobox-answer__box"
+                    *ngFor="let opcion of matchingInputs; let i = index"
+                  >
+                    <!-- <div class="match-combobox-answer__input-box"> -->
+                    <div class="match-combobox-answer__inputs">
+                      <div class="match-combobox-answer__keyword">
+                        {{ opcion.keyword }}
+                      </div>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Options</mat-label>
+                        <mat-select
+                          [(ngModel)]="opcion.match"
+                          name="input{{ i }}"
+                        >
+                          <mat-option
+                            *ngFor="let options of comboOptions"
+                            [value]="options.value"
+                          >
+                            {{ options.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <!-- </div> -->
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- combobox -->
+                  <!--subtitle-->
+                  <div class="dialog-subtitle">
+                    <div class="dialog-subtitle__text">
+                      <span>Options</span>
+                    </div>
+                  </div>
+                  <div
+                    class="match-combobox-answer__box"
+                    *ngFor="let options of matchingInputs; let i = index"
+                  >
+                    <!--#subtitle-->
+                    <mat-form-field class="match-combobox-answer__options">
+                      <mat-label style="text-align: center"
+                        >Option {{ i + 1 }}</mat-label
+                      >
+                      <textarea style="text-align: center" matInput>{{
+                        options.match
+                      }}</textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!--button-->
+                <div class="question-card-added__button">
+                  <button
+                    mat-mini-fab
+                    (click)="editarPregunta(card)"
+                    class="question-card-added__button--positive"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    mat-mini-fab
+                    (click)="eliminarPreg(i)"
+                    class="question-card-added__button--negative"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+                <!--#button-->
+              </div>
+              <!--#combobox matching questions-->
             </div>
           </ng-template>
           <h4
             *ngIf="paso2bloqScore"
-            style="color: red; padding-left: 1rem; margin-bottom: -2rem;"
+            style="color: red; padding-left: 1rem; margin-bottom: -2rem"
           >
             *check the total score
           </h4>
@@ -459,9 +887,7 @@
               <div class="rubric__text">
                 <span>Score : {{ total }}</span>
               </div>
-              <mat-icon class="rubric__icon">
-                check
-              </mat-icon>
+              <mat-icon class="rubric__icon"> check </mat-icon>
             </div>
           </div>
         </div>
@@ -471,9 +897,7 @@
               <div class="rubric__text">
                 <span>Score : {{ total }}</span>
               </div>
-              <mat-icon class="rubric__icon">
-                close
-              </mat-icon>
+              <mat-icon class="rubric__icon"> close </mat-icon>
             </div>
           </div>
         </ng-template>
@@ -529,7 +953,41 @@
               />
               <!-- //Input para el email-->
             </mat-form-field>
-
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text" *ngIf="!paso1.bloqtiempo">
+                <span>Time Limit</span>
+              </div>
+            </div>
+            <div class="dialog-subtitle">
+              <div
+                class="dialog-subtitle__text"
+                *ngIf="paso1.bloqtiempo"
+                style="color: red"
+              >
+                <span>*Time Limit</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <!--fecha-->
+                <div *ngIf="radioButtonValue === 'enable'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      readonly
+                      [(ngModel)]="paso1.tiempoLimite"
+                      [ngModelOptions]="{ standalone: true }"
+                      type="number"
+                    />
+                  </mat-form-field>
+                </div>
+                <div *ngIf="radioButtonValue !== 'enable'">
+                  <mat-form-field>
+                    <input matInput readonly placeholder="UNLIMITED" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <!--start date-->
               <div class="col-sm-6">
@@ -683,7 +1141,7 @@
                       <mat-form-field class="full-width-field">
                         <input
                           [(value)]="card.opciones[x]"
-                          style="color: black;"
+                          style="color: black"
                           readonly
                           class="question-card-added__choice--input"
                           matInput
@@ -749,7 +1207,7 @@
                     <mat-form-field class="full-width-field">
                       <input
                         [(value)]="card.opciones[x]"
-                        style="color: black;"
+                        style="color: black"
                         readonly
                         class="card-question__choice--input"
                         matInput
@@ -763,6 +1221,203 @@
                 </div>
               </div>
             </div>
+             <!-- drag and drop column-->
+             <div class="question-card-added" *ngSwitchCase="'3'">
+              <div class="question-card-added__content">
+                <div class="question-card-added__header">
+                  <!--input para pregunta-->
+                  <div class="question-card-added__header--question">
+                    <mat-form-field
+                      appearance="outline"
+                      class="card-question__instruction"
+                    >
+                      <mat-label>Instruction</mat-label>
+                      <input
+                        [(ngModel)]="card.pregunta"
+                        type="text"
+                        readonly
+                        class="input-form"
+                        matInput
+                        placeholder="Instruction"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <!--#input para pregunta-->
+                  <div class="question-card-added__header--score">
+                    <!--input para pregunta-->
+                    <div class="card-question__input">
+                      <mat-form-field appearance="outline">
+                        <mat-label >Score</mat-label>
+                        <input
+                          [(ngModel)]="card.puntuacion"
+                          type="number"
+                          class="input-form"
+                          matInput
+                          readonly
+                          placeholder="Score"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                  </div>
+                </div>
+
+                <!-- Drag and drop content -->
+                <div class="drag-drop__area" cdkDropListGroup>
+                  <!-- cards wrapper columns-->
+                  <div class="drag-drop__wrapper">
+                    <div class="drag-drop__columns">
+                      <div
+                        class="drag-drop__column"
+                        *ngFor="let column of card.respuesta"
+                      >
+                        <mat-form-field class="example-form-field">
+                          <mat-label>Column title</mat-label>
+                          <input
+                            matInput
+                            type="text"
+                            [(ngModel)]="column.titulo"  
+                            [ngModelOptions]="{ standalone: true }"     
+                          />
+                        </mat-form-field>
+                        <!-- <div class="drag-drop__column-title">
+                          {{ column.columnTitle }}
+                        </div> -->
+                        <div
+                          class="drag-drop__task-container"
+                        >
+                          <mat-chip
+                            class="example-box"
+                            *ngFor="let option of column.cards"
+                          >
+                            {{ card.opciones[option] }}
+                          </mat-chip>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- #cards wrapper columns-->
+                  <!-- #Drag and drop chips -->
+                  <div class="drag-drop__chips--horizontal">
+                    <!--subtitle-->
+                    <div class="dialog-subtitle">
+                      <div class="dialog-subtitle__text">
+                        <span>Options</span>
+                      </div>
+                    </div>
+                    <!--#subtitle-->
+                    <mat-chip-list
+                      class="drag-drop__column--horizontal"
+                      cdkDropListOrientation="horizontal"
+                    >
+                      <mat-chip
+                        class="task"
+                        *ngFor="let option of card.opciones"
+                      >
+                        {{ option}}
+                      </mat-chip>
+                    </mat-chip-list>
+                  </div>
+                  <!-- #Drag and drop chips -->
+                </div>
+              </div>
+            </div>
+                  <!-- drag and drop fill in the blancks-->
+                  <div class="question-card-added" *ngSwitchCase="'4'">
+                    <div class="question-card-added__content">
+                      <div class="question-card-added__header">
+                        <!--input para pregunta-->
+                        <div class="question-card-added__header--question">
+                          <mat-form-field
+                            appearance="outline"
+                            class="card-question__instruction"
+                          >
+                            <mat-label>Instruction</mat-label>
+                            <input
+                              type="text"
+                              class="input-form"
+                              matInput
+                              placeholder="Instruction"
+                              [ngModelOptions]="{ standalone: true }"
+                              [(ngModel)]="card.pregunta"
+      
+                            />
+                          </mat-form-field>
+                        </div>
+                        <!--#input para pregunta-->
+                        <div class="card-question__header--score">
+                          <!--input para pregunta-->
+                          <div class="card-question__input">
+                            <mat-form-field appearance="outline">
+                              <mat-label>Score</mat-label>
+                              <input
+                                type="number"
+                                class="input-form"
+                                matInput
+                                placeholder="Score"
+                                [ngModelOptions]="{ standalone: true }"
+                                [(ngModel)]="card.puntuacion"
+                              />
+                            </mat-form-field>
+                          </div>
+                          <!--#input para pregunta-->
+                        </div>
+                      </div>
+                        <div class="drag-drop__respuesta" cdkDropListGroup>
+                          <div class="dialog-subtitle">
+                            <div class="dialog-subtitle__text">
+                              <span>Complete the sentence</span>
+                            </div>
+                          </div>
+                          <span class="question__suggestion"
+                            >Complete the sentence with the options below</span
+                          >
+      
+                          <div class="drag-drop__input">
+                            <div *ngFor="let option of card.respuesta; let i = index">
+                              <div *ngIf="option !== '*'; else templateName">
+                                <div class="auxliar_span">
+                                  {{ option }}
+                                </div>
+                              </div>
+                              <ng-template #templateName>
+                                <!-- <span> token </span> -->
+                                <mat-chip-list
+                                  class="drag-drop__chip-container-tasks"
+                                  cdkDropListOrientation="horizontal"
+                                >
+                                </mat-chip-list>
+                              </ng-template>
+                            </div>
+                          </div>
+                          <!-- #divs with tags -->
+                          <div class="dialog-subtitle">
+                            <div class="dialog-subtitle__text">
+                              <span>Options</span>
+                            </div>
+                          </div>
+                          <span class="question__suggestion"
+                            >Options to fill the sentence</span
+                          >
+                          <!--  opciones respuesta-->
+                          <mat-chip-list
+                            class="drag-drop__column--horizontal"
+                            cdkDropListOrientation="horizontal"
+                          >
+                            <mat-chip
+                              class="task"
+                              *ngFor="let option of card.opciones"
+                            >
+                              {{ option }}
+                            </mat-chip>
+                          </mat-chip-list>
+                          <!--  #opciones respuesta-->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- #drag and drop fill in the blancks-->
           </div>
           <!--#row-->
         </div>
@@ -804,7 +1459,7 @@
       <div class="spinner">
         <mat-spinner *ngIf="showSpinner"></mat-spinner>
       </div>
-      <div *ngIf="spinnerFinish == true" >
+      <div *ngIf="spinnerFinish == true">
         <div class="done">
           <div class="done__content done--positive">
             <div class="done__text">
@@ -821,7 +1476,7 @@
           <!-- buttons -->
           <div class="progress-bar__bar">
             <!--next button-->
-            <div class="progress-bar__next" (click)="finish()">
+            <div class="progress-bar__finish" (click)="finish()">
               <span class="progress-bar__text-next">Finish</span>
               <button class="progress-bar__button-next" mat-mini-fab>
                 <mat-icon class="progress-bar__icon">chevron_right</mat-icon>

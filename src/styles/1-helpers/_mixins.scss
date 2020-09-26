@@ -39,6 +39,16 @@
   display: flex;
   overflow: hidden;
 }
+@mixin custom-card-dashboard($color) {
+  //z-index: 5;
+  //position: absolute;
+  //transform: translate(-50%, -50%);
+  background-color: $color;
+  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem;
+  display: flex;
+  overflow: hidden;
+}
 //-----------------//CLASSROOMCARD----------------
 //------------CENTER OBJECT ABSOLUTE--------------
 @mixin center {
@@ -77,3 +87,47 @@
   border-radius: 3rem;
 }
 //-----------------//CLASSROOMCARD HEADER----------------
+
+//MEDIA QUERY MANAGER
+
+/*
+0 - 480 px : Phone
+480 -768 px : tablet portrait
+768-1024px : tablet landscape
+[1224-1200] : our normal size 
+1200px > :big desktop
+*/
+
+//BREAKPOINTS
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 30em) {
+      // 480px/16=30
+      @content;
+    }
+  }
+  @if $breakpoint == tab-por {
+    @media (max-width: 50em) {
+      // 480px/16=30
+      @content;
+    }
+  }
+  @if $breakpoint == tab-lan {
+    @media (max-width: 64em) {
+      // 1024px /16 = 64
+      @content;
+    }
+  }
+  @if $breakpoint == normal {
+    @media (max-width: 75em) {
+      // 1200px /16 = 75
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 75.06em) {
+      // 1201/16=75.06
+      @content;
+    }
+  }
+}

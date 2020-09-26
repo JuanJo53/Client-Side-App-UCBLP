@@ -1,4 +1,26 @@
 <div class="container">
+  <!-- buttons de agregar seccion -->
+  <div class="button-module-container">
+    <!-- container for buttons with simple actions-->
+    <div class="button-module-container--actions">
+      <!-- INSERT BUTTONS ACTIONS HERE!!! -->
+    </div>
+    <!-- #container for buttons with simple actions-->
+    <!-- container for buttons like excel svg word etc -->
+    <div class="button-module-container-imports">
+      <button
+        class="module-button module-button--excel"
+        (click)="ExportTOExcel()"
+      >
+        <i class="far fa-file-excel module-button__icon"></i>
+        <div class="module-button__text">
+          Excel
+        </div>
+      </button>
+    </div>
+    <!-- #container for buttons like excel svg word etc -->
+  </div>
+  <!-- //buttons de agregar seccion -->
   <!--Subtitle-->
   <div class="subtitle-compound">
     <div class="subtitle-compound__text">
@@ -61,7 +83,7 @@
         matColumnDef="{{ column }}"
       >
         <th mat-header-cell *matHeaderCellDef class="header-table">
-          {{ column }}
+          {{ column }}<br>{{columnsPor[i]}}
         </th>
         <td mat-cell *cdkCellDef="let element">
           <!-- <span class="circular-button-table__icon"><mat-icon class="circular-button-subtitle__icon">close</mat-icon>
@@ -112,7 +134,4 @@
     ></mat-paginator>
     <!-- #Paginator -->
   </div>
-
-  <button (click)="ExportTOExcel()">Excel</button>
-  <br />
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SimpleCard } from "src/app/models/simpleCard";
+import { SimpleCard } from "src/app/models/SimpleCard";
 import { ActivatedRoute, Router } from "@angular/router";
 import { DeleteCardComponent } from "src/app/modules/dialogs/delete-card/delete-card.component";
 import { DeleteItemService } from "src/app/services/dialogs/delete-item.service";
@@ -100,7 +100,8 @@ export class CustomModuleComponent implements OnInit {
         const dialogRef = this.dialog.open(CustomModuleRubricComponent, {
           width: "400px",
           data: {
-            rubricas: this.cardsModulosPers
+            rubricas: this.cardsModulosPers,
+            idModulo:this.idModulo
           },
         });
         dialogRef.afterClosed().subscribe((result) => {
@@ -127,7 +128,8 @@ export class CustomModuleComponent implements OnInit {
       width: "400px",
       data:{
         id:contenido.id,
-        tipo:"Custom Module Content"
+        tipo:"Custom Module Content",
+        idModulo:this.idModulo
       }
     });
     dialogRef.afterClosed().subscribe((result)=>{

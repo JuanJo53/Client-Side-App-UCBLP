@@ -1,0 +1,91 @@
+.match-combobox__input-box {
+  display: flex;
+  align-items: center;
+  //background-color: orangered;
+  justify-content: space-between;
+}
+.match-combobox__inputs {
+  //background-color: plum;
+  display: flex;
+  width: 100%;
+}
+.match-combobox {
+  &__keyword {
+    //background-color: orchid;
+    flex: 0 1 25%;
+    margin-right: 2rem;
+    //width: 25%;
+  }
+  &__complement {
+    //width: 70%;
+    //background-color: palegoldenrod;
+    flex: 1;
+    margin-right: 1rem;
+  }
+}
+
+.match-combobox__choice {
+  &--button-delete {
+    background-color: $color-primary-red !important;
+  }
+  &--button-add {
+    background-color: $color-primary-blue !important;
+  }
+  &--button-delete-icon,
+  &--button-add-icon {
+    color: white !important;
+  }
+}
+.match-combobox__input-box-titles {
+  display: flex;
+  justify-content: space-between;
+}
+// .match-combobox__input-box-title {
+//   &--keyword {
+//     flex: 0 1 25%;
+//     margin-right: 2rem;
+//   }
+//   &--matches {
+//     flex: 1;
+//     margin-right: 2rem;
+//   }
+// }
+// .mat-divider {
+//   border-top-color: rgba($color-secondary-blue, 0.5) !important;
+// }
+
+//-----ANSWERS-----
+
+.match-combobox-answer__inputs {
+  display: flex;
+  //background-color: yellowgreen;
+  margin-top: 1.81rem;
+}
+.match-combobox-answer__keyword {
+  font-size: 1.5rem;
+  color: $color-primary-blue;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.81rem;
+}
+.match-combobox-answer {
+  &__keyword {
+    //background-color: orchid;
+    flex: 0 1 35%;
+    margin-right: 2rem;
+    //width: 25%;
+  }
+  &__complement {
+    //background-color: palegoldenrod;
+    flex: 1;
+    margin-right: 1rem;
+  }
+}
+.match-combobox-answer__box {
+  margin-bottom: 1.5rem;
+}
+.match-combobox-answer__options {
+  width: 100%;
+}

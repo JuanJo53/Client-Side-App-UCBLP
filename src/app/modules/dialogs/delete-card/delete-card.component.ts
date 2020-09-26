@@ -13,6 +13,7 @@ import { SectionsService } from 'src/app/_services/teacher_services/sections.ser
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { EvaluationService } from 'src/app/_services/teacher_services/evaluation.service';
 import { ContenidoModuloService } from 'src/app/_services/teacher_services/contenido-modulo.service';
+import { PracticesService } from 'src/app/_services/teacher_services/practices.service';
 @Component({
   selector: "app-delete-card",
   templateUrl: "./delete-card.component.html",
@@ -30,7 +31,8 @@ export class DeleteCardComponent implements OnInit {
     private servSecc:SectionsService,
     private servMod:EvaluationService,
     private servCont:ContenidoModuloService,
-    private dialogRef: MatDialogRef<DeleteCardComponent>
+    private dialogRef: MatDialogRef<DeleteCardComponent>,
+    private servPrac:PracticesService
   ) { }
   ngOnInit(): void {
     this.item = this.dataDialog["tipo"];
@@ -64,10 +66,30 @@ export class DeleteCardComponent implements OnInit {
         break;          
       case "Custom Module Content":
         this.eliminarContenidoModulo();
-        break;  
+        break; 
+      case "Practice":
+        this.eliminarPractica();
+        break; 
     }
   }
-
+  //Funcion para eliminar una practica de la lista de practicas
+  eliminarPractica()
+  {
+    this.servPrac.delPractica(this.dataDialog["idPractica"]).subscribe({
+      next:(data)=>{
+        if(data.status==200){
+          this.dialogRef.close("ok");
+        }
+        else{
+          this.dialogRef.close();}
+      },
+      error:(error)=>{
+         if(error.status==403){
+          this.dialogRef.close();
+         }
+      }
+    })
+  }
   //FUncion para eliminar Alumno
   eliminarAlumno() {
     this.servEst
@@ -193,7 +215,7 @@ export class DeleteCardComponent implements OnInit {
   }
   //Funcion para eliminar el contenido de un modulo pérsonalizado
   eliminarContenidoModulo(){
-    this.servCont.deleteContenidoModulos(this.dataDialog["id"]).subscribe({
+    this.servCont.deleteContenidoModulos(this.dataDialog["id"],this.dataDialog["idModulo"]).subscribe({
       next:(data)=>{
         if(data.status==200){
           this.dialogRef.close("ok");

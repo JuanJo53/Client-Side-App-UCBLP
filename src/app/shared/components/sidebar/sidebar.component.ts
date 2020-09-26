@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  HostListener,
+} from "@angular/core";
 import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LoadingService } from "src/app/_services/loading.service";
@@ -17,7 +23,6 @@ export class SidebarComponent implements OnInit {
 
   @Output() openEvent = new EventEmitter<boolean>();
   onSidebarMenuToggle() {
-    console.log("toogle : ", this.isSidebarOpen);
     this.isSidebarOpen = !this.isSidebarOpen;
     this.openEvent.emit(this.isSidebarOpen);
   }
@@ -59,9 +64,7 @@ export class SidebarComponent implements OnInit {
       });
     }
   }
-  decirHola() {
-    console.log("hola");
-  }
+
   navigateCustom(modulo) {
     this.servLoading.activar();
     console.log(modulo);

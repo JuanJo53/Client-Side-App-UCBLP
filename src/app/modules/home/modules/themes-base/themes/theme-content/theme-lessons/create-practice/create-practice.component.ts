@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
-import { CustomQuestionComponent } from "../../../../../dialogs/create-practice/custom-question/custom-question.component";
-import { RepositoryQuestionComponent } from "../../../../../dialogs/create-practice/repository-question/repository-question.component";
+import { CustomQuestionComponent } from "../../../../../../../dialogs/create-practice/custom-question/custom-question.component";
+import { RepositoryQuestionComponent } from "../../../../../../../dialogs/create-practice/repository-question/repository-question.component";
 import {
   MatDialog,
   MatDialogRef,
@@ -13,16 +13,27 @@ import { MatStepper } from "@angular/material/stepper";
 import { Time, Location } from "@angular/common";
 import { TIME_LOCALE } from "ngx-material-timepicker/src/app/material-timepicker/tokens/time-locale.token";
 import { windowTime } from "rxjs/operators";
-import { Config1 } from "src/app/models/Teacher/CreatePractice/Paso1";
+import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
-import { PracticesService } from "../../../../../../_services/teacher_services/practices.service";
+import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
+import { matching } from "src/app/models/Preguntas/Matching";
+
+export interface ChipOption {
+  name: string;
+}
+interface comboInputOption {
+  value: number;
+  viewValue: number;
+}
+
 @Component({
   selector: "app-create-practice",
   templateUrl: "./create-practice.component.html",
   styleUrls: ["./create-practice.component.scss"],
 })
 export class CreatePracticeComponent implements OnInit {
-  spinnerFinish=false;
+  radioButtonValue: string = "unable";
+  spinnerFinish = false;
   total = 0;
   repository: any = [];
   showSpinner = false;
@@ -67,7 +78,7 @@ export class CreatePracticeComponent implements OnInit {
   paso2bloq = false;
   idLeccion: string;
   paso2bloqScore = false;
-  paso1: Config1 = new Config1();
+  paso1: Practica = new Practica();
   preguntas: Pregunta[] = [];
 
   constructor(
@@ -78,6 +89,12 @@ export class CreatePracticeComponent implements OnInit {
     private location: Location
   ) {}
 
+  actPuntaje() {
+    this.total = 0;
+    for (let preg of this.preguntas) {
+      this.total += preg.puntuacion;
+    }
+  }
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
       this.idLeccion = param["idLeccion"];
@@ -85,10 +102,13 @@ export class CreatePracticeComponent implements OnInit {
     this.route.data.subscribe({
       next: (data) => {
         if (data.repository.status == 200) {
+          console.log(data.repository.body);
           this.repository = data.repository.body;
         }
       },
-      error: (err) => {},
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
   generateId(): string {
@@ -106,6 +126,7 @@ export class CreatePracticeComponent implements OnInit {
   next(stepper: MatStepper) {
     switch (stepper.selectedIndex) {
       case 0:
+        console.log(this.paso1);
         var a = this.verificarpaso1();
         if (a) {
           stepper.next();
@@ -151,6 +172,7 @@ export class CreatePracticeComponent implements OnInit {
           },
         });
       }
+      this.actPuntaje();
     });
   }
   //Retroceder en el proceso
@@ -175,20 +197,15 @@ export class CreatePracticeComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result !== "" && result !== "undefined" && result != null) {
-        this.route.data.subscribe({
-          next: (data) => {
             this.preguntas.push(result);
-          },
-          error: (error) => {
-            console.log("no se pudo agregar la pregunta");
-          },
-        });
+        
       }
+      this.actPuntaje();
     });
   }
   cambiarFecha() {
-    this.paso1.fechaini = this.Date_toDMY(this.paso1.fechaini);
-    this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafin);
+    this.paso1.fechaini = this.Date_toDMY(this.paso1.fechainiDate);
+    this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafinDate);
   }
   preguntasRepositorio() {
     const dialogRef = this.dialog.open(RepositoryQuestionComponent, {
@@ -199,30 +216,41 @@ export class CreatePracticeComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
+      this.actPuntaje();
       if (result !== "" && result !== "undefined" && result != null) {
         for (let pregunta of result) {
           this.preguntas.push(pregunta);
         }
       }
+      this.actPuntaje();
     });
   }
 
   //Funciones paso 1
   verificarpaso1(): boolean {
+    if (this.radioButtonValue === "unable") {
+      this.paso1.tiempoLimite = null;
+    }
     console.log("se verficia");
-    if (this.paso1.fechaini == null) {
+    if (this.paso1.fechainiDate == null) {
       this.paso1.bloqfecha1 = true;
     } else this.paso1.bloqfecha1 = false;
-    if (this.paso1.fechafin == null) {
+    if (this.paso1.fechafinDate == null) {
       this.paso1.bloqfecha2 = true;
     } else this.paso1.bloqfecha2 = false;
     if (this.paso1.horaini == null) {
       this.paso1.bloqhora1 = true;
     } else this.paso1.bloqhora1 = false;
     if (
+      (this.paso1.tiempoLimite == null || this.paso1.tiempoLimite < 5) &&
+      this.radioButtonValue === "enable"
+    ) {
+      this.paso1.bloqtiempo = true;
+    } else this.paso1.bloqtiempo = false;
+    if (
       this.paso1.horafin == null ||
       (String(this.paso1.horafin) === String(this.paso1.horaini) &&
-        String(this.paso1.fechaini) === String(this.paso1.fechafin))
+        String(this.paso1.fechainiDate) === String(this.paso1.fechafinDate))
     ) {
       this.paso1.bloqhora2 = true;
     } else this.paso1.bloqhora2 = false;
@@ -234,7 +262,8 @@ export class CreatePracticeComponent implements OnInit {
       this.paso1.bloqfecha2 == false &&
       this.paso1.bloqhora1 == false &&
       this.paso1.bloqhora2 == false &&
-      this.paso1.bloqnombre == false
+      this.paso1.bloqnombre == false &&
+      this.paso1.bloqtiempo == false
     ) {
       return true;
     } else return false;
@@ -312,29 +341,29 @@ export class CreatePracticeComponent implements OnInit {
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
     console.log(this.paso1.fechaini);
 
-    this.servPrac.addPractica(this.paso1).subscribe({
+    this.servPrac.addPractica(this.paso1, this.preguntas).subscribe({
       next: (data) => {
         if (data.status == 200) {
-          this.servPrac
-            .addPracticaPreguntas(this.preguntas, data.body.idPractica)
-            .subscribe({
-              next: (dataFin) => {
-                if (dataFin.status == 200) {
-                  console.log(dataFin.body);
-                  this.correcto = "Se Agregaron Correctamente las preguntas";
-                  stepper.next();
-                } else {
-                  console.log("error");
-                  this.correcto = "No se pudieron agregar las preguntas";
-                  stepper.next();
-                }
-              },
-              error: (errorFin) => {
-                console.log("error");
-                this.correcto = "No se pudieron agregar las preguntas";
-                stepper.next();
-              },
-            });
+          // this.servPrac
+          //   .addPracticaPreguntas(this.preguntas, data.body.idPractica)
+          //   .subscribe({
+          //     next: (dataFin) => {
+          //       if (dataFin.status == 200) {
+          //         console.log(dataFin.body);
+          //         this.correcto = "Se Agregaron Correctamente las preguntas";
+          //         stepper.next();
+          //       } else {
+          //         console.log("error");
+          //         this.correcto = "No se pudieron agregar las preguntas";
+          //         stepper.next();
+          //       }
+          //     },
+          //     error: (errorFin) => {
+          //       console.log("error");
+          //       this.correcto = "No se pudieron agregar las preguntas";
+          //       stepper.next();
+          //     },
+          //   });
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";
@@ -356,7 +385,34 @@ export class CreatePracticeComponent implements OnInit {
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
-      this.showSpinner = false;this.spinnerFinish=true;
+      this.showSpinner = false;
+      this.spinnerFinish = true;
     }, 5000);
   }
+
+  // combobox matching
+
+  comboOptions: comboInputOption[] = [
+    { value: 1, viewValue: 1 },
+    { value: 2, viewValue: 2 },
+    { value: 3, viewValue: 3 },
+  ];
+  matchingInputs: matching[] = [
+    {
+      keyword: "the",
+      match: "prepositions",
+    },
+    {
+      keyword: "play",
+      match: "verb",
+    },
+    {
+      keyword: "beautiful",
+      match: "adjective",
+    },
+    {
+      keyword: "likely",
+      match: "adverb",
+    },
+  ];
 }

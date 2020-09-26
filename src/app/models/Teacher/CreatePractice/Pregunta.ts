@@ -1,6 +1,6 @@
 export class Pregunta{   
     id:number;
-    tipo:boolean=false; 
+    tipo:number=0; 
     nivel:number;
     numeroPreg:number;
     puntuacion: number;

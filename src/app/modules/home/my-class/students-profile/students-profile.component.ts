@@ -13,7 +13,20 @@ import { CardImage } from 'src/app/models/CardImage';
 export class StudentsProfileComponent implements OnInit {
   //variables
   estudiante:ListaEstudiante=new ListaEstudiante();
-  
+  imagenesPred:string[]=[
+    "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1564144006388-615f4f4abb6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1009&q=80",
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+  ]
+  coloresPred:string[]=[
+    "9c5faf",
+    "8f8f8f",
+    "498161",
+    "403837",
+    "27649b"
+  ]
   colores: CardColor[] = [];
   images: CardImage[] = [];
   defaultCard:  Module[] = [
@@ -30,7 +43,6 @@ export class StudentsProfileComponent implements OnInit {
       }
     }
   }
-  
   sacarColor(id){
     for(let color of this.colores){
       if(color.idColor==id){

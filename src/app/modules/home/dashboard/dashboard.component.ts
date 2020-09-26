@@ -4,31 +4,26 @@ import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { ChartType } from "chart.js";
 import { MultiDataSet, Label } from "ng2-charts";
-// import * as pluginDataLabels from 'chartjs-plugin-datalabels';
-// import { MultiDataSet, Label } from 'ng2-charts';
 import { ChartOptions, ChartDataSets } from "chart.js";
 import { ActivatedRoute } from "@angular/router";
 import { TokenStorageService } from "src/app/_services/general_services/token-storage.service";
 import { PracticeDashboard } from "src/app/models/DashBoard/PracticeDashboard";
 import { SharedService } from "src/app/shared/shared.service";
+import { NgxGlideComponent } from "ngx-glide";
 
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
 })
-
-// export class DashboardComponent implements OnInit {
-//     link="Dashboard";
-
-//   constructor() { }
-
-//   ngOnInit() {
-
-//   }
-
-// }
 export class DashboardComponent implements OnInit {
+  @ViewChild(NgxGlideComponent, { static: false }) ngxGlide: NgxGlideComponent;
+
+  play(): void {
+    this.ngxGlide.play();
+    this.ngxGlide.arrowLeftLabel = "<";
+  }
+
   practicas: PracticeDashboard[] = [];
   // link = "Dashboard";
   public doughnutChartType: ChartType = "doughnut";
@@ -101,7 +96,8 @@ export class DashboardComponent implements OnInit {
   ];
   constructor(
     private route: ActivatedRoute,
-    private tokenServ: TokenStorageService
+    private tokenServ: TokenStorageService,
+    private datalink: SharedService
   ) {}
   cargarDatosPractica() {
     this.practicas = [];
@@ -114,7 +110,7 @@ export class DashboardComponent implements OnInit {
             newPrac.nombrePractica = practica.nombre_practica;
             var a = practica.aprobados as number;
             var r = practica.reprobados as number;
-            var n = 0;
+            var n = practica.sin_dar as number;
             newPrac.datos = [[a, r, n]];
             this.practicas.push(newPrac);
           }
@@ -129,6 +125,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   ngOnInit() {
+    this.datalink.changeMessage(this.link);
     this.cargarDatosPractica();
   }
 

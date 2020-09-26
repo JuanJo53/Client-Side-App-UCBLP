@@ -6,6 +6,8 @@
 
 //2 - TOOLS
 @import "2-tools/files";
+@import "2-tools/flexboxgrid";
+@import "2-tools/carousel";
 
 //3 - BASICS
 @import "3-basics/base";
@@ -26,6 +28,9 @@
 @import "3-basics/progress-bar";
 @import "3-basics/rubric";
 @import "3-basics/done-message";
+@import "3-basics/schedule";
+@import "3-basics/slider";
+@import "3-basics/extras";
 
 //4 - LAYOUT
 @import "4-layout/grid";
@@ -50,6 +55,8 @@
 @import "5-modules/aux_pages";
 @import "5-modules/card-profile-student";
 @import "5-modules/dashboard";
+@import "5-modules/drag-drop";
+@import "5-modules/match-combobox";
 
 //6- PAGES
 @import "6-pages/home";

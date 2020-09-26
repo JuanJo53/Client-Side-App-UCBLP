@@ -7,7 +7,25 @@
   &__title {
     color: $color-primary-blue;
     font-size: 1.5rem;
+    //background-color: pink;
   }
+  &__content {
+    //background-color: red;
+  }
+  //background-color: yellow;
+}
+
+.radio-buttons-practice {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  //background-color: $color-primary-blue;
+  align-items: center;
+  justify-content: flex-end;
+  &__content {
+    //background-color: red;
+  }
+  //background-color: yellow;
 }
 .radio-button {
   color: $color-primary-blue;
@@ -15,6 +33,7 @@
   //background-color: $color-primary-blue;
   border-radius: 3rem;
   border: 0.1rem solid $color-primary-blue;
+  margin-left: 1rem;
 }
 .mat-radio-outer-circle {
   border-color: $color-primary-gray !important;

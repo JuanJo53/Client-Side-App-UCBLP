@@ -9,7 +9,7 @@
           <img [src]="mylogo" class="navbar-brand__img" />
           <!-- #logo-->
           <!-- texto-->
-          <div class="navbar-brand__text">UCB English for teachers</div>
+          <div class="navbar-brand__text">UCB idiomas para docentes</div>
           <!-- #texto-->
           <!-- button icono de usuario-->
         </div>
@@ -18,7 +18,8 @@
           <!-- agregar classroom-->
           <button
             class="circular-button-navbar"
-            mat-mini-fab (click)="agregarCurso()"
+            mat-mini-fab
+            (click)="agregarCurso()"
           >
             <!-- primera letra de nombre de usuario-->
             <mat-icon class="circular-button__first-word">add</mat-icon>
@@ -106,7 +107,7 @@
           <i class="far fa-calendar-alt"></i
           ><!--horario-->
           <span class="classroom-card__description-detail-text"
-            >Days: {{ cards.diasCurso }}</span
+            >Dias : {{ cards.diasCurso }}</span
           >
           <!--#horario-->
         </span>
@@ -114,7 +115,7 @@
           <i class="fas fa-clock"></i
           ><!--horario-->
           <span class="classroom-card__description-detail-text"
-            >Schedule: {{ cards.horarioCurso }}</span
+            >Horario : {{ cards.horarioCurso }}</span
           >
           <!--#horario-->
         </p>
@@ -122,7 +123,7 @@
           <i class="fas fa-user-friends"></i>
           <!--total de estudiantes-->
           <span class="classroom-card__description-detail-text"
-            >Students: {{ cards.totalEstudiantes }}</span
+            >Estudiantes : {{ cards.totalEstudiantes }}</span
           >
           <!--#total de estudiantes-->
         </span>

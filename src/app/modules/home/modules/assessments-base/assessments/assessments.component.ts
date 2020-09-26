@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { SimpleCard } from "src/app/models/simpleCard";
+//import { SimpleCard } from "src/app/models/simpleCard";
+
 import { Router, ActivatedRoute } from "@angular/router";
+import { SimpleCard } from 'src/app/models/SimpleCard';
 @Component({
   selector: "app-assessments",
   templateUrl: "./assessments.component.html",

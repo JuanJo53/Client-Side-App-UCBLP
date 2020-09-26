@@ -17,6 +17,7 @@ import { ListaEstudiante } from "src/app/models/Teacher/MyClass/ListaEstudiante"
 import { MyClassService } from "src/app/_services/teacher_services/my-class.service";
 import { THIS_EXPR, IfStmt } from "@angular/compiler/src/output/output_ast";
 import { SharedService } from "src/app/shared/shared.service";
+import { ExportExcelService } from "src/app/_services/export-excel.service";
 
 export interface ListaDeEstudiantes {
   nombre: string;
@@ -37,9 +38,9 @@ export class StudentsComponent implements OnInit {
   item: string = "student";
   displayedColumns: string[] = [
     "posicion",
-    "nombre",
     "p_nombre",
     "m_nombre",
+    "nombre",
     "promedio",
     "id",
   ];
@@ -58,8 +59,13 @@ export class StudentsComponent implements OnInit {
     private router: Router,
     private stService: ActivatedRoute,
     private servEst: MyClassService,
-    private dataLink: SharedService
+    private dataLink: SharedService,
+    private exc: ExportExcelService
   ) {}
+  ExportExcel() {
+    let element = document.getElementById("TABLE");
+    this.exc.export(element, "Students Notes", this.displayedColumns.length);
+  }
   agregarListaEstudiantes(data) {
     for (let i in data) {
       let nuevoEstudiante = new ListaEstudiante();

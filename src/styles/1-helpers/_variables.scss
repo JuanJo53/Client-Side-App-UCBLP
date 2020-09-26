@@ -1,4 +1,3 @@
-$text-color: green;
 //WHITE COLORS
 $color-primary-white: #ffffff;
 
@@ -16,7 +15,7 @@ $color-secondary-gray: #ebebe4;
 $color-primary-blue: #084c61;
 $color-secondary-blue: #83a5af;
 
-//BLUE COLORS
+//ORANGE COLORS
 $color-primary-orange: #ffae42;
 
 //FONT WEIGHTS
@@ -37,6 +36,9 @@ $color-card-option-1: #6ab1b4;
 $color-card-option-2: #c7cc77;
 //
 
+//extra colors
+$color-primary-excel: #008000;
+
 $color-box-shadow: rgba(0, 0, 0, 0.25);
 
 $opacity-custom-card: 0.75;
@@ -44,3 +46,6 @@ $hover-custom-card: 10;
 
 $border-radious-standard: 1rem;
 $card-width: 0.15rem;
+
+//tiempos de transiciones
+$transition-5: 0.5s;

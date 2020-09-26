@@ -1,4 +1,23 @@
 <div class="container">
+  <!-- buttons de agregar seccion -->
+  <div class="button-module-container">
+    <!-- container for buttons with simple actions-->
+    <div class="button-module-container--actions">
+      <!-- INSERT BUTTONS ACTIONS HERE!!! -->
+    </div>
+    <!-- #container for buttons with simple actions-->
+    <!-- container for buttons like excel svg word etc -->
+    <div class="button-module-container-imports">
+      <button class="module-button module-button--excel">
+        <i class="far fa-file-excel module-button__icon"></i>
+        <div class="module-button__text">
+          Excel
+        </div>
+      </button>
+    </div>
+    <!-- #container for buttons like excel svg word etc -->
+  </div>
+  <!-- //buttons de agregar seccion -->
   <!--Subtitle-->
   <div class="subtitle-compound">
     <div class="subtitle-compound__text">
@@ -19,14 +38,6 @@
         </td>
       </ng-container>
       <!-- #Position Column -->
-      <!-- Name Column -->
-      <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          Name
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
-      </ng-container>
-      <!-- #Name Column -->
 
       <!-- Father's Name Column -->
       <ng-container matColumnDef="p_nombre">
@@ -41,9 +52,17 @@
         <th mat-header-cell *matHeaderCellDef class="header-table">
           Mother's Name
         </th>
-        <td mat-cell *matCellDef="let element">{{ element.apMaterno}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.apMaterno }}</td>
       </ng-container>
       <!-- #Mother's Name Column -->
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+      <!-- #Name Column -->
       <!-- Assistance Column -->
       <!-- <ng-container matColumnDef="asistencia">
         <th mat-header-cell *matHeaderCellDef class="header-table">

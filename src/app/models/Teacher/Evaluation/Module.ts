@@ -7,4 +7,6 @@ export class Module{
     estado:number;
     idTipoModulo:number;
     idCurso:number;
+    imagen:string;
+    color:string;
 }
