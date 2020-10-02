@@ -456,7 +456,7 @@
           <!--button-->
           <div class="question-card-added">
             <div class="question-card-added__button">
-              <ng-container *ngIf="respuestaCorrecta == true">
+              <ng-container *ngIf="card.puntuacion!= 0">
                 <button
                   mat-mini-fab
                   class="question-card-added__button--positive"
@@ -464,7 +464,7 @@
                   <mat-icon> check </mat-icon>
                 </button>
               </ng-container>
-              <ng-container *ngIf="respuestaCorrecta == false">
+              <ng-container *ngIf="card.puntuacion== 0">
                 <button
                   mat-mini-fab
                   class="question-card-added__button--negative"

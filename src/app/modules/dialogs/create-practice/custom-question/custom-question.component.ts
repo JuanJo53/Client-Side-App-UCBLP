@@ -666,6 +666,14 @@ export class CustomQuestionComponent implements OnInit {
       this.options2.splice(index, 1);
     }
   }
+  removeList(option: ChipOption,list:Column): void {
+    const index = list.chip.indexOf(option);
+
+    if (index >= 0) {
+      this.options2.push(option);
+      list.chip.splice(index,1);
+    }
+  }
   remove2(option: Column): void {
     // const index = this.listColumnsChips2.indexOf(option.chip);
     // if (index >= 0) {

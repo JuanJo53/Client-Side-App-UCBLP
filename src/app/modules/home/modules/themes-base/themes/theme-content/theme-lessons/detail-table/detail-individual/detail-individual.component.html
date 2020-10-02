@@ -2,7 +2,7 @@
   <!--Subtitle-->
   <div class="subtitle-compound">
     <div class="subtitle-compound__text">
-      <span>Practice X - Ariel Colque Herrera</span>
+      <span>Practice X </span>
     </div>
   </div>
   <!--#Subtitle-->
@@ -11,10 +11,9 @@
     *ngFor="let card of preguntas; let i = index"
     [ngSwitch]="card.idTipoRespuesta"
     #template
+    class="question-card-added" 
   >
-    <!--radio button case-->
-    <div class="question-card-added" *ngSwitchCase="'1'">
-      <div class="question-card-added__content">
+      <div class="question-card-added__content"  *ngSwitchCase="'1'">
         <div class="question-card-added__header">
           <!--input para pregunta-->
           <div class="question-card-added__header--question">
@@ -58,7 +57,7 @@
             class="example-radio-group"
             name="radioButtonsGroupPas3{{ i }}"
             [disabled]="true"
-            [(ngModel)]="card.respuesta[0]"
+            [(ngModel)]="card.respuestaAl[0]"
           >
             <!-- radio button option -->
             <mat-radio-button
@@ -84,11 +83,9 @@
           <!-- </form> -->
         </div>
       </div>
-    </div>
 
     <!--checkbox case-->
-    <div class="question-card-added" *ngSwitchCase="'2'">
-      <div class="question-card-added__content">
+      <div class="question-card-added__content"  *ngSwitchCase="'2'">
         <div class="question-card-added__header">
           <!--input para pregunta-->
           <div class="question-card-added__header--question">
@@ -151,7 +148,221 @@
           <!-- </form> -->
         </div>
       </div>
+    
+    <!-- drag and drop column-->
+      <div class="question-card-added__content" *ngSwitchCase="'3'">
+        <div class="question-card-added__header">
+          <!--input para pregunta-->
+          <div class="question-card-added__header--question">
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label>Instruction</mat-label>
+              <input
+                [(ngModel)]="card.pregunta"
+                type="text"
+                readonly
+                class="input-form"
+                matInput
+                placeholder="Instruction"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+          <div class="question-card-added__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label>Score</mat-label>
+                <input
+                  [(ngModel)]="card.puntuacion"
+                  type="number"
+                  class="input-form"
+                  matInput
+                  readonly
+                  placeholder="Score"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+
+        <!-- Drag and drop content -->
+        <div class="drag-drop__area" cdkDropListGroup>
+          <!-- cards wrapper columns-->
+          <div class="drag-drop__wrapper">
+            <div class="drag-drop__columns">
+              <div
+                class="drag-drop__column"
+                *ngFor="let column of card.respuestaAl,let colAl=index"
+              >
+                <mat-form-field class="example-form-field">
+                  <mat-label>Column title</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    [(ngModel)]="card.respuesta[colAl].titulo"
+                    [ngModelOptions]="{ standalone: true }"
+                  />
+                </mat-form-field>
+                <!-- <div class="drag-drop__column-title">
+                  {{ column.columnTitle }}
+                </div> -->
+                <div class="drag-drop__task-container">
+                  <mat-chip
+                    class="example-box"
+                    *ngFor="let option of column.cards"
+                  >
+                    {{ option }}
+                  </mat-chip>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- #cards wrapper columns-->
+          <!-- #Drag and drop chips -->
+          <div class="drag-drop__chips--horizontal">
+            <!--subtitle-->
+            <div class="dialog-subtitle">
+              <div class="dialog-subtitle__text">
+                <span>Options</span>
+              </div>
+            </div>
+            <!--#subtitle-->
+            <mat-chip-list
+              class="drag-drop__column--horizontal"
+              cdkDropListOrientation="horizontal"
+            >
+              <mat-chip
+                class="task"
+                *ngFor="let option of card.opciones"
+              >
+                {{ option }}
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+          <!-- #Drag and drop chips -->
+        </div>
+      </div>
+    <!-- drag and drop fill in the blancks-->
+      <div class="question-card-added__content" *ngSwitchCase="'4'">
+        <div class="question-card-added__header">
+          <!--input para pregunta-->
+          <div class="question-card-added__header--question">
+            <mat-form-field
+              appearance="outline"
+              class="card-question__instruction"
+            >
+              <mat-label>Instruction</mat-label>
+              <input
+                type="text"
+                class="input-form"
+                matInput
+                placeholder="Instruction"
+                [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="card.pregunta"
+              />
+            </mat-form-field>
+          </div>
+          <!--#input para pregunta-->
+          <div class="card-question__header--score">
+            <!--input para pregunta-->
+            <div class="card-question__input">
+              <mat-form-field appearance="outline">
+                <mat-label>Score</mat-label>
+                <input
+                  type="number"
+                  class="input-form"
+                  matInput
+                  placeholder="Score"
+                  [ngModelOptions]="{ standalone: true }"
+                  [(ngModel)]="card.puntuacion"
+                />
+              </mat-form-field>
+            </div>
+            <!--#input para pregunta-->
+          </div>
+        </div>
+        <div class="drag-drop__respuesta" cdkDropListGroup>
+          <div class="dialog-subtitle">
+            <div class="dialog-subtitle__text">
+              <span>Complete the sentence</span>
+            </div>
+          </div>
+          <span class="question__suggestion"
+            >Complete the sentence with the options below</span
+          >
+
+          <div class="drag-drop__input">
+            <div *ngFor="let option of card.respuesta; let i = index">
+              <div *ngIf="option !== '*'; else templateName">
+                <div class="auxliar_span">
+                  {{ option }}
+                </div>
+              </div>
+              <ng-template #templateName>
+                <!-- <span> token </span> -->
+                <mat-chip-list
+                  class="drag-drop__chip-container-tasks"
+                  cdkDropListOrientation="horizontal"
+                >
+                <mat-chip class="task" *ngIf="card.respuestaAl[card.respuestasBool[i]]!==''">
+                  {{ card.respuestaAl[card.respuestasBool[i]] }}
+                </mat-chip>
+                </mat-chip-list>
+              </ng-template>
+            </div>
+          </div>
+          <!-- #divs with tags -->
+          <div class="dialog-subtitle">
+            <div class="dialog-subtitle__text">
+              <span>Options</span>
+            </div>
+          </div>
+          <span class="question__suggestion"
+            >Options to fill the sentence</span
+          >
+          <!--  opciones respuesta-->
+          <mat-chip-list
+            class="drag-drop__column--horizontal"
+            cdkDropListOrientation="horizontal"
+          >
+            <mat-chip class="task" *ngFor="let option of card.opciones">
+              {{ option }}
+            </mat-chip>
+          </mat-chip-list>
+          <!--  #opciones respuesta-->
+        </div>
+      
     </div>
+    <!--button-->
+    <div class="question-card-added">
+      <div class="question-card-added__button">
+        <ng-container *ngIf="card.puntuacion!= 0">
+          <button
+            mat-mini-fab
+            class="question-card-added__button--positive"
+          >
+            <mat-icon> check </mat-icon>
+          </button>
+        </ng-container>
+        <ng-container *ngIf="card.puntuacion== 0">
+          <button
+            mat-mini-fab
+            class="question-card-added__button--negative"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+      <!--#button-->
+    </div>
+    
+    <!-- #drag and drop fill in the blancks-->
   </div>
   <!--#row-->
 </div>

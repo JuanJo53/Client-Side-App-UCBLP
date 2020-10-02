@@ -53,7 +53,7 @@ export class DetailTableComponent implements OnInit {
   ngOnInit(): void {
     this.cargarNotas();
   }
-  verDetalles() {
-    this.router.navigate(["individual"], { relativeTo: this.route });
+  verDetalles(id:number) {
+    this.router.navigate(["individual",id], { relativeTo: this.route });
   }
 }
