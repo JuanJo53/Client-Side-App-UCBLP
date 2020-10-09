@@ -128,6 +128,7 @@
         </th>
         <td mat-cell *matCellDef="let element">
           <button
+          *ngIf="element.practicaDada"
             class="circular-button-table--normal"
             mat-mini-fab
             (click)="verDetalles(element.idNotaPractica)"
@@ -138,6 +139,14 @@
             >
             <!-- #usuario-->
           </button>
+          <div
+            *ngIf="!element.practicaDada"
+            mat-mini-fab
+            class="simple_element"
+          >
+            No taken
+            <!-- #usuario-->
+          </div>
 
           <!-- #Buttons Column -->
         </td>
