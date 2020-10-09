@@ -17,6 +17,7 @@ export class DefaultComponent implements OnInit {
   @ViewChild("sidenav") public sidenav: SidebarComponent;
   @ViewChild("loading") public loading: LoadingComponent;
   isSidebarOpen2: boolean = true;
+  isSidebarOpen3: boolean = true;
   contentMargin = 26;
   constructor(
     private serv: SideBarControlService,
@@ -26,14 +27,12 @@ export class DefaultComponent implements OnInit {
   ngOnInit() {}
   receiveOpen(event) {
     this.isSidebarOpen2 = event;
-    console.log(
-      "inside burgerClicked: pls. change showMenu to be:",
-      this.isSidebarOpen2
-    );
     if (!this.isSidebarOpen2) {
       this.contentMargin = 9; //css when it's close
+      //this.isSidebarOpen3 = true;
     } else {
       this.contentMargin = 26; //css when it's open
+      //this.isSidebarOpen3 = false;
     }
   }
   ngAfterViewInit(): void {

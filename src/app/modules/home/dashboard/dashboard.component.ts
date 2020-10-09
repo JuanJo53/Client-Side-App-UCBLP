@@ -10,7 +10,6 @@ import { TokenStorageService } from "src/app/_services/general_services/token-st
 import { PracticeDashboard } from "src/app/models/DashBoard/PracticeDashboard";
 import { SharedService } from "src/app/shared/shared.service";
 import { NgxGlideComponent } from "ngx-glide";
-
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",

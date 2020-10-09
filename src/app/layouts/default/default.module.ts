@@ -98,6 +98,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { MatDividerModule } from "@angular/material/divider";
 import { NgxGlideModule } from "ngx-glide";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -202,6 +203,7 @@ import { NgxGlideModule } from "ngx-glide";
     ScrollingModule,
     MatDividerModule,
     NgxGlideModule,
+    MatTooltipModule,
   ],
 })
 export class DefaultModule {}

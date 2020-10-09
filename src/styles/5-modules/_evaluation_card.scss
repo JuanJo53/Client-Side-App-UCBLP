@@ -50,6 +50,16 @@
     justify-content: center;
     align-items: center;
   }
+  &__circle-container {
+    flex: 1;
+    //background-color: greenyellow;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__title-container {
+    flex: 0 1 70%;
+    //background-color: hotpink;
+  }
   &__circle {
     border-radius: 50%;
     width: 5rem;
@@ -59,14 +69,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0rem 1rem;
     font-size: 1.25rem;
   }
   &__title {
     color: $color-primary-white;
     font-size: 2rem;
     margin: 0rem 1rem;
+    text-align: center;
+    line-height: 1.5;
+    //background-color: red;
   }
+
   &:hover {
   }
 }
