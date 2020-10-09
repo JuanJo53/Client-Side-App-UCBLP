@@ -37,6 +37,7 @@ export class DetailTableComponent implements OnInit {
             newNota.apPaterno = nota.ap_paterno_alumno;
             newNota.nombre = nota.nombre_alumno;
             newNota.nota = nota.nota_practica;
+            newNota.practicaDada=nota.practica_dada;
             newNota.posicion = Number(i) + 1;
             this.ELEMENT_DATA.push(newNota);
           }
