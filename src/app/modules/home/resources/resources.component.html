@@ -8,9 +8,7 @@
         (click)="agregarSeccion()"
       >
         <i class="fas fa-plus module-button__icon"></i>
-        <div class="module-button__text">
-          Add section
-        </div>
+        <div class="module-button__text">Add section</div>
       </button>
     </div>
     <!-- #container for buttons with simple actions-->
@@ -60,100 +58,95 @@
     </div>
     <!--#Subtitle-->
     <!--tables-->
-    <div class="mat-elevation-z8">
-      <table
-        mat-table
-        [dataSource]="seccion.resourceContent"
-        matSort
-        class="mat-header-row"
-      >
-        <!-- Forum's name Column -->
-        <ng-container matColumnDef="tipoDocumento">
-          <th mat-header-cell *matHeaderCellDef class="header-table">
-            Type
-          </th>
-          <td
-            mat-cell
-            *matCellDef="let element"
-            class="mat-cell"
-            [ngSwitch]="element.tipo"
+
+    <table
+      mat-table
+      [dataSource]="seccion.resourceContent"
+      matSort
+      class="mat-header-row mat-elevation-z8"
+    >
+      <!-- Forum's name Column -->
+      <ng-container matColumnDef="tipoDocumento">
+        <th mat-header-cell *matHeaderCellDef class="header-table">Type</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          class="mat-cell"
+          [ngSwitch]="element.tipo"
+        >
+          <mat-icon class="resource_type_icon" *ngSwitchCase="1">
+            insert_drive_file
+          </mat-icon>
+          <mat-icon class="resource_type_icon" *ngSwitchCase="2">
+            video_library
+          </mat-icon>
+          <mat-icon class="resource_type_icon" *ngSwitchCase="3">
+            fiber_manual_record
+          </mat-icon>
+        </td>
+      </ng-container>
+      <!-- #Forum's name Column -->
+      <!-- Start date Column -->
+      <ng-container matColumnDef="nombreDocumento">
+        <th mat-header-cell *matHeaderCellDef class="header-table">
+          Document's Name
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.nombre }}
+        </td>
+      </ng-container>
+      <!-- #Start date Column -->
+
+      <!-- Buttons Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="header-table">Actions</th>
+        <td mat-cell *matCellDef="let element2; let x = index">
+          <button
+            class="circular-button-subtitle"
+            mat-mini-fab
+            (click)="descargarArchivo(element2)"
           >
-            <mat-icon class="resource_type_icon" *ngSwitchCase="1">
-              insert_drive_file
-            </mat-icon>
-            <mat-icon class="resource_type_icon" *ngSwitchCase="2">
-              video_library
-            </mat-icon>
-            <mat-icon class="resource_type_icon" *ngSwitchCase="3">
-              fiber_manual_record
-            </mat-icon>
-          </td>
-        </ng-container>
-        <!-- #Forum's name Column -->
-        <!-- Start date Column -->
-        <ng-container matColumnDef="nombreDocumento">
-          <th mat-header-cell *matHeaderCellDef class="header-table">
-            Document's Name
-          </th>
-          <td mat-cell *matCellDef="let element">
-            {{ element.nombre }}
-          </td>
-        </ng-container>
-        <!-- #Start date Column -->
+            <!--download-->
+            <mat-icon class="circular-button-subtitle__icon"
+              >file_download</mat-icon
+            >
+            <!--#download-->
+          </button>
+          <button
+            class="circular-button-table--normal"
+            (click)="editarDocumento(element2)"
+            mat-mini-fab
+          >
+            <!--update usuario-->
+            <span class="circular-button-table__icon"
+              ><i class="fas fa-pencil-alt"></i>
+            </span>
+            <!-- #update usuario-->
+          </button>
+          <button
+            class="circular-button-table--negative"
+            (click)="eliminarDocumento(element2, i, x)"
+            mat-mini-fab
+          >
+            <!--delete usuario-->
+            <span class="circular-button-table__icon"
+              ><i class="fas fa-trash"></i>
+            </span>
+            <!-- #delete usuario-->
+          </button>
+          <!-- #Buttons Column -->
+        </td>
+      </ng-container>
 
-        <!-- Buttons Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef class="header-table">
-            Actions
-          </th>
-          <td mat-cell *matCellDef="let element2; let x = index">
-            <button
-              class="circular-button-subtitle"
-              mat-mini-fab
-              (click)="descargarArchivo(element2)"
-            >
-              <!--download-->
-              <mat-icon class="circular-button-subtitle__icon"
-                >file_download</mat-icon
-              >
-              <!--#download-->
-            </button>
-            <button
-              class="circular-button-table--normal"
-              (click)="editarDocumento(element2)"
-              mat-mini-fab
-            >
-              <!--update usuario-->
-              <span class="circular-button-table__icon"
-                ><i class="fas fa-pencil-alt"></i>
-              </span>
-              <!-- #update usuario-->
-            </button>
-            <button
-              class="circular-button-table--negative"
-              (click)="eliminarDocumento(element2, i, x)"
-              mat-mini-fab
-            >
-              <!--delete usuario-->
-              <span class="circular-button-table__icon"
-                ><i class="fas fa-trash"></i>
-              </span>
-              <!-- #delete usuario-->
-            </button>
-            <!-- #Buttons Column -->
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
-      <!--#tables-->
-      <!-- Paginator -->
-      <mat-paginator
-        [pageSizeOptions]="[10, 20]"
-        showFirstLastButtons
-      ></mat-paginator>
-      <!-- #Paginator -->
-    </div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!--#tables-->
+    <!-- Paginator -->
+    <mat-paginator
+      [pageSizeOptions]="[10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+    <!-- #Paginator -->
   </div>
 </div>

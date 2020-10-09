@@ -39,90 +39,89 @@
   <!--#Subtitle-->
 
   <!--tables-->
-  <div class="mat-elevation-z8">
-    <table
-      mat-table
-      [dataSource]="dataSource"
-      matSort
-      class="mat-header-row"
-      id="TABLE"
-    >
-      <!-- Position Column -->
-      <ng-container matColumnDef="posicion">
-        <th mat-header-cell *matHeaderCellDef class="header-table">No.</th>
-        <td mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.posicion }}
-        </td>
-      </ng-container>
-      <!-- #Position Column -->
 
-      <!-- Father's Name Column -->
-      <ng-container matColumnDef="p_nombre">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          Father's Name
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
-      </ng-container>
-      <!-- #Father's Name Column -->
-      <!-- Mother's Name Column -->
-      <ng-container matColumnDef="m_nombre">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          Mother's Name
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
-      </ng-container>
-      <!-- #Mother's Name Column -->
-      <!-- Name Column -->
-      <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef class="header-table">Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
-      </ng-container>
-      <!-- #Name Column -->
-      <!-- Average Column -->
-      <ng-container matColumnDef="promedio">
-        <th mat-header-cell *matHeaderCellDef class="header-table">Average</th>
-        <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
-      </ng-container>
-      <!-- #Average Column -->
-      <!-- Buttons Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef class="header-table">Actions</th>
-        <td mat-cell *matCellDef="let element">
-          <button
-            class="circular-button-table--normal"
-            mat-mini-fab
-            (click)="perfilEstudiante(element)"
-          >
-            <!--update usuario-->
-            <span class="circular-button-table__icon"
-              ><i class="fas fa-user"></i>
-            </span>
-            <!-- #update usuario-->
-          </button>
-          <button
-            class="circular-button-table--negative"
-            mat-mini-fab
-            (click)="eliminarEstudiante(element.id_alumno_curso)"
-          >
-            <!--delete usuario-->
-            <span class="circular-button-table__icon"
-              ><i class="fas fa-trash"></i>
-            </span>
-            <!-- #delete usuario-->
-          </button>
-          <!-- #Buttons Column -->
-        </td>
-      </ng-container>
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    class="mat-header-row mat-elevation-z8"
+    id="TABLE"
+  >
+    <!-- Position Column -->
+    <ng-container matColumnDef="posicion">
+      <th mat-header-cell *matHeaderCellDef class="header-table">No.</th>
+      <td mat-cell *matCellDef="let element" class="mat-cell">
+        {{ element.posicion }}
+      </td>
+    </ng-container>
+    <!-- #Position Column -->
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
-    <!--#tables-->
-    <!-- Paginator -->
-    <mat-paginator
-      [pageSizeOptions]="[10, 20]"
-      showFirstLastButtons
-    ></mat-paginator>
-    <!-- #Paginator -->
-  </div>
+    <!-- Father's Name Column -->
+    <ng-container matColumnDef="p_nombre">
+      <th mat-header-cell *matHeaderCellDef class="header-table">
+        Father's Name
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.p_nombre }}</td>
+    </ng-container>
+    <!-- #Father's Name Column -->
+    <!-- Mother's Name Column -->
+    <ng-container matColumnDef="m_nombre">
+      <th mat-header-cell *matHeaderCellDef class="header-table">
+        Mother's Name
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.m_nombre }}</td>
+    </ng-container>
+    <!-- #Mother's Name Column -->
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef class="header-table">Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+    </ng-container>
+    <!-- #Name Column -->
+    <!-- Average Column -->
+    <ng-container matColumnDef="promedio">
+      <th mat-header-cell *matHeaderCellDef class="header-table">Average</th>
+      <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
+    </ng-container>
+    <!-- #Average Column -->
+    <!-- Buttons Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef class="header-table">Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          class="circular-button-table--normal"
+          mat-mini-fab
+          (click)="perfilEstudiante(element)"
+        >
+          <!--update usuario-->
+          <span class="circular-button-table__icon"
+            ><i class="fas fa-user"></i>
+          </span>
+          <!-- #update usuario-->
+        </button>
+        <button
+          class="circular-button-table--negative"
+          mat-mini-fab
+          (click)="eliminarEstudiante(element.id_alumno_curso)"
+        >
+          <!--delete usuario-->
+          <span class="circular-button-table__icon"
+            ><i class="fas fa-trash"></i>
+          </span>
+          <!-- #delete usuario-->
+        </button>
+        <!-- #Buttons Column -->
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <!--#tables-->
+  <!-- Paginator -->
+  <mat-paginator
+    [pageSizeOptions]="[10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+  <!-- #Paginator -->
 </div>
