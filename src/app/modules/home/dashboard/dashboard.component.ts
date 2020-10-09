@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, Inject } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Inject,
+  ViewEncapsulation,
+} from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
@@ -10,11 +16,13 @@ import { TokenStorageService } from "src/app/_services/general_services/token-st
 import { PracticeDashboard } from "src/app/models/DashBoard/PracticeDashboard";
 import { SharedService } from "src/app/shared/shared.service";
 import { NgxGlideComponent } from "ngx-glide";
-
+import { TooltipPosition } from "@angular/material/tooltip";
+import { FormControl } from "@angular/forms";
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DashboardComponent implements OnInit {
   @ViewChild(NgxGlideComponent, { static: false }) ngxGlide: NgxGlideComponent;
@@ -23,7 +31,16 @@ export class DashboardComponent implements OnInit {
     this.ngxGlide.play();
     this.ngxGlide.arrowLeftLabel = "<";
   }
-
+  positionOptions: TooltipPosition[] = [
+    "after",
+    "before",
+    "above",
+    "below",
+    "left",
+    "right",
+  ];
+  tooltipText: String = "porcentaje";
+  position = new FormControl(this.positionOptions[2]);
   practicas: PracticeDashboard[] = [];
   // link = "Dashboard";
   public doughnutChartType: ChartType = "doughnut";

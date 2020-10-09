@@ -127,7 +127,12 @@
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
-      <span>Slider</span>
+      <span
+        matTooltip="{{ tooltipText }}"
+        matTooltipClass="tooltip"
+        [matTooltipPosition]="position.value"
+        >Carousel</span
+      >
     </div>
   </div>
   <!--#Subtitle-->
