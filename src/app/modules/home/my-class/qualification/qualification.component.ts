@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  ViewEncapsulation,
+} from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
@@ -12,7 +18,9 @@ import {
 import { TitleCasePipe } from "@angular/common";
 import { ListaEstudiante } from "src/app/models/Teacher/MyClass/ListaEstudiante";
 import { SharedService } from "src/app/shared/shared.service";
-import { ExportExcelService } from 'src/app/_services/export-excel.service';
+import { ExportExcelService } from "src/app/_services/export-excel.service";
+import { TooltipPosition } from "@angular/material/tooltip";
+import { FormControl } from "@angular/forms";
 export interface ListaDeNotas {
   nombre: string;
   posicion: number;
@@ -31,8 +39,20 @@ export interface ListaDeNotas {
   selector: "app-qualification",
   templateUrl: "./qualification.component.html",
   styleUrls: ["./qualification.component.scss"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class QualificationComponent implements OnInit {
+  positionOptions: TooltipPosition[] = [
+    "after",
+    "before",
+    "above",
+    "below",
+    "left",
+    "right",
+  ];
+  tooltipText: String = "porcentaje";
+  position = new FormControl(this.positionOptions[2]);
+
   link: string = "My class / Qualification";
   columns: string[] = [];
   columnsPor: string[] = [];
@@ -48,15 +68,15 @@ export class QualificationComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private data: SharedService,
-    private exc:ExportExcelService
+    private exc: ExportExcelService
   ) {}
   cargarDatosBody(data) {
     console.log(data);
   }
- 
+
   ExportTOExcel() {
     let element = document.getElementById("TABLE");
-    this.exc.export(element,"General Notes",this.displayedColumns.length);
+    this.exc.export(element, "General Notes", this.displayedColumns.length);
   }
 
   cargarCabezera(cabe) {
@@ -71,12 +91,8 @@ export class QualificationComponent implements OnInit {
     if (data.length > 0) {
       if (data[0].modulos) {
         for (let dat of data[0].modulos) {
-          this.columns.push(
-            dat.nombre_modulo
-          );
-          this.columnsPor.push(
-            String(dat.rubrica) + "%"
-          )
+          this.columns.push(dat.nombre_modulo);
+          this.columnsPor.push(String(dat.rubrica) + "%");
         }
       }
       this.displayedColumns = this.columns.map((col) => col);

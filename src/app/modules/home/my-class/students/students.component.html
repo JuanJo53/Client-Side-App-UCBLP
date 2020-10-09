@@ -13,9 +13,7 @@
         (click)="ExportExcel()"
       >
         <i class="far fa-file-excel module-button__icon"></i>
-        <div class="module-button__text">
-          Excel
-        </div>
+        <div class="module-button__text">Excel</div>
       </button>
     </div>
     <!-- #container for buttons like excel svg word etc -->
@@ -51,9 +49,7 @@
     >
       <!-- Position Column -->
       <ng-container matColumnDef="posicion">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          No.
-        </th>
+        <th mat-header-cell *matHeaderCellDef class="header-table">No.</th>
         <td mat-cell *matCellDef="let element" class="mat-cell">
           {{ element.posicion }}
         </td>
@@ -78,25 +74,19 @@
       <!-- #Mother's Name Column -->
       <!-- Name Column -->
       <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          Name
-        </th>
+        <th mat-header-cell *matHeaderCellDef class="header-table">Name</th>
         <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
       </ng-container>
       <!-- #Name Column -->
       <!-- Average Column -->
       <ng-container matColumnDef="promedio">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          Average
-        </th>
+        <th mat-header-cell *matHeaderCellDef class="header-table">Average</th>
         <td mat-cell *matCellDef="let element">{{ element.promedio }}</td>
       </ng-container>
       <!-- #Average Column -->
       <!-- Buttons Column -->
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef class="header-table">
-          Actions
-        </th>
+        <th mat-header-cell *matHeaderCellDef class="header-table">Actions</th>
         <td mat-cell *matCellDef="let element">
           <button
             class="circular-button-table--normal"
