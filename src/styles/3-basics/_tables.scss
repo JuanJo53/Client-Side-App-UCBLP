@@ -17,8 +17,8 @@ table tr:last-child td /*To remove the last border*/ {
   background-color: $color-primary-blue !important;
   color: $color-primary-white !important;
 }
-.simple_element{
-  color:$color-primary-blue  
+.simple_element {
+  color: $color-primary-blue;
 }
 .mat-sort-header-container {
   display: flex !important;
@@ -75,13 +75,13 @@ th.mat-header-cell {
   color: $color-primary-blue;
   font-weight: bold;
 }
-tr.example-element-row:not(.example-expanded-row):hover {
+tr.header-table__hover:not(.example-expanded-row):hover {
   background: #efefef;
 }
 
-tr.example-element-row:not(.example-expanded-row):active {
+tr.header-table__hover:not(.example-expanded-row):active {
   background: $color-hover-blue;
 }
-.example-element-row td {
+.header-table__hover td {
   border-bottom-width: 0;
 }
