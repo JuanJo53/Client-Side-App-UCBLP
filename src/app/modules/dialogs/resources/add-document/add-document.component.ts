@@ -62,6 +62,7 @@ export class AddDocumentComponent implements OnInit {
       this.Url = event.target.result;
     }
     reader.readAsDataURL(this.fileToUpload);
+    this.nombre=this.fileToUpload.name.split(".")[0];
    }
   }
   verificarTipoTam(tipo:string,tam:number):boolean{

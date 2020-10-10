@@ -17,6 +17,9 @@ table tr:last-child td /*To remove the last border*/ {
   background-color: $color-primary-blue !important;
   color: $color-primary-white !important;
 }
+.simple_element{
+  color:$color-primary-blue  
+}
 .mat-sort-header-container {
   display: flex !important;
   justify-content: center !important;

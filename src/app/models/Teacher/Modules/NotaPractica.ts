@@ -5,4 +5,5 @@ export class NotaPractica{
     apPaterno:string;
     apMaterno:string;
     nota:number;
+    practicaDada=true;
 }

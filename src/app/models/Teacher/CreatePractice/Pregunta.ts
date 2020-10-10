@@ -1,4 +1,5 @@
 export class Pregunta{   
+    respuestaAl:any[]=[];
     id:number;
     tipo:number=0; 
     nivel:number;
@@ -7,8 +8,8 @@ export class Pregunta{
     pregunta: string="";
     opciones:string[]=[""];
     grupo:String;
-    respuesta:any[]=[0];
-    respuestasBool:boolean[]=[true];
+    respuesta:any[]=[];
+    respuestasBool:any[]=[true];
     idTipoPregunta:string="1";
     idTipoRespuesta:string="1";
     recurso:string;

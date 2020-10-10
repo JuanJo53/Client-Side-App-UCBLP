@@ -49,4 +49,9 @@ export class PracticesService {
   getScores(idPractica):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/practice/scores/"+idPractica,{ observe: 'response' });
   }
+
+
+  getPracticaIndividual(idNotaPractica:number){
+    return this.http.get(apiKey.api+"/teacher/practice/scores/individual/"+idNotaPractica,{observe:'response'});
+  }
 }

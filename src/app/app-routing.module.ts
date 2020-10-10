@@ -60,13 +60,14 @@ import { GetScoresPracticesResolver } from "./_resolvers/docente/practices/get-s
 import { GetPracticesDashBoardResolver } from "./_resolvers/docente/dashBoards/get_practices-dashboard.resolver";
 import { EditPracticeComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
 import { GetPracticeModResolver } from './_resolvers/docente/practices/get-practice-mod.resolver';
+import { GetPracticesIndividualResolver } from './_resolvers/docente/practices/get-practices-individual.resolver';
 
 const routes: Routes = [
   {
     path: "",
 
     component: LoginComponent,
-    resolve: { login: AuthDocenteResolver },
+    resolve: { login: AuthDocenteResolver }
   },
   {
     path: "building",
@@ -252,14 +253,23 @@ const routes: Routes = [
                             children: [
                               {
                                 path: ":idPractica",
-                                resolve: {
-                                  scores: GetScoresPracticesResolver,
-                                },
-                                component: DetailTableComponent,
-                              },
-                              {
-                                path: "individual",
-                                component: DetailIndividualComponent,
+                                children:[
+                                  {
+                                    path:"",
+                                    resolve: {
+                                      scores: GetScoresPracticesResolver,
+                                    },
+                                    component: DetailTableComponent,
+
+                                  },
+                                  {
+                                    path: "individual/:idNotaPractica",
+                                    component: DetailIndividualComponent,
+                                    resolve:{
+                                      practica: GetPracticesIndividualResolver
+                                    }
+                                  },
+                                ]
                               },
                             ],
                           },

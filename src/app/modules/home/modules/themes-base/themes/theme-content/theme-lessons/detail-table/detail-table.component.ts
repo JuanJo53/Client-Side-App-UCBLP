@@ -37,6 +37,7 @@ export class DetailTableComponent implements OnInit {
             newNota.apPaterno = nota.ap_paterno_alumno;
             newNota.nombre = nota.nombre_alumno;
             newNota.nota = nota.nota_practica;
+            newNota.practicaDada=nota.practica_dada;
             newNota.posicion = Number(i) + 1;
             this.ELEMENT_DATA.push(newNota);
           }
@@ -53,7 +54,7 @@ export class DetailTableComponent implements OnInit {
   ngOnInit(): void {
     this.cargarNotas();
   }
-  verDetalles() {
-    this.router.navigate(["individual"], { relativeTo: this.route });
+  verDetalles(id:number) {
+    this.router.navigate(["individual",id], { relativeTo: this.route });
   }
 }
