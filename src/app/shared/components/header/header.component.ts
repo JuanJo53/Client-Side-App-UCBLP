@@ -43,8 +43,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     var idCurso;
     this.usService.params.subscribe((data)=>{
-      idCurso=data["idCurso"];
-      console.log(idCurso);
+      console.log(data);
     })
     
     this.data.currentMessage.subscribe((message) => (this.message = message));

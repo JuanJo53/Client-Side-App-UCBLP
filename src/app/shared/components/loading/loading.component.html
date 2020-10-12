@@ -1,6 +1,4 @@
 <!-- <router-outlet></router-outlet> -->
-<div *ngIf="cargando" #loading  class="loading">
-    <div class="centro">      
-      <mat-spinner style="zoom: 0.7"></mat-spinner>  
-    </div>
+<div *ngIf="cargando" #loading  class="container">
+  <ngx-spinner bdColor = "rgba(8,76,97,0.4)" size = "medium" color = "#ffffff" type = "ball-clip-rotate-pulse" [fullScreen] = "true"></ngx-spinner>
   </div>
