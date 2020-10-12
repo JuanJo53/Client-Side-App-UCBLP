@@ -99,6 +99,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
 import { MatDividerModule } from "@angular/material/divider";
 import { NgxGlideModule } from "ngx-glide";
 import {NgxSpinnerModule} from 'ngx-spinner'
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -203,7 +204,8 @@ import {NgxSpinnerModule} from 'ngx-spinner'
     ScrollingModule,
     MatDividerModule,
     NgxGlideModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatTooltipModule,
   ],
 })
 export class DefaultModule {}
