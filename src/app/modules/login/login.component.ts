@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
   }
   //-----funciones
   LoginDocente() {
+    console.log(this.loading);
     this.servLoading.setLoading(this.loading);
     this.servLoading.activar();
     this.authService.loginDocente(this.loginTeacher).subscribe({
