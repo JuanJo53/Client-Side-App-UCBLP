@@ -35,7 +35,14 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="default-card-attendance">
         <div class="default-card-attendance__img">
-          <div class="default-card-attendance__img-overlay">
+          <div
+            class="default-card-attendance__img-overlay"
+            [ngStyle]="{
+              'background-color':
+                cardsModulosPred[0].estado != 2 ? '#9C5FAFA6' : '#8f8f8fCC',
+              transition: '.5s'
+            }"
+          >
             <div class="default-card-attendance__buttons-card">
               <!--btn configuraciones-->
               <button
@@ -50,7 +57,16 @@
             </div>
             <div class="default-card-attendance__content-card">
               <div class="default-card-attendance__circle-container">
-                <div class="default-card-attendance__circle">
+                <div
+                  class="default-card-attendance__circle"
+                  [ngStyle]="{
+                    'background-color':
+                      cardsModulosPred[0].estado != 2
+                        ? '#9C5FAFA6'
+                        : '#8f8f8fCC',
+                    transition: '.5s'
+                  }"
+                >
                   {{ cardsModulosPred[0].rubrica }}%
                 </div>
               </div>
@@ -69,7 +85,14 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="default-card-theme">
         <div class="default-card-theme__img">
-          <div class="default-card-theme__img-overlay">
+          <div
+            class="default-card-theme__img-overlay"
+            [ngStyle]="{
+              'background-color':
+                cardsModulosPred[1].estado != 2 ? '#98be83A6' : '#8f8f8fCC',
+              transition: '.5s'
+            }"
+          >
             <div class="default-card-theme__buttons-card">
               <!--btn configuraciones-->
               <button
@@ -84,7 +107,16 @@
             </div>
             <div class="default-card-theme__content-card">
               <div class="default-card-theme__circle-container">
-                <div class="default-card-theme__circle">
+                <div
+                  class="default-card-theme__circle"
+                  [ngStyle]="{
+                    'background-color':
+                      cardsModulosPred[1].estado != 2
+                        ? '#98be83A6'
+                        : '#8f8f8fCC',
+                    transition: '.5s'
+                  }"
+                >
                   {{ cardsModulosPred[1].rubrica }}%
                 </div>
               </div>
@@ -103,7 +135,14 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="default-card-practices">
         <div class="default-card-practices__img">
-          <div class="default-card-practices__img-overlay">
+          <div
+            class="default-card-practices__img-overlay"
+            [ngStyle]="{
+              'background-color':
+                cardsModulosPred[2].estado != 2 ? '#498161A6' : '#8f8f8fCC',
+              transition: '.5s'
+            }"
+          >
             <div class="default-card-practices__buttons-card">
               <!--btn configuraciones-->
               <button
@@ -118,7 +157,16 @@
             </div>
             <div class="default-card-practices__content-card">
               <div class="default-card-practices__circle-container">
-                <div class="default-card-practices__circle">
+                <div
+                  class="default-card-practices__circle"
+                  [ngStyle]="{
+                    'background-color':
+                      cardsModulosPred[2].estado != 2
+                        ? '#498161A6'
+                        : '#8f8f8fCC',
+                    transition: '.5s'
+                  }"
+                >
                   {{ cardsModulosPred[2].rubrica }}%
                 </div>
               </div>
@@ -137,7 +185,14 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="default-card-theme-test">
         <div class="default-card-theme-test__img">
-          <div class="default-card-theme-test__img-overlay">
+          <div
+            class="default-card-theme-test__img-overlay"
+            [ngStyle]="{
+              'background-color':
+                cardsModulosPred[3].estado != 2 ? '#403837A6' : '#8f8f8fCC',
+              transition: '.5s'
+            }"
+          >
             <div class="default-card-theme-test__buttons-card">
               <!--btn configuraciones-->
               <button
@@ -152,7 +207,16 @@
             </div>
             <div class="default-card-theme-test__content-card">
               <div class="default-card-theme-test__circle-container">
-                <div class="default-card-theme-test__circle">
+                <div
+                  class="default-card-theme-test__circle"
+                  [ngStyle]="{
+                    'background-color':
+                      cardsModulosPred[3].estado != 2
+                        ? '#403837A6'
+                        : '#8f8f8fCC',
+                    transition: '.5s'
+                  }"
+                >
                   {{ cardsModulosPred[3].rubrica }}%
                 </div>
               </div>
@@ -171,7 +235,14 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="default-card-assessment">
         <div class="default-card-assessment__img">
-          <div class="default-card-assessment__img-overlay">
+          <div
+            class="default-card-assessment__img-overlay"
+            [ngStyle]="{
+              'background-color':
+                cardsModulosPred[4].estado != 2 ? '#27649bA6' : '#8f8f8fCC',
+              transition: '.5s'
+            }"
+          >
             <div class="default-card-assessment__buttons-card">
               <!--btn configuraciones-->
               <button
@@ -186,7 +257,16 @@
             </div>
             <div class="default-card-assessment__content-card">
               <div class="default-card-assessment__circle-container">
-                <div class="default-card-assessment__circle">
+                <div
+                  class="default-card-assessment__circle"
+                  [ngStyle]="{
+                    'background-color':
+                      cardsModulosPred[4].estado != 2
+                        ? '#27649bA6'
+                        : '#8f8f8fCC',
+                    transition: '.5s'
+                  }"
+                >
                   {{ cardsModulosPred[4].rubrica }}%
                 </div>
               </div>
@@ -239,7 +319,11 @@
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': sacarColor(custCards.idColor) + 'A6'
+              'background-color':
+                custCards.estado != 2
+                  ? sacarColor(custCards.idColor) + 'A6'
+                  : '#8f8f8fCC',
+              transition: '.5s'
             }"
           >
             <div class="evaluation-card__buttons-card">
@@ -269,7 +353,11 @@
                 <div
                   class="evaluation-card__circle"
                   [ngStyle]="{
-                    'background-color': sacarColor(custCards.idColor)
+                    'background-color':
+                      custCards.estado != 2
+                        ? sacarColor(custCards.idColor) + 'A6'
+                        : '#8f8f8fCC',
+                    transition: '.5s'
                   }"
                 >
                   {{ custCards.rubrica }}%

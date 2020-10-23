@@ -77,12 +77,7 @@
       matColumnDef="{{ column }}"
     >
       <th mat-header-cell *matHeaderCellDef class="header-table">
-        <span
-          matTooltip="{{ columnsPor[i] }}"
-          matTooltipClass="tooltip"
-          [matTooltipPosition]="position.value"
-          >{{ column }} <br />{{ columnsPor[i] }}</span
-        >
+        <span>{{ column }}</span>
       </th>
       <td mat-cell *cdkCellDef="let element">
         <!-- <span class="circular-button-table__icon"><mat-icon class="circular-button-subtitle__icon">close</mat-icon>

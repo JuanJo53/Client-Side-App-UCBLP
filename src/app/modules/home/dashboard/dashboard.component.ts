@@ -20,7 +20,6 @@ export class DashboardComponent implements OnInit {
 
   play(): void {
     this.ngxGlide.play();
-    this.ngxGlide.arrowLeftLabel = "<";
   }
 
   practicas: PracticeDashboard[] = [];
