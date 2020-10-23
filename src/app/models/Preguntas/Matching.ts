@@ -1,4 +1,4 @@
-export class matching {
+export class Matching {
   keyword: string;
   match: string;
 }

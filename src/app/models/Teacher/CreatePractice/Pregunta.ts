@@ -6,7 +6,7 @@ export class Pregunta{
     numeroPreg:number;
     puntuacion: number;
     pregunta: string="";
-    opciones:string[]=[""];
+    opciones:any[]=[""];
     grupo:String;
     respuesta:any[]=[];
     respuestasBool:any[]=[true];
