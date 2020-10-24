@@ -26,6 +26,4 @@ export class SideBarControlService {
   public getmodulos() {
     return this.sideBar.getModulos();
   }
-
-
 }

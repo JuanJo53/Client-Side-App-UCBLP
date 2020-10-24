@@ -49,7 +49,10 @@
     >
       <div class="custom-card--custom">
         <div class="custom-card--custom__img">
-          <div class="custom-card--custom__img-overlay">
+          <div class="custom-card--custom__img-overlay"
+          [ngStyle]="{
+            'background-color': sacarColor(custCards.idColor) + 'A6'
+          }">
             <div class="custom-card--custom__buttons-card">
               <!--btn Ver lista-->
               <button
@@ -83,11 +86,14 @@
               <!--#btn eliminar-->
             </div>
             <div class="custom-card--custom__content-card">
-              <div class="custom-card--custom__circle">
+              <div class="custom-card--custom__circle"
+              [ngStyle]="{
+                'background-color': sacarColor(custCards.idColor)
+              }">
                 {{ custCards.rubrica }}%
               </div>
               <div class="custom-card--custom__title">
-                {{ custCards.nombreContenido }}
+                {{ custCards.nombreModulo }}
               </div>
             </div>
           </div>

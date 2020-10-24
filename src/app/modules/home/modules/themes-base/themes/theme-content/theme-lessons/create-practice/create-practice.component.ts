@@ -16,7 +16,7 @@ import { windowTime } from "rxjs/operators";
 import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
-import { matching } from "src/app/models/Preguntas/Matching";
+import { Matching } from "src/app/models/Preguntas/Matching";
 
 export interface ChipOption {
   name: string;
@@ -397,7 +397,7 @@ export class CreatePracticeComponent implements OnInit {
     { value: 2, viewValue: 2 },
     { value: 3, viewValue: 3 },
   ];
-  matchingInputs: matching[] = [
+  matchingInputs: Matching[] = [
     {
       keyword: "the",
       match: "prepositions",

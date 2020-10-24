@@ -36,6 +36,7 @@
     "ng2-charts": "^2.3.2",
     "ngx-glide": "^10.1.0",
     "ngx-material-timepicker": "^5.5.3",
+    "ngx-spinner": "^10.0.1",
     "rxjs": "~6.5.5",
     "sheetjs-style": "^0.15.6",
     "tslib": "^1.13.0",

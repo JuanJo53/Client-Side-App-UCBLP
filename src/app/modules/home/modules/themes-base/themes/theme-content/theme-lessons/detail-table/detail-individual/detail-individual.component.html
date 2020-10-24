@@ -340,6 +340,98 @@
       
     </div>
     <!--button-->
+    
+                <!-- matching combo box-->
+                <div class="question-card-added__content" *ngSwitchCase="'5'">
+                  <div class="question-card-added__header">
+                    <div class="question-card-added__header--question">
+                      <!--input para pregunta-->
+                        <mat-form-field
+                          appearance="outline"
+                        >
+                          <mat-label 
+                            >Instruction Dropbox</mat-label
+                          >
+                          <input
+                          readonly
+                            [(ngModel)]="card.pregunta"
+                            type="text"
+                            class="input-form"
+                            matInput
+                            placeholder="Instruction dorpbox"
+                            [ngModelOptions]="{ standalone: true }"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <!--#input para pregunta-->
+                      <div class="question-card-added__header--score">
+                        <!--input para pregunta-->
+                        <div class="card-question__input">
+                          <mat-form-field appearance="outline">
+                            <mat-label  
+                              >Score</mat-label
+                            >
+                            <input
+                            readonly
+                              [(ngModel)]="card.puntuacion"
+                              type="number"
+                              class="input-form"
+                              matInput
+                              placeholder="Score"
+                              [ngModelOptions]="{ standalone: true }"
+                            />
+                          </mat-form-field>
+                        </div>
+                        <!--#input para pregunta-->
+                      </div>   
+                      
+                    </div>   
+                      <div class="match-combobox__input-box-titles">
+                        <div class="match-combobox__inputs">
+                          <!--subtitle-->
+                          <div class="dialog-subtitle match-combobox__keyword">
+                            <div class="dialog-subtitle__text">
+                              <span>Set Keywords</span>
+                            </div>
+                          </div>
+                          <div class="dialog-subtitle match-combobox__complement">
+                            <div class="dialog-subtitle__text">
+                              <span>Set Matches</span>
+                            </div>
+                          </div>
+                          <!--#subtitle-->
+                        </div>
+                      </div>
+                      <div class="" *ngFor="let opcionMatch of card.opciones; let i = index">
+                        <div class="match-combobox__input-box">
+                          <div class="match-combobox__inputs">
+                            <mat-form-field class="match-combobox__keyword">
+                              <mat-label>Keyword</mat-label>
+                              <input
+                              readonly
+                                matInput
+                                placeholder="Write a keyword"
+                                [(ngModel)]="card.opciones[i]"
+                                [ngModelOptions]="{ standalone: true }"
+                              />
+                            </mat-form-field>
+                            <mat-form-field class="match-combobox__complement">
+                              <mat-label>Match</mat-label>
+                              <input
+                              readonly
+                                matInput
+                                placeholder="Write the match of the keyword"
+                                [(ngModel)]="card.respuesta[i]"
+                                [ngModelOptions]="{ standalone: true }"
+                              />
+                            </mat-form-field>
+                          </div>
+                          <!-- eliminar -->
+                        </div>
+                        <mat-divider></mat-divider>
+                      </div> 
+                </div>
+                <!-- #matching combo box-->
     <div class="question-card-added">
       <div class="question-card-added__button">
         <ng-container *ngIf="card.puntuacion!= 0">

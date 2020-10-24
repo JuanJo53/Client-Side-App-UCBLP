@@ -10,6 +10,7 @@ import { CustomModuleRubricComponent } from "src/app/modules/dialogs/custom-modu
 import { AddCardComponent } from "src/app/modules/dialogs/custom-modules/add-card/add-card.component";
 import { ContentModule } from 'src/app/models/Teacher/Modules/ContentModule';
 import { SideBarControlService } from 'src/app/_services/side-bar-control.service';
+import { CardColor } from 'src/app/models/CardColor';
 @Component({
   selector: "app-custom-module",
   templateUrl: "./custom-module.component.html",
@@ -18,8 +19,9 @@ import { SideBarControlService } from 'src/app/_services/side-bar-control.servic
 export class CustomModuleComponent implements OnInit {
   idModulo:number;
   nombreModulo:string="";
-  cardsModulosPers: ContentModule[] = [
+  cardsModulosPers: Module[] = [
   ];
+  colores: CardColor[] = [];
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -30,14 +32,23 @@ export class CustomModuleComponent implements OnInit {
     cargarContenidoModulo(contenido){
       this.cardsModulosPers=[];
       for(let cont of contenido){
-        let newCon= new ContentModule();
+        let newCon= new Module();
         newCon.id=cont.id_contenido_mod_per;
-        newCon.nombreContenido=cont.nombre_contenido;
+        newCon.nombreModulo=cont.nombre_contenido;
         newCon.rubrica=cont.rubrica_contenido;
+        newCon.idColor=cont.id_color;
         this.cardsModulosPers.push(newCon);
       }
     }
-  
+    cargarColores(data) {
+      for (let i in data) {
+        let newCol = new CardColor();
+        newCol.idColor = data[i].id_color;
+        newCol.color = data[i].valor;
+        this.colores.push(newCol);
+      }
+      console.log(this.colores);
+    }
     cargarNombreModulo(){
       this.route.parent.parent.parent.data.subscribe({
         next:(data)=>{
@@ -64,6 +75,7 @@ export class CustomModuleComponent implements OnInit {
       next:(data)=>{
           if(data.content.status==200){
             this.cargarContenidoModulo(data.content.body);
+            this.cargarColores(data.colors.body);
           }else
           {
             console.log("error");
@@ -138,5 +150,12 @@ export class CustomModuleComponent implements OnInit {
       }
     })
   }
-  sacarColor(id) {}
+  
+  sacarColor(id) {
+    for (let color of this.colores) {
+      if (color.idColor == id) {
+        return color.color;
+      }
+    }
+  }
 }

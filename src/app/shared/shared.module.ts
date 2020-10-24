@@ -15,6 +15,9 @@ import { RouterModule } from "@angular/router";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { CardClassroomComponent } from './components/cards/card-classroom/card-classroom.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import {NgxSpinnerModule} from 'ngx-spinner'
+
+
 @NgModule({
   declarations: [HeaderComponent, SidebarComponent, CardClassroomComponent, LoadingComponent],
   imports: [
@@ -28,7 +31,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     MatListModule,
     RouterModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxSpinnerModule
   ],
   exports: [HeaderComponent, SidebarComponent,LoadingComponent],
 })

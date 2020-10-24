@@ -15,7 +15,7 @@ import { TIME_LOCALE } from "ngx-material-timepicker/src/app/material-timepicker
 import { windowTime } from "rxjs/operators";
 import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 
-import { matching } from "src/app/models/Preguntas/Matching";
+import { Matching } from "src/app/models/Preguntas/Matching";
 import { PracticesService } from "src/app/_services/teacher_services/practices.service";
 import { CustomQuestionComponent } from "src/app/modules/dialogs/create-practice/custom-question/custom-question.component";
 import { RepositoryQuestionComponent } from "src/app/modules/dialogs/create-practice/repository-question/repository-question.component";
@@ -366,7 +366,7 @@ export class IndividualAssessmentComponent implements OnInit {
     { value: 2, viewValue: 2 },
     { value: 3, viewValue: 3 },
   ];
-  matchingInputs: matching[] = [
+  matchingInputs: Matching[] = [
     {
       keyword: "the",
       match: "prepositions",

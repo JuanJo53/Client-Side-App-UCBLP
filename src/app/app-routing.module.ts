@@ -190,6 +190,7 @@ const routes: Routes = [
                 component: CustomModuleComponent,
                 resolve: {
                   content: GetContentModuleResolver,
+                  colors:GetColorsResolver
                 },
                 runGuardsAndResolvers: "always",
               },

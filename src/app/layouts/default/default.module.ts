@@ -98,6 +98,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { MatDividerModule } from "@angular/material/divider";
 import { NgxGlideModule } from "ngx-glide";
+import {NgxSpinnerModule} from 'ngx-spinner'
 import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
@@ -203,6 +204,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     ScrollingModule,
     MatDividerModule,
     NgxGlideModule,
+    NgxSpinnerModule,
     MatTooltipModule,
   ],
 })

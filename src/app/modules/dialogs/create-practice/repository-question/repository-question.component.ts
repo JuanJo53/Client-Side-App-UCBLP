@@ -85,7 +85,7 @@ export class RepositoryQuestionComponent implements OnInit {
   nivelIngles: string[] = ["Level 1", "Level 2", "Level 3", "Level 4"];
   tipoCategoriasRepositorio: string[] = ["Animals", "Vegetables", "Technology"];
   tipoPreguntasRepositorio: string[] = ["Simple", "Drag and Drop"];
-  tipoRespuestasRepositorio: string[] = ["One choice", "Multiple choices"];
+  tipoRespuestasRepositorio: string[] = ["One choice", "Multiple choices", "Columns", "Fill in the blanks", "Combobox's"];
   tipoHabilidadRepositorio: string[] = [
     "Listening",
     "Reading",

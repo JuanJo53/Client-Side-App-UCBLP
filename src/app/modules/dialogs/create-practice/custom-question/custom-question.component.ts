@@ -18,7 +18,7 @@ import { ChipOption } from "src/app/models/Dragandrop/ChipOption";
 import { ChipOptionNumber } from "src/app/models/Dragandrop/ChipOptionNumber";
 import { DragandDropColumns } from "src/app/models/Dragandrop/DragandDropColumn";
 import { Column } from "src/app/models/Dragandrop/Column";
-import { matching } from "src/app/models/Preguntas/Matching";
+import { Matching } from "src/app/models/Preguntas/Matching";
 import { repeat } from "rxjs/operators";
 
 @Component({
@@ -34,7 +34,6 @@ export class CustomQuestionComponent implements OnInit {
   tipoPreguntaSeleccionado: string;
   nuevaPregunta: Pregunta = new Pregunta();
   tipoPreguntaEscogida: string = "1";
-
   radioButtonOpciones: RadioButtonQuestion[] = [{ opcionRespuesta: "" }];
   checkboxOpciones: CheckboxQuestion[] = [
     { opcionRespuesta: "", isChecked: true },
@@ -54,7 +53,7 @@ export class CustomQuestionComponent implements OnInit {
     { value: "3", display: "Three" },
     { value: "4", display: "Four" },
   ];
-  matchingInputs: matching[] = [];
+  matchingInputs: Matching[] = [{keyword:"Example Keyword",match:"Example Match"}];
 
   //drag and drop
   value = "Clear me";
@@ -213,6 +212,16 @@ export class CustomQuestionComponent implements OnInit {
           contO++;
         }
         break;
+      case "5":
+        this.matchingInputs=[];
+        for(let i in preg.respuesta){
+          let match=new Matching();
+          match.keyword=preg.opciones[i];
+          match.match=preg.respuesta[i];
+          this.matchingInputs.push(match);
+        }
+        break;
+
 
 
     }
@@ -289,7 +298,32 @@ export class CustomQuestionComponent implements OnInit {
             if (this.nuevaPregunta.respuesta.length==0) this.nuevaPregunta.bloqopci = true;
             else this.nuevaPregunta.bloqopci = false;
           }
-          break;  
+          break; 
+      case "5":
+            if (this.nuevaPregunta.opciones.length == 0)
+              this.nuevaPregunta.bloqopci = true;
+            else {
+              if (this.nuevaPregunta.respuesta.length==0) this.nuevaPregunta.bloqopci = true;
+              else this.nuevaPregunta.bloqopci = false;
+            }
+            var ver=true;
+            for(let opcion of this.nuevaPregunta.opciones){
+              if(String(opcion).trim()==""){
+                ver=false;
+              }
+            }
+            for(let respuesta of this.nuevaPregunta.respuesta){
+              if(String(respuesta).trim()==""){
+                ver=false;
+              }
+            }
+            if(ver=false){
+              this.nuevaPregunta.bloqopci=true;
+            }
+            else
+            this.nuevaPregunta.bloqopci=false;
+            console.log(this.nuevaPregunta);   
+            break;  
     }
 
     if (this.nuevaPregunta.pregunta === "") this.nuevaPregunta.bloqpreg = true;
@@ -428,6 +462,14 @@ export class CustomQuestionComponent implements OnInit {
         }
         this.nuevaPregunta.respuesta=respuestas;
         return true;
+      case "5":
+        this.nuevaPregunta.respuesta=[];
+        this.nuevaPregunta.opciones=[];
+        for(let match of this.matchingInputs){
+          this.nuevaPregunta.respuesta.push(match.match);
+          this.nuevaPregunta.opciones.push(match.keyword);
+        }
+        return true;  
     }
   }
   cambiarColumnas(valor) {
@@ -577,9 +619,22 @@ export class CustomQuestionComponent implements OnInit {
               if(this.preguntaAntigua.opciones[opci]!=nuevaPregunta.opciones[opci]){
                 verOpci=false;                
               }
-            }    
-
-            break
+            }   
+            break;
+          case "5":
+            for(let resp in nuevaPregunta.respuesta){
+              if(this.preguntaAntigua.respuesta[resp]!=nuevaPregunta.respuesta[resp]){
+                verOpci=false;
+                
+              }
+            }
+            
+            for(let opci in nuevaPregunta.opciones){
+              if(this.preguntaAntigua.opciones[opci]!=nuevaPregunta.opciones[opci]){
+                verOpci=false;                
+              }
+            }
+            break;
       }
 
       if (nuevaPregunta.pregunta !== this.preguntaAntigua.pregunta) {
@@ -612,6 +667,7 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   agregarPreguntaEnContenido() {
+    console.log(this.nuevaPregunta);
     this.nuevaPregunta.numeroPreg = this.dataDialog["numero"];
     this.nuevaPregunta.opciones = [];
     if (this.agregarRespuestasNuevo()) {
