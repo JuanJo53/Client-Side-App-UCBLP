@@ -8,9 +8,7 @@
         (click)="editarPorcentajes()"
       >
         <i class="fas fa-edit module-button__icon"></i>
-        <div class="module-button__text">
-          Edit Percentages
-        </div>
+        <div class="module-button__text">Edit Percentages</div>
       </button>
     </div>
     <!-- #container for buttons with simple actions-->
@@ -49,10 +47,12 @@
     >
       <div class="custom-card--custom">
         <div class="custom-card--custom__img">
-          <div class="custom-card--custom__img-overlay"
-          [ngStyle]="{
-            'background-color': sacarColor(custCards.idColor) + 'A6'
-          }">
+          <div
+            class="custom-card--custom__img-overlay"
+            [ngStyle]="{
+              'background-color': sacarColor(custCards.idColor) + 'A6'
+            }"
+          >
             <div class="custom-card--custom__buttons-card">
               <!--btn Ver lista-->
               <button
@@ -86,14 +86,20 @@
               <!--#btn eliminar-->
             </div>
             <div class="custom-card--custom__content-card">
-              <div class="custom-card--custom__circle"
-              [ngStyle]="{
-                'background-color': sacarColor(custCards.idColor)
-              }">
-                {{ custCards.rubrica }}%
+              <div class="custom-card--custom__circle-container">
+                <div
+                  class="custom-card--custom__circle"
+                  [ngStyle]="{
+                    'background-color': sacarColor(custCards.idColor)
+                  }"
+                >
+                  {{ custCards.rubrica }}%
+                </div>
               </div>
-              <div class="custom-card--custom__title">
-                {{ custCards.nombreModulo }}
+              <div class="custom-card--custom__title-container">
+                <div class="custom-card--custom__title">
+                  {{ custCards.nombreModulo }}
+                </div>
               </div>
             </div>
           </div>
