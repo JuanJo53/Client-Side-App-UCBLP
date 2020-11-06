@@ -155,11 +155,11 @@ export class ThemeContentComponent implements OnInit {
       if (result != "") {
         this.route.data.subscribe({
           next: (data) => {
-            console.log(data.lessons.body);
-            console.log(result);
-            data.lessons.body = result;
-            this.lessonCards = [];
-            this.agregarCardsLecciones(result);
+            if(result!=null&&result!=="undefined"&&result!==""){
+              data.lessons.body = result;
+              this.lessonCards = [];
+              this.agregarCardsLecciones(result);
+            }
           },
           error: (error) => {
             console.log("no se pudo añadir el tema");
