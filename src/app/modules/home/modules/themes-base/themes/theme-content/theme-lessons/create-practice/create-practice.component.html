@@ -255,26 +255,32 @@
         </div>
         <!-- #card -->
         <!-- <button mat-button matStepperNext>Next</button> -->
-        <!-- buttons -->
-        <div class="progress-bar__bar">
-          <!--back button-->
-          <div class="progress-bar__previous" (click)="previous(stepper)">
-            <button class="progress-bar__button-previous" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+        <!-- buttons next back-->
+        <div class="u__space-between mt-3">
+          <div class="u__flex" (click)="previous(stepper)">
+            <button
+              class="circular-button circular-button--primary"
+              mat-mini-fab
+            >
+              <mat-icon class="circular-button__icon">chevron_left</mat-icon>
             </button>
-            <span class="progress-bar__text-previous">Back</span>
+            <div class="circular-button__text circular-button__text--right">
+              Back
+            </div>
           </div>
-          <!--#back button-->
-          <!--next button-->
-          <div class="progress-bar__next" (click)="next(stepper)">
-            <span class="progress-bar__text-next">Next</span>
-            <button class="progress-bar__button-next" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+          <div class="u__flex" (click)="next(stepper)">
+            <div class="circular-button__text circular-button__text--left">
+              Next
+            </div>
+            <button
+              class="circular-button circular-button--primary"
+              mat-mini-fab
+            >
+              <mat-icon class="circular-button__icon">chevron_right</mat-icon>
             </button>
           </div>
-          <!--#next button-->
         </div>
-        <!-- #buttons -->
+        <!-- #buttons next back -->
       </form>
     </mat-step>
     <!--#1 paso-->
@@ -634,90 +640,86 @@
                   <div class="question-card-added__header">
                     <div class="question-card-added__header--question">
                       <!--input para pregunta-->
-                        <mat-form-field
-                          appearance="outline"
-                        >
-                          <mat-label 
-                            >Instruction Dropbox</mat-label
-                          >
-                          <input
+                      <mat-form-field appearance="outline">
+                        <mat-label>Instruction Dropbox</mat-label>
+                        <input
                           readonly
-                            [(ngModel)]="card.pregunta"
-                            type="text"
+                          [(ngModel)]="card.pregunta"
+                          type="text"
+                          class="input-form"
+                          matInput
+                          placeholder="Instruction dorpbox"
+                          [ngModelOptions]="{ standalone: true }"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <!--#input para pregunta-->
+                    <div class="question-card-added__header--score">
+                      <!--input para pregunta-->
+                      <div class="card-question__input">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Score</mat-label>
+                          <input
+                            readonly
+                            [(ngModel)]="card.puntuacion"
+                            type="number"
                             class="input-form"
                             matInput
-                            placeholder="Instruction dorpbox"
+                            placeholder="Score"
                             [ngModelOptions]="{ standalone: true }"
                           />
                         </mat-form-field>
                       </div>
                       <!--#input para pregunta-->
-                      <div class="question-card-added__header--score">
-                        <!--input para pregunta-->
-                        <div class="card-question__input">
-                          <mat-form-field appearance="outline">
-                            <mat-label  
-                              >Score</mat-label
-                            >
-                            <input
-                            readonly
-                              [(ngModel)]="card.puntuacion"
-                              type="number"
-                              class="input-form"
-                              matInput
-                              placeholder="Score"
-                              [ngModelOptions]="{ standalone: true }"
-                            />
-                          </mat-form-field>
-                        </div>
-                        <!--#input para pregunta-->
-                      </div>   
-                      
-                    </div>   
-                      <div class="match-combobox__input-box-titles">
-                        <div class="match-combobox__inputs">
-                          <!--subtitle-->
-                          <div class="dialog-subtitle match-combobox__keyword">
-                            <div class="dialog-subtitle__text">
-                              <span>Set Keywords</span>
-                            </div>
-                          </div>
-                          <div class="dialog-subtitle match-combobox__complement">
-                            <div class="dialog-subtitle__text">
-                              <span>Set Matches</span>
-                            </div>
-                          </div>
-                          <!--#subtitle-->
+                    </div>
+                  </div>
+                  <div class="match-combobox__input-box-titles">
+                    <div class="match-combobox__inputs">
+                      <!--subtitle-->
+                      <div class="dialog-subtitle match-combobox__keyword">
+                        <div class="dialog-subtitle__text">
+                          <span>Set Keywords</span>
                         </div>
                       </div>
-                      <div class="" *ngFor="let opcionMatch of card.opciones; let i = index">
-                        <div class="match-combobox__input-box">
-                          <div class="match-combobox__inputs">
-                            <mat-form-field class="match-combobox__keyword">
-                              <mat-label>Keyword</mat-label>
-                              <input
-                              readonly
-                                matInput
-                                placeholder="Write a keyword"
-                                [(ngModel)]="card.opciones[i]"
-                                [ngModelOptions]="{ standalone: true }"
-                              />
-                            </mat-form-field>
-                            <mat-form-field class="match-combobox__complement">
-                              <mat-label>Match</mat-label>
-                              <input
-                              readonly
-                                matInput
-                                placeholder="Write the match of the keyword"
-                                [(ngModel)]="card.respuesta[i]"
-                                [ngModelOptions]="{ standalone: true }"
-                              />
-                            </mat-form-field>
-                          </div>
-                          <!-- eliminar -->
+                      <div class="dialog-subtitle match-combobox__complement">
+                        <div class="dialog-subtitle__text">
+                          <span>Set Matches</span>
                         </div>
-                        <mat-divider></mat-divider>
-                      </div> 
+                      </div>
+                      <!--#subtitle-->
+                    </div>
+                  </div>
+                  <div
+                    class=""
+                    *ngFor="let opcionMatch of card.opciones; let i = index"
+                  >
+                    <div class="match-combobox__input-box">
+                      <div class="match-combobox__inputs">
+                        <mat-form-field class="match-combobox__keyword">
+                          <mat-label>Keyword</mat-label>
+                          <input
+                            readonly
+                            matInput
+                            placeholder="Write a keyword"
+                            [(ngModel)]="card.opciones[i]"
+                            [ngModelOptions]="{ standalone: true }"
+                          />
+                        </mat-form-field>
+                        <mat-form-field class="match-combobox__complement">
+                          <mat-label>Match</mat-label>
+                          <input
+                            readonly
+                            matInput
+                            placeholder="Write the match of the keyword"
+                            [(ngModel)]="card.respuesta[i]"
+                            [ngModelOptions]="{ standalone: true }"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <!-- eliminar -->
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
                 </div>
                 <!-- #matching combo box-->
                 <!--button-->
@@ -807,26 +809,32 @@
           </div>
         </ng-template>
         <!-- #control de sumatoria == 100 -->
-        <!-- buttons -->
-        <div class="progress-bar__bar">
-          <!--back button-->
-          <div class="progress-bar__previous" (click)="previous(stepper)">
-            <button class="progress-bar__button-previous" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
+        <!-- buttons next back-->
+        <div class="u__space-between mt-3">
+          <div class="u__flex" (click)="previous(stepper)">
+            <button
+              class="circular-button circular-button--primary"
+              mat-mini-fab
+            >
+              <mat-icon class="circular-button__icon">chevron_left</mat-icon>
             </button>
-            <span class="progress-bar__text-previous">Back</span>
+            <div class="circular-button__text circular-button__text--right">
+              Back
+            </div>
           </div>
-          <!--#back button-->
-          <!--next button-->
-          <div class="progress-bar__next" (click)="next(stepper)">
-            <span class="progress-bar__text-next">Next</span>
-            <button class="progress-bar__button-next" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+          <div class="u__flex" (click)="next(stepper)">
+            <div class="circular-button__text circular-button__text--left">
+              Next
+            </div>
+            <button
+              class="circular-button circular-button--primary"
+              mat-mini-fab
+            >
+              <mat-icon class="circular-button__icon">chevron_right</mat-icon>
             </button>
           </div>
-          <!--#next button-->
         </div>
-        <!-- #buttons -->
+        <!-- #buttons next back -->
       </form>
     </mat-step>
     <!--#2 paso-->
@@ -1321,31 +1329,32 @@
           <!--#row-->
         </div>
 
-        <!-- buttons -->
-        <div class="progress-bar__bar">
-          <!--back button-->
-          <div class="progress-bar__previous" (click)="previous(stepper)">
-            <button class="progress-bar__button-previous" mat-mini-fab>
-              <mat-icon class="progress-bar__icon">chevron_left</mat-icon>
-            </button>
-            <span class="progress-bar__text-previous">Back</span>
-          </div>
-          <!--#back button-->
-          <!--next button-->
-          <div class="progress-bar__next" (click)="Generar(stepper)">
-            <span class="progress-bar__text-next">Generate</span>
+        <!-- buttons next back-->
+        <div class="u__space-between mt-3">
+          <div class="u__flex" (click)="previous(stepper)">
             <button
-              (click)="next(stepper)"
-              (click)="loadData()"
-              class="progress-bar__button-next"
+              class="circular-button circular-button--primary"
               mat-mini-fab
             >
-              <mat-icon class="progress-bar__icon">chevron_right</mat-icon>
+              <mat-icon class="circular-button__icon">chevron_left</mat-icon>
+            </button>
+            <div class="circular-button__text circular-button__text--right">
+              Back
+            </div>
+          </div>
+          <div class="u__flex" (click)="next(stepper)">
+            <div class="circular-button__text circular-button__text--left">
+              Next
+            </div>
+            <button
+              class="circular-button circular-button--primary"
+              mat-mini-fab
+            >
+              <mat-icon class="circular-button__icon">chevron_right</mat-icon>
             </button>
           </div>
-          <!--#next button-->
         </div>
-        <!-- #buttons -->
+        <!-- #buttons next back -->
       </form>
     </mat-step>
 

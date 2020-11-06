@@ -1,11 +1,5 @@
-@import "1-helpers/variables";
-
 .dialog {
   margin: 1.5rem 1rem 1rem 1rem;
-  //background-color: yellow;
-  // .mat-dialog-content{
-  //   margin: 1rem 0rem;
-  // }
   &__container {
     //margin: 1rem 0;
     display: flex;
@@ -144,4 +138,13 @@ mat-datepicker-toggle {
 .dialog-hr {
   background-color: $color-primary-blue;
   margin-bottom: 0.5rem;
+}
+
+//final
+.dialog__message {
+  margin: 0.5rem 0;
+  color: $color-secondary-blue;
+  &--assistance {
+    font-size: 1.2rem;
+  }
 }

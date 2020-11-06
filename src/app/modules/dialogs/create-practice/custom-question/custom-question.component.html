@@ -1,8 +1,31 @@
-<mat-dialog-content class="mat-typography">
-  <!--combo box-->
-  <div class="combo-box-container question-maker">
+<mat-dialog-content>
+  <div class="dialog__message dialog__message--assistance">
+    Choose the question skill
+  </div>
+  <div class="u__space-evenly">
+    <div class="chip chip--active">
+      <div class="chip__text">Listening</div>
+      <mat-icon class="chip__icon">hearing</mat-icon>
+    </div>
+    <div class="chip">
+      <div class="chip__text">Reading</div>
+      <mat-icon class="chip__icon">chrome_reader_mode</mat-icon>
+    </div>
+    <div class="chip">
+      <div class="chip__text">Grammar</div>
+      <mat-icon class="chip__icon">spellcheck</mat-icon>
+    </div>
+    <div class="chip">
+      <div class="chip__text">Vocabulary</div>
+      <mat-icon class="chip__icon">format_shapes</mat-icon>
+    </div>
+  </div>
+  <div class="dialog__message dialog__message--assistance">
+    Choose a type of question and answer
+  </div>
+  <div class="u__space-between">
     <!--combo tipo de preguntas-->
-    <div class="combo-box-container--left">
+    <div class="u__space-between">
       <div class="combo-box">
         <mat-form-field>
           <mat-label *ngIf="!nuevaPregunta.bloqidtp"
@@ -49,25 +72,20 @@
       </div>
       <!--#combo tipo de respuestas-->
     </div>
-    <div class="progress-bar__button-actions-container--right">
-      <!-- clear button -->
-      <button
-        mat-raised-button
-        class="progress-bar__button-normal"
-        (click)="limpiar()"
-      >
-        <div class="progress-bar__button-container">
-          <mat-icon class="progress-bar__button-normal--icon"
-            >clear_all</mat-icon
-          >
-          <span class="progress-bar__button-normal--text">Clear</span>
-        </div>
-      </button>
-      <!-- #clear button -->
-    </div>
-    <!--#combo tipo de respuestas-->
+    <!-- clear button -->
+    <button
+      mat-raised-button
+      class="circular-button circular-button--primary"
+      (click)="limpiar()"
+      mat-mini-fab
+    >
+      <mat-icon class="circular-button__icon">clear_all</mat-icon>
+    </button>
+    <!-- #clear button -->
   </div>
   <!--#combo box-->
+
+  <!--combo box-->
   <!--card-->
   <div class="card-question" [ngSwitch]="nuevaPregunta.idTipoRespuesta">
     <!-- <div class="card__text--no-content">
@@ -403,7 +421,7 @@
                   class="example-box"
                   cdkDrag
                   *ngFor="let option of column.chip"
-                  (removed)="removeList(option,column)"
+                  (removed)="removeList(option, column)"
                 >
                   {{ option.chipName }}
                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
@@ -682,51 +700,6 @@
           </mat-chip-list>
           <!-- #matchips options list -->
 
-          <!-- cards wrapper columns-->
-          <!-- <div class="drag-drop__wrapper">
-            <div class="drag-drop__columns">
-              <div
-                class="drag-drop__column"
-                *ngFor="let column of listColumnsChips2"
-              >
-                <mat-form-field class="example-form-field">
-                  <mat-label>Column title</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    [(ngModel)]="column.columnTitle"
-                  />
-                  <button
-                    mat-button
-                    *ngIf="value"
-                    matSuffix
-                    mat-icon-button
-                    aria-label="Column title"
-                    (click)="column.columnTitle = ''"
-                  >
-                    <mat-icon>close</mat-icon>
-                  </button>
-                </mat-form-field>
-
-                <div
-                  class="drag-drop__task-container"
-                  cdkDropList
-                  [cdkDropListData]="column.chip"
-                  (cdkDropListDropped)="drop2($event)"
-                >
-                  <mat-chip
-                    class="example-box"
-                    cdkDrag
-                    *ngFor="let option of column.chip"
-                    (removed)="remove2(option)"
-                  >
-                    {{ option.chipName }}
-                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                  </mat-chip>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <!-- #cards wrapper columns-->
           <!-- #Drag and drop chips -->
           <div class="drag-drop__chips--horizontal">
@@ -789,72 +762,6 @@
               </mat-chip>
             </mat-chip-list>
           </div>
-          <!-- #Drag and drop chips -->
-          <!-- divs with tags -->
-          <!-- <div class="drag-drop__respuesta" cdkDropListGroup>
-            <div class="dialog-subtitle">
-              <div class="dialog-subtitle__text">
-                <span>Complete the sentence</span>
-              </div>
-            </div>
-            <span class="question__suggestion"
-              >Complete the sentence with the options below</span
-            >
-
-            <div class="drag-drop__input">
-              <div *ngFor="let option of oracionEjemplo; let i = index">
-                <div *ngIf="option !== '*'; else templateName">
-                  <div class="auxliar_span">
-                    {{ option }}
-                  </div>
-                </div>
-                <ng-template #templateName> -->
-          <!-- <span> token </span> -->
-          <!-- <mat-chip-list
-                    class="drag-drop__chip-container-tasks"
-                    cdkDropList
-                    cdkDropListOrientation="horizontal"
-                    [cdkDropListData]="oracionRespuestas"
-                    (cdkDropListDropped)="drop2($event)"
-                  >
-                    <mat-chip
-                      class="task"
-                      cdkDrag
-                      *ngFor="let option of oracionRespuestas"
-                    >
-                      {{ option.chipName }}
-                    </mat-chip>
-                  </mat-chip-list>
-                </ng-template>
-              </div>
-            </div> -->
-          <!-- #divs with tags -->
-          <!-- <div class="dialog-subtitle">
-              <div class="dialog-subtitle__text">
-                <span>Options</span>
-              </div>
-            </div>
-            <span class="question__suggestion"
-              >Options to fill the sentence</span
-            >
-            <!--  opciones respuesta-->
-          <!-- <mat-chip-list
-              class="drag-drop__column--horizontal"
-              cdkDropList
-              cdkDropListOrientation="horizontal"
-              [cdkDropListData]="optionsRespuestas"
-              (cdkDropListDropped)="drop2($event)"
-            >
-              <mat-chip
-                cdkDrag
-                class="task"
-                *ngFor="let option of optionsRespuestas"
-              >
-                {{ option.chipName }}
-              </mat-chip>
-            </mat-chip-list> -->
-          <!--  #opciones respuesta-->
-          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -863,20 +770,20 @@
   <!--#card-->
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <div class="progress-bar__container-mix">
+  <div class="u__flex--flex-end">
     <button
       mat-raised-button
-      class="progress-bar__button-negative"
+      class="button-normal button-normal--negative"
       (click)="cancelar()"
     >
-      <span class="progress-bar__button-normal--text">Cancel</span>
+      <span class="button-normal__text">Cancel</span>
     </button>
     <button
       (click)="agregarPreguntaEnContenido()"
       mat-raised-button
-      class="progress-bar__button-normal"
+      class="button-normal button-normal--positive"
     >
-      <span class="progress-bar__button-normal--text">Add question</span>
+      <span class="button-normal__text">Add question</span>
     </button>
   </div>
 </mat-dialog-actions>

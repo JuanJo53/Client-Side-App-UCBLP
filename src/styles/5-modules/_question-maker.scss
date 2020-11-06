@@ -9,12 +9,6 @@
   flex-direction: column;
   align-items: center;
   //background-color: red;
-  &__container-mix {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 3rem;
-    //background-color: red;
-  }
 
   &__choose-buttons-container {
     margin-top: 2rem;
@@ -26,20 +20,7 @@
     display: flex;
     justify-content: center;
   }
-  &__text {
-    &-previous {
-      margin-left: 1rem;
-      color: $color-primary-blue;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-    &-next {
-      margin-right: 1rem;
-      color: $color-primary-blue;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-  }
+
   &__button {
     &-container {
       display: flex;
@@ -74,33 +55,7 @@
       }
     }
   }
-  &__bar {
-    margin-top: 4rem;
-    display: flex;
-    //background-color: green;
-    justify-content: space-between;
-    &--circle {
-      height: 3rem;
-      width: 3rem;
-      border: 0.2rem solid $color-primary-blue;
-      border-radius: 50%;
-      opacity: 25%;
-      &.active {
-        border: 0.275rem solid $color-primary-blue;
-        opacity: 100%;
-        transition: 0.5s;
-      }
-    }
-    &--row {
-      border: 0.15rem solid $color-primary-blue;
-      width: 4rem;
-      opacity: 25%;
-      &.active {
-        opacity: 100%;
-        transition: 0.5s;
-      }
-    }
-  }
+
   &__finish {
     margin-left: auto;
   }

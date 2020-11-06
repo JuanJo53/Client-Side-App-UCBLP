@@ -1,0 +1,24 @@
+.u__space-evenly {
+  margin: 1rem 0rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.u__space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.u__flex--flex-end {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem;
+  //background-color: red;
+}
+.u__flex {
+  display: flex;
+  align-items: center;
+}
+.mt-3 {
+  margin-top: 3rem;
+}

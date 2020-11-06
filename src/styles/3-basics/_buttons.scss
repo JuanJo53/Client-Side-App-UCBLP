@@ -38,27 +38,6 @@
   }
 }
 
-.circular-button {
-  background-color: $color-primary-white !important;
-  color: $color-primary-blue !important;
-  position: relative !important;
-  &__icon {
-    font-size: 2rem;
-  }
-  &__first-word {
-    font-size: 2rem;
-    font-weight: $font-weight-regular;
-  }
-  &__class {
-    font-size: 2rem;
-    font-weight: $font-weight-regular;
-  }
-  &:hover {
-    background-color: $color-primary-blue;
-    color: $color-primary-white;
-  }
-}
-
 //------circular button navbar brand------
 .circular-button-brand {
   padding: 2rem 0rem;
@@ -216,16 +195,7 @@
 }
 
 //-----#button table-----
-//-----button progress bar-----
-.progress-bar {
-  &__button {
-    &-next,
-    &-previous {
-      background-color: $color-primary-blue !important;
-    }
-  }
-}
-//-----#button progress bar-----
+
 // module buttons
 .module-button {
   cursor: pointer;
@@ -315,4 +285,58 @@
     color: $color-primary-white;
   }
   z-index: 100;
+}
+//final
+.button-normal {
+  &--positive {
+    background-color: $color-primary-blue !important;
+  }
+  &--negative {
+    background-color: $color-primary-red !important;
+  }
+  &__text {
+    color: $color-primary-white !important;
+  }
+}
+
+.circular-button {
+  &--primary {
+    background-color: $color-primary-blue !important;
+    color: $color-primary-white !important;
+  }
+  &--secondary {
+    background-color: $color-primary-white !important;
+    color: $color-primary-blue !important;
+  }
+
+  // position: relative !important;
+  &__icon {
+    font-size: 2rem;
+  }
+  &__first-word {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__class {
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__text {
+    cursor: pointer;
+    font-size: 1.6rem;
+    &--right {
+      margin-left: 1rem;
+    }
+    &--left {
+      margin-right: 1rem;
+    }
+    &:hover {
+      transform: scale(1.2);
+      transition: 0.5s;
+    }
+  }
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
 }

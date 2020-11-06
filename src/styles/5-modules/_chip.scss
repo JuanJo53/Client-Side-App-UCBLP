@@ -1,0 +1,36 @@
+// login buttons
+.chip {
+  cursor: pointer;
+  background-color: $color-primary-white;
+  color: $color-primary-blue;
+  border: 0.1rem solid $color-primary-blue;
+  //opacity: 60%;
+  border-radius: 2.5rem;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 1rem;
+  &__text {
+    margin: 0 0.25rem;
+  }
+  &__icon {
+    margin: 0 0.5rem;
+    //vertical-align: middle;
+  }
+  &:hover {
+    transition: 0.3s;
+    transform: translateY(-4px);
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+    //border: 0.1rem solid $color-primary-blue;
+    //opacity: 100%;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &--active {
+    background-color: $color-primary-blue;
+    color: $color-primary-white;
+  }
+}

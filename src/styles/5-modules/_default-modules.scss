@@ -33,7 +33,7 @@
     flex: 0 1 30%;
   }
   &__content-card {
-    background-color: green;
+    //background-color: green;
     //flex: 30;
     display: flex;
     //justify-content: center;
@@ -41,13 +41,13 @@
   }
   &__circle-container {
     flex: 1;
-    background-color: greenyellow;
+    //background-color: greenyellow;
     display: flex;
     justify-content: flex-end;
   }
   &__title-container {
     flex: 0 1 70%;
-    background-color: hotpink;
+    //background-color: hotpink;
   }
   &__circle {
     border-radius: 50%;
@@ -66,7 +66,7 @@
     margin: 0rem 1rem;
     text-align: center;
     line-height: 1.5;
-    background-color: red;
+    //background-color: red;
   }
 }
 
