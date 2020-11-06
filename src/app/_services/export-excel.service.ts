@@ -27,7 +27,8 @@ export class ExportExcelService {
     }
   }
   async export(element,nombre,tamCol){
-    const ws:XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    const ws:XLSX.WorkSheet = XLSX.utils.table_to_sheet(element,{ raw:true });
+    console.log(ws);
     const work=new Excel.Workbook();
     var ws2=work.addWorksheet("hoja 1");
     var inicio=ws["!ref"].split(":")[0];
