@@ -70,25 +70,23 @@ export class EvaluationComponent implements OnInit {
     private servNav: SideBarControlService,
     private data: SharedService
   ) {}
-  verificarRubrica(){
-    var total=0;
-    for(let modPer of this.cardsModulosPers){
-      if(modPer.estado==1){
-        total+=modPer.rubrica;
+  verificarRubrica() {
+    var total = 0;
+    for (let modPer of this.cardsModulosPers) {
+      if (modPer.estado == 1) {
+        total += modPer.rubrica;
       }
     }
-    for(let modPred of this.cardsModulosPred){
-      if(modPred.estado==1){
-        total+=modPred.rubrica;
+    for (let modPred of this.cardsModulosPred) {
+      if (modPred.estado == 1) {
+        total += modPred.rubrica;
       }
     }
-    if(total!=100){
-      this.controlPuntuacion100=1;
+    if (total != 100) {
+      this.controlPuntuacion100 = 1;
       this.errorAlert();
-    }
-    else{
-      this.controlPuntuacion100=0;
-
+    } else {
+      this.controlPuntuacion100 = 0;
     }
   }
   ngOnInit(): void {
@@ -274,7 +272,7 @@ export class EvaluationComponent implements OnInit {
           if (result !== "" && result != null && result !== "undefined") {
             data.modules.body = result;
             this.cargarDatos(result);
-          }          
+          }
           this.verificarRubrica();
         });
       },
@@ -295,7 +293,7 @@ export class EvaluationComponent implements OnInit {
       if (result === "ok") {
         this.cardsModulosPers.splice(index, 1);
         this.servNav.eliminarmodulos(index);
-      }      
+      }
       this.verificarRubrica();
     });
   }

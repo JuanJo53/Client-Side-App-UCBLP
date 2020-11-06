@@ -23,15 +23,16 @@
       <!--custom-cards  #D77A61  -->
       <div class="custom-card--themes">
         <div class="custom-card--themes__img">
-          <div class="custom-card--themes__img-overlay">
+          <div
+            class="custom-card--themes__img-overlay"
+            [ngStyle]="{
+              'background-color': cards.estado != 2 ? '#98be83A6' : '#8f8f8fCC',
+              transition: '.5s'
+            }"
+          >
             <div class="custom-card--themes__buttons-card">
               <!--btn ver contenido-->
               <button
-                [ngStyle]="{
-                  'background-color':
-                    cards.estado == 2 ? '#808080' : 'transparent'
-                }"
-                [disabled]="cards.estado == 2"
                 class="circular-button-custom-card"
                 (click)="verContenido(cards.idTema)"
               >
@@ -43,9 +44,18 @@
               <!--btn configuraciones-->
               <button
                 class="circular-button-custom-card"
+                [ngStyle]="{
+                  'background-color':
+                    cards.estado == 2 ? '#ffffff' : 'transparent'
+                }"
                 (click)="configuraciones(cards)"
               >
-                <mat-icon class="circular-button-custom-card__icon">
+                <mat-icon
+                  class="circular-button-custom-card__icon"
+                  [ngStyle]="{
+                    color: cards.estado == 2 ? '#8f8f8fCC' : '#ffffff'
+                  }"
+                >
                   settings
                 </mat-icon>
               </button>
@@ -53,10 +63,6 @@
               <!--btn eliminar-->
               <button
                 class="circular-button-custom-card"
-                [ngStyle]="{
-                  'background-color':
-                    cards.estado == 2 ? 'transparent' : '#808080'
-                }"
                 [disabled]="cards.estado == 2"
                 (click)="eliminar(cards.idTema)"
               >

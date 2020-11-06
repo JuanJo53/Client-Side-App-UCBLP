@@ -10,9 +10,9 @@ import { Module } from "src/app/models/Teacher/Evaluation/Module";
 })
 export class ModulesRubricComponent implements OnInit {
   total: number = 95;
-  disableTextbox = true;
   listaRubricas: any[] = [];
   porcentajes: any[] = [];
+  disableTextbox = true;
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private dialogRef: MatDialogRef<ModulesRubricComponent>,
@@ -49,11 +49,9 @@ export class ModulesRubricComponent implements OnInit {
     this.cambio();
   }
   verificarRubricas() {
-    if(this.total==100)
-    {
+    if (this.total == 100) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }

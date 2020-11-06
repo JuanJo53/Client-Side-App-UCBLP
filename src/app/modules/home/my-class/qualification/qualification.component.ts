@@ -113,7 +113,7 @@ export class QualificationComponent implements OnInit {
       if (data[0].modulos) {
         for (let dat of data[0].modulos) {
           this.columns.push(dat.nombre_modulo);
-          this.columnsPor.push(String(dat.rubrica) + "%");
+          this.columnsPor.push(String(dat.rubrica));
         }
       }
       this.displayedColumns = this.columns.map((col) => col);

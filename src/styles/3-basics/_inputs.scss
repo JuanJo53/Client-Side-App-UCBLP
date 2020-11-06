@@ -36,6 +36,7 @@
 }
 .input-disabled {
   .mat-form-field-outline {
+    border-radius: 0.5rem;
     background-color: $color-secondary-gray;
 
     // cursor: pointer!important;
@@ -67,14 +68,27 @@
 .input-form {
   font-size: 1.25rem !important;
 }
-.input-minutes{
+.input-minutes {
   margin-left: 1rem;
   color: $color-primary-blue;
   font-weight: bold;
-
 }
-.detail-minutes{
+.detail-minutes {
   align-items: center;
   justify-content: space-between;
   display: flex;
+}
+//details input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+.input--icon {
+  color: $color-primary-blue;
+  font-weight: 500;
 }

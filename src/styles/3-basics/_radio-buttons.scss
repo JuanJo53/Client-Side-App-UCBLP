@@ -7,6 +7,7 @@
   &__title {
     color: $color-primary-blue;
     font-size: 1.5rem;
+    font-weight: 500;
     //background-color: pink;
   }
   &__content {
@@ -32,7 +33,7 @@
   padding: 0.75rem 1rem;
   //background-color: $color-primary-blue;
   border-radius: 3rem;
-  border: 0.1rem solid $color-primary-blue;
+  border: 0.15rem solid $color-primary-blue;
   margin-left: 1rem;
 }
 .mat-radio-outer-circle {
@@ -47,4 +48,8 @@
 
 .mat-radio-ripple .mat-ripple-element {
   background-color: rgba($color-primary-blue, 0.35) !important;
+}
+
+.mat-radio-outer-circle {
+  border-color: $color-primary-blue !important;
 }
