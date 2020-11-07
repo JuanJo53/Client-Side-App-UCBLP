@@ -88,7 +88,7 @@ export class ThemesComponent implements OnInit {
       data: {
         idCurso: this.idCurso,
         images: this.themeImages,
-        numero_tema: this.themeCards.length,
+        numero_tema: this.themeCards.length+1,
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
