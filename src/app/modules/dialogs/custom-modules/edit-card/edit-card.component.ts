@@ -18,7 +18,7 @@ export class EditCardComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.nombreCard=this.dataDialog["contenido"].nombreContenido;
+    this.nombreCard=this.dataDialog["contenido"].nombreModulo;
   }
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
@@ -30,7 +30,7 @@ export class EditCardComponent implements OnInit {
     this.serv.updateContenidoModulos(updCard).subscribe({
       next:(data)=>{
         if(data.status==200){
-          this.dataDialog["contenido"].nombreContenido=this.nombreCard;
+          this.dataDialog["contenido"].nombreModulo=this.nombreCard;
           this.dialogRef.close(this.dataDialog["contenido"]);
         }else{
           console.log("error");
