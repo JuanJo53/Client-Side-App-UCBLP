@@ -1,9 +1,9 @@
 export class Lesson{
     id: number;
     numeroLeccion:number;
-    idTipoLeccion:string;
+    idTipoLeccion:number;
     nombre: string;
-    idImagen: string;
+    idImagen: number;
     estado:number;
     idTema:number;
 }

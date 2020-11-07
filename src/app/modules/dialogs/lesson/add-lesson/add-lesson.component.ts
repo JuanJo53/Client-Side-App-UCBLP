@@ -89,8 +89,8 @@ export class AddLessonComponent implements OnInit {
       let newLes=new Lesson();
 
       newLes.nombre=this.nombrelesson;
-      newLes.idTipoLeccion=String(this.typeSelected);
-      newLes.idImagen=String(this.imageSelected);
+      newLes.idTipoLeccion=this.typeSelected;
+      newLes.idImagen=1;
       newLes.numeroLeccion=this.numero;
       newLes.idTema=this.dataDialog['idTema'];
     this.servLes.addLesson(newLes).subscribe({

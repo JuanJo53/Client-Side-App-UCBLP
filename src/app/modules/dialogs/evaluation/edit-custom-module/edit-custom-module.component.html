@@ -16,6 +16,7 @@
         <input
           [disabled]="disableTextbox"
           [(ngModel)]="nombre"
+          [ngModelOptions]="{ standalone: true }"
           type="text"
           class="input-form"
           matInput
