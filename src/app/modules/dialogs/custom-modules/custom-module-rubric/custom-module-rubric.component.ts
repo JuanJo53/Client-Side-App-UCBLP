@@ -13,7 +13,7 @@ export class CustomModuleRubricComponent implements OnInit {
   total = 100;
   valor = 30;
   disableTextbox = true;
-  listaRubricas: ContentModule[] = [];
+  listaRubricas: Module[] = [];
   porcentajes: any[] = [];
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
@@ -23,14 +23,15 @@ export class CustomModuleRubricComponent implements OnInit {
   toggleDisable() {
     this.disableTextbox = !this.disableTextbox;
   }
-  cargarDatos(rubricas:ContentModule[]) {
+  cargarDatos(rubricas:Module[]) {
+    console.log(rubricas);
     for (let rubrica of rubricas) {
-      let newRubrica = new ContentModule();
+      let newRubrica = new Module();
       newRubrica.id = rubrica.id;
       newRubrica.rubrica = rubrica.rubrica; 
       newRubrica.estado= rubrica.estado;
-      newRubrica.idModulo = rubrica.idModulo; 
-      newRubrica.nombreContenido=rubrica.nombreContenido;
+      newRubrica.nombreModulo=rubrica.nombreModulo;
+      newRubrica.idColor=rubrica.idColor;
       this.listaRubricas.push(newRubrica);
       this.porcentajes.push({
         porcentaje: rubrica.rubrica,

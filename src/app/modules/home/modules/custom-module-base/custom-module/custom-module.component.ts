@@ -19,6 +19,7 @@ import { CardColor } from 'src/app/models/CardColor';
 export class CustomModuleComponent implements OnInit {
   idModulo:number;
   nombreModulo:string="";
+  idColor:number=0;
   cardsModulosPers: Module[] = [
   ];
   colores: CardColor[] = [];
@@ -56,6 +57,7 @@ export class CustomModuleComponent implements OnInit {
             for(let modulo of data.modules.body){
               if(modulo.id_modulo==this.idModulo){
                 this.nombreModulo=modulo.nombre_modulo;
+                this.idColor=modulo.id_color;
               }
             }
           }
@@ -91,7 +93,8 @@ export class CustomModuleComponent implements OnInit {
     const dialogRef = this.dialog.open(AddCardComponent, {
       width: "400px",
       data:{
-        idModulo:this.idModulo
+        idModulo:this.idModulo,
+        idColor:this.idColor
       }
     });
     dialogRef.afterClosed().subscribe((result) => {
