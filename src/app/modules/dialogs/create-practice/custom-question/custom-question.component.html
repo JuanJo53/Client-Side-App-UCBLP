@@ -80,7 +80,6 @@
       </div>
       <!--#combo tipo de respuestas-->
     </div>
-    <!-- clear button -->
     <button
       mat-raised-button
       class="circular-button circular-button--primary"
@@ -89,11 +88,9 @@
     >
       <mat-icon class="circular-button__icon">clear_all</mat-icon>
     </button>
-    <!-- #clear button -->
   </div>
   <!--#combo box-->
 
-  <!--combo box-->
   <!--card-->
   <div class="card-question" [ngSwitch]="nuevaPregunta.idTipoRespuesta">
     <!-- <div class="card__text--no-content">
@@ -150,39 +147,44 @@
           *Check the answers
         </h5>
 
-        <div class="card-question__content">
+        <div class="radio-button-question">
           <!-- <form class="example-form"> -->
           <mat-radio-group
             aria-label="Select an option"
-            class="example-radio-group"
+            class="radio-button-question__radio-group"
             name="radiobuttons"
             [(ngModel)]="nuevaPregunta.respuesta[0]"
           >
             <!-- radio button option -->
             <mat-radio-button
-              class="card-question__choice"
+              class="radio-button-question__choice"
               *ngFor="let opcion of radioButtonOpciones; let i = index"
               [value]="i"
             >
-              <mat-form-field class="full-width-field">
+              <mat-form-field class="radio-button-question__mat-form-field">
                 <input
                   [(ngModel)]="opcion.opcionRespuesta"
                   [ngModelOptions]="{ standalone: true }"
-                  class="card-question__choice--input"
+                  class="radio-button-question__choice--input"
                   matInput
                   placeholder="opcion"
                 />
               </mat-form-field>
-              <button class="card-question__choice--button-delete">
-                <mat-icon
-                  class="card-question__choice--button-delete-icon"
-                  (click)="eliminarElemento(i)"
-                  >close</mat-icon
-                >
+
+              <button
+                class="circle-button circle-button__container circle-button__container--delete-mini ml-1"
+                (click)="eliminarElemento(i)"
+              >
+                <mat-icon class="circle-button__icon">close</mat-icon>
               </button>
+
               <!--#radio button option-->
             </mat-radio-button>
           </mat-radio-group>
+
+          <!-- </form> -->
+        </div>
+        <div class="u__flex--flex-end">
           <button
             mat-mini-fab
             class="card-question__button--add"
@@ -190,7 +192,6 @@
           >
             <mat-icon>add</mat-icon>
           </button>
-          <!-- </form> -->
         </div>
       </div>
     </div>

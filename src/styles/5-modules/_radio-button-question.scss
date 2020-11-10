@@ -1,0 +1,28 @@
+.radio-button-question {
+  //background-color: red;
+  &__choice {
+    display: flex;
+    //background-color: orange;
+    align-items: center;
+    width: 100%;
+    &--input {
+      width: 100%;
+    }
+    .mat-radio-label-content {
+      width: 100%;
+      display: flex !important;
+      //background-color: yellowgreen;
+      align-items: center !important;
+    }
+  }
+  // &__radio-group {
+  //   //display: flex;
+  //   width: 100%;
+  //   //background-color: yellow;
+  // }
+  &__mat-form-field {
+    //display: flex;
+    //background-color: violet;
+    width: 100%;
+  }
+}

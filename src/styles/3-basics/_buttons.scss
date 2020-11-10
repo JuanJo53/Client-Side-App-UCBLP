@@ -340,3 +340,50 @@
     color: $color-primary-white;
   }
 }
+//question
+.circle-button {
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  outline: none;
+  border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__icon {
+    color: $color-primary-white;
+    //font-size: 1rem;
+    vertical-align: middle;
+  }
+  &__container {
+    &--delete-mini {
+      height: 3rem;
+      width: 3rem;
+      background-color: $color-primary-red;
+      opacity: 60%;
+    }
+  }
+  &:hover {
+    opacity: 100%;
+    transition: 0.75s;
+  }
+  // &--button-delete {
+  //   background-color: $color-primary-white;
+  //   height: 3rem;
+  //   width: 3rem;
+  //   border-radius: 50%;
+  //   border: none;
+  //   outline: none;
+  //   &-icon {
+  //     color: $color-primary-gray;
+  //   }
+  //   &:hover {
+  //     background-color: lighten($color-primary-gray, 50%);
+  //     transition: 0.75s;
+  //     cursor: pointer;
+  //   }
+  //   .mat-icon {
+  //     vertical-align: middle;
+  //   }
+  // }
+}
