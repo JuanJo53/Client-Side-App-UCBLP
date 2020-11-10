@@ -11,9 +11,55 @@
     justify-content: space-between;
   }
 }
-
+.combos-container {
+  @include respond-dialogs(tab-lan) {
+    width: 90%;
+    //background-color: brown;
+  }
+  @include respond-dialogs(tab-por) {
+    width: 80%;
+    //background-color: blue;
+  }
+}
 .combo-box {
   margin-right: 2rem;
+  @include respond-dialogs(tab-lan) {
+    margin-right: 1rem !important;
+    width: 70%;
+  }
+
+  @include respond-dialogs(tab-por) {
+    width: 60%;
+    margin-right: 0.25rem !important;
+  }
+
+  // &__mat-form-field {
+  //   @include respond-dialogs(tab-por) {
+  //     margin-right: 2rem;
+  //   }
+  // }
+  // @include respond-dialogs(tab-lan) {
+  //   background-color: red;
+  //   margin-right: 1rem;
+  //   width: 80%;
+  // }
+  // @include respond-dialogs(tab-por) {
+  //   background-color: orange;
+  //   width: 60%;
+  // }
+  &__mat-form-field {
+    @include respond-dialogs(tab-lan) {
+      //background-color: violet;
+      width: 70%;
+    }
+  }
+  &__mat-form-field {
+    @include respond-dialogs(tab-por) {
+      //background-color: red;
+      width: 60%;
+    }
+  }
+
   .mat-form-field-underline {
     height: 1 !important;
   }

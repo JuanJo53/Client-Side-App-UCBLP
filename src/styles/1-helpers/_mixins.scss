@@ -131,3 +131,38 @@
     }
   }
 }
+
+//modals
+
+@mixin respond-dialogs($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 21.8em) {
+      // 350px/16=321.8
+      @content;
+    }
+  }
+  @if $breakpoint == tab-por {
+    @media (max-width: 37.5em) {
+      // 600px/16=37.5
+      @content;
+    }
+  }
+  @if $breakpoint == tab-lan {
+    @media (max-width: 56.25em) {
+      // 900px /16 = 56.25
+      @content;
+    }
+  }
+  @if $breakpoint == normal {
+    @media (max-width: 68.75em) {
+      // 1100px /16 = 68.75
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 68.75em) {
+      // 1100px /16 = 68.75
+      @content;
+    }
+  }
+}

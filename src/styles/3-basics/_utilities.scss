@@ -2,6 +2,7 @@
   margin: 1rem 0rem;
   display: flex;
   justify-content: space-evenly;
+  flex-flow: wrap;
 }
 .u__space-between {
   display: flex;
@@ -13,6 +14,13 @@
   display: flex;
   justify-content: flex-end;
   margin: 2rem;
+
+  //background-color: red;
+}
+
+.u__flex--flex-start {
+  display: flex;
+  justify-content: flex-start;
   //background-color: red;
 }
 .u__flex {

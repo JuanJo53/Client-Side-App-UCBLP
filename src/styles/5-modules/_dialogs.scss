@@ -148,3 +148,20 @@ mat-datepicker-toggle {
     font-size: 1.2rem;
   }
 }
+.mat-dialog-content {
+  @include respond-dialogs(big-desktop) {
+    background-color: violet;
+  }
+  @include respond-dialogs(normal) {
+    background-color: orange;
+  }
+  @include respond-dialogs(tab-lan) {
+    background-color: green;
+  }
+  @include respond-dialogs(tab-por) {
+    background-color: pink;
+  }
+  @include respond-dialogs(phone) {
+    background-color: red;
+  }
+}

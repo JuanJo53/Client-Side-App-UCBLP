@@ -3,21 +3,29 @@
     Choose the question skill
   </div>
   <div class="u__space-evenly">
-    <div class="chip chip--active">
-      <div class="chip__text">Listening</div>
-      <mat-icon class="chip__icon">hearing</mat-icon>
+    <div class="chip-container">
+      <div class="chip chip--active">
+        <div class="chip__text">Listening</div>
+        <mat-icon class="chip__icon">hearing</mat-icon>
+      </div>
     </div>
-    <div class="chip">
-      <div class="chip__text">Reading</div>
-      <mat-icon class="chip__icon">chrome_reader_mode</mat-icon>
+    <div class="chip-container">
+      <div class="chip">
+        <div class="chip__text">Reading</div>
+        <mat-icon class="chip__icon">chrome_reader_mode</mat-icon>
+      </div>
     </div>
-    <div class="chip">
-      <div class="chip__text">Grammar</div>
-      <mat-icon class="chip__icon">spellcheck</mat-icon>
+    <div class="chip-container">
+      <div class="chip">
+        <div class="chip__text">Grammar</div>
+        <mat-icon class="chip__icon">spellcheck</mat-icon>
+      </div>
     </div>
-    <div class="chip">
-      <div class="chip__text">Vocabulary</div>
-      <mat-icon class="chip__icon">format_shapes</mat-icon>
+    <div class="chip-container">
+      <div class="chip">
+        <div class="chip__text">Vocabulary</div>
+        <mat-icon class="chip__icon">format_shapes</mat-icon>
+      </div>
     </div>
   </div>
   <div class="dialog__message dialog__message--assistance">
@@ -25,9 +33,9 @@
   </div>
   <div class="u__space-between">
     <!--combo tipo de preguntas-->
-    <div class="u__space-between">
+    <div class="u__flex--flex-start combos-container">
       <div class="combo-box">
-        <mat-form-field>
+        <mat-form-field class="combo-box__mat-form-field">
           <mat-label *ngIf="!nuevaPregunta.bloqidtp"
             >Type of Question</mat-label
           >
@@ -52,7 +60,7 @@
       <!--#combo tipo de preguntas-->
       <!--combo tipo de respuestas-->
       <div class="combo-box">
-        <mat-form-field>
+        <mat-form-field class="combo-box__mat-form-field">
           <mat-label *ngIf="!nuevaPregunta.bloqidtr">Type of answer</mat-label>
           <mat-label *ngIf="nuevaPregunta.bloqidtr" style="color: red"
             >*Type of answer</mat-label
