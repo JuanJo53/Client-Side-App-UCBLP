@@ -150,18 +150,18 @@ mat-datepicker-toggle {
 }
 .mat-dialog-content {
   @include respond-dialogs(big-desktop) {
-    //background-color: violet;
+    background-color: violet;
   }
   @include respond-dialogs(normal) {
-    //background-color: orange;
+    background-color: orange;
   }
   @include respond-dialogs(tab-lan) {
-    //background-color: green;
+    background-color: green;
   }
   @include respond-dialogs(tab-por) {
-    //background-color: pink;
+    background-color: pink;
   }
   @include respond-dialogs(phone) {
-    //background-color: red;
+    background-color: red;
   }
 }

@@ -73,6 +73,9 @@
   &__instruction {
     width: 100%;
   }
+  &__input-icon {
+    color: $color-primary-blue;
+  }
   //
   &__text {
     &--no-content {
@@ -83,16 +86,31 @@
     }
   }
   &__header {
+    //background-color: red;
     margin-top: 2rem;
     display: flex;
     align-items: center;
+    flex-flow: wrap;
+    //background-color: red;
     &--question {
-      flex: 0 1 85%;
-      margin-right: 1rem;
+      width: 79%;
+      margin-right: 0.5rem;
+      //background-color: yellowgreen;
+      @include respond-dialogs(tab-lan) {
+        //background-color: red;
+        margin-right: 0rem;
+        width: 100%;
+      }
     }
     &--score {
-      flex: 1;
-      margin-left: 1rem;
+      width: 19%;
+      margin-left: 0.5rem;
+      //background-color: skyblue;
+      @include respond-dialogs(tab-lan) {
+        //background-color: red;
+        margin-left: 0rem;
+        width: 100%;
+      }
     }
   }
   &__choice {
@@ -100,33 +118,33 @@
     align-items: center;
   }
   &__content {
-    &-inputs {
-      width: 100%;
-    }
-    .mat-form-field-infix {
-      width: 75rem !important;
-    }
+    // &-inputs {
+    //   width: 100%;
+    // }
+    // .mat-form-field-infix {
+    //   width: 75rem !important;
+    // }
   }
   &__button--add {
     background-color: $color-primary-blue !important;
     margin-bottom: 2rem !important;
   }
-  .example-radio-group {
-    display: flex;
-    flex-direction: column;
-  }
+  // .example-radio-group {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 }
 // .full-width-field {
 // }
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-.box {
-  background-color: pink;
-  width: 100%;
-}
+// .example-form {
+//   min-width: 150px;
+//   max-width: 500px;
+//   width: 100%;
+// }
+// .box {
+//   background-color: pink;
+//   width: 100%;
+// }
 
 //specials
 .mat-stepper__edit {

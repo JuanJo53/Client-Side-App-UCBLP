@@ -1,0 +1,34 @@
+.checkbox-question {
+  //background-color: pink;
+  &__choice {
+    display: flex;
+    //background-color: orange;
+    align-items: center;
+    width: 100%;
+    &--input {
+      width: 100%;
+    }
+    .mat-checkbox-label {
+      width: 100%;
+      display: flex !important;
+      //background-color: yellowgreen;
+      align-items: center !important;
+    }
+  }
+  &__mat-form-field {
+    //background-color: red;
+    width: 100% !important;
+    display: flex !important;
+  }
+  .mat-checkbox-layout {
+    width: 100%;
+  }
+  .mat-form-field-infix {
+    display: flex !important;
+    width: 100%;
+  }
+
+  .mat-form-field-wrapper {
+    position: static !important;
+  }
+}
