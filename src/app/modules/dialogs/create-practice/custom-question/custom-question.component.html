@@ -94,6 +94,9 @@
   <div class="card-question" [ngSwitch]="nuevaPregunta.idTipoRespuesta">
     <div class="card-question-radio-button" *ngSwitchCase="'1'">
       <div class="container-dialog">
+        <div class="dialog__message dialog__message--subtitle">
+          Question Setup
+        </div>
         <div class="card-question__header">
           <mat-form-field
             appearance="outline"
@@ -141,6 +144,7 @@
         <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
           *Check the answers
         </h5>
+        <div class="divisor-line divisor-line--primary mb-2"></div>
         <div class="radio-button-question">
           <mat-radio-group
             aria-label="Select an option"
@@ -187,6 +191,9 @@
     <!-- checkbox question-->
     <div class="card-question-radio-button" *ngSwitchCase="'2'">
       <div class="container-dialog">
+        <div class="dialog__message dialog__message--subtitle">
+          Question Setup
+        </div>
         <div class="card-question__header">
           <mat-form-field
             appearance="outline"
@@ -229,10 +236,11 @@
             >
           </mat-form-field>
         </div>
+
         <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
           *Check the answers
         </h5>
-
+        <div class="divisor-line divisor-line--primary mb-2"></div>
         <div class="card-question__content">
           <!-- <form class="example-form"> -->
           <!-- radio button option -->
@@ -274,6 +282,134 @@
       </div>
     </div>
     <!-- #checkbox question-->
+
+    <!-- matching combo box-->
+    <div class="card-question-radio-button" *ngSwitchCase="'5'">
+      <div class="container-dialog">
+        <div class="dialog__message dialog__message--subtitle">
+          Question Setup
+        </div>
+        <div class="card-question__header">
+          <mat-form-field
+            appearance="outline"
+            class="card-question__header--question"
+          >
+            <mat-label *ngIf="!nuevaPregunta.bloqpreg"
+              >Instruction Dropbox</mat-label
+            >
+            <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+              >*Instruction Dropbox</mat-label
+            >
+            <input
+              [(ngModel)]="nuevaPregunta.pregunta"
+              type="text"
+              class="input-form"
+              matInput
+              placeholder="Instruction dorpbox"
+              name="nombre pregunta"
+            />
+            <mat-icon class="card-question__input-icon" matSuffix
+              >mode_edit</mat-icon
+            >
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="card-question__header--score"
+          >
+            <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+            <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+              >*Score</mat-label
+            >
+            <input
+              [(ngModel)]="nuevaPregunta.puntuacion"
+              type="number"
+              class="input-form"
+              matInput
+              placeholder="Score"
+              name="puntuacion"
+            />
+            <mat-icon class="card-question__input-icon" matSuffix
+              >star</mat-icon
+            >
+          </mat-form-field>
+        </div>
+        <div class="divisor-line divisor-line--primary mb-2"></div>
+        <div class="dialog__message dialog__message--subtitle mb-2">
+          Answer Setup
+        </div>
+        <div class="u__space-between mb-2">
+          <div class="match-input match-input__titles--small">
+            <div class="match-title__container">
+              <div class="divisor-line divisor-line--secondary"></div>
+              <div class="dialog__message dialog__message--subtitle mx-1">
+                Set Keywords y Matches
+              </div>
+              <div class="divisor-line divisor-line--secondary"></div>
+            </div>
+          </div>
+          <div class="match-input match-input__titles--big">
+            <div class="match-title__container">
+              <div class="divisor-line divisor-line--secondary"></div>
+              <div class="dialog__message dialog__message--subtitle mx-1">
+                Set Keywords
+              </div>
+              <div class="divisor-line divisor-line--secondary"></div>
+            </div>
+            <div class="match-input__icon"></div>
+            <div class="match-title__container">
+              <div class="divisor-line divisor-line--secondary"></div>
+              <div class="dialog__message dialog__message--subtitle mx-1">
+                Set Matches
+              </div>
+              <div class="divisor-line divisor-line--secondary"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="" *ngFor="let opcion of matchingInputs; let i = index">
+          <div class="u__space-between">
+            <div class="match-input">
+              <mat-form-field class="match-input__container">
+                <mat-label>Keyword</mat-label>
+                <input
+                  matInput
+                  placeholder="Write a keyword"
+                  [(ngModel)]="opcion.keyword"
+                />
+              </mat-form-field>
+              <div class="match-input__icon">
+                <mat-icon inline="true">arrow_forward</mat-icon>
+              </div>
+              <mat-form-field class="match-input__container">
+                <mat-label>Match</mat-label>
+                <input
+                  matInput
+                  placeholder="Write the match of the keyword"
+                  [(ngModel)]="opcion.match"
+                />
+              </mat-form-field>
+            </div>
+
+            <button
+              class="circle-button circle-button__container circle-button__container--delete-mini ml-1"
+              (click)="eliminarInputMatch(i)"
+            >
+              <mat-icon class="circle-button__icon">close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="u__flex--flex-end">
+          <button
+            (click)="agregarInputMatch()"
+            mat-mini-fab
+            class="card-question__button--add"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- #matching combo box-->
 
     <!-- drag and drop column-->
     <div class="card-question-radio-button" *ngSwitchCase="'3'">
@@ -457,117 +593,6 @@
       </div>
     </div>
     <!-- #drag and drop column-->
-
-    <!-- matching combo box-->
-    <div class="card-question-radio-button" *ngSwitchCase="'5'">
-      <div class="container-dialog">
-        <div class="card-question__header">
-          <!--input para pregunta-->
-          <div class="card-question__header--question">
-            <mat-form-field
-              appearance="outline"
-              class="card-question__instruction"
-            >
-              <mat-label *ngIf="!nuevaPregunta.bloqpreg"
-                >Instruction Dropbox</mat-label
-              >
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
-                >*Instruction Dropbox</mat-label
-              >
-              <input
-                [(ngModel)]="nuevaPregunta.pregunta"
-                type="text"
-                class="input-form"
-                matInput
-                placeholder="Instruction dorpbox"
-                name="nombre pregunta"
-              />
-            </mat-form-field>
-          </div>
-          <!--#input para pregunta-->
-          <div class="card-question__header--score">
-            <!--input para pregunta-->
-            <div class="card-question__input">
-              <mat-form-field appearance="outline">
-                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
-                  >*Score</mat-label
-                >
-                <input
-                  [(ngModel)]="nuevaPregunta.puntuacion"
-                  type="number"
-                  class="input-form"
-                  matInput
-                  placeholder="Score"
-                  name="puntuacion"
-                />
-              </mat-form-field>
-            </div>
-            <!--#input para pregunta-->
-          </div>
-        </div>
-        <div class="match-combobox__input-box-titles">
-          <div class="match-combobox__inputs">
-            <!--subtitle-->
-            <div class="dialog-subtitle match-combobox__keyword">
-              <div class="dialog-subtitle__text">
-                <span>Set Keywords</span>
-              </div>
-            </div>
-            <div class="dialog-subtitle match-combobox__complement">
-              <div class="dialog-subtitle__text">
-                <span>Set Matches</span>
-              </div>
-            </div>
-            <!--#subtitle-->
-          </div>
-          <button
-            mat-mini-fab
-            class="match-combobox__choice--button-add"
-            (click)="agregarInputMatch()"
-          >
-            <mat-icon class="match-combobox__choice--button-add-icon"
-              >add</mat-icon
-            >
-          </button>
-        </div>
-        <div class="" *ngFor="let opcion of matchingInputs; let i = index">
-          <div class="match-combobox__input-box">
-            <div class="match-combobox__inputs">
-              <mat-form-field class="match-combobox__keyword">
-                <mat-label>Keyword</mat-label>
-                <input
-                  matInput
-                  placeholder="Write a keyword"
-                  [(ngModel)]="opcion.keyword"
-                />
-              </mat-form-field>
-              <mat-form-field class="match-combobox__complement">
-                <mat-label>Match</mat-label>
-                <input
-                  matInput
-                  placeholder="Write the match of the keyword"
-                  [(ngModel)]="opcion.match"
-                />
-              </mat-form-field>
-            </div>
-            <!-- eliminar -->
-            <button
-              mat-mini-fab
-              class="match-combobox__choice--button-delete"
-              (click)="eliminarInputMatch(i)"
-            >
-              <mat-icon class="match-combobox__choice--button-delete-icon"
-                >close</mat-icon
-              >
-            </button>
-            <!-- eliminar -->
-          </div>
-          <mat-divider></mat-divider>
-        </div>
-      </div>
-    </div>
-    <!-- #matching combo box-->
 
     <!-- drag and drop fill in the blancks-->
     <div class="card-question-radio-button" *ngSwitchCase="'4'">

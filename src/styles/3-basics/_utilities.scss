@@ -29,10 +29,20 @@
 .u__flex {
   display: flex;
   align-items: center;
+  background-color: pink;
 }
 .mt-3 {
   margin-top: 3rem;
 }
 .ml-1 {
   margin-left: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mx-1 {
+  margin: 0 1rem;
 }

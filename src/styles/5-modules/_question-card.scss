@@ -7,8 +7,8 @@
     flex: 0 1 90%;
     padding: 2rem 2rem;
     //background-color: red;
-    border: $card-width solid $color-primary-blue;
-    border-radius: $border-radious-standard;
+    border: $border-radious-1 solid $color-primary-blue;
+    border-radius: $border-radious-1;
   }
   &__button {
     //background-color: green;
@@ -87,7 +87,7 @@
   .card-question {
     background-color: red;
     border: $card-width solid $color-primary-blue;
-    border-radius: $border-radious-standard;
+    border-radius: $border-radious-1;
     mat-form-field {
       width: 100%;
     }

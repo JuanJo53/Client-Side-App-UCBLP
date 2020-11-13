@@ -142,10 +142,16 @@ mat-datepicker-toggle {
 
 //final
 .dialog__message {
-  margin: 0.5rem 0;
+  //margin: 0.5rem 0;
   color: $color-secondary-blue;
   &--assistance {
     font-size: 1.2rem;
+    font-weight: 500;
+  }
+  &--subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    white-space: nowrap;
   }
 }
 .mat-dialog-content {
@@ -163,5 +169,16 @@ mat-datepicker-toggle {
   }
   @include respond-dialogs(phone) {
     background-color: red;
+  }
+}
+.divisor-line {
+  width: 100%;
+  //margin: 0 0.5rem;
+
+  &--primary {
+    border: 0.1rem solid $color-primary-blue;
+  }
+  &--secondary {
+    border: 0.1rem solid $color-secondary-blue;
   }
 }
