@@ -156,19 +156,19 @@ mat-datepicker-toggle {
 }
 .mat-dialog-content {
   @include respond-dialogs(big-desktop) {
-    background-color: violet;
+    //background-color: violet;
   }
   @include respond-dialogs(normal) {
-    background-color: orange;
+    //background-color: orange;
   }
   @include respond-dialogs(tab-lan) {
-    background-color: green;
+    //background-color: green;
   }
   @include respond-dialogs(tab-por) {
-    background-color: pink;
+    //background-color: pink;
   }
   @include respond-dialogs(phone) {
-    background-color: red;
+    //background-color: red;
   }
 }
 .divisor-line {
@@ -179,6 +179,11 @@ mat-datepicker-toggle {
     border: 0.1rem solid $color-primary-blue;
   }
   &--secondary {
+    margin: 0.5rem 0;
     border: 0.1rem solid $color-secondary-blue;
+  }
+  &--secondary-mini {
+    margin: 1.75rem 0;
+    border: 0.05rem solid $color-secondary-blue;
   }
 }
