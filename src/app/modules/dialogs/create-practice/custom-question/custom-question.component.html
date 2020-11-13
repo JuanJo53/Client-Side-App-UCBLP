@@ -411,120 +411,96 @@
     </div>
     <!-- #matching combo box-->
 
-    <!-- drag and drop column-->
+    <!-- drag and drop columns-->
     <div class="card-question-radio-button" *ngSwitchCase="'3'">
       <div class="container-dialog">
-        <div class="card-question__header">
-          <!--input para pregunta-->
-          <div class="card-question__header--question">
-            <mat-form-field
-              appearance="outline"
-              class="card-question__instruction"
-            >
-              <mat-label *ngIf="!nuevaPregunta.bloqpreg">Instruction</mat-label>
-              <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
-                >*Instruction</mat-label
-              >
-              <input
-                [(ngModel)]="nuevaPregunta.pregunta"
-                type="text"
-                class="input-form"
-                matInput
-                placeholder="Instruction"
-                name="nombre pregunta"
-              />
-            </mat-form-field>
-          </div>
-          <!--#input para pregunta-->
-          <div class="card-question__header--score">
-            <!--input para pregunta-->
-            <div class="card-question__input">
-              <mat-form-field appearance="outline">
-                <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
-                <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
-                  >*Score</mat-label
-                >
-                <input
-                  [(ngModel)]="nuevaPregunta.puntuacion"
-                  type="number"
-                  class="input-form"
-                  matInput
-                  placeholder="Score"
-                  name="puntuacion"
-                />
-              </mat-form-field>
-            </div>
-            <!--#input para pregunta-->
-          </div>
+        <div class="dialog__message dialog__message--subtitle">
+          Question Setup
         </div>
-
-        <!-- Drag and drop content -->
-        <!-- <div class="card-question__content"> -->
-        <div class="drag-drop__header">
-          <!--subtitle-->
-          <div class="dialog-subtitle">
-            <div class="dialog-subtitle__text">
-              <span>Maker</span>
-            </div>
-          </div>
-          <!--#subtitle-->
-          <div class="drag-drop__maker">
-            <div class="drag-drop__add-option">
-              <mat-form-field appearance="outline">
-                <mat-label>Option</mat-label>
-                <!-- Input para el email-->
-                <input
-                  class="input-form"
-                  type="text"
-                  matInput
-                  placeholder="Write an option"
-                  name="chipOption{{ options2.length }}"
-                  id="name{{ options2.length }}"
-                  [(ngModel)]="optionChipName"
-                />
-                <!-- //Input para el email-->
-              </mat-form-field>
-              <!--Add button-->
-              <button
-                class="circular-button-subtitle"
-                mat-mini-fab
-                (click)="agregarOpcion()"
+        <div class="card-question__header">
+          <mat-form-field
+            appearance="outline"
+            class="card-question__header--question"
+          >
+            <mat-label *ngIf="!nuevaPregunta.bloqpreg">Instruction</mat-label>
+            <mat-label *ngIf="nuevaPregunta.bloqpreg" style="color: red"
+              >*Instruction</mat-label
+            >
+            <input
+              [(ngModel)]="nuevaPregunta.pregunta"
+              type="text"
+              class="input-form"
+              matInput
+              placeholder="Instruction"
+              name="nombre pregunta"
+            />
+            <mat-icon class="card-question__input-icon" matSuffix
+              >mode_edit</mat-icon
+            >
+          </mat-form-field>
+          <mat-form-field
+            appearance="outline"
+            class="card-question__header--score"
+          >
+            <mat-label *ngIf="!nuevaPregunta.bloqpunt">Score</mat-label>
+            <mat-label *ngIf="nuevaPregunta.bloqpunt" style="color: red"
+              >*Score</mat-label
+            >
+            <input
+              [(ngModel)]="nuevaPregunta.puntuacion"
+              type="number"
+              class="input-form"
+              matInput
+              placeholder="Score"
+              name="puntuacion"
+            />
+            <mat-icon class="card-question__input-icon" matSuffix
+              >star</mat-icon
+            >
+          </mat-form-field>
+        </div>
+        <div class="divisor-line divisor-line--primary mb-2"></div>
+        <div class="dialog__message dialog__message--subtitle mb-2">
+          Answer Setup
+        </div>
+        <div
+          class="dialog__message dialog__message--assistance u__flex--flex-end mb-1"
+        >
+          *Select the number of columns
+        </div>
+        <div class="u__flex--flex-end">
+          <mat-form-field>
+            <mat-label *ngIf="!nuevaPregunta.bloqidtp"
+              >Number of Columns</mat-label
+            >
+            <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
+              >Number of Columns</mat-label
+            >
+            <mat-select
+              (selectionChange)="ponerColumnas()"
+              [(ngModel)]="numColumnas"
+            >
+              <mat-option
+                *ngFor="let columnsOption of dragAndDropColumn"
+                [value]="columnsOption.value"
               >
-                <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
-              </button>
-              <!--#Add button-->
-            </div>
-            <mat-form-field>
-              <mat-label *ngIf="!nuevaPregunta.bloqidtp"
-                >Number of Columns</mat-label
-              >
-              <mat-label *ngIf="nuevaPregunta.bloqidtp" style="color: red"
-                >Number of Columns</mat-label
-              >
-              <mat-select
-                (selectionChange)="ponerColumnas()"
-                [(ngModel)]="numColumnas"
-              >
-                <mat-option
-                  *ngFor="let columnsOption of dragAndDropColumn"
-                  [value]="columnsOption.value"
-                >
-                  <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
-                  {{ columnsOption.display }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+                <!-- <mat-icon>{{ elemento.icon }}</mat-icon> -->
+                {{ columnsOption.display }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="dialog__message dialog__message--assistance mb-1">
+          Fill the columns with the chips
         </div>
         <div class="drag-drop__area" cdkDropListGroup>
           <!-- cards wrapper columns-->
-
           <div class="drag-drop__columns">
             <div
               class="drag-drop__column"
               *ngFor="let column of listColumnsChips2"
             >
-              <mat-form-field class="example-form-field">
+              <mat-form-field class="drag-drop__field">
                 <mat-label>Column title</mat-label>
                 <input matInput type="text" [(ngModel)]="column.columnTitle" />
                 <button
@@ -559,40 +535,64 @@
               </div>
             </div>
           </div>
-
           <!-- #cards wrapper columns-->
-          <!-- #Drag and drop chips -->
-          <div class="drag-drop__chips--horizontal">
-            <!--subtitle-->
-            <div class="dialog-subtitle">
-              <div class="dialog-subtitle__text">
-                <span>Options</span>
-              </div>
-            </div>
-            <!--#subtitle-->
-            <mat-chip-list
-              class="drag-drop__column--horizontal"
-              cdkDropList
-              cdkDropListOrientation="horizontal"
-              [cdkDropListData]="options2"
-              (cdkDropListDropped)="drop2($event)"
-            >
-              <mat-chip
-                class="task"
-                cdkDrag
-                *ngFor="let option of options2"
-                (removed)="remove(option)"
-              >
-                {{ option.chipName }}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-              </mat-chip>
-            </mat-chip-list>
+          <div
+            class="dialog__message dialog__message--assistance u__flex--flex-end mb-1"
+          >
+            *Add new chip
           </div>
+          <div class="u__flex--flex-end">
+            <div class="drag-drop__add-option">
+              <mat-form-field appearance="outline">
+                <mat-label>Option</mat-label>
+
+                <input
+                  class="input-form"
+                  type="text"
+                  matInput
+                  placeholder="Write an option"
+                  name="chipOption{{ options2.length }}"
+                  id="name{{ options2.length }}"
+                  [(ngModel)]="optionChipName"
+                />
+              </mat-form-field>
+              <button
+                class="circular-button-subtitle"
+                mat-mini-fab
+                (click)="agregarOpcion()"
+              >
+                <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <!-- </div>
+          </div> -->
           <!-- #Drag and drop chips -->
+          <div class="dialog__message dialog__message--assistance mb-1">
+            List of chips
+          </div>
+          <mat-chip-list
+            class="drag-drop__column--horizontal"
+            cdkDropList
+            cdkDropListOrientation="horizontal"
+            [cdkDropListData]="options2"
+            (cdkDropListDropped)="drop2($event)"
+          >
+            <mat-chip
+              class="task"
+              cdkDrag
+              *ngFor="let option of options2"
+              (removed)="remove(option)"
+            >
+              {{ option.chipName }}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
         </div>
+        <!-- #Drag and drop chips -->
       </div>
     </div>
-    <!-- #drag and drop column-->
+    <!-- ## drag and drop columns-->
 
     <!-- drag and drop fill in the blancks-->
     <div class="card-question-radio-button" *ngSwitchCase="'4'">
