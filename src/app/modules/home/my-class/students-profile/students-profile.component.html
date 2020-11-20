@@ -46,56 +46,11 @@
     </div>
   </div>
   <!--#Subtitle-->
-  <!--row dynamic-->
-  <!-- <div class="row">
-    <div
-      *ngFor="let preCard of defaultCard"
-      class="col-lg-3 col-md-6 col-xs-12"
-    >
-      <div class="evaluation-card">
-        <div
-          class="evaluation-card__img"
-          [ngStyle]="{
-            'background-image': getImageUrl(getImageIndex(preCard.idImagen))
-          }"
-        >
-          <div
-            class="evaluation-card__img-overlay"
-            [ngStyle]="{
-              'background-color': sacarColor(preCard.idColor) + 'A6'
-            }"
-          >
-            <div class="evaluation-card__buttons-card">
-              <button
-                class="circular-button-custom-card"
-                (click)="verContenido(1)"
-              >
-                <mat-icon class="circular-button-custom-card__icon">
-                  remove_red_eye
-                </mat-icon>
-              </button>
-            </div>
-            <div class="evaluation-card__content-card">
-              <div
-                class="evaluation-card__circle"
-                [ngStyle]="{ 'background-color': sacarColor(preCard.idColor) }"
-              >
-                {{ preCard.rubrica }}
-              </div>
-              <div class="evaluation-card__title">
-                {{ preCard.nombreModulo }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <!--#row dynamic-->
   <div class="row">
     <!--default attendance -->
     <div
-      *ngFor="let custCards of defaultCard,let predi=index"
+      *ngFor="let custCards of defaultCard; let predi = index"
       class="col-lg-3 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
@@ -108,7 +63,7 @@
           <div
             class="evaluation-card__img-overlay"
             [ngStyle]="{
-              'background-color': '#'+coloresPred[predi] + 'A6'
+              'background-color': '#' + coloresPred[predi] + 'A6'
             }"
           >
             <div class="evaluation-card__buttons-card">
@@ -124,23 +79,26 @@
               <!--#btn ver contenido-->
             </div>
             <div class="evaluation-card__content-card">
-              <div
-                class="evaluation-card__circle"
-                [ngStyle]="{
-                  'background-color': '#'+coloresPred[predi]
-                }"
-              >
-                {{ custCards.rubrica }}
+              <div class="evaluation-card__circle-container">
+                <div
+                  class="evaluation-card__circle"
+                  [ngStyle]="{
+                    'background-color': '#' + coloresPred[predi]
+                  }"
+                >
+                  {{ custCards.rubrica }}
+                </div>
               </div>
-              <div class="evaluation-card__title">
-                {{ custCards.nombreModulo }}
+              <div class="evaluation-card__title-container">
+                <div class="evaluation-card__title">
+                  {{ custCards.nombreModulo }}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
   </div>
   <!--#row-->
   <!--Subtitle-->
@@ -183,16 +141,20 @@
               <!--#btn ver contenido-->
             </div>
             <div class="evaluation-card__content-card">
-              <div
-                class="evaluation-card__circle"
-                [ngStyle]="{
-                  'background-color': sacarColor(custCards.idColor)
-                }"
-              >
-                {{ custCards.rubrica }}
+              <div class="evaluation-card__circle-container">
+                <div
+                  class="evaluation-card__circle"
+                  [ngStyle]="{
+                    'background-color': sacarColor(custCards.idColor)
+                  }"
+                >
+                  {{ custCards.rubrica }}
+                </div>
               </div>
-              <div class="evaluation-card__title">
-                {{ custCards.nombreModulo }}
+              <div class="evaluation-card__title-container">
+                <div class="evaluation-card__title">
+                  {{ custCards.nombreModulo }}
+                </div>
               </div>
             </div>
           </div>
