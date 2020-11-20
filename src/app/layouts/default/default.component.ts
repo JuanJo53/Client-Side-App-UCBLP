@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, HostListener, OnInit, ViewChild } from "@angular/core";
 import { SideBarControlService } from "src/app/_services/side-bar-control.service";
 import { SidebarComponent } from "src/app/shared/components/sidebar/sidebar.component";
 import { LoadingService } from "src/app/_services/loading.service";
@@ -16,15 +16,18 @@ export class DefaultComponent implements OnInit {
 
   @ViewChild("sidenav") public sidenav: SidebarComponent;
   @ViewChild("loading") public loading: LoadingComponent;
+
   isSidebarOpen2: boolean = true;
-  isSidebarOpen3: boolean = true;
-  contentMargin = 26;
+  contentMargin = 0;
+  public innerWidth: number;
+
   constructor(
     private serv: SideBarControlService,
     private servLoading: LoadingService,
     private _location: Location
   ) {}
   ngOnInit() {}
+  @HostListener("window:resize", ["$event"])
   receiveOpen(event) {
     this.isSidebarOpen2 = event;
     if (!this.isSidebarOpen2) {
@@ -35,6 +38,7 @@ export class DefaultComponent implements OnInit {
       //this.isSidebarOpen3 = false;
     }
   }
+
   ngAfterViewInit(): void {
     this.serv.setSidenav(this.sidenav);
     this.servLoading.setLoading(this.loading);

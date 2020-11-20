@@ -1,7 +1,19 @@
+.header-control {
+  //background-color: red;
+}
+.header-control.header-open {
+  margin-left: 26rem !important;
+  transition: 0.5s;
+}
+.header-control.header-close {
+  margin-left: 9rem !important;
+  transition: 0.5s;
+}
 .header {
   //padding: 2rem 0;
   background-color: $color-primary-red !important;
   //padding:0!important;
+
   &__container {
     background-color: transparent !important;
     padding: 5rem 0rem !important;

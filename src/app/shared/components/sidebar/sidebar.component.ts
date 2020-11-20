@@ -8,7 +8,6 @@ import {
 import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LoadingService } from "src/app/_services/loading.service";
-// import { SharedService } from "../../shared.service";
 
 @Component({
   selector: "app-sidebar",
@@ -21,7 +20,20 @@ export class SidebarComponent implements OnInit {
   mylogo: string = "assets/logo.png";
   message: String = "link";
 
+  public innerWidth: number;
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    this.innerWidth = event.target.innerWidth;
+    if (this.innerWidth <= 1500) {
+      this.isSidebarOpen = false;
+    } else {
+      this.isSidebarOpen = true;
+    }
+    this.openEvent.emit(this.isSidebarOpen);
+  }
+
   @Output() openEvent = new EventEmitter<boolean>();
+
   onSidebarMenuToggle() {
     this.isSidebarOpen = !this.isSidebarOpen;
     this.openEvent.emit(this.isSidebarOpen);
@@ -32,8 +44,7 @@ export class SidebarComponent implements OnInit {
     private router: Router,
     private servLoading: LoadingService
   ) {}
-  // constructor() {}
-  // ngOnInit(): void {}
+
   agregarModulos2(data) {
     this.mPersonalizados = [];
     for (let datos of data) {
@@ -83,6 +94,7 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit() {
     // this.data.currentMessage.subscribe((message) => (this.message = message));
+
     this.route.data.subscribe({
       next: (data) => {
         this.agregarModulos(data.modules.body);
