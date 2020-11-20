@@ -176,6 +176,7 @@ export class RepositoryQuestionComponent implements OnInit {
       nuevaPregunta.id=pregunta.id_pregunta;
       nuevaPregunta.respuesta=pregunta.pregunta.respuestas;
       nuevaPregunta.opciones=pregunta.pregunta.opciones;
+      nuevaPregunta.idHabilidad=pregunta.id_habilidad;
       nuevaPregunta.puntuacion=10;
       nuevaPregunta.tipo=1;
       console.log(nuevaPregunta);
@@ -194,6 +195,7 @@ export class RepositoryQuestionComponent implements OnInit {
       nuevaPregunta.id=pregunta.id_pregunta;
       nuevaPregunta.respuesta=pregunta.respuesta;
       nuevaPregunta.opciones=pregunta.opciones;
+      nuevaPregunta.idHabilidad=pregunta.id_habilidad;
       nuevaPregunta.puntuacion=10;
       nuevaPregunta.tipo=1;
       console.log(nuevaPregunta);

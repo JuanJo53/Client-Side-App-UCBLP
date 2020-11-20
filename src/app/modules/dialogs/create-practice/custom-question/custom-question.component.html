@@ -3,30 +3,13 @@
     Choose the question skill
   </div>
   <div class="u__space-evenly">
-    <div class="chip-container">
-      <div class="chip chip--active">
-        <div class="chip__text">Listening</div>
-        <mat-icon class="chip__icon">hearing</mat-icon>
+    <div class="chip-container"  *ngFor="let habilidad of habilidades;let habI =index">
+      <div class="chip " [ngClass]="{'chip--active': nuevaPregunta.idHabilidad ==habI+1}" value=habI+1 (click)="cambiarHabilidad(habI+1)">
+        <div class="chip__text">{{habilidad.tipo}}</div>
+        <mat-icon class="chip__icon">{{habilidad.icon}}</mat-icon>
       </div>
     </div>
-    <div class="chip-container">
-      <div class="chip">
-        <div class="chip__text">Reading</div>
-        <mat-icon class="chip__icon">chrome_reader_mode</mat-icon>
-      </div>
-    </div>
-    <div class="chip-container">
-      <div class="chip">
-        <div class="chip__text">Grammar</div>
-        <mat-icon class="chip__icon">spellcheck</mat-icon>
-      </div>
-    </div>
-    <div class="chip-container">
-      <div class="chip">
-        <div class="chip__text">Vocabulary</div>
-        <mat-icon class="chip__icon">format_shapes</mat-icon>
-      </div>
-    </div>
+    
   </div>
   <div class="dialog__message dialog__message--assistance">
     Choose a type of question and answer

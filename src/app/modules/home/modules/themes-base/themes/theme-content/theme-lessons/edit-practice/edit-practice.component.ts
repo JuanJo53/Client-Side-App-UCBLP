@@ -17,6 +17,7 @@ import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
+import { LoadingService } from 'src/app/_services/loading.service';
 
 @Component({
   selector: "app-edit-practice",
@@ -48,7 +49,8 @@ export class EditPracticeComponent implements OnInit {
     private route: ActivatedRoute,
     private servPrac: PracticesService,
     private location: Location,
-    private tokenServ:TokenStorageService
+    private tokenServ:TokenStorageService,
+    private loading: LoadingService
   ) {}
   
   actPuntaje() {
@@ -69,6 +71,7 @@ export class EditPracticeComponent implements OnInit {
       newPreg.idTipoRespuesta=String(pregunta.id_tipo_respuesta);
       newPreg.recurso=pregunta.recurso;
       newPreg.puntuacion=pregunta.puntuacion_practica_pregunta;
+      newPreg.idHabilidad=pregunta.id_habilidad;
       newPreg.respuestasBool=[];
       for(let op of newPreg.opciones){
         newPreg.respuestasBool.push(false);
@@ -372,15 +375,14 @@ agregarDatos(data){
     if(this.radioButtonValue=="unable"){
       this.paso1.tiempoLimite=null;
     }
-    this.showSpinner = true;
+    this.loading.cambiarLabel("Modificando Práctica");
+    this.loading.activar();
     this.spinnerFinish = false;
-    stepper.next();
     this.servPrac.modPractica(this.paso1,this.preguntas,this.preguntasEli).subscribe({
       next: (data) => {
         if (data.status == 200) {
-          this.correcto = "Se Agregaron Correctamente las preguntas";
-          this.showSpinner = false;
-          this.spinnerFinish = true;
+          this.location.back();
+          this.loading.desactivar();
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";

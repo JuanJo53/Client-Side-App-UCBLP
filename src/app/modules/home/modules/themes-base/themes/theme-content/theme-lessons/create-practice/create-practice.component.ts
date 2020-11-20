@@ -17,6 +17,7 @@ import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 import { Matching } from "src/app/models/Preguntas/Matching";
+import { LoadingService } from 'src/app/_services/loading.service';
 
 export interface ChipOption {
   name: string;
@@ -86,7 +87,8 @@ export class CreatePracticeComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private servPrac: PracticesService,
-    private location: Location
+    private location: Location,
+    private loading:LoadingService
   ) {}
 
   actPuntaje() {
@@ -332,6 +334,9 @@ export class CreatePracticeComponent implements OnInit {
   }
   //Funciones paso 3
   Generar(stepper) {
+    this.loading.cambiarLabel("Generando Práctica...");
+    this.loading.activar();
+    this.showSpinner = true;
     this.paso1.idLeccion = this.idLeccion;
     this.paso1.numero = 1;
     this.paso1.fechaini = this.Date_toYMD(this.paso1.fechaini);
@@ -344,6 +349,7 @@ export class CreatePracticeComponent implements OnInit {
     this.servPrac.addPractica(this.paso1, this.preguntas).subscribe({
       next: (data) => {
         if (data.status == 200) {
+          this.showSpinner = false;
           // this.servPrac
           //   .addPracticaPreguntas(this.preguntas, data.body.idPractica)
           //   .subscribe({
@@ -364,6 +370,9 @@ export class CreatePracticeComponent implements OnInit {
           //       stepper.next();
           //     },
           //   });
+
+          this.location.back();
+          this.loading.desactivar();
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";
@@ -384,10 +393,6 @@ export class CreatePracticeComponent implements OnInit {
   //funcion del loader
   loadData() {
     this.showSpinner = true;
-    setTimeout(() => {
-      this.showSpinner = false;
-      this.spinnerFinish = true;
-    }, 5000);
   }
 
   // combobox matching
