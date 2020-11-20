@@ -308,6 +308,10 @@
     background-color: $color-primary-white !important;
     color: $color-primary-blue !important;
   }
+  &--negative {
+    background-color: $color-primary-red !important;
+    color: $color-primary-white !important;
+  }
 
   // position: relative !important;
   &__icon {
