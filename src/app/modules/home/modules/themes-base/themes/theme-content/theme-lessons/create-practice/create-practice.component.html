@@ -303,7 +303,6 @@
     <mat-step>
       <form>
         <ng-template matStepLabel>Building Question</ng-template>
-
         <div
           class="card__text--no-content"
           *ngIf="preguntas.length == 0; else negative"
@@ -313,13 +312,26 @@
             *No questions added
           </div>
         </div>
-        <!--row added row-->
+
         <ng-template #negative>
+          <div class="subtitle-card-question">
+            <div class="u__space-between">
+              <div class="subtitle-card-question__text">Listening Section</div>
+              <div class="subtitle-card-question__icon">
+                <mat-icon
+                  class="card-question__input-icon"
+                  [inline]="true"
+                  matSuffix
+                  >hearing</mat-icon
+                >
+              </div>
+            </div>
+          </div>
           <div
             *ngFor="let card of preguntas; let i = index"
             [ngSwitch]="card.idTipoRespuesta"
             #template
-            class="card-question mb-1"
+            class="card-question mb-2"
           >
             <div class="u__flex-normal">
               <div class="u__flex-95">

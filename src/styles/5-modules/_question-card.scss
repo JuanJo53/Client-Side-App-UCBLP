@@ -10,33 +10,14 @@
     border: $border-radious-1 solid $color-primary-blue;
     border-radius: $border-radious-1;
   }
-  // &__button {
-  //   //background-color: green;
-  //   flex: 1;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   //background-color: yellow;
-  //   align-items: center;
-  //   &--positive {
-  //     background-color: $color-primary-blue !important;
-  //     margin-bottom: 0.5rem !important;
-  //   }
-  //   &--negative {
-  //     margin-top: 0.5rem !important;
-  //     background-color: $color-primary-red !important;
-  //   }
-  // }
 
   //---------
   &__header {
-    //background-color: red;
     margin-top: 2rem;
-    //background-color: yellow;
+
     display: flex;
     align-items: center;
     &--question {
-      //background-color: yellow;
       flex: 0 1 85%;
       margin-right: 1rem;
     }
@@ -47,9 +28,6 @@
   }
 
   &__content-question {
-    //background-color: red;
-    //display: flex;
-    //flex-direction: column;
     &-inputs {
       width: 100%;
     }
@@ -62,8 +40,6 @@
     //background-color: yellow;
     display: flex;
     align-items: center;
-    //margin-bottom: 1rem;
-    //width: 100%;
     &--button-delete {
       background-color: $color-primary-white;
       height: 3rem;
@@ -84,29 +60,4 @@
       }
     }
   }
-  // .card-question {
-  //   //background-color: red;
-  //   border: $card-width solid $color-primary-blue;
-  //   border-radius: $border-radious-1;
-  //   mat-form-field {
-  //     width: 100%;
-  //   }
-  //   &__text {
-  //     &--no-content {
-  //       color: $color-primary-gray;
-  //       font-size: 2rem;
-  //       display: flex;
-  //       justify-content: center;
-  //     }
-  //   }
-
-  //   &__button--add {
-  //     background-color: $color-primary-blue !important;
-  //     margin-bottom: 2rem !important;
-  //   }
-  //   .example-radio-group {
-  //     display: flex;
-  //     flex-direction: column;
-  //   }
-  // }
 }

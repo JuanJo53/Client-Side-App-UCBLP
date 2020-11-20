@@ -13,6 +13,7 @@
     border-bottom: 0.2rem solid $color-primary-blue;
   }
 }
+
 .dialog-subtitle {
   margin-bottom: 1.5rem;
   width: 100%;
@@ -39,9 +40,6 @@
     font-size: 2.5rem;
     color: $color-primary-blue;
   }
-  // &__buttons-container {
-  //   //background-color: red;
-  // }
 }
 .dialog-subtitle-compound {
   margin-bottom: 1.5rem;
@@ -60,4 +58,31 @@
   color: $color-secondary-blue;
   font-weight: bold;
   font-style: italic;
+}
+
+.subtitle-compound {
+  display: flex;
+  border-bottom: 0.2rem solid $color-primary-blue;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  &__text {
+    font-size: 2.5rem;
+    color: $color-primary-blue;
+  }
+}
+
+.subtitle-card-question {
+  background-color: green;
+  &__text {
+    color: $color-primary-blue;
+    font-size: 2.5rem;
+  }
+  &__icon {
+    color: $color-primary-blue;
+    font-size: 3.5rem;
+  }
+  border-bottom: 0.2rem solid $color-primary-blue;
+  padding-bottom: 1rem;
 }
