@@ -12,6 +12,7 @@ export class Pregunta{
     respuestasBool:any[]=[true];
     idTipoPregunta:string="1";
     idTipoRespuesta:string="1";
+    idHabilidad:number=1;
     recurso:string;
     bloqpunt:boolean=false;
     bloqpreg:boolean=false;
