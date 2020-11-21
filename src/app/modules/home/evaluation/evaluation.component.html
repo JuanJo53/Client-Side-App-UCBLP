@@ -1,28 +1,14 @@
 <div class="container">
-  <!-- buttons de agregar seccion -->
-  <div class="button-module-container">
-    <!-- container for buttons with simple actions-->
-    <div class="button-module-container--actions">
-      <button
-        class="module-button module-button--actions"
-        [ngClass]="{ 'module-button--error': this.controlPuntuacion100 === 1 }"
-        (click)="editarPorcentajes()"
-      >
-        <i class="fas fa-edit module-button__icon"></i>
-        <div class="module-button__text">Edit Percentages</div>
-      </button>
-    </div>
-    <!-- #container for buttons with simple actions-->
-    <!-- container for buttons like excel svg word etc -->
-    <div class="button-module-container-imports">
-      <!-- INSERT BUTTONS IMPORTS HERE!!! -->
-    </div>
-    <!-- #container for buttons like excel svg word etc -->
+  <div class="u__flex--flex-start mt-3">
+    <button
+      class="chip-button chip-button--primary"
+      [ngClass]="{ 'chip-button--error': this.controlPuntuacion100 === 1 }"
+      (click)="editarPorcentajes()"
+    >
+      <i class="fas fa-edit chip-button__icon"></i>
+      <div class="chip-button__text">Edit Percentages</div>
+    </button>
   </div>
-  <!-- //buttons de agregar seccion -->
-  <!-- botton de editar porcentajes -->
-
-  <!-- //botton de editar porcentajes -->
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
@@ -61,9 +47,7 @@
                   class="default-card-attendance__circle"
                   [ngStyle]="{
                     'background-color':
-                      cardsModulosPred[0].estado != 2
-                        ? '#9C5FAFA6'
-                        : '#8f8f8fCC',
+                      cardsModulosPred[0].estado != 2 ? '#9C5FAF' : '#8f8f8fCC',
                     transition: '.5s'
                   }"
                 >
@@ -89,7 +73,7 @@
             class="default-card-theme__img-overlay"
             [ngStyle]="{
               'background-color':
-                cardsModulosPred[1].estado != 2 ? '#98be83A6' : '#8f8f8fCC',
+                cardsModulosPred[1].estado != 2 ? '#be8383A6' : '#8f8f8fCC',
               transition: '.5s'
             }"
           >
@@ -111,9 +95,7 @@
                   class="default-card-theme__circle"
                   [ngStyle]="{
                     'background-color':
-                      cardsModulosPred[1].estado != 2
-                        ? '#98be83A6'
-                        : '#8f8f8fCC',
+                      cardsModulosPred[1].estado != 2 ? '#be8383' : '#8f8f8fCC',
                     transition: '.5s'
                   }"
                 >
@@ -161,9 +143,7 @@
                   class="default-card-practices__circle"
                   [ngStyle]="{
                     'background-color':
-                      cardsModulosPred[2].estado != 2
-                        ? '#498161A6'
-                        : '#8f8f8fCC',
+                      cardsModulosPred[2].estado != 2 ? '#498161' : '#8f8f8fCC',
                     transition: '.5s'
                   }"
                 >
@@ -211,9 +191,7 @@
                   class="default-card-theme-test__circle"
                   [ngStyle]="{
                     'background-color':
-                      cardsModulosPred[3].estado != 2
-                        ? '#403837A6'
-                        : '#8f8f8fCC',
+                      cardsModulosPred[3].estado != 2 ? '#403837' : '#8f8f8fCC',
                     transition: '.5s'
                   }"
                 >
@@ -261,9 +239,7 @@
                   class="default-card-assessment__circle"
                   [ngStyle]="{
                     'background-color':
-                      cardsModulosPred[4].estado != 2
-                        ? '#27649bA6'
-                        : '#8f8f8fCC',
+                      cardsModulosPred[4].estado != 2 ? '#27649b' : '#8f8f8fCC',
                     transition: '.5s'
                   }"
                 >
@@ -355,7 +331,7 @@
                   [ngStyle]="{
                     'background-color':
                       custCards.estado != 2
-                        ? sacarColor(custCards.idColor) + 'A6'
+                        ? sacarColor(custCards.idColor)
                         : '#8f8f8fCC',
                     transition: '.5s'
                   }"

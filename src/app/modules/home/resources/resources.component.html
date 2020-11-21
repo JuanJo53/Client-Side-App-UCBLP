@@ -1,24 +1,10 @@
 <div class="container">
-  <!-- buttons de agregar seccion -->
-  <div class="button-module-container">
-    <!-- container for buttons with simple actions-->
-    <div class="button-module-container--actions">
-      <button
-        class="module-button module-button--actions"
-        (click)="agregarSeccion()"
-      >
-        <i class="fas fa-plus module-button__icon"></i>
-        <div class="module-button__text">Add section</div>
-      </button>
-    </div>
-    <!-- #container for buttons with simple actions-->
-    <!-- container for buttons like excel svg word etc -->
-    <div class="button-module-container-imports">
-      <!-- INSERT BUTTONS IMPORTS HERE!!! -->
-    </div>
-    <!-- #container for buttons like excel svg word etc -->
+  <div class="u__flex--flex-start mt-3">
+    <button class="chip-button chip-button--primary" (click)="agregarSeccion()">
+      <i class="fas fa-plus chip-button__icon"></i>
+      <div class="chip-button__text">Add section</div>
+    </button>
   </div>
-  <!-- //buttons de agregar seccion -->
 
   <div *ngFor="let seccion of ListaSecciones; let i = index">
     <!--Subtitle-->

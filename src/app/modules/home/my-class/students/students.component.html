@@ -1,22 +1,9 @@
 <div class="container">
-  <!-- buttons de agregar seccion -->
-  <div class="button-module-container">
-    <!-- container for buttons with simple actions-->
-    <div class="button-module-container--actions">
-      <!-- INSERT BUTTONS ACTIONS HERE!!! -->
-    </div>
-    <!-- #container for buttons with simple actions-->
-    <!-- container for buttons like excel svg word etc -->
-    <div class="button-module-container-imports">
-      <button
-        class="module-button module-button--excel"
-        (click)="ExportExcel()"
-      >
-        <i class="far fa-file-excel module-button__icon"></i>
-        <div class="module-button__text">Excel</div>
-      </button>
-    </div>
-    <!-- #container for buttons like excel svg word etc -->
+  <div class="u__flex--flex-end mt-3">
+    <button class="chip-button chip-button--excel ml-1" (click)="ExportExcel()">
+      <i class="far fa-file-excel chip-button__icon"></i>
+      <div class="chip-button__text">Excel</div>
+    </button>
   </div>
   <!-- //buttons de agregar seccion -->
   <!--Subtitle-->
