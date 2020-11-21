@@ -320,29 +320,31 @@
                   <div class="dialog__message dialog__message--subtitle mb-2">
                     Answer Section
                   </div>
-                  <div class="question-card-added__content-question">
+                  <div class="radio-button-question">
                     <!-- <form class="example-form"> -->
                     <mat-radio-group
                       aria-label="Select an option"
-                      class="example-radio-group"
+                      class="radio-button-question__radio-group"
                       [disabled]="true"
                       [ngModelOptions]="{ standalone: true }"
                       [(ngModel)]="card.respuesta[0]"
                     >
                       <mat-radio-button
-                        class="question-card-added__choice"
+                        class="radio-button-question__choice"
                         *ngFor="
                           let opcionesRadioButton of card.opciones;
                           let x = index
                         "
                         [value]="x"
                       >
-                        <mat-form-field class="full-width-field">
+                        <mat-form-field
+                          class="radio-button-question__mat-form-field"
+                        >
                           <input
                             [(value)]="card.opciones[x]"
                             style="color: black"
                             readonly
-                            class="question-card-added__choice--input"
+                            class="radio-button-question__choice--input"
                             matInput
                             placeholder="opcion {{ x + 1 }}"
                           />
@@ -400,16 +402,16 @@
                   <div class="dialog__message dialog__message--subtitle mb-2">
                     Answer Section
                   </div>
-                  <div class="question-card-added__content-question">
+                  <div class="checkbox-question">
                     <!-- <form class="example-form"> -->
                     <mat-checkbox
-                      class="card-question__choice"
+                      class="checkbox-question__choice"
                       [disabled]="true"
                       *ngFor="let opcionesCB of card.opciones; let x = index"
                       [(ngModel)]="card.respuestasBool[x]"
                       [ngModelOptions]="{ standalone: true }"
                     >
-                      <mat-form-field class="full-width-field">
+                      <mat-form-field class="checkbox-question__mat-form-field">
                         <input
                           [(value)]="card.opciones[x]"
                           style="color: black"
