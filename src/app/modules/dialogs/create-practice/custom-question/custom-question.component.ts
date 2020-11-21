@@ -27,6 +27,8 @@ import { repeat } from "rxjs/operators";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
+  habilidades=[{tipo:"Listening",icon:"hearing"},{tipo:"Reading",icon:"chrome_reader_mode"},{tipo:"Grammar",icon:"spellcheck"},{tipo:"Vocabulary",icon:"format_shapes"}]
+  habilidadSelec:number=1;
   ocultarFillQuestion = false;
   tipoR = ["Unique", "Multiple", "Columns", "Fill in the blanks", "Combobox's"];
   numColumnas: string = "1";
@@ -136,6 +138,7 @@ export class CustomQuestionComponent implements OnInit {
       }
       this.preguntaAntigua.idTipoPregunta = preg.idTipoPregunta;
       this.preguntaAntigua.idTipoRespuesta = preg.idTipoRespuesta;
+      this.preguntaAntigua.idHabilidad=preg.idHabilidad;
     }
 
     this.nuevaPregunta = preg;
@@ -508,6 +511,10 @@ export class CustomQuestionComponent implements OnInit {
       var verResp = true;
       var verTipoP = true;
       var verTipoR = true;
+      var verTipoH=true;
+      if(nuevaPregunta.idHabilidad!=this.preguntaAntigua.idHabilidad){
+        verTipoH=false;
+      }
 
       //Verifica si las respuestas y opciones son iguales
       switch (nuevaPregunta.idTipoRespuesta) {
@@ -650,7 +657,7 @@ export class CustomQuestionComponent implements OnInit {
       ) {
         verTipoR = false;
       }
-      if (verOpci && verPreg && verResp && verTipoP && verTipoR) {
+      if (verOpci && verPreg && verResp && verTipoP && verTipoR&& verTipoH) {
         if (
           nuevaPregunta.puntuacion != this.preguntaAntigua.puntuacion &&
           this.preguntaAntigua.tipo == 3
@@ -947,5 +954,8 @@ export class CustomQuestionComponent implements OnInit {
     this.optionsTextarea = [];
     this.options = [];
     // # drag and drop
+  }
+  cambiarHabilidad(habilidad){
+    this.nuevaPregunta.idHabilidad=habilidad;
   }
 }

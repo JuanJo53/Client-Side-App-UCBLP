@@ -19,5 +19,8 @@ export class LoadingService {
   public desactivar(){
     this.loading.desactivar();
   }
+  public cambiarLabel(label){
+    this.loading.cambiarLabel(label);
+  }
 
 }

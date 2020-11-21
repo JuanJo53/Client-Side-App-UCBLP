@@ -8,6 +8,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class LoadingComponent implements OnInit {
   cargando:boolean=false;
+  label="Cargando...";
   constructor(private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,9 @@ export class LoadingComponent implements OnInit {
     this.spinner.hide();
     this.cargando=false;
 
+  }
+  cambiarLabel(label){
+    this.label=label;
   }
 
 }

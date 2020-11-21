@@ -1,10 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { UpdateStudentScoreComponent } from "src/app/modules/dialogs/custom-modules/update-student-score/update-student-score.component";
 import { NotasContenidoModulo } from "src/app/models/Teacher/Modules/NotasContenidoModulo";
 import { ExportExcelService } from "src/app/_services/export-excel.service";
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: "app-detail-custom-module",
@@ -23,6 +25,9 @@ export class DetailCustomModuleComponent implements OnInit {
     "id",
   ];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild("TABLE", { static: false }) TABLE: ElementRef;
 
   constructor(
     public dialog: MatDialog,
@@ -58,6 +63,10 @@ export class DetailCustomModuleComponent implements OnInit {
             newCont.posicion = Number(i) + 1;
             this.ELEMENT_DATA.push(newCont);
           }
+          
+          this.dataSource.data = this.ELEMENT_DATA;
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
         }
       },
       error: (err) => {
