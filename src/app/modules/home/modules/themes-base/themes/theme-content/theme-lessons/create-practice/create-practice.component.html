@@ -16,9 +16,9 @@
       <form>
         <ng-template matStepLabel>Initial Information</ng-template>
         <!-- card -->
-        <div class="card-question">
+        <div class="card-question mb-2">
           <div class="container-dialog">
-            <div class="u__flex-normal mb-1">
+            <div class="u__flex-normal">
               <div class="card-question__practice-input-container px-1">
                 <!--subtitle-->
                 <div class="dialog-subtitle">
@@ -789,6 +789,9 @@
                               [ngModelOptions]="{ standalone: true }"
                             />
                           </mat-form-field>
+                          <div class="match-input__icon">
+                            <mat-icon inline="true">arrow_forward</mat-icon>
+                          </div>
                           <mat-form-field class="match-input__container">
                             <mat-label>Match</mat-label>
                             <input
