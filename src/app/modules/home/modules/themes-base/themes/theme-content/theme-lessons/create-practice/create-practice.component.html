@@ -5,9 +5,6 @@
       <span>Practice creation</span>
     </div>
   </div>
-
-  <!--#Subtitle-->
-  <!-------------------------------------------------------------------------->
   <mat-horizontal-stepper
     labelPosition="bottom"
     #stepper
@@ -118,8 +115,6 @@
                 </div>
               </div>
             </div>
-            <!--  //radio button -->
-
             <div class="u__flex-normal">
               <!--start date-->
               <div class="card-question__practice-input-container px-1">
@@ -304,7 +299,7 @@
       <form>
         <ng-template matStepLabel>Building Question</ng-template>
         <div
-          class="card__text--no-content"
+          class="card-question__no-content"
           *ngIf="preguntas.length == 0; else negative"
         >
           <div *ngIf="!paso2bloq">No questions added</div>

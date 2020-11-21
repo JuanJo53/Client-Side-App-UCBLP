@@ -1,17 +1,14 @@
 .question-card-added {
-  //padding: 1rem;
   margin: 2rem 4rem;
   display: flex;
   &__content {
     background-color: $color-secondary-gray;
     flex: 0 1 90%;
     padding: 2rem 2rem;
-    //background-color: red;
     border: $border-radious-1 solid $color-primary-blue;
     border-radius: $border-radious-1;
   }
 
-  //---------
   &__header {
     margin-top: 2rem;
 
