@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
 import { ColorPickerComponent } from "./color-picker/color-picker.component";
 
-
 @NgModule({
   declarations: [AppComponent, ColorPickerComponent],
   imports: [

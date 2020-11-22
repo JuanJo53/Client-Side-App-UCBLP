@@ -3,13 +3,20 @@
     Choose the question skill
   </div>
   <div class="u__space-evenly">
-    <div class="chip-container"  *ngFor="let habilidad of habilidades;let habI =index">
-      <div class="chip " [ngClass]="{'chip--active': nuevaPregunta.idHabilidad ==habI+1}" value=habI+1 (click)="cambiarHabilidad(habI+1)">
-        <div class="chip__text">{{habilidad.tipo}}</div>
-        <mat-icon class="chip__icon">{{habilidad.icon}}</mat-icon>
+    <div
+      class="chip-container"
+      *ngFor="let habilidad of habilidades; let habI = index"
+    >
+      <div
+        class="chip"
+        [ngClass]="{ 'chip--active': nuevaPregunta.idHabilidad == habI + 1 }"
+        value="habI+1"
+        (click)="cambiarHabilidad(habI + 1)"
+      >
+        <div class="chip__text">{{ habilidad.tipo }}</div>
+        <mat-icon class="chip__icon">{{ habilidad.icon }}</mat-icon>
       </div>
     </div>
-    
   </div>
   <div class="dialog__message dialog__message--assistance">
     Choose a type of question and answer
@@ -123,6 +130,51 @@
             >
           </mat-form-field>
         </div>
+        <!--  Listening Resources -->
+        <div class="dialog__message dialog__message--assistance mb-1">
+          Listening resource
+        </div>
+        <div class="u__flex mb-1">
+          <div class="u__flex-95">
+            <ngx-audio-player
+              [playlist]="msaapPlaylist"
+              [displayTitle]="msaapDisplayTitle"
+              [autoPlay]="false"
+              muted="muted"
+              [displayPlaylist]="msaapDisplayPlayList"
+              (trackEnded)="onEnded($event)"
+              [displayVolumeControls]="msaapDisplayVolumeControls"
+              [disablePositionSlider]="msaapDisablePositionSlider"
+              [expanded]="true"
+            ></ngx-audio-player>
+          </div>
+          <div class="u__flex-05 ml-1 u__flex--flex-end">
+            <button class="circular-button--primary" mat-mini-fab>
+              <!--download-->
+              <mat-icon>file_upload</mat-icon>
+              <!--#download-->
+            </button>
+          </div>
+        </div>
+        <!-- #Listening Resources-->
+        <!-- Reading Resource -->
+        <div class="dialog__message dialog__message--assistance mb-1">
+          Reading resource
+        </div>
+        <div class="u__space-between mb-1">
+          <div class="u__flex">
+            <mat-icon class="dialog__file-container--icon"
+              >insert_drive_file</mat-icon
+            >
+            <div class="dialog__file-container--file-name-big">File.pdf</div>
+          </div>
+          <button class="circular-button--primary" mat-mini-fab>
+            <!--download-->
+            <mat-icon>file_upload</mat-icon>
+            <!--#download-->
+          </button>
+        </div>
+        <!-- #Reading Resource -->
 
         <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
           *Check the answers

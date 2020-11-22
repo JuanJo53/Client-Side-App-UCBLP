@@ -20,6 +20,7 @@ import { DragandDropColumns } from "src/app/models/Dragandrop/DragandDropColumn"
 import { Column } from "src/app/models/Dragandrop/Column";
 import { Matching } from "src/app/models/Preguntas/Matching";
 import { repeat } from "rxjs/operators";
+import { Track } from "ngx-audio-player/lib/model/track.model";
 
 @Component({
   selector: "app-custom-question",
@@ -27,8 +28,13 @@ import { repeat } from "rxjs/operators";
   styleUrls: ["./custom-question.component.scss"],
 })
 export class CustomQuestionComponent implements OnInit {
-  habilidades=[{tipo:"Listening",icon:"hearing"},{tipo:"Reading",icon:"chrome_reader_mode"},{tipo:"Grammar",icon:"spellcheck"},{tipo:"Vocabulary",icon:"format_shapes"}]
-  habilidadSelec:number=1;
+  habilidades = [
+    { tipo: "Listening", icon: "hearing" },
+    { tipo: "Reading", icon: "chrome_reader_mode" },
+    { tipo: "Grammar", icon: "spellcheck" },
+    { tipo: "Vocabulary", icon: "format_shapes" },
+  ];
+  habilidadSelec: number = 1;
   ocultarFillQuestion = false;
   tipoR = ["Unique", "Multiple", "Columns", "Fill in the blanks", "Combobox's"];
   numColumnas: string = "1";
@@ -55,7 +61,9 @@ export class CustomQuestionComponent implements OnInit {
     { value: "3", display: "Three" },
     { value: "4", display: "Four" },
   ];
-  matchingInputs: Matching[] = [{keyword:"Example Keyword",match:"Example Match"}];
+  matchingInputs: Matching[] = [
+    { keyword: "Example Keyword", match: "Example Match" },
+  ];
 
   //drag and drop
   value = "Clear me";
@@ -82,7 +90,7 @@ export class CustomQuestionComponent implements OnInit {
         this.tipoRespuesta = [];
         this.tipoRespuesta.push({ value: "1", display: this.tipoR[0] });
         this.tipoRespuesta.push({ value: "2", display: this.tipoR[1] });
-        if(this.nuevaPregunta.idTipoRespuesta !=="2"){
+        if (this.nuevaPregunta.idTipoRespuesta !== "2") {
           this.nuevaPregunta.idTipoRespuesta = "1";
         }
         break;
@@ -90,14 +98,14 @@ export class CustomQuestionComponent implements OnInit {
         this.tipoRespuesta = [];
         this.tipoRespuesta.push({ value: "3", display: this.tipoR[2] });
         this.tipoRespuesta.push({ value: "4", display: this.tipoR[3] });
-        if(this.nuevaPregunta.idTipoRespuesta !=="4"){
+        if (this.nuevaPregunta.idTipoRespuesta !== "4") {
           this.nuevaPregunta.idTipoRespuesta = "3";
         }
         break;
       case "3":
         this.tipoRespuesta = [];
         this.tipoRespuesta.push({ value: "5", display: this.tipoR[4] });
-          this.nuevaPregunta.idTipoRespuesta = "5";
+        this.nuevaPregunta.idTipoRespuesta = "5";
         break;
     }
   }
@@ -124,7 +132,7 @@ export class CustomQuestionComponent implements OnInit {
   cargarPreguntaModificar() {
     var preg = this.dataDialog["preg"] as Pregunta;
     console.log(preg);
-    if (preg.tipo) {      
+    if (preg.tipo) {
       this.preguntaAntigua.pregunta = preg.pregunta;
       this.preguntaAntigua.puntuacion = preg.puntuacion;
       this.preguntaAntigua.tipo = preg.tipo;
@@ -138,13 +146,12 @@ export class CustomQuestionComponent implements OnInit {
       }
       this.preguntaAntigua.idTipoPregunta = preg.idTipoPregunta;
       this.preguntaAntigua.idTipoRespuesta = preg.idTipoRespuesta;
-      this.preguntaAntigua.idHabilidad=preg.idHabilidad;
+      this.preguntaAntigua.idHabilidad = preg.idHabilidad;
     }
 
     this.nuevaPregunta = preg;
     switch (preg.idTipoRespuesta) {
       case "2":
-
         this.checkboxOpciones = [];
         for (let i in preg.opciones) {
           this.checkboxOpciones.push({
@@ -178,55 +185,52 @@ export class CustomQuestionComponent implements OnInit {
         }
         this.numColumnas = String(preg.respuesta.length);
         break;
-        //Caso 4 para Fill in the blanks 
-      case "4":       
-      this.dragdropText="";
-        var indiceOpciones=[];
+      //Caso 4 para Fill in the blanks
+      case "4":
+        this.dragdropText = "";
+        var indiceOpciones = [];
         this.ocultarFillQuestion = true;
-        var chipTextArea=preg.respuesta;
-        var contA=0;
-        var cOpci=0;
-        for(let chip of chipTextArea){
-          if(chip==="*"){     
-            this.dragdropText+=preg.opciones[cOpci]+" ";       
+        var chipTextArea = preg.respuesta;
+        var contA = 0;
+        var cOpci = 0;
+        for (let chip of chipTextArea) {
+          if (chip === "*") {
+            this.dragdropText += preg.opciones[cOpci] + " ";
             var relleno = "";
             for (let i = 0; i < preg.opciones[cOpci].length; i++) {
               relleno += ". ";
             }
-            this.optionsTextarea.push({chipName:relleno});
+            this.optionsTextarea.push({ chipName: relleno });
             indiceOpciones.push(contA);
-            cOpci++
-
+            cOpci++;
+          } else {
+            this.dragdropText += chip + " ";
+            this.optionsTextarea.push({ chipName: chip });
           }
-          else{
-            this.dragdropText+=chip+" ";
-            this.optionsTextarea.push({chipName:chip});
-          }          
-          contA++;        
+          contA++;
         }
-        var contO=0;
-        for(let opcion of preg.opciones){
-          if(contO<indiceOpciones.length){
-            this.options.push({chipName:opcion,numero:indiceOpciones[contO]});
-          }
-          else{
-            this.options.push({chipName:opcion,numero:-1});
+        var contO = 0;
+        for (let opcion of preg.opciones) {
+          if (contO < indiceOpciones.length) {
+            this.options.push({
+              chipName: opcion,
+              numero: indiceOpciones[contO],
+            });
+          } else {
+            this.options.push({ chipName: opcion, numero: -1 });
           }
           contO++;
         }
         break;
       case "5":
-        this.matchingInputs=[];
-        for(let i in preg.respuesta){
-          let match=new Matching();
-          match.keyword=preg.opciones[i];
-          match.match=preg.respuesta[i];
+        this.matchingInputs = [];
+        for (let i in preg.respuesta) {
+          let match = new Matching();
+          match.keyword = preg.opciones[i];
+          match.match = preg.respuesta[i];
           this.matchingInputs.push(match);
         }
         break;
-
-
-
     }
   }
   ngOnInit(): void {
@@ -295,38 +299,38 @@ export class CustomQuestionComponent implements OnInit {
         break;
 
       case "4":
-          if (this.nuevaPregunta.opciones.length == 0)
+        if (this.nuevaPregunta.opciones.length == 0)
+          this.nuevaPregunta.bloqopci = true;
+        else {
+          if (this.nuevaPregunta.respuesta.length == 0)
             this.nuevaPregunta.bloqopci = true;
-          else {
-            if (this.nuevaPregunta.respuesta.length==0) this.nuevaPregunta.bloqopci = true;
-            else this.nuevaPregunta.bloqopci = false;
-          }
-          break; 
+          else this.nuevaPregunta.bloqopci = false;
+        }
+        break;
       case "5":
-            if (this.nuevaPregunta.opciones.length == 0)
-              this.nuevaPregunta.bloqopci = true;
-            else {
-              if (this.nuevaPregunta.respuesta.length==0) this.nuevaPregunta.bloqopci = true;
-              else this.nuevaPregunta.bloqopci = false;
-            }
-            var ver=true;
-            for(let opcion of this.nuevaPregunta.opciones){
-              if(String(opcion).trim()==""){
-                ver=false;
-              }
-            }
-            for(let respuesta of this.nuevaPregunta.respuesta){
-              if(String(respuesta).trim()==""){
-                ver=false;
-              }
-            }
-            if(ver=false){
-              this.nuevaPregunta.bloqopci=true;
-            }
-            else
-            this.nuevaPregunta.bloqopci=false;
-            console.log(this.nuevaPregunta);   
-            break;  
+        if (this.nuevaPregunta.opciones.length == 0)
+          this.nuevaPregunta.bloqopci = true;
+        else {
+          if (this.nuevaPregunta.respuesta.length == 0)
+            this.nuevaPregunta.bloqopci = true;
+          else this.nuevaPregunta.bloqopci = false;
+        }
+        var ver = true;
+        for (let opcion of this.nuevaPregunta.opciones) {
+          if (String(opcion).trim() == "") {
+            ver = false;
+          }
+        }
+        for (let respuesta of this.nuevaPregunta.respuesta) {
+          if (String(respuesta).trim() == "") {
+            ver = false;
+          }
+        }
+        if ((ver = false)) {
+          this.nuevaPregunta.bloqopci = true;
+        } else this.nuevaPregunta.bloqopci = false;
+        console.log(this.nuevaPregunta);
+        break;
     }
 
     if (this.nuevaPregunta.pregunta === "") this.nuevaPregunta.bloqpreg = true;
@@ -426,53 +430,51 @@ export class CustomQuestionComponent implements OnInit {
         this.nuevaPregunta.opciones = opciones;
         return true;
       case "4":
-        var respuestas=[];
-        var opciones=[];
-        var pivot=0;
-        for(let i=1;i<this.options.length;i++){
+        var respuestas = [];
+        var opciones = [];
+        var pivot = 0;
+        for (let i = 1; i < this.options.length; i++) {
           console.log(this.options);
-          pivot=Number(i);
-          while(pivot>0&&this.options[pivot].numero<this.options[pivot-1].numero){
-            var auxi=this.options[pivot-1];
-            this.options[pivot-1]=this.options[pivot];
-            this.options[pivot]=auxi;
+          pivot = Number(i);
+          while (
+            pivot > 0 &&
+            this.options[pivot].numero < this.options[pivot - 1].numero
+          ) {
+            var auxi = this.options[pivot - 1];
+            this.options[pivot - 1] = this.options[pivot];
+            this.options[pivot] = auxi;
             pivot--;
           }
-        } 
-        var extras=[]; 
-        this.nuevaPregunta.opciones=[];
-        for(let option of this.options){
-          if(option.numero==-1){
+        }
+        var extras = [];
+        this.nuevaPregunta.opciones = [];
+        for (let option of this.options) {
+          if (option.numero == -1) {
             extras.push(option.chipName);
-          }
-          else{
+          } else {
             this.nuevaPregunta.opciones.push(option.chipName);
           }
         }
-        for(let extra of extras){
+        for (let extra of extras) {
           this.nuevaPregunta.opciones.push(extra);
         }
-        for(let option of this.optionsTextarea){
-          if (
-            option.chipName.split(". ")[0] ===
-            option.chipName
-          ){
+        for (let option of this.optionsTextarea) {
+          if (option.chipName.split(". ")[0] === option.chipName) {
             respuestas.push(option.chipName);
-          }
-          else{
+          } else {
             respuestas.push("*");
           }
         }
-        this.nuevaPregunta.respuesta=respuestas;
+        this.nuevaPregunta.respuesta = respuestas;
         return true;
       case "5":
-        this.nuevaPregunta.respuesta=[];
-        this.nuevaPregunta.opciones=[];
-        for(let match of this.matchingInputs){
+        this.nuevaPregunta.respuesta = [];
+        this.nuevaPregunta.opciones = [];
+        for (let match of this.matchingInputs) {
           this.nuevaPregunta.respuesta.push(match.match);
           this.nuevaPregunta.opciones.push(match.keyword);
         }
-        return true;  
+        return true;
     }
   }
   cambiarColumnas(valor) {
@@ -497,12 +499,12 @@ export class CustomQuestionComponent implements OnInit {
     }
   }
   clickChipOptions(chip: number) {
-    if(this.options[chip].numero!=-1){
+    if (this.options[chip].numero != -1) {
       this.optionsTextarea.splice(this.options[chip].numero, 1, {
         chipName: this.options[chip].chipName,
       });
     }
-      this.options.splice(chip, 1);
+    this.options.splice(chip, 1);
   }
   verificarRepo(nuevaPregunta: Pregunta): boolean {
     try {
@@ -511,9 +513,9 @@ export class CustomQuestionComponent implements OnInit {
       var verResp = true;
       var verTipoP = true;
       var verTipoR = true;
-      var verTipoH=true;
-      if(nuevaPregunta.idHabilidad!=this.preguntaAntigua.idHabilidad){
-        verTipoH=false;
+      var verTipoH = true;
+      if (nuevaPregunta.idHabilidad != this.preguntaAntigua.idHabilidad) {
+        verTipoH = false;
       }
 
       //Verifica si las respuestas y opciones son iguales
@@ -612,36 +614,46 @@ export class CustomQuestionComponent implements OnInit {
                 verOpci = false;
               }
             }
-            } else verOpci = false;
-            break;
-          case "4":
-            for(let resp in nuevaPregunta.respuesta){
-              if(this.preguntaAntigua.respuesta[resp]!=nuevaPregunta.respuesta[resp]){
-                verOpci=false;
-                
-              }
+          } else verOpci = false;
+          break;
+        case "4":
+          for (let resp in nuevaPregunta.respuesta) {
+            if (
+              this.preguntaAntigua.respuesta[resp] !=
+              nuevaPregunta.respuesta[resp]
+            ) {
+              verOpci = false;
             }
-            
-            for(let opci in nuevaPregunta.opciones){
-              if(this.preguntaAntigua.opciones[opci]!=nuevaPregunta.opciones[opci]){
-                verOpci=false;                
-              }
-            }   
-            break;
-          case "5":
-            for(let resp in nuevaPregunta.respuesta){
-              if(this.preguntaAntigua.respuesta[resp]!=nuevaPregunta.respuesta[resp]){
-                verOpci=false;
-                
-              }
+          }
+
+          for (let opci in nuevaPregunta.opciones) {
+            if (
+              this.preguntaAntigua.opciones[opci] !=
+              nuevaPregunta.opciones[opci]
+            ) {
+              verOpci = false;
             }
-            
-            for(let opci in nuevaPregunta.opciones){
-              if(this.preguntaAntigua.opciones[opci]!=nuevaPregunta.opciones[opci]){
-                verOpci=false;                
-              }
+          }
+          break;
+        case "5":
+          for (let resp in nuevaPregunta.respuesta) {
+            if (
+              this.preguntaAntigua.respuesta[resp] !=
+              nuevaPregunta.respuesta[resp]
+            ) {
+              verOpci = false;
             }
-            break;
+          }
+
+          for (let opci in nuevaPregunta.opciones) {
+            if (
+              this.preguntaAntigua.opciones[opci] !=
+              nuevaPregunta.opciones[opci]
+            ) {
+              verOpci = false;
+            }
+          }
+          break;
       }
 
       if (nuevaPregunta.pregunta !== this.preguntaAntigua.pregunta) {
@@ -657,7 +669,7 @@ export class CustomQuestionComponent implements OnInit {
       ) {
         verTipoR = false;
       }
-      if (verOpci && verPreg && verResp && verTipoP && verTipoR&& verTipoH) {
+      if (verOpci && verPreg && verResp && verTipoP && verTipoR && verTipoH) {
         if (
           nuevaPregunta.puntuacion != this.preguntaAntigua.puntuacion &&
           this.preguntaAntigua.tipo == 3
@@ -729,12 +741,12 @@ export class CustomQuestionComponent implements OnInit {
       this.options2.splice(index, 1);
     }
   }
-  removeList(option: ChipOption,list:Column): void {
+  removeList(option: ChipOption, list: Column): void {
     const index = list.chip.indexOf(option);
 
     if (index >= 0) {
       this.options2.push(option);
-      list.chip.splice(index,1);
+      list.chip.splice(index, 1);
     }
   }
   remove2(option: Column): void {
@@ -810,46 +822,36 @@ export class CustomQuestionComponent implements OnInit {
   //   }
   // }
 
-
-
-
-
-
-
-
-
   //drag drop version 2
 
   token: ChipOption = { chipName: "*" };
   optionsTextarea: ChipOption[] = [];
-  dragdropText: string="";
+  dragdropText: string = "";
   textareaview() {
-    
-    this.optionsTextarea=[];
-    this.options=[];
-    var splitText=this.dragdropText.split(" ");
-    var contEsp=0;
-    for(let pal of splitText){
-      if(pal===""){
+    this.optionsTextarea = [];
+    this.options = [];
+    var splitText = this.dragdropText.split(" ");
+    var contEsp = 0;
+    for (let pal of splitText) {
+      if (pal === "") {
         contEsp++;
       }
     }
-    if(contEsp!=splitText.length){
+    if (contEsp != splitText.length) {
       this.ocultarFillQuestion = true;
-    var x = this.dragdropText;
-    var arrayWords = x.split(" ");
-    for (var i = 0; i < arrayWords.length; i += 1) {
-      //console.log("En el índice '" + i + "' hay este valor: " + arrayWords[i]);
-      if (arrayWords[i] != "") {
-        this.crearChipsParaOpciones(arrayWords[i]);
+      var x = this.dragdropText;
+      var arrayWords = x.split(" ");
+      for (var i = 0; i < arrayWords.length; i += 1) {
+        //console.log("En el índice '" + i + "' hay este valor: " + arrayWords[i]);
+        if (arrayWords[i] != "") {
+          this.crearChipsParaOpciones(arrayWords[i]);
+        }
       }
-    }
-    //console.log(this.dragdropText);
+      //console.log(this.dragdropText);
     }
   }
-  textAreaEdit(){
-    this.ocultarFillQuestion = false;   
-
+  textAreaEdit() {
+    this.ocultarFillQuestion = false;
   }
 
   crearChipsParaOpciones(word) {
@@ -859,27 +861,15 @@ export class CustomQuestionComponent implements OnInit {
     auxChip.chipName = word;
     this.optionsTextarea.push(auxChip);
   }
-  agregarOpcionExtraFill(){    
-    if(this.optionChipName!==""){
+  agregarOpcionExtraFill() {
+    if (this.optionChipName !== "") {
       this.options.push({
         chipName: this.optionChipName,
         numero: -1,
       });
-      this.optionChipName="";
+      this.optionChipName = "";
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   drop3(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -955,7 +945,26 @@ export class CustomQuestionComponent implements OnInit {
     this.options = [];
     // # drag and drop
   }
-  cambiarHabilidad(habilidad){
-    this.nuevaPregunta.idHabilidad=habilidad;
+  cambiarHabilidad(habilidad) {
+    this.nuevaPregunta.idHabilidad = habilidad;
+  }
+
+  // resources
+
+  msaapDisplayTitle = true;
+  msaapDisplayPlayList = true;
+  msaapPageSizeOptions = [2, 4, 6];
+  msaapDisplayVolumeControls = true;
+  msaapDisablePositionSlider = true;
+
+  // Material Style Advance Audio Player Playlist
+  msaapPlaylist: Track[] = [
+    // {
+    //   title: "i dont wanna miss a thing",
+    //   link: "",
+    // },
+  ];
+  onEnded($event) {
+    console.log("Ended");
   }
 }

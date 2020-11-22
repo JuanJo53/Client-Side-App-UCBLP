@@ -98,8 +98,9 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { MatDividerModule } from "@angular/material/divider";
 import { NgxGlideModule } from "ngx-glide";
-import {NgxSpinnerModule} from 'ngx-spinner'
+import { NgxSpinnerModule } from "ngx-spinner";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { NgxAudioPlayerModule } from "ngx-audio-player";
 
 @NgModule({
   declarations: [
@@ -206,6 +207,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     NgxGlideModule,
     NgxSpinnerModule,
     MatTooltipModule,
+    NgxAudioPlayerModule,
   ],
 })
 export class DefaultModule {}
