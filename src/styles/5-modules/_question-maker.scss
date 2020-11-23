@@ -1,7 +1,69 @@
-// .question-maker-container {
-//   margin-top: 4rem;
-//   margin-bottom: 4rem;
-// }
+.card-question {
+  border: $card-width solid $color-primary-blue;
+  border-radius: $border-radious-1-5;
+  border-left: $border-radious-1-5 solid $color-primary-blue;
+  padding: 2rem 1rem;
+  margin: 1rem 0;
+  &__instruction {
+    width: 100%;
+  }
+  &__input-icon {
+    color: $color-primary-blue;
+  }
+  //
+  &__text {
+    &--no-content {
+      color: $color-primary-gray;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__header {
+    //background-color: red;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+
+    //background-color: red;
+    &--question {
+      width: 79%;
+      margin-right: 0.5rem;
+      //background-color: yellowgreen;
+      @include respond-dialogs(tab-lan) {
+        //background-color: red;
+        margin-right: 0rem;
+        width: 100%;
+      }
+    }
+    &--score {
+      width: 19%;
+      margin-left: 0.5rem;
+      //background-color: skyblue;
+      @include respond-dialogs(tab-lan) {
+        //background-color: red;
+        margin-left: 0rem;
+        width: 100%;
+      }
+    }
+  }
+  &__choice {
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+  }
+  &__button--add {
+    background-color: $color-primary-blue !important;
+    margin-bottom: 2rem !important;
+  }
+
+  &__input-form {
+    width: 100%;
+    //background-color: blue;
+  }
+}
 .progress-bar {
   display: flex;
   flex-direction: column;
@@ -65,94 +127,38 @@
   background-color: $color-secondary-blue !important;
 }
 
-.card-question {
-  border: $card-width solid $color-primary-blue;
-  border-radius: $border-radious-1-5;
-  border-left: $border-radious-1-5 solid $color-primary-blue;
-  padding: 2rem 1rem;
-  margin: 1rem 0;
-  &__instruction {
-    width: 100%;
-  }
-  &__input-icon {
-    color: $color-primary-blue;
-  }
-  //
-  &__text {
-    &--no-content {
-      color: $color-primary-gray;
-      font-size: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-  }
-  &__header {
-    //background-color: red;
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-    flex-flow: wrap;
-
-    //background-color: red;
-    &--question {
-      width: 79%;
-      margin-right: 0.5rem;
-      //background-color: yellowgreen;
-      @include respond-dialogs(tab-lan) {
-        //background-color: red;
-        margin-right: 0rem;
-        width: 100%;
-      }
-    }
-    &--score {
-      width: 19%;
-      margin-left: 0.5rem;
-      //background-color: skyblue;
-      @include respond-dialogs(tab-lan) {
-        //background-color: red;
-        margin-left: 0rem;
-        width: 100%;
-      }
-    }
-  }
-  &__choice {
-    display: flex;
-    align-items: center;
-  }
-  &__content {
-    // &-inputs {
-    //   width: 100%;
-    // }
-    // .mat-form-field-infix {
-    //   width: 75rem !important;
-    // }
-  }
-  &__button--add {
-    background-color: $color-primary-blue !important;
-    margin-bottom: 2rem !important;
-  }
-  // .example-radio-group {
-  //   display: flex;
-  //   flex-direction: column;
-  // }
-}
-// .full-width-field {
-// }
-// .example-form {
-//   min-width: 150px;
-//   max-width: 500px;
-//   width: 100%;
-// }
-// .box {
-//   background-color: pink;
-//   width: 100%;
-// }
-
 //specials
 .mat-stepper__edit {
   &.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
     padding: 24px 200px !important;
     //margin: 0 200px;
     //background-color: red !important;
+  }
+}
+//inputs for creation!!!
+.card-question {
+  &__practice-input-container {
+    //background-color: red;
+    width: 50%;
+  }
+}
+
+.card-question__no-content {
+  display: flex;
+  border: 0.25rem solid $color-primary-blue;
+  border-radius: 2.5rem;
+  justify-content: center;
+  color: $color-primary-blue;
+  padding: 5rem 0rem !important;
+  font-size: 2.5rem;
+}
+
+.card {
+  margin-top: 2rem;
+  padding: 4rem 0rem;
+  border: $card-width solid $color-primary-blue;
+  border-radius: $border-radious-1;
+  mat-form-field {
+    width: 100%;
   }
 }

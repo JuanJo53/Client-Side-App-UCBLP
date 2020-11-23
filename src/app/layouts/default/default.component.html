@@ -14,10 +14,12 @@
       #sidenav
     ></app-sidebar>
   </mat-drawer>
-  <!-- [ngStyle]="{ 'margin-left.rem': contentMargin }" -->
   <mat-drawer-content
-    [ngStyle]="{ 'margin-left.rem': contentMargin, transition: '0.5s' }"
+    class="header-control"
+    [class.header-open]="isSidebarOpen2"
+    [class.header-close]="!isSidebarOpen2"
   >
+    <!-- [ngStyle]="{ 'margin-left.rem': contentMargin, transition: '0.5s' }" -->
     <app-header></app-header>
     <router-outlet>
       <button

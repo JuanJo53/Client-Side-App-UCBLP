@@ -197,29 +197,28 @@
 //-----#button table-----
 
 // module buttons
-.module-button {
+.chip-button {
   cursor: pointer;
-  margin-top: 2rem;
   opacity: 55%;
   border-radius: 2.5rem;
-  text-align: right;
   font-size: 1.25rem;
   padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  &--actions {
-    background-color: $color-primary-blue;
-    color: $color-primary-white;
-  }
-  &--error {
-    background-color: $color-primary-red;
+  &__text,
+  &__icon {
     color: $color-primary-white;
   }
   &--excel {
     background-color: $color-primary-excel;
-    color: $color-primary-white;
+  }
+  &--primary {
+    background-color: $color-primary-blue;
+  }
+  &--error {
+    background-color: $color-primary-red;
   }
 
   &__text {
@@ -238,16 +237,6 @@
     outline: 0;
   }
 }
-.button-module-container {
-  display: flex;
-  align-items: center;
-  &--actions {
-    margin-right: auto;
-  }
-  &--imports {
-    margin-left: auto;
-  }
-}
 // --- module buttons
 .dialog-circular-minus {
   background-color: $color-secondary-blue;
@@ -255,20 +244,6 @@
   height: 3rem;
   width: 3rem;
 }
-// #module buttons
-
-//-----question choice-----
-// .button-delete__question-choice {
-//   width: 2.5rem;
-//   height: 2.5rem;
-//   margin: 0;
-//   background-color: red;
-//   border-radius: 50%;
-//   &--icon {
-//     color: $color-primary-red;
-//   }
-// }
-//-----#question choice-----
 
 .group-buttons__dialog {
   display: flex;
@@ -308,6 +283,10 @@
     background-color: $color-primary-white !important;
     color: $color-primary-blue !important;
   }
+  &--negative {
+    background-color: $color-primary-red !important;
+    color: $color-primary-white !important;
+  }
 
   // position: relative !important;
   &__icon {
@@ -343,7 +322,7 @@
 //question
 .circle-button {
   cursor: pointer;
-  background-color: red;
+  //background-color: red;
   border: none;
   outline: none;
   border-radius: 50rem;
@@ -367,23 +346,4 @@
     opacity: 100%;
     transition: 0.75s;
   }
-  // &--button-delete {
-  //   background-color: $color-primary-white;
-  //   height: 3rem;
-  //   width: 3rem;
-  //   border-radius: 50%;
-  //   border: none;
-  //   outline: none;
-  //   &-icon {
-  //     color: $color-primary-gray;
-  //   }
-  //   &:hover {
-  //     background-color: lighten($color-primary-gray, 50%);
-  //     transition: 0.75s;
-  //     cursor: pointer;
-  //   }
-  //   .mat-icon {
-  //     vertical-align: middle;
-  //   }
-  // }
 }

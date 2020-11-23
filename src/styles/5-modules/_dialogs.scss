@@ -111,6 +111,11 @@ mat-datepicker-toggle {
     color: black;
     overflow: hidden;
   }
+  &--file-name-big {
+    //background-color: orange;
+    color: $color-primary-blue;
+    font-size: 1.8rem;
+  }
 }
 
 .dialog-schedule {

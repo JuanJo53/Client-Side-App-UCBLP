@@ -1,4 +1,3 @@
-@import "4-layout/navbar";
 .navbar-brand {
   display: flex;
   //background-color: red;
@@ -9,10 +8,9 @@
     display: flex;
     justify-content: left;
     align-items: center;
-   // background-color: orange;
+    // background-color: orange;
   }
   &__img {
-   
     width: 80px;
     height: 100%;
     background-size: cover;
@@ -22,7 +20,7 @@
   &__text {
     font-size: 2.5rem;
   }
-  &__header-buttons{
+  &__header-buttons {
     justify-content: flex-start;
     //background-color: red;
   }

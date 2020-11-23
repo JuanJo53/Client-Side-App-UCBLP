@@ -35,6 +35,7 @@
     "mat-timepicker": "^4.0.7",
     "ng-file-upload": "^12.2.13",
     "ng2-charts": "^2.3.2",
+    "ngx-audio-player": "^8.1.1",
     "ngx-glide": "^10.1.0",
     "ngx-material-timepicker": "^5.5.3",
     "ngx-spinner": "^10.0.1",

@@ -124,9 +124,15 @@
       @content;
     }
   }
+  @if $breakpoint == normal-desktop {
+    @media (max-width: 89.375em) {
+      // 1430/16=75.06
+      @content;
+    }
+  }
   @if $breakpoint == big-desktop {
-    @media (min-width: 75.06em) {
-      // 1201/16=75.06
+    @media (min-width: 89.375em) {
+      // 1430/16=75.06
       @content;
     }
   }

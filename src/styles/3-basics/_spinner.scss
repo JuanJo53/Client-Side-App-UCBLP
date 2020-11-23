@@ -1,20 +1,16 @@
-@import "1-helpers/variables";
-@import "1-helpers/mixins";
-
-.mat-progress-spinner circle, .mat-spinner circle {
-    stroke: $color-primary-blue !important;
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $color-primary-blue !important;
 }
-.spinner{
-    display: flex;
-    margin-top: 4rem;
-    align-items: center;
-    justify-content: center;
- 
+.spinner {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
 }
-.spinner2{
-    display: flex;
-    margin-top: 0rem;
-    align-items: center;
-    justify-content: center;
- 
+.spinner2 {
+  display: flex;
+  margin-top: 0rem;
+  align-items: center;
+  justify-content: center;
 }
