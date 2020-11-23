@@ -54,4 +54,7 @@ export class PracticesService {
   getPracticaIndividual(idNotaPractica:number){
     return this.http.get(apiKey.api+"/teacher/practice/scores/individual/"+idNotaPractica,{observe:'response'});
   }
+  getDataSet(){
+    return this.http.get(apiKey.api+"/teacher/practice/dataset",{observe:'response'})
+  }
 }
