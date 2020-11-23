@@ -21,6 +21,7 @@ import { SharedService } from "src/app/shared/shared.service";
 import { ExportExcelService } from "src/app/_services/export-excel.service";
 import { TooltipPosition } from "@angular/material/tooltip";
 import { FormControl } from "@angular/forms";
+import { PracticesService } from 'src/app/_services/teacher_services/practices.service';
 export interface ListaDeNotas {
   nombre: string;
   posicion: number;
@@ -89,7 +90,8 @@ export class QualificationComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private data: SharedService,
-    private exc: ExportExcelService
+    private exc: ExportExcelService,
+    private practiceS:PracticesService
   ) {}
   cargarDatosBody(data) {
     console.log(data);
@@ -151,6 +153,61 @@ export class QualificationComponent implements OnInit {
     this.dataSource.data = this.ELEMENT_DATA;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+  }
+  ConvertToCSV(objArray, headerList) {
+    let array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+    let str = '';
+    let row = '';
+
+    for (let index in headerList) {
+        row += headerList[index] + ',';
+    }
+    row = row.slice(0, -1);
+    str += row + '\r\n';
+    for (let i = 0; i < array.length; i++) {
+        let line = '';
+        for (let index in headerList) {
+           let head = headerList[index];
+
+            if(Number(index)>0){
+              line += ',' + array[i][head];
+            }
+            else{
+              line +=  array[i][head];
+
+            }
+        }
+        str += line + '\r\n';
+    }
+    return str;
+}
+downloadFile(data, filename='data') {
+  let csvData = this.ConvertToCSV(data, ['approved','carrera', 'edad_alumno', 'genero_alumno', 'id_alumno','weak_skill']);
+  console.log(csvData)
+  let blob = new Blob(['\ufeff' + csvData], { type: 'text/csv;charset=utf-8;' });
+  let dwldLink = document.createElement("a");
+  let url = URL.createObjectURL(blob);
+  let isSafariBrowser = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
+  if (isSafariBrowser) {  //if Safari open in new window to save file with random filename.
+      dwldLink.setAttribute("target", "_blank");
+  }
+  dwldLink.setAttribute("href", url);
+  dwldLink.setAttribute("download", filename + ".csv");
+  dwldLink.style.visibility = "hidden";
+  document.body.appendChild(dwldLink);
+  dwldLink.click();
+  document.body.removeChild(dwldLink);
+}
+  DataMining(){
+    this.practiceS.getDataSet().subscribe({
+      next:(data)=>{
+        if(data.status==200){
+            this.downloadFile(data.body);        }
+      },
+      error:(err)=>{
+
+      }
+    })
   }
   ngOnInit(): void {
     this.data.changeMessage(this.link);
