@@ -1,0 +1,11 @@
+.graphic {
+  margin: 1rem 0rem;
+  width: 49%;
+  background-color: $color-primary-white;
+  padding: 3rem;
+  box-shadow: 0 0 10px $color-box-shadow;
+  border-radius: 5rem;
+  @include respond(tab-lan) {
+    width: 100%;
+  }
+}

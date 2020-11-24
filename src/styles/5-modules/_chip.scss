@@ -45,3 +45,34 @@
     color: $color-primary-white;
   }
 }
+
+.chip-static {
+  border-radius: 2.5rem;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  &__text,
+  &__icon {
+    color: $color-primary-white;
+  }
+  &__title {
+    color: $color-primary-gray;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  &__text {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  i {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
