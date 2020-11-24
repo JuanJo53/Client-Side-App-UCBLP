@@ -182,7 +182,7 @@ export class QualificationComponent implements OnInit {
     return str;
 }
 downloadFile(data, filename='data') {
-  let csvData = this.ConvertToCSV(data, ['approved','carrera', 'edad_alumno', 'genero_alumno', 'id_alumno','weak_skill']);
+  let csvData = this.ConvertToCSV(data, ['approved','carrera', 'edad_alumno', 'genero_alumno','weak_skill']);
   console.log(csvData)
   let blob = new Blob(['\ufeff' + csvData], { type: 'text/csv;charset=utf-8;' });
   let dwldLink = document.createElement("a");
