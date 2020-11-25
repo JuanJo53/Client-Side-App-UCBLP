@@ -1,12 +1,8 @@
 <mat-horizontal-stepper labelPosition="bottom" #stepper>
   <!-- primer paso -->
-  <mat-step [stepControl]="firstFormGroup">
-    <form>
-      <ng-template matStepLabel>Repository</ng-template>
-      <mat-dialog-content class="mat-typography">
-        <!-- <div class="row"> -->
-        <!--cantidad estudiantes-->
-        <!-- <mat-form-field class="col-sm-2">
+  <!-- <div class="row"> -->
+  <!--cantidad estudiantes-->
+  <!-- <mat-form-field class="col-sm-2">
             <mat-label>English Level</mat-label>
             <mat-select [(value)]="valueNivelIngles">
               <mat-option
@@ -18,8 +14,8 @@
             </mat-select>
           </mat-form-field>
           <!--#cantidad estudiantes-->
-        <!--cantidad categoria pregunta-->
-        <!-- <mat-form-field class="col-sm-2">
+  <!--cantidad categoria pregunta-->
+  <!-- <mat-form-field class="col-sm-2">
             <mat-label>Category</mat-label>
             <mat-select [(value)]="valueTipoCategoria">
               <mat-option
@@ -30,9 +26,9 @@
               </mat-option>
             </mat-select>
           </mat-form-field> -->
-        <!--#cantidad categoria pregunta-->
-        <!-- tipo preguntas-->
-        <!-- <mat-form-field class="col-sm-2">
+  <!--#cantidad categoria pregunta-->
+  <!-- tipo preguntas-->
+  <!-- <mat-form-field class="col-sm-2">
             <mat-label>Type of question</mat-label>
             <mat-select [(value)]="valueTipoPregunta">
               <mat-option
@@ -43,9 +39,9 @@
               </mat-option>
             </mat-select>
           </mat-form-field> -->
-        <!--# tipo preguntas-->
-        <!-- tipo respuestas-->
-        <!-- <mat-form-field class="col-sm-2">
+  <!--# tipo preguntas-->
+  <!-- tipo respuestas-->
+  <!-- <mat-form-field class="col-sm-2">
             <mat-label>Type of answer</mat-label>
             <mat-select [(value)]="valueTipoRespuesta">
               <mat-option
@@ -56,9 +52,9 @@
               </mat-option>
             </mat-select>
           </mat-form-field> -->
-        <!--# tipo respuestas-->
-        <!-- tipo skill-->
-        <!-- <mat-form-field class="col-sm-2">
+  <!--# tipo respuestas-->
+  <!-- tipo skill-->
+  <!-- <mat-form-field class="col-sm-2">
             <mat-label>Type of skill</mat-label>
             <mat-select [(value)]="valueTipoHabilidad">
               <mat-option
@@ -69,9 +65,9 @@
               </mat-option>
             </mat-select>
           </mat-form-field> -->
-        <!--# tipo skill-->
-        <!-- search bar -->
-        <!-- <mat-form-field class="col-sm-2">
+  <!--# tipo skill-->
+  <!-- search bar -->
+  <!-- <mat-form-field class="col-sm-2">
             <input
               type="text"
               placeholder="Search"
@@ -89,10 +85,13 @@
               </mat-option>
             </mat-autocomplete>
           </mat-form-field> -->
-        <!-- #search bar -->
-        <!-- </div> -->
-        <!-- tabla -->
-
+  <!-- #search bar -->
+  <!-- </div> -->
+  <!-- tabla -->
+  <mat-step [stepControl]="firstFormGroup">
+    <ng-template matStepLabel>Repository</ng-template>
+    <div class="">
+      <mat-dialog-content>
         <table
           mat-table
           [dataSource]="dataSource"
@@ -157,28 +156,30 @@
         </table>
         <mat-paginator
           [pageSizeOptions]="[10, 20]"
+          [pageSize]="8"
           showFirstLastButtons
         ></mat-paginator>
       </mat-dialog-content>
-      <mat-dialog-actions align="end">
-        <div class="u__flex--flex-end">
-          <button
-            mat-raised-button
-            class="button-normal button-normal--negative"
-            (click)="cancelar()"
-          >
-            <span class="button-normal__text">Cancel</span>
-          </button>
-          <button
-            (click)="irPasoTres(stepper)"
-            mat-raised-button
-            class="button-normal button-normal--positive"
-          >
-            <span class="button-normal__text"> Add questions</span>
-          </button>
-        </div>
-      </mat-dialog-actions>
-      <!-- <div class="group-buttons__dialog">
+    </div>
+    <mat-dialog-actions align="end">
+      <div class="u__flex--flex-end">
+        <button
+          mat-raised-button
+          class="button-normal button-normal--negative"
+          (click)="cancelar()"
+        >
+          <span class="button-normal__text">Cancel</span>
+        </button>
+        <button
+          (click)="irPasoTres(stepper)"
+          mat-raised-button
+          class="button-normal button-normal--positive"
+        >
+          <span class="button-normal__text"> Add questions</span>
+        </button>
+      </div>
+    </mat-dialog-actions>
+    <!-- <div class="group-buttons__dialog">
         <button
           mat-button
           matStepperPrevious
@@ -195,7 +196,6 @@
           Add questions
         </button>
       </div> -->
-    </form>
   </mat-step>
   <!-- #primer paso -->
   <!-- segundo paso -->

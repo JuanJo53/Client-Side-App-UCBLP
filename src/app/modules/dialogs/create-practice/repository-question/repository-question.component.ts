@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, ViewChild } from "@angular/core";
 import {
   FormBuilder,
   FormGroup,
@@ -10,9 +10,10 @@ import { map, startWith } from "rxjs/operators";
 import { MatTableDataSource } from "@angular/material/table";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { MatStepper } from "@angular/material/stepper";
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { RadioButtonQuestion } from 'src/app/models/Preguntas/RadioButton';
-import { CheckboxQuestion } from 'src/app/models/Preguntas/Checkbox';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
+import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox";
+import { MatPaginator } from "@angular/material/paginator";
 
 export interface ListaPreguntasPracticas {
   codigo: number;
@@ -30,16 +31,14 @@ export interface ListaPreguntasPracticas {
   styleUrls: ["./repository-question.component.scss"],
 })
 export class RepositoryQuestionComponent implements OnInit {
-  preguntaPaso2:Pregunta=new Pregunta();
+  preguntaPaso2: Pregunta = new Pregunta();
   showSpinner = false;
-  checked: boolean;  
+  checked: boolean;
   checkboxOpciones: CheckboxQuestion[] = [
-    { isChecked: true ,opcionRespuesta:""},
+    { isChecked: true, opcionRespuesta: "" },
   ];
-  preguntas: Pregunta[] = [
-  ];
-  preguntasElegidas: Pregunta[] = [
-  ];
+  preguntas: Pregunta[] = [];
+  preguntasElegidas: Pregunta[] = [];
   ELEMENT_DATA: ListaPreguntasPracticas[] = [
     {
       codigo: 1,
@@ -76,7 +75,7 @@ export class RepositoryQuestionComponent implements OnInit {
     "codigo",
     "checkbox",
   ];
-  
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   dataSource = new MatTableDataSource(this.preguntas);
   isLinear = false;
   firstFormGroup: FormGroup;
@@ -85,7 +84,13 @@ export class RepositoryQuestionComponent implements OnInit {
   nivelIngles: string[] = ["Level 1", "Level 2", "Level 3", "Level 4"];
   tipoCategoriasRepositorio: string[] = ["Animals", "Vegetables", "Technology"];
   tipoPreguntasRepositorio: string[] = ["Simple", "Drag and Drop"];
-  tipoRespuestasRepositorio: string[] = ["One choice", "Multiple choices", "Columns", "Fill in the blanks", "Combobox's"];
+  tipoRespuestasRepositorio: string[] = [
+    "One choice",
+    "Multiple choices",
+    "Columns",
+    "Fill in the blanks",
+    "Combobox's",
+  ];
   tipoHabilidadRepositorio: string[] = [
     "Listening",
     "Reading",
@@ -102,9 +107,11 @@ export class RepositoryQuestionComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ["One", "Two", "Three"];
   filteredOptions: Observable<string[]>;
-  constructor(private _formBuilder: FormBuilder,
+  constructor(
+    private _formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
-    private dialogRef: MatDialogRef<RepositoryQuestionComponent>) {}
+    private dialogRef: MatDialogRef<RepositoryQuestionComponent>
+  ) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -122,6 +129,10 @@ export class RepositoryQuestionComponent implements OnInit {
     );
     this.cargarDatosSQL(this.dataDialog["repository"]);
   }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
@@ -129,6 +140,7 @@ export class RepositoryQuestionComponent implements OnInit {
       (option) => option.toLowerCase().indexOf(filterValue) === 0
     );
   }
+
   // funciones
   loadData() {
     this.showSpinner = true;
@@ -137,76 +149,77 @@ export class RepositoryQuestionComponent implements OnInit {
     }, 5000);
   }
   irPasoDos(stepper: MatStepper, codigo: number) {
-    this.preguntaPaso2=this.preguntas[codigo];
+    this.preguntaPaso2 = this.preguntas[codigo];
     stepper.next();
   }
   irPasoTres(stepper: MatStepper) {
-    this.preguntasElegidas=[];
-    var elegido=false;
-    for(let i in this.checkboxOpciones){
-      if(this.checkboxOpciones[i].isChecked){
-        elegido=true;
+    this.preguntasElegidas = [];
+    var elegido = false;
+    for (let i in this.checkboxOpciones) {
+      if (this.checkboxOpciones[i].isChecked) {
+        elegido = true;
         this.preguntasElegidas.push(this.preguntas[i]);
       }
     }
-    if(elegido){
+    if (elegido) {
       stepper.selectedIndex = 2;
     }
   }
   volverPasoUno(stepper: MatStepper) {
     stepper.selectedIndex = 0;
   }
-  cargarRespuestasBool(nuevaPregunta:Pregunta){
-    nuevaPregunta.respuestasBool=[];
-    for(let opcion of nuevaPregunta.opciones ){
+  cargarRespuestasBool(nuevaPregunta: Pregunta) {
+    nuevaPregunta.respuestasBool = [];
+    for (let opcion of nuevaPregunta.opciones) {
       nuevaPregunta.respuestasBool.push(false);
     }
-    for(let respuesta of nuevaPregunta.respuesta ){
-      nuevaPregunta.respuestasBool[respuesta]=true;
+    for (let respuesta of nuevaPregunta.respuesta) {
+      nuevaPregunta.respuestasBool[respuesta] = true;
     }
   }
-  cargarDatos(data){
-    this.checkboxOpciones=[];
-    for(let pregunta of data){
-      this.checkboxOpciones.push({isChecked:false,opcionRespuesta:""})
-      let nuevaPregunta=new Pregunta();
-      nuevaPregunta.idTipoPregunta=String(pregunta.id_tipo_pregunta);
-      nuevaPregunta.idTipoRespuesta=String(pregunta.id_tipo_respuesta);
-      nuevaPregunta.pregunta=pregunta.pregunta.pregunta;
-      nuevaPregunta.id=pregunta.id_pregunta;
-      nuevaPregunta.respuesta=pregunta.pregunta.respuestas;
-      nuevaPregunta.opciones=pregunta.pregunta.opciones;
-      nuevaPregunta.idHabilidad=pregunta.id_habilidad;
-      nuevaPregunta.puntuacion=10;
-      nuevaPregunta.tipo=1;
+  cargarDatos(data) {
+    this.checkboxOpciones = [];
+    for (let pregunta of data) {
+      this.checkboxOpciones.push({ isChecked: false, opcionRespuesta: "" });
+      let nuevaPregunta = new Pregunta();
+      nuevaPregunta.idTipoPregunta = String(pregunta.id_tipo_pregunta);
+      nuevaPregunta.idTipoRespuesta = String(pregunta.id_tipo_respuesta);
+      nuevaPregunta.pregunta = pregunta.pregunta.pregunta;
+      nuevaPregunta.id = pregunta.id_pregunta;
+      nuevaPregunta.respuesta = pregunta.pregunta.respuestas;
+      nuevaPregunta.opciones = pregunta.pregunta.opciones;
+      nuevaPregunta.idHabilidad = pregunta.id_habilidad;
+      nuevaPregunta.puntuacion = 10;
+      nuevaPregunta.tipo = 1;
       console.log(nuevaPregunta);
       this.cargarRespuestasBool(nuevaPregunta);
-      this.preguntas.push(nuevaPregunta)
+      this.preguntas.push(nuevaPregunta);
     }
+    this.dataSource.paginator = this.paginator;
   }
-  cargarDatosSQL(data){
-    this.checkboxOpciones=[];
-    for(let pregunta of data){
-      this.checkboxOpciones.push({isChecked:false,opcionRespuesta:""})
-      let nuevaPregunta=new Pregunta();
-      nuevaPregunta.idTipoPregunta=String(pregunta.id_tipo_pregunta);
-      nuevaPregunta.idTipoRespuesta=String(pregunta.id_tipo_respuesta);
-      nuevaPregunta.pregunta=pregunta.pregunta;
-      nuevaPregunta.id=pregunta.id_pregunta;
-      nuevaPregunta.respuesta=pregunta.respuesta;
-      nuevaPregunta.opciones=pregunta.opciones;
-      nuevaPregunta.idHabilidad=pregunta.id_habilidad;
-      nuevaPregunta.puntuacion=10;
-      nuevaPregunta.tipo=1;
+  cargarDatosSQL(data) {
+    this.checkboxOpciones = [];
+    for (let pregunta of data) {
+      this.checkboxOpciones.push({ isChecked: false, opcionRespuesta: "" });
+      let nuevaPregunta = new Pregunta();
+      nuevaPregunta.idTipoPregunta = String(pregunta.id_tipo_pregunta);
+      nuevaPregunta.idTipoRespuesta = String(pregunta.id_tipo_respuesta);
+      nuevaPregunta.pregunta = pregunta.pregunta;
+      nuevaPregunta.id = pregunta.id_pregunta;
+      nuevaPregunta.respuesta = pregunta.respuesta;
+      nuevaPregunta.opciones = pregunta.opciones;
+      nuevaPregunta.idHabilidad = pregunta.id_habilidad;
+      nuevaPregunta.puntuacion = 10;
+      nuevaPregunta.tipo = 1;
       console.log(nuevaPregunta);
       this.cargarRespuestasBool(nuevaPregunta);
-      this.preguntas.push(nuevaPregunta)
+      this.preguntas.push(nuevaPregunta);
     }
   }
-  aceptar(){
+  aceptar() {
     this.dialogRef.close(this.preguntasElegidas);
   }
-  cancelar(){
+  cancelar() {
     this.dialogRef.close();
   }
 }
