@@ -33,6 +33,11 @@
 }
 .u__flex-normal {
   display: flex;
+  //flex-flow: wrap;
+  //background-color: red;
+}
+.u__flex-normal-inputs {
+  display: flex;
   flex-flow: wrap;
   //background-color: red;
 }
@@ -91,7 +96,17 @@
   width: 50%;
   background-color: red;
 }
-.u--25 {
-  width: 50%;
-  background-color: pink;
+// .u--25 {
+//   width: 50%;
+//   background-color: pink;
+// }
+.u__space-between-minutes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(tab-por) {
+    //background-color: green;
+    width: 100%;
+    text-align: center;
+  }
 }
