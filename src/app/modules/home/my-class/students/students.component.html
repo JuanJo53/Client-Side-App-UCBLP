@@ -112,9 +112,9 @@
   </table>
   <!--#tables-->
   <!-- Paginator -->
-  <mat-paginator
-    [pageSizeOptions]="[10, 20]"
-    showFirstLastButtons
+  <mat-paginator [length]="length"
+  [pageSize]="pageSize"
+  (page)="cambiarPagina($event)">
   ></mat-paginator>
   <!-- #Paginator -->
 </div>

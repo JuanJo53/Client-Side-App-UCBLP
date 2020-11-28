@@ -18,7 +18,7 @@ export class StudentsGeneralResolver{
 
     }
     else{      
-      return this.studentService.getStudentsGeneral(idCurso);
+      return this.studentService.getStudentsGeneral(idCurso,10,0);
       
     }
   }

@@ -16,8 +16,9 @@ export class MyClassService {
   //Servicios para el control de los estudiantes
 
   //APIRoute Obtener lista de los estudiantes para la tabla principal
-  getStudentsGeneral(idCurso):Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/my-class/students/"+idCurso);
+  getStudentsGeneral(idCurso,lim,ini):Observable<any>{
+    console.log(lim);
+    return this.http.get(apiKey.api+"/teacher/my-class/students/"+idCurso+"?lim="+lim+"&&ini="+ini,{ observe: 'response' });
   }
   //APIRoute Eliminar a un estudiante
   removeStudentsGeneral(idAlumnoCurso):Observable<any>{
