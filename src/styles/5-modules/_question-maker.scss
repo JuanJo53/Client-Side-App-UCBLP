@@ -61,12 +61,16 @@
 
   &__input-form {
     width: 100%;
-    //background-color: blue;
+  }
+  &__input-form-75 {
+    width: 75%;
+    background-color: hotpink;
   }
   &--added {
     background-color: lighten($color-blocked, $amount: 30);
   }
 }
+
 .progress-bar {
   display: flex;
   flex-direction: column;
@@ -143,7 +147,23 @@
   &__practice-input-container {
     //background-color: red;
     width: 50%;
+    //background-color: pink;
+    @include respond(normal) {
+      //background-color: orange;
+      width: 100%;
+    }
   }
+}
+.card-question--input-container {
+  width: 47.5%;
+  //background-color: pink;
+  @include respond(tab-por) {
+    width: 100%;
+  }
+}
+.card-question--input-container-time {
+  width: 47.5%;
+  //background-color: pink;
 }
 
 .card-question__no-content {

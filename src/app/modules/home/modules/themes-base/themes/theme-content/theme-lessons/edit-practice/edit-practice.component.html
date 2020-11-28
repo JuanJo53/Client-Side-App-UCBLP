@@ -17,9 +17,9 @@
     <mat-step>
       <form>
         <ng-template matStepLabel>Review Questions</ng-template>
-        <div class="card-question">
+        <div class="card-question mb-2">
           <div class="container-dialog">
-            <div class="u__flex-normal mb-1">
+            <div class="u__flex-normal-inputs mb-1">
               <div class="card-question__practice-input-container px-1">
                 <!--subtitle-->
                 <div class="dialog-subtitle">
@@ -36,7 +36,6 @@
                   class="card-question__input-form"
                 >
                   <mat-label>Practice name</mat-label>
-                  <!-- Input para el email-->
                   <input
                     class=""
                     type="text"
@@ -45,7 +44,6 @@
                     placeholder="Practice name"
                     name="nombrePractica"
                   />
-                  <!-- //Input para el email-->
                 </mat-form-field>
               </div>
 
@@ -65,70 +63,68 @@
                     <span>*Time Limit</span>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <!--fecha-->
-                    <div *ngIf="radioButtonValue === 'enable'">
-                      <div class="detail-minutes">
-                        <mat-form-field>
-                          <input
-                            matInput
-                            [(ngModel)]="paso1.tiempoLimite"
-                            [ngModelOptions]="{ standalone: true }"
-                            type="number"
-                          />
-                        </mat-form-field>
-                        <span class="input-minutes">minutes</span>
-                      </div>
+                <div class="u__space-between">
+                  <div
+                    class="u__space-between-minutes"
+                    *ngIf="radioButtonValue === 'enable'"
+                  >
+                    <div class="card-question--input-container-time">
+                      <mat-form-field class="card-question__input-form">
+                        <input
+                          matInput
+                          [(ngModel)]="paso1.tiempoLimite"
+                          [ngModelOptions]="{ standalone: true }"
+                          type="number"
+                        />
+                      </mat-form-field>
                     </div>
-
-                    <div *ngIf="radioButtonValue !== 'enable'">
-                      <div class="detail-minutes">
-                        <mat-form-field>
-                          <input matInput disabled placeholder="UNLIMITED" />
-                        </mat-form-field>
-                        <span class="input-minutes">minutes</span>
-                      </div>
+                    <div class="card-question--input-container-time">
+                      <div class="detail-minutes">minutes</div>
                     </div>
                   </div>
-
-                  <div class="col-sm-6">
-                    <div class="radio-buttons-practice">
-                      <div class="radio-buttons-practice__content">
-                        <mat-radio-group
-                          aria-label="Select an option"
-                          name="radiobuttonvaluePractice"
-                          [(ngModel)]="radioButtonValue"
-                        >
-                          <mat-radio-button
-                            class="radio-button"
-                            value="enable"
-                            checked
-                            >Enable</mat-radio-button
-                          >
-                          <mat-radio-button class="radio-button" value="unable"
-                            >Unable</mat-radio-button
-                          >
-                        </mat-radio-group>
-                      </div>
+                  <div
+                    *ngIf="radioButtonValue !== 'enable'"
+                    class="u__space-between-minutes"
+                  >
+                    <div class="card-question--input-container-time">
+                      <mat-form-field class="card-question__input-form">
+                        <input matInput disabled placeholder="UNLIMITED" />
+                      </mat-form-field>
+                    </div>
+                    <div class="card-question--input-container-time">
+                      <div class="detail-minutes">minutes</div>
                     </div>
                   </div>
+                  <mat-radio-group
+                    class="mat-radio-group--container"
+                    aria-label="Select an option"
+                    name="radiobuttonvaluePractice"
+                    [(ngModel)]="radioButtonValue"
+                  >
+                    <mat-radio-button
+                      class="radio-button"
+                      value="enable"
+                      checked
+                      >Enable</mat-radio-button
+                    >
+                    <mat-radio-button class="radio-button" value="unable"
+                      >Unable</mat-radio-button
+                    >
+                  </mat-radio-group>
                 </div>
               </div>
             </div>
-            <div class="u__flex-normal">
-              <!--start date-->
+            <div class="u__flex-normal-inputs">
               <div class="card-question__practice-input-container px-1">
-                <!--subtitle-->
                 <div class="dialog-subtitle">
                   <div class="dialog-subtitle__text">
                     <span>Start date and hour</span>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-6">
+                <div class="u__space-between">
+                  <div class="card-question--input-container">
                     <!--fecha-->
-                    <mat-form-field>
+                    <mat-form-field class="card-question__input-form">
                       <mat-label *ngIf="!paso1.bloqfecha1"
                         >Choose a date</mat-label
                       >
@@ -154,35 +150,31 @@
                   </div>
                   <!--fecha-->
                   <!--hora-->
-                  <div class="col-sm-6">
-                    <div class="toggle-example">
-                      <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqhora1"
-                          >Choose an hour</mat-label
-                        >
-                        <mat-label
-                          *ngIf="paso1.bloqhora1"
-                          style="color: #ca5a5d"
-                          >Choose an hour*</mat-label
-                        >
-                        <input
-                          matInput
-                          [(ngModel)]="paso1.horaini"
-                          [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker1"
-                          [disableClick]="true"
-                          readonly
-                        />
-                        <ngx-material-timepicker-toggle
-                          matSuffix
-                          [for]="toggleTimepicker1"
-                        >
-                        </ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker1
-                        ></ngx-material-timepicker>
-                      </mat-form-field>
-                    </div>
+                  <div class="card-question--input-container">
+                    <mat-form-field class="card-question__input-form">
+                      <mat-label *ngIf="!paso1.bloqhora1"
+                        >Choose an hour</mat-label
+                      >
+                      <mat-label *ngIf="paso1.bloqhora1" style="color: #ca5a5d"
+                        >Choose an hour*</mat-label
+                      >
+                      <input
+                        matInput
+                        [(ngModel)]="paso1.horaini"
+                        [ngModelOptions]="{ standalone: true }"
+                        [ngxTimepicker]="toggleTimepicker1"
+                        [disableClick]="true"
+                        readonly
+                      />
+                      <ngx-material-timepicker-toggle
+                        matSuffix
+                        [for]="toggleTimepicker1"
+                      >
+                      </ngx-material-timepicker-toggle>
+                      <ngx-material-timepicker
+                        #toggleTimepicker1
+                      ></ngx-material-timepicker>
+                    </mat-form-field>
                   </div>
                   <!--#hora-->
                 </div>
@@ -190,18 +182,15 @@
               <!--#start date-->
               <!--end date-->
               <div class="card-question__practice-input-container px-1">
-                <!--subtitle-->
                 <div class="dialog-subtitle">
                   <div class="dialog-subtitle__text">
                     <span>End date and hour</span>
                   </div>
                 </div>
-                <!--#subtitle-->
-                <!--row-->
-                <div class="row">
-                  <div class="col-sm-6">
+                <div class="u__space-between">
+                  <div class="card-question--input-container">
                     <!--fecha-->
-                    <mat-form-field>
+                    <mat-form-field class="card-question__input-form">
                       <mat-label *ngIf="!paso1.bloqfecha2"
                         >Choose a date</mat-label
                       >
@@ -227,35 +216,31 @@
                     <!--fecha-->
                   </div>
                   <!--hora-->
-                  <div class="col-sm-6">
-                    <div class="toggle-example">
-                      <mat-form-field>
-                        <mat-label *ngIf="!paso1.bloqhora2"
-                          >Choose an hour</mat-label
-                        >
-                        <mat-label
-                          *ngIf="paso1.bloqhora2"
-                          style="color: #ca5a5d"
-                          >Choose an hour*</mat-label
-                        >
-                        <input
-                          matInput
-                          [(ngModel)]="paso1.horafin"
-                          [ngModelOptions]="{ standalone: true }"
-                          [ngxTimepicker]="toggleTimepicker2"
-                          [disableClick]="true"
-                          readonly
-                        />
-                        <ngx-material-timepicker-toggle
-                          matSuffix
-                          [for]="toggleTimepicker2"
-                        >
-                        </ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker
-                          #toggleTimepicker2
-                        ></ngx-material-timepicker>
-                      </mat-form-field>
-                    </div>
+                  <div class="card-question--input-container">
+                    <mat-form-field class="card-question__input-form">
+                      <mat-label *ngIf="!paso1.bloqhora2"
+                        >Choose an hour</mat-label
+                      >
+                      <mat-label *ngIf="paso1.bloqhora2" style="color: #ca5a5d"
+                        >Choose an hour*</mat-label
+                      >
+                      <input
+                        matInput
+                        [(ngModel)]="paso1.horafin"
+                        [ngModelOptions]="{ standalone: true }"
+                        [ngxTimepicker]="toggleTimepicker2"
+                        [disableClick]="true"
+                        readonly
+                      />
+                      <ngx-material-timepicker-toggle
+                        matSuffix
+                        [for]="toggleTimepicker2"
+                      >
+                      </ngx-material-timepicker-toggle>
+                      <ngx-material-timepicker
+                        #toggleTimepicker2
+                      ></ngx-material-timepicker>
+                    </mat-form-field>
                   </div>
                   <!--#hora-->
                 </div>

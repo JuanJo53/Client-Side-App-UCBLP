@@ -1,6 +1,12 @@
 <!-- <router-outlet></router-outlet> -->
-<div *ngIf="cargando" #loading  class="container">
-  <ngx-spinner bdColor = "rgba(8,76,97,0.4)" size = "medium" color = "#ffffff" type = "ball-clip-rotate-pulse" [fullScreen] = "true">
-    <div style="color : #ffffff;font-size: 1.9rem;">{{label}}</div>
+<div *ngIf="cargando" #loading class="container">
+  <ngx-spinner
+    bdColor="rgba(8,76,97,0.4)"
+    size="medium"
+    color="#ffffff"
+    type="ball-clip-rotate-pulse"
+    [fullScreen]="true"
+  >
+    <div style="color: #ffffff; font-size: 1.9rem">{{ label }}</div>
   </ngx-spinner>
-  </div>
+</div>

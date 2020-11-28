@@ -16,18 +16,6 @@
   //background-color: yellow;
 }
 
-.radio-buttons-practice {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  display: flex;
-  //background-color: $color-primary-blue;
-  align-items: center;
-  justify-content: flex-end;
-  &__content {
-    //background-color: red;
-  }
-  //background-color: yellow;
-}
 .radio-button {
   color: $color-primary-blue;
   padding: 0.75rem 1rem;
@@ -52,4 +40,11 @@
 
 .mat-radio-outer-circle {
   border-color: $color-primary-blue !important;
+}
+
+.mat-radio-group--container {
+  @include respond(tab-por) {
+    margin: auto;
+    margin-bottom: 1rem;
+  }
 }

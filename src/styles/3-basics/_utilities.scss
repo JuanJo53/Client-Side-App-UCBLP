@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: wrap;
 }
 
 .u__flex--flex-end {
@@ -29,10 +30,15 @@
 .u__flex {
   display: flex;
   align-items: center;
-  //background-color: pink;
 }
 .u__flex-normal {
   display: flex;
+  //flex-flow: wrap;
+  //background-color: red;
+}
+.u__flex-normal-inputs {
+  display: flex;
+  flex-flow: wrap;
   //background-color: red;
 }
 .u__flex-95 {
@@ -84,4 +90,23 @@
   justify-content: space-between;
   align-items: center;
   flex-flow: wrap;
+}
+
+.u--75 {
+  width: 50%;
+  background-color: red;
+}
+// .u--25 {
+//   width: 50%;
+//   background-color: pink;
+// }
+.u__space-between-minutes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(tab-por) {
+    //background-color: green;
+    width: 100%;
+    text-align: center;
+  }
 }
