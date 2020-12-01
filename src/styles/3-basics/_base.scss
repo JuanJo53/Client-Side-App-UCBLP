@@ -34,22 +34,22 @@ body {
   margin-right: auto;
   margin-left: auto;
   @include respond(big-desktop) {
-    background-color: violet;
+    //background-color: violet;
   }
   @include respond(normal-desktop) {
-    background-color: blue;
+    //background-color: blue;
   }
   @include respond(normal) {
-    background-color: orange;
+    //background-color: orange;
   }
   @include respond(tab-lan) {
-    background-color: green;
+    //background-color: green;
   }
   @include respond(tab-por) {
-    background-color: pink;
+    //background-color: pink;
   }
   @include respond(phone) {
-    background-color: red;
+    //background-color: red;
   }
 }
 .container-dialog {
