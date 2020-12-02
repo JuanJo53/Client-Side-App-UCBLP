@@ -8,7 +8,6 @@
     <form class="dialogforms" enctype="multipart/form-data">
       <mat-form-field appearance="outline">
         <mat-label>Module's name</mat-label>
-        <!-- Input para el nombre del modulo-->
         <input
           type="text"
           class="input-form"
@@ -17,50 +16,27 @@
           name="nombreModulo"
           [(ngModel)]="nombreModulo"
         />
-        <!-- //Input para el nombre del modulo-->
       </mat-form-field>
-      <!-- <div class="combo-box">
-        <mat-form-field>
-          <mat-label>Colors</mat-label>
-          <mat-select [(value)]="valueColor">
-            <mat-option
-              *ngFor="let elemento of colores"
-              [value]="elemento.value"
-              [ngStyle]="{
-                'background-color': elemento.display + 'A6'
-              }"
-            >
-              {{ elemento.display }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div> -->
-      <!-- escoger colores -->
-      <div class="color-picker__container">
-        <span class="color-picker__title">Color :</span>
-        <div class="color-picker__content">
-          <div class="summary-info" (click)="toggleColors()">
-            <div class="info">
-              <p class="style">{{ heading }}</p>
-              <p class="style-value">{{ color }}</p>
-            </div>
-
-            <div class="circle" [ngStyle]="{ background: color }"></div>
-          </div>
-
-          <div *ngIf="show" class="opened">
-            <div class="colors">
-              <div
-                (click)="changeColor(paint)"
-                *ngFor="let paint of colores"
-                class="circle"
-                [ngStyle]="{ background: paint.display }"
-              ></div>
-            </div>
+      <div class="radio-buttons-dialog__title">Choose a color :</div>
+      <div class="u__flex--flex-center">
+        <div class="opened">
+          <div class="colors">
+            <div
+              (click)="changeColor(paint)"
+              *ngFor="let paint of colores"
+              class="circle"
+              [ngStyle]="{ background: paint.display }"
+            ></div>
           </div>
         </div>
       </div>
-      <!-- /escoger colores -->
+      <div class="u__space-evenly--center">
+        <div class="radio-buttons-dialog__title">Color selected :</div>
+        <div class="summary-info">
+          <div class="circle" [ngStyle]="{ background: color }"></div>
+        </div>
+      </div>
+
       <div>
         <mat-form-field>
           <mat-label>Images</mat-label>
@@ -78,7 +54,12 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <!--btn cancel-->
-    <button mat-button mat-dialog-close class="dialog-button-cancel" (click)=cancelar()>
+    <button
+      mat-button
+      mat-dialog-close
+      class="dialog-button-cancel"
+      (click)="cancelar()"
+    >
       Cancel
     </button>
     <!--#btn cancel-->

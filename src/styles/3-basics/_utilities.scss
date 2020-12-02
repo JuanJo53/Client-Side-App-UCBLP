@@ -27,6 +27,12 @@
   justify-content: center;
   //background-color: red;
 }
+.u__space-evenly--center {
+  margin: 1rem 0rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .u__flex {
   display: flex;
   align-items: center;
