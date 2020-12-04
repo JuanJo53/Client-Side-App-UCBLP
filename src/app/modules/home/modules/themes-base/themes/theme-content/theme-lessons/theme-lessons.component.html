@@ -15,7 +15,10 @@
   <!--#Subtitle lesson-->
   <!--row-->
   <div class="row">
-    <div *ngFor="let cards of simpleCards" class="col-lg-3 col-md-6 col-xs-12">
+    <div
+      *ngFor="let cards of simpleCards"
+      class="col-xlg-3 col-lg-4 col-md-6 col-xs-12"
+    >
       <div class="custom-card--lessons">
         <div class="custom-card--lessons__img">
           <div class="custom-card--lessons__img-overlay">
@@ -71,12 +74,12 @@
     </div>
     <div class="subtitle-compound__buttons-container">
       <!--Add button-->
-      <button class="circular-button-subtitle" mat-mini-fab
-      (click)="agregarPractica()">
-        <mat-icon
-          class="circular-button-subtitle__icon"
-          >add</mat-icon
-        >
+      <button
+        class="circular-button-subtitle"
+        mat-mini-fab
+        (click)="agregarPractica()"
+      >
+        <mat-icon class="circular-button-subtitle__icon">add</mat-icon>
       </button>
       <!--#Add button-->
     </div>
@@ -84,7 +87,10 @@
   <!--#Subtitle practices-->
   <!--row-->
   <div class="row">
-    <div *ngFor="let cards of practices,let indexpra=index" class="col-lg-3 col-md-6 col-xs-12">
+    <div
+      *ngFor="let cards of practices; let indexpra = index"
+      class="col-xlg-3 col-lg-4 col-md-6 col-xs-12"
+    >
       <div class="custom-card--practices">
         <div class="custom-card--practices__img">
           <div class="custom-card--practices__img-overlay">
@@ -112,7 +118,7 @@
               <!--btn eliminar-->
               <button
                 class="circular-button-custom-card"
-                (click)="eliminarPractica(cards,indexpra)"
+                (click)="eliminarPractica(cards, indexpra)"
               >
                 <mat-icon class="circular-button-custom-card__icon">
                   delete
