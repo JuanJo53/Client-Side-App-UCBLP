@@ -37,7 +37,6 @@
     }
   }
   &__buttons-card {
-    //background-color: orange;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -81,5 +80,23 @@
   }
 
   &:hover {
+  }
+}
+
+.images-mini-card {
+  margin: 1rem 0;
+  width: 45%;
+  height: 10rem;
+  background-color: $color-primary-white;
+  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem 3rem 3rem 3rem;
+  display: flex;
+  overflow: hidden;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    display: block;
+    position: relative;
   }
 }
