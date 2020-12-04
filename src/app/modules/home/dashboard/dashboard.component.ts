@@ -11,6 +11,7 @@ import { PracticeDashboard } from "src/app/models/DashBoard/PracticeDashboard";
 import { SharedService } from "src/app/shared/shared.service";
 import { NgxGlideComponent } from "ngx-glide";
 import { Track } from "ngx-audio-player/lib/model/track.model";
+import { GraphicModel } from "src/app/models/ColorsPalette";
 
 @Component({
   selector: "app-dashboard",
@@ -19,7 +20,48 @@ import { Track } from "ngx-audio-player/lib/model/track.model";
 })
 export class DashboardComponent implements OnInit {
   @ViewChild(NgxGlideComponent, { static: false }) ngxGlide: NgxGlideComponent;
-
+  graphicModel: GraphicModel[] = [
+    {
+      nameChip: "Lessons",
+      color: "#d77a61A6",
+      title: "Statistics of all",
+    },
+    {
+      nameChip: "Practices",
+      color: "#498161A6",
+      title: "Statistics of last",
+    },
+    {
+      nameChip: "Attendance",
+      color: "#9c5fafA6",
+      title: "Statistics by month",
+    },
+    {
+      nameChip: "Theme Test",
+      color: "#403837A6",
+      title: "Statistics of last",
+    },
+    {
+      nameChip: "Assessments",
+      color: "#27649bA6",
+      title: "Statistics of all",
+    },
+    {
+      nameChip: "Expositions",
+      color: "#9c5fafA6",
+      title: "Statistics of all",
+    },
+    {
+      nameChip: "Extra points",
+      color: "#403837A6",
+      title: "Statistics of all",
+    },
+    {
+      nameChip: "Special lectures",
+      color: "#27649bA6",
+      title: "Statistics of all",
+    },
+  ];
   play(): void {
     this.ngxGlide.play();
   }

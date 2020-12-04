@@ -17,7 +17,7 @@ import { Practica } from "src/app/models/Teacher/CreatePractice/Practica";
 import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 import { Matching } from "src/app/models/Preguntas/Matching";
-import { LoadingService } from 'src/app/_services/loading.service';
+import { LoadingService } from "src/app/_services/loading.service";
 
 export interface ChipOption {
   name: string;
@@ -88,7 +88,7 @@ export class CreatePracticeComponent implements OnInit {
     private route: ActivatedRoute,
     private servPrac: PracticesService,
     private location: Location,
-    private loading:LoadingService
+    private loading: LoadingService
   ) {}
 
   actPuntaje() {
@@ -199,8 +199,7 @@ export class CreatePracticeComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result !== "" && result !== "undefined" && result != null) {
-            this.preguntas.push(result);
-        
+        this.preguntas.push(result);
       }
       this.actPuntaje();
     });
@@ -211,8 +210,8 @@ export class CreatePracticeComponent implements OnInit {
   }
   preguntasRepositorio() {
     const dialogRef = this.dialog.open(RepositoryQuestionComponent, {
-      width: "1000px",
-      maxHeight: "80vh",
+      width: "75%",
+      maxHeight: "90vh",
       data: {
         repository: this.repository,
       },

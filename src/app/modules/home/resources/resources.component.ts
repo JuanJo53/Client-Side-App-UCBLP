@@ -16,7 +16,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { SectionsService } from "src/app/_services/teacher_services/sections.service";
 import { SharedService } from "src/app/shared/shared.service";
 import * as XLSX from "xlsx";
-import { HttpClient, HttpHeaders, HttpBackend } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpBackend } from "@angular/common/http";
 
 @Component({
   selector: "app-resources",
@@ -36,8 +36,10 @@ export class ResourcesComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private data: SharedService,
-    handler: HttpBackend) { 
-      this.httpClient = new HttpClient(handler);}
+    handler: HttpBackend
+  ) {
+    this.httpClient = new HttpClient(handler);
+  }
   fileChange(file) {
     this.file = file;
   }
@@ -178,6 +180,7 @@ export class ResourcesComponent implements OnInit {
       }
     });
   }
+
   editarSeccion(seccion: ResourceSection, index) {
     const dialogRef = this.dialog.open(EditSectionComponent, {
       width: "500px",
@@ -207,20 +210,20 @@ export class ResourcesComponent implements OnInit {
       }
     });
   }
-  sacarExtension(tipo){
-    switch(tipo){
+  sacarExtension(tipo) {
+    switch (tipo) {
       case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-        return ".docx"
+        return ".docx";
       case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-        return ".xlsx"
+        return ".xlsx";
       case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-        return ".pptx"
+        return ".pptx";
       case "application/pdf":
-        return ".pdf"
+        return ".pdf";
       case "video/mp4":
-        return ".mp4"
+        return ".mp4";
       case "audio/mpeg":
-        return ".mp3"
+        return ".mp3";
     }
   }
   eliminarDocumento(resource: ResourceContent, indexs, index) {
@@ -253,29 +256,28 @@ export class ResourcesComponent implements OnInit {
   async descargarArchivo(resource: ResourceContent) {
     this.servSec.downloadResource(resource.url).subscribe({
       next: async (data) => {
-        if (data.status == 200) { 
-        this.httpClient.get(data.body.url[0],{responseType: 'blob'}).subscribe({
-          next:(archivo)=>{
-            console.log(archivo);
-            var file = new Blob([ archivo ], {
-              type : 'application/json'
-          });
-          var fileURL = URL.createObjectURL(file);
-          var a         = document.createElement('a');
-          a.href        = fileURL; 
-          a.target      = '_blank';
-          a.download    = resource.nombre+this.sacarExtension(archivo.type);
-          document.body.appendChild(a);
-          a.click();
-
-          },
-          error:(err)=>{
-            console.log(err);
-          }
-        }); 
-        
-
-        
+        if (data.status == 200) {
+          this.httpClient
+            .get(data.body.url[0], { responseType: "blob" })
+            .subscribe({
+              next: (archivo) => {
+                console.log(archivo);
+                var file = new Blob([archivo], {
+                  type: "application/json",
+                });
+                var fileURL = URL.createObjectURL(file);
+                var a = document.createElement("a");
+                a.href = fileURL;
+                a.target = "_blank";
+                a.download =
+                  resource.nombre + this.sacarExtension(archivo.type);
+                document.body.appendChild(a);
+                a.click();
+              },
+              error: (err) => {
+                console.log(err);
+              },
+            });
         }
       },
       error: (err) => {
