@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="dialog__message dialog__message--assistance">
-    Choose a type of question and answer
+    Choose a type of question and answer  {{nuevaPregunta.idHabilidad}}
   </div>
   <div class="u__space-between">
     <!--combo tipo de preguntas-->
@@ -131,25 +131,35 @@
           </mat-form-field>
         </div>
         <!--  Listening Resources -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Listening resource
-        </div>
-        <div class="u__flex mb-1">
-          <div class="u__flex-95">
-            <ngx-audio-player
-              [playlist]="msaapPlaylist"
-              [displayTitle]="msaapDisplayTitle"
-              [autoPlay]="false"
-              muted="muted"
-              [displayPlaylist]="msaapDisplayPlayList"
-              (trackEnded)="onEnded($event)"
-              [displayVolumeControls]="msaapDisplayVolumeControls"
-              [disablePositionSlider]="msaapDisablePositionSlider"
-              [expanded]="true"
-            ></ngx-audio-player>
+        <div *ngIf="nuevaPregunta.idHabilidad==1">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Listening resource
           </div>
-          <div class="u__flex-05 ml-1 u__flex--flex-end">
-            <button class="circular-button--primary" mat-mini-fab>
+          <div *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            * Listening resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >fiber_manual_record</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+
+            <input
+            #csvInput
+            hidden="true"
+            type="file"
+            onclick="this.value=null"
+            accept=".mp3"
+            (change)="handleFileInput($event.target.files,1)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
               <!--download-->
               <mat-icon>file_upload</mat-icon>
               <!--#download-->
@@ -158,24 +168,41 @@
         </div>
         <!-- #Listening Resources-->
         <!-- Reading Resource -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Reading resource
-        </div>
-        <div class="u__space-between mb-1">
-          <div class="u__flex">
-            <mat-icon class="dialog__file-container--icon"
-              >insert_drive_file</mat-icon
-            >
-            <div class="dialog__file-container--file-name-big">File.pdf</div>
+        <div  *ngIf="nuevaPregunta.idHabilidad==2">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
           </div>
-          <button class="circular-button--primary" mat-mini-fab>
-            <!--download-->
-            <mat-icon>file_upload</mat-icon>
-            <!--#download-->
-          </button>
+          <div  *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >insert_drive_file</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+            <input
+              #csvInput
+              hidden="true"
+              type="file"
+              onclick="this.value=null"
+              accept=".pdf"
+              (change)="handleFileInput($event.target.files,2)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
+              <!--download-->
+              <mat-icon>file_upload</mat-icon>
+              <!--#download-->
+            </button>
+          </div>
         </div>
         <!-- #Reading Resource -->
-
         <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
           *Check the answers
         </h5>
@@ -275,25 +302,35 @@
           </mat-form-field>
         </div>
         <!--  Listening Resources -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Listening resource
-        </div>
-        <div class="u__flex mb-1">
-          <div class="u__flex-95">
-            <ngx-audio-player
-              [playlist]="msaapPlaylist"
-              [displayTitle]="msaapDisplayTitle"
-              [autoPlay]="false"
-              muted="muted"
-              [displayPlaylist]="msaapDisplayPlayList"
-              (trackEnded)="onEnded($event)"
-              [displayVolumeControls]="msaapDisplayVolumeControls"
-              [disablePositionSlider]="msaapDisablePositionSlider"
-              [expanded]="true"
-            ></ngx-audio-player>
+        <div *ngIf="nuevaPregunta.idHabilidad==1">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Listening resource
           </div>
-          <div class="u__flex-05 ml-1 u__flex--flex-end">
-            <button class="circular-button--primary" mat-mini-fab>
+          <div *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            * Listening resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >fiber_manual_record</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+
+            <input
+            #csvInput
+            hidden="true"
+            type="file"
+            onclick="this.value=null"
+            accept=".mp3"
+            (change)="handleFileInput($event.target.files,1)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
               <!--download-->
               <mat-icon>file_upload</mat-icon>
               <!--#download-->
@@ -302,21 +339,39 @@
         </div>
         <!-- #Listening Resources-->
         <!-- Reading Resource -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Reading resource
-        </div>
-        <div class="u__space-between mb-1">
-          <div class="u__flex">
-            <mat-icon class="dialog__file-container--icon"
-              >insert_drive_file</mat-icon
-            >
-            <div class="dialog__file-container--file-name-big">File.pdf</div>
+        <div  *ngIf="nuevaPregunta.idHabilidad==2">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
           </div>
-          <button class="circular-button--primary" mat-mini-fab>
-            <!--download-->
-            <mat-icon>file_upload</mat-icon>
-            <!--#download-->
-          </button>
+          <div  *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >insert_drive_file</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+            <input
+              #csvInput
+              hidden="true"
+              type="file"
+              onclick="this.value=null"
+              accept=".pdf"
+              (change)="handleFileInput($event.target.files,2)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
+              <!--download-->
+              <mat-icon>file_upload</mat-icon>
+              <!--#download-->
+            </button>
+          </div>
         </div>
         <!-- #Reading Resource -->
         <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
@@ -415,25 +470,35 @@
           </mat-form-field>
         </div>
         <!--  Listening Resources -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Listening resource
-        </div>
-        <div class="u__flex mb-1">
-          <div class="u__flex-95">
-            <ngx-audio-player
-              [playlist]="msaapPlaylist"
-              [displayTitle]="msaapDisplayTitle"
-              [autoPlay]="false"
-              muted="muted"
-              [displayPlaylist]="msaapDisplayPlayList"
-              (trackEnded)="onEnded($event)"
-              [displayVolumeControls]="msaapDisplayVolumeControls"
-              [disablePositionSlider]="msaapDisablePositionSlider"
-              [expanded]="true"
-            ></ngx-audio-player>
+        <div *ngIf="nuevaPregunta.idHabilidad==1">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Listening resource
           </div>
-          <div class="u__flex-05 ml-1 u__flex--flex-end">
-            <button class="circular-button--primary" mat-mini-fab>
+          <div *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            * Listening resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >fiber_manual_record</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+
+            <input
+            #csvInput
+            hidden="true"
+            type="file"
+            onclick="this.value=null"
+            accept=".mp3"
+            (change)="handleFileInput($event.target.files,1)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
               <!--download-->
               <mat-icon>file_upload</mat-icon>
               <!--#download-->
@@ -442,21 +507,39 @@
         </div>
         <!-- #Listening Resources-->
         <!-- Reading Resource -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Reading resource
-        </div>
-        <div class="u__space-between mb-1">
-          <div class="u__flex">
-            <mat-icon class="dialog__file-container--icon"
-              >insert_drive_file</mat-icon
-            >
-            <div class="dialog__file-container--file-name-big">File.pdf</div>
+        <div  *ngIf="nuevaPregunta.idHabilidad==2">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
           </div>
-          <button class="circular-button--primary" mat-mini-fab>
-            <!--download-->
-            <mat-icon>file_upload</mat-icon>
-            <!--#download-->
-          </button>
+          <div  *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >insert_drive_file</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+            <input
+              #csvInput
+              hidden="true"
+              type="file"
+              onclick="this.value=null"
+              accept=".pdf"
+              (change)="handleFileInput($event.target.files,2)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
+              <!--download-->
+              <mat-icon>file_upload</mat-icon>
+              <!--#download-->
+            </button>
+          </div>
         </div>
         <!-- #Reading Resource -->
         <div class="divisor-line divisor-line--primary mb-2"></div>
@@ -586,25 +669,35 @@
           </mat-form-field>
         </div>
         <!--  Listening Resources -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Listening resource
-        </div>
-        <div class="u__flex mb-1">
-          <div class="u__flex-95">
-            <ngx-audio-player
-              [playlist]="msaapPlaylist"
-              [displayTitle]="msaapDisplayTitle"
-              [autoPlay]="false"
-              muted="muted"
-              [displayPlaylist]="msaapDisplayPlayList"
-              (trackEnded)="onEnded($event)"
-              [displayVolumeControls]="msaapDisplayVolumeControls"
-              [disablePositionSlider]="msaapDisablePositionSlider"
-              [expanded]="true"
-            ></ngx-audio-player>
+        <div *ngIf="nuevaPregunta.idHabilidad==1">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Listening resource
           </div>
-          <div class="u__flex-05 ml-1 u__flex--flex-end">
-            <button class="circular-button--primary" mat-mini-fab>
+          <div *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            * Listening resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >fiber_manual_record</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+
+            <input
+            #csvInput
+            hidden="true"
+            type="file"
+            onclick="this.value=null"
+            accept=".mp3"
+            (change)="handleFileInput($event.target.files,1)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
               <!--download-->
               <mat-icon>file_upload</mat-icon>
               <!--#download-->
@@ -613,21 +706,39 @@
         </div>
         <!-- #Listening Resources-->
         <!-- Reading Resource -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Reading resource
-        </div>
-        <div class="u__space-between mb-1">
-          <div class="u__flex">
-            <mat-icon class="dialog__file-container--icon"
-              >insert_drive_file</mat-icon
-            >
-            <div class="dialog__file-container--file-name-big">File.pdf</div>
+        <div  *ngIf="nuevaPregunta.idHabilidad==2">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
           </div>
-          <button class="circular-button--primary" mat-mini-fab>
-            <!--download-->
-            <mat-icon>file_upload</mat-icon>
-            <!--#download-->
-          </button>
+          <div  *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >insert_drive_file</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+            <input
+              #csvInput
+              hidden="true"
+              type="file"
+              onclick="this.value=null"
+              accept=".pdf"
+              (change)="handleFileInput($event.target.files,2)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
+              <!--download-->
+              <mat-icon>file_upload</mat-icon>
+              <!--#download-->
+            </button>
+          </div>
         </div>
         <!-- #Reading Resource -->
         <div class="divisor-line divisor-line--primary mb-2"></div>
@@ -813,25 +924,35 @@
           </mat-form-field>
         </div>
         <!--  Listening Resources -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Listening resource
-        </div>
-        <div class="u__flex mb-1">
-          <div class="u__flex-95">
-            <ngx-audio-player
-              [playlist]="msaapPlaylist"
-              [displayTitle]="msaapDisplayTitle"
-              [autoPlay]="false"
-              muted="muted"
-              [displayPlaylist]="msaapDisplayPlayList"
-              (trackEnded)="onEnded($event)"
-              [displayVolumeControls]="msaapDisplayVolumeControls"
-              [disablePositionSlider]="msaapDisablePositionSlider"
-              [expanded]="true"
-            ></ngx-audio-player>
+        <div *ngIf="nuevaPregunta.idHabilidad==1">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Listening resource
           </div>
-          <div class="u__flex-05 ml-1 u__flex--flex-end">
-            <button class="circular-button--primary" mat-mini-fab>
+          <div *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            * Listening resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >fiber_manual_record</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+
+            <input
+            #csvInput
+            hidden="true"
+            type="file"
+            onclick="this.value=null"
+            accept=".mp3"
+            (change)="handleFileInput($event.target.files,1)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
               <!--download-->
               <mat-icon>file_upload</mat-icon>
               <!--#download-->
@@ -840,21 +961,39 @@
         </div>
         <!-- #Listening Resources-->
         <!-- Reading Resource -->
-        <div class="dialog__message dialog__message--assistance mb-1">
-          Reading resource
-        </div>
-        <div class="u__space-between mb-1">
-          <div class="u__flex">
-            <mat-icon class="dialog__file-container--icon"
-              >insert_drive_file</mat-icon
-            >
-            <div class="dialog__file-container--file-name-big">File.pdf</div>
+        <div  *ngIf="nuevaPregunta.idHabilidad==2">
+          <div *ngIf="nuevaPregunta.bloqRec==false" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
           </div>
-          <button class="circular-button--primary" mat-mini-fab>
-            <!--download-->
-            <mat-icon>file_upload</mat-icon>
-            <!--#download-->
-          </button>
+          <div  *ngIf="nuevaPregunta.bloqRec==true" style="color:red" class="dialog__message dialog__message--assistance mb-1">
+            Reading resource
+          </div>
+          <div class="u__space-between mb-1">
+            <div class="u__flex">
+              <mat-icon class="dialog__file-container--icon"
+                >insert_drive_file</mat-icon
+              >
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+            </div>
+            <input
+              #csvInput
+              hidden="true"
+              type="file"
+              onclick="this.value=null"
+              accept=".pdf"
+              (change)="handleFileInput($event.target.files,2)"
+            />
+            <button
+              class="dialog-circular-button"
+              mat-mini-fab
+              (click)="csvInput.click()"
+            >
+              <!--download-->
+              <mat-icon>file_upload</mat-icon>
+              <!--#download-->
+            </button>
+          </div>
         </div>
         <!-- #Reading Resource -->
         <div class="divisor-line divisor-line--primary mb-2"></div>

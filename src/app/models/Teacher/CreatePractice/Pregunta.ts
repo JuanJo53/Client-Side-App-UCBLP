@@ -20,4 +20,5 @@ export class Pregunta{
     bloqopci:boolean=false;
     bloqidtp:boolean=false;
     bloqidtr:boolean=false;
+    bloqRec:boolean=false;
 }

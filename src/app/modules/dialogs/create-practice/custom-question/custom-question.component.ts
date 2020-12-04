@@ -109,6 +109,40 @@ export class CustomQuestionComponent implements OnInit {
         break;
     }
   }
+  verificarTamTip(tam,tip,tipo){
+    var ver=false;
+    if(tipo==1){
+      if(tip=="audio/mpeg"){
+        ver=true;
+      }
+    } 
+    else{
+      if(tip=="application/pdf"){
+        ver=true;
+      }
+    }
+    if(tam/1000000<10&&ver){
+      console.log(tam);
+      return true;
+      }
+    else{
+      return false;
+    }
+  }
+  handleFileInput(file: FileList,tipo) {
+    console.log(file);
+    this.nuevaPregunta.recursoFile=null;
+    
+   if(this.verificarTamTip(file.item(0).size,file.item(0).type,tipo)){
+    this.nuevaPregunta.recursoFile = file.item(0);
+
+    //Show image preview
+    var reader = new FileReader();
+    reader.readAsDataURL(this.nuevaPregunta.recursoFile);
+    this.nuevaPregunta.recurso=file.item(0).name;
+   }
+   console.log(this.nuevaPregunta);
+  }
   ponerColumnas() {
     var numerCol = this.listColumnsChips2.length;
     console.log(this.numColumnas);
@@ -332,7 +366,8 @@ export class CustomQuestionComponent implements OnInit {
         console.log(this.nuevaPregunta);
         break;
     }
-
+    if(this.nuevaPregunta.recursoFile==null&&(this.nuevaPregunta.idHabilidad==1||this.nuevaPregunta.idHabilidad==2))this.nuevaPregunta.bloqRec=true;
+    else this.nuevaPregunta.bloqRec=false;
     if (this.nuevaPregunta.pregunta === "") this.nuevaPregunta.bloqpreg = true;
     else this.nuevaPregunta.bloqpreg = false;
     if (
@@ -356,7 +391,8 @@ export class CustomQuestionComponent implements OnInit {
       this.nuevaPregunta.bloqidtr == false &&
       this.nuevaPregunta.bloqopci == false &&
       this.nuevaPregunta.bloqpreg == false &&
-      this.nuevaPregunta.bloqpunt == false
+      this.nuevaPregunta.bloqpunt == false&&
+      this.nuevaPregunta.bloqRec == false
     ) {
       return true;
     } else return false;
@@ -946,7 +982,11 @@ export class CustomQuestionComponent implements OnInit {
     // # drag and drop
   }
   cambiarHabilidad(habilidad) {
+    if(this.nuevaPregunta.idHabilidad !==habilidad){
     this.nuevaPregunta.idHabilidad = habilidad;
+    this.nuevaPregunta.recurso=null;
+    this.nuevaPregunta.recursoFile=null;
+  }
   }
 
   // resources
@@ -959,6 +999,10 @@ export class CustomQuestionComponent implements OnInit {
 
   // Material Style Advance Audio Player Playlist
   msaapPlaylist: Track[] = [
+    {
+      title:"asdf",
+      link:"file:///C:/Users/Alvin/Desktop/the-champs-tequila-karaoke-version.mp3"
+    }
     // {
     //   title: "i dont wanna miss a thing",
     //   link: "",
