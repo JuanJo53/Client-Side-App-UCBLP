@@ -96,13 +96,12 @@
                   <mat-radio-group
                     class="mat-radio-group--container"
                     aria-label="Select an option"
-                    name="radiobuttonvaluePractice"
+                    [ngModelOptions]="{ standalone: true }"
                     [(ngModel)]="radioButtonValue"
                   >
                     <mat-radio-button
                       class="radio-button"
                       value="enable"
-                      checked
                       >Enable</mat-radio-button
                     >
                     <mat-radio-button class="radio-button" value="unable"
@@ -1133,15 +1132,16 @@
                   <mat-radio-group
                     class="mat-radio-group--container"
                     aria-label="Select an option"
-                    name="radiobuttonvaluePractice"
+                    [ngModelOptions]="{ standalone: true }"
+                    [(ngModel)]="radioButtonValue"
                   >
                     <mat-radio-button
                       class="radio-button"
                       value="enable"
-                      checked
+                      disabled
                       >Enable</mat-radio-button
                     >
-                    <mat-radio-button class="radio-button" value="unable"
+                    <mat-radio-button disabled class="radio-button" value="unable"
                       >Unable</mat-radio-button
                     >
                   </mat-radio-group>
@@ -1341,6 +1341,38 @@
                   >
                 </mat-form-field>
               </div>
+              <!--  Listening Resources -->
+              <div *ngIf="card.idHabilidad==1">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Listening resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >fiber_manual_record</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Listening Resources-->
+              <!-- Reading Resource -->
+              <div   *ngIf="card.idHabilidad==2">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Reading resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >insert_drive_file</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Reading Resource -->
               <div class="divisor-line divisor-line--primary mb-2"></div>
               <div class="dialog__message dialog__message--subtitle mb-2">
                 Answer Section
@@ -1493,6 +1525,38 @@
                   >
                 </mat-form-field>
               </div>
+              <!--  Listening Resources -->
+              <div *ngIf="card.idHabilidad==1">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Listening resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >fiber_manual_record</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Listening Resources-->
+              <!-- Reading Resource -->
+              <div   *ngIf="card.idHabilidad==2">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Reading resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >insert_drive_file</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Reading Resource -->
               <div class="divisor-line divisor-line--primary mb-2"></div>
               <div class="dialog__message dialog__message--subtitle mb-2">
                 Answer Section
@@ -1648,6 +1712,38 @@
                   >
                 </mat-form-field>
               </div>
+              <!--  Listening Resources -->
+              <div *ngIf="card.idHabilidad==1">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Listening resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >fiber_manual_record</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Listening Resources-->
+              <!-- Reading Resource -->
+              <div   *ngIf="card.idHabilidad==2">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Reading resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >insert_drive_file</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Reading Resource -->
               <div class="divisor-line divisor-line--primary mb-2"></div>
               <div class="dialog__message dialog__message--subtitle mb-2">
                 Answer Section
@@ -1821,6 +1917,38 @@
                   >
                 </mat-form-field>
               </div>
+              <!--  Listening Resources -->
+              <div *ngIf="card.idHabilidad==1">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Listening resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >fiber_manual_record</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Listening Resources-->
+              <!-- Reading Resource -->
+              <div   *ngIf="card.idHabilidad==2">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Reading resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >insert_drive_file</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Reading Resource -->
               <div class="divisor-line divisor-line--primary mb-2"></div>
               <div class="dialog__message dialog__message--subtitle mb-2">
                 Answer Section
@@ -1909,6 +2037,38 @@
                   >
                 </mat-form-field>
               </div>
+              <!--  Listening Resources -->
+              <div *ngIf="card.idHabilidad==1">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Listening resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >fiber_manual_record</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Listening Resources-->
+              <!-- Reading Resource -->
+              <div   *ngIf="card.idHabilidad==2">
+                <div class="dialog__message dialog__message--assistance mb-1">
+                  Reading resource
+                </div>
+                <div class="u__space-between mb-1">
+                  <div class="u__flex">
+                    <mat-icon class="dialog__file-container--icon"
+                      >insert_drive_file</mat-icon
+                    >
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso==null">Ningun archivo seleccionado</div>
+                    <div class="dialog__file-container--file-name-big" *ngIf="card.recurso!=null">{{card.recurso}}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- #Reading Resource -->
               <div class="divisor-line divisor-line--primary mb-2"></div>
               <div class="dialog__message dialog__message--subtitle mb-2">
                 Answer Section
