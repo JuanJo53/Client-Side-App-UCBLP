@@ -16,6 +16,8 @@
   cursor: pointer;
   &:hover {
     opacity: 75%;
+    transition: 0.25s;
+    transform: translateY(-0.25rem);
   }
 }
 

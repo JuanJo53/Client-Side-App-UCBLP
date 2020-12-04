@@ -91,7 +91,7 @@
   width: 20rem;
   height: 10rem;
 
-  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.75px 1.5rem rgba(0, 0, 0, 0.35);
   border-radius: 2rem 2rem 2rem 2rem;
   display: flex;
   overflow: hidden;
@@ -101,8 +101,15 @@
     background-size: cover;
     display: block;
     position: relative;
-    &:hover {
-      background-color: red;
-    }
+    cursor: pointer;
   }
+  &__img:hover {
+    //background-color: red !important;
+    opacity: 75%;
+    transition: 0.3s;
+    transform: scale(1.1);
+  }
+  // &:hover {
+  //   border: 1px solid $color-primary-gray;
+  // }
 }
