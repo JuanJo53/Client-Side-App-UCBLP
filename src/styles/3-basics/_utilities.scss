@@ -28,7 +28,6 @@
   //background-color: red;
 }
 .u__space-evenly--center {
-  margin: 1rem 0rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -60,6 +59,12 @@
   justify-content: center;
   align-items: center;
 }
+.u__row {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: wrap;
+  //background-color: red;
+}
 .mt-3 {
   margin-top: 3rem;
 }
@@ -83,6 +88,9 @@
 }
 .mx-1 {
   margin: 0 1rem;
+}
+.my-1 {
+  margin: 1rem 0;
 }
 .px-1 {
   padding: 0 1rem;
