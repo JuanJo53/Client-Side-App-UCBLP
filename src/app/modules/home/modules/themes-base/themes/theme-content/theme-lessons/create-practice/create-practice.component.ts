@@ -18,6 +18,7 @@ import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 import { Matching } from "src/app/models/Preguntas/Matching";
 import { LoadingService } from "src/app/_services/loading.service";
+import { UploadFilesService } from 'src/app/_services/teacher_services/upload-files.service';
 
 export interface ChipOption {
   name: string;
@@ -88,7 +89,8 @@ export class CreatePracticeComponent implements OnInit {
     private route: ActivatedRoute,
     private servPrac: PracticesService,
     private location: Location,
-    private loading: LoadingService
+    private loading: LoadingService,
+    private upServ:UploadFilesService
   ) {}
 
   actPuntaje() {
@@ -346,8 +348,9 @@ export class CreatePracticeComponent implements OnInit {
     console.log(this.paso1.fechaini);
 
     this.servPrac.addPractica(this.paso1, this.preguntas).subscribe({
-      next: (data) => {
+      next: async  (data) => {
         if (data.status == 200) {
+          console.log(data.body);
           this.showSpinner = false;
           // this.servPrac
           //   .addPracticaPreguntas(this.preguntas, data.body.idPractica)
@@ -369,7 +372,15 @@ export class CreatePracticeComponent implements OnInit {
           //       stepper.next();
           //     },
           //   });
-
+          let j=0;
+          
+          this.loading.cambiarLabel("Subiendo Documentos");
+          for await (let i of this.preguntas){
+            if(i.idHabilidad==1 ||i.idHabilidad==2){
+              await this.upServ.subirArchivo(data.body.recursos[j],i.recursoFile).toPromise();
+              j++;
+            }
+          }
           this.location.back();
           this.loading.desactivar();
         } else {

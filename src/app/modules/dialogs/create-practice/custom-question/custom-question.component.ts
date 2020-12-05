@@ -84,6 +84,10 @@ export class CustomQuestionComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private dialogRef: MatDialogRef<CustomQuestionComponent>
   ) {}
+  geturlMp3(url){
+    var urlT:Track[]=[{link:url,title:"mp3"}]
+    return urlT; 
+  }
   cargarRespuestas() {
     switch (this.nuevaPregunta.idTipoPregunta) {
       case "1":
