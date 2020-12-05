@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, ViewChild } from "@angular/core";
 import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCompleteCard";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 import { Combo } from "src/app/models/ComboBox/comboBox";
@@ -21,6 +21,7 @@ import { Column } from "src/app/models/Dragandrop/Column";
 import { Matching } from "src/app/models/Preguntas/Matching";
 import { repeat } from "rxjs/operators";
 import { Track } from "ngx-audio-player/lib/model/track.model";
+import { PlyrComponent } from 'ngx-plyr';
 
 @Component({
   selector: "app-custom-question",
@@ -84,10 +85,23 @@ export class CustomQuestionComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private dialogRef: MatDialogRef<CustomQuestionComponent>
   ) {}
-  geturlMp3(url){
-    var urlT:Track[]=[{link:url,title:"mp3"}]
-    return urlT; 
-  }
+  // get the component instance to have access to plyr instance
+@ViewChild(PlyrComponent)
+plyr: PlyrComponent;
+
+// or get it from plyrInit event
+player: Plyr;
+
+videoSources: Plyr.Source[] = [
+];
+
+played(event: Plyr.PlyrEvent) {
+  console.log('played', event);
+}
+
+play(): void {
+  this.player.play(); // or this.plyr.player.play()
+}
   cargarRespuestas() {
     switch (this.nuevaPregunta.idTipoPregunta) {
       case "1":
@@ -188,6 +202,11 @@ export class CustomQuestionComponent implements OnInit {
     }
 
     this.nuevaPregunta = preg;
+    this.msaapPlaylist.push(
+        {
+          link:preg.recurso,
+        title:"Listening resource" }
+    )
     switch (preg.idTipoRespuesta) {
       case "2":
         this.checkboxOpciones = [];
@@ -1003,14 +1022,6 @@ export class CustomQuestionComponent implements OnInit {
 
   // Material Style Advance Audio Player Playlist
   msaapPlaylist: Track[] = [
-    {
-      title:"asdf",
-      link:"file:///C:/Users/Alvin/Desktop/the-champs-tequila-karaoke-version.mp3"
-    }
-    // {
-    //   title: "i dont wanna miss a thing",
-    //   link: "",
-    // },
   ];
   onEnded($event) {
     console.log("Ended");
