@@ -51,14 +51,17 @@
   }
   &__circle {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $color-card-attendance;
     border: 0.1rem solid $color-primary-white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    &--big {
+      font-size: 1.75rem;
+    }
   }
   &__title {
     color: $color-primary-white;
@@ -119,14 +122,17 @@
   }
   &__circle {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $color-card-themes;
     border: 0.1rem solid $color-primary-white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    &--big {
+      font-size: 1.75rem;
+    }
   }
   &__title {
     color: $color-primary-white;
@@ -191,14 +197,17 @@
   }
   &__circle {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $color-card-practices;
     border: 0.1rem solid $color-primary-white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    &--big {
+      font-size: 1.75rem;
+    }
   }
   &__title {
     color: $color-primary-white;
@@ -262,14 +271,17 @@
   }
   &__circle {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $color-card-themes-test;
     border: 0.1rem solid $color-primary-white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    &--big {
+      font-size: 1.75rem;
+    }
   }
   &__title {
     color: $color-primary-white;
@@ -334,14 +346,17 @@
   }
   &__circle {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $color-card-assessment;
     border: 0.1rem solid $color-primary-white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    &--big {
+      font-size: 1.75rem;
+    }
   }
   &__title {
     color: $color-primary-white;
@@ -407,14 +422,17 @@
   }
   &__circle {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $color-card-option-1;
     border: 0.1rem solid $color-primary-white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    &--big {
+      font-size: 1.75rem;
+    }
   }
   &__title {
     color: $color-primary-white;
@@ -422,6 +440,5 @@
     margin: 0rem 1rem;
     text-align: center;
     line-height: 1.5;
-    //background-color: red;
   }
 }

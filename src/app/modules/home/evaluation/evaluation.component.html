@@ -12,13 +12,13 @@
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
-      <span>Default Modules</span>
+      <span>Main Modules</span>
     </div>
   </div>
   <!--#Subtitle-->
   <div class="row">
     <!--default attendance -->
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="col-xlg-3 col-lg-4 col-md-6 col-xs-12">
       <div class="default-card-attendance">
         <div class="default-card-attendance__img">
           <div
@@ -44,7 +44,7 @@
             <div class="default-card-attendance__content-card">
               <div class="default-card-attendance__circle-container">
                 <div
-                  class="default-card-attendance__circle"
+                  class="default-card-attendance__circle default-card-attendance__circle--big"
                   [ngStyle]="{
                     'background-color':
                       cardsModulosPred[0].estado != 2 ? '#9C5FAF' : '#8f8f8fCC',
@@ -66,7 +66,7 @@
     </div>
     <!--#default  attendance-->
     <!--default themes -->
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="col-xlg-3 col-lg-4 col-md-6 col-xs-12">
       <div class="default-card-theme">
         <div class="default-card-theme__img">
           <div
@@ -92,7 +92,7 @@
             <div class="default-card-theme__content-card">
               <div class="default-card-theme__circle-container">
                 <div
-                  class="default-card-theme__circle"
+                  class="default-card-theme__circle default-card-theme__circle--big"
                   [ngStyle]="{
                     'background-color':
                       cardsModulosPred[1].estado != 2 ? '#be8383' : '#8f8f8fCC',
@@ -114,7 +114,7 @@
     </div>
     <!--#default  themes-->
     <!--default practices -->
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="col-xlg-3 col-lg-4 col-md-6 col-xs-12">
       <div class="default-card-practices">
         <div class="default-card-practices__img">
           <div
@@ -140,7 +140,7 @@
             <div class="default-card-practices__content-card">
               <div class="default-card-practices__circle-container">
                 <div
-                  class="default-card-practices__circle"
+                  class="default-card-practices__circle default-card-practices__circle--big"
                   [ngStyle]="{
                     'background-color':
                       cardsModulosPred[2].estado != 2 ? '#498161' : '#8f8f8fCC',
@@ -162,7 +162,7 @@
     </div>
     <!--#default  practices-->
     <!--default Theme test -->
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="col-xlg-3 col-lg-4 col-md-6 col-xs-12">
       <div class="default-card-theme-test">
         <div class="default-card-theme-test__img">
           <div
@@ -188,7 +188,7 @@
             <div class="default-card-theme-test__content-card">
               <div class="default-card-theme-test__circle-container">
                 <div
-                  class="default-card-theme-test__circle"
+                  class="default-card-theme-test__circle default-card-theme-test__circle--big"
                   [ngStyle]="{
                     'background-color':
                       cardsModulosPred[3].estado != 2 ? '#403837' : '#8f8f8fCC',
@@ -210,7 +210,7 @@
     </div>
     <!--#default  theme test-->
     <!--default Assessments -->
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="col-xlg-3 col-lg-4 col-md-6 col-xs-12">
       <div class="default-card-assessment">
         <div class="default-card-assessment__img">
           <div
@@ -236,7 +236,7 @@
             <div class="default-card-assessment__content-card">
               <div class="default-card-assessment__circle-container">
                 <div
-                  class="default-card-assessment__circle"
+                  class="default-card-assessment__circle default-card-assessment__circle--big"
                   [ngStyle]="{
                     'background-color':
                       cardsModulosPred[4].estado != 2 ? '#27649b' : '#8f8f8fCC',
@@ -283,7 +283,7 @@
     <!--evaluation-card-attendance  -->
     <div
       *ngFor="let custCards of cardsModulosPers; let indexcu = index"
-      class="col-lg-3 col-md-6 col-xs-12"
+      class="col-xlg-3 col-lg-4 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
         <div
@@ -327,7 +327,7 @@
             <div class="evaluation-card__content-card">
               <div class="evaluation-card__circle-container">
                 <div
-                  class="evaluation-card__circle"
+                  class="evaluation-card__circle evaluation-card__circle--big"
                   [ngStyle]="{
                     'background-color':
                       custCards.estado != 2
