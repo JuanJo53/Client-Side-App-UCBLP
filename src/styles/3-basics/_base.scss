@@ -34,46 +34,52 @@ body {
   margin-right: auto;
   margin-left: auto;
   @include respond(big-desktop) {
-    // background-color: violet;
+    //background-color: violet;
   }
   @include respond(normal-desktop) {
-    background-color: blue;
+    //background-color: blue;
   }
   @include respond(normal) {
-    background-color: orange;
+    //background-color: orange;
   }
   @include respond(tab-lan) {
-    background-color: green;
+    //background-color: green;
   }
   @include respond(tab-por) {
-    background-color: pink;
+    //background-color: pink;
   }
   @include respond(phone) {
-    background-color: red;
+    //background-color: red;
   }
 }
-.container-dialog {
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-.last-component {
-  margin-bottom: 4rem;
-}
-@media (min-width: 768px) {
+@media (min-width: 30rem) {
   .container {
-    width: 75rem;
+    //background-color: violet;
+    width: 40rem;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 50rem) {
   .container {
-    width: 97rem;
+    //background-color: blue;
+    width: 60rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .container {
-    width: 117rem;
+    //background-color: orange;
+    width: 85rem;
+  }
+}
+@media (min-width: 90rem) {
+  .container {
+    //background-color: green;
+    width: 100rem;
+  }
+}
+@media (min-width: 120rem) {
+  .container {
+    //background-color: red;
+    width: 120rem;
   }
 }
 ::-webkit-scrollbar {

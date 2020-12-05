@@ -33,7 +33,8 @@
             General Average :
           </div>
           <div class="card-profile-student__characteristic--content">
-            {{ estudiante.promedio }}
+            {{ estudiante.promedio
+            }}<span class="header-table__metric"> / 100</span>
           </div>
         </div>
       </div>
@@ -42,7 +43,7 @@
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
-      <span>Default Grades</span>
+      <span>Main grades</span>
     </div>
   </div>
   <!--#Subtitle-->
@@ -51,7 +52,7 @@
     <!--default attendance -->
     <div
       *ngFor="let custCards of defaultCard; let predi = index"
-      class="col-lg-3 col-md-6 col-xs-12"
+      class="col-xlg-3 col-lg-4 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
         <div
@@ -86,7 +87,7 @@
                     'background-color': '#' + coloresPred[predi]
                   }"
                 >
-                  {{ custCards.rubrica }}
+                  {{ custCards.rubrica }} / XX
                 </div>
               </div>
               <div class="evaluation-card__title-container">
@@ -104,16 +105,16 @@
   <!--Subtitle-->
   <div class="subtitle">
     <div class="subtitle__text">
-      <span>Custom Grades</span>
+      <span>Custom grades</span>
     </div>
   </div>
   <!--#Subtitle-->
   <!--row-->
-  <div class="row last-component">
+  <div class="row">
     <!--evaluation-card-attendance  -->
     <div
       *ngFor="let custCards of customCards"
-      class="col-lg-3 col-md-6 col-xs-12"
+      class="col-xlg-3 col-lg-4 col-md-6 col-xs-12"
     >
       <div class="evaluation-card">
         <div
@@ -148,7 +149,7 @@
                     'background-color': sacarColor(custCards.idColor)
                   }"
                 >
-                  {{ custCards.rubrica }}
+                  {{ custCards.rubrica }} / XX
                 </div>
               </div>
               <div class="evaluation-card__title-container">
