@@ -34,7 +34,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   @include respond(big-desktop) {
-    background-color: violet;
+    // background-color: violet;
   }
   @include respond(normal-desktop) {
     background-color: blue;
