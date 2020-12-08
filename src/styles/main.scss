@@ -1,66 +1,60 @@
 //Only imports
 // 1 - HELPERS
-@import "1-helpers/variables";
-@import "1-helpers/functions";
-@import "1-helpers/mixins";
+@import "1-abstracts/variables";
+@import "1-abstracts/functions";
+@import "1-abstracts/mixins";
 
-//2 - TOOLS
-@import "2-tools/files";
-@import "2-tools/flexboxgrid";
-@import "2-tools/carousel";
+//2 - BASE
+@import "2-base/flexboxgrid";
+@import "2-base/carousel";
+@import "2-base/base";
+@import "2-base/utilities";
 
-//3 - BASICS
-@import "3-basics/base";
-@import "3-basics/buttons";
-@import "3-basics/inputs";
-@import "3-basics/links";
-@import "3-basics/navbar-brand";
-@import "3-basics/radio-buttons";
-@import "3-basics/selection-colors";
-@import "3-basics/tables";
-@import "3-basics/combo-box";
-@import "3-basics/typography";
-@import "3-basics/timepicker";
-@import "3-basics/checkbox";
-@import "3-basics/spinner";
-@import "3-basics/color-picker";
-@import "3-basics/progress-bar";
-@import "3-basics/rubric";
-@import "3-basics/done-message";
-@import "3-basics/schedule";
-@import "3-basics/slider";
-@import "3-basics/tooltip";
-@import "3-basics/utilities";
+//3 - COMPONENT
+@import "3-component/buttons";
+@import "3-component/inputs";
+@import "3-component/links";
+
+@import "3-component/radio-buttons";
+@import "3-component/selection-colors";
+@import "3-component/tables";
+@import "3-component/combo-box";
+@import "3-component/typography";
+@import "3-component/timepicker";
+@import "3-component/checkbox";
+@import "3-component/spinner";
+@import "3-component/color-picker";
+@import "3-component/progress-bar";
+@import "3-component/rubric";
+@import "3-component/done-message";
+@import "3-component/schedule";
+@import "3-component/slider";
+@import "3-component/tooltip";
+@import "3-component/choosing_classroom_card";
+@import "3-component/custom_card";
+@import "3-component/default-modules";
+@import "3-component/custom_subtitle";
+@import "3-component/dialogs";
+@import "3-component/login_card";
+@import "3-component/forum";
+@import "3-component/question-maker";
+@import "3-component/evaluation_card";
+@import "3-component/simple_dialogs";
+@import "3-component/aux_pages";
+@import "3-component/card-profile-student";
+@import "3-component/dashboard";
+@import "3-component/drag-drop-questions";
+@import "3-component/match-combobox";
+@import "3-component/chip";
+@import "3-component/radio-button-question";
+@import "3-component/checkbox_question";
+@import "3-component/match-question";
+@import "3-component/graphic";
 
 //4 - LAYOUT
-@import "4-layout/grid";
+@import "4-layout/navbar-brand";
 @import "4-layout/navbar";
-@import "4-layout/navigation";
 @import "4-layout/sidebar";
 
-//5- MODULES
-@import "5-modules/choosing_classroom_card";
-@import "5-modules/custom_card";
-@import "5-modules/default-modules";
-@import "5-modules/custom_subtitle";
-@import "5-modules/dialogs";
-@import "5-modules/login_card";
-@import "5-modules/logo";
-@import "5-modules/forum";
-@import "5-modules/question-maker";
-@import "5-modules/question-card";
-@import "5-modules/evaluation_card";
-@import "5-modules/simple_dialogs";
-@import "5-modules/aux_pages";
-@import "5-modules/card-profile-student";
-@import "5-modules/dashboard";
-@import "5-modules/drag-drop-questions";
-@import "5-modules/match-combobox";
-@import "5-modules/chip";
-@import "5-modules/radio-button-question";
-@import "5-modules/checkbox_question";
-@import "5-modules/match-question";
-@import "5-modules/graphic";
-
-//6- PAGES
-@import "6-pages/home";
+//5- PAGES
+@import "5-pages/home";
