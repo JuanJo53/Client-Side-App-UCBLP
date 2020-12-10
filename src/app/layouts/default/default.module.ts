@@ -101,7 +101,7 @@ import { NgxGlideModule } from "ngx-glide";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { NgxAudioPlayerModule } from "ngx-audio-player";
-
+import { MatPaginatorGotoComponent } from '../../shared/components/mat-paginator-goto/mat-paginator-goto.component';
 
 @NgModule({
   declarations: [
@@ -169,6 +169,7 @@ import { NgxAudioPlayerModule } from "ngx-audio-player";
     ConfigureLessonContentComponent,
     EditPracticeComponent,
     ScheduleComponent,
+    MatPaginatorGotoComponent
   ],
   imports: [
     CommonModule,

@@ -17,7 +17,7 @@ export class GetQuestionsRepositoryResolver{
 
     }
     else{      
-      return this.practi.getQuestions();
+      return this.practi.getQuestions(10,0);
       
     }
   }

@@ -111,12 +111,10 @@ agregarDatos(data){
     });
     this.route.data.subscribe({
       next: (data) => {
+        console.log(data.practice);
         if (data.practice.status == 200) {
           this.agregarDatos(data.practice.body);
-        }        
-        if (data.repository.status == 200) {
-          this.repository = data.repository.body;
-        }
+        }     
       },
       error: (err) => {
         if(err.status==403){

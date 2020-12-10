@@ -1,7 +1,7 @@
 export class Module{
     id:number;
     nombreModulo:string;
-    rubrica:number;
+    rubrica:any;
     idColor:number;
     idImagen:number;
     estado:number;
@@ -9,4 +9,5 @@ export class Module{
     idCurso:number;
     imagen:string;
     color:string;
+    notaRubrica:string;
 }

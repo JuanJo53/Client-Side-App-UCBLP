@@ -46,7 +46,6 @@ import { CreatePracticeComponent } from "./modules/home/modules/themes-base/them
 import { BuildingPageComponent } from "./modules/aux-pages/building-page/building-page.component";
 import { GetForumsResolver } from "./_resolvers/docente/forums/get-forums.resolver";
 import { GetPracticesResolver } from "./_resolvers/docente/practices/get-practices.resolver";
-import { GetQuestionsRepositoryResolver } from "./_resolvers/docente/practices/get-questions-repository.resolver";
 import { GetResourcesResolver } from "./_resolvers/docente/Resources/get-resources.resolver";
 import { GetModulesSimpleResolver } from "./_resolvers/docente/evaluation/get-modules-simple.resolver";
 import { CustomModuleBaseComponent } from "./modules/home/modules/custom-module-base/custom-module-base.component";
@@ -279,15 +278,11 @@ const routes: Routes = [
                       {
                         path: "practice",
                         component: CreatePracticeComponent,
-                        resolve: {
-                          repository: GetQuestionsRepositoryResolver,
-                        },
                       },
                       {
                         path: "edit-practice/:idPractica",
                         resolve:{
                           practice:GetPracticeModResolver,
-                          repository: GetQuestionsRepositoryResolver,
                         },
                         component: EditPracticeComponent,
                       },

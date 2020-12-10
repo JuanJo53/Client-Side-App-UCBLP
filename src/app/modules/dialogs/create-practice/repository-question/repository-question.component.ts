@@ -14,6 +14,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 import { CheckboxQuestion } from "src/app/models/Preguntas/Checkbox";
 import { MatPaginator } from "@angular/material/paginator";
+import { PracticesService } from 'src/app/_services/teacher_services/practices.service';
+import { LoadingService } from 'src/app/_services/loading.service';
 
 export interface ListaPreguntasPracticas {
   codigo: number;
@@ -31,6 +33,8 @@ export interface ListaPreguntasPracticas {
   styleUrls: ["./repository-question.component.scss"],
 })
 export class RepositoryQuestionComponent implements OnInit {
+  length=20;
+  pageSize=10;
   preguntaPaso2: Pregunta = new Pregunta();
   showSpinner = false;
   checked: boolean;
@@ -75,7 +79,6 @@ export class RepositoryQuestionComponent implements OnInit {
     "codigo",
     "checkbox",
   ];
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   dataSource = new MatTableDataSource(this.preguntas);
   isLinear = false;
   firstFormGroup: FormGroup;
@@ -110,7 +113,9 @@ export class RepositoryQuestionComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
-    private dialogRef: MatDialogRef<RepositoryQuestionComponent>
+    private dialogRef: MatDialogRef<RepositoryQuestionComponent>,
+    private pracServ:PracticesService,
+    private loadServ:LoadingService
   ) {}
 
   ngOnInit(): void {
@@ -127,10 +132,31 @@ export class RepositoryQuestionComponent implements OnInit {
       startWith(""),
       map((value) => this._filter(value))
     );
-    this.cargarDatosSQL(this.dataDialog["repository"]);
+    this.obtenerDatos(10,0);
+  }
+  
+  cambiarPagina(event){
+    this.loadServ.activar();
+    this.obtenerDatos(10,event.pageIndex*event.pageSize);
+  }
+  obtenerDatos(lim,ini){
+    this.loadServ.activar();
+    this.pracServ.getQuestions(lim,ini).subscribe({
+      next:(data)=>{
+        this.cargarDatosSQL(data.body.data);
+        if(ini==0){
+          
+        this.length=data.body.total;
+        console.log(this.length);
+        }
+        this.loadServ.desactivar();
+      },
+      error:(err)=>{
+
+      }
+    })
   }
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
   }
 
   private _filter(value: string): string[] {
@@ -195,9 +221,9 @@ export class RepositoryQuestionComponent implements OnInit {
       this.cargarRespuestasBool(nuevaPregunta);
       this.preguntas.push(nuevaPregunta);
     }
-    this.dataSource.paginator = this.paginator;
   }
   cargarDatosSQL(data) {
+    this.preguntas=[];
     this.checkboxOpciones = [];
     for (let pregunta of data) {
       this.checkboxOpciones.push({ isChecked: false, opcionRespuesta: "" });
@@ -215,6 +241,7 @@ export class RepositoryQuestionComponent implements OnInit {
       this.cargarRespuestasBool(nuevaPregunta);
       this.preguntas.push(nuevaPregunta);
     }
+    this.dataSource.data=this.preguntas;
   }
   aceptar() {
     this.dialogRef.close(this.preguntasElegidas);

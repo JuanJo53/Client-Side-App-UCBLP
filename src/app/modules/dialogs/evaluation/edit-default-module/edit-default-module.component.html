@@ -17,7 +17,10 @@
           placeholder="Module's name"
           disabled="disabled"
           name="nombreModulo"
+          #nombreM
+          maxlength="50"
         />
+        <mat-hint align="end">{{nombreM.value.length}} / 50</mat-hint>
         <!-- //Input para el nombre del modulo-->
       </mat-form-field>
       <div class="radio-buttons-dialog">

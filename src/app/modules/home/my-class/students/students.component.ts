@@ -81,7 +81,7 @@ export class StudentsComponent implements OnInit {
       nuevoEstudiante.nombre = data[i].nombre_alumno;
       nuevoEstudiante.p_nombre = data[i].ap_paterno_alumno;
       nuevoEstudiante.posicion = Number(i) + 1+indice;
-      nuevoEstudiante.promedio = data[i].nota;
+      nuevoEstudiante.promedio = data[i].nota.toFixed(2)
       this.ELEMENT_DATA.push(nuevoEstudiante);
     }
     this.dataSource.data=this.ELEMENT_DATA;
