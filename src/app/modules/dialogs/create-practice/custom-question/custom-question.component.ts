@@ -184,7 +184,7 @@ play(): void {
   cargarPreguntaModificar() {
     var preg = this.dataDialog["preg"] as Pregunta;
     console.log(preg);
-    if (preg.tipo) {
+    if (true) {
       this.preguntaAntigua.pregunta = preg.pregunta;
       this.preguntaAntigua.puntuacion = preg.puntuacion;
       this.preguntaAntigua.tipo = preg.tipo;
@@ -199,6 +199,9 @@ play(): void {
       this.preguntaAntigua.idTipoPregunta = preg.idTipoPregunta;
       this.preguntaAntigua.idTipoRespuesta = preg.idTipoRespuesta;
       this.preguntaAntigua.idHabilidad = preg.idHabilidad;
+      this.preguntaAntigua.recurso=preg.recurso;
+      this.preguntaAntigua.id=preg.id;
+      this.preguntaAntigua.nivel=preg.nivel;
     }
 
     this.nuevaPregunta = preg;
@@ -389,7 +392,8 @@ play(): void {
         console.log(this.nuevaPregunta);
         break;
     }
-    if(this.nuevaPregunta.recursoFile==null&&(this.nuevaPregunta.idHabilidad==1||this.nuevaPregunta.idHabilidad==2))this.nuevaPregunta.bloqRec=true;
+    console.log(this.nuevaPregunta.recurso==null);
+    if(this.nuevaPregunta.recurso==null&&(this.nuevaPregunta.idHabilidad==1||this.nuevaPregunta.idHabilidad==2))this.nuevaPregunta.bloqRec=true;
     else this.nuevaPregunta.bloqRec=false;
     if (this.nuevaPregunta.pregunta === "") this.nuevaPregunta.bloqpreg = true;
     else this.nuevaPregunta.bloqpreg = false;
@@ -573,8 +577,12 @@ play(): void {
       var verTipoP = true;
       var verTipoR = true;
       var verTipoH = true;
+      var verRec = true;
       if (nuevaPregunta.idHabilidad != this.preguntaAntigua.idHabilidad) {
         verTipoH = false;
+      }
+      if(nuevaPregunta.recurso!=this.preguntaAntigua.recurso){
+        verRec=false;
       }
 
       //Verifica si las respuestas y opciones son iguales
@@ -728,7 +736,7 @@ play(): void {
       ) {
         verTipoR = false;
       }
-      if (verOpci && verPreg && verResp && verTipoP && verTipoR && verTipoH) {
+      if (verOpci && verPreg && verResp && verTipoP && verTipoR && verTipoH&&verRec) {
         if (
           nuevaPregunta.puntuacion != this.preguntaAntigua.puntuacion &&
           this.preguntaAntigua.tipo == 3
@@ -768,6 +776,13 @@ play(): void {
     console.log("tipo de pregunta : " + this.tipoPreguntaEscogida);
   }
   cancelar() {
+    this.nuevaPregunta.puntuacion=this.preguntaAntigua.puntuacion;
+    this.nuevaPregunta.pregunta=this.preguntaAntigua.pregunta;
+    this.nuevaPregunta.recursoFile=this.preguntaAntigua.recursoFile;
+    this.nuevaPregunta.recurso=this.preguntaAntigua.recurso;
+    this.nuevaPregunta.idHabilidad=this.preguntaAntigua.idHabilidad;
+    this.nuevaPregunta.idTipoRespuesta=this.preguntaAntigua.idTipoRespuesta;
+    this.nuevaPregunta.idTipoPregunta=this.preguntaAntigua.idTipoPregunta;
     this.dialogRef.close();
   }
 

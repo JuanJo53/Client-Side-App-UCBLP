@@ -179,7 +179,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >fiber_manual_record</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
 
@@ -216,8 +216,17 @@
               <mat-icon class="dialog__file-container--icon"
                 >insert_drive_file</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
+              <div class="u__flex mb-1" *ngIf="nuevaPregunta.id!=null&&nuevaPregunta.recursoFile==null">
+
+                <a href="{{nuevaPregunta.recurso}}" target="_blank"class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">Download File</a>
+
+              </div>
+              <div class="u__flex mb-1" *ngIf="nuevaPregunta.id==null||nuevaPregunta.recursoFile!=null">
+
+                <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
+
+              </div>
             </div>
             <input
               #csvInput
@@ -239,11 +248,11 @@
           </div>
         </div>
         <!-- #Reading Resource -->
-        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
-          *Check the answers
-        </h5>
         <div class="divisor-line divisor-line--primary mb-2"></div>
-        <div class="dialog__message dialog__message--subtitle mb-2">
+        <h5 *ngIf="nuevaPregunta.bloqopci" class="dialog__message dialog__message--subtitle mb-2" style="color: red">
+          *Answer Setup
+        </h5>
+        <div *ngIf="!nuevaPregunta.bloqopci"class="dialog__message dialog__message--subtitle mb-2">
           Answer Setup
         </div>
         <div class="radio-button-question">
@@ -361,7 +370,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >fiber_manual_record</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
 
@@ -398,7 +407,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >insert_drive_file</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
             <input
@@ -421,11 +430,11 @@
           </div>
         </div>
         <!-- #Reading Resource -->
-        <h5 *ngIf="nuevaPregunta.bloqopci" style="color: red">
-          *Check the answers
-        </h5>
         <div class="divisor-line divisor-line--primary mb-2"></div>
-        <div class="dialog__message dialog__message--subtitle mb-2">
+        <h5 *ngIf="nuevaPregunta.bloqopci" class="dialog__message dialog__message--subtitle mb-2" style="color: red">
+          *Answer Setup
+        </h5>
+        <div *ngIf="!nuevaPregunta.bloqopci"class="dialog__message dialog__message--subtitle mb-2">
           Answer Setup
         </div>
         <div class="card-question__content">
@@ -541,7 +550,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >fiber_manual_record</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
 
@@ -578,7 +587,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >insert_drive_file</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
             <input
@@ -602,7 +611,10 @@
         </div>
         <!-- #Reading Resource -->
         <div class="divisor-line divisor-line--primary mb-2"></div>
-        <div class="dialog__message dialog__message--subtitle mb-2">
+        <h5 *ngIf="nuevaPregunta.bloqopci" class="dialog__message dialog__message--subtitle mb-2" style="color: red">
+          *Answer Setup
+        </h5>
+        <div *ngIf="!nuevaPregunta.bloqopci"class="dialog__message dialog__message--subtitle mb-2">
           Answer Setup
         </div>
         <div class="u__space-between mb-2">
@@ -751,7 +763,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >fiber_manual_record</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
 
@@ -788,7 +800,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >insert_drive_file</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
             <input
@@ -812,7 +824,10 @@
         </div>
         <!-- #Reading Resource -->
         <div class="divisor-line divisor-line--primary mb-2"></div>
-        <div class="dialog__message dialog__message--subtitle mb-2">
+        <h5 *ngIf="nuevaPregunta.bloqopci" class="dialog__message dialog__message--subtitle mb-2" style="color: red">
+          *Answer Setup
+        </h5>
+        <div *ngIf="!nuevaPregunta.bloqopci"class="dialog__message dialog__message--subtitle mb-2">
           Answer Setup
         </div>
         <div
@@ -1017,7 +1032,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >fiber_manual_record</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
 
@@ -1054,7 +1069,7 @@
               <mat-icon class="dialog__file-container--icon"
                 >insert_drive_file</mat-icon
               >
-              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">Ningun archivo seleccionado</div>
+              <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso==null">No resource selected</div>
               <div class="dialog__file-container--file-name-big" *ngIf="nuevaPregunta.recurso!=null">{{nuevaPregunta.recurso}}</div>
             </div>
             <input
@@ -1078,7 +1093,10 @@
         </div>
         <!-- #Reading Resource -->
         <div class="divisor-line divisor-line--primary mb-2"></div>
-        <div class="dialog__message dialog__message--subtitle mb-2">
+        <h5 *ngIf="nuevaPregunta.bloqopci" class="dialog__message dialog__message--subtitle mb-2" style="color: red">
+          *Answer Setup
+        </h5>
+        <div *ngIf="!nuevaPregunta.bloqopci"class="dialog__message dialog__message--subtitle mb-2">
           Answer Setup
         </div>
         <div
