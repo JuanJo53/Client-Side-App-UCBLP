@@ -8,6 +8,9 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    @include respond(tab-lan) {
+      margin: 2.25rem 0;
+    }
     // background-color: orange;
   }
   &__img {
@@ -15,13 +18,32 @@
     height: 100%;
     background-size: cover;
     margin: 0rem 1rem;
+    @include respond(normal) {
+      width: 60px;
+    }
+    @include respond(tab-lan) {
+      width: 40px;
+    }
     //background-color: green;
   }
   &__text {
     font-size: 2.5rem;
+    @include respond(normal) {
+      font-size: 2rem;
+    }
+    @include respond(tab-lan) {
+      font-size: 1.5rem;
+    }
   }
   &__header-buttons {
     justify-content: flex-start;
-    //background-color: red;
+    @include respond(tab-lan) {
+      font-size: 1.5rem;
+    }
+    .circular-button-navbar {
+      @include respond(tab-lan) {
+        margin: 0.5rem 0;
+      }
+    }
   }
 }

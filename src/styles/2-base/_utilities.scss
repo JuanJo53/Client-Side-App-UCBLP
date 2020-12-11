@@ -124,3 +124,19 @@
     text-align: center;
   }
 }
+.u__flex-normal-cards {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+
+  @include respond(big-desktop) {
+    //background-color: violet;
+  }
+  @include respond(normal-desktop) {
+    //background-color: blue;
+  }
+  @include respond(normal) {
+    justify-content: center;
+    //background-color: orange;
+  }
+}
