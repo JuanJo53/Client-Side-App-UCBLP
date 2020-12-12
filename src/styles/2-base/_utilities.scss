@@ -22,11 +22,13 @@
   justify-content: flex-start;
   //background-color: red;
 }
-.u__flex--flex-center {
-  display: flex;
-  justify-content: center;
-  //background-color: red;
-}
+
+// .u__center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: red;
+// }
 .u__space-evenly--center {
   display: flex;
   justify-content: space-evenly;
@@ -59,11 +61,21 @@
   justify-content: center;
   align-items: center;
 }
+.u__vertical-align--space-evenly {
+  //background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .u__row {
   justify-content: space-between;
   display: flex;
   flex-flow: wrap;
   //background-color: red;
+}
+.mt-5 {
+  margin-top: 5rem;
 }
 .mt-3 {
   margin-top: 3rem;
@@ -98,6 +110,20 @@
 .p-1 {
   padding: 1rem;
 }
+.h-5 {
+  font-size: 5rem;
+  letter-spacing: 0px;
+}
+.h-3 {
+  font-size: 3rem;
+  letter-spacing: 0px;
+}
+.l-h-7 {
+  line-height: 7rem;
+}
+.l-h-5 {
+  line-height: 5rem;
+}
 
 .u__space-between--graphics {
   display: flex;
@@ -123,4 +149,27 @@
     width: 100%;
     text-align: center;
   }
+}
+.u__flex-normal-cards {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+
+  @include respond(big-desktop) {
+    //background-color: violet;
+  }
+  @include respond(normal-desktop) {
+    //background-color: blue;
+  }
+  @include respond(normal) {
+    justify-content: center;
+    //background-color: orange;
+  }
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

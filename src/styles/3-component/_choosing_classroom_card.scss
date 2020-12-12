@@ -1,12 +1,4 @@
 .card-container {
-  @include respond(normal) {
-    @include center();
-    padding-left: 5rem;
-  }
-  @include respond(tab-lan) {
-    @include center();
-  }
-
   @include respond(phone) {
     padding-top: 4.5rem;
   }
@@ -17,12 +9,11 @@
   justify-content: center;
 }
 .classroom-card {
+  // @include respond(phone) {
+  //   margin-left: 0%;
+  // }
   @include respond(normal) {
-    margin-right: 3rem;
-  }
-
-  @include respond(phone) {
-    margin-left: 0%;
+    margin: 1rem 2.5rem;
   }
 
   @include custom-card(27rem, 16rem, $color-primary-white);
@@ -91,18 +82,18 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@include respond(normal) {
   .card-container {
     margin-top: 15rem;
   }
 }
-@media only screen and (max-width: 991px) {
+@include respond(tab-lan) {
   .card-container {
-    margin-top: 15rem;
+    margin-top: 10rem;
   }
 }
-@media only screen and (max-width: 1199px) {
+@include respond(tab-por) {
   .card-container {
-    margin-top: 15rem;
+    margin-top: 5rem;
   }
 }
