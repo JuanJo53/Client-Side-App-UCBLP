@@ -37,7 +37,7 @@ export class AddStudentComponent implements OnInit {
                     newEst.nombre=data.body[0].nombre_alumno;
                     newEst.p_nombre=data.body[0].ap_paterno_alumno;
                     newEst.m_nombre=data.body[0].ap_materno_alumno;
-                    newEst.promedio=0;
+                    newEst.promedio="0";
                     newEst.id_alumno_curso=data2.body[0].id_curso_alumno;
                     this.dialogRef.close(newEst);   
                   }

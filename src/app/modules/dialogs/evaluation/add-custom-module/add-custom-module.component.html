@@ -12,10 +12,12 @@
           type="text"
           class="input-form"
           matInput
+          maxlength="50"
           placeholder="Module's name"
-          name="nombreModulo"
+          #nombreM
           [(ngModel)]="nombreModulo"
         />
+        <mat-hint align="end">{{nombreM.value.length}} / 50</mat-hint>
       </mat-form-field>
       <div class="radio-buttons-dialog__title">Choose a color :</div>
       <div class="u__flex--flex-center">

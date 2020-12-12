@@ -140,13 +140,13 @@ export class QualificationComponent implements OnInit {
       if (data[i].modulos) {
         for (let nota of data[i].modulos) {
           a.push(
-            Number((nota.rubrica / 100) * nota.nota_modulo).toPrecision(3)
+            Number((nota.rubrica / 100) * nota.nota_modulo).toFixed(2)
           );
           prom += (nota.rubrica / 100) * nota.nota_modulo;
         }
       }
       newAsis.notas = a;
-      newAsis.promedio = Number(prom.toPrecision(3));
+      newAsis.promedio =prom.toFixed(2);
       newAsis.posicion = Number(i) + 1;
       this.ELEMENT_DATA.push(newAsis);
     }

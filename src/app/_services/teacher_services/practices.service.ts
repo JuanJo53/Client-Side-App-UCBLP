@@ -42,8 +42,8 @@ export class PracticesService {
   getPractica(idLeccion):Observable<any>{
     return this.http.get(apiKey.api+"/teacher/practice/"+idLeccion,{ observe: 'response' });
   }
-  getQuestions():Observable<any>{
-    return this.http.get(apiKey.api+"/teacher/questionSQL",{ observe: 'response' });
+  getQuestions(lim:number,ini:number):Observable<any>{ 
+    return this.http.get(apiKey.api+"/teacher/questionSQL?lim="+lim+"&&ini="+ini,{ observe: 'response' });
     // return this.http.get(apiKey.api+"/teacher/question",{ observe: 'response' });
   }
   getScores(idPractica):Observable<any>{

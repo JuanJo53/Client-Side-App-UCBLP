@@ -20,8 +20,11 @@
           type="text"
           class="input-form"
           matInput
+          #nombreM
+          maxlength="50"
           placeholder="Module's name"
         />
+      <mat-hint align="end">{{nombreM.value.length}} / 50</mat-hint>
         <!-- //Input para el nombre del modulo-->
       </mat-form-field>
       <div class="radio-buttons-dialog">

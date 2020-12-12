@@ -81,8 +81,6 @@ export class AssistanceComponent implements OnInit {
       this.displayedColumns.splice(0, 0, "p_nombre");
       this.displayedColumns.splice(0, 0, "nombre");
       this.displayedColumns.splice(0, 0, "posicion");
-      console.log(this.columns);
-      console.log(this.displayedColumns);
 
       this.displayedColumns.push("promedioFinal");
     }
@@ -101,7 +99,7 @@ export class AssistanceComponent implements OnInit {
         }
       }
       newAsis.asistencia = a;
-      newAsis.promedio = String(prom.toPrecision(3));
+      newAsis.promedio = prom.toFixed(2)
       newAsis.posicion = Number(i) + 1;
       this.ELEMENT_DATA.push(newAsis);
     }
