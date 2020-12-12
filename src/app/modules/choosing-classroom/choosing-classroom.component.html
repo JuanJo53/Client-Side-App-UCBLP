@@ -5,28 +5,17 @@
       <!--logo y text-->
       <div class="navbar-brand">
         <div class="navbar-brand__container">
-          <!-- logo-->
           <img [src]="mylogo" class="navbar-brand__img" />
-          <!-- #logo-->
-          <!-- texto-->
           <div class="navbar-brand__text">UCB idiomas para docentes</div>
-          <!-- #texto-->
-          <!-- button icono de usuario-->
         </div>
-        <!-- <div class="navbar-brand__buttons"> -->
         <div class="navbar-brand__header-buttons">
-          <!-- agregar classroom-->
           <button
             class="circular-button-navbar"
             mat-mini-fab
             (click)="agregarCurso()"
           >
-            <!-- primera letra de nombre de usuario-->
             <mat-icon class="circular-button__first-word">add</mat-icon>
-            <!-- #primera letra de nombre de usuario-->
           </button>
-          <!-- #agregar classroom-->
-          <!-- button icono de usuario-->
           <button
             class="circular-button-navbar"
             mat-mini-fab
@@ -85,17 +74,8 @@
   </div>
 </div>
 <div class="container card-container">
-  <div class="row">
-    <div
-      *ngFor="let cards of classroomCards"
-      class="cols"
-      [ngClass]="{
-        'col-lg-6 col-md-6': numeroCards === 4,
-        'col-lg-4 col-sm-12 col-xs-12': numeroCards === 3,
-        'col-md-6 col-sm-6 col-xs-12': numeroCards === 2,
-        'col-xs-12': numeroCards === 1
-      }"
-    >
+  <div class="u__flex-normal-cards">
+    <div *ngFor="let cards of classroomCards">
       <!--card-->
       <div class="classroom-card" (click)="cardClicked(cards.id_curso)">
         <!--titulo de la clase-->
