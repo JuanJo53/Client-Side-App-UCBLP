@@ -99,6 +99,9 @@ export class CreatePracticeComponent implements OnInit {
       this.total += preg.puntuacion;
     }
   }
+  clickInput(){
+    console.log("click");
+  }
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
       this.idLeccion = param["idLeccion"];

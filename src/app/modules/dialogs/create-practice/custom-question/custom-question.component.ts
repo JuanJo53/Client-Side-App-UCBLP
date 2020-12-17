@@ -200,6 +200,7 @@ play(): void {
       this.preguntaAntigua.idTipoRespuesta = preg.idTipoRespuesta;
       this.preguntaAntigua.idHabilidad = preg.idHabilidad;
       this.preguntaAntigua.recurso=preg.recurso;
+      this.preguntaAntigua.recursoFile=preg.recursoFile;
       this.preguntaAntigua.id=preg.id;
       this.preguntaAntigua.nivel=preg.nivel;
     }
@@ -1033,7 +1034,7 @@ play(): void {
   msaapDisplayPlayList = true;
   msaapPageSizeOptions = [2, 4, 6];
   msaapDisplayVolumeControls = true;
-  msaapDisablePositionSlider = true;
+  msaapDisablePositionSlider = false;
 
   // Material Style Advance Audio Player Playlist
   msaapPlaylist: Track[] = [
