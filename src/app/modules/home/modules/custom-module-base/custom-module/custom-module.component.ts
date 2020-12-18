@@ -50,33 +50,17 @@ export class CustomModuleComponent implements OnInit {
       }
       console.log(this.colores);
     }
-    cargarNombreModulo(){
-      this.route.parent.parent.parent.data.subscribe({
-        next:(data)=>{
-          if(data.modules.status==200){
-            for(let modulo of data.modules.body){
-              if(modulo.id_modulo==this.idModulo){
-                this.nombreModulo=modulo.nombre_modulo;
-                this.idColor=modulo.id_color;
-              }
-            }
-          }
-        },
-        error:(err)=>{
-          console.log(err);
-        }
-      })
-    }
   ngOnInit(): void {
     this.route.params.subscribe((param)=>{
       this.idModulo=param["idModulo"];
       console.log("idMOdulo"+String(this.idModulo));
-      this.cargarNombreModulo();
     })
     this.route.data.subscribe({
       next:(data)=>{
           if(data.content.status==200){
-            this.cargarContenidoModulo(data.content.body);
+            this.cargarContenidoModulo(data.content.body.contenido);
+            this.nombreModulo=data.content.body.nombre_modulo;
+            this.idColor=data.content.body.id_color;
             this.cargarColores(data.colors.body);
           }else
           {

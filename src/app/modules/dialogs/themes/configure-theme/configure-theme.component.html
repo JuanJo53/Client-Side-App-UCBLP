@@ -10,7 +10,11 @@
         <mat-label>Theme's name</mat-label>
         <!-- Input para el nombre del tema-->
         <input [disabled]='disableTextbox' type="text" class="input-form" matInput placeholder="Name" name="nombreTema"
-          [(ngModel)]="nombre" />
+          [(ngModel)]="nombre"
+          maxlength="100"
+          #nombreL
+        />
+        <mat-hint align="end">{{nombreL.value.length}} / 100</mat-hint>
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
       <div class="radio-buttons-dialog">

@@ -346,15 +346,16 @@ play(): void {
         else {
           var contCont = 0;
           var contNom = 0;
+          console.log(this.nuevaPregunta.respuesta);
           for (let columna of this.nuevaPregunta.respuesta) {
             if (columna.cards.length != 0) {
               contCont++;
             }
-            if (columna.titulo !== "") {
+            if (columna.titulo == "") {
               contNom++;
             }
           }
-          if (contCont == 0 || contNom == 0) this.nuevaPregunta.bloqopci = true;
+          if (contCont == 0 || contNom > 0) this.nuevaPregunta.bloqopci = true;
           else this.nuevaPregunta.bloqopci = false;
         }
         break;
@@ -777,7 +778,15 @@ play(): void {
     console.log("tipo de pregunta : " + this.tipoPreguntaEscogida);
   }
   cancelar() {
+    this.nuevaPregunta.bloqRec=false;
+    this.nuevaPregunta.bloqidtp=false;
+    this.nuevaPregunta.bloqidtr=false;
+    this.nuevaPregunta.bloqopci=false;
+    this.nuevaPregunta.bloqpreg=false;
+    this.nuevaPregunta.bloqpunt=false;
     this.nuevaPregunta.puntuacion=this.preguntaAntigua.puntuacion;
+    this.nuevaPregunta.opciones=this.preguntaAntigua.opciones;
+    this.nuevaPregunta.respuesta=this.preguntaAntigua.respuesta;
     this.nuevaPregunta.pregunta=this.preguntaAntigua.pregunta;
     this.nuevaPregunta.recursoFile=this.preguntaAntigua.recursoFile;
     this.nuevaPregunta.recurso=this.preguntaAntigua.recurso;

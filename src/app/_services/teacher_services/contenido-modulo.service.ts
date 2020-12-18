@@ -13,7 +13,7 @@ export class ContenidoModuloService {
 
   constructor(private http:HttpClient) { }
   getContenidoModulos(idModulo,idCurso):Observable<any>{
-    return this.http.post(apiKey.api+"/teacher/cutson/module/content/get",{idModulo,idCurso},{ observe: 'response' });
+    return this.http.get(apiKey.api+"/teacher/cutson/module/content/"+idModulo,{ observe: 'response' });
   }
   addContenidoModulos(contenidoModulo:ContentModule):Observable<any>{
     return this.http.post(apiKey.api+"/teacher/cutson/module/content",contenidoModulo,{ observe: 'response' });
