@@ -192,10 +192,11 @@ export class EvaluationComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== "" && result != null && result !== "undefined") {
-        console.log(result);
         this.route.data.subscribe({
           next: (data) => {
+
             data.modules.body = result;
+            console.log(data.modules.body);
             this.cargarDatos(result);
             this.servNav.modulos(result);
           },

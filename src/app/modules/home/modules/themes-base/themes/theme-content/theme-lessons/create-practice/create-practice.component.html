@@ -154,6 +154,7 @@
                       >
                       <input
                         matInput
+                        (click)="toggleTimepicker1.open()"
                         [(ngModel)]="paso1.horaini"
                         [ngModelOptions]="{ standalone: true }"
                         [ngxTimepicker]="toggleTimepicker1"
@@ -217,6 +218,7 @@
                         >
                         <input
                           matInput
+                          (click)="toggleTimepicker2.open()"
                           [(ngModel)]="paso1.horafin"
                           [ngModelOptions]="{ standalone: true }"
                           [ngxTimepicker]="toggleTimepicker2"

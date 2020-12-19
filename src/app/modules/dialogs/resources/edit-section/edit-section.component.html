@@ -18,8 +18,10 @@
             placeholder=""
             [(ngModel)]=nombre
             name="nombre seccion"
-           
+            maxlength="100"
+            #nombreM
           />
+          <mat-hint align="end">{{nombreM.value.length}} / 100</mat-hint>
           <!-- //Input para el nombre de la seccion-->
         </mat-form-field>
       </form>

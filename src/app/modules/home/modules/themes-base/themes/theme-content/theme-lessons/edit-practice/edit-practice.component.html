@@ -43,7 +43,10 @@
                     [(ngModel)]="paso1.nombre"
                     placeholder="Practice name"
                     name="nombrePractica"
+                    maxlength="100"
+                    #nombreL
                   />
+                  <mat-hint align="end">{{nombreL.value.length}} / 100</mat-hint>
                 </mat-form-field>
               </div>
 
@@ -75,7 +78,11 @@
                           [(ngModel)]="paso1.tiempoLimite"
                           [ngModelOptions]="{ standalone: true }"
                           type="number"
+                          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                          maxlength="4"
+                          #nombreM
                         />
+                        <mat-hint align="end">{{nombreM.value.length}} / 4</mat-hint>
                       </mat-form-field>
                     </div>
                     <div class="card-question--input-container-time">
@@ -160,6 +167,7 @@
                       >
                       <input
                         matInput
+                        (click)="toggleTimepicker1.open()"
                         [(ngModel)]="paso1.horaini"
                         [ngModelOptions]="{ standalone: true }"
                         [ngxTimepicker]="toggleTimepicker1"
@@ -226,6 +234,7 @@
                       >
                       <input
                         matInput
+                        (click)="toggleTimepicker2.open()"
                         [(ngModel)]="paso1.horafin"
                         [ngModelOptions]="{ standalone: true }"
                         [ngxTimepicker]="toggleTimepicker2"

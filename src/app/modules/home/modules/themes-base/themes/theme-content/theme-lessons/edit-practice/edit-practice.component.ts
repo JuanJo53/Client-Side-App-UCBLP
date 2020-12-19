@@ -362,9 +362,11 @@ agregarDatos(data){
         let j=0;
         if (data.status == 200) {
           this.loading.cambiarLabel("Subiendo Documentos");
+          console.log(data.body.recursos);
           if(data.body.recursos.length>0){
             for await (let i of this.preguntas){
-              if(i.idHabilidad==1 ||i.idHabilidad==2){
+              if((i.idHabilidad==1 ||i.idHabilidad==2)&&i.recursoFile!=null){
+                console.log(i.recursoFile);
                 await this.upServ.subirArchivo(data.body.recursos[j],i.recursoFile).toPromise();
                 j++;
               }
