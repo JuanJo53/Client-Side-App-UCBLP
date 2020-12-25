@@ -18,6 +18,7 @@ import { Pregunta } from "src/app/models/Teacher/CreatePractice/Pregunta";
 import { PracticesService } from "../../../../../../../../_services/teacher_services/practices.service";
 import { TokenStorageService } from 'src/app/_services/general_services/token-storage.service';
 import { LoadingService } from 'src/app/_services/loading.service';
+import { UploadFilesService } from 'src/app/_services/teacher_services/upload-files.service';
 
 @Component({
   selector: "app-edit-practice",
@@ -50,7 +51,8 @@ export class EditPracticeComponent implements OnInit {
     private servPrac: PracticesService,
     private location: Location,
     private tokenServ:TokenStorageService,
-    private loading: LoadingService
+    private loading: LoadingService,
+    private upServ:UploadFilesService
   ) {}
   
   actPuntaje() {
@@ -80,7 +82,6 @@ export class EditPracticeComponent implements OnInit {
         newPreg.respuestasBool[resp]=true;
       }
       this.preguntas.push(newPreg);
-      console.log(newPreg);
     }
   }
 agregarDatos(data){
@@ -101,24 +102,19 @@ agregarDatos(data){
     this.radioButtonValue="enable";
     this.paso1.tiempoLimite=data.practica.tiempo_limite;
   }
-  console.log(data.preguntas);
   this.agregarPreguntas(data.preguntas);
   this.actPuntaje();
 }
   ngOnInit(): void {
     this.route.parent.params.subscribe((param) => {
       this.idPractica = param["idPractica"];
-      console.log(this.idPractica);
     });
     this.route.data.subscribe({
       next: (data) => {
+        console.log(data.practice);
         if (data.practice.status == 200) {
           this.agregarDatos(data.practice.body);
-        }        
-        if (data.repository.status == 200) {
-          console.log(data.repository.body);
-          this.repository = data.repository.body;
-        }
+        }     
       },
       error: (err) => {
         if(err.status==403){
@@ -170,7 +166,6 @@ agregarDatos(data){
   }
   //Editar una pregunta
   editarPregunta(pregunta: Pregunta) {
-    console.log(pregunta);
     var tipo=pregunta.tipo;
     const dialogRef = this.dialog.open(CustomQuestionComponent, {
       width: "1000px",
@@ -182,12 +177,10 @@ agregarDatos(data){
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
       if (result !== "" && result !== "undefined" && result != null) {
         if((tipo==3||tipo==2)&&pregunta.tipo==0){
           if(!this.preguntasEli.some(e=>e==pregunta.id)){
             this.preguntasEli.push(pregunta.id);
-            console.log(this.preguntasEli);
           }
         }
       }
@@ -197,10 +190,8 @@ agregarDatos(data){
   //Retroceder en el proceso
   previous(stepper: MatStepper) {
     stepper.previous();
-    console.log("previous");
   }
   eliminarPreg(index,pregunta:Pregunta) {
-    console.log(pregunta);
     this.preguntas.splice(index, 1);
     this.preguntasEli.push(pregunta.id);
   }
@@ -216,7 +207,6 @@ agregarDatos(data){
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
       if (result !== "" && result !== "undefined" && result != null) {
         this.route.data.subscribe({
           next: (data) => {
@@ -254,7 +244,6 @@ agregarDatos(data){
 
   //Funciones paso 1
   verificarpaso1(): boolean {
-    console.log("se verficia");
     if (this.paso1.fechaini == null) {
       this.paso1.bloqfecha1 = true;
     } else this.paso1.bloqfecha1 = false;
@@ -308,7 +297,6 @@ agregarDatos(data){
   }
   Date_toDMY(date: any) {
     var dato2=String(date).split("-")
-    console.log(dato2);
     if(dato2.length==3){
       return dato2[2].substring(0,2)+"/"+dato2[1]+"/"+dato2[0];
     }
@@ -357,21 +345,12 @@ agregarDatos(data){
   Generar(stepper) {
     this.paso1.idLeccion = "0";
     this.paso1.numero = 1;
-    console.log("asdf");
-    console.log(this.paso1.horaini);
-    console.log(this.paso1.fechaini);
-    console.log(this.paso1.horafin);
-    console.log(this.paso1.fechafin);
     this.paso1.fechaini = this.Date_toDMY(this.paso1.fechainiDate);
     this.paso1.fechafin = this.Date_toDMY(this.paso1.fechafinDate);
     this.paso1.fechaini = this.Date_toYMD(this.paso1.fechaini);
     this.paso1.fechafin = this.Date_toYMD(this.paso1.fechafin);
     this.paso1.horaini = this.Hour_toMYSQL(this.paso1.horaini);
     this.paso1.horafin = this.Hour_toMYSQL(this.paso1.horafin);
-    console.log(this.paso1.horaini);
-    console.log(this.paso1.fechaini);
-    console.log(this.paso1.horafin);
-    console.log(this.paso1.fechafin);
     if(this.radioButtonValue=="unable"){
       this.paso1.tiempoLimite=null;
     }
@@ -379,10 +358,22 @@ agregarDatos(data){
     this.loading.activar();
     this.spinnerFinish = false;
     this.servPrac.modPractica(this.paso1,this.preguntas,this.preguntasEli).subscribe({
-      next: (data) => {
+      next: async (data) => {
+        let j=0;
         if (data.status == 200) {
-          this.location.back();
-          this.loading.desactivar();
+          this.loading.cambiarLabel("Subiendo Documentos");
+          console.log(data.body.recursos);
+          if(data.body.recursos.length>0){
+            for await (let i of this.preguntas){
+              if((i.idHabilidad==1 ||i.idHabilidad==2)&&i.recursoFile!=null){
+                console.log(i.recursoFile);
+                await this.upServ.subirArchivo(data.body.recursos[j],i.recursoFile).toPromise();
+                j++;
+              }
+            }
+          }
+        this.location.back();
+        this.loading.desactivar();
         } else {
           console.log("error");
           this.correcto = "No se pudieron agregar las preguntas";

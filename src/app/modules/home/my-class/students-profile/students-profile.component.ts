@@ -52,14 +52,15 @@ export class StudentsProfileComponent implements OnInit {
       newEvaluationCard.idImagen = modulo.id_imagen;
       newEvaluationCard.idColor = modulo.id_color;
       newEvaluationCard.nombreModulo = modulo.nombre_modulo;
-      newEvaluationCard.rubrica = (modulo.nota_modulo * modulo.rubrica) / 100;
+      newEvaluationCard.notaRubrica = ((modulo.nota_modulo * modulo.rubrica) / 100).toFixed(2)
+      newEvaluationCard.rubrica = modulo.rubrica
       if (modulo.id_tipo_modulo == 1) {
         this.defaultCard.push(newEvaluationCard);
       } else {
         this.customCards.push(newEvaluationCard);
       }
     }
-    this.estudiante.promedio = Number(promedio.toPrecision(3));
+    this.estudiante.promedio =promedio.toFixed(2)
   }
   cargarColores(data) {
     for (let i in data) {

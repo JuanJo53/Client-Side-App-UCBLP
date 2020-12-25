@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, ViewChild } from "@angular/core";
 import { RadioButtonCompleteCard } from "src/app/models/Preguntas/RadioButtonCompleteCard";
 import { RadioButtonQuestion } from "src/app/models/Preguntas/RadioButton";
 import { Combo } from "src/app/models/ComboBox/comboBox";
@@ -21,6 +21,7 @@ import { Column } from "src/app/models/Dragandrop/Column";
 import { Matching } from "src/app/models/Preguntas/Matching";
 import { repeat } from "rxjs/operators";
 import { Track } from "ngx-audio-player/lib/model/track.model";
+import { PlyrComponent } from 'ngx-plyr';
 
 @Component({
   selector: "app-custom-question",
@@ -84,6 +85,23 @@ export class CustomQuestionComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public dataDialog: any,
     private dialogRef: MatDialogRef<CustomQuestionComponent>
   ) {}
+  // get the component instance to have access to plyr instance
+@ViewChild(PlyrComponent)
+plyr: PlyrComponent;
+
+// or get it from plyrInit event
+player: Plyr;
+
+videoSources: Plyr.Source[] = [
+];
+
+played(event: Plyr.PlyrEvent) {
+  console.log('played', event);
+}
+
+play(): void {
+  this.player.play(); // or this.plyr.player.play()
+}
   cargarRespuestas() {
     switch (this.nuevaPregunta.idTipoPregunta) {
       case "1":
@@ -109,6 +127,40 @@ export class CustomQuestionComponent implements OnInit {
         break;
     }
   }
+  verificarTamTip(tam,tip,tipo){
+    var ver=false;
+    if(tipo==1){
+      if(tip=="audio/mpeg"){
+        ver=true;
+      }
+    } 
+    else{
+      if(tip=="application/pdf"){
+        ver=true;
+      }
+    }
+    if(tam/1000000<10&&ver){
+      console.log(tam);
+      return true;
+      }
+    else{
+      return false;
+    }
+  }
+  handleFileInput(file: FileList,tipo) {
+    console.log(file);
+    this.nuevaPregunta.recursoFile=null;
+    
+   if(this.verificarTamTip(file.item(0).size,file.item(0).type,tipo)){
+    this.nuevaPregunta.recursoFile = file.item(0);
+
+    //Show image preview
+    var reader = new FileReader();
+    reader.readAsDataURL(this.nuevaPregunta.recursoFile);
+    this.nuevaPregunta.recurso=file.item(0).name;
+   }
+   console.log(this.nuevaPregunta);
+  }
   ponerColumnas() {
     var numerCol = this.listColumnsChips2.length;
     console.log(this.numColumnas);
@@ -132,7 +184,7 @@ export class CustomQuestionComponent implements OnInit {
   cargarPreguntaModificar() {
     var preg = this.dataDialog["preg"] as Pregunta;
     console.log(preg);
-    if (preg.tipo) {
+    if (true) {
       this.preguntaAntigua.pregunta = preg.pregunta;
       this.preguntaAntigua.puntuacion = preg.puntuacion;
       this.preguntaAntigua.tipo = preg.tipo;
@@ -147,9 +199,18 @@ export class CustomQuestionComponent implements OnInit {
       this.preguntaAntigua.idTipoPregunta = preg.idTipoPregunta;
       this.preguntaAntigua.idTipoRespuesta = preg.idTipoRespuesta;
       this.preguntaAntigua.idHabilidad = preg.idHabilidad;
+      this.preguntaAntigua.recurso=preg.recurso;
+      this.preguntaAntigua.recursoFile=preg.recursoFile;
+      this.preguntaAntigua.id=preg.id;
+      this.preguntaAntigua.nivel=preg.nivel;
     }
 
     this.nuevaPregunta = preg;
+    this.msaapPlaylist.push(
+        {
+          link:preg.recurso,
+        title:"Listening resource" }
+    )
     switch (preg.idTipoRespuesta) {
       case "2":
         this.checkboxOpciones = [];
@@ -285,15 +346,16 @@ export class CustomQuestionComponent implements OnInit {
         else {
           var contCont = 0;
           var contNom = 0;
+          console.log(this.nuevaPregunta.respuesta);
           for (let columna of this.nuevaPregunta.respuesta) {
             if (columna.cards.length != 0) {
               contCont++;
             }
-            if (columna.titulo !== "") {
+            if (columna.titulo == "") {
               contNom++;
             }
           }
-          if (contCont == 0 || contNom == 0) this.nuevaPregunta.bloqopci = true;
+          if (contCont == 0 || contNom > 0) this.nuevaPregunta.bloqopci = true;
           else this.nuevaPregunta.bloqopci = false;
         }
         break;
@@ -332,7 +394,9 @@ export class CustomQuestionComponent implements OnInit {
         console.log(this.nuevaPregunta);
         break;
     }
-
+    console.log(this.nuevaPregunta.recurso==null);
+    if(this.nuevaPregunta.recurso==null&&(this.nuevaPregunta.idHabilidad==1||this.nuevaPregunta.idHabilidad==2))this.nuevaPregunta.bloqRec=true;
+    else this.nuevaPregunta.bloqRec=false;
     if (this.nuevaPregunta.pregunta === "") this.nuevaPregunta.bloqpreg = true;
     else this.nuevaPregunta.bloqpreg = false;
     if (
@@ -356,7 +420,8 @@ export class CustomQuestionComponent implements OnInit {
       this.nuevaPregunta.bloqidtr == false &&
       this.nuevaPregunta.bloqopci == false &&
       this.nuevaPregunta.bloqpreg == false &&
-      this.nuevaPregunta.bloqpunt == false
+      this.nuevaPregunta.bloqpunt == false&&
+      this.nuevaPregunta.bloqRec == false
     ) {
       return true;
     } else return false;
@@ -514,8 +579,12 @@ export class CustomQuestionComponent implements OnInit {
       var verTipoP = true;
       var verTipoR = true;
       var verTipoH = true;
+      var verRec = true;
       if (nuevaPregunta.idHabilidad != this.preguntaAntigua.idHabilidad) {
         verTipoH = false;
+      }
+      if(nuevaPregunta.recurso!=this.preguntaAntigua.recurso){
+        verRec=false;
       }
 
       //Verifica si las respuestas y opciones son iguales
@@ -669,7 +738,7 @@ export class CustomQuestionComponent implements OnInit {
       ) {
         verTipoR = false;
       }
-      if (verOpci && verPreg && verResp && verTipoP && verTipoR && verTipoH) {
+      if (verOpci && verPreg && verResp && verTipoP && verTipoR && verTipoH&&verRec) {
         if (
           nuevaPregunta.puntuacion != this.preguntaAntigua.puntuacion &&
           this.preguntaAntigua.tipo == 3
@@ -709,6 +778,21 @@ export class CustomQuestionComponent implements OnInit {
     console.log("tipo de pregunta : " + this.tipoPreguntaEscogida);
   }
   cancelar() {
+    this.nuevaPregunta.bloqRec=false;
+    this.nuevaPregunta.bloqidtp=false;
+    this.nuevaPregunta.bloqidtr=false;
+    this.nuevaPregunta.bloqopci=false;
+    this.nuevaPregunta.bloqpreg=false;
+    this.nuevaPregunta.bloqpunt=false;
+    this.nuevaPregunta.puntuacion=this.preguntaAntigua.puntuacion;
+    this.nuevaPregunta.opciones=this.preguntaAntigua.opciones;
+    this.nuevaPregunta.respuesta=this.preguntaAntigua.respuesta;
+    this.nuevaPregunta.pregunta=this.preguntaAntigua.pregunta;
+    this.nuevaPregunta.recursoFile=this.preguntaAntigua.recursoFile;
+    this.nuevaPregunta.recurso=this.preguntaAntigua.recurso;
+    this.nuevaPregunta.idHabilidad=this.preguntaAntigua.idHabilidad;
+    this.nuevaPregunta.idTipoRespuesta=this.preguntaAntigua.idTipoRespuesta;
+    this.nuevaPregunta.idTipoPregunta=this.preguntaAntigua.idTipoPregunta;
     this.dialogRef.close();
   }
 
@@ -946,7 +1030,11 @@ export class CustomQuestionComponent implements OnInit {
     // # drag and drop
   }
   cambiarHabilidad(habilidad) {
+    if(this.nuevaPregunta.idHabilidad !==habilidad){
     this.nuevaPregunta.idHabilidad = habilidad;
+    this.nuevaPregunta.recurso=null;
+    this.nuevaPregunta.recursoFile=null;
+  }
   }
 
   // resources
@@ -955,14 +1043,10 @@ export class CustomQuestionComponent implements OnInit {
   msaapDisplayPlayList = true;
   msaapPageSizeOptions = [2, 4, 6];
   msaapDisplayVolumeControls = true;
-  msaapDisablePositionSlider = true;
+  msaapDisablePositionSlider = false;
 
   // Material Style Advance Audio Player Playlist
   msaapPlaylist: Track[] = [
-    // {
-    //   title: "i dont wanna miss a thing",
-    //   link: "",
-    // },
   ];
   onEnded($event) {
     console.log("Ended");

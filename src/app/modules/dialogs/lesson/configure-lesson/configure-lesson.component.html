@@ -21,7 +21,10 @@
           placeholder="Name"
           name="nombre"
           [(ngModel)]="nombre"
+          maxlength="100"
+          #nombreL
         />
+        <mat-hint align="end">{{nombreL.value.length}} / 100</mat-hint>
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
       <mat-form-field
@@ -39,7 +42,11 @@
           placeholder="Number"
           name="numero"
           [(ngModel)]="numero"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="3"
+          #nombreM
         />
+        <mat-hint align="end">{{nombreM.value.length}} / 3</mat-hint>
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
 

@@ -14,9 +14,11 @@ export class Pregunta{
     idTipoRespuesta:string="1";
     idHabilidad:number=1;
     recurso:string;
+    recursoFile:File;
     bloqpunt:boolean=false;
     bloqpreg:boolean=false;
     bloqopci:boolean=false;
     bloqidtp:boolean=false;
     bloqidtr:boolean=false;
+    bloqRec:boolean=false;
 }

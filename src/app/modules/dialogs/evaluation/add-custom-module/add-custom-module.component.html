@@ -13,9 +13,12 @@
           class="input-form"
           matInput
           placeholder="Module's name"
-          name="nombreModulo"
           [(ngModel)]="nombreModulo"
+          [ngModelOptions]="{ standalone: true }"
+          maxlength="50"
+          #nombreM
         />
+        <mat-hint align="end">{{nombreM.value.length}} / 50</mat-hint>
       </mat-form-field>
       <div class="radio-buttons-dialog__title">Choose a color :</div>
       <div class="u__flex--flex-center">
@@ -39,9 +42,9 @@
       <div class="radio-buttons-dialog__title">Choose an image :</div>
       <div class="u__row">
         <div *ngFor="let elemento of imagenes; let i = index">
-          <div class="images-mini-card">
+          <div class="images-mini-card" (click)="elegirImagen(elemento)">
             <div
-              class="images-mini-card__img"
+              class="images-mini-card__img" 
               [ngStyle]="{
                 'background-image': 'url(' + elemento.display + ')'
               }"
@@ -49,7 +52,7 @@
           </div>
         </div>
       </div>
-      <mat-form-field>
+      <!-- <mat-form-field>
         <mat-label>Images</mat-label>
         <mat-select [(value)]="valueImage">
           <mat-option
@@ -59,7 +62,7 @@
             {{ elemento.display }}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </form>
   </mat-dialog-content>
   <mat-dialog-actions align="end">

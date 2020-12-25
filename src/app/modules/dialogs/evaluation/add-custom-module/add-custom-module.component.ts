@@ -28,7 +28,7 @@ export class AddCustomModuleComponent implements OnInit {
   nombreTema = "";
   nombreModulo = "";
   valueColor: number = 0;
-  valueImage: number = 0;
+  valueImage: Combo = null;
   colores: Combo[] = [];
   imagenes: Combo[] = [];
   imageUrl: string = "/assets/default.png";
@@ -56,12 +56,15 @@ export class AddCustomModuleComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.imagenes);
   }
+  elegirImagen(value){
+    this.valueImage=value;
+  }
   addModulesPers() {
     console.log("color escogido:" + this.heading);
     console.log("color escogido:" + this.color);
     let newModule = new Module();
     newModule.idColor = this.valueColor;
-    newModule.idImagen = this.valueImage;
+    newModule.idImagen = Number(this.valueImage.value);
     newModule.nombreModulo = this.nombreModulo;
     newModule.rubrica = 0;
     newModule.idCurso = Number(this.dataDialog["idCurso"]);

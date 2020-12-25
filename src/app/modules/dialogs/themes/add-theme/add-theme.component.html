@@ -16,7 +16,10 @@
           placeholder="Name"
           name="nombreTema"
           [(ngModel)]="nombreTema"
+          maxlength="100"
+          #nombreL
         />
+        <mat-hint align="end">{{nombreL.value.length}} / 100</mat-hint>
         <!-- //Input para el nombre del tema-->
       </mat-form-field>
       <!-- <div class="dialog__container-image">

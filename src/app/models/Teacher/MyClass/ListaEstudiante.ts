@@ -4,7 +4,7 @@ export class ListaEstudiante {
   nombre: string;
   p_nombre: string;
   m_nombre: string;
-  promedio: number;
+  promedio: string;
   id: number;
   correo: string;
   notas:any[];
