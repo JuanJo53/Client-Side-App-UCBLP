@@ -122,6 +122,7 @@ const routes: Routes = [
           // },
           {
             path: "profile/:idAlumnoCurso",
+            data: { breadcrumb: "Student Profile" },
             resolve: {
               students: GetProfileStudentResolver,
               colors: GetColorsResolver,
@@ -142,6 +143,7 @@ const routes: Routes = [
               },
               {
                 path: "profile-students",
+                data: { breadcrumb: "Student Profile" },
                 children: [
                   {
                     path: "",
@@ -188,6 +190,7 @@ const routes: Routes = [
         children: [
           {
             path: "custom/:idModulo",
+            data: { breadcrumb: "Custome Module" },
             children: [
               {
                 path: "",
@@ -257,7 +260,6 @@ const routes: Routes = [
                           },
                           {
                             path: "detail",
-
                             children: [
                               {
                                 path: ":idPractica",
@@ -288,6 +290,7 @@ const routes: Routes = [
                       },
                       {
                         path: "edit-practice/:idPractica",
+                        data: { breadcrumb: "Edit Practice" },
                         resolve: {
                           practice: GetPracticeModResolver,
                           repository: GetQuestionsRepositoryResolver,

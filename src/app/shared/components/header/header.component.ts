@@ -46,7 +46,6 @@ export class HeaderComponent implements OnInit {
       idCurso = data["idCurso"];
       console.log(idCurso);
     });
-
     this.data.currentMessage.subscribe((message) => (this.message = message));
     this.usService.data.subscribe({
       next: (data) => {
@@ -81,6 +80,10 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(["/"]);
       },
     });
+  }
+  ngAfterViewInit() {
+    const themeId = this.usService.snapshot.params.idTema;
+    console.log("id tema: " + themeId);
   }
   horario() {
     const dialogRef = this.dialog.open(ScheduleComponent, { width: "400px" });

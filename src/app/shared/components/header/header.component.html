@@ -1,19 +1,21 @@
 <div class="header">
   <div class="container">
     <mat-toolbar class="header__container">
-      <span class="header__text">{{ materia }}</span>
-      <breadcrumb #parent>
-        <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
-          <a
-            mat-button
-            *ngIf="!route.terminal"
-            href=""
-            [routerLink]="[route.url]"
-            >{{ route.displayName }}</a
-          >
-          <a mat-button *ngIf="route.terminal">{{ route.displayName }}</a>
-        </span>
-      </breadcrumb>
+      <span class="header__text"
+        >{{ materia }}/
+        <breadcrumb #parent>
+          <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
+            <a
+              mat-button
+              *ngIf="!route.terminal"
+              href=""
+              [routerLink]="[route.url]"
+              >{{ route.displayName }}</a
+            >
+            <a mat-button *ngIf="route.terminal">{{ route.displayName }}</a>
+          </span>
+        </breadcrumb>
+      </span>
       <div class="header__buttons">
         <button class="circular-button-navbar" mat-mini-fab (click)="horario()">
           <mat-icon class="circular-button__icon">info_outline</mat-icon>
