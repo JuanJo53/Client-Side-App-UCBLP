@@ -1,10 +1,13 @@
 <div class="header">
   <div class="container">
     <mat-toolbar class="header__container">
-      <span class="header__text"
-        >{{ materia }}/
-        <breadcrumb #parent>
-          <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
+      <span class="header__text">{{ materia }}/ </span>
+      <breadcrumb #parent>
+        <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
+          <div *ngIf="route == parent.breadcrumbs[0]">
+            <span *ngIf="!route.terminal">{{ route.displayName }}</span>
+          </div>
+          <div *ngIf="route != parent.breadcrumbs[0]">
             <a
               mat-button
               *ngIf="!route.terminal"
@@ -13,9 +16,9 @@
               >{{ route.displayName }}</a
             >
             <a mat-button *ngIf="route.terminal">{{ route.displayName }}</a>
-          </span>
-        </breadcrumb>
-      </span>
+          </div>
+        </span>
+      </breadcrumb>
       <div class="header__buttons">
         <button class="circular-button-navbar" mat-mini-fab (click)="horario()">
           <mat-icon class="circular-button__icon">info_outline</mat-icon>
