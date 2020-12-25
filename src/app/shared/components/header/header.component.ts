@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterContentInit, Component, OnChanges, OnInit } from "@angular/core";
 import { SharedService } from "../../shared.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Teacher } from "src/app/models/Teacher/Teacher";
@@ -17,7 +17,7 @@ import {
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterContentInit {
   userDocente: Teacher = {
     apellidoDocente: "",
     nombreDocente: "",
@@ -81,7 +81,7 @@ export class HeaderComponent implements OnInit {
       },
     });
   }
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     const themeId = this.usService.snapshot.params.idTema;
     console.log("id tema: " + themeId);
   }

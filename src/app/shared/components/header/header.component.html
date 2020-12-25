@@ -5,7 +5,7 @@
       <breadcrumb #parent>
         <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
           <div *ngIf="route == parent.breadcrumbs[0]">
-            <span *ngIf="!route.terminal">{{ route.displayName }}</span>
+            <span>{{ route.displayName }}</span>
           </div>
           <div *ngIf="route != parent.breadcrumbs[0]">
             <a
