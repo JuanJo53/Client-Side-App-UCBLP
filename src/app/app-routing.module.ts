@@ -59,15 +59,14 @@ import { GetScoreContentModuleResolver } from "./_resolvers/docente/modules/get-
 import { GetScoresPracticesResolver } from "./_resolvers/docente/practices/get-scores-practices.resolver";
 import { GetPracticesDashBoardResolver } from "./_resolvers/docente/dashBoards/get_practices-dashboard.resolver";
 import { EditPracticeComponent } from "./modules/home/modules/themes-base/themes/theme-content/theme-lessons/edit-practice/edit-practice.component";
-import { GetPracticeModResolver } from './_resolvers/docente/practices/get-practice-mod.resolver';
-import { GetPracticesIndividualResolver } from './_resolvers/docente/practices/get-practices-individual.resolver';
+import { GetPracticeModResolver } from "./_resolvers/docente/practices/get-practice-mod.resolver";
+import { GetPracticesIndividualResolver } from "./_resolvers/docente/practices/get-practices-individual.resolver";
 
 const routes: Routes = [
   {
     path: "",
-
     component: LoginComponent,
-    resolve: { login: AuthDocenteResolver }
+    resolve: { login: AuthDocenteResolver },
   },
   {
     path: "building",
@@ -98,12 +97,14 @@ const routes: Routes = [
         // path: "building",
         // component: BuildingPageComponent,
         component: DashboardComponent,
+        data: { breadcrumb: "Dashboard" },
         resolve: {
           practices: GetPracticesDashBoardResolver,
         },
       },
       {
         path: "my-class",
+        data: { breadcrumb: "My Class" },
         children: [
           {
             path: "students",
@@ -130,6 +131,7 @@ const routes: Routes = [
           },
           {
             path: "qualification",
+            data: { breadcrumb: "Qualification" },
             children: [
               {
                 path: "",
@@ -164,6 +166,7 @@ const routes: Routes = [
         // component: ForumsComponent,
         path: "forums",
         component: ForumsBaseComponent,
+        data: { breadcrumb: "Forum" },
         children: [
           {
             path: "",
@@ -180,6 +183,7 @@ const routes: Routes = [
       },
       {
         path: "modules",
+        data: { breadcrumb: "Modules" },
         component: CustomModuleBaseComponent,
         children: [
           {
@@ -190,7 +194,7 @@ const routes: Routes = [
                 component: CustomModuleComponent,
                 resolve: {
                   content: GetContentModuleResolver,
-                  colors:GetColorsResolver
+                  colors: GetColorsResolver,
                 },
                 runGuardsAndResolvers: "always",
               },
@@ -210,6 +214,7 @@ const routes: Routes = [
           },
           {
             path: "themes",
+            data: { breadcrumb: "Themes" },
             component: ThemesBaseComponent,
             resolve: {
               themes: GetThemesTeacherResolver,
@@ -222,6 +227,7 @@ const routes: Routes = [
               },
               {
                 path: ":idTema",
+                data: { breadcrumb: "Theme Detail" },
                 children: [
                   {
                     path: "",
@@ -235,6 +241,7 @@ const routes: Routes = [
                   {
                     path: ":idLeccion",
                     //component: ThemeLessonsComponent,
+                    data: { breadcrumb: "Lesson Detail" },
                     children: [
                       {
                         path: "",
@@ -254,23 +261,22 @@ const routes: Routes = [
                             children: [
                               {
                                 path: ":idPractica",
-                                children:[
+                                children: [
                                   {
-                                    path:"",
+                                    path: "",
                                     resolve: {
                                       scores: GetScoresPracticesResolver,
                                     },
                                     component: DetailTableComponent,
-
                                   },
                                   {
                                     path: "individual/:idNotaPractica",
                                     component: DetailIndividualComponent,
-                                    resolve:{
-                                      practica: GetPracticesIndividualResolver
-                                    }
+                                    resolve: {
+                                      practica: GetPracticesIndividualResolver,
+                                    },
                                   },
-                                ]
+                                ],
                               },
                             ],
                           },
@@ -285,8 +291,8 @@ const routes: Routes = [
                       },
                       {
                         path: "edit-practice/:idPractica",
-                        resolve:{
-                          practice:GetPracticeModResolver,
+                        resolve: {
+                          practice: GetPracticeModResolver,
                           repository: GetQuestionsRepositoryResolver,
                         },
                         component: EditPracticeComponent,
@@ -325,6 +331,7 @@ const routes: Routes = [
       {
         path: "resources",
         component: ResourcesComponent,
+        data: { breadcrumb: "Resources" },
         runGuardsAndResolvers: "always",
         resolve: {
           sections: GetResourcesResolver,
@@ -333,6 +340,7 @@ const routes: Routes = [
       {
         path: "evaluation",
         component: EvaluationComponent,
+        data: { breadcrumb: "Evaluation" },
         resolve: {
           modules: GetModulesResolver,
           colors: GetColorsResolver,

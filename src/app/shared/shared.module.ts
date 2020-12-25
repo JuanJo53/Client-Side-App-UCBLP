@@ -13,13 +13,18 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatListModule } from "@angular/material/list";
 import { RouterModule } from "@angular/router";
 import { MatExpansionModule } from "@angular/material/expansion";
-import { CardClassroomComponent } from './components/cards/card-classroom/card-classroom.component';
-import { LoadingComponent } from './components/loading/loading.component';
-import {NgxSpinnerModule} from 'ngx-spinner'
-
+import { CardClassroomComponent } from "./components/cards/card-classroom/card-classroom.component";
+import { LoadingComponent } from "./components/loading/loading.component";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BreadcrumbModule } from "angular-crumbs";
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, CardClassroomComponent, LoadingComponent],
+  declarations: [
+    HeaderComponent,
+    SidebarComponent,
+    CardClassroomComponent,
+    LoadingComponent,
+  ],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -32,8 +37,9 @@ import {NgxSpinnerModule} from 'ngx-spinner'
     RouterModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BreadcrumbModule,
   ],
-  exports: [HeaderComponent, SidebarComponent,LoadingComponent],
+  exports: [HeaderComponent, SidebarComponent, LoadingComponent],
 })
 export class SharedModule {}

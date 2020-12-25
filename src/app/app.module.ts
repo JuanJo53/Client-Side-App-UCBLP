@@ -8,6 +8,7 @@ import { DefaultModule } from "./layouts/default/default.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from "./_help/auth-interceptor.service";
 import { ColorPickerComponent } from "./color-picker/color-picker.component";
+import { BreadcrumbModule } from "angular-crumbs";
 
 @NgModule({
   declarations: [AppComponent, ColorPickerComponent],
@@ -18,6 +19,7 @@ import { ColorPickerComponent } from "./color-picker/color-picker.component";
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    BreadcrumbModule,
   ],
   providers: [
     {
