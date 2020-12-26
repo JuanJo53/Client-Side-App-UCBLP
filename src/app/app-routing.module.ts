@@ -271,7 +271,6 @@ const routes: Routes = [
                                 children: [
                                   {
                                     path: "",
-
                                     resolve: {
                                       scores: GetScoresPracticesResolver,
                                     },
