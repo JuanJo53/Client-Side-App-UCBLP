@@ -108,6 +108,7 @@ const routes: Routes = [
         children: [
           {
             path: "students",
+            data: { breadcrumb: "Students" },
             resolve: {
               students: StudentsGeneralResolver,
             },
