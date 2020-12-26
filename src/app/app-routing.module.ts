@@ -261,12 +261,17 @@ const routes: Routes = [
                           },
                           {
                             path: "detail",
+                            data: { breadcrumb: "practice detail" },
                             children: [
                               {
                                 path: ":idPractica",
+                                data: {
+                                  breadcrumb: "practice detail number",
+                                },
                                 children: [
                                   {
                                     path: "",
+
                                     resolve: {
                                       scores: GetScoresPracticesResolver,
                                     },
