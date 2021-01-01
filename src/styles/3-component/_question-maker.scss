@@ -2,7 +2,7 @@
   border: $card-width solid $color-primary-blue;
   border-radius: $border-radious-1-5;
   border-left: $border-radious-1-5 solid $color-primary-blue;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   margin: 1rem 0;
   &__instruction {
     width: 100%;
@@ -19,6 +19,15 @@
       justify-content: center;
     }
   }
+  &__type {
+    @include respond-dialogs(tab-lan) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
   &__header {
     //background-color: red;
     margin: 1rem 0;
@@ -28,7 +37,7 @@
 
     //background-color: red;
     &--question {
-      width: 79%;
+      width: 78%;
       margin-right: 0.5rem;
       //background-color: yellowgreen;
       @include respond-dialogs(tab-lan) {
@@ -38,7 +47,7 @@
       }
     }
     &--score {
-      width: 19%;
+      width: 18%;
       margin-left: 0.5rem;
       //background-color: skyblue;
       @include respond-dialogs(tab-lan) {

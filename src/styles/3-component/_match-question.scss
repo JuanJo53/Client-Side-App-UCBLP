@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include respond-dialogs(tab-por) {
+  @include respond-dialogs(tab-lan) {
     //background-color: pink;
     //background-color: green;
     width: 100%;
@@ -14,7 +14,7 @@
 .match-input__container {
   //background-color: greenyellow;
   width: 45%;
-  @include respond-dialogs(tab-por) {
+  @include respond-dialogs(tab-lan) {
     //background-color: pink;
     //background-color: green;
     width: 100%;
@@ -30,7 +30,7 @@
   //   width: 36px;
   //   line-height: 36px;
   // }
-  @include respond-dialogs(tab-por) {
+  @include respond-dialogs(tab-lan) {
     //background-color: pink;
     //background-color: green;
     width: 10%;
@@ -55,7 +55,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include respond-dialogs(tab-por) {
+  @include respond-dialogs(tab-lan) {
     //background-color: pink;
     //background-color: green;
     width: 90%;
@@ -63,7 +63,7 @@
     flex-direction: column;
   }
   &__titles--big {
-    @include respond-dialogs(tab-por) {
+    @include respond-dialogs(tab-lan) {
       //background-color: pink;
       //background-color: green;
       display: none;
@@ -71,7 +71,7 @@
     }
   }
   &__titles--small {
-    @include respond-dialogs(tab-por) {
+    @include respond-dialogs(tab-lan) {
       //background-color: pink;
       //background-color: green;
       display: block;
