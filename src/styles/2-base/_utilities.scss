@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   flex-flow: wrap;
+  //background-color: red;
 }
 
 .u__flex--flex-end {
@@ -147,6 +148,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   @include respond(tab-por) {
     //background-color: green;
     width: 100%;

@@ -43,8 +43,9 @@
 }
 
 .mat-radio-group--container {
-  @include respond(tab-por) {
-    margin: auto;
-    margin-bottom: 1rem;
-  }
+  margin: auto;
+  margin-bottom: 1rem;
+  // @include respond(tab-por) {
+  //   margin: auto;
+  // }
 }
