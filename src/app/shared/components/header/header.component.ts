@@ -44,14 +44,12 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     this.sidebarOpen = true;
     this.usService.params.subscribe((data) => {
       idCurso = data["idCurso"];
-      console.log(idCurso);
     });
     this.data.currentMessage.subscribe((message) => (this.message = message));
     this.usService.data.subscribe({
       next: (data) => {
         this.materias = [];
         for (let materia of data.classroom) {
-          console.log(materia);
           let newCurso = new CardClassroom();
           newCurso.curso = materia.nombre_curso;
           newCurso.id_curso = materia.id_curso;
@@ -66,7 +64,6 @@ export class HeaderComponent implements OnInit, AfterContentInit {
             this.simbCurso = ini + fin;
           }
         }
-        console.log(this.materias);
         this.userDocente.correoDocente = data.profile.correo_docente;
         this.userDocente.nombreDocente = data.profile.nombre_docente;
         this.userDocente.apellidoDocente =
@@ -83,7 +80,6 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   }
   ngAfterContentInit() {
     const themeId = this.usService.snapshot.params.idTema;
-    console.log("id tema: " + themeId);
   }
   horario() {
     const dialogRef = this.dialog.open(ScheduleComponent, { width: "400px" });

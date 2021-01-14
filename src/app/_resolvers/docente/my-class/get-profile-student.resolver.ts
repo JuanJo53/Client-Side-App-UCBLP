@@ -13,8 +13,6 @@ export class GetProfileStudentResolver{
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.params['idCurso'];
     const idAlumnoCurso=route.params['idAlumnoCurso'];
-    console.log(idCurso); 
-    console.log(idAlumnoCurso); 
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 

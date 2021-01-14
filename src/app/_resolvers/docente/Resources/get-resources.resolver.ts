@@ -18,10 +18,8 @@ export class GetResourcesResolver{
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
     }
-    else{
-        console.log(idCurso);    
+    else{ 
         var result=this.resService.getSections(idCurso);
-        console.log(result);  
       return result;
     }
   }

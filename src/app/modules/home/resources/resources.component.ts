@@ -46,7 +46,6 @@ export class ResourcesComponent implements OnInit {
   subirArchivo() {
     this.servUpload.getUrlvideo().subscribe({
       next: (data) => {
-        console.log(data);
         this.servUpload
           .subirArchivo(data.body[0], this.file.target.files[0])
           .subscribe({
@@ -113,7 +112,6 @@ export class ResourcesComponent implements OnInit {
 
       this.ListaSecciones.push(nuevaSeccion);
     }
-    console.log(this.ListaSecciones);
   }
   ngOnInit(): void {
     this.data.changeMessage(this.link);
@@ -261,7 +259,6 @@ export class ResourcesComponent implements OnInit {
             .get(data.body.url[0], { responseType: "blob" })
             .subscribe({
               next: (archivo) => {
-                console.log(archivo);
                 var file = new Blob([archivo], {
                   type: "application/json",
                 });

@@ -66,7 +66,6 @@ export class SidebarComponent implements OnInit {
     this.mPersonalizados.splice(index, 1);
   }
   agregarModulos(data) {
-    console.log(data);
     this.mPersonalizados = [];
     for (let datos of data) {
       this.mPersonalizados.push({
@@ -78,7 +77,6 @@ export class SidebarComponent implements OnInit {
 
   navigateCustom(modulo) {
     this.servLoading.activar();
-    console.log(modulo);
     this.route.params.subscribe((params) => {
       const nav = this.router.navigate([
         "teacher",

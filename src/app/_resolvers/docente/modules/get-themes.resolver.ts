@@ -13,7 +13,6 @@ export class GetThemesTeacherResolver{
   constructor(private themeService:ThemesService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.params['idCurso'];
-    console.log(idCurso); 
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 

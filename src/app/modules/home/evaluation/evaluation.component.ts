@@ -158,8 +158,6 @@ export class EvaluationComponent implements OnInit {
         }
       }
     }
-    console.log(this.cardsModulosPers);
-    console.log(this.cardsModulosPred);
   }
 
   cargarColores(data) {
@@ -169,7 +167,6 @@ export class EvaluationComponent implements OnInit {
       newCol.color = data[i].valor;
       this.colores.push(newCol);
     }
-    console.log(this.colores);
   }
   cargarImagenes(data) {
     for (let i in data) {
@@ -178,7 +175,6 @@ export class EvaluationComponent implements OnInit {
       newImg.url = data[i].imagen;
       this.images.push(newImg);
     }
-    console.log(this.images);
   }
 
   customModulo() {
@@ -196,7 +192,6 @@ export class EvaluationComponent implements OnInit {
           next: (data) => {
 
             data.modules.body = result;
-            console.log(data.modules.body);
             this.cargarDatos(result);
             this.servNav.modulos(result);
           },
@@ -218,7 +213,6 @@ export class EvaluationComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== "" && result != null && result !== "undefined") {
-        console.log(result);
         this.route.data.subscribe({
           next: (data) => {
             data.modules.body = result;
@@ -244,7 +238,6 @@ export class EvaluationComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== "" && result != null && result !== "undefined") {
-        console.log(result);
         this.route.data.subscribe({
           next: (data) => {
             data.modules.body = result;
@@ -282,7 +275,6 @@ export class EvaluationComponent implements OnInit {
     });
   }
   eliminar(modulo: Module, index) {
-    console.log(modulo);
     const dialogRef = this.dialog.open(DeleteCardComponent, {
       width: "400px",
       data: {

@@ -20,7 +20,6 @@ export class AuthInterceptor implements HttpInterceptor{
           this.router.navigate(['/']);
         }
         else{
-          console.log(req);
           //aqui se agrega el token al header
           request=req.clone({
             setHeaders:{
@@ -28,7 +27,6 @@ export class AuthInterceptor implements HttpInterceptor{
             }
           });
         }
-        console.log(request);
         //aqui se returna el request pero con el token añadido
         return next.handle(request).pipe(
           catchError((err:HttpErrorResponse)=>{

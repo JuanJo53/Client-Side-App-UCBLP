@@ -12,7 +12,6 @@ export class GetModulesResolver{
   resolve(route:ActivatedRouteSnapshot){
       
     const idCurso=route.parent.params['idCurso'];
-    console.log(idCurso);
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 

@@ -14,7 +14,6 @@ export class GetScoreContentModuleResolver{
   constructor(private servCon:ContenidoModuloService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idContenidoModulo=route.params['idContenidoModulo'];
-    console.log(idContenidoModulo); 
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 

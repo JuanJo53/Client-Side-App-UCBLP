@@ -13,7 +13,6 @@ export class GetPracticesResolver{
   constructor(private practi:PracticesService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idLeccion=route.parent.params['idLeccion'];
-    console.log(idLeccion);
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 

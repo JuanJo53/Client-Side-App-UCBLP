@@ -106,17 +106,20 @@ export class CreatePracticeComponent implements OnInit {
     this.route.parent.params.subscribe((param) => {
       this.idLeccion = param["idLeccion"];
     });
-    this.route.data.subscribe({
-      next: (data) => {
-        if (data.repository.status == 200) {
-          console.log(data.repository.body);
-          this.repository = data.repository.body;
-        }
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
+    //metodo para recuperar la informacion del repositorio (obsoleto)
+    // this.route.data.subscribe({
+    //   next: (data) => {
+    //     console.log("algo");
+    //     console.log(data);
+    //     if (data.repository.status == 200) {
+    //       console.log(data.repository.body);
+    //       this.repository = data.repository.body;
+    //     }
+    //   },
+    //   error: (err) => {
+    //     console.log(err);
+    //   },
+    // });
   }
   generateId(): string {
     // Alphanumeric characters

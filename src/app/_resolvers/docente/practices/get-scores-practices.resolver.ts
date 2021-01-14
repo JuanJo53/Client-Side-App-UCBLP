@@ -13,7 +13,6 @@ export class GetScoresPracticesResolver{
   constructor(private practi:PracticesService,private tokenService:TokenStorageService,private router:Router) { }
   resolve(route:ActivatedRouteSnapshot){
     const idPractica=route.params['idPractica'];
-    console.log(idPractica);
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 

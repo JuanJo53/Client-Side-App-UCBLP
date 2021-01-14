@@ -15,8 +15,6 @@ export class GetContentModuleResolver{
   resolve(route:ActivatedRouteSnapshot){
     const idCurso=route.parent.parent.parent.params['idCurso'];
     const idModulo=route.params['idModulo'];
-    console.log(idCurso); 
-    console.log(idModulo); 
     if(this.tokenService.getToken()==="undefined"||this.tokenService.getToken()==null){
       this.router.navigate(['/']);
 
